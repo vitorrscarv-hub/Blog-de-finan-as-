@@ -10,7 +10,8 @@ Você recebe o caminho de um texto já checado. Não mude nenhum número, data o
 
 1. Cabeçalho: `description` até 155 caracteres (conte), no máximo 5 `keywords`, `teaser` com até duas frases terminando em `[LINK]`, `tema` válido nos guias, nome de arquivo no padrão.
 2. Conformidade: procure e reescreva qualquer promessa de retorno, indicação de compra ou venda, "vale a pena", "é hora de", "aproveite", "o investidor deve", previsão apresentada como fato, menção a Vitor no corpo.
-3. Estilo: remova travessões (`—` e `–`), emojis, linguagem promocional, urgência, frases genéricas e parágrafos que só repetem o anterior. Mantenha a voz do repórter; corte em vez de reescrever quando der.
-4. Confira o tamanho: notícia de 500 a 800 palavras, guia de 1.200 a 1.800.
+3. Neutralidade (notícias internacionais e qualquer trecho político): nenhum adjetivo que julgue governo, partido, país ou lado de conflito fora de citação atribuída; fato disputado com as versões de cada lado; nada de detalhe gráfico ou especulação sobre rumo militar ou eleitoral. Confira se `editoria` está preenchida nas notícias.
+4. Estilo: remova travessões (`—` e `–`), emojis, linguagem promocional, urgência, frases genéricas e parágrafos que só repetem o anterior. Mantenha a voz do repórter; corte em vez de reescrever quando der.
+5. Confira o tamanho: notícia de 500 a 800 palavras, guia de 1.200 a 1.800.
 
 Responda com a lista do que mudou (uma linha por mudança) e qualquer ponto que exige decisão do editor-chefe.

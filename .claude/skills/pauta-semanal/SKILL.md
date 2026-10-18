@@ -1,6 +1,6 @@
 ---
 name: pauta-semanal
-description: Coordena a redação do blog para a pauta da semana (3 notícias e 1 guia) com os agentes pauteiro, repórter, checador e revisor, roda build e testes e abre um pull request para Vitor revisar e publicar com o botão Merge. Use quando a tarefa agendada semanal disparar ou quando pedirem a pauta da semana.
+description: Coordena a redação do blog para a pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) com os agentes pauteiro, repórter, checador e revisor, roda build e testes e abre um pull request para Vitor revisar e publicar com o botão Merge. Use quando a tarefa agendada semanal disparar ou quando pedirem a pauta da semana.
 ---
 
 # Pauta semanal: editor-chefe
@@ -30,13 +30,14 @@ Chame o `pauteiro` com a data de hoje e os títulos dos pull requests abertos. A
 
 - cada item tem fonte primária aberta e é relevante para o leitor do manual;
 - não repete assunto publicado ou em revisão;
-- são até 3 notícias e 1 guia.
+- são até 3 notícias do Brasil, 2 internacionais e 1 guia;
+- cada internacional tem um canal claro até a carteira do investidor brasileiro.
 
 Se algum item não passar, peça outro ao pauteiro uma vez. Se mesmo assim faltar, siga com menos textos e registre isso no pull request.
 
 ## 3. Reportagem (em paralelo)
 
-Chame um `reporter` por item da pauta, todos na mesma resposta, para trabalharem em paralelo. Passe a cada um: o bloco do item, a data da pauta (para `date` e para o nome do arquivo) e o caminho do arquivo.
+Chame um `reporter` por item da pauta, todos na mesma resposta, para trabalharem em paralelo. Passe a cada um: o bloco do item, a editoria (nas notícias), a data da pauta (para `date` e para o nome do arquivo) e o caminho do arquivo.
 
 ## 4. Checagem e revisão (em paralelo, por texto)
 
@@ -55,7 +56,7 @@ Se o revisor apontar algo que exige decisão, decida você com base no manual. N
 
 Push do branch e pull request para o `main`, com título `Pauta da semana AAAA-MM-DD`. No corpo:
 
-- para cada texto: título, endereço da página, resumo em duas linhas, se está publicado ou como rascunho, a tabela final do checador ("dado | valor no texto | fonte | situação") e as mudanças relevantes do revisor;
+- para cada texto: editoria (ou tema, no guia), título, endereço da página, resumo em duas linhas, se está publicado ou como rascunho, a tabela final do checador ("dado | valor no texto | fonte | situação") e as mudanças relevantes do revisor;
 - o que ficou de fora da pauta e por quê, se for o caso;
 - resultado do build e dos testes;
 - a lembrança de que o link de prévia do Cloudflare aparece no próprio pull request e de que textos com `draft: true` não aparecem na prévia nem no site.

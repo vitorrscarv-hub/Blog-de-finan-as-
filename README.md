@@ -12,7 +12,7 @@ src/
   site.config.ts         nome, credenciais do autor, imagem de compartilhamento e regras do pop-up
   components/            cabeçalho, rodapé, card e pop-up de cadastro (LeadGate.astro)
   layouts/               página base (SEO) e página de artigo
-  pages/                 home, listas, artigos, privacidade, RSS e 404
+  pages/                 home, listas (com filtro por editoria), artigos, privacidade, RSS e 404
   scripts/formatos.ts    datas em pt-BR, ordenação, rascunhos e tempo de leitura
   styles/global.css      todo o CSS do site, com modo escuro
 public/                  favicon e imagem padrão de compartilhamento (og-padrao.png)
@@ -62,6 +62,7 @@ Cabeçalho de uma notícia:
 title: "IPCA de setembro fica acima do esperado"
 description: "Até 155 caracteres. O build falha se passar disso."
 date: 2026-10-19
+editoria: "Brasil"         # ou "Internacional"; só em notícias, padrão Brasil
 updated: 2026-10-20        # opcional
 keywords: ["IPCA setembro 2026", "inflação", "Selic"]   # até 5
 teaser: "Texto curto para o canal de WhatsApp. [LINK]"  # opcional
@@ -75,7 +76,7 @@ gate: true       # false libera o texto sem pedir cadastro
 Texto em Markdown. Intertítulos com ##, listas, tabelas e links funcionam normalmente.
 ```
 
-Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
+As notícias aparecem em `/noticias/` e também em `/noticias/brasil/` ou `/noticias/internacional/`, conforme a `editoria`, com etiqueta no card. Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
 
 O build falha, com a mensagem de erro em português, se faltar título ou description, se a description passar de 155 caracteres, se houver mais de 5 palavras-chave, se uma fonte não tiver url completa ou se o tema não estiver na lista. As datas aparecem exatamente como no cabeçalho: `2026-10-12` sai como "12 de outubro de 2026".
 
@@ -83,15 +84,23 @@ Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md
 
 ## Pauta semanal automática
 
-Toda segunda-feira de manhã uma tarefa agendada do Claude Code monta a pauta da semana (3 notícias e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
+Toda segunda-feira de manhã uma tarefa agendada do Claude Code monta a pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
 
 | Integrante | Papel |
 | --- | --- |
 | Editor-chefe | a sessão principal; coordena, decide, roda build e testes e abre o pull request (`.claude/skills/pauta-semanal/SKILL.md`) |
-| Pauteiro | escolhe os 3 fatos da semana e o tema do guia, com as fontes primárias |
-| Repórter | escreve cada texto; os quatro repórteres trabalham em paralelo |
+| Pauteiro | escolhe os 3 fatos do Brasil, os 2 internacionais e o tema do guia, com as fontes primárias |
+| Repórter | escreve cada texto; um repórter por texto, todos em paralelo |
 | Checador | confere cada número do texto na fonte oficial e corrige ou marca como rascunho |
-| Revisor | ajusta estilo, tom e conformidade (sem recomendação, sem promessa, sem travessão) |
+| Revisor | ajusta estilo, tom, neutralidade política e conformidade (sem recomendação, sem promessa, sem travessão) |
+
+A editoria internacional cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro (câmbio, juros, petróleo, bolsas), com neutralidade: o blog não toma partido de governo, país ou lado de guerra.
+
+Para o checador conseguir abrir as fontes oficiais, estes domínios precisam estar liberados na rede do ambiente do Claude Code (menu do ambiente na barra de título da sessão, Edit, Allowed domains):
+
+- Brasil: `bcb.gov.br`, `api.bcb.gov.br`, `ibge.gov.br`, `agenciadenoticias.ibge.gov.br`, `servicodados.ibge.gov.br`, `tesourodireto.com.br`, `gov.br`, `in.gov.br`, `anbima.com.br`, `b3.com.br`
+- Exterior: `federalreserve.gov`, `bls.gov`, `bea.gov`, `treasury.gov`, `ecb.europa.eu`, `ec.europa.eu`, `imf.org`, `worldbank.org`, `oecd.org`, `eia.gov`, `iea.org`, `opec.org`, `un.org`
+- Agências (fatos políticos e de guerra): `reuters.com`, `apnews.com`, `afp.com`
 
 Todos seguem o manual de redação em `.claude/skills/pauta-semanal/manual-de-redacao.md`. Para mudar critérios de pauta, tamanho ou tom, edite o manual por pull request. Você é o publisher: só o seu merge publica.
 
