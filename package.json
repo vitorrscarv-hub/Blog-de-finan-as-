@@ -12,7 +12,8 @@
     "test:e2e": "playwright test",
     "cf:db:local": "wrangler d1 execute blog-leads --local --env local --file=db/schema.sql",
     "cf:dev": "astro build && wrangler pages dev dist --d1 DB=COLE-O-ID-DO-BANCO-AQUI",
-    "cf:exportar": "node scripts/exportar-leads.mjs"
+    "cf:exportar": "node scripts/exportar-leads.mjs",
+    "marca": "node scripts/gerar-marca.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
