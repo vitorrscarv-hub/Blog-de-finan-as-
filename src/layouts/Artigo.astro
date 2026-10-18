@@ -18,17 +18,27 @@ interface Props {
 
 const { title, description, date, updated, keywords, fontes, gate, secao, leitura } = Astro.props;
 
+const autor = {
+  '@type': 'Person',
+  name: SITE.autor.nome,
+  url: new URL('/', Astro.site).href,
+  description: SITE.autor.credenciais.join('; '),
+};
+
 const jsonLd: Record<string, unknown> = {
   '@context': 'https://schema.org',
   '@type': secao.href.startsWith('/noticias') ? 'NewsArticle' : 'Article',
   headline: title,
   description,
+  image: [new URL(SITE.imagemPadrao, Astro.site).href],
   datePublished: date.toISOString(),
   dateModified: (updated ?? date).toISOString(),
   inLanguage: 'pt-BR',
+  articleSection: secao.nome,
   keywords: keywords.join(', '),
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
-  author: { '@type': 'Person', name: SITE.autor.nome, description: SITE.autor.credenciais.join('; ') },
+  author: autor,
+  publisher: autor,
 };
 
 // Marcação recomendada pelo Google para conteúdo que pede cadastro:
@@ -38,7 +48,14 @@ if (gate) {
   jsonLd.hasPart = { '@type': 'WebPageElement', isAccessibleForFree: false, cssSelector: '.artigo-corpo' };
 }
 ---
-<Base title={title} description={description} keywords={keywords} tipo="article" jsonLd={jsonLd}>
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  tipo="article"
+  jsonLd={jsonLd}
+  artigo={{ publicado: date, modificado: updated, secao: secao.nome }}
+>
   <article class="artigo container-texto">
     <header class="artigo-cabecalho">
       <a class="etiqueta" href={secao.href}>{secao.nome}</a>

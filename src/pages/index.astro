@@ -7,8 +7,18 @@ import { porData, publicado } from '../scripts/formatos';
 
 const noticias = (await getCollection('noticias', publicado)).sort(porData).slice(0, 6);
 const guias = (await getCollection('guias', publicado)).sort(porData).slice(0, 3);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.nome,
+  description: SITE.descricao,
+  url: new URL('/', Astro.site).href,
+  inLanguage: 'pt-BR',
+  author: { '@type': 'Person', name: SITE.autor.nome, description: SITE.autor.credenciais.join('; ') },
+};
 ---
-<Base title={SITE.nome}>
+<Base title={SITE.nome} jsonLd={jsonLd}>
   <section class="destaque container">
     <h1>Finanças e investimentos, explicados por quem acompanha o mercado</h1>
     <p>{SITE.descricao}</p>

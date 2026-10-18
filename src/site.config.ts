@@ -2,6 +2,8 @@ export const SITE = {
   nome: 'Vitor Reis de Carvalho',
   descricao:
     'Conteúdo educacional sobre finanças e investimentos para quem tem patrimônio relevante.',
+  // Imagem usada quando um link do blog é compartilhado (WhatsApp, LinkedIn etc.). 1200x630.
+  imagemPadrao: '/og-padrao.png',
   autor: {
     nome: 'Vitor Reis de Carvalho',
     credenciais: [
