@@ -83,7 +83,17 @@ Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md
 
 ## Pauta semanal automática
 
-Toda segunda-feira de manhã uma tarefa agendada do Claude Code escreve a pauta da semana (3 notícias e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O roteiro que ela segue está em `.claude/skills/pauta-semanal/SKILL.md`. Para mudar critérios de pauta, tamanho ou tom, edite esse arquivo por pull request.
+Toda segunda-feira de manhã uma tarefa agendada do Claude Code monta a pauta da semana (3 notícias e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
+
+| Integrante | Papel |
+| --- | --- |
+| Editor-chefe | a sessão principal; coordena, decide, roda build e testes e abre o pull request (`.claude/skills/pauta-semanal/SKILL.md`) |
+| Pauteiro | escolhe os 3 fatos da semana e o tema do guia, com as fontes primárias |
+| Repórter | escreve cada texto; os quatro repórteres trabalham em paralelo |
+| Checador | confere cada número do texto na fonte oficial e corrige ou marca como rascunho |
+| Revisor | ajusta estilo, tom e conformidade (sem recomendação, sem promessa, sem travessão) |
+
+Todos seguem o manual de redação em `.claude/skills/pauta-semanal/manual-de-redacao.md`. Para mudar critérios de pauta, tamanho ou tom, edite o manual por pull request. Você é o publisher: só o seu merge publica.
 
 O que você faz:
 

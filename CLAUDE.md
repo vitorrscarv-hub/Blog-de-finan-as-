@@ -26,7 +26,7 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 
 ## Pauta semanal
 
-A pauta da semana segue `.claude/skills/pauta-semanal/SKILL.md`: todo dado conferido na fonte primária, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
+A pauta da semana segue `.claude/skills/pauta-semanal/SKILL.md` (editor-chefe) com os agentes de `.claude/agents/` (pauteiro, repórter, checador, revisor) e o manual `.claude/skills/pauta-semanal/manual-de-redacao.md`: todo dado conferido na fonte primária, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
 
 ## Segredos
 
