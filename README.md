@@ -15,6 +15,7 @@ src/
   pages/                 home, listas (com filtro por editoria), artigos, privacidade, RSS e 404
   scripts/formatos.ts    datas em pt-BR, ordenação, rascunhos e tempo de leitura
   styles/global.css      todo o CSS do site, com modo escuro
+  data/indicadores.json  valores da faixa de indicadores (Selic, IPCA, dólar), com fonte e data
 public/                  favicon e imagem padrão de compartilhamento (og-padrao.png)
 functions/api/lead.js    recebe o cadastro (POST /api/lead) e grava no D1
 db/schema.sql            tabela de cadastros
@@ -24,6 +25,12 @@ tests/unit/              testes da função de cadastro com um D1 falso
 wrangler.toml            configuração do wrangler para uso no seu computador
 .github/workflows/ci.yml build e testes em cada pull request
 ```
+
+## Visual
+
+Layout editorial próprio: barra superior escura, grade com filetes finos em vez de caixas, títulos na fonte Archivo (condensada) e texto corrido na Source Serif 4. As fontes vêm dos pacotes `@fontsource-variable` e são servidas pelo próprio site, sem Google Fonts. Cores e tamanhos ficam nas variáveis do topo de `src/styles/global.css`, com versão para o modo escuro.
+
+A faixa de indicadores abaixo do menu (Selic, IPCA em 12 meses, dólar PTAX) lê `src/data/indicadores.json`. Cada item precisa de `nome`, `valor`, `data`, `fonte` e `url` (https). Item incompleto não aparece, e a faixa some se o arquivo estiver vazio. A pauta semanal atualiza esse arquivo com os valores conferidos na fonte oficial.
 
 ## Como rodar
 
