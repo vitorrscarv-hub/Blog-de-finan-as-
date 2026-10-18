@@ -18,6 +18,13 @@ Todos seguem `.claude/skills/pauta-semanal/manual-de-redacao.md`. Leia esse manu
 
 Chame cada integrante com a ferramenta Agent, usando o nome dele em `subagent_type` e passando no prompt tudo o que ele precisa (ele não vê esta conversa). Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faça você mesmo cada papel, na mesma ordem, lendo o arquivo do agente em `.claude/agents/` como instrução.
 
+## 0. Edição
+
+A edição padrão é `br` (Brasil), a única ativa hoje. Se o pedido citar outra edição, confira `.claude/skills/pauta-semanal/edicoes/edicoes.json`:
+
+- se a edição não existir ou estiver com `"ativa": false`, não faça a pauta: responda que ela ainda não foi ativada e aponte `edicoes/COMO-ATIVAR.md`;
+- se estiver ativa, passe a todos os integrantes o código da edição e o arquivo `edicoes/<codigo>.md`, que substitui as seções de leitor, pauta e fontes do manual comum. Use o fuso da edição para a data da pauta e no nome do branch (`pauta/<codigo>/AAAA-MM-DD`), e as pastas de conteúdo da edição.
+
 ## 1. Preparar
 
 1. `git fetch origin main` e crie o branch `pauta/AAAA-MM-DD` (data de hoje no fuso de São Paulo) a partir de `origin/main`.

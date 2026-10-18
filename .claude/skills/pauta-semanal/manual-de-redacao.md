@@ -2,6 +2,8 @@
 
 Vale para todos os integrantes da redação (pauteiro, repórter, checador, revisor e editor-chefe). O `CLAUDE.md` da raiz continua valendo; este manual detalha o que ele diz sobre conteúdo.
 
+Este é o manual da edição Brasil e a base de todas as edições. Em outra edição (ver `edicoes/COMO-ATIVAR.md`), o modelo do país em `edicoes/<codigo>.md` substitui as seções "Leitor", "Pauta da semana" e as fontes do Brasil; as demais regras valem para todas, em qualquer idioma.
+
 ## Leitor
 
 Investidor pessoa física com patrimônio relevante, que já conhece o básico e quer entender o que mudou e o que isso significa para a carteira dele. Não é iniciante, não é profissional do mercado.
