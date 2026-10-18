@@ -214,3 +214,9 @@ O GitHub Actions (`.github/workflows/ci.yml`) roda o build e todos os testes em 
 - [ ] Se usar envio por WhatsApp, conferir se a ferramenta segue as regras da Meta para contato com quem se cadastrou.
 - [ ] Cadastrar o site no Google Search Console e enviar `https://SEU-DOMINIO/sitemap-index.xml`.
 - [ ] Conferir a imagem de compartilhamento colando um link do blog no WhatsApp.
+
+## Edições de outros países
+
+O Grafous está pronto para ganhar edições em outros países. Os modelos de redação ficam em `.claude/skills/pauta-semanal/edicoes/`, todos desligados: Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália. Cada modelo traz leitor e idioma, pauta e editorias locais, fontes oficiais, regras locais sobre conteúdo financeiro e dados pessoais, aviso legal no idioma do país (para revisão de advogado local), domínios a liberar na rede e as pendências antes de ativar.
+
+O registro com código, idioma, fuso, horário da pauta e a chave de ativação está em `edicoes/edicoes.json`. O passo a passo para ligar uma edição, do parecer jurídico à tarefa agendada, está em `edicoes/COMO-ATIVAR.md`. Para incluir um país novo, copie um dos modelos, mantenha as mesmas seções e acrescente a linha no registro; `tests/unit/edicoes.test.js` confere se nada ficou faltando.

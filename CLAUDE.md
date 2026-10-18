@@ -30,6 +30,8 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 
 A pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) segue `.claude/skills/pauta-semanal/SKILL.md` (editor-chefe) com os agentes de `.claude/agents/` (pauteiro, repórter, checador, revisor) e o manual `.claude/skills/pauta-semanal/manual-de-redacao.md`: todo dado conferido na fonte primária, neutralidade em política e conflitos, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
 
+Edições de outros países (Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália) têm modelo de redação pronto em `.claude/skills/pauta-semanal/edicoes/`, todas inativas. Só a edição Brasil está ativa; ativar outra segue `edicoes/COMO-ATIVAR.md`, começando pelo parecer jurídico do país, e nunca por iniciativa própria.
+
 ## Segredos
 
 Nunca versionar ids reais de banco, tokens, senhas ou `.dev.vars`. O `wrangler.toml` mantém o placeholder `COLE-O-ID-DO-BANCO-AQUI` e não tem `pages_build_output_dir`; os vínculos de produção ficam no painel do Cloudflare. Arquivos `leads-*.csv` têm dados pessoais e não vão para o repositório.
