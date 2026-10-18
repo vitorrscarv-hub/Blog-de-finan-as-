@@ -1,0 +1,23 @@
+---
+import dados from '../data/indicadores.json';
+
+// Cada item: { nome, valor, data, fonte, url }. Item incompleto não aparece:
+// a faixa nunca mostra número sem fonte e sem data.
+interface Indicador { nome: string; valor: string; data: string; fonte: string; url: string }
+const itens = ((dados as { itens?: Indicador[] }).itens ?? []).filter(
+  (i) => i.nome && i.valor && i.data && i.fonte && /^https:\/\//.test(i.url)
+);
+---
+{itens.length > 0 && (
+  <aside class="indicadores" aria-label="Indicadores">
+    <div class="container">
+      {itens.map((i) => (
+        <a class="indicador" href={i.url} rel="noopener" target="_blank" title={`${i.fonte}, ${i.data}`}>
+          <strong>{i.nome}</strong>
+          <span class="valor">{i.valor}</span>
+          <span class="meta">{i.data}</span>
+        </a>
+      ))}
+    </div>
+  </aside>
+)}

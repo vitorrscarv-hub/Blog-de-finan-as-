@@ -45,18 +45,29 @@ Para cada texto entregue, chame o `checador` com o caminho do arquivo e a tabela
 
 Se o revisor apontar algo que exige decisão, decida você com base no manual. Na dúvida sobre conformidade, prefira cortar o trecho.
 
-## 5. Fechamento
+## 5. Indicadores do topo do site
+
+Chame o `checador` (em paralelo com a checagem dos textos) para atualizar `src/data/indicadores.json`, com estes três itens:
+
+- `Selic`: meta da taxa Selic vigente, em "% a.a.", lida no site do Banco Central (decisões do Copom ou série SGS 432);
+- `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida no IBGE (ou série SGS 13522 do Banco Central);
+- `Dólar PTAX`: PTAX de venda do último dia útil, lida no Banco Central (série SGS 1 ou boletim PTAX), no formato "R$ 0,0000".
+
+Cada item tem `nome`, `valor` (com vírgula decimal), `data` (a que o valor se refere, ex.: "set 2026" ou "16 out 2026"), `fonte` (ex.: "Banco Central") e `url` (https da página ou da consulta aberta). Item que não puder ser conferido sai do arquivo; a faixa esconde o que estiver incompleto e some se ficar vazia. Um commit separado: `atualiza indicadores`.
+
+## 6. Fechamento
 
 1. Se ainda existirem os textos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md` e `src/content/guias/tesouro-ipca-marcacao-a-mercado.md`) e a pauta tiver pelo menos dois textos com `draft: false` e `gate: true`, apague os exemplos.
 2. `npm run build` sem erros nem avisos e `npm test` passando. Se o build falhar por um texto, corrija o cabeçalho; se não der, marque o texto com `draft: true` e registre.
 3. Faça você mesmo uma última leitura: `grep -rnE "—|–" src/content` deve vir vazio, e nenhum texto pode ter recomendação de compra ou venda.
 4. Um commit por texto, em português (ex.: `adiciona notícia sobre a ata do Copom`), e um para a remoção dos exemplos, se houver.
 
-## 6. Pull request
+## 7. Pull request
 
 Push do branch e pull request para o `main`, com título `Pauta da semana AAAA-MM-DD`. No corpo:
 
 - para cada texto: editoria (ou tema, no guia), título, endereço da página, resumo em duas linhas, se está publicado ou como rascunho, a tabela final do checador ("dado | valor no texto | fonte | situação") e as mudanças relevantes do revisor;
+- os indicadores atualizados (valor, data e fonte de cada um) ou o motivo de terem ficado de fora;
 - o que ficou de fora da pauta e por quê, se for o caso;
 - resultado do build e dos testes;
 - a lembrança de que o link de prévia do Cloudflare aparece no próprio pull request e de que textos com `draft: true` não aparecem na prévia nem no site.
