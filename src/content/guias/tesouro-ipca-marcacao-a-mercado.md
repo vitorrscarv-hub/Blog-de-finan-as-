@@ -11,11 +11,37 @@ draft: false
 gate: true
 ---
 
+> **Texto de exemplo.** Apague este arquivo antes do lançamento.
+
 Este é um guia de exemplo. Os guias ficam em `src/content/guias/` e precisam do campo `tema`, que organiza a página de guias por assunto.
 
 Os temas aceitos estão em `src/content.config.ts`. Para criar um tema novo, inclua o nome na lista de lá.
 
 ## Um intertítulo
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+## Outro intertítulo
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
+
+## Um terceiro intertítulo
 
 Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up. Parágrafo de preenchimento para testar o pop-up.
 

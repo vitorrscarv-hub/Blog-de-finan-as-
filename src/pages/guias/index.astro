@@ -3,9 +3,11 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import CardPost from '../../components/CardPost.astro';
 import { porData, publicado } from '../../scripts/formatos';
+import { TEMAS } from '../../content.config';
 
 const guias = (await getCollection('guias', publicado)).sort(porData);
-const temas = [...new Set(guias.map((g) => g.data.tema))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+// Mesma ordem da lista de temas em content.config.ts; temas sem guia publicado não aparecem.
+const temas = TEMAS.filter((t) => guias.some((g) => g.data.tema === t));
 ---
 <Base title="Guias" description="Textos de referência sobre previdência, renda fixa, fundos, investimento no exterior e mais.">
   <section class="secao container">
