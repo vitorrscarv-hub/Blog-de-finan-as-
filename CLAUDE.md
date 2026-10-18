@@ -24,6 +24,10 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 - O texto completo fica sempre no HTML. Não esconder conteúdo no servidor; o JSON-LD marca `isAccessibleForFree: false` com `hasPart` em `.artigo-corpo`.
 - A validação do formulário e a de `functions/api/lead.js` precisam continuar iguais (nome, e-mail, WhatsApp com DDD de 10 ou 11 dígitos, consentimento, campo-armadilha `site`).
 
+## Pauta semanal
+
+A pauta da semana segue `.claude/skills/pauta-semanal/SKILL.md`: todo dado conferido na fonte primária, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
+
 ## Segredos
 
 Nunca versionar ids reais de banco, tokens, senhas ou `.dev.vars`. O `wrangler.toml` mantém o placeholder `COLE-O-ID-DO-BANCO-AQUI` e não tem `pages_build_output_dir`; os vínculos de produção ficam no painel do Cloudflare. Arquivos `leads-*.csv` têm dados pessoais e não vão para o repositório.

@@ -81,6 +81,19 @@ O build falha, com a mensagem de erro em português, se faltar título ou descri
 
 Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md` e `src/content/guias/tesouro-ipca-marcacao-a-mercado.md`) servem só para mostrar o formato. Apague os dois antes do lançamento, de preferência no mesmo pull request em que entrarem os primeiros textos reais. Os testes não dependem deles: acham os artigos pelas listas do site e só precisam de pelo menos dois textos publicados com `gate: true`.
 
+## Pauta semanal automática
+
+Toda segunda-feira de manhã uma tarefa agendada do Claude Code escreve a pauta da semana (3 notícias e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O roteiro que ela segue está em `.claude/skills/pauta-semanal/SKILL.md`. Para mudar critérios de pauta, tamanho ou tom, edite esse arquivo por pull request.
+
+O que você faz:
+
+1. Abra o pull request (chega notificação no celular e no e-mail do GitHub).
+2. Leia os textos no link de prévia do Cloudflare. No corpo do PR há uma tabela com cada número usado e a fonte, para conferir rápido.
+3. Se quiser mudar algo, edite o arquivo no próprio PR ou escreva um comentário pedindo a alteração.
+4. Aperte Merge. O site é publicado em um ou dois minutos.
+
+Textos com algum dado que a rotina não conseguiu conferir na fonte oficial vêm com `draft: true`. Eles não aparecem na prévia nem no site, mesmo depois do merge, até alguém conferir o dado e trocar para `draft: false`.
+
 ## Como funciona o pop-up de cadastro
 
 - Só aparece em textos com `gate: true` e só depois que o leitor começa a rolar a página. Na abertura da página ele nunca aparece.
