@@ -32,7 +32,7 @@ const jsonLd = {
     {noticias.length === 0 ? <p class="meta">Nenhuma notícia publicada ainda.</p> : (
       <div class="grade">
         {noticias.map((n) => (
-          <CardPost href={`/noticias/${n.id}/`} title={n.data.title} description={n.data.description} date={n.data.date} />
+          <CardPost href={`/noticias/${n.id}/`} title={n.data.title} description={n.data.description} date={n.data.date} etiqueta={n.data.editoria} />
         ))}
       </div>
     )}

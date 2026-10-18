@@ -10,3 +10,6 @@ export const publicado = <T extends { data: { draft: boolean } }>(e: T) =>
 
 export const minutosDeLeitura = (texto = '') =>
   Math.max(1, Math.round(texto.split(/\s+/).filter(Boolean).length / 200));
+
+// "Internacional" -> "internacional"; usado nos endereços das editorias.
+export const slugEditoria = (editoria: string) => editoria.toLowerCase();

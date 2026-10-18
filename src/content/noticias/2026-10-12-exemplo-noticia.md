@@ -2,6 +2,7 @@
 title: "Exemplo de notícia: como um texto da semana aparece no blog"
 description: "Texto de exemplo para mostrar o formato das notícias semanais. Substitua pelo conteúdo revisado antes de publicar."
 date: 2026-10-12
+editoria: "Brasil"
 keywords: ["exemplo", "notícias da semana", "formato"]
 teaser: "Exemplo de teaser. Até duas frases, seguidas do link. [LINK]"
 fontes:

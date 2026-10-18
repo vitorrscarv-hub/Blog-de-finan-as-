@@ -36,9 +36,13 @@ export const TEMAS = [
   'Fundamentos',
 ] as const;
 
+// Editoria das notícias. Também vira endereço: /noticias/brasil/ e /noticias/internacional/.
+export const EDITORIAS = ['Brasil', 'Internacional'] as const;
+export type Editoria = (typeof EDITORIAS)[number];
+
 const noticias = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/noticias' }),
-  schema: base,
+  schema: base.extend({ editoria: z.enum(EDITORIAS).default('Brasil') }),
 });
 
 const guias = defineCollection({

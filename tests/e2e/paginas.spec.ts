@@ -33,7 +33,7 @@ test('rodapé traz as credenciais do autor e o aviso legal', async ({ page }) =>
 test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO', async ({ page }) => {
   const [href] = await linksDe(page, '/noticias/');
   await page.goto(href);
-  await expect(page.locator('.artigo .etiqueta')).toHaveText('Notícias da semana');
+  await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Internacional)$/);
   await expect(page.locator('.linha-fina')).toBeVisible();
   const meta = page.locator('.artigo-cabecalho .meta');
   await expect(meta).toContainText('Vitor Reis de Carvalho');
@@ -73,6 +73,28 @@ test('/guias/ agrupa por tema e /noticias/ lista as notícias', async ({ page })
   for (const t of titulos) expect(temas).toContain(t);
   await page.goto('/noticias/');
   await expect(page.locator('.card')).not.toHaveCount(0);
+});
+
+test('filtro de editorias em /noticias/', async ({ page }) => {
+  await page.goto('/noticias/');
+  const filtro = page.getByRole('navigation', { name: 'Editorias' });
+  await expect(filtro.getByRole('link', { name: 'Todas' })).toHaveAttribute('aria-current', 'page');
+  const total = await page.locator('.card').count();
+
+  let somadas = 0;
+  for (const [rotulo, caminho] of [['Brasil', '/noticias/brasil/'], ['Internacional', '/noticias/internacional/']]) {
+    await filtro.getByRole('link', { name: rotulo }).click();
+    await expect(page).toHaveURL(new RegExp(`${caminho}$`));
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(`Notícias da semana: ${rotulo}`);
+    await expect(page.getByRole('navigation', { name: 'Editorias' }).getByRole('link', { name: rotulo })).toHaveAttribute('aria-current', 'page');
+    const etiquetas = await page.locator('.card .etiqueta').allTextContents();
+    for (const e of etiquetas) expect(e).toBe(rotulo);
+    if (etiquetas.length === 0) await expect(page.locator('main')).toContainText('Nenhuma notícia publicada nesta editoria ainda.');
+    somadas += etiquetas.length;
+    await page.goto('/noticias/');
+  }
+  // Toda notícia está em exatamente uma editoria.
+  expect(somadas).toBe(total);
 });
 
 test('privacidade tem os campos para preencher', async ({ page }) => {

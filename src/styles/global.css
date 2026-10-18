@@ -39,10 +39,15 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   color: var(--text);
   font: 17px/1.65 var(--sans);
 }
+
+main { flex: 1; }
 
 a { color: var(--brand); text-underline-offset: 3px; }
 a:hover { color: var(--accent); }
@@ -85,6 +90,12 @@ h3 { font-size: 1.25rem; margin: 1.8rem 0 .5rem; }
 
 .destaque { padding: 56px 0 8px; }
 .destaque p { color: var(--muted); max-width: 60ch; font-size: 1.1rem; margin: 0; }
+
+/* Filtro de editorias em /noticias/ */
+.filtro { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
+.filtro a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; color: var(--muted); text-decoration: none; background: var(--surface); }
+.filtro a:hover { color: var(--text); border-color: var(--muted); }
+.filtro a[aria-current='page'] { color: var(--surface); background: var(--brand); border-color: var(--brand); }
 
 /* Artigo */
 .artigo { padding: 40px 0 64px; }
