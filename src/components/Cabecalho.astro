@@ -16,7 +16,7 @@ const ativo = (l: (typeof links)[number]) =>
 ---
 <header class="topo">
   <div class="container">
-    <a class="marca" href="/" aria-label={`${SITE.nome}, página inicial`}><Logo /></a>
+    <a class="marca" href="/" aria-label={`${SITE.nome}, página inicial`}><Logo tamanho={38} /></a>
     <nav class="nav" aria-label="Principal">
       {links.map((l) => (
         <a href={l.href} aria-current={ativo(l) ? 'page' : undefined}>{l.rotulo}</a>

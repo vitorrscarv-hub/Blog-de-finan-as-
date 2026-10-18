@@ -115,7 +115,7 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .marca { display: inline-flex; color: var(--barra-texto); text-decoration: none; }
 .marca:hover { color: var(--barra-texto); }
 .logo { display: inline-flex; align-items: center; gap: 10px; }
-.logo-simbolo { display: block; flex: none; }
+.logo-simbolo { display: block; flex: none; color: var(--marca-texto); overflow: visible; }
 .logo-nome {
   font-family: var(--ui);
   font-stretch: 100%;
