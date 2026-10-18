@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site.config';
+// Modelo inicial. Revise com um advogado antes de publicar e preencha os campos entre colchetes.
+---
+<Base title="Política de privacidade" description="Como os dados de cadastro do blog são coletados, usados e protegidos.">
+  <article class="artigo container-texto">
+    <header class="artigo-cabecalho">
+      <h1>Política de privacidade</h1>
+      <p class="meta">Última atualização: [data]</p>
+    </header>
+    <div class="artigo-corpo">
+      <p>
+        Esta política explica como {SITE.autor.nome} ("nós") trata os dados pessoais de quem se cadastra
+        neste blog, nos termos da Lei Geral de Proteção de Dados (Lei 13.709/2018).
+      </p>
+
+      <h2>Quais dados coletamos</h2>
+      <p>
+        No cadastro pedimos nome, e-mail e número de WhatsApp. Registramos também a data do cadastro, a
+        página em que ele foi feito e a página de origem da visita, quando o navegador a informa.
+      </p>
+
+      <h2>Para que usamos</h2>
+      <p>
+        Os dados servem para liberar o acesso aos textos e para enviar conteúdos do blog por e-mail e
+        WhatsApp. A base legal é o seu consentimento, dado ao marcar a caixa de autorização no cadastro.
+        Não vendemos nem cedemos seus dados a terceiros para fins comerciais.
+      </p>
+
+      <h2>Onde ficam guardados</h2>
+      <p>
+        Os dados ficam armazenados em infraestrutura da Cloudflare, usada para hospedar o site, e podem ser
+        enviados à ferramenta de e-mail ou de mensagens usada para os envios: [nome da ferramenta, se houver].
+        Esses serviços podem manter servidores fora do Brasil. Nesse caso, a transferência internacional
+        segue o artigo 33 da LGPD: [descrever a garantia aplicável, por exemplo cláusulas contratuais do
+        fornecedor].
+      </p>
+
+      <h2>Quem tem acesso</h2>
+      <p>
+        Apenas {SITE.autor.nome} e, quando necessário, os fornecedores citados acima, que tratam os dados
+        somente para prestar o serviço contratado. O acesso ao banco de dados exige login com senha e
+        verificação em duas etapas: [confirmar].
+      </p>
+
+      <h2>Seus direitos</h2>
+      <p>
+        Você pode pedir a qualquer momento a confirmação de que tratamos seus dados, acesso, correção ou
+        exclusão deles, e revogar o consentimento. Basta escrever para [e-mail de contato]. Também é possível
+        cancelar o recebimento pelo link presente em cada e-mail ou respondendo "SAIR" no WhatsApp.
+      </p>
+
+      <h2>Por quanto tempo</h2>
+      <p>
+        Mantemos os dados enquanto o consentimento estiver ativo. Após o pedido de exclusão, eles são
+        apagados em até [prazo] dias, salvo obrigação legal de guarda.
+      </p>
+
+      <h2>Cookies e armazenamento no navegador</h2>
+      <p>
+        Depois do cadastro, guardamos no seu navegador uma marcação simples (um cookie e um registro local)
+        para não pedir o cadastro de novo. Ela não contém seus dados pessoais e vale por até dois anos. Você
+        pode apagá-la a qualquer momento limpando os dados do site nas configurações do navegador. O site
+        não usa cookies de publicidade: [confirmar, e listar aqui ferramentas de análise de audiência, se
+        forem instaladas].
+      </p>
+
+      <h2>Contato</h2>
+      <p>
+        Responsável pelo tratamento: [nome completo ou razão social], [CPF ou CNPJ], [e-mail de contato].
+        Encarregado pelo tratamento de dados (DPO): [nome e e-mail, ou informar a dispensa aplicável].
+      </p>
+      <p>
+        Se você entender que seus dados foram tratados em desacordo com a lei, também pode procurar a
+        Autoridade Nacional de Proteção de Dados (ANPD).
+      </p>
+    </div>
+  </article>
+</Base>

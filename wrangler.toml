@@ -1,0 +1,18 @@
+# Configuração do wrangler para o seu computador. O site publicado não lê este arquivo.
+#
+# De propósito, não há "pages_build_output_dir". Com essa linha, o Cloudflare Pages passaria a ler
+# os vínculos daqui e travaria a edição no painel. Assim, o vínculo DB e as variáveis ficam no painel
+# do Pages (veja o README) e nenhum id real precisa ser versionado.
+#
+# Comandos no banco publicado (--remote) usam só o nome "blog-leads": o wrangler encontra o banco
+# na sua conta depois do "wrangler login". Comandos no banco local usam "--env local".
+name = "blog-vitor-reis"
+compatibility_date = "2026-10-01"
+
+[env.local]
+
+[[env.local.d1_databases]]
+binding = "DB"
+database_name = "blog-leads"
+# Id de exemplo, usado só para o banco local em .wrangler/. Não troque por um id real aqui.
+database_id = "COLE-O-ID-DO-BANCO-AQUI"

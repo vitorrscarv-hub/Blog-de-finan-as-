@@ -1,0 +1,23 @@
+---
+import { SITE } from '../site.config';
+const ano = new Date().getFullYear();
+---
+<footer class="rodape">
+  <div class="container">
+    <div>
+      <strong>{SITE.autor.nome}</strong>
+      <ul>
+        {SITE.autor.credenciais.map((c) => <li>{c}</li>)}
+      </ul>
+    </div>
+    <p>
+      Conteúdo de caráter exclusivamente educacional. Não constitui recomendação de compra ou venda de
+      ativos nem análise de valores mobiliários. Rentabilidade passada não garante rentabilidade futura.
+      Avalie qualquer investimento de acordo com o seu perfil.
+    </p>
+    <p>
+      © {ano} {SITE.autor.nome} · <a href="/privacidade/">Política de privacidade</a> ·{' '}
+      <a href="/rss.xml">RSS</a>
+    </p>
+  </div>
+</footer>

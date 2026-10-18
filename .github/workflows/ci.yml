@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-e-testes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ASTRO_TELEMETRY_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (falha se houver erro ou aviso)
+        run: |
+          npm run build 2>&1 | tee build.log
+          if grep -iE '\[(warn|warning)\]|\bwarning\b' build.log; then
+            echo "::error::O build gerou avisos. Corrija antes de publicar."
+            exit 1
+          fi
+
+      - name: Testes da função /api/lead
+        run: npm run test:unit
+
+      - name: Instalar Chromium para o Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Testes do site (celular e computador)
+        run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: relatorio-playwright
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

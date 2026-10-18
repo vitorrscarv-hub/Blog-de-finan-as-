@@ -1,0 +1,29 @@
+{
+  "name": "blog-vitor-reis",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "npm run build && npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test \"tests/unit/**/*.test.js\"",
+    "test:e2e": "playwright test",
+    "cf:db:local": "wrangler d1 execute blog-leads --local --env local --file=db/schema.sql",
+    "cf:dev": "astro build && wrangler pages dev dist --d1 DB=COLE-O-ID-DO-BANCO-AQUI",
+    "cf:exportar": "node scripts/exportar-leads.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.4.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "wrangler": "^4.151.1"
+  },
+  "engines": {
+    "node": ">=22.22.0"
+  }
+}

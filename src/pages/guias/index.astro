@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CardPost from '../../components/CardPost.astro';
+import { porData, publicado } from '../../scripts/formatos';
+import { TEMAS } from '../../content.config';
+
+const guias = (await getCollection('guias', publicado)).sort(porData);
+// Mesma ordem da lista de temas em content.config.ts; temas sem guia publicado não aparecem.
+const temas = TEMAS.filter((t) => guias.some((g) => g.data.tema === t));
+---
+<Base title="Guias" description="Textos de referência sobre previdência, renda fixa, fundos, investimento no exterior e mais.">
+  <section class="secao container">
+    <h1>Guias</h1>
+    <p class="meta">Textos de referência, organizados por tema.</p>
+    {temas.map((tema) => (
+      <section>
+        <h2>{tema}</h2>
+        <div class="grade">
+          {guias.filter((g) => g.data.tema === tema).map((g) => (
+            <CardPost href={`/guias/${g.id}/`} title={g.data.title} description={g.data.description} date={g.data.date} />
+          ))}
+        </div>
+      </section>
+    ))}
+  </section>
+</Base>
