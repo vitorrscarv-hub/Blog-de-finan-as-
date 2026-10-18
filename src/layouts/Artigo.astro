@@ -61,10 +61,11 @@ if (gate) {
       <a class="etiqueta" href={secao.href}>{secao.nome}</a>
       <h1>{title}</h1>
       <p class="linha-fina">{description}</p>
-      <p class="meta">
-        Por {SITE.autor.nome} · <time datetime={date.toISOString()}>{dataBR(date)}</time>
-        {updated && <> · atualizado em <time datetime={updated.toISOString()}>{dataBR(updated)}</time></>}
-        · {leitura} min de leitura
+      <p class="meta meta-artigo">
+        <span>Por {SITE.autor.nome}</span>
+        <span><time datetime={date.toISOString()}>{dataBR(date)}</time></span>
+        {updated && <span>atualizado em <time datetime={updated.toISOString()}>{dataBR(updated)}</time></span>}
+        <span>{leitura} min de leitura</span>
       </p>
     </header>
 

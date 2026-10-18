@@ -83,13 +83,16 @@ h3 { font-size: 1.25rem; margin: 1.8rem 0 .5rem; }
 .meta { color: var(--muted); font-size: .85rem; }
 .etiqueta { display: inline-block; font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
 
-.destaque { padding: 56px 0 24px; }
+.destaque { padding: 56px 0 8px; }
 .destaque p { color: var(--muted); max-width: 60ch; font-size: 1.1rem; margin: 0; }
 
 /* Artigo */
 .artigo { padding: 40px 0 64px; }
 .artigo-cabecalho { margin-bottom: 28px; }
 .artigo-cabecalho .linha-fina { color: var(--muted); font-size: 1.1rem; margin: 0 0 12px; }
+.meta-artigo { display: flex; flex-wrap: wrap; column-gap: 0; row-gap: 2px; margin: 0; }
+.meta-artigo span { white-space: nowrap; }
+.meta-artigo span:not(:last-child)::after { content: '·'; padding: 0 .45em; }
 .artigo-corpo { font-family: var(--serif); font-size: 1.12rem; line-height: 1.75; }
 .artigo-corpo p { margin: 0 0 1.15em; }
 .artigo-corpo table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: .95rem; margin: 1.5em 0; display: block; overflow-x: auto; }
@@ -156,5 +159,10 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
 @media (max-width: 600px) {
   body { font-size: 16px; }
   .artigo-corpo { font-size: 1.05rem; }
-  .nav { gap: 14px; }
+  .nav { gap: 18px; }
+  .topo .container { min-height: 0; padding: 12px 0; row-gap: 6px; }
+  .destaque { padding: 36px 0 8px; }
+  .secao { padding: 28px 0; }
+  .lead-caixa { padding: 22px 18px 18px; }
+  .lead-caixa > p { font-size: .9rem; }
 }
