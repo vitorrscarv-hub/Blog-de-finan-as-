@@ -1,7 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-
-const NOTICIA = '/noticias/2026-10-12-exemplo-noticia/';
-const GUIA = '/guias/tesouro-ipca-marcacao-a-mercado/';
+import { artigosComCadastro } from './artigos';
 
 // Mesma definição usada no LeadGate: fração do corpo do texto que já passou
 // por uma linha imaginária a 60% da altura da tela.
@@ -33,6 +31,7 @@ const rolarAte = async (page: Page, parar: () => Promise<boolean>, passo = 20, l
 };
 
 test('pop-up de cadastro: abre no ponto certo, valida, libera a leitura e não volta', async ({ page }) => {
+  const [NOTICIA, OUTRO] = await artigosComCadastro(page);
   const envios: Record<string, unknown>[] = [];
   await page.route('**/api/lead', async (route) => {
     envios.push(route.request().postDataJSON());
@@ -75,8 +74,8 @@ test('pop-up de cadastro: abre no ponto certo, valida, libera a leitura e não v
     await page.waitForTimeout(200);
     const depois = await page.evaluate(() => document.body.getBoundingClientRect().top);
     expect(depois).toBe(antes);
-    // O texto inteiro continua no HTML, para indexação.
-    await expect(page.locator('.artigo-corpo h2', { hasText: 'O que observar nas próximas semanas' })).toHaveCount(1);
+    // O texto inteiro continua no HTML, para indexação: o último parágrafo está lá, só desfocado.
+    await expect(page.locator('.artigo-corpo > :last-child')).toHaveClass(/depois-do-corte/);
     // Inputs com 16px evitam o zoom automático do iPhone.
     const fonte = await page.locator('#lead-email').evaluate((el) => getComputedStyle(el).fontSize);
     expect(fonte).toBe('16px');
@@ -139,7 +138,7 @@ test('pop-up de cadastro: abre no ponto certo, valida, libera a leitura e não v
   });
 
   await test.step('em outro artigo o pop-up não volta', async () => {
-    await page.goto(GUIA);
+    await page.goto(OUTRO);
     await rolarAte(page, async () => false, 60, 300);
     expect(await popupAberto(page)).toBe(false);
     await expect(page.locator('.artigo-corpo .depois-do-corte')).toHaveCount(0);
@@ -154,6 +153,7 @@ test('pop-up de cadastro: abre no ponto certo, valida, libera a leitura e não v
 });
 
 test('mostra aviso de erro se o envio falhar e mantém o pop-up aberto', async ({ page }) => {
+  const [NOTICIA] = await artigosComCadastro(page);
   await page.route('**/api/lead', (route) => route.fulfill({ status: 500, body: '{"ok":false}' }));
   await page.goto(NOTICIA);
   expect(await rolarAte(page, () => popupAberto(page))).toBe(true);
