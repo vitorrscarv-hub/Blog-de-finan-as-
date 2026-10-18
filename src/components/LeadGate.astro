@@ -5,18 +5,24 @@ const { gatilhoMin, gatilhoMax, modo, endpoint } = SITE.lead;
 <div
   class="lead-fundo"
   id="lead-fundo"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="lead-titulo"
   data-min={gatilhoMin}
   data-max={gatilhoMax}
   data-modo={modo}
   data-endpoint={endpoint}
   hidden
 >
-  <div class="lead-caixa">
-    <h2 id="lead-titulo">Continue a leitura gratuitamente</h2>
-    <p>Faça um cadastro rápido, uma única vez, e tenha acesso a todos os textos do blog.</p>
+  <div
+    class="lead-caixa"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lead-titulo"
+    aria-describedby="lead-descricao"
+  >
+    <h2 id="lead-titulo">Para continuar lendo</h2>
+    <p id="lead-descricao">
+      O cadastro é feito uma vez só e libera todos os textos do blog. Você também passa a receber os
+      novos conteúdos por e-mail e WhatsApp.
+    </p>
     <form id="lead-form" novalidate>
       <div class="campo">
         <label for="lead-nome">Nome</label>
@@ -24,10 +30,20 @@ const { gatilhoMin, gatilhoMax, modo, endpoint } = SITE.lead;
       </div>
       <div class="campo">
         <label for="lead-email">E-mail</label>
-        <input id="lead-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" />
+        <input
+          id="lead-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          inputmode="email"
+          autocapitalize="off"
+          spellcheck="false"
+          required
+          maxlength="160"
+        />
       </div>
       <div class="campo">
-        <label for="lead-whatsapp">WhatsApp</label>
+        <label for="lead-whatsapp">WhatsApp com DDD</label>
         <input
           id="lead-whatsapp"
           name="whatsapp"
@@ -43,16 +59,16 @@ const { gatilhoMin, gatilhoMax, modo, endpoint } = SITE.lead;
         <label for="lead-site">Não preencha este campo</label>
         <input id="lead-site" name="site" tabindex="-1" autocomplete="off" />
       </div>
-      <label class="consentimento">
+      <div class="consentimento">
         <input type="checkbox" name="consentimento" id="lead-consentimento" required />
-        <span>
-          Autorizo o uso dos meus dados para receber conteúdos por e-mail e WhatsApp, conforme a{' '}
+        <label for="lead-consentimento">
+          Autorizo o uso do meu nome, e-mail e WhatsApp para receber os conteúdos do blog, conforme a
           <a href="/privacidade/" target="_blank" rel="noopener">política de privacidade</a>. Posso
           cancelar quando quiser.
-        </span>
-      </label>
-      <button class="botao" type="submit">Liberar leitura</button>
+        </label>
+      </div>
       <p class="lead-erro" id="lead-erro" role="alert"></p>
+      <button class="botao" type="submit">Continuar lendo</button>
     </form>
     {modo === 'opcional' && (
       <button class="lead-fechar" type="button" id="lead-fechar">Agora não</button>
@@ -62,6 +78,7 @@ const { gatilhoMin, gatilhoMax, modo, endpoint } = SITE.lead;
 
 <script>
   const CHAVE = 'vrc_lead_ok';
+  const CHAVE_DISPENSA = 'vrc_lead_dispensado';
 
   const jaCadastrado = () => {
     try {
@@ -75,120 +92,209 @@ const { gatilhoMin, gatilhoMax, modo, endpoint } = SITE.lead;
       localStorage.setItem(CHAVE, '1');
     } catch {}
     // Cookie de 2 anos como reserva para navegadores que bloqueiam o localStorage.
-    document.cookie = `${CHAVE}=1; max-age=${60 * 60 * 24 * 730}; path=/; SameSite=Lax`;
+    const seguro = location.protocol === 'https:' ? '; Secure' : '';
+    document.cookie = `${CHAVE}=1; max-age=${60 * 60 * 24 * 730}; path=/; SameSite=Lax${seguro}`;
   };
 
-  const soDigitos = (v: string) => v.replace(/\D/g, '');
+  // No modo opcional, "Agora não" vale só para esta visita (aba aberta).
+  const dispensadoNaSessao = () => {
+    try {
+      return sessionStorage.getItem(CHAVE_DISPENSA) === '1';
+    } catch {
+      return false;
+    }
+  };
+  const marcarDispensado = () => {
+    try {
+      sessionStorage.setItem(CHAVE_DISPENSA, '1');
+    } catch {}
+  };
+
+  // Aceita colagens como "+55 (11) 91234-5678" ou "011 91234-5678".
+  const digitosWhats = (v: string) => {
+    let d = v.replace(/\D/g, '');
+    if (d.length > 11 && d.startsWith('55')) d = d.slice(2);
+    return d.replace(/^0+/, '').slice(0, 11);
+  };
 
   const mascaraWhats = (v: string) => {
-    const d = soDigitos(v).slice(0, 11);
+    const d = digitosWhats(v);
     if (d.length <= 2) return d.length ? `(${d}` : '';
     if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
     if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
     return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
   };
 
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const whatsValido = (d: string) => /^[1-9]{2}\d{8,9}$/.test(d);
+
   function iniciar() {
     const fundo = document.getElementById('lead-fundo');
     const corpo = document.querySelector<HTMLElement>('.artigo-corpo[data-gate="true"]');
     if (!fundo || !corpo || jaCadastrado()) return;
 
+    const obrigatorio = fundo.dataset.modo !== 'opcional';
+    if (!obrigatorio && dispensadoNaSessao()) return;
+
     const min = Number(fundo.dataset.min) || 0.3;
     const max = Number(fundo.dataset.max) || 0.4;
-    const obrigatorio = fundo.dataset.modo !== 'opcional';
     const endpoint = fundo.dataset.endpoint || '/api/lead';
     const gatilho = min + Math.random() * (max - min);
+    fundo.dataset.gatilho = gatilho.toFixed(4);
 
+    const caixa = fundo.querySelector<HTMLElement>('.lead-caixa')!;
     const form = fundo.querySelector<HTMLFormElement>('#lead-form')!;
     const erro = fundo.querySelector<HTMLElement>('#lead-erro')!;
+    const nome = fundo.querySelector<HTMLInputElement>('#lead-nome')!;
+    const email = fundo.querySelector<HTMLInputElement>('#lead-email')!;
     const whats = fundo.querySelector<HTMLInputElement>('#lead-whatsapp')!;
+    const consentimento = fundo.querySelector<HTMLInputElement>('#lead-consentimento')!;
+    const armadilha = fundo.querySelector<HTMLInputElement>('#lead-site')!;
     const botao = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const atras = Array.from(document.body.children).filter((el) => el !== fundo);
     let aberto = false;
+    let rolagemSalva = 0;
 
     whats.addEventListener('input', () => {
       whats.value = mascaraWhats(whats.value);
     });
 
-    // Considera lido o trecho acima de uma linha imaginária a 60% da altura da tela.
+    // A leitura avança com uma linha imaginária a 60% da altura da tela:
+    // o progresso é a fração do corpo do texto que já ficou acima dela.
+    const LINHA = 0.6;
     const progresso = () => {
       const r = corpo.getBoundingClientRect();
-      const lido = window.innerHeight * 0.6 - r.top;
-      return Math.min(1, Math.max(0, lido / r.height));
+      return Math.min(1, Math.max(0, (window.innerHeight * LINHA - r.top) / r.height));
     };
 
-    const bloquear = () => {
-      const limite = window.innerHeight;
-      corpo.classList.add('bloqueado');
-      for (const el of Array.from(corpo.children)) {
-        if (el.getBoundingClientRect().top > limite) el.classList.add('depois-do-corte');
-      }
+    const travarRolagem = () => {
+      // position: fixed no body é o que trava a rolagem também no Safari do iPhone.
+      rolagemSalva = window.scrollY;
+      document.body.style.top = `-${rolagemSalva}px`;
       document.body.classList.add('travado');
     };
 
-    const liberar = () => {
+    const destravarRolagem = () => {
+      document.body.classList.remove('travado');
+      document.body.style.top = '';
+      window.scrollTo(0, rolagemSalva);
+    };
+
+    const bloquearTexto = () => {
+      const corte = window.innerHeight * LINHA;
+      corpo.classList.add('bloqueado');
+      for (const el of Array.from(corpo.children)) {
+        if (el.getBoundingClientRect().bottom > corte) el.classList.add('depois-do-corte');
+      }
+    };
+
+    const fechar = () => {
       corpo.classList.remove('bloqueado');
       corpo.querySelectorAll('.depois-do-corte').forEach((el) => el.classList.remove('depois-do-corte'));
-      document.body.classList.remove('travado');
+      atras.forEach((el) => el.removeAttribute('inert'));
+      destravarRolagem();
       fundo.classList.remove('aberto');
       fundo.hidden = true;
+      document.removeEventListener('keydown', aoTeclar);
+    };
+
+    const focaveis = () =>
+      Array.from(
+        caixa.querySelectorAll<HTMLElement>('input:not([tabindex="-1"]), button, a[href]')
+      ).filter((el) => !el.hasAttribute('disabled') && el.offsetParent !== null);
+
+    const aoTeclar = (ev: KeyboardEvent) => {
+      if (ev.key === 'Escape' && !obrigatorio) {
+        marcarDispensado();
+        fechar();
+        return;
+      }
+      if (ev.key !== 'Tab') return;
+      const lista = focaveis();
+      const primeiro = lista[0];
+      const ultimo = lista[lista.length - 1];
+      if (ev.shiftKey && document.activeElement === primeiro) {
+        ev.preventDefault();
+        ultimo.focus();
+      } else if (!ev.shiftKey && document.activeElement === ultimo) {
+        ev.preventDefault();
+        primeiro.focus();
+      }
     };
 
     const abrir = () => {
       if (aberto) return;
       aberto = true;
       window.removeEventListener('scroll', aoRolar);
-      if (obrigatorio) bloquear();
+      if (obrigatorio) bloquearTexto();
+      travarRolagem();
+      // Fora do <main>, para poder deixar o resto da página inerte.
+      document.body.appendChild(fundo);
+      atras.forEach((el) => el.setAttribute('inert', ''));
       fundo.hidden = false;
       fundo.classList.add('aberto');
-      fundo.querySelector<HTMLInputElement>('#lead-nome')?.focus();
+      document.addEventListener('keydown', aoTeclar);
+      nome.focus();
     };
 
     // Só dispara depois que o leitor rola a página, nunca no carregamento.
     const aoRolar = () => {
       if (window.scrollY > 0 && progresso() >= gatilho) abrir();
     };
-
     window.addEventListener('scroll', aoRolar, { passive: true });
 
-    fundo.querySelector('#lead-fechar')?.addEventListener('click', liberar);
+    fundo.querySelector('#lead-fechar')?.addEventListener('click', () => {
+      marcarDispensado();
+      fechar();
+    });
+
+    const mostrarErro = (campo: HTMLInputElement, texto: string) => {
+      form.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+      campo.setAttribute('aria-invalid', 'true');
+      campo.setAttribute('aria-describedby', 'lead-erro');
+      erro.textContent = texto;
+      campo.focus();
+    };
 
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
       erro.textContent = '';
-      const dados = new FormData(form);
-      const nome = String(dados.get('nome') || '').trim();
-      const email = String(dados.get('email') || '').trim();
-      const whatsapp = soDigitos(String(dados.get('whatsapp') || ''));
+      form.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
 
-      if (nome.length < 2) return void (erro.textContent = 'Informe seu nome.');
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return void (erro.textContent = 'Confira o e-mail.');
-      if (whatsapp.length < 10 || whatsapp.length > 11)
-        return void (erro.textContent = 'Informe o WhatsApp com DDD.');
-      if (!dados.get('consentimento'))
-        return void (erro.textContent = 'Para continuar, marque a autorização de uso dos dados.');
+      const vNome = nome.value.trim();
+      const vEmail = email.value.trim();
+      const vWhats = digitosWhats(whats.value);
+
+      if (vNome.length < 2) return mostrarErro(nome, 'Informe seu nome.');
+      if (!EMAIL_RE.test(vEmail)) return mostrarErro(email, 'Confira o e-mail. Ele precisa estar no formato nome@provedor.com.');
+      if (!whatsValido(vWhats)) return mostrarErro(whats, 'Informe o WhatsApp com DDD, com 10 ou 11 números.');
+      if (!consentimento.checked)
+        return mostrarErro(consentimento, 'Para continuar, marque a autorização de uso dos dados.');
 
       botao.disabled = true;
+      botao.textContent = 'Enviando...';
       try {
         const resp = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            nome,
-            email,
-            whatsapp,
+            nome: vNome,
+            email: vEmail,
+            whatsapp: vWhats,
             consentimento: true,
-            site: String(dados.get('site') || ''),
+            site: armadilha.value,
             pagina: location.pathname,
             origem: document.referrer || null,
           }),
         });
         if (!resp.ok) throw new Error(String(resp.status));
         marcarCadastrado();
-        liberar();
+        fechar();
       } catch {
-        erro.textContent = 'Não foi possível enviar agora. Tente de novo em instantes.';
+        erro.textContent = 'Não foi possível enviar agora. Confira sua conexão e tente de novo.';
       } finally {
         botao.disabled = false;
+        botao.textContent = 'Continuar lendo';
       }
     });
   }
