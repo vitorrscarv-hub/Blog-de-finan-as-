@@ -32,6 +32,16 @@ import { SITE } from '../site.config';
       <p>
         Os dados ficam armazenados em infraestrutura da Cloudflare, usada para hospedar o site, e podem ser
         enviados à ferramenta de e-mail ou de mensagens usada para os envios: [nome da ferramenta, se houver].
+        Esses serviços podem manter servidores fora do Brasil. Nesse caso, a transferência internacional
+        segue o artigo 33 da LGPD: [descrever a garantia aplicável, por exemplo cláusulas contratuais do
+        fornecedor].
+      </p>
+
+      <h2>Quem tem acesso</h2>
+      <p>
+        Apenas {SITE.autor.nome} e, quando necessário, os fornecedores citados acima, que tratam os dados
+        somente para prestar o serviço contratado. O acesso ao banco de dados exige login com senha e
+        verificação em duas etapas: [confirmar].
       </p>
 
       <h2>Seus direitos</h2>
@@ -50,11 +60,21 @@ import { SITE } from '../site.config';
       <h2>Cookies e armazenamento no navegador</h2>
       <p>
         Depois do cadastro, guardamos no seu navegador uma marcação simples (um cookie e um registro local)
-        para não pedir o cadastro de novo. Ela não contém seus dados pessoais.
+        para não pedir o cadastro de novo. Ela não contém seus dados pessoais e vale por até dois anos. Você
+        pode apagá-la a qualquer momento limpando os dados do site nas configurações do navegador. O site
+        não usa cookies de publicidade: [confirmar, e listar aqui ferramentas de análise de audiência, se
+        forem instaladas].
       </p>
 
       <h2>Contato</h2>
-      <p>Responsável pelo tratamento: [nome completo ou razão social], [e-mail de contato].</p>
+      <p>
+        Responsável pelo tratamento: [nome completo ou razão social], [CPF ou CNPJ], [e-mail de contato].
+        Encarregado pelo tratamento de dados (DPO): [nome e e-mail, ou informar a dispensa aplicável].
+      </p>
+      <p>
+        Se você entender que seus dados foram tratados em desacordo com a lei, também pode procurar a
+        Autoridade Nacional de Proteção de Dados (ANPD).
+      </p>
     </div>
   </article>
 </Base>
