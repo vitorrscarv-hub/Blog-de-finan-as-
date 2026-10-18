@@ -114,7 +114,7 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
   font-family: var(--titulo);
   font-stretch: 80%;
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.7rem;
   letter-spacing: -0.01em;
   color: var(--barra-texto);
   text-decoration: none;
@@ -216,8 +216,11 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .artigo-cabecalho h1 { font-size: clamp(2.2rem, 5.4vw, 3.9rem); font-stretch: 78%; line-height: 1.02; margin: 12px 0 16px; }
 .artigo-cabecalho .linha-fina { font-family: var(--texto); font-size: 1.3rem; line-height: 1.45; color: var(--tinta-suave); margin: 0 0 24px; }
 .assinatura { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; border-top: 1px solid var(--filete-forte); border-bottom: 1px solid var(--filete); padding: 10px 0; }
-.assinatura .autor { font-weight: 700; font-size: .92rem; }
-.assinatura .autor span { font-weight: 400; color: var(--tinta-suave); }
+.fontes-linha { margin: 0; font-size: .92rem; font-weight: 600; }
+.fontes-linha .rotulo { color: var(--tinta-suave); margin-right: 8px; }
+.fontes-linha a { text-decoration: none; border-bottom: 1px solid var(--filete); }
+.fontes-linha a:hover { color: var(--destaque); border-bottom-color: var(--destaque); }
+.assinatura > .meta-artigo:only-child { margin-left: auto; }
 .meta-artigo { display: flex; flex-wrap: wrap; row-gap: 2px; margin: 0; }
 .meta-artigo span { white-space: nowrap; }
 .meta-artigo span:not(:last-child)::after { content: '·'; padding: 0 .45em; }

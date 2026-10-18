@@ -9,7 +9,8 @@ const dataEsperada = (iso: string) =>
 
 test('home lista notícias e guias com a data em pt-BR', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle('Vitor Reis de Carvalho');
+  await expect(page).toHaveTitle('InfouS');
+  await expect(page.locator('header.topo .marca')).toHaveText('InfouS');
   await expect(page.getByRole('heading', { name: 'Notícias da semana' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Guias', exact: true })).toBeVisible();
   // Capa: manchete + coluna "Mais notícias" + fileira, no máximo 6 notícias; guias, no máximo 3.
@@ -41,7 +42,9 @@ test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO
   await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Internacional)$/);
   await expect(page.locator('.linha-fina')).toBeVisible();
   const meta = page.locator('.artigo-cabecalho .assinatura');
-  await expect(meta).toContainText('Vitor Reis de Carvalho');
+  // Abaixo do título vai a fonte, não o nome do autor.
+  await expect(meta).not.toContainText('Vitor Reis de Carvalho');
+  if (await page.locator('.fontes li').count()) await expect(meta.locator('.fontes-linha')).toContainText(/^Fontes?/);
   await expect(meta).toContainText('min de leitura');
   const data = meta.locator('time').first();
   await expect(data).toHaveText(dataEsperada((await data.getAttribute('datetime'))!));

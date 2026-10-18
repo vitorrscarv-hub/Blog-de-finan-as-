@@ -3,6 +3,7 @@ import Base from './Base.astro';
 import LeadGate from '../components/LeadGate.astro';
 import { SITE } from '../site.config';
 import { dataBR } from '../scripts/formatos';
+import { instituicoes } from '../scripts/fontes';
 
 interface Props {
   title: string;
@@ -18,12 +19,15 @@ interface Props {
 
 const { title, description, date, updated, keywords, fontes, gate, secao, leitura } = Astro.props;
 
+// As matérias não levam assinatura visível; o autor continua nos metadados para o Google,
+// e o blog aparece como publicador.
 const autor = {
   '@type': 'Person',
   name: SITE.autor.nome,
-  url: new URL('/', Astro.site).href,
   description: SITE.autor.credenciais.join('; '),
 };
+const publicador = { '@type': 'Organization', name: SITE.nome, url: new URL('/', Astro.site).href };
+const instituicoesCitadas = instituicoes(fontes);
 
 const jsonLd: Record<string, unknown> = {
   '@context': 'https://schema.org',
@@ -38,7 +42,7 @@ const jsonLd: Record<string, unknown> = {
   keywords: keywords.join(', '),
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
   author: autor,
-  publisher: autor,
+  publisher: publicador,
 };
 
 // Marcação recomendada pelo Google para conteúdo que pede cadastro:
@@ -62,7 +66,14 @@ if (gate) {
       <h1>{title}</h1>
       <p class="linha-fina">{description}</p>
       <div class="assinatura">
-        <p class="autor">Por {SITE.autor.nome} <span>· {SITE.autor.credenciais[0]}</span></p>
+        {instituicoesCitadas.length > 0 && (
+          <p class="fontes-linha">
+            <span class="rotulo">{instituicoesCitadas.length > 1 ? 'Fontes' : 'Fonte'}</span>
+            {instituicoesCitadas.map((f, i) => (
+              <>{i > 0 && ', '}<a href={f.url} rel="noopener" target="_blank">{f.nome}</a></>
+            ))}
+          </p>
+        )}
         <p class="meta meta-artigo">
           <span><time datetime={date.toISOString()}>{dataBR(date)}</time></span>
           {updated && <span>atualizado em <time datetime={updated.toISOString()}>{dataBR(updated)}</time></span>}
@@ -76,7 +87,7 @@ if (gate) {
     </div>
 
     {fontes.length > 0 && (
-      <section class="fontes">
+      <section class="fontes" id="fontes">
         <h2>Fontes</h2>
         <ol>
           {fontes.map((f) => (

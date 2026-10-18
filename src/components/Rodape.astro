@@ -10,7 +10,7 @@ const ano = new Date().getFullYear();
         <p>{SITE.descricao}</p>
       </div>
       <div>
-        <h2>Autor</h2>
+        <h2>Responsável pelo conteúdo</h2>
         <ul>
           <li><strong>{SITE.autor.nome}</strong></li>
           {SITE.autor.credenciais.map((c) => <li>{c}</li>)}
@@ -33,7 +33,7 @@ const ano = new Date().getFullYear();
         ativos nem análise de valores mobiliários. Rentabilidade passada não garante rentabilidade futura.
         Avalie qualquer investimento de acordo com o seu perfil.
       </p>
-      <p>© {ano} {SITE.autor.nome}</p>
+      <p>© {ano} {SITE.nome}</p>
     </div>
   </div>
 </footer>
