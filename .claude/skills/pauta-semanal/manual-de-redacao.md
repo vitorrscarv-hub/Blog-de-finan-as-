@@ -24,7 +24,7 @@ Fatos políticos e de guerra (ataque, acordo, sanção, declaração) muitas vez
 
 - Jornal, portal ou site de investimento serve para achar a pauta, nunca como fonte do número.
 - Se a fonte primária não abrir (bloqueio de rede, site fora do ar), o dado fica sem conferência. O texto vai com `draft: true` e o pull request diz o que faltou. Nunca preencher com o que "provavelmente" é.
-- Em `fontes:` do cabeçalho, só páginas abertas de fato, com título descritivo e url completa.
+- Em `fontes:` do cabeçalho, só páginas abertas de fato, com título descritivo e url completa. Toda matéria precisa de pelo menos uma fonte: a linha "Fonte" abaixo do título é montada a partir dela, e é ela que o leitor vê no lugar de uma assinatura.
 
 ## Formato
 

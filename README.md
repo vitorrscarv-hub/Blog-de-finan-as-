@@ -1,6 +1,6 @@
-# Blog Vitor Reis de Carvalho
+# InfouS
 
-Site estático feito em [Astro](https://astro.build), com os textos em Markdown, hospedagem no Cloudflare Pages e cadastro de leitores gravado num banco Cloudflare D1.
+Blog InfouS, de Vitor Reis de Carvalho. Site estático feito em [Astro](https://astro.build), com os textos em Markdown, hospedagem no Cloudflare Pages e cadastro de leitores gravado num banco Cloudflare D1.
 
 ## Estrutura de pastas
 
@@ -27,6 +27,8 @@ wrangler.toml            configuração do wrangler para uso no seu computador
 ```
 
 ## Visual
+
+O nome do blog (InfouS) fica em `SITE.nome`, em `src/site.config.ts`. As matérias não têm assinatura: abaixo do título aparece a linha "Fonte" com as instituições citadas em `fontes:` (Banco Central, IBGE, Fed etc.), cada uma com link para a página original. Para uma instituição nova aparecer pelo nome, e não pelo endereço, inclua o domínio em `src/scripts/fontes.ts`.
 
 Layout editorial próprio: barra superior escura, grade com filetes finos em vez de caixas, títulos na fonte Archivo (condensada) e texto corrido na Source Serif 4. As fontes vêm dos pacotes `@fontsource-variable` e são servidas pelo próprio site, sem Google Fonts. Cores e tamanhos ficam nas variáveis do topo de `src/styles/global.css`, com versão para o modo escuro.
 

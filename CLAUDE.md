@@ -1,8 +1,10 @@
 # Regras do projeto
 
-Blog educacional de finanças de Vitor Reis de Carvalho. Astro estático, Cloudflare Pages, cadastro em Pages Function com D1. Detalhes de uso no README.
+InfouS, blog educacional de finanças de Vitor Reis de Carvalho. Astro estático, Cloudflare Pages, cadastro em Pages Function com D1. Detalhes de uso no README.
 
 ## Autor e conteúdo
+
+- O nome do blog é InfouS (`SITE.nome`), no cabeçalho, nos títulos das páginas, no RSS e no Open Graph. As matérias não têm assinatura visível: abaixo do título vai a linha "Fonte(s)", montada a partir de `fontes:` (`src/scripts/fontes.ts`). Vitor aparece no rodapé, na política de privacidade e nos metadados (JSON-LD `author`).
 
 - Credenciais de Vitor, sempre nestes termos: CEA (Anbima), pós-graduado em Finanças, Investimentos e Banking pela PUC-RS, formado em Gestão Financeira. A fonte única é `SITE.autor` em `src/site.config.ts`.
 - Nunca apresentar Vitor como economista nem como assessor de investimentos, em nenhum texto, metadado ou JSON-LD.
