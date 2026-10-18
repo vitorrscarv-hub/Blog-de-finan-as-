@@ -1,0 +1,14 @@
+{
+  "_comentario": "Registro das edições do Grafous. Só edição com \"ativa\": true pode ter pauta. Para ativar uma edição, siga edicoes/COMO-ATIVAR.md. O horário é segunda-feira de manhã no fuso local (formato cron com CRON_TZ).",
+  "edicoes": [
+    { "codigo": "br", "pais": "Brasil", "ativa": true, "idioma": "pt-BR", "fuso": "America/Sao_Paulo", "cron": "CRON_TZ=America/Sao_Paulo 56 6 * * 1", "caminho": "/", "manual": "../manual-de-redacao.md" },
+    { "codigo": "pt", "pais": "Portugal", "ativa": false, "idioma": "pt-PT", "fuso": "Europe/Lisbon", "cron": "CRON_TZ=Europe/Lisbon 51 6 * * 1", "caminho": "/pt/", "manual": "pt.md" },
+    { "codigo": "us", "pais": "Estados Unidos", "ativa": false, "idioma": "en-US", "fuso": "America/New_York", "cron": "CRON_TZ=America/New_York 52 6 * * 1", "caminho": "/us/", "manual": "us.md" },
+    { "codigo": "gb", "pais": "Reino Unido", "ativa": false, "idioma": "en-GB", "fuso": "Europe/London", "cron": "CRON_TZ=Europe/London 53 6 * * 1", "caminho": "/uk/", "manual": "gb.md" },
+    { "codigo": "za", "pais": "África do Sul", "ativa": false, "idioma": "en-ZA", "fuso": "Africa/Johannesburg", "cron": "CRON_TZ=Africa/Johannesburg 54 6 * * 1", "caminho": "/za/", "manual": "za.md" },
+    { "codigo": "in", "pais": "Índia", "ativa": false, "idioma": "en-IN", "fuso": "Asia/Kolkata", "cron": "CRON_TZ=Asia/Kolkata 55 6 * * 1", "caminho": "/in/", "manual": "in.md" },
+    { "codigo": "cn", "pais": "China", "ativa": false, "idioma": "zh-CN", "fuso": "Asia/Shanghai", "cron": "CRON_TZ=Asia/Shanghai 57 6 * * 1", "caminho": "/cn/", "manual": "cn.md" },
+    { "codigo": "jp", "pais": "Japão", "ativa": false, "idioma": "ja-JP", "fuso": "Asia/Tokyo", "cron": "CRON_TZ=Asia/Tokyo 58 6 * * 1", "caminho": "/jp/", "manual": "jp.md" },
+    { "codigo": "au", "pais": "Austrália", "ativa": false, "idioma": "en-AU", "fuso": "Australia/Sydney", "cron": "CRON_TZ=Australia/Sydney 59 6 * * 1", "caminho": "/au/", "manual": "au.md" }
+  ]
+}
