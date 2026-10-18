@@ -1,0 +1,75 @@
+---
+import Base from './Base.astro';
+import LeadGate from '../components/LeadGate.astro';
+import { SITE } from '../site.config';
+import { dataBR } from '../scripts/formatos';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  updated?: Date;
+  keywords: string[];
+  fontes: { titulo: string; url: string }[];
+  gate: boolean;
+  secao: { nome: string; href: string };
+  leitura: number;
+}
+
+const { title, description, date, updated, keywords, fontes, gate, secao, leitura } = Astro.props;
+
+const jsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': secao.href.startsWith('/noticias') ? 'NewsArticle' : 'Article',
+  headline: title,
+  description,
+  datePublished: date.toISOString(),
+  dateModified: (updated ?? date).toISOString(),
+  inLanguage: 'pt-BR',
+  keywords: keywords.join(', '),
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+  author: { '@type': 'Person', name: SITE.autor.nome, description: SITE.autor.credenciais.join('; ') },
+};
+
+// Marcação recomendada pelo Google para conteúdo que pede cadastro:
+// evita que o bloqueio seja tratado como cloaking.
+if (gate) {
+  jsonLd.isAccessibleForFree = false;
+  jsonLd.hasPart = { '@type': 'WebPageElement', isAccessibleForFree: false, cssSelector: '.artigo-corpo' };
+}
+---
+<Base title={title} description={description} keywords={keywords} tipo="article" jsonLd={jsonLd}>
+  <article class="artigo container-texto">
+    <header class="artigo-cabecalho">
+      <a class="etiqueta" href={secao.href}>{secao.nome}</a>
+      <h1>{title}</h1>
+      <p class="linha-fina">{description}</p>
+      <p class="meta">
+        Por {SITE.autor.nome} · <time datetime={date.toISOString()}>{dataBR(date)}</time>
+        {updated && <> · atualizado em <time datetime={updated.toISOString()}>{dataBR(updated)}</time></>}
+        · {leitura} min de leitura
+      </p>
+    </header>
+
+    <div class="artigo-corpo" data-gate={gate ? 'true' : 'false'}>
+      <slot />
+    </div>
+
+    {fontes.length > 0 && (
+      <section class="fontes">
+        <h2>Fontes</h2>
+        <ul>
+          {fontes.map((f) => (
+            <li><a href={f.url} rel="noopener" target="_blank">{f.titulo}</a></li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <p class="aviso">
+      Este texto tem caráter educacional e não é recomendação de investimento. Rentabilidade passada não
+      garante rentabilidade futura. Avalie qualquer decisão de acordo com o seu perfil de investidor.
+    </p>
+  </article>
+  {gate && <LeadGate />}
+</Base>

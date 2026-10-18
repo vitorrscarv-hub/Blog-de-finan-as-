@@ -1,0 +1,18 @@
+---
+import { SITE } from '../site.config';
+const caminho = Astro.url.pathname;
+const links = [
+  { href: '/noticias/', rotulo: 'Notícias da semana' },
+  { href: '/guias/', rotulo: 'Guias' },
+];
+---
+<header class="topo">
+  <div class="container">
+    <a class="marca" href="/">{SITE.nome}</a>
+    <nav class="nav" aria-label="Principal">
+      {links.map((l) => (
+        <a href={l.href} aria-current={caminho.startsWith(l.href) ? 'page' : undefined}>{l.rotulo}</a>
+      ))}
+    </nav>
+  </div>
+</header>

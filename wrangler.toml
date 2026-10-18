@@ -1,0 +1,9 @@
+name = "blog-vitor-reis"
+compatibility_date = "2026-10-01"
+pages_build_output_dir = "./dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "blog-leads"
+# Cole aqui o id exibido por: npx wrangler d1 create blog-leads
+database_id = "COLE-O-ID-DO-BANCO-AQUI"

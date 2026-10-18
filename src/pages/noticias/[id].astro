@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import Artigo from '../../layouts/Artigo.astro';
+import { minutosDeLeitura, publicado } from '../../scripts/formatos';
+
+export async function getStaticPaths() {
+  const noticias = await getCollection('noticias', publicado);
+  return noticias.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+<Artigo
+  title={d.title}
+  description={d.description}
+  date={d.date}
+  updated={d.updated}
+  keywords={d.keywords}
+  fontes={d.fontes}
+  gate={d.gate}
+  secao={{ nome: 'Notícias da semana', href: '/noticias/' }}
+  leitura={minutosDeLeitura(entry.body)}
+>
+  <Content />
+</Artigo>

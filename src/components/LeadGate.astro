@@ -1,0 +1,197 @@
+---
+import { SITE } from '../site.config';
+const { gatilhoMin, gatilhoMax, modo, endpoint } = SITE.lead;
+---
+<div
+  class="lead-fundo"
+  id="lead-fundo"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="lead-titulo"
+  data-min={gatilhoMin}
+  data-max={gatilhoMax}
+  data-modo={modo}
+  data-endpoint={endpoint}
+  hidden
+>
+  <div class="lead-caixa">
+    <h2 id="lead-titulo">Continue a leitura gratuitamente</h2>
+    <p>Faça um cadastro rápido, uma única vez, e tenha acesso a todos os textos do blog.</p>
+    <form id="lead-form" novalidate>
+      <div class="campo">
+        <label for="lead-nome">Nome</label>
+        <input id="lead-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
+      </div>
+      <div class="campo">
+        <label for="lead-email">E-mail</label>
+        <input id="lead-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" />
+      </div>
+      <div class="campo">
+        <label for="lead-whatsapp">WhatsApp</label>
+        <input
+          id="lead-whatsapp"
+          name="whatsapp"
+          type="tel"
+          autocomplete="tel-national"
+          inputmode="numeric"
+          placeholder="(11) 91234-5678"
+          required
+          maxlength="16"
+        />
+      </div>
+      <div class="oculto-visual" aria-hidden="true">
+        <label for="lead-site">Não preencha este campo</label>
+        <input id="lead-site" name="site" tabindex="-1" autocomplete="off" />
+      </div>
+      <label class="consentimento">
+        <input type="checkbox" name="consentimento" id="lead-consentimento" required />
+        <span>
+          Autorizo o uso dos meus dados para receber conteúdos por e-mail e WhatsApp, conforme a{' '}
+          <a href="/privacidade/" target="_blank" rel="noopener">política de privacidade</a>. Posso
+          cancelar quando quiser.
+        </span>
+      </label>
+      <button class="botao" type="submit">Liberar leitura</button>
+      <p class="lead-erro" id="lead-erro" role="alert"></p>
+    </form>
+    {modo === 'opcional' && (
+      <button class="lead-fechar" type="button" id="lead-fechar">Agora não</button>
+    )}
+  </div>
+</div>
+
+<script>
+  const CHAVE = 'vrc_lead_ok';
+
+  const jaCadastrado = () => {
+    try {
+      if (localStorage.getItem(CHAVE) === '1') return true;
+    } catch {}
+    return document.cookie.split('; ').some((c) => c === `${CHAVE}=1`);
+  };
+
+  const marcarCadastrado = () => {
+    try {
+      localStorage.setItem(CHAVE, '1');
+    } catch {}
+    // Cookie de 2 anos como reserva para navegadores que bloqueiam o localStorage.
+    document.cookie = `${CHAVE}=1; max-age=${60 * 60 * 24 * 730}; path=/; SameSite=Lax`;
+  };
+
+  const soDigitos = (v: string) => v.replace(/\D/g, '');
+
+  const mascaraWhats = (v: string) => {
+    const d = soDigitos(v).slice(0, 11);
+    if (d.length <= 2) return d.length ? `(${d}` : '';
+    if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+    if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+    return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+  };
+
+  function iniciar() {
+    const fundo = document.getElementById('lead-fundo');
+    const corpo = document.querySelector<HTMLElement>('.artigo-corpo[data-gate="true"]');
+    if (!fundo || !corpo || jaCadastrado()) return;
+
+    const min = Number(fundo.dataset.min) || 0.3;
+    const max = Number(fundo.dataset.max) || 0.4;
+    const obrigatorio = fundo.dataset.modo !== 'opcional';
+    const endpoint = fundo.dataset.endpoint || '/api/lead';
+    const gatilho = min + Math.random() * (max - min);
+
+    const form = fundo.querySelector<HTMLFormElement>('#lead-form')!;
+    const erro = fundo.querySelector<HTMLElement>('#lead-erro')!;
+    const whats = fundo.querySelector<HTMLInputElement>('#lead-whatsapp')!;
+    const botao = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    let aberto = false;
+
+    whats.addEventListener('input', () => {
+      whats.value = mascaraWhats(whats.value);
+    });
+
+    // Considera lido o trecho acima de uma linha imaginária a 60% da altura da tela.
+    const progresso = () => {
+      const r = corpo.getBoundingClientRect();
+      const lido = window.innerHeight * 0.6 - r.top;
+      return Math.min(1, Math.max(0, lido / r.height));
+    };
+
+    const bloquear = () => {
+      const limite = window.innerHeight;
+      corpo.classList.add('bloqueado');
+      for (const el of Array.from(corpo.children)) {
+        if (el.getBoundingClientRect().top > limite) el.classList.add('depois-do-corte');
+      }
+      document.body.classList.add('travado');
+    };
+
+    const liberar = () => {
+      corpo.classList.remove('bloqueado');
+      corpo.querySelectorAll('.depois-do-corte').forEach((el) => el.classList.remove('depois-do-corte'));
+      document.body.classList.remove('travado');
+      fundo.classList.remove('aberto');
+      fundo.hidden = true;
+    };
+
+    const abrir = () => {
+      if (aberto) return;
+      aberto = true;
+      window.removeEventListener('scroll', aoRolar);
+      if (obrigatorio) bloquear();
+      fundo.hidden = false;
+      fundo.classList.add('aberto');
+      fundo.querySelector<HTMLInputElement>('#lead-nome')?.focus();
+    };
+
+    // Só dispara depois que o leitor rola a página, nunca no carregamento.
+    const aoRolar = () => {
+      if (window.scrollY > 0 && progresso() >= gatilho) abrir();
+    };
+
+    window.addEventListener('scroll', aoRolar, { passive: true });
+
+    fundo.querySelector('#lead-fechar')?.addEventListener('click', liberar);
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      erro.textContent = '';
+      const dados = new FormData(form);
+      const nome = String(dados.get('nome') || '').trim();
+      const email = String(dados.get('email') || '').trim();
+      const whatsapp = soDigitos(String(dados.get('whatsapp') || ''));
+
+      if (nome.length < 2) return void (erro.textContent = 'Informe seu nome.');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return void (erro.textContent = 'Confira o e-mail.');
+      if (whatsapp.length < 10 || whatsapp.length > 11)
+        return void (erro.textContent = 'Informe o WhatsApp com DDD.');
+      if (!dados.get('consentimento'))
+        return void (erro.textContent = 'Para continuar, marque a autorização de uso dos dados.');
+
+      botao.disabled = true;
+      try {
+        const resp = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome,
+            email,
+            whatsapp,
+            consentimento: true,
+            site: String(dados.get('site') || ''),
+            pagina: location.pathname,
+            origem: document.referrer || null,
+          }),
+        });
+        if (!resp.ok) throw new Error(String(resp.status));
+        marcarCadastrado();
+        liberar();
+      } catch {
+        erro.textContent = 'Não foi possível enviar agora. Tente de novo em instantes.';
+      } finally {
+        botao.disabled = false;
+      }
+    });
+  }
+
+  iniciar();
+</script>
