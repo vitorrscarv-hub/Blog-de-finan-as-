@@ -9,7 +9,9 @@
     "preview": "astro preview",
     "test": "npm run build && npm run test:unit && npm run test:e2e",
     "test:unit": "node --test \"tests/unit/**/*.test.js\"",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "cf:db:local": "wrangler d1 execute blog-leads --local --env local --file=db/schema.sql",
+    "cf:dev": "astro build && wrangler pages dev dist --d1 DB=COLE-O-ID-DO-BANCO-AQUI"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -17,7 +19,8 @@
     "astro": "^7.4.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.64.1"
+    "@playwright/test": "^1.64.1",
+    "wrangler": "^4.151.1"
   },
   "engines": {
     "node": ">=22.22.0"
