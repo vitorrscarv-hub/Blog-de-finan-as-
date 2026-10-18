@@ -6,3 +6,5 @@ dist/
 test-results/
 playwright-report/
 capturas/
+leads-*.csv
+leads*.json
