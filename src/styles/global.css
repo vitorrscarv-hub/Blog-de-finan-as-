@@ -4,19 +4,21 @@
  * pelo próprio site (pacotes @fontsource), sem chamada a terceiros.
  */
 :root {
-  --papel: #f6f4ef;
+  /* Marca Grafous: azul-marinho e dourado. O dourado puro (--marca-texto) só aparece sobre o
+     marinho ou em elementos grandes; em texto pequeno no fundo claro usamos o bronze (--destaque). */
+  --papel: #f5f3ee;
   --superficie: #ffffff;
-  --tinta: #121417;
-  --tinta-suave: #4b5059;
-  --filete: #d9d5cc;
-  --filete-forte: #121417;
-  --barra: #101215;
-  --barra-texto: #f4f1ea;
-  --barra-suave: #9aa0a8;
-  --destaque: #0d7a63;
-  --destaque-forte: #0a5f4d;
-  --marca-texto: #f2c14e;
-  --aviso-fundo: #ece7db;
+  --tinta: #141b27;
+  --tinta-suave: #4a5262;
+  --filete: #d8d4ca;
+  --filete-forte: #131c2b;
+  --barra: #131c2b;
+  --barra-texto: #ffffff;
+  --barra-suave: #a7b0bf;
+  --destaque: #7a5c17;
+  --destaque-forte: #5e470f;
+  --marca-texto: #d4b46a;
+  --aviso-fundo: #ece6d6;
   --perigo: #b42318;
   --titulo: 'Archivo Variable', 'Archivo', 'Arial Narrow', system-ui, sans-serif;
   --texto: 'Source Serif 4 Variable', 'Source Serif 4', Charter, Georgia, serif;
@@ -28,19 +30,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --papel: #0f1114;
-    --superficie: #161a1f;
+    --papel: #0d121a;
+    --superficie: #141b26;
     --tinta: #ece9e2;
-    --tinta-suave: #a4aab3;
-    --filete: #2b3138;
+    --tinta-suave: #a7b0bf;
+    --filete: #263041;
     --filete-forte: #ece9e2;
-    --barra: #07080a;
-    --barra-texto: #ece9e2;
-    --barra-suave: #8b929b;
-    --destaque: #3cc6a2;
-    --destaque-forte: #6fdcbf;
-    --marca-texto: #f2c14e;
-    --aviso-fundo: #1d2127;
+    --barra: #0a0f16;
+    --barra-texto: #ffffff;
+    --barra-suave: #a7b0bf;
+    --destaque: #d4b46a;
+    --destaque-forte: #e3c98a;
+    --marca-texto: #d4b46a;
+    --aviso-fundo: #1a2230;
     --perigo: #f47a70;
     color-scheme: dark;
   }
@@ -110,18 +112,19 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 /* Barra superior */
 .topo { background: var(--barra); color: var(--barra-texto); }
 .topo .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 60px; }
-.marca {
-  font-family: var(--titulo);
-  font-stretch: 80%;
-  font-weight: 800;
-  font-size: 1.7rem;
-  letter-spacing: -0.01em;
-  color: var(--barra-texto);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.marca::after { content: ''; display: inline-block; width: 8px; height: 8px; margin-left: 6px; background: var(--marca-texto); vertical-align: baseline; }
+.marca { display: inline-flex; color: var(--barra-texto); text-decoration: none; }
 .marca:hover { color: var(--barra-texto); }
+.logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo-simbolo { display: block; flex: none; }
+.logo-nome {
+  font-family: var(--ui);
+  font-stretch: 100%;
+  font-weight: 800;
+  font-size: 1.45rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
 .nav { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
 .nav::-webkit-scrollbar { display: none; }
 .nav a {
@@ -189,7 +192,7 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 
 .grade-numerada { counter-reset: guia; }
 .grade-numerada .card { counter-increment: guia; }
-.grade-numerada .card::before { content: counter(guia, decimal-leading-zero); font-family: var(--titulo); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--filete); }
+.grade-numerada .card::before { content: counter(guia, decimal-leading-zero); font-family: var(--titulo); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--marca-texto); }
 
 /* Filtro de editorias em /noticias/ */
 .filtro { display: flex; flex-wrap: wrap; gap: 0; margin: 20px 0 8px; border-bottom: 1px solid var(--filete); }
@@ -250,8 +253,10 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .rodape { background: var(--barra); color: var(--barra-suave); font-size: .88rem; padding: 40px 0 32px; margin-top: 48px; }
 .rodape a { color: var(--barra-texto); text-decoration: none; }
 .rodape a:hover { color: var(--marca-texto); }
-.rodape-grade { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid #2a2f36; }
-.rodape .marca { display: inline-block; margin-bottom: 8px; }
+.rodape-grade { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.rodape .marca { margin-bottom: 14px; }
+.rodape .slogan { color: var(--barra-texto); font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+.rodape .editorias-marca { color: var(--marca-texto); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
 .rodape h2 { font-family: var(--ui); font-stretch: 100%; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--barra-texto); margin: 0 0 10px; }
 .rodape ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
 .rodape p { margin: 0; }
@@ -297,7 +302,7 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
   padding: 13px; border: 0; border-radius: 0;
   background: var(--tinta); color: var(--papel); cursor: pointer;
 }
-.botao:hover { background: var(--destaque); color: #fff; }
+.botao:hover { background: var(--destaque); color: var(--papel); }
 .botao:disabled { opacity: .6; cursor: wait; }
 .lead-erro { color: var(--perigo); font-size: .85rem; min-height: 1.3em; margin: 6px 0 8px; }
 .lead-erro:empty { margin: 0 0 8px; }

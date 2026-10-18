@@ -1,0 +1,27 @@
+---
+// Símbolo do Grafous: seis nós ligados, desenhado em SVG a partir da arte da marca.
+// A cor vem de currentColor no traço e de --marca-texto nos nós, então funciona no claro e no escuro.
+import { SITE } from '../site.config';
+
+interface Props {
+  tamanho?: number;
+  comNome?: boolean;
+}
+const { tamanho = 34, comNome = true } = Astro.props;
+---
+<span class="logo">
+  <svg class="logo-simbolo" viewBox="180 165 325 220" width={tamanho * 1.48} height={tamanho} aria-hidden="true" focusable="false">
+    <g stroke="var(--marca-texto)" stroke-width="7" stroke-linecap="round" fill="none">
+      <path d="M200 190 L315 272 L210 362 M315 272 L422 182 L485 272 L435 367 Z" />
+    </g>
+    <g fill="var(--marca-texto)">
+      <circle cx="200" cy="190" r="15" />
+      <circle cx="210" cy="362" r="15" />
+      <circle cx="315" cy="272" r="16" />
+      <circle cx="422" cy="182" r="15" />
+      <circle cx="485" cy="272" r="15" />
+      <circle cx="435" cy="367" r="15" />
+    </g>
+  </svg>
+  {comNome && <span class="logo-nome">{SITE.nome}</span>}
+</span>

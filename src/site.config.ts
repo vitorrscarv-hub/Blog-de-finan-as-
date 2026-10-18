@@ -1,6 +1,7 @@
 export const SITE = {
   // Nome do blog (cabeçalho, título das páginas, RSS, Open Graph). O autor fica em `autor`.
-  nome: 'InfouS',
+  nome: 'Grafous',
+  slogan: 'A informação que conecta os fatos.',
   descricao:
     'Conteúdo educacional sobre finanças e investimentos para quem tem patrimônio relevante.',
   // Imagem usada quando um link do blog é compartilhado (WhatsApp, LinkedIn etc.). 1200x630.

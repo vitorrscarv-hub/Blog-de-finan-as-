@@ -9,8 +9,8 @@ const dataEsperada = (iso: string) =>
 
 test('home lista notícias e guias com a data em pt-BR', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle('InfouS');
-  await expect(page.locator('header.topo .marca')).toHaveText('InfouS');
+  await expect(page).toHaveTitle('Grafous');
+  await expect(page.locator('header.topo .marca')).toHaveText('Grafous');
   await expect(page.getByRole('heading', { name: 'Notícias da semana' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Guias', exact: true })).toBeVisible();
   // Capa: manchete + coluna "Mais notícias" + fileira, no máximo 6 notícias; guias, no máximo 3.

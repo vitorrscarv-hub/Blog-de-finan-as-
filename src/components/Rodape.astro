@@ -1,12 +1,15 @@
 ---
 import { SITE } from '../site.config';
+import Logo from './Logo.astro';
 const ano = new Date().getFullYear();
 ---
 <footer class="rodape">
   <div class="container">
     <div class="rodape-grade">
       <div>
-        <a class="marca" href="/">{SITE.nome}</a>
+        <a class="marca" href="/" aria-label={`${SITE.nome}, página inicial`}><Logo tamanho={30} /></a>
+        <p class="slogan">{SITE.slogan}</p>
+        <p class="editorias-marca">Economia · Política · Mundo</p>
         <p>{SITE.descricao}</p>
       </div>
       <div>
