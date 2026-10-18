@@ -3,9 +3,13 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import CardPost from '../components/CardPost.astro';
 import { SITE } from '../site.config';
-import { porData, publicado } from '../scripts/formatos';
+import { dataBR, dataCurta, porData, publicado, slugEditoria } from '../scripts/formatos';
 
 const noticias = (await getCollection('noticias', publicado)).sort(porData).slice(0, 6);
+// Capa: manchete, 2 notícias na coluna ao lado e as outras 3 numa fileira embaixo.
+const [manchete, ...resto] = noticias;
+const mais = resto.slice(0, 2);
+const fileira = resto.slice(2);
 const guias = (await getCollection('guias', publicado)).sort(porData).slice(0, 3);
 
 const jsonLd = {
@@ -19,32 +23,60 @@ const jsonLd = {
 };
 ---
 <Base title={SITE.nome} jsonLd={jsonLd}>
-  <section class="destaque container">
-    <h1>Finanças e investimentos, explicados por quem acompanha o mercado</h1>
-    <p>{SITE.descricao}</p>
-  </section>
+  <h1 class="oculto-visual">{SITE.nome}: {SITE.descricao}</h1>
 
-  <section class="secao container">
-    <div class="secao-titulo">
-      <h2>Notícias da semana</h2>
+  <section class="capa container" aria-labelledby="titulo-noticias">
+    <div class="bloco-titulo">
+      <h2 id="titulo-noticias">Notícias da semana</h2>
       <a href="/noticias/">Ver todas</a>
     </div>
-    {noticias.length === 0 ? <p class="meta">Nenhuma notícia publicada ainda.</p> : (
-      <div class="grade">
-        {noticias.map((n) => (
-          <CardPost href={`/noticias/${n.id}/`} title={n.data.title} description={n.data.description} date={n.data.date} etiqueta={n.data.editoria} />
-        ))}
-      </div>
+    {!manchete ? <p class="meta vazio">Nenhuma notícia publicada ainda.</p> : (
+      <>
+        <article class="manchete">
+          <a class="etiqueta" href={`/noticias/${slugEditoria(manchete.data.editoria)}/`}>{manchete.data.editoria}</a>
+          <h2><a href={`/noticias/${manchete.id}/`}>{manchete.data.title}</a></h2>
+          <p>{manchete.data.description}</p>
+          <time class="meta" datetime={manchete.data.date.toISOString()}>{dataBR(manchete.data.date)}</time>
+        </article>
+        {mais.length > 0 && (
+          <aside class="mais" aria-label="Mais notícias">
+            <p class="rotulo">Mais notícias</p>
+            <ol>
+              {mais.map((n) => (
+                <li>
+                  <span class="etiqueta">{n.data.editoria}</span>
+                  <h3><a href={`/noticias/${n.id}/`}>{n.data.title}</a></h3>
+                  <time class="meta" datetime={n.data.date.toISOString()}>{dataCurta(n.data.date)}</time>
+                </li>
+              ))}
+            </ol>
+          </aside>
+        )}
+        {fileira.length > 0 && (
+          <div class="grade fileira">
+            {fileira.map((n) => (
+              <CardPost
+                href={`/noticias/${n.id}/`}
+                title={n.data.title}
+                description={n.data.description}
+                date={n.data.date}
+                etiqueta={n.data.editoria}
+                etiquetaHref={`/noticias/${slugEditoria(n.data.editoria)}/`}
+              />
+            ))}
+          </div>
+        )}
+      </>
     )}
   </section>
 
-  <section class="secao container">
-    <div class="secao-titulo">
-      <h2>Guias</h2>
+  <section class="bloco container" aria-labelledby="titulo-guias">
+    <div class="bloco-titulo">
+      <h2 id="titulo-guias">Guias</h2>
       <a href="/guias/">Ver todos</a>
     </div>
-    {guias.length === 0 ? <p class="meta">Nenhum guia publicado ainda.</p> : (
-      <div class="grade">
+    {guias.length === 0 ? <p class="meta vazio">Nenhum guia publicado ainda.</p> : (
+      <div class="grade grade-numerada">
         {guias.map((g) => (
           <CardPost href={`/guias/${g.id}/`} title={g.data.title} description={g.data.description} date={g.data.date} etiqueta={g.data.tema} />
         ))}

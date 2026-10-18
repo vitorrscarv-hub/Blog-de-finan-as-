@@ -12,9 +12,14 @@ test('home lista notícias e guias com a data em pt-BR', async ({ page }) => {
   await expect(page).toHaveTitle('Vitor Reis de Carvalho');
   await expect(page.getByRole('heading', { name: 'Notícias da semana' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Guias', exact: true })).toBeVisible();
-  expect(await page.locator('.secao').nth(0).locator('.card').count()).toBeLessThanOrEqual(6);
-  expect(await page.locator('.secao').nth(1).locator('.card').count()).toBeLessThanOrEqual(3);
-  const data = page.locator('.card time').first();
+  // Capa: manchete + coluna "Mais notícias" + fileira, no máximo 6 notícias; guias, no máximo 3.
+  const capa = page.locator('.capa');
+  const noticiasNaCapa = await capa.locator('.manchete, .mais li, .fileira .card').count();
+  expect(noticiasNaCapa).toBeGreaterThan(0);
+  expect(noticiasNaCapa).toBeLessThanOrEqual(6);
+  await expect(capa.locator('.manchete')).toHaveCount(1);
+  expect(await page.locator('section[aria-labelledby="titulo-guias"] .card').count()).toBeLessThanOrEqual(3);
+  const data = capa.locator('time').first();
   await expect(data).toHaveText(dataEsperada((await data.getAttribute('datetime'))!));
   // Home não tem pop-up.
   await expect(page.locator('#lead-fundo')).toHaveCount(0);
@@ -35,7 +40,7 @@ test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO
   await page.goto(href);
   await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Internacional)$/);
   await expect(page.locator('.linha-fina')).toBeVisible();
-  const meta = page.locator('.artigo-cabecalho .meta');
+  const meta = page.locator('.artigo-cabecalho .assinatura');
   await expect(meta).toContainText('Vitor Reis de Carvalho');
   await expect(meta).toContainText('min de leitura');
   const data = meta.locator('time').first();

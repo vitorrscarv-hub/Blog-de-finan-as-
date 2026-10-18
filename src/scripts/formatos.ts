@@ -13,3 +13,7 @@ export const minutosDeLeitura = (texto = '') =>
 
 // "Internacional" -> "internacional"; usado nos endereços das editorias.
 export const slugEditoria = (editoria: string) => editoria.toLowerCase();
+
+// "12 out 2026", para listas compactas. Também em UTC, pelo mesmo motivo de dataBR.
+const MESES_CURTOS = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+export const dataCurta = (d: Date) => `${d.getUTCDate()} ${MESES_CURTOS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;

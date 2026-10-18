@@ -4,20 +4,36 @@ const ano = new Date().getFullYear();
 ---
 <footer class="rodape">
   <div class="container">
-    <div>
-      <strong>{SITE.autor.nome}</strong>
-      <ul>
-        {SITE.autor.credenciais.map((c) => <li>{c}</li>)}
-      </ul>
+    <div class="rodape-grade">
+      <div>
+        <a class="marca" href="/">{SITE.nome}</a>
+        <p>{SITE.descricao}</p>
+      </div>
+      <div>
+        <h2>Autor</h2>
+        <ul>
+          <li><strong>{SITE.autor.nome}</strong></li>
+          {SITE.autor.credenciais.map((c) => <li>{c}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h2>Seções</h2>
+        <ul>
+          <li><a href="/noticias/brasil/">Notícias do Brasil</a></li>
+          <li><a href="/noticias/internacional/">Notícias internacionais</a></li>
+          <li><a href="/guias/">Guias</a></li>
+          <li><a href="/privacidade/">Política de privacidade</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+      </div>
     </div>
-    <p>
-      Conteúdo de caráter exclusivamente educacional. Não constitui recomendação de compra ou venda de
-      ativos nem análise de valores mobiliários. Rentabilidade passada não garante rentabilidade futura.
-      Avalie qualquer investimento de acordo com o seu perfil.
-    </p>
-    <p>
-      © {ano} {SITE.autor.nome} · <a href="/privacidade/">Política de privacidade</a> ·{' '}
-      <a href="/rss.xml">RSS</a>
-    </p>
+    <div class="rodape-legal">
+      <p>
+        Conteúdo de caráter exclusivamente educacional. Não constitui recomendação de compra ou venda de
+        ativos nem análise de valores mobiliários. Rentabilidade passada não garante rentabilidade futura.
+        Avalie qualquer investimento de acordo com o seu perfil.
+      </p>
+      <p>© {ano} {SITE.autor.nome}</p>
+    </div>
   </div>
 </footer>

@@ -61,12 +61,14 @@ if (gate) {
       <a class="etiqueta" href={secao.href}>{secao.nome}</a>
       <h1>{title}</h1>
       <p class="linha-fina">{description}</p>
-      <p class="meta meta-artigo">
-        <span>Por {SITE.autor.nome}</span>
-        <span><time datetime={date.toISOString()}>{dataBR(date)}</time></span>
-        {updated && <span>atualizado em <time datetime={updated.toISOString()}>{dataBR(updated)}</time></span>}
-        <span>{leitura} min de leitura</span>
-      </p>
+      <div class="assinatura">
+        <p class="autor">Por {SITE.autor.nome} <span>· {SITE.autor.credenciais[0]}</span></p>
+        <p class="meta meta-artigo">
+          <span><time datetime={date.toISOString()}>{dataBR(date)}</time></span>
+          {updated && <span>atualizado em <time datetime={updated.toISOString()}>{dataBR(updated)}</time></span>}
+          <span>{leitura} min de leitura</span>
+        </p>
+      </div>
     </header>
 
     <div class="artigo-corpo" data-gate={gate ? 'true' : 'false'}>
@@ -76,11 +78,11 @@ if (gate) {
     {fontes.length > 0 && (
       <section class="fontes">
         <h2>Fontes</h2>
-        <ul>
+        <ol>
           {fontes.map((f) => (
             <li><a href={f.url} rel="noopener" target="_blank">{f.titulo}</a></li>
           ))}
-        </ul>
+        </ol>
       </section>
     )}
 
@@ -90,4 +92,30 @@ if (gate) {
     </p>
   </article>
   {gate && <LeadGate />}
+  <div class="progresso" id="progresso" aria-hidden="true"></div>
 </Base>
+
+<script>
+  // Barra fina no topo que acompanha a leitura do corpo do texto.
+  const barra = document.getElementById('progresso');
+  const corpo = document.querySelector<HTMLElement>('.artigo-corpo');
+  if (barra && corpo) {
+    let pendente = false;
+    const atualizar = () => {
+      pendente = false;
+      const r = corpo.getBoundingClientRect();
+      // Mesma linha de leitura do pop-up: 60% da altura da tela.
+      const lido = (window.innerHeight * 0.6 - r.top) / r.height;
+      barra.style.transform = `scaleX(${Math.min(1, Math.max(0, lido))})`;
+    };
+    const agendar = () => {
+      if (!pendente) {
+        pendente = true;
+        requestAnimationFrame(atualizar);
+      }
+    };
+    window.addEventListener('scroll', agendar, { passive: true });
+    window.addEventListener('resize', agendar, { passive: true });
+    atualizar();
+  }
+</script>
