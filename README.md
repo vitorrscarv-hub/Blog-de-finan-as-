@@ -96,11 +96,13 @@ Toda terça-feira de manhã (6h56, horário de Brasília) uma tarefa agendada do
 
 A editoria internacional cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro (câmbio, juros, petróleo, bolsas), com neutralidade: o blog não toma partido de governo, país ou lado de guerra.
 
-Para o checador conseguir abrir as fontes oficiais, estes domínios precisam estar liberados na rede do ambiente do Claude Code (menu do ambiente na barra de título da sessão, Edit, Allowed domains):
+Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code precisa de acesso a elas: nível **Limitado** (Custom, na documentação), com a caixa de gerenciadores de pacotes marcada, e a lista abaixo em **Domínios permitidos** (menu do ambiente na barra de título da sessão, Edit). A regra vale pelo nome exato do endereço, então use o curinga `*.` para cobrir o "www" e os outros subdomínios. Cada domínio vale também sem o curinga, e a lista funciona com os dois.
 
-- Brasil: `bcb.gov.br`, `api.bcb.gov.br`, `ibge.gov.br`, `agenciadenoticias.ibge.gov.br`, `servicodados.ibge.gov.br`, `tesourodireto.com.br`, `gov.br`, `in.gov.br`, `anbima.com.br`, `b3.com.br`
-- Exterior: `federalreserve.gov`, `bls.gov`, `bea.gov`, `treasury.gov`, `ecb.europa.eu`, `ec.europa.eu`, `imf.org`, `worldbank.org`, `oecd.org`, `eia.gov`, `iea.org`, `opec.org`, `un.org`
-- Agências (fatos políticos e de guerra): `reuters.com`, `apnews.com`, `afp.com`
+- Brasil: `*.bcb.gov.br`, `*.ibge.gov.br`, `*.tesourodireto.com.br`, `*.gov.br`, `*.in.gov.br`, `*.anbima.com.br`, `*.b3.com.br`
+- Exterior: `*.federalreserve.gov`, `*.bls.gov`, `*.bea.gov`, `*.treasury.gov`, `*.europa.eu`, `*.imf.org`, `*.worldbank.org`, `*.oecd.org`, `*.eia.gov`, `*.iea.org`, `*.opec.org`, `*.un.org`
+- Agências (fatos políticos e de guerra): `*.reuters.com`, `*.apnews.com`, `*.afp.com`
+
+Neste ambiente o WebFetch não resolve endereços, então a redação lê as fontes pelo terminal: `node scripts/ler-pagina.mjs <url>` (Chromium de verdade, para páginas com JavaScript) e `curl` para APIs. O guia `.claude/skills/pauta-semanal/acesso-as-fontes.md` lista os endereços de dados que funcionam (Selic, dólar PTAX, Focus, IPCA, BCE, OCDE, Banco Mundial) e os sites que bloqueiam robôs (BLS, páginas do IBGE, Reuters, AP), nos quais o dado fica sem conferência em vez de se tentar contornar o bloqueio.
 
 Todos seguem o manual de redação em `.claude/skills/pauta-semanal/manual-de-redacao.md`. Para mudar critérios de pauta, tamanho ou tom, edite o manual por pull request. Você é o publisher: só o seu merge publica.
 
