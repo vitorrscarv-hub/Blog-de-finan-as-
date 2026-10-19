@@ -1,0 +1,290 @@
+---
+// Painel interno de audiência. Não tem link em nenhuma página, fica fora do sitemap e tem noindex.
+// A proteção de verdade é a chave (ADMIN_TOKEN) conferida em functions/api/admin/resumo.js:
+// sem ela, a página abre mas os dados não. Para trocar o endereço, renomeie esta pasta e ajuste
+// SITE.metricas.painel em src/site.config.ts.
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { publicado } from '../../scripts/formatos';
+
+const [noticias, guias] = await Promise.all([getCollection('noticias', publicado), getCollection('guias', publicado)]);
+// Endereço -> título e rótulo, para o painel mostrar o nome da matéria em vez do endereço.
+const titulos: Record<string, { titulo: string; rotulo: string }> = {
+  '/': { titulo: 'Página inicial', rotulo: 'Página' },
+  '/noticias/': { titulo: 'Lista de notícias', rotulo: 'Página' },
+  '/noticias/brasil/': { titulo: 'Notícias: Brasil', rotulo: 'Página' },
+  '/noticias/mercado/': { titulo: 'Notícias: Mercado', rotulo: 'Página' },
+  '/noticias/internacional/': { titulo: 'Notícias: Internacional', rotulo: 'Página' },
+  '/guias/': { titulo: 'Lista de guias', rotulo: 'Página' },
+  '/calendario/': { titulo: 'Calendário de proventos', rotulo: 'Página' },
+  '/privacidade/': { titulo: 'Política de privacidade', rotulo: 'Página' },
+};
+for (const n of noticias) titulos[`/noticias/${n.id}/`] = { titulo: n.data.title, rotulo: n.data.editoria };
+for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotulo: `Guia · ${g.data.tema}` };
+---
+<Base title="Painel de audiência" description="Uso interno." noindex>
+  <section class="container painel" id="painel" data-titulos={JSON.stringify(titulos)}>
+    <header class="pagina-titulo">
+      <h1>Painel de audiência</h1>
+      <p>Leitura de cada matéria, acessos ao blog e retorno de leitores. Uso interno.</p>
+    </header>
+
+    <form class="painel-entrada" id="entrada" autocomplete="off">
+      <label for="chave">Chave de acesso</label>
+      <input id="chave" name="chave" type="password" autocomplete="off" spellcheck="false" required />
+      <button type="submit">Entrar</button>
+      <p class="painel-erro" id="erro" role="alert" hidden></p>
+    </form>
+
+    <div id="conteudo" hidden>
+      <div class="painel-barra">
+        <div class="painel-periodos" role="group" aria-label="Período">
+          <button type="button" class="leve" data-dias="7" aria-pressed="false">7 dias</button>
+          <button type="button" class="leve" data-dias="30" aria-pressed="true">30 dias</button>
+          <button type="button" class="leve" data-dias="90" aria-pressed="false">90 dias</button>
+        </div>
+        <p class="meta" id="periodo"></p>
+        <button type="button" class="leve" id="sair">Sair</button>
+      </div>
+
+      <dl class="kpis" id="kpis"></dl>
+
+      <section class="painel-secao" aria-labelledby="t-dias">
+        <h2 id="t-dias">Visitas por dia</h2>
+        <p>Visita é cada página aberta. Visitante único é um navegador, contado uma vez por dia.</p>
+        <div class="legenda" aria-hidden="true">
+          <span style="--cor: var(--serie-1)">Visitas</span>
+          <span style="--cor: var(--serie-2)">Visitantes únicos</span>
+        </div>
+        <div class="grafico" id="g-dias"></div>
+        <details><summary>Ver em tabela</summary><div id="tabela-dias"></div></details>
+      </section>
+
+      <section class="painel-secao" aria-labelledby="t-materias">
+        <h2 id="t-materias">Matérias mais lidas</h2>
+        <p>Leram até o fim: quem passou de 75% do texto. Tempo médio: só tempo com a página aberta e visível.</p>
+        <div id="materias"></div>
+      </section>
+
+      <section class="painel-secao" aria-labelledby="t-retorno">
+        <h2 id="t-retorno">Quem volta</h2>
+        <p>Voltou: apareceu em mais de um dia no período, ou já tinha visitado antes dele. O reconhecimento vale por navegador.</p>
+        <div class="painel-colunas">
+          <div>
+            <h3>Novos e que voltaram</h3>
+            <div id="proporcao"></div>
+          </div>
+          <div>
+            <h3>Dias diferentes de visita, por visitante</h3>
+            <div id="distribuicao"></div>
+          </div>
+        </div>
+        <h3 style="margin-top: 28px; font-family: var(--ui); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-suave)">Visitantes que voltaram</h3>
+        <div id="recorrentes"></div>
+      </section>
+
+      <section class="painel-secao" aria-labelledby="t-origem">
+        <h2 id="t-origem">De onde vêm e como leem</h2>
+        <div class="painel-colunas">
+          <div><h3>Origem das visitas</h3><div id="origens"></div></div>
+          <div><h3>Páginas de entrada</h3><div id="entradas"></div></div>
+          <div><h3>Dispositivo</h3><div id="dispositivos"></div></div>
+          <div><h3>País</h3><div id="paises"></div></div>
+        </div>
+      </section>
+
+      <p class="painel-nota">
+        A medição não usa cookies, não guarda IP nem nome e não roda para quem pediu "Não rastrear". Os visitantes são
+        anônimos: um código aleatório guardado no navegador, que muda se a pessoa limpar os dados do site ou trocar de
+        aparelho. Suas próprias visitas não contam depois que você entra aqui neste navegador.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { CHAVE_IGNORAR } from '../../scripts/medir';
+
+  const raiz = document.getElementById('painel')!;
+  const titulos: Record<string, { titulo: string; rotulo: string }> = JSON.parse(raiz.dataset.titulos ?? '{}');
+  const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+  const CHAVE = 'grafous_painel';
+
+  const esc = (s: unknown) =>
+    String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const num = (n: number) => n.toLocaleString('pt-BR');
+  const pct = (n: number) => `${n.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}%`;
+  const tempo = (s: number | null) => (s == null ? 'sem dados' : s >= 60 ? `${Math.floor(s / 60)} min ${String(s % 60).padStart(2, '0')} s` : `${s} s`);
+  const dataCurta = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}`;
+  const nome = (caminho: string) => titulos[caminho] ?? { titulo: caminho, rotulo: 'Página' };
+
+  type Dia = { dia: string; visitas: number; visitantes: number };
+  type Resumo = {
+    periodo: { dias: number; de: string; ate: string };
+    totais: Record<string, number>;
+    porDia: Dia[];
+    materias: { caminho: string; visitas: number; leitores: number; segundosMedios: number | null; rolagemMedia: number | null; taxaConclusao: number }[];
+    origens: { origem: string; visitas: number }[];
+    dispositivos: { dispositivo: string; visitas: number }[];
+    paises: { pais: string; visitas: number }[];
+    entradas: { caminho: string; sessoes: number }[];
+    retorno: {
+      distribuicao: { faixa: string; visitantes: number }[];
+      recorrentes: { visitante: string; visitas: number; dias: number; primeira: string; ultima: string; jaTinhaVisitado: boolean; materias: string[] }[];
+    };
+  };
+
+  // Gráfico de linhas: visitas e visitantes únicos por dia, com mira e dica ao passar o mouse ou tocar.
+  function graficoDias(dias: Dia[]) {
+    const alvo = $('g-dias');
+    const maxBruto = Math.max(1, ...dias.map((d) => d.visitas));
+    const passo = 10 ** Math.floor(Math.log10(maxBruto));
+    const topo = [1, 2, 5, 10].map((m) => m * passo).find((v) => v >= maxBruto)!;
+    // Desenha na largura real do quadro, para o texto do gráfico manter o tamanho no celular.
+    const W = Math.max(300, Math.round(alvo.clientWidth || 720)), H = W < 500 ? 230 : 260, e = 40, d = 12, t = 14, b = 30;
+    const x = (i: number) => e + (dias.length === 1 ? (W - e - d) / 2 : (i * (W - e - d)) / (dias.length - 1));
+    const y = (v: number) => t + (H - t - b) * (1 - v / topo);
+    const linha = (k: 'visitas' | 'visitantes') => dias.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p[k]).toFixed(1)}`).join(' ');
+    const grade = [0, 1, 2, 3, 4].map((n) => {
+      const v = (topo * n) / 4;
+      return `<line class="grade-y" x1="${e}" x2="${W - d}" y1="${y(v)}" y2="${y(v)}"/><text x="${e - 8}" y="${y(v) + 4}" text-anchor="end">${num(v)}</text>`;
+    }).join('');
+    const cada = Math.ceil(dias.length / (W < 500 ? 4 : 7));
+    const rotulos = dias.map((p, i) => (i % cada === 0 || i === dias.length - 1 ? `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${dataCurta(p.dia)}</text>` : '')).join('');
+    larguraGrafico = alvo.clientWidth;
+    alvo.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Visitas e visitantes únicos por dia">
+      ${grade}${rotulos}
+      <path class="linha" d="${linha('visitas')}" stroke="var(--serie-1)"/>
+      <path class="linha" d="${linha('visitantes')}" stroke="var(--serie-2)"/>
+      <line class="mira" id="mira" y1="${t}" y2="${H - b}" x1="0" x2="0" visibility="hidden"/>
+      <circle class="ponto" id="p1" r="4.5" fill="var(--serie-1)" visibility="hidden"/>
+      <circle class="ponto" id="p2" r="4.5" fill="var(--serie-2)" visibility="hidden"/>
+    </svg><div class="dica" id="dica" hidden></div>`;
+    const svg = alvo.querySelector('svg')!;
+    const dica = $('dica');
+    const mostrar = (ev: PointerEvent) => {
+      const r = svg.getBoundingClientRect();
+      const px = ((ev.clientX - r.left) / r.width) * W;
+      const i = Math.min(dias.length - 1, Math.max(0, Math.round(((px - e) / (W - e - d)) * (dias.length - 1))));
+      const p = dias[i];
+      const mira = svg.querySelector<SVGLineElement>('#mira')!;
+      mira.setAttribute('x1', String(x(i))); mira.setAttribute('x2', String(x(i))); mira.setAttribute('visibility', 'visible');
+      for (const [id, k] of [['p1', 'visitas'], ['p2', 'visitantes']] as const) {
+        const c = svg.querySelector<SVGCircleElement>(`#${id}`)!;
+        c.setAttribute('cx', String(x(i))); c.setAttribute('cy', String(y(p[k]))); c.setAttribute('visibility', 'visible');
+      }
+      dica.innerHTML = `<strong>${dataCurta(p.dia)}/${p.dia.slice(0, 4)}</strong>${num(p.visitas)} visitas<br>${num(p.visitantes)} visitantes únicos`;
+      dica.hidden = false;
+      dica.style.left = `${Math.min(Math.max((x(i) / W) * r.width, 70), r.width - 70)}px`;
+      dica.style.top = `${(y(Math.max(p.visitas, p.visitantes)) / H) * r.height - 10}px`;
+    };
+    svg.addEventListener('pointermove', mostrar);
+    svg.addEventListener('pointerdown', mostrar);
+    svg.addEventListener('pointerleave', () => {
+      dica.hidden = true;
+      svg.querySelectorAll('#mira, #p1, #p2').forEach((el) => el.setAttribute('visibility', 'hidden'));
+    });
+    $('tabela-dias').innerHTML = `<table class="tabela-painel"><thead><tr><th>Dia</th><th class="num">Visitas</th><th class="num">Visitantes únicos</th></tr></thead><tbody>${[...dias].reverse().map((p) => `<tr><td>${dataCurta(p.dia)}/${p.dia.slice(0, 4)}</td><td class="num">${num(p.visitas)}</td><td class="num">${num(p.visitantes)}</td></tr>`).join('')}</tbody></table>`;
+  }
+
+  function listaDeBarras(itens: { rotulo: string; valor: number }[], vazio = 'Sem dados no período.', total?: number) {
+    if (!itens.length) return `<p class="meta">${vazio}</p>`;
+    const max = Math.max(...itens.map((i) => i.valor));
+    return `<ul class="barras">${itens
+      .map((i) => `<li><span class="rotulo-barra">${esc(i.rotulo)}</span><span class="valor">${num(i.valor)}${total ? ` · ${pct((100 * i.valor) / total)}` : ''}</span><span class="trilho"><i style="width:${(100 * i.valor) / max}%"></i></span></li>`)
+      .join('')}</ul>`;
+  }
+
+  function render(r: Resumo) {
+    const T = r.totais;
+    $('periodo').textContent = `${dataCurta(r.periodo.de)}/${r.periodo.de.slice(0, 4)} a ${dataCurta(r.periodo.ate)}/${r.periodo.ate.slice(0, 4)} (horário de Brasília)`;
+    $('kpis').innerHTML = [
+      ['Visitas', num(T.visitas), `${num(T.sessoes)} sessões`],
+      ['Visitantes únicos', num(T.visitantes), ''],
+      ['Voltaram', pct(T.taxaRetorno), `${num(T.voltaram)} de ${num(T.visitantes)} visitantes`],
+      ['Tempo de leitura', tempo(T.segundosMedios), `média por matéria, ${num(T.leituras)} leituras`],
+      ['Leram até o fim', pct(T.taxaConclusao), `passaram de 75% do texto`],
+    ].map(([n, v, s]) => `<div><dt>${n}</dt><dd>${v}${s ? `<small>${s}</small>` : ''}</dd></div>`).join('');
+
+    if (T.visitas === 0) {
+      $('g-dias').innerHTML = '<p class="meta vazio">Ainda não há visitas medidas neste período.</p>';
+      $('tabela-dias').innerHTML = '';
+    } else {
+      ultimoDias = r.porDia;
+      graficoDias(r.porDia);
+    }
+
+    const maxV = Math.max(1, ...r.materias.map((m) => m.visitas));
+    $('materias').innerHTML = r.materias.length
+      ? `<div style="overflow-x:auto"><table class="tabela-painel"><thead><tr><th>Matéria</th><th class="num">Visitas</th><th class="num">Leitores</th><th class="num">Tempo médio</th><th class="num">Leram até o fim</th></tr></thead><tbody>${r.materias.map((m) => {
+          const n = nome(m.caminho);
+          return `<tr><td><a href="${esc(m.caminho)}" target="_blank" rel="noopener">${esc(n.titulo)}</a><span class="sub">${esc(n.rotulo)}</span></td><td class="num" style="min-width:110px">${num(m.visitas)}<span class="mini" style="width:${(100 * m.visitas) / maxV}%"></span></td><td class="num">${num(m.leitores)}</td><td class="num">${tempo(m.segundosMedios)}</td><td class="num">${pct(m.taxaConclusao)}</td></tr>`;
+        }).join('')}</tbody></table></div>`
+      : '<p class="meta">Nenhuma matéria lida neste período.</p>';
+
+    const novos = T.visitantes - T.voltaram;
+    $('proporcao').innerHTML = T.visitantes
+      ? `<div class="proporcao" role="img" aria-label="${num(novos)} novos e ${num(T.voltaram)} que voltaram"><i style="flex:${novos};background:var(--serie-2)"></i><i style="flex:${T.voltaram};background:var(--serie-1)"></i></div>
+         <div class="legenda"><span class="bloco" style="--cor: var(--serie-2)">Novos: ${num(novos)}</span><span class="bloco" style="--cor: var(--serie-1)">Voltaram: ${num(T.voltaram)}</span></div>`
+      : '<p class="meta">Sem visitantes no período.</p>';
+    const maxD = Math.max(1, ...r.retorno.distribuicao.map((d) => d.visitantes));
+    $('distribuicao').innerHTML = `<div class="colunas">${r.retorno.distribuicao.map((d) => `<div><b>${num(d.visitantes)}</b><i style="height:${(100 * d.visitantes) / maxD}%"></i><span>${d.faixa} ${d.faixa === '1' ? 'dia' : 'dias'}</span></div>`).join('')}</div>`;
+
+    $('recorrentes').innerHTML = r.retorno.recorrentes.length
+      ? `<div style="overflow-x:auto"><table class="tabela-painel"><thead><tr><th>Visitante</th><th class="num">Visitas</th><th class="num">Dias</th><th>Primeira no período</th><th>Última</th><th>Matérias lidas</th></tr></thead><tbody>${r.retorno.recorrentes.map((v) => `<tr><td><code>${esc(v.visitante)}</code>${v.jaTinhaVisitado ? '<span class="sub">já visitava antes</span>' : ''}</td><td class="num">${num(v.visitas)}</td><td class="num">${num(v.dias)}</td><td>${esc(v.primeira)}</td><td>${esc(v.ultima)}</td><td>${v.materias.length ? v.materias.map((c) => esc(nome(c).titulo)).join('<br>') : '<span class="sub">nenhuma matéria</span>'}</td></tr>`).join('')}</tbody></table></div>`
+      : '<p class="meta">Ninguém voltou neste período ainda.</p>';
+
+    $('origens').innerHTML = listaDeBarras(r.origens.map((o) => ({ rotulo: o.origem, valor: o.visitas })), undefined, T.visitas);
+    $('entradas').innerHTML = listaDeBarras(r.entradas.map((o) => ({ rotulo: nome(o.caminho).titulo, valor: o.sessoes })));
+    $('dispositivos').innerHTML = listaDeBarras(r.dispositivos.map((o) => ({ rotulo: o.dispositivo[0].toUpperCase() + o.dispositivo.slice(1), valor: o.visitas })), undefined, T.visitas);
+    $('paises').innerHTML = listaDeBarras(r.paises.map((o) => ({ rotulo: o.pais, valor: o.visitas })), undefined, T.visitas);
+  }
+
+  let dias = 30;
+  let ultimoDias: Dia[] = [];
+  let larguraGrafico = 0;
+  // Redesenha o gráfico quando a largura do quadro muda (girar o celular, redimensionar a janela).
+  new ResizeObserver(() => {
+    const w = $('g-dias').clientWidth;
+    if (ultimoDias.length && w && Math.abs(w - larguraGrafico) > 24) { larguraGrafico = w; graficoDias(ultimoDias); }
+  }).observe($('g-dias'));
+  const erro = (msg: string) => { const e = $('erro'); e.textContent = msg; e.hidden = !msg; };
+  const guardarChave = (v: string | null) => { try { v ? sessionStorage.setItem(CHAVE, v) : sessionStorage.removeItem(CHAVE); } catch {} };
+  const lerChave = () => { try { return sessionStorage.getItem(CHAVE); } catch { return null; } };
+
+  async function carregar(chave: string) {
+    erro('');
+    let resp: Response;
+    try {
+      resp = await fetch(`/api/admin/resumo?dias=${dias}`, { headers: { Authorization: `Bearer ${chave}` } });
+    } catch {
+      return erro('Não consegui falar com o servidor. Confira a conexão e tente de novo.');
+    }
+    if (resp.status === 401) { guardarChave(null); $('conteudo').hidden = true; $('entrada').hidden = false; return erro('Chave incorreta.'); }
+    if (resp.status === 503) return erro('O servidor ainda não tem a chave configurada (variável ADMIN_TOKEN no Cloudflare Pages).');
+    if (!resp.ok) return erro('Os dados só existem no site publicado no Cloudflare (ou com npm run cf:dev). Código ' + resp.status + '.');
+    guardarChave(chave);
+    // O navegador de quem entra aqui deixa de ser contado como leitor.
+    try { localStorage.setItem(CHAVE_IGNORAR, '1'); } catch {}
+    $('entrada').hidden = true;
+    $('conteudo').hidden = false;
+    render(await resp.json());
+  }
+
+  $<HTMLFormElement>('entrada').addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const v = $<HTMLInputElement>('chave').value.trim();
+    if (v) carregar(v);
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-dias]').forEach((b) =>
+    b.addEventListener('click', () => {
+      dias = Number(b.dataset.dias);
+      document.querySelectorAll<HTMLButtonElement>('[data-dias]').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+      const c = lerChave();
+      if (c) carregar(c);
+    })
+  );
+  $('sair').addEventListener('click', () => { guardarChave(null); location.reload(); });
+  const salva = lerChave();
+  if (salva) carregar(salva);
+</script>

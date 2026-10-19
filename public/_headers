@@ -1,0 +1,6 @@
+# Painel interno e rotas de dados: não indexar, não guardar em cache.
+/painel-grafous/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+/api/*
+  X-Robots-Tag: noindex, nofollow

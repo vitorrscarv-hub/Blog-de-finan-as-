@@ -1,5 +1,9 @@
 import { test, expect, type Page } from '@playwright/test';
 import { artigosComCadastro } from './artigos';
+import { SITE } from '../../src/site.config';
+
+// Com o pop-up desligado (SITE.lead.ativo), estes testes não se aplicam: metricas.spec confere que ele não aparece.
+test.skip(!SITE.lead.ativo, 'pop-up desligado em SITE.lead.ativo');
 
 // Mesma definição usada no LeadGate: fração do corpo do texto que já passou
 // por uma linha imaginária a 60% da altura da tela.
