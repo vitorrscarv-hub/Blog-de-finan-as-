@@ -26,7 +26,7 @@ Os testes duram 60 dias, contados do primeiro dia útil seguinte ao fim do prazo
 
 ## O que a norma não é
 
-Aqui está o ponto que mais importa para o leitor. O art. 1º, § 3º, da resolução é explícito:
+O art. 1º, § 3º, da resolução é explícito:
 
 - os testes não admitem investidores reais, valores mobiliários efetivamente emitidos ou em circulação, nem movimentação de recursos financeiros reais (inciso I);
 - não autorizam atividade regulada, como oferta pública de distribuição, escrituração, custódia, depósito centralizado ou intermediação (inciso II);
@@ -41,14 +41,12 @@ O art. 18 proíbe os participantes de veicular material publicitário ou de capt
 
 Em termos de carteira, nada muda de imediato. Nenhum produto novo foi autorizado, nenhuma regra de ofertas, custódia ou negociação foi alterada para o mercado real, e ninguém pode aportar dinheiro no piloto. O art. 16 afasta normas da CVM sobre registro de ofertas, escrituração, custódia, depósito centralizado, mercados organizados e intermediação apenas dentro das operações experimentais, e enquanto a resolução estiver vigente.
 
-Isso tem uma consequência prática. Se alguém oferecer hoje um ativo descrito como tokenizado, a resolução 249 não serve como atestado de regularidade nem de segurança. As perguntas de sempre continuam valendo: qual é o valor mobiliário por trás do token, quem o emitiu, se a oferta é registrada ou dispensada de registro, onde fica a custódia e quais são os riscos e custos do produto.
+Se alguém oferecer hoje um ativo descrito como tokenizado, a Resolução CVM 249 não serve como atestado de regularidade nem de segurança. Os pontos de sempre continuam a valer na análise de qualquer oferta: qual é o valor mobiliário por trás do token, quem o emitiu, se a oferta é registrada ou dispensada de registro, onde fica a custódia e quais são os riscos e custos do produto.
 
-Para o médio prazo, o piloto é um sinal de que o regulador quer produzir evidências antes de decidir sobre mudanças de regra. A norma, porém, diz expressamente (art. 1º, § 3º, III) que os testes não geram expectativa legítima de aprovação nem de tratamento regulatório futuro. Quais testes serão feitos, por quem e com que conclusões só ficará claro quando a CVM divulgar as redes admitidas, o que, segundo o art. 9º, ocorrerá na página do órgão, e depois o relatório final.
+Quanto ao futuro, a norma diz expressamente (art. 1º, § 3º, III) que os testes não geram expectativa legítima de aprovação nem de tratamento regulatório futuro. Quais testes serão feitos, por quem e com que conclusões só ficará claro quando a CVM divulgar as redes admitidas, o que, segundo o art. 9º, ocorrerá na página do órgão, e depois o relatório final.
 
 ## O que acompanhar
 
 - A lista de redes de teste admitidas, a ser publicada pela CVM após o prazo de propostas.
 - Eventual prorrogação dos testes por até 30 dias.
-- A versão pública do relatório final e as propostas de ajuste normativo que dele saírem.
-
-Até lá, tokenização, para o investidor pessoa física, segue sendo um tema para acompanhar, e não um novo canal autorizado de investimento.
+- A versão pública do relatório final.
