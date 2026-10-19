@@ -10,13 +10,16 @@ const guias = (await getCollection('guias', publicado)).sort(porData);
 const temas = TEMAS.filter((t) => guias.some((g) => g.data.tema === t));
 ---
 <Base title="Guias" description="Textos de referência sobre previdência, renda fixa, fundos, investimento no exterior e mais.">
-  <section class="secao container">
-    <h1>Guias</h1>
-    <p class="meta">Textos de referência, organizados por tema.</p>
+  <section class="container">
+    <header class="pagina-titulo">
+      <h1>Guias</h1>
+      <p>Textos de referência, que não envelhecem com a semana, organizados por tema.</p>
+    </header>
+    {temas.length === 0 && <p class="meta vazio">Nenhum guia publicado ainda.</p>}
     {temas.map((tema) => (
-      <section>
+      <section class="tema">
         <h2>{tema}</h2>
-        <div class="grade">
+        <div class="grade grade-numerada">
           {guias.filter((g) => g.data.tema === tema).map((g) => (
             <CardPost href={`/guias/${g.id}/`} title={g.data.title} description={g.data.description} date={g.data.date} />
           ))}

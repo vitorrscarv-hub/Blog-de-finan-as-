@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import CardPost from './CardPost.astro';
+import { EDITORIAS, type Editoria } from '../content.config';
+import { porData, publicado, slugEditoria } from '../scripts/formatos';
+
+interface Props {
+  editoria?: Editoria;
+}
+const { editoria } = Astro.props;
+
+const noticias = (await getCollection('noticias', publicado))
+  .filter((n) => !editoria || n.data.editoria === editoria)
+  .sort(porData);
+
+const titulo = editoria ? `Notícias da semana: ${editoria}` : 'Notícias da semana';
+const descricao =
+  editoria === 'Internacional'
+    ? 'Economia, política e conflitos no exterior, e o que isso muda para quem investe no Brasil.'
+    : editoria === 'Mercado'
+      ? 'Empresas e ações: fatos relevantes, fusões e aquisições, recuperações judiciais e o que mudam para quem investe.'
+      : editoria === 'Brasil'
+        ? 'Juros, inflação, tributação e regras que mudaram no Brasil, e o efeito para quem investe.'
+        : 'O que aconteceu na semana, no Brasil e no exterior, e o que muda para quem investe.';
+
+const filtros = [
+  { rotulo: 'Todas', href: '/noticias/', ativo: !editoria },
+  ...EDITORIAS.map((e) => ({ rotulo: e, href: `/noticias/${slugEditoria(e)}/`, ativo: e === editoria })),
+];
+---
+<Base title={titulo} description={descricao}>
+  <section class="container">
+    <header class="pagina-titulo">
+      <h1>{titulo}</h1>
+      <p>{descricao}</p>
+    </header>
+    <nav class="filtro" aria-label="Editorias">
+      {filtros.map((f) => (
+        <a href={f.href} aria-current={f.ativo ? 'page' : undefined}>{f.rotulo}</a>
+      ))}
+    </nav>
+    {noticias.length === 0 ? (
+      <p class="meta vazio">Nenhuma notícia publicada nesta editoria ainda.</p>
+    ) : (
+      <div class="grade">
+        {noticias.map((n) => (
+          <CardPost
+            href={`/noticias/${n.id}/`}
+            title={n.data.title}
+            description={n.data.description}
+            date={n.data.date}
+            etiqueta={n.data.editoria}
+            etiquetaHref={`/noticias/${slugEditoria(n.data.editoria)}/`}
+          />
+        ))}
+      </div>
+    )}
+  </section>
+</Base>

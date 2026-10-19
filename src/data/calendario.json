@@ -1,0 +1,122 @@
+{
+  "atualizado": "2026-10-19",
+  "acoes": [
+    {
+      "empresa": "Petrobras",
+      "ticker": "PETR4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.67407131,
+      "dataCom": "2026-08-21",
+      "dataPagamento": "2026-11-23",
+      "fonte": {
+        "titulo": "Petrobras, Fato Relevante de 06/08/2026: remuneração aos acionistas (primeira parcela, JCP)",
+        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1553780&numSequencia=1078486&numVersao=1"
+      }
+    },
+    {
+      "empresa": "Petrobras",
+      "ticker": "PETR4",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.47156696,
+      "dataCom": "2026-08-21",
+      "dataPagamento": "2026-12-21",
+      "fonte": {
+        "titulo": "Petrobras, Fato Relevante de 06/08/2026: remuneração aos acionistas (segunda parcela, parte em dividendos)",
+        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1553780&numSequencia=1078486&numVersao=1"
+      }
+    },
+    {
+      "empresa": "Petrobras",
+      "ticker": "PETR4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.20250435,
+      "dataCom": "2026-08-21",
+      "dataPagamento": "2026-12-21",
+      "fonte": {
+        "titulo": "Petrobras, Fato Relevante de 06/08/2026: remuneração aos acionistas (segunda parcela, parte em JCP)",
+        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1553780&numSequencia=1078486&numVersao=1"
+      }
+    },
+    {
+      "empresa": "Localiza",
+      "ticker": "RENT3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.556580414,
+      "dataCom": "2026-09-25",
+      "dataPagamento": "2026-11-18",
+      "fonte": {
+        "titulo": "Localiza, Comunicado ao Mercado de 25/09/2026: JCP, valor por ação",
+        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1571759&numSequencia=1096465&numVersao=1"
+      }
+    },
+    {
+      "empresa": "WEG",
+      "ticker": "WEGE3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.107212121,
+      "dataCom": "2026-09-18",
+      "dataPagamento": "2027-03-10",
+      "fonte": {
+        "titulo": "WEG, Aviso aos Acionistas de 15/09/2026: JCP",
+        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1568334&numSequencia=1093040&numVersao=1"
+      }
+    }
+  ],
+  "fiis": [
+    {
+      "fundo": "FII XP MALLS",
+      "ticker": "XPML11",
+      "valorPorCota": 0.92,
+      "dataBase": "2026-10-16",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo XPML, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQTUwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII BTLG",
+      "ticker": "BTLG11",
+      "valorPorCota": 0.81,
+      "dataBase": "2026-10-15",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo BTLG, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJUTEciLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII ALIANZA",
+      "ticker": "ALZR11",
+      "valorPorCota": 0.084,
+      "dataBase": "2026-10-16",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo ALZR, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkFMWlIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII BTG SHOP",
+      "ticker": "BPML11",
+      "valorPorCota": 0.92,
+      "dataBase": "2026-10-16",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo BPML, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJQTUwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII MAUA",
+      "ticker": "MCCI11",
+      "valorPorCota": 1,
+      "dataBase": "2026-10-13",
+      "dataPagamento": "2026-10-20",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo MCCI, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1DQ0kiLCJ0eXBlRnVuZCI6N30="
+      }
+    }
+  ]
+}

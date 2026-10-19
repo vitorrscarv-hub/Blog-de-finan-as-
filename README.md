@@ -1,6 +1,6 @@
-# Blog Vitor Reis de Carvalho
+# Grafous
 
-Site estático feito em [Astro](https://astro.build), com os textos em Markdown, hospedagem no Cloudflare Pages e cadastro de leitores gravado num banco Cloudflare D1.
+Blog Grafous, de Vitor Reis de Carvalho. Site estático feito em [Astro](https://astro.build), com os textos em Markdown, hospedagem no Cloudflare Pages e cadastro de leitores gravado num banco Cloudflare D1.
 
 ## Estrutura de pastas
 
@@ -12,9 +12,10 @@ src/
   site.config.ts         nome, credenciais do autor, imagem de compartilhamento e regras do pop-up
   components/            cabeçalho, rodapé, card e pop-up de cadastro (LeadGate.astro)
   layouts/               página base (SEO) e página de artigo
-  pages/                 home, listas, artigos, privacidade, RSS e 404
+  pages/                 home, listas (com filtro por editoria), artigos, calendário de proventos, privacidade, RSS e 404
   scripts/formatos.ts    datas em pt-BR, ordenação, rascunhos e tempo de leitura
   styles/global.css      todo o CSS do site, com modo escuro
+  data/indicadores.json  valores da faixa de indicadores (Selic, IPCA, dólar), com fonte e data
 public/                  favicon e imagem padrão de compartilhamento (og-padrao.png)
 functions/api/lead.js    recebe o cadastro (POST /api/lead) e grava no D1
 db/schema.sql            tabela de cadastros
@@ -24,6 +25,14 @@ tests/unit/              testes da função de cadastro com um D1 falso
 wrangler.toml            configuração do wrangler para uso no seu computador
 .github/workflows/ci.yml build e testes em cada pull request
 ```
+
+## Visual
+
+O nome do blog (Grafous) e o slogan ficam em `SITE.nome` e `SITE.slogan`, em `src/site.config.ts`. O símbolo da logo liga as capitais de grandes economias nos cinco continentes (Washington, Brasília, Londres, Pretória, Nova Délhi, Pequim, Tóquio e Canberra), cada uma na sua posição geográfica real, com Brasília em destaque e a linha do Equador tracejada. As coordenadas e as ligações ficam em `src/scripts/marca.ts`, a única fonte do desenho: a logo do site (`src/components/Logo.astro`) usa esse arquivo, e `npm run marca` regera a partir dele o favicon, o ícone do iPhone e a imagem de compartilhamento (`public/og-padrao.png`). As matérias não têm assinatura: abaixo do título aparece a linha "Fonte" com as instituições citadas em `fontes:` (Banco Central, IBGE, Fed etc.), cada uma com link para a página original. Para uma instituição nova aparecer pelo nome, e não pelo endereço, inclua o domínio em `src/scripts/fontes.ts`.
+
+Layout editorial próprio: barra superior escura, grade com filetes finos em vez de caixas, títulos na fonte Archivo (condensada) e texto corrido na Source Serif 4. As fontes vêm dos pacotes `@fontsource-variable` e são servidas pelo próprio site, sem Google Fonts. Cores e tamanhos ficam nas variáveis do topo de `src/styles/global.css`, com versão para o modo escuro.
+
+A faixa de indicadores abaixo do menu (Selic, IPCA em 12 meses, dólar PTAX) lê `src/data/indicadores.json`. Cada item precisa de `nome`, `valor`, `data`, `fonte` e `url` (https). Item incompleto não aparece, e a faixa some se o arquivo estiver vazio. A pauta semanal atualiza esse arquivo com os valores conferidos na fonte oficial.
 
 ## Como rodar
 
@@ -62,6 +71,8 @@ Cabeçalho de uma notícia:
 title: "IPCA de setembro fica acima do esperado"
 description: "Até 155 caracteres. O build falha se passar disso."
 date: 2026-10-19
+editoria: "Brasil"         # ou "Mercado" ou "Internacional"; só em notícias, padrão Brasil
+pais: "Ucrânia"            # opcional; país ou região de que a notícia trata (internacionais)
 updated: 2026-10-20        # opcional
 keywords: ["IPCA setembro 2026", "inflação", "Selic"]   # até 5
 teaser: "Texto curto para o canal de WhatsApp. [LINK]"  # opcional
@@ -75,11 +86,61 @@ gate: true       # false libera o texto sem pedir cadastro
 Texto em Markdown. Intertítulos com ##, listas, tabelas e links funcionam normalmente.
 ```
 
-Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
+As notícias aparecem em `/noticias/` e também em `/noticias/brasil/`, `/noticias/mercado/` ou `/noticias/internacional/`, conforme a `editoria`, com etiqueta no card. Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
 
 O build falha, com a mensagem de erro em português, se faltar título ou description, se a description passar de 155 caracteres, se houver mais de 5 palavras-chave, se uma fonte não tiver url completa ou se o tema não estiver na lista. As datas aparecem exatamente como no cabeçalho: `2026-10-12` sai como "12 de outubro de 2026".
 
 Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md` e `src/content/guias/tesouro-ipca-marcacao-a-mercado.md`) servem só para mostrar o formato. Apague os dois antes do lançamento, de preferência no mesmo pull request em que entrarem os primeiros textos reais. Os testes não dependem deles: acham os artigos pelas listas do site e só precisam de pelo menos dois textos publicados com `gate: true`.
+
+## Pauta semanal automática
+
+Duas vezes por semana, de manhã (6h56, horário de Brasília), uma tarefa agendada do Claude Code monta a pauta e abre um pull request chamado "Pauta da semana AAAA-MM-DD (...)":
+
+- **segunda, Brasil e mercado:** 3 notícias do Brasil, 2 de Mercado (ações, fusões e aquisições, recuperação judicial de empresas relevantes), 1 guia e o calendário de proventos;
+- **sexta, Internacional:** 5 notícias (Rússia e Ucrânia, Irã e Oriente Médio, duas potências em rodízio entre Estados Unidos, China, França, Reino Unido, Alemanha, Itália, Japão, Índia e outras, e bancos centrais e economia global) e o calendário de proventos.
+
+Além dos dois ciclos há o **plantão**: nos dias úteis (8h07, 12h07 e 17h07, horário de Brasília) uma tarefa varre as fontes oficiais com `node scripts/radar.mjs` e só abre pull request quando acontece algo que o leitor precisa entender no mesmo dia (decisão de juros, dado de grande efeito, mudança de regra, fato relevante de empresa grande, sanção). Máximo de 2 textos por plantão e 3 por dia; sem nada relevante, não abre nada. O aviso chega como notificação da tarefa e o pull request "Plantão AAAA-MM-DD HH:MM: assunto" traz o texto pronto para você revisar e mesclar.
+
+O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
+
+| Integrante | Papel |
+| --- | --- |
+| Editor-chefe | a sessão principal; coordena, decide, roda build e testes e abre o pull request (`.claude/skills/pauta-semanal/SKILL.md`) |
+| Pauteiro | escolhe os fatos do ciclo (Brasil, Mercado, guia ou as 5 vagas internacionais) e os candidatos ao calendário, com as fontes primárias |
+| Repórter | escreve cada texto; um repórter por texto, todos em paralelo |
+| Calendarista | monta as linhas do calendário de proventos (dividendos, JCP e rendimentos de fundos imobiliários) a partir de avisos e comunicados oficiais |
+| Checador | confere cada número do texto e de cada linha do calendário na fonte oficial e corrige, remove ou marca como rascunho |
+| Revisor | ajusta estilo, tom, neutralidade política e conformidade (sem recomendação, sem promessa, sem travessão) |
+
+A editoria internacional cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro (câmbio, juros, petróleo, bolsas), com neutralidade: o blog não toma partido de governo, país ou lado de guerra. Como Reuters, AP e AFP recusam robôs neste ambiente, fato de guerra só entra por documento oficial (ONU, AIEA, governos, sanções publicadas); sem isso, o texto vai como rascunho.
+
+A editoria Mercado trata só de empresas relevantes e só do fato, sem preço-alvo e sem opinar sobre negócio.
+
+### Calendário de proventos
+
+A página `/calendario/` lê `src/data/calendario.json`, que a pauta atualiza nos dois ciclos: dividendos e JCP de ações e rendimentos de fundos imobiliários, cada linha com valor, datas e a fonte aberta. O build falha se uma linha estiver incompleta (`src/scripts/calendario.ts`). É informativo: sem ranking de pagadores, sem projeção, sem indicação de compra ou venda. Para editar à mão, siga o formato do arquivo (`acoes`: empresa, ticker, tipo `Dividendo` ou `JCP`, `valorPorAcao`, `dataCom`, `dataPagamento`, `fonte`; `fiis`: fundo, ticker, `valorPorCota`, `dataBase`, `dataPagamento`, `fonte`).
+
+Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code precisa de acesso a elas: nível **Limitado** (Custom, na documentação), com a caixa de gerenciadores de pacotes marcada, e a lista abaixo em **Domínios permitidos** (menu do ambiente na barra de título da sessão, Edit). A regra vale pelo nome exato do endereço, então use o curinga `*.` para cobrir o "www" e os outros subdomínios. Cada domínio vale também sem o curinga, e a lista funciona com os dois.
+
+- Brasil: `*.bcb.gov.br`, `*.ibge.gov.br`, `*.tesourodireto.com.br`, `*.gov.br`, `*.in.gov.br`, `*.anbima.com.br`, `*.b3.com.br` (a CVM, com os dados abertos e o RAD, entra em `*.gov.br`). Para Mercado e calendário, páginas de relações com investidores das empresas (ex.: `ri.empresa.com.br`) precisam ser liberadas quando a pauta pedir.
+- Fundos imobiliários: os rendimentos vêm da API de proventos da B3 (`sistemaswebb3-listados.b3.com.br`, em `*.b3.com.br`), pelo script `node scripts/proventos-b3.mjs`.
+- Potências (ampliação internacional): `*.gov.uk`, `*.bankofengland.co.uk`, `*.ons.gov.uk`, `*.bundesbank.de`, `*.destatis.de`, `*.banque-france.fr`, `*.insee.fr`, `*.bancaditalia.it`, `*.istat.it`, `*.cbr.ru`, `*.kremlin.ru`, `*.whitehouse.gov`, `*.iaea.org`, `*.unocha.org`
+- Exterior: `*.federalreserve.gov`, `*.bls.gov`, `*.bea.gov`, `*.treasury.gov`, `*.europa.eu`, `*.imf.org`, `*.worldbank.org`, `*.oecd.org`, `*.eia.gov`, `*.iea.org`, `*.opec.org`, `*.un.org`
+- Opcional, para ouvir os dois lados dos conflitos e outras fontes oficiais (hoje recusados pelo proxy do ambiente): `*.mid.ru`, `*.government.ru`, `*.minfin.gov.ru`, `*.rosstat.gov.ru`, `*.president.gov.ua`, `*.mfa.gov.ua`, `*.bank.gov.ua`, `*.president.ir`, `*.mfa.ir`, `*.cbi.ir`, `*.nato.int`, `*.state.gov`, `*.defense.gov`, `*.economie.gouv.fr`, `*.gouvernement.fr`, `*.bundesregierung.de`
+- Agências (fatos políticos e de guerra): `*.reuters.com`, `*.apnews.com`, `*.afp.com`
+
+Neste ambiente o WebFetch não resolve endereços, então a redação lê as fontes pelo terminal: `node scripts/ler-pagina.mjs <url>` (Chromium de verdade, para páginas com JavaScript) e `curl` para APIs. O guia `.claude/skills/pauta-semanal/acesso-as-fontes.md` lista os endereços de dados que funcionam (Selic, dólar PTAX, Focus, IPCA, BCE, OCDE, Banco Mundial) e os sites que bloqueiam robôs (BLS, páginas do IBGE, Reuters, AP), nos quais o dado fica sem conferência em vez de se tentar contornar o bloqueio.
+
+Todos seguem o manual de redação em `.claude/skills/pauta-semanal/manual-de-redacao.md`. Para mudar critérios de pauta, tamanho ou tom, edite o manual por pull request. Você é o publisher: só o seu merge publica.
+
+O que você faz:
+
+1. Abra o pull request (chega notificação no celular e no e-mail do GitHub).
+2. Leia os textos no link de prévia do Cloudflare. No corpo do PR há uma tabela com cada número usado e a fonte, para conferir rápido.
+3. Se quiser mudar algo, edite o arquivo no próprio PR ou escreva um comentário pedindo a alteração.
+4. Aperte Merge. O site é publicado em um ou dois minutos.
+
+Textos com algum dado que a rotina não conseguiu conferir na fonte oficial vêm com `draft: true`. Eles não aparecem na prévia nem no site, mesmo depois do merge, até alguém conferir o dado e trocar para `draft: false`.
 
 ## Como funciona o pop-up de cadastro
 
@@ -173,3 +234,9 @@ O GitHub Actions (`.github/workflows/ci.yml`) roda o build e todos os testes em 
 - [ ] Se usar envio por WhatsApp, conferir se a ferramenta segue as regras da Meta para contato com quem se cadastrou.
 - [ ] Cadastrar o site no Google Search Console e enviar `https://SEU-DOMINIO/sitemap-index.xml`.
 - [ ] Conferir a imagem de compartilhamento colando um link do blog no WhatsApp.
+
+## Edições de outros países
+
+O Grafous está pronto para ganhar edições em outros países. Os modelos de redação ficam em `.claude/skills/pauta-semanal/edicoes/`, todos desligados: Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália. Cada modelo traz leitor e idioma, pauta e editorias locais, fontes oficiais, regras locais sobre conteúdo financeiro e dados pessoais, aviso legal no idioma do país (para revisão de advogado local), domínios a liberar na rede e as pendências antes de ativar.
+
+O registro com código, idioma, fuso, horário da pauta e a chave de ativação está em `edicoes/edicoes.json`. O passo a passo para ligar uma edição, do parecer jurídico à tarefa agendada, está em `edicoes/COMO-ATIVAR.md`. Para incluir um país novo, copie um dos modelos, mantenha as mesmas seções e acrescente a linha no registro; `tests/unit/edicoes.test.js` confere se nada ficou faltando.

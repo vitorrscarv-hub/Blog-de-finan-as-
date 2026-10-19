@@ -7,11 +7,12 @@ interface Props {
   description: string;
   date: Date;
   etiqueta?: string;
+  etiquetaHref?: string;
 }
-const { href, title, description, date, etiqueta } = Astro.props;
+const { href, title, description, date, etiqueta, etiquetaHref } = Astro.props;
 ---
 <article class="card">
-  {etiqueta && <span class="etiqueta">{etiqueta}</span>}
+  {etiqueta && (etiquetaHref ? <a class="etiqueta" href={etiquetaHref}>{etiqueta}</a> : <span class="etiqueta">{etiqueta}</span>)}
   <h3><a href={href}>{title}</a></h3>
   <p>{description}</p>
   <time class="meta" datetime={date.toISOString()}>{dataBR(date)}</time>

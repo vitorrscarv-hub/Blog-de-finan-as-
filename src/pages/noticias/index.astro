@@ -1,19 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../../layouts/Base.astro';
-import CardPost from '../../components/CardPost.astro';
-import { porData, publicado } from '../../scripts/formatos';
-
-const noticias = (await getCollection('noticias', publicado)).sort(porData);
+import ListaNoticias from '../../components/ListaNoticias.astro';
 ---
-<Base title="Notícias da semana" description="O que aconteceu na semana e o que muda para quem investe.">
-  <section class="secao container">
-    <h1>Notícias da semana</h1>
-    <p class="meta">O que aconteceu e o que muda para quem investe.</p>
-    <div class="grade">
-      {noticias.map((n) => (
-        <CardPost href={`/noticias/${n.id}/`} title={n.data.title} description={n.data.description} date={n.data.date} />
-      ))}
-    </div>
-  </section>
-</Base>
+<ListaNoticias />

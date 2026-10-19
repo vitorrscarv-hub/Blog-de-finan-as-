@@ -1,20 +1,22 @@
 # Regras do projeto
 
-Blog educacional de finanças de Vitor Reis de Carvalho. Astro estático, Cloudflare Pages, cadastro em Pages Function com D1. Detalhes de uso no README.
+Grafous, blog educacional de finanças de Vitor Reis de Carvalho. Astro estático, Cloudflare Pages, cadastro em Pages Function com D1. Detalhes de uso no README.
 
 ## Autor e conteúdo
+
+- O nome do blog é Grafous (`SITE.nome`), com o slogan "A informação que conecta os fatos." (`SITE.slogan`) e a logo em `src/components/Logo.astro`, cujo símbolo (capitais ligadas, com Brasília em destaque) vem de `src/scripts/marca.ts`; depois de mudar o símbolo, rodar `npm run marca` (azul-marinho #131c2b e dourado #d4b46a; o dourado não serve para texto pequeno sobre fundo claro, use `--destaque`). Aparece no cabeçalho, nos títulos das páginas, no RSS e no Open Graph. As matérias não têm assinatura visível: abaixo do título vai a linha "Fonte(s)", montada a partir de `fontes:` (`src/scripts/fontes.ts`). Vitor aparece no rodapé, na política de privacidade e nos metadados (JSON-LD `author`).
 
 - Credenciais de Vitor, sempre nestes termos: CEA (Anbima), pós-graduado em Finanças, Investimentos e Banking pela PUC-RS, formado em Gestão Financeira. A fonte única é `SITE.autor` em `src/site.config.ts`.
 - Nunca apresentar Vitor como economista nem como assessor de investimentos, em nenhum texto, metadado ou JSON-LD.
 - Nunca citar instituição financeira à qual Vitor seja vinculado.
 - Público: investidores pessoa física com patrimônio relevante. Todo texto da interface em português do Brasil.
 - Tom natural, de pessoa experiente falando com outra. Sem linguagem promocional, sem emojis, sem travessão, sem urgência artificial.
-- Nenhum texto do site pode prometer retorno nem indicar compra ou venda de ativo. O aviso de conteúdo educacional do artigo (`src/layouts/Artigo.astro`) e o do rodapé (`src/components/Rodape.astro`) não saem.
+- Nenhum texto do site pode prometer retorno nem indicar compra ou venda de ativo. Isso vale para Mercado (sem preço-alvo, sem opinar sobre negócio de M&A ou recuperação judicial) e para o calendário de proventos (informativo: sem ranking de pagadores, sem projeção). O aviso de conteúdo educacional do artigo (`src/layouts/Artigo.astro`) e o do rodapé (`src/components/Rodape.astro`) não saem.
 - Não inventar dados, fontes ou links. Os textos são escritos fora do site e revisados por Vitor antes de publicar.
 
 ## Schema de conteúdo
 
-Manter o schema de `src/content.config.ts` como está. Campos: `title`, `description` (até 155 caracteres, o build falha se passar), `date`, `updated`, `keywords` (até 5), `teaser`, `fontes` ({titulo, url}), `draft` (padrão false), `gate` (padrão true). Guias têm `tema`, com um destes valores: Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior, Fundamentos. Mudar campo ou tema só com pedido explícito.
+Manter o schema de `src/content.config.ts` como está. Campos: `title`, `description` (até 155 caracteres, o build falha se passar), `date`, `updated`, `keywords` (até 5), `teaser`, `fontes` ({titulo, url}), `draft` (padrão false), `gate` (padrão true). Notícias têm `editoria` (`Brasil`, `Mercado` ou `Internacional`, padrão `Brasil`), que define a etiqueta e as páginas `/noticias/brasil/`, `/noticias/mercado/` e `/noticias/internacional/`, e `pais` (opcional, texto livre). Guias têm `tema`, com um destes valores: Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior, Fundamentos. Mudar campo ou tema só com pedido explícito.
 
 As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" apareça como 12 de outubro. Não remover o `timeZone: 'UTC'`.
 
@@ -23,6 +25,12 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 - Configuração em `SITE.lead` (`src/site.config.ts`): gatilho entre 30% e 40% do corpo, modo `obrigatorio` (padrão) ou `opcional`.
 - O texto completo fica sempre no HTML. Não esconder conteúdo no servidor; o JSON-LD marca `isAccessibleForFree: false` com `hasPart` em `.artigo-corpo`.
 - A validação do formulário e a de `functions/api/lead.js` precisam continuar iguais (nome, e-mail, WhatsApp com DDD de 10 ou 11 dígitos, consentimento, campo-armadilha `site`).
+
+## Pauta semanal
+
+A pauta tem dois ciclos por semana: segunda (3 notícias do Brasil, 2 de Mercado e 1 guia) e sexta (5 internacionais), e o plantão (`node scripts/radar.mjs`, até 2 textos por rodada, só com fato que passe nos critérios do manual) cobre o que não pode esperar; os ciclos atualizam o calendário de proventos (`src/data/calendario.json`, página `/calendario/`). Segue `.claude/skills/pauta-semanal/SKILL.md` (editor-chefe) com os agentes de `.claude/agents/` (pauteiro, repórter, checador, calendarista, revisor) e o manual `.claude/skills/pauta-semanal/manual-de-redacao.md`: todo dado conferido na fonte primária, neutralidade em política e conflitos, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
+
+Edições de outros países (Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália) têm modelo de redação pronto em `.claude/skills/pauta-semanal/edicoes/`, todas inativas. Só a edição Brasil está ativa; ativar outra segue `edicoes/COMO-ATIVAR.md`, começando pelo parecer jurídico do país, e nunca por iniciativa própria.
 
 ## Segredos
 

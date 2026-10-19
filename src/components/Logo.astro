@@ -1,0 +1,23 @@
+---
+// Logo do Grafous: símbolo (capitais ligadas, ver src/scripts/marca.ts) + nome.
+// O símbolo usa currentColor, e a cor vem de --marca-texto no CSS, então funciona no claro e no escuro.
+import { SITE } from '../site.config';
+import { geometria, simboloSvg } from '../scripts/marca';
+
+interface Props {
+  tamanho?: number;
+  comNome?: boolean;
+}
+const { tamanho = 34, comNome = true } = Astro.props;
+const { proporcao } = geometria();
+// Abaixo de ~60 px de altura, traços e nós precisam de mais peso para continuar visíveis.
+const peso = tamanho < 60 ? 1.9 : 1;
+const svg = simboloSvg({ cor: 'currentColor', peso }).replace(
+  '<svg ',
+  `<svg class="logo-simbolo" width="${Math.round(tamanho * proporcao)}" height="${tamanho}" aria-hidden="true" focusable="false" `
+);
+---
+<span class="logo">
+  <Fragment set:html={svg} />
+  {comNome && <span class="logo-nome">{SITE.nome}</span>}
+</span>

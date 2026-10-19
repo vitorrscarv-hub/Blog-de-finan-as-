@@ -1,0 +1,26 @@
+{
+  "_comentario": "Faixa de indicadores no topo do site. Só aparece item com valor, data e url da fonte oficial conferidos. A pauta semanal atualiza este arquivo.",
+  "itens": [
+    {
+      "nome": "Selic",
+      "valor": "13,75% a.a.",
+      "data": "desde 17 set 2026",
+      "fonte": "Banco Central",
+      "url": "https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros"
+    },
+    {
+      "nome": "IPCA 12m",
+      "valor": "4,58%",
+      "data": "set 2026",
+      "fonte": "IBGE",
+      "url": "https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265?localidades=N1[all]"
+    },
+    {
+      "nome": "Dólar PTAX",
+      "valor": "R$ 5,0826",
+      "data": "16 out 2026",
+      "fonte": "Banco Central",
+      "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='10-16-2026'&$format=json"
+    }
+  ]
+}

@@ -36,9 +36,18 @@ export const TEMAS = [
   'Fundamentos',
 ] as const;
 
+// Editoria das notícias. Também vira endereço: /noticias/brasil/, /noticias/mercado/ e /noticias/internacional/.
+// Mercado cobre empresas e ações (fatos relevantes, M&A, recuperação judicial); o calendário de proventos é outra página.
+export const EDITORIAS = ['Brasil', 'Mercado', 'Internacional'] as const;
+export type Editoria = (typeof EDITORIAS)[number];
+
 const noticias = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/noticias' }),
-  schema: base,
+  schema: base.extend({
+    editoria: z.enum(EDITORIAS).default('Brasil'),
+    // País ou região de que a notícia trata (ex.: "Ucrânia", "Irã", "Estados Unidos"); opcional, usado nas internacionais.
+    pais: z.string().min(1).optional(),
+  }),
 });
 
 const guias = defineCollection({

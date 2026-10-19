@@ -1,4 +1,7 @@
 ---
+// Fontes servidas pelo próprio site (sem Google Fonts). Archivo com eixo de largura, para os títulos condensados.
+import '@fontsource-variable/archivo/wdth.css';
+import '@fontsource-variable/source-serif-4';
 import '../styles/global.css';
 import Cabecalho from '../components/Cabecalho.astro';
 import Rodape from '../components/Rodape.astro';
@@ -47,6 +50,8 @@ const tituloCompleto = title === SITE.nome ? title : `${title} | ${SITE.nome}`;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="author" content={SITE.autor.nome} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#131c2b" />
     <link rel="alternate" type="application/rss+xml" title={SITE.nome} href="/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />}

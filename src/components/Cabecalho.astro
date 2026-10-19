@@ -1,18 +1,29 @@
 ---
 import { SITE } from '../site.config';
+import Indicadores from './Indicadores.astro';
+import Logo from './Logo.astro';
 const caminho = Astro.url.pathname;
 const links = [
-  { href: '/noticias/', rotulo: 'Notícias da semana' },
+  { href: '/noticias/', rotulo: 'Notícias', exato: true },
+  { href: '/noticias/brasil/', rotulo: 'Brasil' },
+  { href: '/noticias/mercado/', rotulo: 'Mercado' },
+  { href: '/noticias/internacional/', rotulo: 'Internacional' },
+  { href: '/calendario/', rotulo: 'Calendário' },
   { href: '/guias/', rotulo: 'Guias' },
 ];
+// "Notícias" fica marcado na lista geral e nos artigos; nas páginas de editoria, a própria editoria.
+const naEditoria = links.some((l) => !l.exato && l.href.startsWith('/noticias/') && caminho.startsWith(l.href));
+const ativo = (l: (typeof links)[number]) =>
+  l.exato ? caminho.startsWith(l.href) && !naEditoria : caminho.startsWith(l.href);
 ---
 <header class="topo">
   <div class="container">
-    <a class="marca" href="/">{SITE.nome}</a>
+    <a class="marca" href="/" aria-label={`${SITE.nome}, página inicial`}><Logo tamanho={38} /></a>
     <nav class="nav" aria-label="Principal">
       {links.map((l) => (
-        <a href={l.href} aria-current={caminho.startsWith(l.href) ? 'page' : undefined}>{l.rotulo}</a>
+        <a href={l.href} aria-current={ativo(l) ? 'page' : undefined}>{l.rotulo}</a>
       ))}
     </nav>
   </div>
 </header>
+<Indicadores />
