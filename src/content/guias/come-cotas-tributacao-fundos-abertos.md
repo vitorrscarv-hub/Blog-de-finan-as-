@@ -16,7 +16,7 @@ draft: false
 gate: true
 ---
 
-Quem tem um fundo de investimento aberto de renda fixa, multimercado ou cambial costuma estranhar o extrato de maio e de novembro. O saldo em reais continua subindo ou descendo conforme a cota, mas a quantidade de cotas cai. Ninguém pediu resgate, e mesmo assim parte do patrimônio saiu. É o come-cotas, que nada mais é do que a cobrança antecipada do imposto de renda na fonte.
+Quem tem um fundo de investimento aberto de renda fixa, multimercado ou cambial costuma estranhar o extrato de maio e de novembro. O saldo em reais continua subindo ou descendo conforme a cota, mas a quantidade de cotas cai. Ninguém pediu resgate, e mesmo assim parte do patrimônio saiu. É o come-cotas, a cobrança antecipada do imposto de renda na fonte.
 
 Este guia descreve a regra geral para pessoa física residente no país, conforme as Leis 14.754/2023 e 11.033/2004. Há exceções por tipo de fundo, por situação do cotista e por regime de transição, e a regulamentação detalha pontos que a lei deixa em aberto. O texto é educacional e não substitui o regulamento do fundo nem o informe de rendimentos da instituição.
 
@@ -24,9 +24,9 @@ Este guia descreve a regra geral para pessoa física residente no país, conform
 
 A Lei 14.754/2023 diz, no artigo 17, que os rendimentos das aplicações em fundos de investimento ficam sujeitos à retenção do Imposto de Renda na Fonte (IRRF) em duas ocasiões. A primeira é o último dia útil dos meses de maio e novembro (inciso I). A segunda é a data da distribuição de rendimentos, da amortização ou do resgate de cotas, se ocorrer antes disso (inciso II).
 
-Essa retenção periódica é o come-cotas. O nome vem da forma de cobrança: o administrador do fundo, que é o responsável pela retenção e pelo recolhimento (artigo 31), em geral não pede um pagamento ao cotista: o imposto sai da própria posição, com a redução da quantidade de cotas por um valor equivalente. Essa forma de operar é prática de mercado, não está descrita na lei. O saldo em reais cai pelo valor do imposto.
+Essa retenção periódica é o come-cotas. O nome vem da forma de cobrança: o administrador do fundo, que é o responsável pela retenção e pelo recolhimento (artigo 31), em geral não pede um pagamento ao cotista. O imposto sai da própria posição, com a redução da quantidade de cotas por um valor equivalente, e o saldo em reais cai pelo valor do imposto. Essa forma de operar é prática de mercado, não está descrita na lei.
 
-Dois pontos merecem atenção. Primeiro, o come-cotas é cobrado mesmo que o cotista não tenha resgatado. Segundo, para a pessoa física residente no país o IRRF é definitivo (artigo 32, inciso I), e não adiantamento a acertar na declaração.
+O come-cotas é cobrado mesmo que o cotista não tenha resgatado. E, para a pessoa física residente no país, o IRRF é definitivo (artigo 32, inciso I), e não adiantamento a acertar na declaração.
 
 ## Qual é a alíquota
 
@@ -41,11 +41,11 @@ No resgate, a alínea b do mesmo dispositivo manda cobrar "o percentual compleme
 
 A conta, portanto, tem duas partes. O come-cotas retém 15% a cada maio e novembro. No resgate, a lei manda completar o percentual até a alíquota da tabela correspondente ao prazo. Em aplicação com mais de 720 dias, a alíquota da tabela também é de 15%, e a diferença em relação ao come-cotas é zero. Em aplicação mais curta, a diferença entre as alíquotas é de 7,5 pontos percentuais para quem resgata em até 180 dias, 5 pontos entre 181 e 360 dias e 2,5 pontos entre 361 e 720 dias. A lei que consultamos não detalha sobre qual base nem de que forma esse complemento é calculado; isso fica para a regulamentação e para o administrador.
 
-O texto legal que traz esses percentuais exibe uma marcação de remissão à Medida Provisória 1.303/2025, com a indicação de que a vigência dela foi encerrada. Para este guia, vale o texto que permanece no Planalto, com as alíquotas acima.
+O texto legal que traz esses percentuais exibe uma anotação remetendo à Medida Provisória 1.303/2025, com a indicação de que a vigência dela foi encerrada. Este guia usa o texto que permanece no Planalto, com as alíquotas acima.
 
 ## Sobre o que o imposto incide
 
-A base de cálculo não é o saldo inteiro, e sim o ganho. Pelo artigo 17, §5º, no come-cotas a base é a diferença positiva entre o valor da cota no dia anterior e o custo de aquisição da cota. No resgate, é a diferença positiva entre o preço do resgate e o custo de aquisição.
+A base de cálculo não é o saldo inteiro, e sim o ganho. Pelo artigo 17, §5º, no come-cotas a base é a diferença positiva entre o valor da cota no dia anterior e o custo de aquisição da cota (o valor pelo qual a cota entra na conta do cotista, ajustado como descrito a seguir). No resgate, é a diferença positiva entre o preço do resgate e o custo de aquisição.
 
 O custo de aquisição não é estático. Segundo o §2º, ele começa no preço pago pela cota e é acrescido da parte do valor da cota que já foi tributada antes. Depois que o come-cotas incide sobre um ganho, ele passa a fazer parte do custo e não é tributado de novo.
 
@@ -65,7 +65,7 @@ Somando as duas retenções, o imposto foi de R$ 1.350, que corresponde a 15% do
 
 Repare no que mudou em relação a um papel de renda fixa mantido até o vencimento: o valor total do imposto foi o mesmo, mas uma parte dele saiu antes. Os R$ 750 retirados em novembro deixaram de render a partir dali. É esse efeito de antecipação, e não uma alíquota maior, que torna o rendimento líquido de um fundo menor do que o de uma aplicação com a mesma rentabilidade bruta e tributação só no fim.
 
-Em um resgate dentro de 180 dias, a alíquota da tabela passa a ser de 22,5%, e a lei manda completar o que falta em relação aos 15% do come-cotas. A conta exata desse complemento, inclusive a base sobre a qual incide, depende da regulamentação e da apuração do administrador, e o extrato e o informe de rendimentos trazem o valor efetivamente retido. Por isso o exemplo acima se limita ao caso de mais de 720 dias.
+Por isso o exemplo se limita ao caso de mais de 720 dias. Em resgates mais curtos, a conta exata do complemento depende da regulamentação e da apuração do administrador, e o extrato e o informe de rendimentos trazem o valor efetivamente retido.
 
 ## O que o leitor observa no extrato
 
@@ -78,15 +78,15 @@ Nos meses de maio e novembro, quem tem fundo no regime geral costuma encontrar:
 
 No resgate, o extrato mostra o valor bruto, o IRRF retido e o líquido. O IRRF retido pelo administrador deve aparecer no informe de rendimentos da instituição.
 
-## Fundos de ações e FII têm regra diferente
+## Fundos de ações e imobiliários têm regra diferente
 
-Este guia trata da regra geral, e o come-cotas não vale para todo fundo. O artigo 17, §8º, estende a incidência a todos os fundos abertos ou fechados, mas ressalva as hipóteses previstas na própria lei e na legislação a que o artigo 39 se refere.
+O come-cotas não vale para todo fundo. O artigo 17, §8º, estende a incidência a todos os fundos abertos ou fechados, mas ressalva as hipóteses previstas na própria lei e na legislação a que o artigo 39 se refere.
 
 Nos fundos de investimento em ações, a Receita Federal informa que o imposto de renda é cobrado exclusivamente na fonte e no momento do resgate, à alíquota de 15%. Não há retenção periódica em maio e novembro (artigo 24, §1º), e isso depende de o fundo cumprir os requisitos legais de enquadramento como fundo de ações; se não cumprir, cai na regra geral. O imposto é retido pelo administrador, e os rendimentos são informados na declaração, na ficha de rendimentos sujeitos à tributação exclusiva ou definitiva. A própria Lei 14.754/2023 trata os fundos de ações dentro do regime específico dos fundos não sujeitos à tributação periódica (artigo 18, parágrafo único), desde que cumpram os requisitos dessa seção.
 
 Os fundos imobiliários (FII) têm outra lógica. Segundo a Receita, os lucros pagos por cota, que se assemelham a aluguéis, sofrem retenção na fonte de 20%. Já o ganho líquido obtido na venda ou no resgate das cotas também é tributado a 20%, mas calculado e pago pelo próprio investidor: nas operações em bolsa, da mesma forma que o ganho com ações; fora da bolsa, como ganho de capital na venda de bens e direitos. O mecanismo, portanto, é diferente de um fundo aberto de renda fixa: não há cancelamento de cotas em maio e novembro, e o imposto não se resolve com o complemento do resgate.
 
-FIP, FIDC e ETF também têm regras próprias na lei (artigos 18 e 26), então vale identificar o tipo de fundo antes de aplicar qualquer conta deste guia.
+Os FIP (fundos de investimento em participações), os FIDC (em direitos creditórios) e os ETF (fundos de índice negociados em bolsa) também têm regras próprias na lei (artigos 18 e 26). Por isso o tipo de fundo precisa ser identificado antes de qualquer conta deste guia.
 
 ## Fundos que já existiam em 2023
 
@@ -102,5 +102,3 @@ Algumas perguntas que o extrato e o regulamento respondem:
 - Qual é o prazo da aplicação, que define a alíquota total da tabela da Lei 11.033/2004?
 - Qual é o custo de aquisição por cota registrado hoje, já com as parcelas tributadas anteriormente?
 - A rentabilidade que o gestor divulga é bruta ou líquida de imposto?
-
-A tributação é só um dos componentes da comparação entre alternativas, ao lado de taxas, liquidez, risco e prazo. O que este guia busca é que o número que aparece no extrato deixe de ser uma surpresa: o come-cotas é antecipação de imposto, o resgate fecha a conta pela tabela do prazo, e o tipo de fundo define se esse mecanismo sequer se aplica.
