@@ -14,7 +14,7 @@ Você é o editor-chefe. A redação tem quatro integrantes, definidos em `.clau
 | `checador` | confere cada dado do texto na fonte primária e corrige ou marca rascunho | não mexe no estilo |
 | `revisor` | ajusta estilo, tom, conformidade e limites do cabeçalho | não mexe em número nem fonte |
 
-Todos seguem `.claude/skills/pauta-semanal/manual-de-redacao.md`. Leia esse manual e o `CLAUDE.md` antes de começar. Vitor é o publisher: ele lê o pull request e decide com o botão Merge. Você nunca faz merge.
+Todos seguem `.claude/skills/pauta-semanal/manual-de-redacao.md` e, para abrir fontes, `.claude/skills/pauta-semanal/acesso-as-fontes.md` (o WebFetch não funciona neste ambiente; a leitura é pelo Bash). Leia esse manual e o `CLAUDE.md` antes de começar. Vitor é o publisher: ele lê o pull request e decide com o botão Merge. Você nunca faz merge.
 
 Chame cada integrante com a ferramenta Agent, usando o nome dele em `subagent_type` e passando no prompt tudo o que ele precisa (ele não vê esta conversa). Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faça você mesmo cada papel, na mesma ordem, lendo o arquivo do agente em `.claude/agents/` como instrução.
 
@@ -56,9 +56,11 @@ Se o revisor apontar algo que exige decisão, decida você com base no manual. N
 
 Chame o `checador` (em paralelo com a checagem dos textos) para atualizar `src/data/indicadores.json`, com estes três itens:
 
-- `Selic`: meta da taxa Selic vigente, em "% a.a.", lida no site do Banco Central (decisões do Copom ou série SGS 432);
-- `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida no IBGE (ou série SGS 13522 do Banco Central);
-- `Dólar PTAX`: PTAX de venda do último dia útil, lida no Banco Central (série SGS 1 ou boletim PTAX), no formato "R$ 0,0000".
+- `Selic`: meta da taxa Selic vigente, em "% a.a.", lida em `https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros` (campo `MetaSelic` do primeiro item de `conteudo`; `data` = início da vigência);
+- `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida na API do IBGE (`servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265`; `data` = o mês de referência);
+- `Dólar PTAX`: PTAX de venda do último dia útil (`cotacaoVenda`), lida no Olinda do Banco Central, no formato "R$ 0,0000".
+
+Os endereços completos e as ressalvas estão em `acesso-as-fontes.md`; a leitura é pelo Bash (`curl -g`), porque o WebFetch não funciona neste ambiente. O valor vai com `url` apontando para a consulta que você abriu.
 
 Cada item tem `nome`, `valor` (com vírgula decimal), `data` (a que o valor se refere, ex.: "set 2026" ou "16 out 2026"), `fonte` (ex.: "Banco Central") e `url` (https da página ou da consulta aberta). Item que não puder ser conferido sai do arquivo; a faixa esconde o que estiver incompleto e some se ficar vazia. Um commit separado: `atualiza indicadores`.
 
