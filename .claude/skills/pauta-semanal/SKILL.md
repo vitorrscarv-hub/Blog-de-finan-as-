@@ -49,9 +49,11 @@ Se o revisor apontar algo que exige decisão, decida você com base no manual. N
 
 Chame o `checador` (em paralelo com a checagem dos textos) para atualizar `src/data/indicadores.json`, com estes três itens:
 
-- `Selic`: meta da taxa Selic vigente, em "% a.a.", lida no site do Banco Central (decisões do Copom ou série SGS 432);
-- `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida no IBGE (ou série SGS 13522 do Banco Central);
-- `Dólar PTAX`: PTAX de venda do último dia útil, lida no Banco Central (série SGS 1 ou boletim PTAX), no formato "R$ 0,0000".
+- `Selic`: meta da taxa Selic vigente, em "% a.a.", lida em `https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros` (campo `MetaSelic` do primeiro item de `conteudo`; `data` = início da vigência);
+- `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida na API do IBGE (`servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265`; `data` = o mês de referência);
+- `Dólar PTAX`: PTAX de venda do último dia útil (`cotacaoVenda`), lida no Olinda do Banco Central, no formato "R$ 0,0000".
+
+Os endereços completos e as ressalvas estão em `acesso-as-fontes.md`; a leitura é pelo Bash (`curl -g`), porque o WebFetch não funciona neste ambiente. O valor vai com `url` apontando para a consulta que você abriu.
 
 Cada item tem `nome`, `valor` (com vírgula decimal), `data` (a que o valor se refere, ex.: "set 2026" ou "16 out 2026"), `fonte` (ex.: "Banco Central") e `url` (https da página ou da consulta aberta). Item que não puder ser conferido sai do arquivo; a faixa esconde o que estiver incompleto e some se ficar vazia. Um commit separado: `atualiza indicadores`.
 
