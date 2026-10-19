@@ -69,7 +69,7 @@ Atemporal, no tema com menos guias publicados.
 Roda nos dois ciclos e mexe só em `src/data/calendario.json` (página `/calendario/`).
 
 - Ações: dividendos e JCP de empresas relevantes (mesmo critério da editoria Mercado) com pagamento nas próximas semanas, lidos nos avisos aos acionistas e comunicados ao mercado (dados abertos da CVM, RI da empresa). Cada linha tem empresa, ticker, tipo, valor bruto por ação, data com, data de pagamento e a fonte.
-- Fundos imobiliários: rendimento por cota, data-base e data de pagamento, lidos no comunicado do administrador. Fundo relevante: componente do IFIX ou com grande base de cotistas.
+- Fundos imobiliários: rendimento por cota, data-base e data de pagamento, lidos na consulta de proventos da B3 (`scripts/proventos-b3.mjs`) ou no comunicado do administrador. Fundo relevante: componente do IFIX ou com grande base de cotistas.
 - Só entra linha com valor, as duas datas e uma fonte aberta nesta sessão. Pagamento "a definir", valor estimado ou data não confirmada ficam de fora.
 - Linha com pagamento anterior à data da pauta sai da lista. O campo `atualizado` leva a data da pauta.
 - A lista não é completa e não é ranking: sem ordenar por rendimento, sem destaque de "melhores pagadores", sem projeção de proventos futuros.

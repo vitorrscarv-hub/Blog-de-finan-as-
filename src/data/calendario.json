@@ -62,5 +62,61 @@
       }
     }
   ],
-  "fiis": []
+  "fiis": [
+    {
+      "fundo": "FII XP MALLS",
+      "ticker": "XPML11",
+      "valorPorCota": 0.92,
+      "dataBase": "2026-10-16",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo XPML, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQTUwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII BTLG",
+      "ticker": "BTLG11",
+      "valorPorCota": 0.81,
+      "dataBase": "2026-10-15",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo BTLG, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJUTEciLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII ALIANZA",
+      "ticker": "ALZR11",
+      "valorPorCota": 0.084,
+      "dataBase": "2026-10-16",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo ALZR, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkFMWlIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII BTG SHOP",
+      "ticker": "BPML11",
+      "valorPorCota": 0.92,
+      "dataBase": "2026-10-16",
+      "dataPagamento": "2026-10-23",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo BPML, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJQTUwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII MAUA",
+      "ticker": "MCCI11",
+      "valorPorCota": 1,
+      "dataBase": "2026-10-13",
+      "dataPagamento": "2026-10-20",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo MCCI, consulta à base de proventos da B3 em 19/10/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1DQ0kiLCJ0eXBlRnVuZCI6N30="
+      }
+    }
+  ]
 }
