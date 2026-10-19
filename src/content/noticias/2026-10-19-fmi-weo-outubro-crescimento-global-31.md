@@ -22,8 +22,6 @@ gate: true
 
 O Fundo Monetário Internacional publicou em 13 de outubro de 2026 o World Economic Outlook, com o título "Resilience Under Strain, Urgent Choices". Segundo o FMI, o crescimento global deve desacelerar para 3,1% em 2026 e voltar a 3,4% em 2027. A inflação global cheia (a que inclui energia e alimentos) deve subir para 4,7% em 2026 e cair para 4,1% em 2027. São projeções do FMI, com dados disponíveis até 1º de outubro de 2026, e não resultados já observados.
 
-Para quem investe no Brasil, a pergunta útil é por onde esse cenário chega à carteira.
-
 ## Energia e inflação
 
 No resumo executivo, o FMI afirma que a economia global está resiliente, "mas de forma desigual", e que a atividade do primeiro semestre ficou melhor do que o esperado, apesar do que o fundo descreve como a guerra prolongada no Oriente Médio e das tensões comerciais. A projeção de inflação global teve revisão acumulada de 0,7 ponto percentual para cima, atribuída principalmente a energia e alimentos.
@@ -48,8 +46,6 @@ O FMI diz que os riscos estão inclinados para baixo e cita escalada de conflito
 
 Do lado positivo, o FMI lista investimento em IA mais persistente, ganhos de produtividade e distensão sustentada de tensões geopolíticas e comerciais.
 
-O capítulo 2, sobre crises de custo de vida, conclui que medidas que seguram preços podem exigir de 3 a 22 vezes mais recursos fiscais do que transferências temporárias e focalizadas.
+## O que o relatório coloca em jogo
 
-## Pontos a considerar
-
-Projeções do FMI são revisadas várias vezes ao ano. Para a carteira, os fatores que o relatório coloca em jogo são o preço do petróleo, os juros longos nas economias avançadas, o apetite por risco em emergentes e a concentração em empresas de tecnologia. Renda fixa pós-fixada, prefixada, atrelada à inflação e exposição cambial reagem a esses fatores de formas diferentes, e o peso de cada um depende do perfil e do prazo do investidor.
+Os fatores que o texto do FMI destaca são o preço do petróleo, os juros longos nas economias avançadas, o apetite por risco em emergentes e a concentração da expansão em poucas empresas de tecnologia. Taxas de juros e câmbio, que afetam títulos pós-fixados, prefixados, atrelados à inflação e posições em moeda estrangeira, estão entre os canais por onde esses fatores chegam ao mercado brasileiro.
