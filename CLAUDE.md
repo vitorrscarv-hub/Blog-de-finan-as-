@@ -22,9 +22,15 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 
 ## Pop-up de cadastro
 
+- Está desligado: `SITE.lead.ativo` é `false` (nenhum texto fica restrito). Só religar a pedido de Vitor.
 - Configuração em `SITE.lead` (`src/site.config.ts`): gatilho entre 30% e 40% do corpo, modo `obrigatorio` (padrão) ou `opcional`.
 - O texto completo fica sempre no HTML. Não esconder conteúdo no servidor; o JSON-LD marca `isAccessibleForFree: false` com `hasPart` em `.artigo-corpo`.
 - A validação do formulário e a de `functions/api/lead.js` precisam continuar iguais (nome, e-mail, WhatsApp com DDD de 10 ou 11 dígitos, consentimento, campo-armadilha `site`).
+
+## Painel de audiência
+
+- Painel oculto em `/painel-grafous/` (`src/pages/painel-grafous/`), dados em `functions/api/admin/resumo.js` (exige `ADMIN_TOKEN`, segredo do Cloudflare; nunca versionar) e medição em `src/scripts/medir.ts` + `functions/api/evento.js` (tabela `visitas` em `db/schema.sql`). Sem link no site, fora do sitemap, com `noindex`.
+- A medição não pode guardar IP, user agent, nome, e-mail nem cookie, e tem de respeitar DNT e Global Privacy Control. Não ligar o identificador de leitor ao cadastro (lead) sem pedido explícito e revisão da política de privacidade.
 
 ## Pauta semanal
 

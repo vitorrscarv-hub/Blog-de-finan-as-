@@ -5,5 +5,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.seudominio.com.br',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  // O painel interno fica fora do sitemap (e tem noindex).
+  integrations: [sitemap({ filter: (pagina) => !pagina.includes('/painel-grafous/') })],
 });

@@ -62,5 +62,9 @@ const tituloCompleto = title === SITE.nome ? title : `${title} | ${SITE.nome}`;
       <slot />
     </main>
     <Rodape />
+    <script>
+      import { medir } from '../scripts/medir';
+      medir();
+    </script>
   </body>
 </html>

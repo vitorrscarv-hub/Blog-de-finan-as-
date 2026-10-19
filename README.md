@@ -144,6 +144,8 @@ Textos com algum dado que a rotina não conseguiu conferir na fonte oficial vêm
 
 ## Como funciona o pop-up de cadastro
 
+**Desligado por enquanto.** `lead.ativo` em `src/site.config.ts` está em `false`: o pop-up não aparece, todos os textos abrem sem cadastro e o JSON-LD deixa de marcar conteúdo restrito. Para religar, troque para `true` (os testes de `popup.spec.ts` voltam a rodar sozinhos). A função `/api/lead` e a tabela `leads` continuam no lugar.
+
 - Só aparece em textos com `gate: true` e só depois que o leitor começa a rolar a página. Na abertura da página ele nunca aparece.
 - O ponto de abertura é sorteado a cada visita entre 30% e 40% do corpo do texto. A leitura é medida por uma linha imaginária a 60% da altura da tela: quando a parte do texto acima dessa linha passa do ponto sorteado, o pop-up abre. Os limites ficam em `lead.gatilhoMin` e `lead.gatilhoMax` em `src/site.config.ts`.
 - Pede nome, e-mail e WhatsApp com DDD (máscara `(11) 91234-5678`, 10 ou 11 números) e a autorização de uso dos dados, com link para `/privacidade/`. Há um campo invisível que pega robôs: cadastros que o preencherem recebem resposta de sucesso, mas não são gravados.
@@ -156,6 +158,25 @@ Textos com algum dado que a rotina não conseguiu conferir na fonte oficial vêm
 - Se o envio falhar (sem internet, por exemplo), o leitor vê um aviso e pode tentar de novo. Uma falha no webhook não bloqueia a liberação da leitura.
 
 Para ver o pop-up de novo no seu navegador, apague os dados do site (ou abra uma janela anônima).
+
+## Painel de audiência (oculto)
+
+O painel mostra quais matérias são mais lidas, de onde vêm os leitores e quem volta, com gráficos. Fica em `/painel-grafous/` (sem link em nenhuma página, fora do sitemap, com `noindex`). Para trocar o endereço, renomeie a pasta `src/pages/painel-grafous/` e ajuste `metricas.painel` em `src/site.config.ts` (e as duas linhas de `public/_headers`).
+
+**Como mede.** Cada página aberta manda um aviso para `/api/evento` (`src/scripts/medir.ts`); nos textos, ao sair da página, vai também até onde a pessoa leu e por quanto tempo a página ficou visível. Cada leitor é um código aleatório guardado no navegador (sem cookie), por isso o retorno vale por navegador: quem limpa os dados ou troca de aparelho aparece como outra pessoa. Não guarda IP, user agent, nome nem e-mail, ignora robôs e respeita "Não rastrear" (DNT) e o Global Privacy Control. Para desligar tudo, `metricas.ativo: false`.
+
+**O que mostra (7, 30 ou 90 dias, horário de Brasília):** visitas e visitantes únicos por dia; matérias mais lidas, com leitores únicos, tempo médio e % que leu até o fim (passou de 75% do texto); novos e que voltaram, e quantos dias diferentes cada visitante apareceu; os visitantes que voltaram, com as matérias que leram; origem, páginas de entrada, dispositivo e país.
+
+**Para ligar em produção:**
+
+1. Crie a tabela nova no banco que já existe (o arquivo é seguro de rodar de novo): `npx wrangler d1 execute blog-leads --remote --file=db/schema.sql`.
+2. No Cloudflare Pages, Settings, Variables and Secrets, crie o segredo **`ADMIN_TOKEN`** com um valor longo e aleatório (32 caracteres ou mais; por exemplo, o resultado de `openssl rand -base64 32`). Sem ele, a rota de dados responde 503. Faça o novo deploy para valer.
+3. Abra `/painel-grafous/`, digite a chave e entre. O navegador em que você entrar deixa de ser contado como leitor.
+4. (Recomendado) Coloque o Cloudflare Access na frente de `/painel-grafous/*` e `/api/admin/*` (Zero Trust, Access, Applications) para exigir seu e-mail antes mesmo de a chave ser pedida.
+
+Para testar no computador, crie `.dev.vars` (não vai para o repositório) com `ADMIN_TOKEN=uma-chave-de-teste-com-16-ou-mais-caracteres` e rode `npm run cf:db:local` e `npm run cf:dev`.
+
+A política de privacidade (`/privacidade/`) tem a seção de medição de audiência para o advogado revisar: confirmar a base legal e se o aviso de cookies/armazenamento é suficiente.
 
 ## Função /api/lead
 
