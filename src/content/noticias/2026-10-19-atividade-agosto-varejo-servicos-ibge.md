@@ -1,10 +1,10 @@
 ---
 title: "Varejo sobe 0,1% e serviços recuam 0,1% em agosto, mostra o IBGE"
-description: "Vendas do varejo avançaram 0,1% e o volume de serviços caiu 0,1% em agosto. Veja o que o ritmo da atividade pode indicar para os juros e a renda fixa."
+description: "Varejo subiu 0,1% e o volume de serviços caiu 0,1% em agosto, segundo o IBGE. Veja o que o ritmo da atividade diz sobre os juros."
 date: 2026-10-19
 editoria: "Brasil"
 keywords: ["volume de serviços", "comércio varejista", "Selic", "Boletim Focus", "PIB 2026"]
-teaser: "Varejo cresceu 0,1% e serviços caíram 0,1% em agosto, segundo o IBGE. Entenda o que a atividade morna pode significar para o ciclo de juros e para a sua renda fixa. [LINK]"
+teaser: "Varejo cresceu 0,1% e serviços caíram 0,1% em agosto, segundo o IBGE. Veja o que a atividade morna diz sobre os juros. [LINK]"
 fontes:
   - titulo: "IBGE: Em agosto, comércio varejista registra variação de 0,1% (15/10/2026)"
     url: "http://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48292-em-agosto-comercio-varejista-registra-variacao-0-1.html"
@@ -43,9 +43,9 @@ Fonte: IBGE.
 
 ## Por que isso interessa aos juros
 
-O Banco Central mantém a meta da Selic em 13,75% ao ano desde 17 de setembro, depois de reduzi-la de 14,00%, segundo o histórico de taxas publicado pela instituição. Juros nesse patamar funcionam, em teoria, como freio sobre o consumo e o crédito. Dados de atividade que mostram desaceleração costumam entrar na conta de quem acompanha o Copom, porque ajudam a medir se a demanda está esfriando.
+O Banco Central mantém a meta da Selic em 13,75% ao ano desde 17 de setembro, depois de reduzi-la de 14,00%, segundo o histórico de taxas publicado pela instituição. Juros nesse patamar encarecem o crédito e funcionam como freio sobre o consumo.
 
-O IPCA acumulado em 12 meses estava em 4,58% em setembro, conforme o IBGE, e o Boletim Focus mais recente, com data de 9 de outubro, traz mediana de 5,22% para o IPCA de 2026. O Copom olha preços, expectativas e atividade ao mesmo tempo, e dois indicadores de um único mês pesam pouco no conjunto. Este texto não prevê o que o comitê vai decidir; a decisão cabe a ele.
+O IPCA acumulado em 12 meses estava em 4,58% em setembro, conforme o IBGE, e o Boletim Focus mais recente, com data de 9 de outubro, traz mediana de projeções de 5,22% para o IPCA de 2026.
 
 ## O que o mercado projeta
 
@@ -55,7 +55,7 @@ O Boletim Focus, pesquisa do Banco Central com instituições financeiras, traz 
 
 Para quem tem renda fixa pós-fixada, o rendimento segue a Selic e o CDI, de modo que o caminho dos juros afeta diretamente o que o investimento entrega. Títulos prefixados e atrelados à inflação reagem também às expectativas de juros futuros, e por isso seus preços oscilam quando o mercado reavalia o ciclo. Quem carrega esses papéis até o vencimento recebe a taxa contratada; quem vende antes fica sujeito à marcação a mercado.
 
-A leitura da atividade também importa para a parte da carteira em ações e fundos multimercado, já que consumo e serviços respondem por boa parte da economia e dos resultados de empresas listadas. Atividade fraca pode pressionar lucros; juros menores, ao contrário, tendem a aliviar o custo de capital. Os dois efeitos caminham em direções opostas, e o balanço entre eles depende do perfil de cada carteira, do prazo e da tolerância a oscilações.
+A atividade chega também às ações e aos fundos multimercado, já que consumo e serviços pesam nos resultados de empresas listadas. Demanda fraca pode pressionar lucros, e juros altos elevam o custo de capital. O peso de cada efeito depende do perfil da carteira, do prazo e da tolerância a oscilações.
 
 ## O que observar
 

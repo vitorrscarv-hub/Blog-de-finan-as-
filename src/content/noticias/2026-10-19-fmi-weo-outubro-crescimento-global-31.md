@@ -22,42 +22,34 @@ gate: true
 
 O Fundo Monetário Internacional publicou em 13 de outubro de 2026 o World Economic Outlook, com o título "Resilience Under Strain, Urgent Choices". Segundo o FMI, o crescimento global deve desacelerar para 3,1% em 2026 e voltar a 3,4% em 2027. A inflação global cheia (a que inclui energia e alimentos) deve subir para 4,7% em 2026 e cair para 4,1% em 2027. São projeções do FMI, com dados disponíveis até 1º de outubro de 2026, e não resultados já observados.
 
-Para quem investe no Brasil, a pergunta útil é por onde esse cenário chega à carteira. O relatório aponta alguns canais.
+Para quem investe no Brasil, a pergunta útil é por onde esse cenário chega à carteira.
 
-## O que o FMI diz sobre energia e inflação
+## Energia e inflação
 
-No resumo executivo, o FMI afirma que a economia global "voltou a mostrar resiliência, mas de forma desigual", com a atividade do primeiro semestre de 2026 melhor do que o esperado, apesar do que descreve como a guerra prolongada no Oriente Médio e de tensões comerciais. A revisão da inflação global é de 0,7 ponto percentual para cima na comparação acumulada, e o fundo atribui a alta temporária principalmente aos preços de energia e alimentos.
+No resumo executivo, o FMI afirma que a economia global está resiliente, "mas de forma desigual", e que a atividade do primeiro semestre ficou melhor do que o esperado, apesar do que o fundo descreve como a guerra prolongada no Oriente Médio e das tensões comerciais. A projeção de inflação global teve revisão acumulada de 0,7 ponto percentual para cima, atribuída principalmente a energia e alimentos.
 
-O capítulo 1 traz números do mercado de petróleo. Segundo o FMI, cerca de 20 milhões de barris por dia passavam pelo Estreito de Hormuz antes da guerra, aproximadamente um quarto do comércio marítimo de petróleo. Os preços chegaram a US$ 126 por barril no fim de março, e a equipe do fundo projeta uma média de US$ 96 por barril em 2026 para o índice de preços spot de petróleo, com energia seguindo acima do patamar anterior à guerra. Os contratos futuros de Brent, ainda segundo o relatório, indicam US$ 79 no fim de 2027.
-
-O FMI também registra que a oferta reagiu: a produção fora do Golfo Pérsico aumentou, e o Brasil aparece entre os países citados nesse aumento, ao lado de Cazaquistão, Estados Unidos e Venezuela.
+O capítulo 1 traz números do petróleo. Segundo o FMI, cerca de 20 milhões de barris por dia passavam pelo Estreito de Hormuz antes da guerra, aproximadamente um quarto do comércio marítimo do produto. Os preços chegaram a US$ 126 por barril no fim de março. A equipe do fundo projeta média de US$ 96 por barril em 2026 para o índice de preços spot de petróleo, com energia acima do patamar anterior à guerra. Os contratos futuros de Brent indicam US$ 79 no fim de 2027, segundo o relatório. O FMI também registra que a produção fora do Golfo Pérsico aumentou, e o Brasil está entre os países citados.
 
 ## O que o fundo projeta para o Brasil
 
-O capítulo 1 projeta crescimento de 2,2% para o PIB brasileiro em 2026 e de 1,9% em 2027. O FMI atribui a desaceleração a condições monetárias que seguem restritivas, à retirada do apoio fiscal e à incerteza global. Para a América Latina e o Caribe como um todo, a projeção é de 2,3% em 2026 e 2,5% em 2027.
+O capítulo 1 projeta crescimento de 2,2% para o PIB brasileiro em 2026 e de 1,9% em 2027. O FMI atribui a desaceleração a condições monetárias ainda restritivas, à retirada do apoio fiscal e à incerteza global. Para a América Latina e o Caribe, a projeção é de 2,3% em 2026 e 2,5% em 2027.
 
-Para comparação, o Banco Central mantém a meta Selic em 13,75% desde 17 de setembro de 2026, decisão da reunião 281 do Copom. Esse é o pano de fundo doméstico sobre o qual o cenário externo vai atuar.
+No plano doméstico, o Banco Central mantém a meta Selic em 13,75% desde 17 de setembro de 2026, decisão da reunião 281 do Copom.
 
-## Juros e câmbio: o que pode mudar
+## Juros e câmbio
 
-O resumo executivo descreve um mundo dividido. Economias importadoras de energia e sem ligação forte com a cadeia de tecnologia são, segundo o FMI, as que enfrentam o cenário mais difícil: contas de importação mais altas, pressão cambial, renda real menor e menos espaço fiscal. O capítulo 1 acrescenta que, para esse grupo de países emergentes, déficits externos maiores podem pressionar o câmbio e exigir política monetária mais apertada.
+O FMI descreve uma economia mundial dividida. As economias importadoras de energia e sem ligação forte com a cadeia de tecnologia enfrentam, segundo o fundo, o cenário mais difícil: contas de importação maiores, pressão cambial, renda real menor e menos espaço fiscal. O capítulo 1 acrescenta que, entre emergentes importadores de energia com pouco espaço fiscal, déficits externos maiores e inflação mais alta podem exigir política monetária mais apertada.
 
-O Brasil não se encaixa de forma simples nessa descrição, e o relatório não o classifica nesse grupo. Para o leitor, o ponto é outro: o mecanismo pelo qual choques de energia e de juros externos chegam a países emergentes passa por câmbio, prêmio de risco e expectativas de inflação.
+O fundo também testa um cenário adverso, apresentado como exercício e não como previsão. Nele, a guerra se prolonga até junho de 2027, o petróleo chega a US$ 130 entre o quarto trimestre de 2026 e o primeiro de 2027, e o prêmio de prazo (a remuneração extra exigida para carregar títulos longos) sobe 60 pontos-base nas economias avançadas e nos emergentes, exceto a China. Os juros básicos subiriam 50 pontos-base nas avançadas e 25 nas emergentes em 2027. O resultado, segundo o FMI, seria crescimento mundial menor e inflação maior em 2027 que no cenário-base.
 
-O FMI testa um cenário adverso, apresentado como exercício e não como previsão. Nele, a guerra se prolonga até junho de 2027, o petróleo chega a US$ 130 entre o quarto trimestre de 2026 e o primeiro de 2027, e o prêmio de prazo (a remuneração extra exigida para carregar títulos longos) sobe 60 pontos-base nas economias avançadas e nos emergentes, exceto a China. Os juros básicos subiriam 50 pontos-base nas economias avançadas e 25 nos emergentes em 2027. Nesse exercício, o fundo conclui que o crescimento mundial em 2027 seria menor e a inflação maior que no cenário-base.
+## Riscos listados
 
-Em termos práticos, um prêmio de prazo mais alto lá fora tende a encarecer o financiamento também aqui, e isso interessa a quem tem títulos prefixados ou atrelados à inflação marcados a mercado, e a quem tem exposição a ações sensíveis a juros.
-
-## Riscos listados pelo FMI
-
-O fundo diz que os riscos estão inclinados para baixo e cita quatro: escalada de conflitos, reavaliação das expectativas sobre inteligência artificial, tensões comerciais renovadas e vulnerabilidades fiscais. Sobre a IA, o relatório afirma que uma reavaliação da lucratividade pode derrubar investimentos, provocar correções nas bolsas e apertar as condições financeiras. Para quem tem ações americanas de tecnologia em dólar, por exemplo, o ponto é a concentração, tema que o próprio blog do FMI aborda ao dizer que a expansão depende de poucas empresas, setores e economias.
+O FMI diz que os riscos estão inclinados para baixo e cita escalada de conflitos, reavaliação das expectativas sobre inteligência artificial, tensões comerciais renovadas e vulnerabilidades fiscais. Sobre a IA, o relatório afirma que uma reavaliação da lucratividade pode reduzir investimentos, provocar correções nas bolsas e apertar as condições financeiras. O blog do fundo observa que a expansão depende de poucas empresas, setores e economias.
 
 Do lado positivo, o FMI lista investimento em IA mais persistente, ganhos de produtividade e distensão sustentada de tensões geopolíticas e comerciais.
 
-## Um dado do capítulo 2
-
-O capítulo 2 analisa crises de custo de vida e conclui que medidas que seguram preços podem exigir de 3 a 22 vezes mais recursos fiscais do que transferências temporárias e focalizadas. A conclusão do fundo é que governos devem preservar os sinais de preço. É um dado de contexto para acompanhar o debate fiscal sobre subsídios a combustíveis e energia, em qualquer país.
+O capítulo 2, sobre crises de custo de vida, conclui que medidas que seguram preços podem exigir de 3 a 22 vezes mais recursos fiscais do que transferências temporárias e focalizadas.
 
 ## Pontos a considerar
 
-Projeções do FMI são revisadas várias vezes ao ano, e a próxima edição trará novos números. O que costuma pesar na carteira é a combinação entre o preço do petróleo, a trajetória dos juros longos nos Estados Unidos e na Europa e o apetite por risco em emergentes. Quem tem renda fixa pós-fixada, prefixada, inflação e exposição cambial sente esses fatores de formas diferentes, e o peso de cada um depende do perfil e do prazo de cada carteira.
+Projeções do FMI são revisadas várias vezes ao ano. Para a carteira, os fatores que o relatório coloca em jogo são o preço do petróleo, os juros longos nas economias avançadas, o apetite por risco em emergentes e a concentração em empresas de tecnologia. Renda fixa pós-fixada, prefixada, atrelada à inflação e exposição cambial reagem a esses fatores de formas diferentes, e o peso de cada um depende do perfil e do prazo do investidor.

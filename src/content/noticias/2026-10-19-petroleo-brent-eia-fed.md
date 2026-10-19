@@ -16,13 +16,15 @@ fontes:
     url: "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm"
   - titulo: "Banco Central: cotação do dólar PTAX (API Olinda)"
     url: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='10-16-2026'&$format=json"
+  - titulo: "Banco Central: Expectativas de Mercado, Boletim Focus (API Olinda, câmbio, anual)"
+    url: "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais?$top=5&$filter=Indicador%20eq%20'C%C3%A2mbio'%20and%20DataReferencia%20eq%20'2026'%20and%20Data%20eq%20'2026-10-09'&$format=json"
   - titulo: "Banco Central: histórico das taxas de juros e meta Selic"
     url: "https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros"
 draft: false
 gate: true
 ---
 
-O preço do petróleo Brent, referência para boa parte do mercado mundial, segue em patamar elevado. Segundo a série diária da Agência de Informação de Energia dos EUA (EIA), o Brent spot fechou a semana de 5 a 9 de outubro entre US$ 125,44 e US$ 130,18 por barril. Na semana seguinte, registrou US$ 129,95 na segunda-feira (12), US$ 125,78 na terça (13) e US$ 126,55 na quarta (14). Os dados de 15 e 16 de outubro ainda não estavam publicados na página quando ela foi consultada. Para comparação, a mesma série mostra US$ 69,56 em 6 de julho.
+O preço do petróleo Brent, referência para boa parte do mercado mundial, segue em patamar elevado. Segundo a série diária da Agência de Informação de Energia dos EUA (EIA), o Brent spot oscilou na semana de 5 a 9 de outubro entre US$ 125,44 e US$ 130,18 por barril. Na semana seguinte, registrou US$ 129,95 na segunda-feira (12), US$ 125,78 na terça (13) e US$ 126,55 na quarta (14). Os dados de 15 e 16 de outubro ainda não estavam publicados na página quando ela foi consultada.
 
 ## O que a EIA e o Fed dizem sobre o contexto
 
@@ -36,9 +38,9 @@ Do lado do Fed, o comunicado de 16 de setembro anunciou alta de 0,25 ponto perce
 
 O primeiro canal é a inflação. Energia entra direto nos índices de preços e indiretamente nos custos de transporte e insumos. A ata do Fed registra exatamente esse ponto, e a EIA informa que a gasolina varejista nos EUA teve média de US$ 4,35 por galão em setembro e o diesel, US$ 6,29. No Brasil, o efeito sobre combustíveis depende de câmbio, de impostos e da política de preços de cada distribuidor e refinador, de modo que a variação do Brent não se repassa de forma mecânica à bomba.
 
-O segundo canal são os juros americanos. Um Fed que mantém ou eleva juros para conter inflação sustenta os rendimentos dos títulos do Tesouro dos EUA. A ata observa que os juros de títulos do Tesouro subiram cerca de 35 pontos-base entre os prazos de 2 e 10 anos no intervalo entre as reuniões, e que parte do movimento refletiu a trajetória esperada da política monetária e a evolução geopolítica. Juros maiores lá fora costumam reduzir o diferencial em relação à renda fixa local.
+O segundo canal são os juros americanos. Juros mais altos do Fed tendem a sustentar os rendimentos dos títulos do Tesouro dos EUA. A ata observa que os rendimentos nominais do Tesouro subiram cerca de 35 pontos-base ao longo do trecho de 2 a 10 anos da curva no intervalo entre as reuniões. Parte da alta refletiu a trajetória esperada da política monetária e a força dos dados econômicos, e comentários de mercado citados na ata apontaram também desdobramentos geopolíticos. Juros maiores lá fora costumam reduzir o diferencial em relação à renda fixa local.
 
-O terceiro é o câmbio. O dólar PTAX, calculado pelo Banco Central, foi de R$ 5,0441 em 14 de outubro, R$ 5,0521 em 15 de outubro e R$ 5,0826 em 16 de outubro. O Boletim Focus de 9 de outubro trazia mediana de R$ 5,1535 para o câmbio no fim de 2026, projeção do mercado coletada pelo Banco Central. O caminho do dólar frente ao real não se deduz só do Brent.
+O terceiro é o câmbio. O dólar PTAX, calculado pelo Banco Central, foi de R$ 5,0441 em 14 de outubro, R$ 5,0521 em 15 de outubro e R$ 5,0826 em 16 de outubro (cotação de venda). O Boletim Focus de 9 de outubro projetava mediana de R$ 5,1535 para o câmbio no fim de 2026, expectativa do mercado coletada pelo Banco Central. O caminho do dólar frente ao real não se deduz só do Brent.
 
 O quarto é a política monetária brasileira. A meta Selic está em 13,75% desde 17 de setembro, conforme o histórico do Banco Central. Preços de combustíveis e câmbio são variáveis que pesam na formação de preços e nas expectativas de inflação, e essas expectativas entram nas taxas de títulos prefixados e atrelados à inflação.
 
