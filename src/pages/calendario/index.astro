@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+import dados from '../../data/calendario.json';
+import { lerCalendario, porPagamento, reais } from '../../scripts/calendario';
+import { dataCurta } from '../../scripts/formatos';
+import { nomeDaFonte } from '../../scripts/fontes';
+
+// Dado incompleto derruba o build (veja validarCalendario).
+const calendario = lerCalendario(dados);
+const acoes = [...calendario.acoes].sort(porPagamento);
+const fiis = [...calendario.fiis].sort(porPagamento);
+const dia = (iso: string) => dataCurta(new Date(`${iso}T00:00:00Z`));
+const filtros = [
+  { rotulo: 'Ações', href: '#acoes' },
+  { rotulo: 'Fundos imobiliários', href: '#fiis' },
+];
+---
+<Base
+  title="Calendário de proventos"
+  description="Dividendos e juros sobre capital próprio de ações e rendimentos de fundos imobiliários: valores e datas declarados, com a fonte de cada um."
+>
+  <section class="container">
+    <header class="pagina-titulo">
+      <h1>Calendário de proventos</h1>
+      <p>
+        Dividendos e juros sobre capital próprio (JCP) de ações, e rendimentos de fundos imobiliários, com os valores
+        e as datas declarados pelas companhias e pelos administradores.
+      </p>
+      <p class="meta">Atualizado em <time datetime={calendario.atualizado}>{dia(calendario.atualizado)}</time></p>
+    </header>
+    <nav class="filtro" aria-label="Seções do calendário">
+      {filtros.map((f) => <a href={f.href}>{f.rotulo}</a>)}
+    </nav>
+
+    <section class="tema" id="acoes" aria-labelledby="titulo-acoes">
+      <h2 id="titulo-acoes">Ações: dividendos e JCP</h2>
+      {acoes.length === 0 ? (
+        <p class="meta vazio">Nenhum provento de ações no calendário no momento.</p>
+      ) : (
+        <div class="tabela-rolavel" tabindex="0" role="region" aria-labelledby="titulo-acoes">
+          <table class="tabela-proventos" data-tabela="acoes">
+            <thead>
+              <tr>
+                <th scope="col">Empresa</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Valor por ação (bruto)</th>
+                <th scope="col">Data com</th>
+                <th scope="col">Pagamento</th>
+                <th scope="col">Fonte</th>
+              </tr>
+            </thead>
+            <tbody>
+              {acoes.map((p) => (
+                <tr>
+                  <th scope="row">{p.empresa} <span class="meta">{p.ticker}</span></th>
+                  <td>{p.tipo}</td>
+                  <td>{reais(p.valorPorAcao)}</td>
+                  <td><time datetime={p.dataCom}>{dia(p.dataCom)}</time></td>
+                  <td><time datetime={p.dataPagamento}>{dia(p.dataPagamento)}</time></td>
+                  <td><a href={p.fonte.url} rel="noopener" target="_blank" title={p.fonte.titulo}>{nomeDaFonte(p.fonte.url)}</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+
+    <section class="tema" id="fiis" aria-labelledby="titulo-fiis">
+      <h2 id="titulo-fiis">Fundos imobiliários: rendimentos</h2>
+      {fiis.length === 0 ? (
+        <p class="meta vazio">Nenhum rendimento de fundo imobiliário no calendário no momento.</p>
+      ) : (
+        <div class="tabela-rolavel" tabindex="0" role="region" aria-labelledby="titulo-fiis">
+          <table class="tabela-proventos" data-tabela="fiis">
+            <thead>
+              <tr>
+                <th scope="col">Fundo</th>
+                <th scope="col">Valor por cota</th>
+                <th scope="col">Data-base</th>
+                <th scope="col">Pagamento</th>
+                <th scope="col">Fonte</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fiis.map((p) => (
+                <tr>
+                  <th scope="row">{p.fundo} <span class="meta">{p.ticker}</span></th>
+                  <td>{reais(p.valorPorCota)}</td>
+                  <td><time datetime={p.dataBase}>{dia(p.dataBase)}</time></td>
+                  <td><time datetime={p.dataPagamento}>{dia(p.dataPagamento)}</time></td>
+                  <td><a href={p.fonte.url} rel="noopener" target="_blank" title={p.fonte.titulo}>{nomeDaFonte(p.fonte.url)}</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+
+    <aside class="nota-calendario" aria-label="Como ler o calendário">
+      <h2>Como ler</h2>
+      <ul>
+        <li>
+          Data com é o último dia em que ter o ativo dá direito ao provento; quem compra depois dessa data
+          negocia o ativo sem o provento. Em fundos imobiliários, a data-base cumpre esse papel.
+        </li>
+        <li>Valores e datas são os declarados nos documentos citados e podem ser alterados pela companhia ou pelo administrador.</li>
+        <li>O JCP aparece pelo valor bruto declarado; a tributação de cada provento segue a regra em vigor e está na fonte de cada linha.</li>
+        <li>
+          A lista reúne empresas e fundos relevantes por tamanho e negociação e não é completa. Não é ranking, não indica
+          compra ou venda e não projeta proventos futuros.
+        </li>
+      </ul>
+    </aside>
+  </section>
+</Base>

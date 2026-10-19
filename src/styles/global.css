@@ -328,3 +328,15 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
   .lead-caixa { padding: 22px 18px 18px; }
   .lead-caixa > p { font-size: .95rem; }
 }
+
+/* Calendário de proventos */
+.tabela-rolavel { overflow-x: auto; margin: 12px 0 8px; border-top: 2px solid var(--filete-forte); }
+.tabela-rolavel:focus-visible { outline-offset: 0; }
+.tabela-proventos { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: .92rem; font-variant-numeric: tabular-nums; }
+.tabela-proventos th, .tabela-proventos td { padding: 10px 14px 10px 0; border-bottom: 1px solid var(--filete); text-align: left; vertical-align: top; white-space: nowrap; }
+.tabela-proventos thead th { font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-suave); font-weight: 700; }
+.tabela-proventos tbody th { font-weight: 600; }
+.nota-calendario { margin: 36px 0 12px; padding: 16px 0 0; border-top: 1px solid var(--filete); max-width: 70ch; color: var(--tinta-suave); font-size: .92rem; }
+.nota-calendario h2 { font-size: 1rem; font-stretch: 85%; margin: 0 0 8px; color: var(--tinta); }
+.nota-calendario ul { margin: 0; padding-left: 1.1em; }
+.nota-calendario li { margin: 0 0 6px; }

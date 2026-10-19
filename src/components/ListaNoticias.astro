@@ -18,9 +18,11 @@ const titulo = editoria ? `Notícias da semana: ${editoria}` : 'Notícias da sem
 const descricao =
   editoria === 'Internacional'
     ? 'Economia, política e conflitos no exterior, e o que isso muda para quem investe no Brasil.'
-    : editoria === 'Brasil'
-      ? 'Juros, inflação, tributação e regras que mudaram no Brasil, e o efeito para quem investe.'
-      : 'O que aconteceu na semana, no Brasil e no exterior, e o que muda para quem investe.';
+    : editoria === 'Mercado'
+      ? 'Empresas e ações: fatos relevantes, fusões e aquisições, recuperações judiciais e o que mudam para quem investe.'
+      : editoria === 'Brasil'
+        ? 'Juros, inflação, tributação e regras que mudaram no Brasil, e o efeito para quem investe.'
+        : 'O que aconteceu na semana, no Brasil e no exterior, e o que muda para quem investe.';
 
 const filtros = [
   { rotulo: 'Todas', href: '/noticias/', ativo: !editoria },

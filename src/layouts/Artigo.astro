@@ -15,9 +15,10 @@ interface Props {
   gate: boolean;
   secao: { nome: string; href: string };
   leitura: number;
+  pais?: string;
 }
 
-const { title, description, date, updated, keywords, fontes, gate, secao, leitura } = Astro.props;
+const { title, description, date, updated, keywords, fontes, gate, secao, leitura, pais } = Astro.props;
 
 // As matérias não levam assinatura visível; o autor continua nos metadados para o Google,
 // e o blog aparece como publicador.
@@ -44,6 +45,8 @@ const jsonLd: Record<string, unknown> = {
   author: autor,
   publisher: publicador,
 };
+
+if (pais) jsonLd.contentLocation = { '@type': 'Place', name: pais };
 
 // Marcação recomendada pelo Google para conteúdo que pede cadastro:
 // evita que o bloqueio seja tratado como cloaking.
@@ -77,6 +80,7 @@ if (gate) {
         <p class="meta meta-artigo">
           <span><time datetime={date.toISOString()}>{dataBR(date)}</time></span>
           {updated && <span>atualizado em <time datetime={updated.toISOString()}>{dataBR(updated)}</time></span>}
+          {pais && <span>{pais}</span>}
           <span>{leitura} min de leitura</span>
         </p>
       </div>

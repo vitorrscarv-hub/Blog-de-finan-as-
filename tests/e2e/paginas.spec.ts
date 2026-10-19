@@ -39,7 +39,7 @@ test('rodapé traz as credenciais do autor e o aviso legal', async ({ page }) =>
 test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO', async ({ page }) => {
   const [href] = await linksDe(page, '/noticias/');
   await page.goto(href);
-  await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Internacional)$/);
+  await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Mercado|Internacional)$/);
   await expect(page.locator('.linha-fina')).toBeVisible();
   const meta = page.locator('.artigo-cabecalho .assinatura');
   // Abaixo do título vai a fonte, não o nome do autor.
@@ -90,7 +90,7 @@ test('filtro de editorias em /noticias/', async ({ page }) => {
   const total = await page.locator('.card').count();
 
   let somadas = 0;
-  for (const [rotulo, caminho] of [['Brasil', '/noticias/brasil/'], ['Internacional', '/noticias/internacional/']]) {
+  for (const [rotulo, caminho] of [['Brasil', '/noticias/brasil/'], ['Mercado', '/noticias/mercado/'], ['Internacional', '/noticias/internacional/']]) {
     await filtro.getByRole('link', { name: rotulo }).click();
     await expect(page).toHaveURL(new RegExp(`${caminho}$`));
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(`Notícias da semana: ${rotulo}`);
@@ -103,6 +103,22 @@ test('filtro de editorias em /noticias/', async ({ page }) => {
   }
   // Toda notícia está em exatamente uma editoria.
   expect(somadas).toBe(total);
+});
+
+test('calendário de proventos tem as duas seções, o aviso e menu', async ({ page }) => {
+  await page.goto('/calendario/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Calendário de proventos');
+  await expect(page.getByRole('heading', { name: /^Ações: dividendos e JCP/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /^Fundos imobiliários: rendimentos/ })).toBeVisible();
+  await expect(page.locator('.nota-calendario')).toContainText('não indica compra ou venda');
+  await expect(page.locator('nav.nav').getByRole('link', { name: 'Calendário' })).toHaveAttribute('aria-current', 'page');
+  // Toda linha tem fonte https; sem linha, a página mostra a mensagem de vazio.
+  for (const link of await page.locator('.tabela-proventos tbody a').all()) {
+    await expect(link).toHaveAttribute('href', /^https:\/\//);
+  }
+  // A página não pode estourar a largura da tela (a tabela rola dentro do próprio quadro).
+  const largura = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(largura).toBeLessThanOrEqual(0);
 });
 
 test('privacidade tem os campos para preencher', async ({ page }) => {

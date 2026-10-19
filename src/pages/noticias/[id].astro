@@ -22,6 +22,7 @@ const d = entry.data;
   gate={d.gate}
   secao={{ nome: `Notícias da semana · ${d.editoria}`, href: `/noticias/${slugEditoria(d.editoria)}/` }}
   leitura={minutosDeLeitura(entry.body)}
+  pais={d.pais}
 >
   <Content />
 </Artigo>
