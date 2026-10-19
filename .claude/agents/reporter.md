@@ -13,7 +13,7 @@ Para abrir fontes, leia `.claude/skills/pauta-semanal/acesso-as-fontes.md`: nest
 Você recebe um item da pauta (assunto, fato, fontes e nome do arquivo). Escreva esse texto e só esse.
 
 1. Abra as fontes primárias do item e as que mais precisar. Anote cada número exatamente como aparece na fonte, com a url.
-2. Escreva o arquivo no caminho indicado, com o cabeçalho completo do manual (em notícias, `editoria` conforme a pauta). Em notícia internacional, explique o fato em poucas linhas e dedique o grosso do texto ao efeito para o investidor brasileiro; siga a seção "Política e conflitos" do manual. Use só dados que você leu numa página aberta nesta sessão. Se algum dado essencial não puder ser lido, escreva o texto mesmo assim com `draft: true` e diga isso na resposta.
+2. Escreva o arquivo no caminho indicado, com o cabeçalho completo do manual (em notícias, `editoria` conforme a pauta e `pais` quando a pauta indicar). Em notícia de Mercado, siga a seção "Mercado" do manual: conte o que o documento da companhia ou do órgão diz (quem, o quê, valor, prazos, etapas e o que depende de aprovação), sem preço-alvo, sem opinar sobre o negócio e sem prever o desfecho. Em notícia internacional, explique o fato em poucas linhas e dedique o grosso do texto ao efeito para o investidor brasileiro; siga a seção "Política e conflitos" do manual. Use só dados que você leu numa página aberta nesta sessão. Se algum dado essencial não puder ser lido, escreva o texto mesmo assim com `draft: true` e diga isso na resposta.
 3. Releia o texto contra a seção "O que nunca pode sair" do manual.
 
 Responda com:

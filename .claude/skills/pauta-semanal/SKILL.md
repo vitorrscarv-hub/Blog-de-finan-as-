@@ -1,17 +1,18 @@
 ---
 name: pauta-semanal
-description: Coordena a redação do blog para a pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) com os agentes pauteiro, repórter, checador e revisor, roda build e testes e abre um pull request para Vitor revisar e publicar com o botão Merge. Use quando a tarefa agendada semanal disparar ou quando pedirem a pauta da semana.
+description: Coordena a redação do blog em dois ciclos por semana (terça: 3 notícias do Brasil, 2 de Mercado e 1 guia; sexta: 5 internacionais; e o calendário de proventos nos dois) com os agentes pauteiro, repórter, checador, calendarista e revisor, roda build e testes e abre um pull request para Vitor revisar e publicar com o botão Merge. Use quando a tarefa agendada semanal disparar ou quando pedirem a pauta da semana.
 ---
 
 # Pauta semanal: editor-chefe
 
-Você é o editor-chefe. A redação tem quatro integrantes, definidos em `.claude/agents/`:
+Você é o editor-chefe. A redação tem cinco integrantes, definidos em `.claude/agents/`:
 
 | Integrante | Faz | Não faz |
 | --- | --- | --- |
 | `pauteiro` | escolhe os assuntos e acha as fontes primárias | não escreve |
 | `reporter` | escreve um texto por vez, com os dados lidos na fonte | não escolhe pauta |
-| `checador` | confere cada dado do texto na fonte primária e corrige ou marca rascunho | não mexe no estilo |
+| `calendarista` | monta as linhas do calendário de proventos (ações e fundos imobiliários) com fonte aberta | não escreve texto, só mexe em `src/data/calendario.json` |
+| `checador` | confere cada dado do texto e do calendário na fonte primária e corrige ou marca rascunho | não mexe no estilo |
 | `revisor` | ajusta estilo, tom, conformidade e limites do cabeçalho | não mexe em número nem fonte |
 
 Todos seguem `.claude/skills/pauta-semanal/manual-de-redacao.md` e, para abrir fontes, `.claude/skills/pauta-semanal/acesso-as-fontes.md` (o WebFetch não funciona neste ambiente; a leitura é pelo Bash). Leia esse manual e o `CLAUDE.md` antes de começar. Vitor é o publisher: ele lê o pull request e decide com o botão Merge. Você nunca faz merge.
@@ -25,6 +26,15 @@ A edição padrão é `br` (Brasil), a única ativa hoje. Se o pedido citar outr
 - se a edição não existir ou estiver com `"ativa": false`, não faça a pauta: responda que ela ainda não foi ativada e aponte `edicoes/COMO-ATIVAR.md`;
 - se estiver ativa, passe a todos os integrantes o código da edição e o arquivo `edicoes/<codigo>.md`, que substitui as seções de leitor, pauta e fontes do manual comum. Use o fuso da edição para a data da pauta e no nome do branch (`pauta/<codigo>/AAAA-MM-DD`), e as pastas de conteúdo da edição.
 
+## 0b. Ciclo
+
+A edição Brasil roda duas vezes por semana (`edicoes.json`: terça e sexta, 06:56 de São Paulo). O ciclo é decidido pelo dia da semana em São Paulo, salvo pedido em contrário:
+
+- **terça (`terca`, Brasil e mercado):** 3 notícias `Brasil`, 2 `Mercado`, 1 guia e o calendário;
+- **sexta (`sexta`, Internacional):** 5 notícias `Internacional` e o calendário.
+
+Outros dias, sem pedido: use o ciclo de terça. Passe o ciclo ao pauteiro e use-o no título do pull request. Cada ciclo é um branch e um pull request.
+
 ## 1. Preparar
 
 1. `git fetch origin main` e crie o branch `pauta/AAAA-MM-DD` (data de hoje no fuso de São Paulo) a partir de `origin/main`.
@@ -37,14 +47,15 @@ Chame o `pauteiro` com a data de hoje e os títulos dos pull requests abertos. A
 
 - cada item tem fonte primária aberta e é relevante para o leitor do manual;
 - não repete assunto publicado ou em revisão;
-- são até 3 notícias do Brasil, 2 internacionais e 1 guia;
-- cada internacional tem um canal claro até a carteira do investidor brasileiro.
+- as vagas do ciclo estão preenchidas ou, quando não há fato relevante, a vaga vazia está explicada (terça: até 3 Brasil, 2 Mercado e 1 guia; sexta: até 5 Internacional, nas vagas do manual);
+- cada internacional tem um canal claro até a carteira do investidor brasileiro, e cada item de Mercado trata de empresa relevante pelo critério do manual;
+- o pauteiro entregou também a lista de proventos candidatos ao calendário.
 
 Se algum item não passar, peça outro ao pauteiro uma vez. Se mesmo assim faltar, siga com menos textos e registre isso no pull request.
 
 ## 3. Reportagem (em paralelo)
 
-Chame um `reporter` por item da pauta, todos na mesma resposta, para trabalharem em paralelo. Passe a cada um: o bloco do item, a editoria (nas notícias), a data da pauta (para `date` e para o nome do arquivo) e o caminho do arquivo.
+Chame um `reporter` por item da pauta, todos na mesma resposta, para trabalharem em paralelo. Passe a cada um: o bloco do item, a editoria (nas notícias) e o `pais`, se houver, a data da pauta (para `date` e para o nome do arquivo) e o caminho do arquivo.
 
 ## 4. Checagem e revisão (em paralelo, por texto)
 
@@ -52,9 +63,13 @@ Para cada texto entregue, chame o `checador` com o caminho do arquivo e a tabela
 
 Se o revisor apontar algo que exige decisão, decida você com base no manual. Na dúvida sobre conformidade, prefira cortar o trecho.
 
+## 4b. Calendário de proventos
+
+Em paralelo com a reportagem, chame o `calendarista` com a data da pauta e a lista de candidatos do pauteiro. Ele devolve `src/data/calendario.json` atualizado (linhas novas, linhas vencidas removidas, `atualizado` com a data da pauta) e a tabela "linha | valor | datas | fonte | situação". Depois chame o `checador` para reabrir a fonte de cada linha nova. Linha que o checador não confirmar sai do arquivo. Um commit separado: `atualiza calendário de proventos`. `npm run build` falha se uma linha estiver incompleta.
+
 ## 5. Indicadores do topo do site
 
-Chame o `checador` (em paralelo com a checagem dos textos) para atualizar `src/data/indicadores.json`, com estes três itens:
+Chame o `checador` (em paralelo com a checagem dos textos; só no ciclo de terça) para atualizar `src/data/indicadores.json`, com estes três itens:
 
 - `Selic`: meta da taxa Selic vigente, em "% a.a.", lida em `https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros` (campo `MetaSelic` do primeiro item de `conteudo`; `data` = início da vigência);
 - `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida na API do IBGE (`servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265`; `data` = o mês de referência);
@@ -67,15 +82,16 @@ Cada item tem `nome`, `valor` (com vírgula decimal), `data` (a que o valor se r
 ## 6. Fechamento
 
 1. Se ainda existirem os textos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md` e `src/content/guias/tesouro-ipca-marcacao-a-mercado.md`) e a pauta tiver pelo menos dois textos com `draft: false` e `gate: true`, apague os exemplos.
-2. `npm run build` sem erros nem avisos e `npm test` passando. Se o build falhar por um texto, corrija o cabeçalho; se não der, marque o texto com `draft: true` e registre.
+2. `npm run build` sem erros nem avisos e `npm test` passando (o build também valida o calendário). Se o build falhar por um texto, corrija o cabeçalho; se não der, marque o texto com `draft: true` e registre.
 3. Faça você mesmo uma última leitura: `grep -rnE "—|–" src/content` deve vir vazio, e nenhum texto pode ter recomendação de compra ou venda.
 4. Um commit por texto, em português (ex.: `adiciona notícia sobre a ata do Copom`), e um para a remoção dos exemplos, se houver.
 
 ## 7. Pull request
 
-Push do branch e pull request para o `main`, com título `Pauta da semana AAAA-MM-DD`. No corpo:
+Push do branch e pull request para o `main`, com título `Pauta da semana AAAA-MM-DD (Brasil e mercado)` ou `Pauta da semana AAAA-MM-DD (Internacional)`. No corpo:
 
 - para cada texto: editoria (ou tema, no guia), título, endereço da página, resumo em duas linhas, se está publicado ou como rascunho, a tabela final do checador ("dado | valor no texto | fonte | situação") e as mudanças relevantes do revisor;
+- o calendário: linhas adicionadas e removidas, cada uma com valor, datas, fonte e situação;
 - os indicadores atualizados (valor, data e fonte de cada um) ou o motivo de terem ficado de fora;
 - o que ficou de fora da pauta e por quê, se for o caso;
 - resultado do build e dos testes;

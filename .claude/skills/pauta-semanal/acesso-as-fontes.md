@@ -20,6 +20,17 @@ Só faça requisições de leitura (GET) às fontes oficiais listadas no manual 
 | Notícias do IBGE | `https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=10` | JSON com título, data e link da página original. |
 | Páginas do Banco Central, Tesouro Direto, Anbima, B3, gov.br | `node scripts/ler-pagina.mjs <url>` | Algumas páginas do BC dependem de API interna e podem vir vazias; prefira os endereços acima. |
 
+## Mercado e calendário (testado em 19/10/2026)
+
+| Dado | Endereço | Como ler |
+| --- | --- | --- |
+| Fatos relevantes, comunicados e avisos aos acionistas das companhias abertas | `https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/ipe_cia_aberta_2026.zip` (troque o ano) | CSV em latin1, separador `;`. Colunas: `Nome_Companhia`, `Data_Referencia`, `Categoria` (ex.: "Fato Relevante", "Aviso aos Acionistas", "Comunicado ao Mercado"), `Assunto`, `Data_Entrega`, `Link_Download` (documento no RAD). Filtre por `Categoria` e `Data_Entrega` e abra o documento pelo link. |
+| Informe mensal dos fundos imobiliários | `https://dados.cvm.gov.br/dados/FII/DOC/INF_MENSAL/DADOS/inf_mensal_fii_2026.zip` | CSV (geral, complemento, ativo e passivo): cotistas, patrimônio e ativos. Não traz a data de pagamento do rendimento: ela vem do comunicado do administrador. |
+| Páginas da CVM, Cade e CNJ | `node scripts/ler-pagina.mjs <url>` | Páginas em `gov.br` abrem. |
+| Páginas de RI das empresas e da B3 | `node scripts/ler-pagina.mjs <url>` | `www.b3.com.br` abre; `sistemaswebb3-listados.b3.com.br` devolve 403 (não contornar). Domínio de RI de empresa precisa estar liberado na rede do ambiente. |
+
+O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso; cite o link da planilha de dados abertos só quando a página do documento não abrir e o `Assunto` já bastar para confirmar o fato.
+
 ## Dados do exterior (funcionam)
 
 | Dado | Endereço |
@@ -30,7 +41,8 @@ Só faça requisições de leitura (GET) às fontes oficiais listadas no manual 
 | OCDE (inflação, PIB, emprego de vários países) | `https://sdmx.oecd.org/public/rest/data/...&format=csvfilewithlabels` |
 | Banco Mundial | `https://api.worldbank.org/v2/country/<ISO2>/indicator/<codigo>?format=json&mrnev=1` |
 | FMI (páginas de publicações) | `ler-pagina.mjs` abre; a API `datamapper` recusa robôs |
-| Tesouro dos EUA, BEA, EIA, OPEP, ONU | `ler-pagina.mjs` |
+| Tesouro dos EUA (OFAC), BEA, EIA, OPEP, ONU (OCHA), AIEA | `ler-pagina.mjs` |
+| Potências: Bundesbank, Destatis, Banco da França, Insee, Banca d'Italia, Istat, Banco da Inglaterra, ONS, gov.uk, Casa Branca, Kremlin, Banco Central da Rússia, Conselho da UE, Jornal Oficial da UE | `ler-pagina.mjs`, depois que o domínio estiver liberado na rede do ambiente. **Ainda não testados.** |
 
 ## O que bloqueia robôs (não contornar)
 
@@ -38,7 +50,7 @@ Só faça requisições de leitura (GET) às fontes oficiais listadas no manual 
 | --- | --- |
 | `bls.gov` (páginas) | Recusa robôs de propósito. A API `api.bls.gov` responde, mas o limite diário do ambiente costuma estar esgotado. Para inflação e PIB dos EUA, use o BEA e o Fed; se o dado for só do BLS, fica **sem conferência**. |
 | `www.ibge.gov.br` e `agenciadenoticias.ibge.gov.br` | Use a API `servicodados.ibge.gov.br` (acima), que traz o link da notícia original. Cite o link da agência em `fontes:` só depois de ler o conteúdo pela API. |
-| `reuters.com`, `apnews.com`, `afp.com` | Recusam robôs (401 ou 403). Para fatos políticos e de guerra, a exigência de duas agências pode não ser cumprível: o texto vai como rascunho e o pull request diz o que faltou. |
+| `reuters.com`, `apnews.com`, `afp.com` | Recusam robôs (vale também para guerra e política: sem as duas agências, o fato só entra por documento oficial, e senão vai como rascunho) (401 ou 403). Para fatos políticos e de guerra, a exigência de duas agências pode não ser cumprível: o texto vai como rascunho e o pull request diz o que faltou. |
 | `oecd.org`, `iea.org` (páginas) | Use a API da OCDE (acima); da AIE, só o que o `ler-pagina.mjs` conseguir abrir. |
 | `api.bcb.gov.br` (séries SGS) | Sem resposta neste ambiente. Use os endereços do BC acima. |
 

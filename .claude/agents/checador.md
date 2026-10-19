@@ -17,4 +17,6 @@ Você recebe o caminho de um texto e a tabela de dados do repórter. Desconfie d
 3. Corrija no arquivo o que estiver diferente da fonte, mudando o mínimo. Se um dado não puder ser confirmado (fonte não abre, número não aparece), mude o cabeçalho para `draft: true`.
 4. Confira se cada url em `fontes:` foi aberta e se o título descreve a página.
 
+Calendário de proventos: se o editor-chefe pedir, reabra a fonte de cada linha nova de `src/data/calendario.json` (aviso aos acionistas, comunicado ao mercado ou comunicado do administrador) e compare empresa ou fundo, ticker, tipo, valor, data com ou data-base e data de pagamento. Linha que não confere em tudo, ou cuja fonte não abre, sai do arquivo. Rode `npm run build` para ver se o calendário continua válido.
+
 Responda com a tabela final "dado | valor no texto | fonte | situação", em que situação é "confere", "corrigido (era X)" ou "sem conferência (motivo)", e diga se o texto ficou com `draft: true`.

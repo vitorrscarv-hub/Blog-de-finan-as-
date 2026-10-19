@@ -12,7 +12,7 @@ src/
   site.config.ts         nome, credenciais do autor, imagem de compartilhamento e regras do pop-up
   components/            cabeçalho, rodapé, card e pop-up de cadastro (LeadGate.astro)
   layouts/               página base (SEO) e página de artigo
-  pages/                 home, listas (com filtro por editoria), artigos, privacidade, RSS e 404
+  pages/                 home, listas (com filtro por editoria), artigos, calendário de proventos, privacidade, RSS e 404
   scripts/formatos.ts    datas em pt-BR, ordenação, rascunhos e tempo de leitura
   styles/global.css      todo o CSS do site, com modo escuro
   data/indicadores.json  valores da faixa de indicadores (Selic, IPCA, dólar), com fonte e data
@@ -71,7 +71,8 @@ Cabeçalho de uma notícia:
 title: "IPCA de setembro fica acima do esperado"
 description: "Até 155 caracteres. O build falha se passar disso."
 date: 2026-10-19
-editoria: "Brasil"         # ou "Internacional"; só em notícias, padrão Brasil
+editoria: "Brasil"         # ou "Mercado" ou "Internacional"; só em notícias, padrão Brasil
+pais: "Ucrânia"            # opcional; país ou região de que a notícia trata (internacionais)
 updated: 2026-10-20        # opcional
 keywords: ["IPCA setembro 2026", "inflação", "Selic"]   # até 5
 teaser: "Texto curto para o canal de WhatsApp. [LINK]"  # opcional
@@ -85,7 +86,7 @@ gate: true       # false libera o texto sem pedir cadastro
 Texto em Markdown. Intertítulos com ##, listas, tabelas e links funcionam normalmente.
 ```
 
-As notícias aparecem em `/noticias/` e também em `/noticias/brasil/` ou `/noticias/internacional/`, conforme a `editoria`, com etiqueta no card. Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
+As notícias aparecem em `/noticias/` e também em `/noticias/brasil/`, `/noticias/mercado/` ou `/noticias/internacional/`, conforme a `editoria`, com etiqueta no card. Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
 
 O build falha, com a mensagem de erro em português, se faltar título ou description, se a description passar de 155 caracteres, se houver mais de 5 palavras-chave, se uma fonte não tiver url completa ou se o tema não estiver na lista. As datas aparecem exatamente como no cabeçalho: `2026-10-12` sai como "12 de outubro de 2026".
 
@@ -93,21 +94,34 @@ Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md
 
 ## Pauta semanal automática
 
-Toda terça-feira de manhã (6h56, horário de Brasília) uma tarefa agendada do Claude Code monta a pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
+Duas vezes por semana, de manhã (6h56, horário de Brasília), uma tarefa agendada do Claude Code monta a pauta e abre um pull request chamado "Pauta da semana AAAA-MM-DD (...)":
+
+- **terça, Brasil e mercado:** 3 notícias do Brasil, 2 de Mercado (ações, fusões e aquisições, recuperação judicial de empresas relevantes), 1 guia e o calendário de proventos;
+- **sexta, Internacional:** 5 notícias (Rússia e Ucrânia, Irã e Oriente Médio, duas potências em rodízio entre Estados Unidos, China, França, Reino Unido, Alemanha, Itália, Japão, Índia e outras, e bancos centrais e economia global) e o calendário de proventos.
+
+O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
 
 | Integrante | Papel |
 | --- | --- |
 | Editor-chefe | a sessão principal; coordena, decide, roda build e testes e abre o pull request (`.claude/skills/pauta-semanal/SKILL.md`) |
-| Pauteiro | escolhe os 3 fatos do Brasil, os 2 internacionais e o tema do guia, com as fontes primárias |
+| Pauteiro | escolhe os fatos do ciclo (Brasil, Mercado, guia ou as 5 vagas internacionais) e os candidatos ao calendário, com as fontes primárias |
 | Repórter | escreve cada texto; um repórter por texto, todos em paralelo |
-| Checador | confere cada número do texto na fonte oficial e corrige ou marca como rascunho |
+| Calendarista | monta as linhas do calendário de proventos (dividendos, JCP e rendimentos de fundos imobiliários) a partir de avisos e comunicados oficiais |
+| Checador | confere cada número do texto e de cada linha do calendário na fonte oficial e corrige, remove ou marca como rascunho |
 | Revisor | ajusta estilo, tom, neutralidade política e conformidade (sem recomendação, sem promessa, sem travessão) |
 
-A editoria internacional cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro (câmbio, juros, petróleo, bolsas), com neutralidade: o blog não toma partido de governo, país ou lado de guerra.
+A editoria internacional cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro (câmbio, juros, petróleo, bolsas), com neutralidade: o blog não toma partido de governo, país ou lado de guerra. Como Reuters, AP e AFP recusam robôs neste ambiente, fato de guerra só entra por documento oficial (ONU, AIEA, governos, sanções publicadas); sem isso, o texto vai como rascunho.
+
+A editoria Mercado trata só de empresas relevantes e só do fato, sem preço-alvo e sem opinar sobre negócio.
+
+### Calendário de proventos
+
+A página `/calendario/` lê `src/data/calendario.json`, que a pauta atualiza nos dois ciclos: dividendos e JCP de ações e rendimentos de fundos imobiliários, cada linha com valor, datas e a fonte aberta. O build falha se uma linha estiver incompleta (`src/scripts/calendario.ts`). É informativo: sem ranking de pagadores, sem projeção, sem indicação de compra ou venda. Para editar à mão, siga o formato do arquivo (`acoes`: empresa, ticker, tipo `Dividendo` ou `JCP`, `valorPorAcao`, `dataCom`, `dataPagamento`, `fonte`; `fiis`: fundo, ticker, `valorPorCota`, `dataBase`, `dataPagamento`, `fonte`).
 
 Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code precisa de acesso a elas: nível **Limitado** (Custom, na documentação), com a caixa de gerenciadores de pacotes marcada, e a lista abaixo em **Domínios permitidos** (menu do ambiente na barra de título da sessão, Edit). A regra vale pelo nome exato do endereço, então use o curinga `*.` para cobrir o "www" e os outros subdomínios. Cada domínio vale também sem o curinga, e a lista funciona com os dois.
 
-- Brasil: `*.bcb.gov.br`, `*.ibge.gov.br`, `*.tesourodireto.com.br`, `*.gov.br`, `*.in.gov.br`, `*.anbima.com.br`, `*.b3.com.br`
+- Brasil: `*.bcb.gov.br`, `*.ibge.gov.br`, `*.tesourodireto.com.br`, `*.gov.br`, `*.in.gov.br`, `*.anbima.com.br`, `*.b3.com.br` (a CVM, com os dados abertos e o RAD, entra em `*.gov.br`). Para Mercado e calendário, páginas de relações com investidores das empresas (ex.: `ri.empresa.com.br`) precisam ser liberadas quando a pauta pedir.
+- Potências (ampliação internacional): `*.gov.uk`, `*.bankofengland.co.uk`, `*.ons.gov.uk`, `*.bundesbank.de`, `*.destatis.de`, `*.banque-france.fr`, `*.insee.fr`, `*.bancaditalia.it`, `*.istat.it`, `*.cbr.ru`, `*.kremlin.ru`, `*.whitehouse.gov`, `*.iaea.org`, `*.unocha.org`
 - Exterior: `*.federalreserve.gov`, `*.bls.gov`, `*.bea.gov`, `*.treasury.gov`, `*.europa.eu`, `*.imf.org`, `*.worldbank.org`, `*.oecd.org`, `*.eia.gov`, `*.iea.org`, `*.opec.org`, `*.un.org`
 - Agências (fatos políticos e de guerra): `*.reuters.com`, `*.apnews.com`, `*.afp.com`
 

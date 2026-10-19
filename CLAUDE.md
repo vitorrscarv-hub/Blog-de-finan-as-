@@ -11,12 +11,12 @@ Grafous, blog educacional de finanças de Vitor Reis de Carvalho. Astro estátic
 - Nunca citar instituição financeira à qual Vitor seja vinculado.
 - Público: investidores pessoa física com patrimônio relevante. Todo texto da interface em português do Brasil.
 - Tom natural, de pessoa experiente falando com outra. Sem linguagem promocional, sem emojis, sem travessão, sem urgência artificial.
-- Nenhum texto do site pode prometer retorno nem indicar compra ou venda de ativo. O aviso de conteúdo educacional do artigo (`src/layouts/Artigo.astro`) e o do rodapé (`src/components/Rodape.astro`) não saem.
+- Nenhum texto do site pode prometer retorno nem indicar compra ou venda de ativo. Isso vale para Mercado (sem preço-alvo, sem opinar sobre negócio de M&A ou recuperação judicial) e para o calendário de proventos (informativo: sem ranking de pagadores, sem projeção). O aviso de conteúdo educacional do artigo (`src/layouts/Artigo.astro`) e o do rodapé (`src/components/Rodape.astro`) não saem.
 - Não inventar dados, fontes ou links. Os textos são escritos fora do site e revisados por Vitor antes de publicar.
 
 ## Schema de conteúdo
 
-Manter o schema de `src/content.config.ts` como está. Campos: `title`, `description` (até 155 caracteres, o build falha se passar), `date`, `updated`, `keywords` (até 5), `teaser`, `fontes` ({titulo, url}), `draft` (padrão false), `gate` (padrão true). Notícias têm `editoria` (`Brasil` ou `Internacional`, padrão `Brasil`), que define a etiqueta e as páginas `/noticias/brasil/` e `/noticias/internacional/`. Guias têm `tema`, com um destes valores: Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior, Fundamentos. Mudar campo ou tema só com pedido explícito.
+Manter o schema de `src/content.config.ts` como está. Campos: `title`, `description` (até 155 caracteres, o build falha se passar), `date`, `updated`, `keywords` (até 5), `teaser`, `fontes` ({titulo, url}), `draft` (padrão false), `gate` (padrão true). Notícias têm `editoria` (`Brasil`, `Mercado` ou `Internacional`, padrão `Brasil`), que define a etiqueta e as páginas `/noticias/brasil/`, `/noticias/mercado/` e `/noticias/internacional/`, e `pais` (opcional, texto livre). Guias têm `tema`, com um destes valores: Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior, Fundamentos. Mudar campo ou tema só com pedido explícito.
 
 As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" apareça como 12 de outubro. Não remover o `timeZone: 'UTC'`.
 
@@ -28,7 +28,7 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 
 ## Pauta semanal
 
-A pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) segue `.claude/skills/pauta-semanal/SKILL.md` (editor-chefe) com os agentes de `.claude/agents/` (pauteiro, repórter, checador, revisor) e o manual `.claude/skills/pauta-semanal/manual-de-redacao.md`: todo dado conferido na fonte primária, neutralidade em política e conflitos, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
+A pauta tem dois ciclos por semana: terça (3 notícias do Brasil, 2 de Mercado e 1 guia) e sexta (5 internacionais), e os dois atualizam o calendário de proventos (`src/data/calendario.json`, página `/calendario/`). Segue `.claude/skills/pauta-semanal/SKILL.md` (editor-chefe) com os agentes de `.claude/agents/` (pauteiro, repórter, checador, calendarista, revisor) e o manual `.claude/skills/pauta-semanal/manual-de-redacao.md`: todo dado conferido na fonte primária, neutralidade em política e conflitos, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
 
 Edições de outros países (Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália) têm modelo de redação pronto em `.claude/skills/pauta-semanal/edicoes/`, todas inativas. Só a edição Brasil está ativa; ativar outra segue `edicoes/COMO-ATIVAR.md`, começando pelo parecer jurídico do país, e nunca por iniciativa própria.
 
