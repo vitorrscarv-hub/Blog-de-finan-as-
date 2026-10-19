@@ -25,9 +25,9 @@ test('códigos e caminhos únicos, com o Brasil na raiz', () => {
   assert.equal(edicoes.find((e) => e.codigo === 'br')?.caminho, '/');
 });
 
-test('horário da pauta no fuso da própria edição, às segundas', () => {
+test('horário da pauta no fuso da própria edição, às terças', () => {
   for (const e of edicoes) {
-    assert.match(e.cron, new RegExp(`^CRON_TZ=${e.fuso} \\d{1,2} \\d{1,2} \\* \\* 1$`), e.codigo);
+    assert.match(e.cron, new RegExp(`^CRON_TZ=${e.fuso} \\d{1,2} \\d{1,2} \\* \\* 2$`), e.codigo);
   }
 });
 

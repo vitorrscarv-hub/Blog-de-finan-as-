@@ -41,7 +41,7 @@ Cada passo é um pull request revisado, como tudo no projeto.
    - testes e capturas da edição nova.
 4. **Rede.** Liberar os domínios listados no modelo em Allowed domains, no ambiente do Claude Code.
 5. **Redação.** Marcar `"ativa": true` em `edicoes.json` para a edição.
-6. **Agenda.** Criar uma tarefa agendada própria para a edição, com o `cron` do registro (segunda-feira de manhã no fuso local) e o pedido "pauta da semana da edição `<codigo>`".
+6. **Agenda.** Criar uma tarefa agendada própria para a edição, com o `cron` do registro (terça-feira de manhã no fuso local) e o pedido "pauta da semana da edição `<codigo>`".
 7. **Primeiras semanas.** Revisar com atenção redobrada, de preferência com um revisor nativo, antes de cada merge.
 
 ## Como a redação usa os modelos
