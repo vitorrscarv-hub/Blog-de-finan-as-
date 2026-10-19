@@ -18,7 +18,9 @@ interface Props {
   pais?: string;
 }
 
-const { title, description, date, updated, keywords, fontes, gate, secao, leitura, pais } = Astro.props;
+const { title, description, date, updated, keywords, fontes, gate: gateDoTexto, secao, leitura, pais } = Astro.props;
+// Com o pop-up desligado em SITE.lead.ativo, nenhum texto fica restrito.
+const gate = gateDoTexto && SITE.lead.ativo;
 
 // As matérias não levam assinatura visível; o autor continua nos metadados para o Google,
 // e o blog aparece como publicador.
