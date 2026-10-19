@@ -1,7 +1,7 @@
 {
-  "_comentario": "Registro das edições do Grafous. Só edição com \"ativa\": true pode ter pauta. Para ativar uma edição, siga edicoes/COMO-ATIVAR.md. O horário é terça-feira de manhã no fuso local (formato cron com CRON_TZ). A edição Brasil roda também às sextas, com dois ciclos (ver SKILL.md).",
+  "_comentario": "Registro das edições do Grafous. Só edição com \"ativa\": true pode ter pauta. Para ativar uma edição, siga edicoes/COMO-ATIVAR.md. O horário é terça-feira de manhã no fuso local (formato cron com CRON_TZ). A edição Brasil roda às segundas e sextas, com dois ciclos (ver SKILL.md).",
   "edicoes": [
-    { "codigo": "br", "pais": "Brasil", "ativa": true, "idioma": "pt-BR", "fuso": "America/Sao_Paulo", "cron": "CRON_TZ=America/Sao_Paulo 56 6 * * 2,5", "caminho": "/", "manual": "../manual-de-redacao.md" },
+    { "codigo": "br", "pais": "Brasil", "ativa": true, "idioma": "pt-BR", "fuso": "America/Sao_Paulo", "cron": "CRON_TZ=America/Sao_Paulo 56 6 * * 1,5", "caminho": "/", "manual": "../manual-de-redacao.md" },
     { "codigo": "pt", "pais": "Portugal", "ativa": false, "idioma": "pt-PT", "fuso": "Europe/Lisbon", "cron": "CRON_TZ=Europe/Lisbon 51 6 * * 2", "caminho": "/pt/", "manual": "pt.md" },
     { "codigo": "us", "pais": "Estados Unidos", "ativa": false, "idioma": "en-US", "fuso": "America/New_York", "cron": "CRON_TZ=America/New_York 52 6 * * 2", "caminho": "/us/", "manual": "us.md" },
     { "codigo": "gb", "pais": "Reino Unido", "ativa": false, "idioma": "en-GB", "fuso": "Europe/London", "cron": "CRON_TZ=Europe/London 53 6 * * 2", "caminho": "/uk/", "manual": "gb.md" },

@@ -12,7 +12,7 @@ Investidor pessoa física com patrimônio relevante, que já conhece o básico e
 
 A edição Brasil tem dois ciclos por semana. O dia da semana (fuso de São Paulo) decide qual deles roda, e o editor-chefe pode rodar o outro sob pedido.
 
-**Ciclo de terça (Brasil e mercado):** 3 notícias com `editoria: "Brasil"`, 2 com `editoria: "Mercado"`, 1 guia e a atualização do calendário de proventos.
+**Ciclo de segunda (Brasil e mercado):** 3 notícias com `editoria: "Brasil"`, 2 com `editoria: "Mercado"`, 1 guia e a atualização do calendário de proventos.
 
 **Ciclo de sexta (Internacional):** 5 notícias com `editoria: "Internacional"`, e a atualização do calendário de proventos.
 
@@ -45,6 +45,20 @@ As 5 vagas da sexta:
 Quando não houver fato novo e relevante numa vaga, a vaga fica vazia e o pull request explica. Preencher com assunto fraco é pior que publicar menos.
 
 Use o campo `pais` (ex.: "Ucrânia", "Irã", "Alemanha") quando a notícia tratar principalmente de um país ou região.
+
+### Plantão (texto pontual)
+
+Além dos dois ciclos, um plantão olha as fontes oficiais nos dias úteis (3 vezes por dia) e só produz texto quando acontece algo que o leitor precisa entender no mesmo dia. Não é o lugar de notícia que cabe no próximo ciclo.
+
+Entra no plantão, e só se o documento primário estiver aberto nesta sessão:
+
+- decisão de juros ou comunicado extraordinário de banco central (Copom, Fed, BCE, Banco da Inglaterra, Banco do Japão);
+- divulgação de dado de grande efeito (IPCA, PIB, emprego e inflação dos Estados Unidos e da zona do euro) quando sair fora do que o Boletim Focus ou a fonte já indicavam;
+- mudança de regra com efeito imediato (norma da Receita, CMN, CVM; medida provisória; decisão do STF sobre tributação);
+- fato relevante de empresa grande: M&A, oferta pública, recuperação judicial, mudança de controle;
+- sanção, embargo ou decisão de governo ou de organismo internacional que mexa com câmbio, energia ou alimentos.
+
+Limites: no máximo 2 textos por plantão e 3 por dia; texto de 400 a 600 palavras; nenhum assunto que já esteja publicado ou em pull request aberto; fato de guerra só por documento oficial, como no resto do manual. Não houve nada que passe nesses critérios: o plantão termina sem pull request.
 
 ### Guia
 

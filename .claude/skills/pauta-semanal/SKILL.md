@@ -1,6 +1,6 @@
 ---
 name: pauta-semanal
-description: Coordena a redação do blog em dois ciclos por semana (terça: 3 notícias do Brasil, 2 de Mercado e 1 guia; sexta: 5 internacionais; e o calendário de proventos nos dois) com os agentes pauteiro, repórter, checador, calendarista e revisor, roda build e testes e abre um pull request para Vitor revisar e publicar com o botão Merge. Use quando a tarefa agendada semanal disparar ou quando pedirem a pauta da semana.
+description: Coordena a redação do blog em dois ciclos por semana (segunda: 3 notícias do Brasil, 2 de Mercado e 1 guia; sexta: 5 internacionais; e o calendário de proventos nos dois) com os agentes pauteiro, repórter, checador, calendarista e revisor, roda build e testes e abre um pull request para Vitor revisar e publicar com o botão Merge. Use quando a tarefa agendada semanal disparar ou quando pedirem a pauta da semana.
 ---
 
 # Pauta semanal: editor-chefe
@@ -28,12 +28,22 @@ A edição padrão é `br` (Brasil), a única ativa hoje. Se o pedido citar outr
 
 ## 0b. Ciclo
 
-A edição Brasil roda duas vezes por semana (`edicoes.json`: terça e sexta, 06:56 de São Paulo). O ciclo é decidido pelo dia da semana em São Paulo, salvo pedido em contrário:
+A edição Brasil roda duas vezes por semana (`edicoes.json`: segunda e sexta, 06:56 de São Paulo). O ciclo é decidido pelo dia da semana em São Paulo, salvo pedido em contrário:
 
-- **terça (`terca`, Brasil e mercado):** 3 notícias `Brasil`, 2 `Mercado`, 1 guia e o calendário;
+- **segunda (`segunda`, Brasil e mercado):** 3 notícias `Brasil`, 2 `Mercado`, 1 guia e o calendário;
 - **sexta (`sexta`, Internacional):** 5 notícias `Internacional` e o calendário.
 
-Outros dias, sem pedido: use o ciclo de terça. Passe o ciclo ao pauteiro e use-o no título do pull request. Cada ciclo é um branch e um pull request.
+Outros dias, sem pedido: use o ciclo de segunda. Tarefa que diga "plantão": ciclo `plantao`, descrito abaixo. Passe o ciclo ao pauteiro e use-o no título do pull request. Cada ciclo é um branch e um pull request.
+
+### Plantão
+
+Se a tarefa disser que é o **plantão**, o ciclo é `plantao` e vale este fluxo curto, no lugar dos passos 2 a 5:
+
+1. Prepare como no passo 1 (branch `plantao/AAAA-MM-DD-HHMM`, `npm ci`, lista de pull requests abertos).
+2. Rode `node scripts/radar.mjs --horas=8` (use `--horas=20` no primeiro plantão do dia) e veja o resultado. O radar lê a API do Banco Central, as notícias do IBGE, os comunicados do Fed e os fatos relevantes dos dados abertos da CVM; os dados abertos da CVM têm defasagem de dias, então para empresa grande também abra a página de RI ou o RAD. Complete olhando, com `ler-pagina.mjs`, o que o manual lista como gatilho e que o radar não cobre (BCE, Banco da Inglaterra, Banco do Japão, OFAC, gov.uk, Casa Branca).
+3. Compare cada achado com os critérios da seção "Plantão" do manual, com o que já está publicado e com os pull requests abertos. Se nada passar, responda "plantão sem pauta" com uma linha por fonte consultada e encerre, sem branch e sem pull request.
+4. Para cada achado que passar (máximo 2), chame `reporter`, depois `checador`, depois `revisor`, como nos passos 3 e 4. Se o achado mexer em provento, chame também o `calendarista` e o `checador` para o calendário.
+5. Feche como no passo 6 (build, testes, um commit por texto). Pull request com título `Plantão AAAA-MM-DD HH:MM: <assunto>`, na forma do passo 7, e a primeira linha do corpo diz qual fonte disparou o plantão e quando.
 
 ## 1. Preparar
 
@@ -47,7 +57,7 @@ Chame o `pauteiro` com a data de hoje e os títulos dos pull requests abertos. A
 
 - cada item tem fonte primária aberta e é relevante para o leitor do manual;
 - não repete assunto publicado ou em revisão;
-- as vagas do ciclo estão preenchidas ou, quando não há fato relevante, a vaga vazia está explicada (terça: até 3 Brasil, 2 Mercado e 1 guia; sexta: até 5 Internacional, nas vagas do manual);
+- as vagas do ciclo estão preenchidas ou, quando não há fato relevante, a vaga vazia está explicada (segunda: até 3 Brasil, 2 Mercado e 1 guia; sexta: até 5 Internacional, nas vagas do manual);
 - cada internacional tem um canal claro até a carteira do investidor brasileiro, e cada item de Mercado trata de empresa relevante pelo critério do manual;
 - o pauteiro entregou também a lista de proventos candidatos ao calendário.
 
@@ -69,7 +79,7 @@ Em paralelo com a reportagem, chame o `calendarista` com a data da pauta e a lis
 
 ## 5. Indicadores do topo do site
 
-Chame o `checador` (em paralelo com a checagem dos textos; só no ciclo de terça) para atualizar `src/data/indicadores.json`, com estes três itens:
+Chame o `checador` (em paralelo com a checagem dos textos; só no ciclo de segunda) para atualizar `src/data/indicadores.json`, com estes três itens:
 
 - `Selic`: meta da taxa Selic vigente, em "% a.a.", lida em `https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros` (campo `MetaSelic` do primeiro item de `conteudo`; `data` = início da vigência);
 - `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida na API do IBGE (`servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265`; `data` = o mês de referência);

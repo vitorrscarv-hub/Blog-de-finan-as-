@@ -96,8 +96,10 @@ Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md
 
 Duas vezes por semana, de manhã (6h56, horário de Brasília), uma tarefa agendada do Claude Code monta a pauta e abre um pull request chamado "Pauta da semana AAAA-MM-DD (...)":
 
-- **terça, Brasil e mercado:** 3 notícias do Brasil, 2 de Mercado (ações, fusões e aquisições, recuperação judicial de empresas relevantes), 1 guia e o calendário de proventos;
+- **segunda, Brasil e mercado:** 3 notícias do Brasil, 2 de Mercado (ações, fusões e aquisições, recuperação judicial de empresas relevantes), 1 guia e o calendário de proventos;
 - **sexta, Internacional:** 5 notícias (Rússia e Ucrânia, Irã e Oriente Médio, duas potências em rodízio entre Estados Unidos, China, França, Reino Unido, Alemanha, Itália, Japão, Índia e outras, e bancos centrais e economia global) e o calendário de proventos.
+
+Além dos dois ciclos há o **plantão**: nos dias úteis (8h07, 12h07 e 17h07, horário de Brasília) uma tarefa varre as fontes oficiais com `node scripts/radar.mjs` e só abre pull request quando acontece algo que o leitor precisa entender no mesmo dia (decisão de juros, dado de grande efeito, mudança de regra, fato relevante de empresa grande, sanção). Máximo de 2 textos por plantão e 3 por dia; sem nada relevante, não abre nada. O aviso chega como notificação da tarefa e o pull request "Plantão AAAA-MM-DD HH:MM: assunto" traz o texto pronto para você revisar e mesclar.
 
 O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
 

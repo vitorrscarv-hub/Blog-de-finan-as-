@@ -33,6 +33,10 @@ Só faça requisições de leitura (GET) às fontes oficiais listadas no manual 
 
 O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso. Muitos avisos trazem pagamento "até", "a partir de" ou "a definir": isso não é data firme e a linha não entra no calendário. Grandes empresas (Itaú, Vale, Ambev, Banco do Brasil) nem sempre têm aviso na janela; não complete com o que se lembra.
 
+## Radar do plantão
+
+`node scripts/radar.mjs [--horas=24]` junta, numa lista só, o que saiu nas últimas horas na API do Banco Central (Selic vigente), nas notícias do IBGE, nos comunicados do Fed e nos fatos relevantes dos dados abertos da CVM. Usa `curl` e `unzip`. Cuidado: o arquivo de dados abertos da CVM atualiza com defasagem (em 19/10/2026 o último fato relevante era de 16/10); para fato do mesmo dia, abra o RAD ou o RI da empresa. O radar só aponta; o texto só sai com o documento primário aberto.
+
 ## Dados do exterior (funcionam)
 
 | Dado | Endereço |
