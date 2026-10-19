@@ -93,7 +93,7 @@ Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md
 
 ## Pauta semanal automática
 
-Toda segunda-feira de manhã uma tarefa agendada do Claude Code monta a pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
+Toda terça-feira de manhã (6h56, horário de Brasília) uma tarefa agendada do Claude Code monta a pauta da semana (3 notícias do Brasil, 2 internacionais e 1 guia) e abre um pull request chamado "Pauta da semana AAAA-MM-DD". O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
 
 | Integrante | Papel |
 | --- | --- |
