@@ -16,13 +16,13 @@ draft: false
 gate: true
 ---
 
-A Comissão de Valores Mobiliários (CVM) publicou no Diário Oficial da União de 14 de outubro de 2026 a Resolução CVM 249, datada de 13 de outubro, que institui o Programa Piloto DLT CVM. O Colegiado aprovou o texto em reunião de 7 de outubro. Na prática, é um ambiente de testes para ver como emissão, oferta, negociação, escrituração, custódia, depósito centralizado e liquidação de valores mobiliários funcionam em redes de tecnologia de registro distribuído (DLT, a família de tecnologias a que pertence o blockchain). A própria CVM descreve a norma como uma entrega do Grupo de Trabalho de Tokenização (GTT), criado pela Portaria CVM/PTE nº 177, de 15 de julho de 2026.
+A Comissão de Valores Mobiliários (CVM) publicou no Diário Oficial da União de 14 de outubro de 2026 a Resolução CVM 249, datada de 13 de outubro, que institui o Programa Piloto DLT CVM. O Colegiado aprovou o texto em reunião de 7 de outubro. Na prática, é um ambiente de testes para ver como emissão, oferta, distribuição, negociação, escrituração, custódia, depósito centralizado e liquidação de valores mobiliários funcionam em redes de tecnologia de registro distribuído (DLT, a família de tecnologias a que pertence o blockchain). A própria CVM descreve a norma como uma entrega do Grupo de Trabalho de Tokenização (GTT), criado pela Portaria CVM/PTE nº 177, de 15 de julho de 2026.
 
 ## O que a norma é
 
 É um programa de testes, em caráter experimental, coordenado e supervisionado pela CVM por meio de um Comitê Gestor formado por membros da autarquia no GTT. Podem propor redes de teste associações que representem entidades autorizadas pela CVM e entidades autorreguladoras que participem do GTT. As propostas têm prazo de 15 dias úteis, contados da publicação, e precisam entregar à CVM um acesso de leitura em tempo real a todos os registros da rede. Cumpridos os requisitos, a admissão é automática e sem limite de número de redes.
 
-Os testes duram 60 dias, contados do primeiro dia útil seguinte ao fim do prazo de propostas, com possibilidade de prorrogação por até 30 dias. Depois, as gestoras das redes enviam relatórios conclusivos em até dez dias úteis, e o Comitê Gestor leva um relatório final ao Colegiado. A CVM promete divulgar uma versão pública desse relatório.
+Os testes duram 60 dias, contados do primeiro dia útil seguinte ao fim do prazo de propostas, com possibilidade de prorrogação por até 30 dias. Depois, as gestoras das redes enviam relatórios conclusivos em até dez dias úteis, e o Comitê Gestor leva um relatório final ao Colegiado. A CVM divulgará uma versão pública desse relatório, ressalvadas as informações protegidas por sigilo.
 
 ## O que a norma não é
 
@@ -41,9 +41,9 @@ O art. 18 proíbe os participantes de veicular material publicitário ou de capt
 
 Em termos de carteira, nada muda de imediato. Nenhum produto novo foi autorizado, nenhuma regra de ofertas, custódia ou negociação foi alterada para o mercado real, e ninguém pode aportar dinheiro no piloto. O art. 16 afasta normas da CVM sobre registro de ofertas, escrituração, custódia, depósito centralizado, mercados organizados e intermediação apenas dentro das operações experimentais, e enquanto a resolução estiver vigente.
 
-Isso tem uma consequência prática. Se alguém oferecer hoje um ativo descrito como tokenizado, a resolução 249 não serve como atestado de regularidade nem de segurança. As perguntas de sempre continuam valendo: qual é o valor mobiliário por trás do token, quem o emitiu, se a oferta é registrada ou dispensada de registro, onde fica a custódia e quais são os riscos e custos do produto, que a lâmina ou o regulamento devem informar.
+Isso tem uma consequência prática. Se alguém oferecer hoje um ativo descrito como tokenizado, a resolução 249 não serve como atestado de regularidade nem de segurança. As perguntas de sempre continuam valendo: qual é o valor mobiliário por trás do token, quem o emitiu, se a oferta é registrada ou dispensada de registro, onde fica a custódia e quais são os riscos e custos do produto.
 
-Para o médio prazo, o piloto é um sinal de que o regulador quer produzir evidências antes de decidir sobre mudanças de regra. A norma, porém, diz expressamente que não há compromisso com um resultado. Quais testes serão feitos, por quem e com que conclusões só ficará claro quando a CVM divulgar as redes admitidas, o que, segundo o art. 9º, ocorrerá na página do órgão, e depois o relatório final.
+Para o médio prazo, o piloto é um sinal de que o regulador quer produzir evidências antes de decidir sobre mudanças de regra. A norma, porém, diz expressamente (art. 1º, § 3º, III) que os testes não geram expectativa legítima de aprovação nem de tratamento regulatório futuro. Quais testes serão feitos, por quem e com que conclusões só ficará claro quando a CVM divulgar as redes admitidas, o que, segundo o art. 9º, ocorrerá na página do órgão, e depois o relatório final.
 
 ## O que acompanhar
 

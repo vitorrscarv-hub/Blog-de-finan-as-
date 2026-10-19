@@ -30,7 +30,7 @@ Outras medianas da mesma leitura: câmbio de 2026 em R$ 5,1535 e crescimento do 
 
 ## Inflação em alta, juro em queda
 
-Os números ficam menos contraditórios quando se olha o que já aconteceu. O IPCA de setembro, segundo o IBGE, foi de 0,82% no mês, com 3,95% no ano e 4,58% em 12 meses. A mediana de 5,22% para o ano fica acima dos 4,58% medidos em 12 meses até setembro. O Focus não informa o motivo dessa revisão, apenas que a mediana das projeções subiu.
+O IPCA de setembro, segundo o IBGE, foi de 0,82% no mês, com 3,95% no ano e 4,58% em 12 meses. A mediana de 5,22% para o ano fica acima dos 4,58% medidos em 12 meses até setembro. O Focus não informa o motivo dessa revisão, apenas que a mediana das projeções subiu.
 
 Com inflação esperada maior e juro nominal esperado menor, o juro real projetado diminui. É essa diferença, e não cada número isolado, que costuma orientar a precificação da renda fixa.
 
@@ -46,6 +46,4 @@ Com inflação esperada maior e juro nominal esperado menor, o juro real projeta
 
 A escolha entre indexadores depende do prazo do dinheiro, da tolerância a oscilações de preço antes do vencimento e da parte do patrimônio que precisa de previsibilidade. Quem pretende manter o título até o fim reduz a importância da marcação a mercado. Quem pode precisar do recurso antes convive com ela.
 
-Vale lembrar que as medianas mudam a cada semana. Em um mês, o Focus pode apontar outro caminho para a inflação e para a Selic, e as projeções de fim de ano já foram revistas em um intervalo de apenas uma semana.
-
-Os próximos boletins mostrarão se a revisão de inflação teve continuidade ou se foi um movimento pontual.
+As medianas do Focus mudam a cada semana: as de fim de ano para a Selic e o IPCA foram revistas em apenas sete dias.
