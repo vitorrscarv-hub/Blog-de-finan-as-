@@ -26,10 +26,12 @@ Só faça requisições de leitura (GET) às fontes oficiais listadas no manual 
 | --- | --- | --- |
 | Fatos relevantes, comunicados e avisos aos acionistas das companhias abertas | `https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/ipe_cia_aberta_2026.zip` (troque o ano) | CSV em latin1, separador `;`. Colunas: `Nome_Companhia`, `Data_Referencia`, `Categoria` (ex.: "Fato Relevante", "Aviso aos Acionistas", "Comunicado ao Mercado"), `Assunto`, `Data_Entrega`, `Link_Download` (documento no RAD). Filtre por `Categoria` e `Data_Entrega` e abra o documento pelo link. |
 | Informe mensal dos fundos imobiliários | `https://dados.cvm.gov.br/dados/FII/DOC/INF_MENSAL/DADOS/inf_mensal_fii_2026.zip` | CSV (geral, complemento, ativo e passivo): cotistas, patrimônio e ativos. Não traz a data de pagamento do rendimento: ela vem do comunicado do administrador. |
+| Documento do RAD (aviso, fato relevante, comunicado) | `Link_Download` do CSV acima | **`ler-pagina.mjs` não funciona** (o link é um download). Use `curl -g -sS -L -H "User-Agent: Mozilla/5.0" -o doc.pdf "<link>"` e depois `pdftotext -layout doc.pdf -` (o conteúdo vem em PDF, em português e inglês). Testado em 19/10/2026 com avisos de Petrobras e Localiza. |
+| Rendimentos de fundos imobiliários (data de pagamento) | Fundos.NET, `fnet.bmfbovespa.com.br` | Recusado pela rede do ambiente (403 no túnel) até o domínio ser liberado. Sem ele, e sem o RI de cada administrador liberado, `fiis` fica vazio. |
 | Páginas da CVM, Cade e CNJ | `node scripts/ler-pagina.mjs <url>` | Páginas em `gov.br` abrem. |
 | Páginas de RI das empresas e da B3 | `node scripts/ler-pagina.mjs <url>` | `www.b3.com.br` abre; `sistemaswebb3-listados.b3.com.br` devolve 403 (não contornar). Domínio de RI de empresa precisa estar liberado na rede do ambiente. |
 
-O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso; cite o link da planilha de dados abertos só quando a página do documento não abrir e o `Assunto` já bastar para confirmar o fato.
+O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso. Muitos avisos trazem pagamento "até", "a partir de" ou "a definir": isso não é data firme e a linha não entra no calendário. Grandes empresas (Itaú, Vale, Ambev, Banco do Brasil) nem sempre têm aviso na janela; não complete com o que se lembra.
 
 ## Dados do exterior (funcionam)
 

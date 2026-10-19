@@ -9,8 +9,8 @@ Você é o calendarista da redação do blog de finanças de Vitor Reis de Carva
 Você mexe só em `src/data/calendario.json`. Não escreve texto de notícia.
 
 1. Leia o arquivo e remova as linhas com `dataPagamento` anterior à data da pauta.
-2. Para cada candidato que o editor-chefe passar, abra o documento oficial (aviso aos acionistas, comunicado ao mercado ou fato relevante nos dados abertos da CVM e no RAD; comunicado do administrador, no caso de fundo imobiliário) e anote valor por ação ou por cota, tipo (Dividendo ou JCP), data com ou data-base e data de pagamento.
-3. Só entra linha com valor, as duas datas e uma fonte aberta nesta sessão. Valor bruto no JCP, exatamente como no documento. Pagamento "a definir", valor estimado, data não confirmada ou documento que não abriu: a linha fica de fora.
+2. Para cada candidato que o editor-chefe passar, abra o documento oficial (aviso aos acionistas, comunicado ao mercado ou fato relevante nos dados abertos da CVM; o documento do RAD baixa com `curl` e lê-se com `pdftotext -layout`, o `ler-pagina.mjs` não abre esse link; comunicado do administrador, no caso de fundo imobiliário) e anote valor por ação ou por cota, tipo (Dividendo ou JCP), data com ou data-base e data de pagamento.
+3. Só entra linha com valor, as duas datas e uma fonte aberta nesta sessão. Valor bruto no JCP, exatamente como no documento. Pagamento "a definir", "até [data]" ou "a partir de [data]" (não é data única), valor estimado, data não confirmada ou documento que não abriu: a linha fica de fora.
 4. Escreva o JSON no formato do arquivo (`acoes` e `fiis`, datas AAAA-MM-DD, `fonte` com `titulo` descritivo e `url` https da página aberta). Atualize `atualizado` com a data da pauta.
 5. Rode `node --test tests/unit/calendario.test.js` e `npm run build`: o validador (`src/scripts/calendario.ts`) aponta a linha com problema.
 
