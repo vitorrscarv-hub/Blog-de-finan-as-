@@ -22,13 +22,7 @@ const { title, description, date, updated, keywords, fontes, gate: gateDoTexto, 
 // Com o pop-up desligado em SITE.lead.ativo, nenhum texto fica restrito.
 const gate = gateDoTexto && SITE.lead.ativo;
 
-// As matérias não levam assinatura visível; o autor continua nos metadados para o Google,
-// e o blog aparece como publicador.
-const autor = {
-  '@type': 'Person',
-  name: SITE.autor.nome,
-  description: SITE.autor.credenciais.join('; '),
-};
+// As matérias não levam assinatura: o Grafous aparece como autor e publicador nos metadados.
 const publicador = { '@type': 'Organization', name: SITE.nome, url: new URL('/', Astro.site).href };
 const instituicoesCitadas = instituicoes(fontes);
 
@@ -44,7 +38,7 @@ const jsonLd: Record<string, unknown> = {
   articleSection: secao.nome,
   keywords: keywords.join(', '),
   mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
-  author: autor,
+  author: publicador,
   publisher: publicador,
 };
 
@@ -105,7 +99,8 @@ if (gate) {
 
     <p class="aviso">
       Este texto tem caráter educacional e não é recomendação de investimento. Rentabilidade passada não
-      garante rentabilidade futura. Avalie qualquer decisão de acordo com o seu perfil de investidor.
+      garante rentabilidade futura. Avalie qualquer decisão de acordo com o seu perfil de investidor. Produzido com
+      apoio de inteligência artificial e revisado por uma pessoa antes da publicação.
     </p>
   </article>
   {gate && <LeadGate />}

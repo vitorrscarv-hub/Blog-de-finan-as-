@@ -7,16 +7,13 @@ const ano = new Date().getFullYear();
   <div class="container">
     <div class="rodape-grade">
       <div>
-        <a class="marca" href="/" aria-label={`${SITE.nome}, página inicial`}><Logo tamanho={30} /></a>
+        <a class="marca" href="/" aria-label={`${SITE.nome}, página inicial`}><Logo tamanho={42} /></a>
         <p class="slogan">{SITE.slogan}</p>
         <p class="editorias-marca">Economia · Política · Mundo</p>
-      </div>
-      <div>
-        <h2>Responsável pelo conteúdo</h2>
-        <ul>
-          <li><strong>{SITE.autor.nome}</strong></li>
-          {SITE.autor.credenciais.map((c) => <li>{c}</li>)}
-        </ul>
+        <p class="rodape-sobre">
+          Notícias, guias e calendário de proventos sobre economia, mercado e política no Brasil e no mundo. Cada
+          dado vem da fonte oficial, com o que ele muda para quem investe.
+        </p>
       </div>
       <div>
         <h2>Seções</h2>
@@ -37,6 +34,7 @@ const ano = new Date().getFullYear();
         ativos nem análise de valores mobiliários. Rentabilidade passada não garante rentabilidade futura.
         Avalie qualquer investimento de acordo com o seu perfil.
       </p>
+      <p>Textos produzidos com apoio de inteligência artificial e revisados por uma pessoa antes da publicação.</p>
       <p>© {ano} {SITE.nome}</p>
     </div>
   </div>

@@ -35,6 +35,10 @@ A edição Brasil roda duas vezes por semana (`edicoes.json`: segunda e sexta, 0
 
 Outros dias, sem pedido: use o ciclo de segunda. Tarefa que diga "plantão": ciclo `plantao`, descrito abaixo. Passe o ciclo ao pauteiro e use-o no título do pull request. Cada ciclo é um branch e um pull request.
 
+### Matéria indicada pontual
+
+Quando Vitor escolhe um assunto fora dos ciclos (pedido direto ou tarefa agendada única), o ciclo é `pontual` e o nome é **Matéria indicada pontual**. Vale o fluxo de uma notícia: repórter, checador e revisor, na editoria que o assunto pedir, com as mesmas regras do manual. Branch `pontual/AAAA-MM-DD-assunto-curto` e pull request com título `Matéria indicada pontual: <assunto>`, com a tabela final do checador e o que ficou de fora.
+
 ### Plantão
 
 Se a tarefa disser que é o **plantão**, o ciclo é `plantao` e vale este fluxo curto, no lugar dos passos 2 a 5:

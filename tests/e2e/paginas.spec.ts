@@ -26,13 +26,13 @@ test('home lista notícias e guias com a data em pt-BR', async ({ page }) => {
   await expect(page.locator('#lead-fundo')).toHaveCount(0);
 });
 
-test('rodapé traz as credenciais do autor e o aviso legal', async ({ page }) => {
+test('rodapé traz a marca, o que o blog faz e os avisos, sem nome de pessoa', async ({ page }) => {
   await page.goto('/');
   const rodape = page.locator('footer.rodape');
-  await expect(rodape).toContainText('Vitor RC');
-  await expect(rodape).toContainText('CEA (Anbima)');
-  await expect(rodape).toContainText('PUC-RS');
-  await expect(rodape).toContainText('Gestão Financeira');
+  await expect(rodape).toContainText('A informação que conecta os fatos.');
+  await expect(rodape).toContainText('fonte oficial');
+  await expect(rodape).toContainText('inteligência artificial e revisados por uma pessoa');
+  await expect(rodape).not.toContainText(/Vitor|CEA|PUC-RS/);
   await expect(rodape).toContainText('Rentabilidade passada não garante rentabilidade futura');
   await expect(page.locator('body')).not.toContainText(/economista|assessor de investimentos/i);
 });
@@ -52,6 +52,8 @@ test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO
   await expect(page.locator('.aviso')).toContainText('não é recomendação de investimento');
   await expect(page.locator('.aviso')).toContainText('Rentabilidade passada não garante rentabilidade futura');
   await expect(page.locator('.aviso')).toContainText('perfil');
+  await expect(page.locator('.aviso')).toContainText('inteligência artificial');
+  await expect(page.locator('body')).not.toContainText(/Vitor/);
 
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new RegExp(`${href}$`));
   await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content', 'article');
@@ -59,7 +61,7 @@ test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO
 
   const ld = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent()) ?? '{}');
   expect(ld['@type']).toBe('NewsArticle');
-  expect(ld.author.name).toBe('Vitor RC');
+  expect(ld.author).toMatchObject({ '@type': 'Organization', name: 'Grafous' });
   if (await page.locator('.artigo-corpo[data-gate="true"]').count()) {
     expect(ld.isAccessibleForFree).toBe(false);
     expect(ld.hasPart).toMatchObject({ isAccessibleForFree: false, cssSelector: '.artigo-corpo' });
@@ -124,7 +126,7 @@ test('calendário de proventos tem as duas seções, o aviso e menu', async ({ p
 
 test('privacidade tem os campos para preencher', async ({ page }) => {
   await page.goto('/privacidade/');
-  // O responsável pelo tratamento é identificado pelo nome completo; no resto do site o nome é "Vitor RC".
+  // O nome de Vitor só aparece aqui, como responsável pelo tratamento dos dados (LGPD).
   await expect(page.locator('main')).toContainText('Vitor Reis de Carvalho');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Política de privacidade');
   await expect(page.locator('main')).toContainText('13.709/2018');

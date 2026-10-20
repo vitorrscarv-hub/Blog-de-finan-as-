@@ -45,10 +45,9 @@ const tituloCompleto = title === SITE.nome ? title : `${title} | ${SITE.nome}`;
     {artigo && <meta property="article:published_time" content={artigo.publicado.toISOString()} />}
     {artigo?.modificado && <meta property="article:modified_time" content={artigo.modificado.toISOString()} />}
     {artigo && <meta property="article:section" content={artigo.secao} />}
-    {artigo && <meta property="article:author" content={SITE.autor.nome} />}
-    {artigo && keywords.map((k) => <meta property="article:tag" content={k} />)}
+        {artigo && keywords.map((k) => <meta property="article:tag" content={k} />)}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="author" content={SITE.autor.nome} />
+    <meta name="author" content={SITE.nome} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#131c2b" />

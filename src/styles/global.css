@@ -257,10 +257,11 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .rodape { background: var(--barra); color: var(--barra-suave); font-size: .88rem; padding: 40px 0 32px; margin-top: 48px; }
 .rodape a { color: var(--barra-texto); text-decoration: none; }
 .rodape a:hover { color: var(--marca-texto); }
-.rodape-grade { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.rodape-grade { display: grid; grid-template-columns: 2fr 1fr; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255, 255, 255, .14); }
 .rodape .marca { margin-bottom: 14px; }
 .rodape .slogan { color: var(--barra-texto); font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
-.rodape .editorias-marca { color: var(--marca-texto); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 0; }
+.rodape .editorias-marca { color: var(--marca-texto); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+.rodape .rodape-sobre { max-width: 52ch; font-size: .95rem; line-height: 1.55; color: var(--barra-suave); }
 .rodape h2 { font-family: var(--ui); font-stretch: 100%; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--barra-texto); margin: 0 0 10px; }
 .rodape ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
 .rodape p { margin: 0; }
@@ -316,8 +317,7 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
 @media (max-width: 860px) {
   .capa { grid-template-columns: 1fr; }
   .mais { border-left: 0; padding-left: 0; border-top: 1px solid var(--filete-forte); padding-top: 12px; }
-  .rodape-grade { grid-template-columns: 1fr 1fr; }
-  .rodape-grade > :first-child { grid-column: 1 / -1; }
+  .rodape-grade { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
