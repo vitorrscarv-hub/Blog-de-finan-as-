@@ -260,7 +260,7 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .rodape-grade { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255, 255, 255, .14); }
 .rodape .marca { margin-bottom: 14px; }
 .rodape .slogan { color: var(--barra-texto); font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
-.rodape .editorias-marca { color: var(--marca-texto); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+.rodape .editorias-marca { color: var(--marca-texto); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 0; }
 .rodape h2 { font-family: var(--ui); font-stretch: 100%; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--barra-texto); margin: 0 0 10px; }
 .rodape ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
 .rodape p { margin: 0; }
