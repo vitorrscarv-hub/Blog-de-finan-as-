@@ -31,7 +31,7 @@ test('rodapé traz a marca, o que o blog faz e os avisos, sem nome de pessoa', a
   const rodape = page.locator('footer.rodape');
   await expect(rodape).toContainText('A informação que conecta os fatos.');
   await expect(rodape).toContainText('fonte oficial');
-  await expect(rodape).toContainText('inteligência artificial e revisados por uma pessoa');
+  await expect(rodape).toContainText('inteligência artificial e revisados pela equipe técnica da redação');
   await expect(rodape).not.toContainText(/Vitor|CEA|PUC-RS/);
   await expect(rodape).toContainText('Rentabilidade passada não garante rentabilidade futura');
   await expect(page.locator('body')).not.toContainText(/economista|assessor de investimentos/i);
