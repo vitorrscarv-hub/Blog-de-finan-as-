@@ -7,7 +7,9 @@ export const SITE = {
   // Imagem usada quando um link do blog é compartilhado (WhatsApp, LinkedIn etc.). 1200x630.
   imagemPadrao: '/og-padrao.png',
   autor: {
-    nome: 'Vitor Reis de Carvalho',
+    // Nome que aparece no rodapé e nos metadados. O nome completo só vai onde a lei pede identificação (política de privacidade).
+    nome: 'Vitor RC',
+    nomeCompleto: 'Vitor Reis de Carvalho',
     credenciais: [
       'CEA (Anbima)',
       'Pós-graduado em Finanças, Investimentos e Banking pela PUC-RS',

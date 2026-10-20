@@ -29,6 +29,7 @@ test('home lista notícias e guias com a data em pt-BR', async ({ page }) => {
 test('rodapé traz as credenciais do autor e o aviso legal', async ({ page }) => {
   await page.goto('/');
   const rodape = page.locator('footer.rodape');
+  await expect(rodape).toContainText('Vitor RC');
   await expect(rodape).toContainText('CEA (Anbima)');
   await expect(rodape).toContainText('PUC-RS');
   await expect(rodape).toContainText('Gestão Financeira');
@@ -43,7 +44,7 @@ test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO
   await expect(page.locator('.linha-fina')).toBeVisible();
   const meta = page.locator('.artigo-cabecalho .assinatura');
   // Abaixo do título vai a fonte, não o nome do autor.
-  await expect(meta).not.toContainText('Vitor Reis de Carvalho');
+  await expect(meta).not.toContainText(/Vitor (RC|Reis de Carvalho)/);
   if (await page.locator('.fontes li').count()) await expect(meta.locator('.fontes-linha')).toContainText(/^Fontes?/);
   await expect(meta).toContainText('min de leitura');
   const data = meta.locator('time').first();
@@ -58,7 +59,7 @@ test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO
 
   const ld = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent()) ?? '{}');
   expect(ld['@type']).toBe('NewsArticle');
-  expect(ld.author.name).toBe('Vitor Reis de Carvalho');
+  expect(ld.author.name).toBe('Vitor RC');
   if (await page.locator('.artigo-corpo[data-gate="true"]').count()) {
     expect(ld.isAccessibleForFree).toBe(false);
     expect(ld.hasPart).toMatchObject({ isAccessibleForFree: false, cssSelector: '.artigo-corpo' });
@@ -123,6 +124,8 @@ test('calendário de proventos tem as duas seções, o aviso e menu', async ({ p
 
 test('privacidade tem os campos para preencher', async ({ page }) => {
   await page.goto('/privacidade/');
+  // O responsável pelo tratamento é identificado pelo nome completo; no resto do site o nome é "Vitor RC".
+  await expect(page.locator('main')).toContainText('Vitor Reis de Carvalho');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Política de privacidade');
   await expect(page.locator('main')).toContainText('13.709/2018');
 });
