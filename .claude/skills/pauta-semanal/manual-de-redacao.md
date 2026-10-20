@@ -85,7 +85,19 @@ Fontes primárias aceitas no exterior: Federal Reserve (federalreserve.gov), Bur
 
 Fatos políticos e de guerra (ataque, acordo, sanção, declaração) muitas vezes não têm fonte primária com números. Nesse caso, o fato só entra confirmado por duas agências de notícias independentes entre Reuters, Associated Press e AFP, ou por comunicado oficial de uma das partes, atribuído como tal ("segundo o governo de X"). Sanção e norma têm fonte primária (OFAC, Jornal Oficial da UE, gov.uk) e entram pelo documento. Como as agências recusam robôs neste ambiente, fato de guerra sem documento oficial aberto fica como rascunho. Números de vítimas, deslocados ou danos sempre com a fonte nomeada no texto ("segundo a ONU", "segundo o ministério da Saúde local").
 
-- Jornal, portal ou site de investimento serve para achar a pauta, nunca como fonte do número.
+- Jornal, portal ou site de investimento serve para achar a pauta, nunca como fonte do número. A exceção é a Matéria indicada pontual (abaixo).
+
+### Exceção: jornais na Matéria indicada pontual
+
+Só na Matéria indicada pontual (assunto escolhido por Vitor), fatos políticos, de protesto, de conflito ou de eleição podem vir de jornais de grande repercussão, quando a fonte oficial ou as agências não abrirem ou ainda não tiverem publicado. Regras:
+
+- Jornais aceitos: veículos de circulação nacional ou internacional com redação própria, como Le Monde, Le Figaro, Les Echos, Financial Times, The Economist, The New York Times, The Washington Post, The Wall Street Journal, BBC, The Guardian, El País, Der Spiegel, Folha de S.Paulo, O Estado de S. Paulo, O Globo e Valor Econômico. Blog, coluna de opinião, editorial, rede social e site agregador não contam.
+- Todo fato tirado de jornal vai atribuído no texto ("segundo o Le Monde", "de acordo com o Financial Times"), e a página aberta entra em `fontes:`.
+- Fato disputado ou número de manifestantes, vítimas ou votos: dois jornais independentes, ou um jornal mais a fonte oficial, e o texto diz quem informa cada número. Se os números divergirem, o texto mostra os dois.
+- Dado econômico (inflação, juros, câmbio, PIB, preço) continua só na fonte primária, mesmo na pontual.
+- Página com paywall ou que recusa robôs não se contorna: se não abriu nesta sessão, não entra.
+- A neutralidade da seção "Política e conflitos" vale igual: o enquadramento e os adjetivos do jornal não passam para o texto; só o fato atribuído.
+- O pull request lista quais fatos vieram de jornal e de qual.
 - Se a fonte primária não abrir (bloqueio de rede, site fora do ar), o dado fica sem conferência. O texto vai com `draft: true` e o pull request diz o que faltou. Nunca preencher com o que "provavelmente" é.
 - Em `fontes:` do cabeçalho, só páginas abertas de fato, com título descritivo e url completa. Toda matéria precisa de pelo menos uma fonte: a linha "Fonte" abaixo do título é montada a partir dela, e é ela que o leitor vê no lugar de uma assinatura.
 
