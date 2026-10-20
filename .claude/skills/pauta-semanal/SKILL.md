@@ -37,7 +37,7 @@ Outros dias, sem pedido: use o ciclo de segunda. Tarefa que diga "plantão": cic
 
 ### Matéria indicada pontual
 
-Quando Vitor escolhe um assunto fora dos ciclos (pedido direto ou tarefa agendada única), o ciclo é `pontual` e o nome é **Matéria indicada pontual**. Vale o fluxo de uma notícia: repórter, checador e revisor, na editoria que o assunto pedir, com as mesmas regras do manual. Branch `pontual/AAAA-MM-DD-assunto-curto` e pull request com título `Matéria indicada pontual: <assunto>`, com a tabela final do checador e o que ficou de fora.
+Quando Vitor escolhe um assunto fora dos ciclos (pedido direto ou tarefa agendada única), o ciclo é `pontual` e o nome é **Matéria indicada pontual**. Vale o fluxo de uma notícia: repórter, checador e revisor, na editoria que o assunto pedir, com as mesmas regras do manual, mais a exceção "jornais na Matéria indicada pontual" (seção Fontes do manual): fato político, de protesto, de conflito ou de eleição pode vir de jornal de grande repercussão, sempre atribuído. Branch `pontual/AAAA-MM-DD-assunto-curto` e pull request com título `Matéria indicada pontual: <assunto>`, com a tabela final do checador e o que ficou de fora.
 
 ### Plantão
 
