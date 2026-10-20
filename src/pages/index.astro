@@ -19,7 +19,7 @@ const jsonLd = {
   description: SITE.descricao,
   url: new URL('/', Astro.site).href,
   inLanguage: 'pt-BR',
-  author: { '@type': 'Person', name: SITE.autor.nome, description: SITE.autor.credenciais.join('; ') },
+  publisher: { '@type': 'Organization', name: SITE.nome },
 };
 ---
 <Base title={SITE.nome} jsonLd={jsonLd}>
