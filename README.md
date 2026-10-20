@@ -184,7 +184,7 @@ Só aceita POST. Valida tudo de novo no servidor, normaliza o e-mail em minúscu
 
 Variáveis opcionais:
 
-- `ALLOWED_ORIGIN`: origens aceitas, separadas por vírgula (ex.: `https://www.seudominio.com.br,https://seudominio.com.br`). Pedidos de outras origens recebem 403. Configure só no ambiente de produção, senão as prévias dos pull requests não conseguem cadastrar.
+- `ALLOWED_ORIGIN`: origens aceitas, separadas por vírgula (para o Grafous: `https://grafous.com.br,https://www.grafous.com.br`). Pedidos de outras origens recebem 403. Configure só no ambiente de produção, senão as prévias dos pull requests não conseguem cadastrar.
 - `LEAD_WEBHOOK_URL`: endereço que recebe cada cadastro por POST em JSON (RD Station, Mailchimp, Brevo, Zapier, Make etc.). O envio acontece em segundo plano, com limite de 5 segundos.
 
 ## Publicar no Cloudflare Pages
@@ -206,10 +206,10 @@ Você precisa de uma conta no Cloudflare. Os comandos abaixo rodam no seu comput
    - em Production, apontando para `blog-leads`;
    - em Preview, apontando para `blog-leads-previa` (ou `blog-leads`, se não criou o banco de prévias).
 8. Em Settings, Variables and Secrets, no ambiente Production:
-   - `ALLOWED_ORIGIN` = `https://www.seudominio.com.br,https://seudominio.com.br`
+   - `ALLOWED_ORIGIN` = `https://grafous.com.br,https://www.grafous.com.br`
    - `LEAD_WEBHOOK_URL` = endereço da sua automação, se houver (marque como Secret, porque a url costuma conter uma chave).
 9. Faça um novo deploy (Deployments, Retry deployment) para os vínculos valerem.
-10. Em Custom domains, ligue o domínio do blog. Troque `https://www.seudominio.com.br` em `astro.config.mjs` pelo domínio definitivo, pois esse endereço entra no canonical, no sitemap, no RSS e no Open Graph.
+10. Em Custom domains, ligue o domínio do blog. O domínio definitivo (`https://grafous.com.br`) já está em `astro.config.mjs`, pois esse endereço entra no canonical, no sitemap, no RSS e no Open Graph.
 11. Faça um cadastro de teste no site publicado e confira com o comando de exportação abaixo.
 
 O `wrangler.toml` não tem `pages_build_output_dir` de propósito: assim o Cloudflare usa os vínculos e as variáveis do painel, e o id do banco não precisa ficar no repositório.
@@ -245,7 +245,7 @@ O GitHub Actions (`.github/workflows/ci.yml`) roda o build e todos os testes em 
 
 ## Checklist de lançamento
 
-- [ ] Comprar ou separar o domínio e trocar `https://www.seudominio.com.br` em `astro.config.mjs`.
+- [x] Domínio `grafous.com.br` registrado no Registro.br, com o DNS no Cloudflare e o endereço em `astro.config.mjs`.
 - [ ] Criar a conta no Cloudflare, o banco D1 e ligar o repositório ao Pages (passo a passo acima).
 - [ ] Configurar o vínculo `DB` em Production e Preview, e `ALLOWED_ORIGIN` em Production.
 - [ ] Fazer um cadastro de teste no site publicado e exportar para conferir.
