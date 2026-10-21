@@ -32,7 +32,29 @@ O nome do blog (Grafous) e o slogan ficam em `SITE.nome` e `SITE.slogan`, em `sr
 
 Layout editorial próprio: barra superior escura, grade com filetes finos em vez de caixas, títulos na fonte Archivo (condensada) e texto corrido na Source Serif 4. As fontes vêm dos pacotes `@fontsource-variable` e são servidas pelo próprio site, sem Google Fonts. Cores e tamanhos ficam nas variáveis do topo de `src/styles/global.css`, com versão para o modo escuro.
 
-A faixa de indicadores abaixo do menu (Selic, IPCA em 12 meses, dólar PTAX) lê `src/data/indicadores.json`. Cada item precisa de `nome`, `valor`, `data`, `fonte` e `url` (https). Item incompleto não aparece, e a faixa some se o arquivo estiver vazio. A pauta semanal atualiza esse arquivo com os valores conferidos na fonte oficial.
+A faixa de indicadores abaixo do menu (Selic, IPCA em 12 meses, dólar PTAX) lê `src/data/indicadores.json`. Cada item precisa de `nome`, `valor`, `data`, `fonte` e `url` (https). Item incompleto não aparece, e a faixa some se o arquivo estiver vazio. O arquivo é atualizado por `npm run indicadores`, sem IA, direto do Banco Central e do IBGE (a rotina automática abaixo roda esse comando nas datas de divulgação).
+
+### Tarja de cotações
+
+Abaixo da faixa de indicadores há uma tarja em movimento com o Ibovespa, 12 ações do índice e o dólar PTAX. O navegador lê `/api/cotacoes` (`functions/api/cotacoes.js`) a cada 60 segundos com a aba aberta. A função consulta a B3 (`cotacao.b3.com.br`, a mesma consulta pública do site da B3, com 15 minutos de atraso, sem chave) e o Olinda do Banco Central, e guarda a resposta na borda da Cloudflare por 60 segundos no pregão e 15 minutos fora dele: o número de leitores não aumenta as consultas às fontes. Não usa banco, chave nem segredo.
+
+- A lista de papéis fica em `src/data/tarja.json`; a função descarta o que não for componente do Ibovespa. É informativa: sem ranking, sem destaque de alta ou baixa e sem recomendação (o aviso está na própria tarja).
+- `SITE.tarja.ativo` (em `src/site.config.ts`) liga e desliga a tarja. Se a fonte falhar, a tarja some em vez de mostrar valor velho como se fosse atual.
+- Com "reduzir movimento" ativado no aparelho, a tarja não anima e vira uma faixa rolável.
+- Aviso de risco: a API da B3 usada aqui é pública, mas não documentada nem contratada. Se a B3 mudar ou bloquear, só a tarja é afetada. A alternativa paga e licenciada é o feed de dados da própria B3 (UP2DATA) ou um provedor como a brapi.
+
+### Rotinas de dados (sem IA)
+
+`.github/workflows/rotinas.yml` roda só na hora em que a fonte publica e abre pull request apenas se algo mudou (nunca faz merge):
+
+| Rotina | Quando (Brasília) | O que faz |
+| --- | --- | --- |
+| `dolar` | 13h20 e 13h50, dias úteis | Gera a nota do dólar PTAX por modelo (`scripts/dolar-diario.mjs`) e atualiza o indicador. Sem PTAX no dia (feriado) ou nota já existente, não faz nada. |
+| `copom` | 18h50 e 19h50, quartas | Atualiza a Selic se a decisão saiu (o Copom não tem API de calendário; a detecção é por mudança). |
+| `ibge` | 9h25 a 12h25, dias úteis | Se o calendário do IBGE (`src/data/agenda.json`) marcou uma divulgação nas últimas 3 horas, atualiza o IPCA. |
+| `agenda` | segunda, 6h05 | Renova `src/data/agenda.json` com as divulgações dos próximos 60 dias. |
+
+Pré-requisito único: em Settings > Actions > General, marcar "Allow GitHub Actions to create and approve pull requests". Pull requests abertos pelo Actions não disparam o CI sozinhos; a rotina do dólar roda `npm run build` antes de abrir o PR. Para testar à mão: Actions > Rotinas de dados > Run workflow. Para ver o que vem pela frente: `npm run agenda -- --proximos=30`.
 
 ## Como rodar
 

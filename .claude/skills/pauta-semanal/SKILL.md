@@ -83,15 +83,7 @@ Em paralelo com a reportagem, chame o `calendarista` com a data da pauta e a lis
 
 ## 5. Indicadores do topo do site
 
-Chame o `checador` (em paralelo com a checagem dos textos; só no ciclo de segunda) para atualizar `src/data/indicadores.json`, com estes três itens:
-
-- `Selic`: meta da taxa Selic vigente, em "% a.a.", lida em `https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros` (campo `MetaSelic` do primeiro item de `conteudo`; `data` = início da vigência);
-- `IPCA 12m`: inflação acumulada em 12 meses do último IPCA divulgado, lida na API do IBGE (`servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265`; `data` = o mês de referência);
-- `Dólar PTAX`: PTAX de venda do último dia útil (`cotacaoVenda`), lida no Olinda do Banco Central, no formato "R$ 0,0000".
-
-Os endereços completos e as ressalvas estão em `acesso-as-fontes.md`; a leitura é pelo Bash (`curl -g`), porque o WebFetch não funciona neste ambiente. O valor vai com `url` apontando para a consulta que você abriu.
-
-Cada item tem `nome`, `valor` (com vírgula decimal), `data` (a que o valor se refere, ex.: "set 2026" ou "16 out 2026"), `fonte` (ex.: "Banco Central") e `url` (https da página ou da consulta aberta). Item que não puder ser conferido sai do arquivo; a faixa esconde o que estiver incompleto e some se ficar vazia. Um commit separado: `atualiza indicadores`.
+Sem IA e sem checador: rode `node scripts/indicadores.mjs`. O script lê Selic (Banco Central), IPCA 12m (IBGE) e dólar PTAX (Banco Central) nas fontes oficiais e troca só `valor` e `data` do que mudou em `src/data/indicadores.json`; fonte que não responder deixa o item como estava e avisa. Também roda sozinho nas datas de divulgação (`.github/workflows/rotinas.yml`), então no ciclo de segunda o arquivo normalmente já está certo. Um commit separado, só se houve mudança: `atualiza indicadores`.
 
 ## 6. Fechamento
 
