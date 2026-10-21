@@ -27,6 +27,14 @@ export const SITE = {
     modo: 'obrigatorio' as 'obrigatorio' | 'opcional',
     endpoint: '/api/lead',
   },
+  // Tarja de cotações no topo (Ibovespa, ações do índice e dólar PTAX). Lê /api/cotacoes; a lista de papéis está em src/data/tarja.json.
+  // A B3 entrega com 15 minutos de atraso; o aviso fica na própria tarja. false desliga a tarja.
+  tarja: {
+    ativo: true,
+    endpoint: '/api/cotacoes',
+    intervaloSegundos: 60,
+    ptaxUrl: 'https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes',
+  },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
   // Respeita "Não rastrear" (DNT) e o Global Privacy Control. O painel mora na pasta src/pages/painel-grafous/:
   // se mudar o endereço, renomeie a pasta e ajuste `painel` aqui.

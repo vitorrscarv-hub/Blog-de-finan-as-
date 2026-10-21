@@ -2,6 +2,7 @@
 import { SITE } from '../site.config';
 import Indicadores from './Indicadores.astro';
 import Logo from './Logo.astro';
+import Tarja from './Tarja.astro';
 const caminho = Astro.url.pathname;
 const links = [
   { href: '/noticias/', rotulo: 'Notícias', exato: true },
@@ -27,3 +28,4 @@ const ativo = (l: (typeof links)[number]) =>
   </div>
 </header>
 <Indicadores />
+<Tarja />

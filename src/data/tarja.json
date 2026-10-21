@@ -1,0 +1,5 @@
+{
+  "_comentario": "Papéis da tarja de cotações, na ordem em que aparecem. Só entram componentes do Ibovespa (a função confere o indicador de índice da B3 e descarta o que não for). Lista informativa: não é carteira, ranking nem recomendação. Para trocar um papel, edite esta lista.",
+  "indice": "IBOV",
+  "acoes": ["ITUB4", "PETR4", "VALE3", "B3SA3", "SBSP3", "BBDC4", "BPAC11", "WEGE3", "BBAS3", "ABEV3", "AXIA3", "ITSA4"]
+}
