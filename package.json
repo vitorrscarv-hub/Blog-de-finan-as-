@@ -13,7 +13,10 @@
     "cf:db:local": "wrangler d1 execute blog-leads --local --env local --file=db/schema.sql",
     "cf:dev": "astro build && wrangler pages dev dist --d1 DB=COLE-O-ID-DO-BANCO-AQUI",
     "cf:exportar": "node scripts/exportar-leads.mjs",
-    "marca": "node scripts/gerar-marca.mjs"
+    "marca": "node scripts/gerar-marca.mjs",
+    "indicadores": "node scripts/indicadores.mjs",
+    "dolar": "node scripts/dolar-diario.mjs",
+    "agenda": "node scripts/agenda.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
