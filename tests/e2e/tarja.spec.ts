@@ -9,12 +9,12 @@ const resposta = {
   ptax: { valor: 5.014, variacao: -0.2, data: '2026-10-20' },
 };
 
-test('tarja mostra índice, ações e PTAX com aviso de atraso', async ({ page }) => {
+test('tarja mostra índice, ações e PTAX, e o rodapé avisa do atraso', async ({ page }) => {
   await page.route('**/api/cotacoes', (r) => r.fulfill({ json: resposta }));
   await page.goto('/');
   const tarja = page.locator('.tarja.pronta');
   await expect(tarja).toBeVisible();
-  await expect(tarja.getByText('atraso de 15 min')).toBeVisible();
+  await expect(page.locator('footer')).toContainText('atraso de até 15 minutos');
   const primeira = tarja.locator('.tarja-copia').first();
   await expect(primeira).toContainText('Ibovespa');
   await expect(primeira).toContainText('208.272 pts');
