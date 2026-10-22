@@ -26,7 +26,8 @@ Uma matéria por dia sobre política nacional, pelo que interessa a quem investe
 
 Em período eleitoral, a matéria acompanha as pesquisas para presidente:
 
-- Só pesquisa registrada no TSE. A lei eleitoral exige que a divulgação informe: instituto, contratante, número de registro (formato `BR-00000/AAAA`), período de campo, número de entrevistas, margem de erro e nível de confiança. Sem algum desses dados, a pesquisa não entra. O `scripts/revisar.mjs` barra texto com instituto e percentuais sem registro.
+- Só pesquisa registrada no TSE. A lei eleitoral exige que a divulgação informe: instituto, contratante, número de registro (formato `BR-00000/AAAA`), período de campo, número de entrevistas, margem de erro e nível de confiança. Sem algum desses dados, a pesquisa não entra. Registro, instituto, campo, divulgação e entrevistas se conferem nos dados abertos do TSE (`node scripts/pesquisas-tse.mjs`); percentuais, contratante e, se faltar no registro, a margem, no relatório do instituto ou na matéria do veículo contratante. O `scripts/revisar.mjs` barra texto com instituto e percentuais sem registro.
+- Entram institutos com amostra nacional e série regular de pesquisas na eleição (o próprio registro do TSE mostra a frequência). A matéria diz quais pesquisas entraram e por que outras ficaram de fora, se for o caso.
 - Números lidos no relatório do instituto, no registro do TSE ou na matéria do veículo que contratou a pesquisa, sempre atribuídos ("segundo a Quaest", "segundo o Datafolha").
 - Uma tabela com as pesquisas mais recentes de cada instituto relevante, candidatos sempre na mesma ordem (a da cédula ou alfabética), com a margem ao lado. Sem média própria, sem projeção, sem "tendência" que a pesquisa não afirme.
 - Diferença dentro da margem é "empate técnico", dito assim. Variação entre pesquisas do mesmo instituto é descrita com o número, sem verbo de efeito (nada de "dispara", "derrete", "despenca").

@@ -30,7 +30,7 @@ Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publ
 
 1. **Branch.** `git fetch origin` e use o branch `edicao/AAAA-MM-DD` (data de São Paulo). Se ele já existir no remoto (a manhã já rodou), faça checkout dele; senão crie a partir de `origin/main`. `npm ci`.
 2. **O que o dia pede (sem IA).** `node scripts/hoje.mjs --turno=<turno>`: matéria obrigatória e sugestões.
-3. **Radar (sem IA).** `node scripts/radar.mjs --horas=14` na manhã, `--horas=8` na noite: manchetes dos jornais e o que as fontes oficiais publicaram. Para não repetir assunto: `ls src/content/noticias | tail -20` e os títulos dos pull requests abertos.
+3. **Radar (sem IA).** `node scripts/radar.mjs --horas=14` na manhã, `--horas=8` na noite: manchetes dos jornais e o que as fontes oficiais publicaram. Na manhã, em período eleitoral, também `node scripts/pesquisas-tse.mjs --dias=7`: pesquisas para presidente registradas no TSE. Para não repetir assunto: `ls src/content/noticias | tail -20` e os títulos dos pull requests abertos.
 4. **Pauta.** Escolha os assuntos das vagas do turno pelos critérios do manual. Não pesquise na web além do necessário para abrir a fonte de cada assunto escolhido.
 5. **Escrever.** Uma matéria por vez, no formato do manual, com os dados lidos na fonte aberta nesta sessão. Para cada matéria, anote a tabela "dado | valor no texto | url da fonte".
 6. **Checar.** Chame um `checador` por matéria (em paralelo), com o caminho do arquivo e a tabela.

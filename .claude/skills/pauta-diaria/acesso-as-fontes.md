@@ -38,7 +38,8 @@ O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso. Muitos avisos trazem 
 
 - `node scripts/radar.mjs [--horas=14] [--so=jornais|oficiais] [--max=12]`: manchetes com hora e link dos jornais (Valor, Folha Mercado e Poder, Estadão Economia e Política, G1 Economia e Política, Money Times, InfoMoney, Poder360) e o que saiu nas fontes oficiais (Copom, Selic, notícias do IBGE, Fed, fatos relevantes da CVM). Fonte que falha vira uma linha de aviso. O arquivo de dados abertos da CVM atualiza com defasagem de dias: para fato do mesmo dia, abra o RAD ou o RI da empresa.
 - `node scripts/hoje.mjs --turno=manha|noite`: matéria obrigatória do turno (IPCA pelo calendário do IBGE; ata e decisão do Copom pelas APIs `sitebcb/copom/atas` e `sitebcb/copom/comunicados` do Banco Central). `--proximos=30` lista as próximas divulgações do IBGE.
-- Bloqueados pela rede do ambiente até serem liberados em "Allowed domains": `moneytimes.com.br`, `infomoney.com.br`, `poder360.com.br` e `tse.jus.br` (registro das pesquisas eleitorais, PesqEle). Até lá, o registro de uma pesquisa é lido na matéria do veículo contratante ou no relatório do instituto.
+- `node scripts/pesquisas-tse.mjs [--dias=7]`: pesquisas para presidente registradas no TSE, pelos dados abertos (`cdn.tse.jus.br/estatistica/sead/odsele/pesquisa_eleitoral/pesquisa_eleitoral_AAAA.zip`, arquivo `_BRASIL.csv`): registro, instituto, campo, divulgação, entrevistas e, quando o registro traz, a margem. O site do TSE (`tse.jus.br`, PesqEle) recusa robôs (Access Denied da Akamai): não contornar.
+- Money Times, InfoMoney e Poder360 abrem desde a liberação na rede (22/10/2026).
 
 ## Dados do exterior (funcionam)
 

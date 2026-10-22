@@ -116,6 +116,7 @@ Para gastar o mínimo de IA, o que é dado vira script e a IA só escreve:
 | --- | --- |
 | O que o dia pede | `node scripts/hoje.mjs`: IPCA pelo calendário do IBGE; ata e decisão do Copom pelas APIs do Banco Central |
 | Pauta | `node scripts/radar.mjs`: manchetes dos jornais (Valor, Folha, Estadão, G1, Money Times, InfoMoney, Poder360) e das fontes oficiais |
+| Pesquisas eleitorais | `node scripts/pesquisas-tse.mjs`: registro das pesquisas para presidente nos dados abertos do TSE |
 | Texto | o editor-chefe (a própria sessão), uma matéria por vez |
 | Checagem | um agente `checador` por matéria (`.claude/agents/checador.md`) |
 | Revisão | `node scripts/revisar.mjs`: travessão, emoji, expressões proibidas, teaser, fontes e registro de pesquisa eleitoral |
