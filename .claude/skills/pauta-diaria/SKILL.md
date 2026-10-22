@@ -1,106 +1,54 @@
 ---
-name: pauta-semanal
-description: Coordena a redação do blog em dois ciclos por semana (segunda: 3 notícias do Brasil, 2 de Mercado e 1 guia; sexta: 5 internacionais; e o calendário de proventos nos dois) com os agentes pauteiro, repórter, checador, calendarista e revisor, roda build e testes e abre um pull request para Vitor revisar e publicar com o botão Merge. Use quando a tarefa agendada semanal disparar ou quando pedirem a pauta da semana.
+name: pauta-diaria
+description: Edição diária do Grafous (segunda a sábado, 10h30 e 18h45 de São Paulo, 3 matérias por dia num só pull request) e a Matéria indicada pontual. Use quando a tarefa agendada da manhã ou da noite disparar, ou quando Vitor pedir uma matéria pontual.
 ---
 
-# Pauta semanal: editor-chefe
+# Edição diária: editor-chefe
 
-Você é o editor-chefe. A redação tem cinco integrantes, definidos em `.claude/agents/`:
+Este arquivo é a única descrição do fluxo. As regras de conteúdo (vagas, fontes, tom, política, o que nunca sai) estão em `manual-de-redacao.md`; como abrir cada fonte, em `acesso-as-fontes.md`. Leia os dois e o `CLAUDE.md` antes de começar. Vitor é o publisher: você nunca faz merge.
 
-| Integrante | Faz | Não faz |
+Economia de tokens é regra: script antes de IA, leitura curta (radar e `hoje.mjs` em vez de pesquisar na web), uma matéria por vez e só os dois agentes abaixo.
+
+| Quem | Faz |
+| --- | --- |
+| você (editor-chefe) | escolhe a pauta pelo radar, escreve as matérias, roda revisão, build e testes, abre ou atualiza o pull request |
+| `checador` (`.claude/agents/checador.md`) | confere cada dado de uma matéria na fonte e corrige ou marca rascunho; um por matéria, em paralelo |
+| `calendarista` (`.claude/agents/calendarista.md`) | só na manhã de segunda: atualiza o calendário de proventos |
+
+Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faça o papel deles você mesmo, lendo o arquivo do agente como instrução.
+
+## Turnos
+
+| Turno | Quando | Matérias |
 | --- | --- | --- |
-| `pauteiro` | escolhe os assuntos e acha as fontes primárias | não escreve |
-| `reporter` | escreve um texto por vez, com os dados lidos na fonte | não escolhe pauta |
-| `calendarista` | monta as linhas do calendário de proventos (ações e fundos imobiliários) com fonte aberta | não escreve texto, só mexe em `src/data/calendario.json` |
-| `checador` | confere cada dado do texto e do calendário na fonte primária e corrige ou marca rascunho | não mexe no estilo |
-| `revisor` | ajusta estilo, tom, conformidade e limites do cabeçalho | não mexe em número nem fonte |
+| `manha` | segunda a sábado, 10h30 | 1 de **Política Brasil** e 1 de **Brasil ou Mercado**. Se `hoje.mjs` apontar matéria obrigatória (IPCA, ata do Copom), ela ocupa a vaga de Brasil ou Mercado. Segunda: também o calendário de proventos. |
+| `noite` | segunda a sábado, 18h45 | 1 com o **fato do dia**: em dia útil, o que marcou o fechamento do mercado; no sábado, o fato mais relevante do dia. Se `hoje.mjs` apontar a decisão do Copom, ela é a matéria. |
 
-Todos seguem `.claude/skills/pauta-semanal/manual-de-redacao.md` e, para abrir fontes, `.claude/skills/pauta-semanal/acesso-as-fontes.md` (o WebFetch não funciona neste ambiente; a leitura é pelo Bash). Leia esse manual e o `CLAUDE.md` antes de começar. Vitor é o publisher: ele lê o pull request e decide com o botão Merge. Você nunca faz merge.
+Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publicar menos é melhor que publicar fraco. Internacional não tem vaga fixa; entra quando for o fato mais relevante da vaga.
 
-Chame cada integrante com a ferramenta Agent, usando o nome dele em `subagent_type` e passando no prompt tudo o que ele precisa (ele não vê esta conversa). Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faça você mesmo cada papel, na mesma ordem, lendo o arquivo do agente em `.claude/agents/` como instrução.
+## Passo a passo
 
-## 0. Edição
+1. **Branch.** `git fetch origin` e use o branch `edicao/AAAA-MM-DD` (data de São Paulo). Se ele já existir no remoto (a manhã já rodou), faça checkout dele; senão crie a partir de `origin/main`. `npm ci`.
+2. **O que o dia pede (sem IA).** `node scripts/hoje.mjs --turno=<turno>`: matéria obrigatória e sugestões.
+3. **Radar (sem IA).** `node scripts/radar.mjs --horas=14` na manhã, `--horas=8` na noite: manchetes dos jornais e o que as fontes oficiais publicaram. Para não repetir assunto: `ls src/content/noticias | tail -20` e os títulos dos pull requests abertos.
+4. **Pauta.** Escolha os assuntos das vagas do turno pelos critérios do manual. Não pesquise na web além do necessário para abrir a fonte de cada assunto escolhido.
+5. **Escrever.** Uma matéria por vez, no formato do manual, com os dados lidos na fonte aberta nesta sessão. Para cada matéria, anote a tabela "dado | valor no texto | url da fonte".
+6. **Checar.** Chame um `checador` por matéria (em paralelo), com o caminho do arquivo e a tabela.
+7. **Calendário (só na manhã de segunda).** Em paralelo com a checagem, chame o `calendarista` com a data. Um commit separado: `atualiza calendário de proventos`.
+8. **Fechar.**
+   - `node scripts/revisar.mjs`: corrija todo erro; aviso, avalie.
+   - `npm run indicadores` (valor de reserva da faixa do topo; o site já mostra o valor ao vivo).
+   - `npm run build` sem erros nem avisos e `npm test`. Texto que derrube o build e não tenha conserto vai com `draft: true`, registrado no pull request.
+   - Um commit por matéria (ex.: `adiciona matéria sobre a ata do Copom`) e um para indicadores, se mudaram.
+9. **Pull request.** Push do branch. Na manhã, abra o pull request `Edição de AAAA-MM-DD` para o `main`. Na noite, atualize o mesmo pull request (se ainda não existir, abra). O corpo tem uma seção por turno com, para cada matéria: vaga, título, endereço, se está publicada ou como rascunho, a tabela final do checador e quais fatos vieram de jornal; depois, vagas vazias e o motivo, o calendário (segunda) e o resultado de build e testes. Use as ferramentas `mcp__github__` (carregue com ToolSearch); se não houver, termine com o link `https://github.com/vitorrscarv-hub/Blog-de-finan-as-/compare/main...edicao/AAAA-MM-DD?expand=1` e o corpo pronto para colar.
+10. **Fim.** Se houver ferramenta de notificação, avise Vitor com o link. Responda com o link e uma linha por matéria.
 
-A edição padrão é `br` (Brasil), a única ativa hoje. Se o pedido citar outra edição, confira `.claude/skills/pauta-semanal/edicoes/edicoes.json`:
+Nunca faça merge, push no `main`, force push ou deploy. Se algo impedir a edição (sem acesso de escrita, nenhuma fonte abre), responda com a primeira linha "EDIÇÃO NÃO FEITA" e o motivo exato.
 
-- se a edição não existir ou estiver com `"ativa": false`, não faça a pauta: responda que ela ainda não foi ativada e aponte `edicoes/COMO-ATIVAR.md`;
-- se estiver ativa, passe a todos os integrantes o código da edição e o arquivo `edicoes/<codigo>.md`, que substitui as seções de leitor, pauta e fontes do manual comum. Use o fuso da edição para a data da pauta e no nome do branch (`pauta/<codigo>/AAAA-MM-DD`), e as pastas de conteúdo da edição.
+## Matéria indicada pontual
 
-## 0b. Ciclo
+Assunto escolhido por Vitor (pedido direto ou tarefa agendada única), inclusive guias. Mesmo fluxo de uma matéria (passos 5, 6, 8), na editoria ou no tema que o assunto pedir. Branch `pontual/AAAA-MM-DD-assunto-curto` e pull request próprio, `Matéria indicada pontual: <assunto>`.
 
-A edição Brasil roda duas vezes por semana (`edicoes.json`: segunda e sexta, 06:56 de São Paulo). O ciclo é decidido pelo dia da semana em São Paulo, salvo pedido em contrário:
+## Edições de outros países
 
-- **segunda (`segunda`, Brasil e mercado):** 3 notícias `Brasil`, 2 `Mercado`, 1 guia e o calendário;
-- **sexta (`sexta`, Internacional):** 5 notícias `Internacional` e o calendário.
-
-Outros dias, sem pedido: use o ciclo de segunda. Tarefa que diga "plantão": ciclo `plantao`, descrito abaixo. Passe o ciclo ao pauteiro e use-o no título do pull request. Cada ciclo é um branch e um pull request.
-
-### Matéria indicada pontual
-
-Quando Vitor escolhe um assunto fora dos ciclos (pedido direto ou tarefa agendada única), o ciclo é `pontual` e o nome é **Matéria indicada pontual**. Vale o fluxo de uma notícia: repórter, checador e revisor, na editoria que o assunto pedir, com as mesmas regras do manual, mais a exceção "jornais na Matéria indicada pontual" (seção Fontes do manual): fato político, de protesto, de conflito ou de eleição pode vir de jornal de grande repercussão, sempre atribuído. Branch `pontual/AAAA-MM-DD-assunto-curto` e pull request com título `Matéria indicada pontual: <assunto>`, com a tabela final do checador e o que ficou de fora.
-
-### Plantão
-
-Se a tarefa disser que é o **plantão**, o ciclo é `plantao` e vale este fluxo curto, no lugar dos passos 2 a 5:
-
-1. Prepare como no passo 1 (branch `plantao/AAAA-MM-DD-HHMM`, `npm ci`, lista de pull requests abertos).
-2. Rode `node scripts/radar.mjs --horas=8` (use `--horas=20` no primeiro plantão do dia) e veja o resultado. O radar lê a API do Banco Central, as notícias do IBGE, os comunicados do Fed e os fatos relevantes dos dados abertos da CVM; os dados abertos da CVM têm defasagem de dias, então para empresa grande também abra a página de RI ou o RAD. Complete olhando, com `ler-pagina.mjs`, o que o manual lista como gatilho e que o radar não cobre (BCE, Banco da Inglaterra, Banco do Japão, OFAC, gov.uk, Casa Branca).
-3. Compare cada achado com os critérios da seção "Plantão" do manual, com o que já está publicado e com os pull requests abertos. Se nada passar, responda "plantão sem pauta" com uma linha por fonte consultada e encerre, sem branch e sem pull request.
-4. Para cada achado que passar (máximo 2), chame `reporter`, depois `checador`, depois `revisor`, como nos passos 3 e 4. Se o achado mexer em provento, chame também o `calendarista` e o `checador` para o calendário.
-5. Feche como no passo 6 (build, testes, um commit por texto). Pull request com título `Plantão AAAA-MM-DD HH:MM: <assunto>`, na forma do passo 7, e a primeira linha do corpo diz qual fonte disparou o plantão e quando.
-
-## 1. Preparar
-
-1. `git fetch origin main` e crie o branch `pauta/AAAA-MM-DD` (data de hoje no fuso de São Paulo) a partir de `origin/main`.
-2. `npm ci`.
-3. Liste os pull requests abertos do repositório (títulos), para passar ao pauteiro.
-
-## 2. Reunião de pauta
-
-Chame o `pauteiro` com a data de hoje e os títulos dos pull requests abertos. Avalie a pauta que ele devolver:
-
-- cada item tem fonte primária aberta e é relevante para o leitor do manual;
-- não repete assunto publicado ou em revisão;
-- as vagas do ciclo estão preenchidas ou, quando não há fato relevante, a vaga vazia está explicada (segunda: até 3 Brasil, 2 Mercado e 1 guia; sexta: até 5 Internacional, nas vagas do manual);
-- cada internacional tem um canal claro até a carteira do investidor brasileiro, e cada item de Mercado trata de empresa relevante pelo critério do manual;
-- o pauteiro entregou também a lista de proventos candidatos ao calendário.
-
-Se algum item não passar, peça outro ao pauteiro uma vez. Se mesmo assim faltar, siga com menos textos e registre isso no pull request.
-
-## 3. Reportagem (em paralelo)
-
-Chame um `reporter` por item da pauta, todos na mesma resposta, para trabalharem em paralelo. Passe a cada um: o bloco do item, a editoria (nas notícias) e o `pais`, se houver, a data da pauta (para `date` e para o nome do arquivo) e o caminho do arquivo.
-
-## 4. Checagem e revisão (em paralelo, por texto)
-
-Para cada texto entregue, chame o `checador` com o caminho do arquivo e a tabela do repórter. Quando o checador terminar um texto, chame o `revisor` para esse texto. Os textos andam em paralelo entre si; dentro de um texto a ordem é sempre repórter, checador, revisor.
-
-Se o revisor apontar algo que exige decisão, decida você com base no manual. Na dúvida sobre conformidade, prefira cortar o trecho.
-
-## 4b. Calendário de proventos
-
-Em paralelo com a reportagem, chame o `calendarista` com a data da pauta e a lista de candidatos do pauteiro. Ele devolve `src/data/calendario.json` atualizado (linhas novas, linhas vencidas removidas, `atualizado` com a data da pauta) e a tabela "linha | valor | datas | fonte | situação". Depois chame o `checador` para reabrir a fonte de cada linha nova. Linha que o checador não confirmar sai do arquivo. Um commit separado: `atualiza calendário de proventos`. `npm run build` falha se uma linha estiver incompleta.
-
-## 5. Indicadores do topo do site
-
-Sem IA e sem checador: rode `node scripts/indicadores.mjs`. O script lê Selic (Banco Central), IPCA 12m (IBGE) e dólar PTAX (Banco Central) nas fontes oficiais e troca só `valor` e `data` do que mudou em `src/data/indicadores.json`; fonte que não responder deixa o item como estava e avisa. Também roda sozinho nas datas de divulgação (`.github/workflows/rotinas.yml`), então no ciclo de segunda o arquivo normalmente já está certo. Um commit separado, só se houve mudança: `atualiza indicadores`.
-
-## 6. Fechamento
-
-1. Se ainda existirem os textos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md` e `src/content/guias/tesouro-ipca-marcacao-a-mercado.md`) e a pauta tiver pelo menos dois textos com `draft: false` e `gate: true`, apague os exemplos.
-2. `npm run build` sem erros nem avisos e `npm test` passando (o build também valida o calendário). Se o build falhar por um texto, corrija o cabeçalho; se não der, marque o texto com `draft: true` e registre.
-3. Faça você mesmo uma última leitura: `grep -rnE "—|–" src/content` deve vir vazio, e nenhum texto pode ter recomendação de compra ou venda.
-4. Um commit por texto, em português (ex.: `adiciona notícia sobre a ata do Copom`), e um para a remoção dos exemplos, se houver.
-
-## 7. Pull request
-
-Push do branch e pull request para o `main`, com título `Pauta da semana AAAA-MM-DD (Brasil e mercado)` ou `Pauta da semana AAAA-MM-DD (Internacional)`. No corpo:
-
-- para cada texto: editoria (ou tema, no guia), título, endereço da página, resumo em duas linhas, se está publicado ou como rascunho, a tabela final do checador ("dado | valor no texto | fonte | situação") e as mudanças relevantes do revisor;
-- o calendário: linhas adicionadas e removidas, cada uma com valor, datas, fonte e situação;
-- os indicadores atualizados (valor, data e fonte de cada um) ou o motivo de terem ficado de fora;
-- o que ficou de fora da pauta e por quê, se for o caso;
-- resultado do build e dos testes;
-- a lembrança de que o link de prévia do Cloudflare aparece no próprio pull request e de que textos com `draft: true` não aparecem na prévia nem no site.
-
-Nunca faça merge, push no `main`, force push nem deploy. Se algo impedir a pauta (falha que você não resolveu, nenhuma fonte acessível), abra o pull request mesmo assim, como draft, explicando o problema.
+Só a edição `br` está ativa. Pedido de outra edição: confira `edicoes/edicoes.json`; se não estiver ativa, não faça a pauta e aponte `edicoes/COMO-ATIVAR.md`. Se estiver, a pauta é semanal, pelo modelo `edicoes/<codigo>.md` (que substitui as vagas e as fontes do manual), com o mesmo passo a passo, branch `pauta/<codigo>/AAAA-MM-DD` e pull request próprio.

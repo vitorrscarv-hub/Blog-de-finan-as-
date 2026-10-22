@@ -1,20 +1,39 @@
 # Manual de redação do blog
 
-Vale para todos os integrantes da redação (pauteiro, repórter, checador, revisor e editor-chefe). O `CLAUDE.md` da raiz continua valendo; este manual detalha o que ele diz sobre conteúdo.
+Vale para o editor-chefe e para os agentes (checador e calendarista). O fluxo está em `SKILL.md`; aqui ficam só as regras de conteúdo. O `CLAUDE.md` da raiz continua valendo; este manual detalha o que ele diz sobre conteúdo.
 
-Este é o manual da edição Brasil e a base de todas as edições. Em outra edição (ver `edicoes/COMO-ATIVAR.md`), o modelo do país em `edicoes/<codigo>.md` substitui as seções "Leitor", "Pauta da semana" e as fontes do Brasil; as demais regras valem para todas, em qualquer idioma.
+Este é o manual da edição Brasil e a base de todas as edições. Em outra edição (ver `edicoes/COMO-ATIVAR.md`), o modelo do país em `edicoes/<codigo>.md` substitui as seções "Leitor" e "Edição diária" (pela "Pauta da semana" do modelo, que é semanal) e as fontes do Brasil; as demais regras valem para todas, em qualquer idioma.
 
 ## Leitor
 
 Investidor pessoa física com patrimônio relevante, que já conhece o básico e quer entender o que mudou e o que isso significa para a carteira dele. Não é iniciante, não é profissional do mercado.
 
-## Pauta da semana
+## Edição diária
 
-A edição Brasil tem dois ciclos por semana. O dia da semana (fuso de São Paulo) decide qual deles roda, e o editor-chefe pode rodar o outro sob pedido.
+Três matérias por dia, de segunda a sábado (fuso de São Paulo), em vagas fixas. O turno de cada vaga está em `SKILL.md`.
 
-**Ciclo de segunda (Brasil e mercado):** 3 notícias com `editoria: "Brasil"`, 2 com `editoria: "Mercado"`, 1 guia e a atualização do calendário de proventos.
+1. **Política Brasil** (manhã).
+2. **Brasil ou Mercado** (manhã). Em dia de matéria obrigatória (abaixo), é ela.
+3. **Fato do dia** (noite): em dia útil, o que marcou o fechamento do mercado (bolsa, juros futuros, câmbio, um fato de empresa ou de governo que mexeu com os preços); no sábado, o fato mais relevante do dia para o leitor. Em dia de decisão do Copom, é a decisão.
 
-**Ciclo de sexta (Internacional):** 5 notícias com `editoria: "Internacional"`, e a atualização do calendário de proventos.
+**Matérias obrigatórias** (o `scripts/hoje.mjs` aponta, sem IA): IPCA, no dia da divulgação, na manhã; ata do Copom, no dia da publicação, na manhã; decisão do Copom, no dia, na noite. Cada uma explica o número ou a decisão pela fonte primária (IBGE, Banco Central) e o que muda para quem investe, com a expectativa do Boletim Focus como comparação quando houver.
+
+Vaga sem fato que passe nestes critérios fica vazia, com o motivo no pull request. O mesmo assunto não volta em menos de 3 dias, salvo fato novo.
+
+### Política Brasil
+
+Uma matéria por dia sobre política nacional, pelo que interessa a quem investe (agenda econômica, fiscal, Congresso, regras), com neutralidade total (seção "Política e conflitos").
+
+Em período eleitoral, a matéria acompanha as pesquisas para presidente:
+
+- Só pesquisa registrada no TSE. A lei eleitoral exige que a divulgação informe: instituto, contratante, número de registro (formato `BR-00000/AAAA`), período de campo, número de entrevistas, margem de erro e nível de confiança. Sem algum desses dados, a pesquisa não entra. O `scripts/revisar.mjs` barra texto com instituto e percentuais sem registro.
+- Números lidos no relatório do instituto, no registro do TSE ou na matéria do veículo que contratou a pesquisa, sempre atribuídos ("segundo a Quaest", "segundo o Datafolha").
+- Uma tabela com as pesquisas mais recentes de cada instituto relevante, candidatos sempre na mesma ordem (a da cédula ou alfabética), com a margem ao lado. Sem média própria, sem projeção, sem "tendência" que a pesquisa não afirme.
+- Diferença dentro da margem é "empate técnico", dito assim. Variação entre pesquisas do mesmo instituto é descrita com o número, sem verbo de efeito (nada de "dispara", "derrete", "despenca").
+- Mesmo tratamento para todos os candidatos: mesmo nível de detalhe, mesmo verbo, foto nenhuma, adjetivo nenhum.
+- No dia da eleição, nenhuma pesquisa antes do fim da votação.
+
+Fora do período eleitoral, a vaga cobre governo e Congresso: votações, medidas provisórias, orçamento, regras fiscais e tributárias, nomeações com efeito econômico, avaliação de governo por pesquisa registrada (com as mesmas regras de atribuição e margem).
 
 ### Brasil
 
@@ -33,40 +52,11 @@ Fatos de empresas listadas que movem o mercado ou ensinam algo ao leitor: fusõe
 
 ### Internacional
 
-Cobre economia, política e conflitos no exterior, sempre pelo efeito para o investidor brasileiro: câmbio, juros (aqui e lá fora), petróleo e outras commodities, inflação importada, bolsas, investimento no exterior. Fato sem canal claro até a carteira do leitor não entra, por mais que esteja no noticiário.
-
-As 5 vagas da sexta:
-
-1. **Rússia e Ucrânia:** sanções, gás e energia, grãos, orçamento de defesa europeu, negociações.
-2. **Irã e Oriente Médio:** petróleo, Ormuz e rotas marítimas, seguros e fretes, sanções, programa nuclear (pelo que a AIEA diz).
-3. e 4. **Potências, em rodízio:** Estados Unidos, China, França, Reino Unido, Alemanha, Itália, Japão, Índia e outras. Escolha o país com fato mais relevante da semana e que não tenha saído na última semana.
-5. **Bancos centrais e economia global:** decisões do Fed, do BCE, do Banco da Inglaterra, do Banco do Japão e do Banco Popular da China; inflação, emprego e PIB dos Estados Unidos, da zona do euro e da China; tarifas e acordos comerciais; eleições e decisões de governo com efeito econômico.
-
-Quando não houver fato novo e relevante numa vaga, a vaga fica vazia e o pull request explica. Preencher com assunto fraco é pior que publicar menos.
-
-Use o campo `pais` (ex.: "Ucrânia", "Irã", "Alemanha") quando a notícia tratar principalmente de um país ou região.
-
-### Plantão (texto pontual)
-
-Além dos dois ciclos, um plantão olha as fontes oficiais nos dias úteis (3 vezes por dia) e só produz texto quando acontece algo que o leitor precisa entender no mesmo dia. Não é o lugar de notícia que cabe no próximo ciclo.
-
-Entra no plantão, e só se o documento primário estiver aberto nesta sessão:
-
-- decisão de juros ou comunicado extraordinário de banco central (Copom, Fed, BCE, Banco da Inglaterra, Banco do Japão);
-- divulgação de dado de grande efeito (IPCA, PIB, emprego e inflação dos Estados Unidos e da zona do euro) quando sair fora do que o Boletim Focus ou a fonte já indicavam;
-- mudança de regra com efeito imediato (norma da Receita, CMN, CVM; medida provisória; decisão do STF sobre tributação);
-- fato relevante de empresa grande: M&A, oferta pública, recuperação judicial, mudança de controle;
-- sanção, embargo ou decisão de governo ou de organismo internacional que mexa com câmbio, energia ou alimentos.
-
-Limites: no máximo 2 textos por plantão e 3 por dia; texto de 400 a 600 palavras; nenhum assunto que já esteja publicado ou em pull request aberto; fato de guerra só por documento oficial, como no resto do manual. Não houve nada que passe nesses critérios: o plantão termina sem pull request.
-
-### Guia
-
-Atemporal, no tema com menos guias publicados.
+Sem vaga fixa: entra quando for o fato mais relevante da vaga Brasil ou Mercado ou do fato do dia. Cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro: câmbio, juros (aqui e lá fora), petróleo e outras commodities, inflação importada, bolsas, investimento no exterior. Fato sem canal claro até a carteira do leitor não entra. Use `editoria: "Internacional"` e o campo `pais` (ex.: "Estados Unidos", "China") quando a notícia tratar de um país ou região.
 
 ### Calendário de proventos
 
-Roda nos dois ciclos e mexe só em `src/data/calendario.json` (página `/calendario/`).
+Roda na manhã de segunda e mexe só em `src/data/calendario.json` (página `/calendario/`).
 
 - Ações: dividendos e JCP de empresas relevantes (mesmo critério da editoria Mercado) com pagamento nas próximas semanas, lidos nos avisos aos acionistas e comunicados ao mercado (dados abertos da CVM, RI da empresa). Cada linha tem empresa, ticker, tipo, valor bruto por ação, data com, data de pagamento e a fonte.
 - Fundos imobiliários: rendimento por cota, data-base e data de pagamento, lidos na consulta de proventos da B3 (`scripts/proventos-b3.mjs`) ou no comunicado do administrador. Fundo relevante: componente do IFIX ou com grande base de cotistas.
@@ -77,27 +67,28 @@ Roda nos dois ciclos e mexe só em `src/data/calendario.json` (página `/calenda
 
 ## Fontes
 
-Regra sem exceção: todo número, data, alíquota, nome de norma e citação precisa ter sido lido na fonte primária, numa página aberta nesta sessão.
+Todo dado econômico (número, taxa, data, alíquota, nome de norma) precisa ter sido lido na fonte primária, numa página aberta nesta sessão. Fato político, de evento ou de empresa pode vir de jornal, atribuído ("Jornais", abaixo); número de pesquisa eleitoral segue a seção "Política Brasil".
 
 Fontes primárias aceitas no Brasil: Banco Central (bcb.gov.br, inclusive a API SGS em api.bcb.gov.br), IBGE (ibge.gov.br, agenciadenoticias.ibge.gov.br, servicodados.ibge.gov.br), Tesouro Nacional e Tesouro Direto, Receita Federal e CVM (gov.br), Anbima, B3, Diário Oficial da União, Câmara e Senado para projetos de lei. Para Mercado e para o calendário: dados abertos da CVM (dados.cvm.gov.br: fatos relevantes, comunicados e avisos aos acionistas), o sistema RAD da CVM, páginas de relações com investidores das companhias, Cade (gov.br/cade), Conselho Nacional de Justiça e sites dos tribunais para decisões publicadas.
 
 Fontes primárias aceitas no exterior: Federal Reserve (federalreserve.gov), Bureau of Labor Statistics (bls.gov), Bureau of Economic Analysis (bea.gov), Tesouro dos EUA (treasury.gov), BCE (ecb.europa.eu), Eurostat (ec.europa.eu/eurostat), Banco da Inglaterra, Banco do Japão, Escritório Nacional de Estatísticas da China, FMI (imf.org), Banco Mundial, OCDE, OMC, Agência de Informação de Energia dos EUA (eia.gov), Agência Internacional de Energia (iea.org), OPEP (opec.org), ONU (un.org), comunicados oficiais de governos (sites .gov e equivalentes) e, para as potências, os bancos centrais e institutos de estatística de cada uma: Bundesbank e Destatis (Alemanha), Banco da França e Insee (França), Banca d'Italia e Istat (Itália), ONS e gov.uk (Reino Unido), Banco Central da Rússia e Kremlin (Rússia), Casa Branca e OFAC (EUA), Conselho da União Europeia e Jornal Oficial da UE. Para conflitos: ONU (OCHA), AIEA e os comunicados dos governos e ministérios envolvidos.
 
-Fatos políticos e de guerra (ataque, acordo, sanção, declaração) muitas vezes não têm fonte primária com números. Nesse caso, o fato só entra confirmado por duas agências de notícias independentes entre Reuters, Associated Press e AFP, ou por comunicado oficial de uma das partes, atribuído como tal ("segundo o governo de X"). Sanção e norma têm fonte primária (OFAC, Jornal Oficial da UE, gov.uk) e entram pelo documento. Como as agências recusam robôs neste ambiente, fato de guerra sem documento oficial aberto fica como rascunho. Números de vítimas, deslocados ou danos sempre com a fonte nomeada no texto ("segundo a ONU", "segundo o ministério da Saúde local").
+Fatos políticos e de guerra (ataque, acordo, sanção, declaração) muitas vezes não têm fonte primária com números. Nesse caso, o fato entra por comunicado oficial de uma das partes, atribuído como tal ("segundo o governo de X"), ou pelos jornais, nas regras abaixo. Sanção e norma têm fonte primária (OFAC, Jornal Oficial da UE, gov.uk) e entram pelo documento. Números de vítimas, deslocados ou danos sempre com a fonte nomeada no texto ("segundo a ONU", "segundo o ministério da Saúde local").
 
-- Jornal, portal ou site de investimento serve para achar a pauta, nunca como fonte do número. A exceção é a Matéria indicada pontual (abaixo).
+### Jornais
 
-### Exceção: jornais na Matéria indicada pontual
+Os jornais são o radar da pauta (`scripts/radar.mjs`) e podem ser fonte de fato político, de evento ou de empresa, nunca de dado econômico.
 
-Só na Matéria indicada pontual (assunto escolhido por Vitor), fatos políticos, de protesto, de conflito ou de eleição podem vir de jornais de grande repercussão, quando a fonte oficial ou as agências não abrirem ou ainda não tiverem publicado. Regras:
-
-- Jornais aceitos: veículos de circulação nacional ou internacional com redação própria, como Le Monde, Le Figaro, Les Echos, Financial Times, The Economist, The New York Times, The Washington Post, The Wall Street Journal, BBC, The Guardian, El País, Der Spiegel, Folha de S.Paulo, O Estado de S. Paulo, O Globo e Valor Econômico. Blog, coluna de opinião, editorial, rede social e site agregador não contam.
-- Todo fato tirado de jornal vai atribuído no texto ("segundo o Le Monde", "de acordo com o Financial Times"), e a página aberta entra em `fontes:`.
-- Fato disputado ou número de manifestantes, vítimas ou votos: dois jornais independentes, ou um jornal mais a fonte oficial, e o texto diz quem informa cada número. Se os números divergirem, o texto mostra os dois.
-- Dado econômico (inflação, juros, câmbio, PIB, preço) continua só na fonte primária, mesmo na pontual.
+- Jornais aceitos: veículos de circulação nacional ou internacional com redação própria, como Valor Econômico, Folha de S.Paulo, O Estado de S. Paulo, O Globo e G1, Money Times, InfoMoney, Poder360, Financial Times, The Economist, The New York Times, The Wall Street Journal, BBC, The Guardian, El País, Le Monde. Blog, coluna de opinião, editorial, rede social e site agregador não contam.
+- Todo fato tirado de jornal vai atribuído no texto ("segundo o Valor", "de acordo com a Folha"), e a página aberta entra em `fontes:`. O texto é sempre próprio: nada de copiar frase, título ou estrutura da matéria do jornal.
+- Fato disputado ou número de manifestantes, vítimas ou votos: dois jornais independentes, ou um jornal mais a fonte oficial, e o texto diz quem informa cada número. Se divergirem, o texto mostra os dois.
+- Dado econômico (inflação, juros, câmbio, PIB, preço, resultado de empresa) só na fonte primária: o jornal aponta, o IBGE, o Banco Central, a B3 ou o documento da companhia confirmam.
 - Página com paywall ou que recusa robôs não se contorna: se não abriu nesta sessão, não entra.
-- A neutralidade da seção "Política e conflitos" vale igual: o enquadramento e os adjetivos do jornal não passam para o texto; só o fato atribuído.
+- O enquadramento e os adjetivos do jornal não passam para o texto; só o fato atribuído (seção "Política e conflitos").
 - O pull request lista quais fatos vieram de jornal e de qual.
+
+### Para todas as fontes
+
 - Se a fonte primária não abrir (bloqueio de rede, site fora do ar), o dado fica sem conferência. O texto vai com `draft: true` e o pull request diz o que faltou. Nunca preencher com o que "provavelmente" é.
 - Em `fontes:` do cabeçalho, só páginas abertas de fato, com título descritivo e url completa. Toda matéria precisa de pelo menos uma fonte: a linha "Fonte" abaixo do título é montada a partir dela, e é ela que o leitor vê no lugar de uma assinatura.
 
@@ -105,8 +96,8 @@ Só na Matéria indicada pontual (assunto escolhido por Vitor), fatos políticos
 
 Um arquivo por texto, no formato do README ("Como publicar um texto"):
 
-- Notícia: `src/content/noticias/AAAA-MM-DD-assunto-curto.md`, `date` igual à data da pauta, 500 a 800 palavras. Ordem: o fato, o contexto e o que muda para quem investe.
-- Guia: `src/content/guias/assunto-curto.md`, com `tema` (Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior ou Fundamentos), 1.200 a 1.800 palavras, intertítulos `##`, exemplos numéricos simples e marcados como ilustrativos.
+- Notícia: `src/content/noticias/AAAA-MM-DD-assunto-curto.md`, `date` igual à data da edição, 500 a 800 palavras. Ordem: o fato, o contexto e o que muda para quem investe.
+- Guia (só na Matéria indicada pontual): `src/content/guias/assunto-curto.md`, com `tema` (Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior ou Fundamentos), 1.200 a 1.800 palavras, intertítulos `##`, exemplos numéricos simples e marcados como ilustrativos.
 - `title` direto, sem pergunta e sem dois-pontos de efeito. `description` de até 155 caracteres, que funcione como linha fina. `keywords`: até 5 termos que alguém digitaria no Google. `teaser`: até duas frases para o canal de WhatsApp, terminando em `[LINK]`. `gate: true`. `draft: false`, salvo dado sem conferência.
 - Nome de arquivo só com letras minúsculas sem acento, números e hífens.
 - Notícias levam `editoria: "Brasil"`, `"Mercado"` ou `"Internacional"`. Guias não têm editoria. `pais` é opcional e só vai nas notícias que tratam de um país ou região.
@@ -123,7 +114,7 @@ Um arquivo por texto, no formato do README ("Como publicar um texto"):
 - Neutralidade total: o blog não toma partido de governo, partido, país ou lado de uma guerra. Nada de adjetivo que julgue ("desastroso", "corajoso", "agressão injustificada") fora de citação atribuída.
 - Quando um fato for disputado, diga quem afirma o quê, com a fonte de cada lado. Em Rússia e Ucrânia e em Irã e Oriente Médio, cada afirmação de guerra leva o nome de quem a faz (governo, ministério, ONU, AIEA) e as duas partes recebem o mesmo tratamento: mesmo nível de detalhe, mesmo verbo ("afirma", "diz", "informa").
 - Não use o nome de um país como sinônimo de governo ou de povo quando a fonte fala de um governo ou de uma força armada.
-- Sem detalhe gráfico de violência e sem especular sobre o rumo militar ou o resultado de eleições.
+- Sem detalhe gráfico de violência e sem especular sobre o rumo militar ou o resultado de eleições (pesquisa é retrato do período de campo, não previsão).
 - O assunto do texto é o efeito econômico e financeiro. A política entra na medida em que explica esse efeito.
 
 ## O que nunca pode sair

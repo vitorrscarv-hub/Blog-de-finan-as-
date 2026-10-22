@@ -13,7 +13,7 @@ O Grafous nasce com a edição Brasil. As outras edições já têm o modelo de 
 | `jp` | Japão | ja-JP | `jp.md` | revisão nativa obrigatória |
 | `au` | Austrália | en-AU | `au.md` | general advice warning obrigatório |
 
-O registro de todas fica em `edicoes.json` (código, idioma, fuso, horário da pauta, endereço e se está ativa). A redação só trabalha numa edição com `"ativa": true`.
+O registro de todas fica em `edicoes.json` (código, idioma, fuso, horário da pauta, endereço e se está ativa). O Brasil tem edição diária; as demais nascem semanais, uma pauta por semana na terça de manhã, e podem passar a diárias depois, como o Brasil. A redação só trabalha numa edição com `"ativa": true`.
 
 ## O que cada modelo traz
 

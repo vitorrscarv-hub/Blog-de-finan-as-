@@ -34,9 +34,11 @@ Só faça requisições de leitura (GET) às fontes oficiais listadas no manual 
 
 O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso. Muitos avisos trazem pagamento "até", "a partir de" ou "a definir": isso não é data firme e a linha não entra no calendário. Grandes empresas (Itaú, Vale, Ambev, Banco do Brasil) nem sempre têm aviso na janela; não complete com o que se lembra.
 
-## Radar do plantão
+## Radar e agenda da edição diária (testado em 22/10/2026)
 
-`node scripts/radar.mjs [--horas=24]` junta, numa lista só, o que saiu nas últimas horas na API do Banco Central (Selic vigente), nas notícias do IBGE, nos comunicados do Fed e nos fatos relevantes dos dados abertos da CVM. Usa `curl` e `unzip`. Cuidado: o arquivo de dados abertos da CVM atualiza com defasagem (em 19/10/2026 o último fato relevante era de 16/10); para fato do mesmo dia, abra o RAD ou o RI da empresa. O radar só aponta; o texto só sai com o documento primário aberto.
+- `node scripts/radar.mjs [--horas=14] [--so=jornais|oficiais] [--max=12]`: manchetes com hora e link dos jornais (Valor, Folha Mercado e Poder, Estadão Economia e Política, G1 Economia e Política, Money Times, InfoMoney, Poder360) e o que saiu nas fontes oficiais (Copom, Selic, notícias do IBGE, Fed, fatos relevantes da CVM). Fonte que falha vira uma linha de aviso. O arquivo de dados abertos da CVM atualiza com defasagem de dias: para fato do mesmo dia, abra o RAD ou o RI da empresa.
+- `node scripts/hoje.mjs --turno=manha|noite`: matéria obrigatória do turno (IPCA pelo calendário do IBGE; ata e decisão do Copom pelas APIs `sitebcb/copom/atas` e `sitebcb/copom/comunicados` do Banco Central). `--proximos=30` lista as próximas divulgações do IBGE.
+- Bloqueados pela rede do ambiente até serem liberados em "Allowed domains": `moneytimes.com.br`, `infomoney.com.br`, `poder360.com.br` e `tse.jus.br` (registro das pesquisas eleitorais, PesqEle). Até lá, o registro de uma pesquisa é lido na matéria do veículo contratante ou no relatório do instituto.
 
 ## Dados do exterior (funcionam)
 
@@ -69,7 +71,7 @@ O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso. Muitos avisos trazem 
 | --- | --- |
 | `bls.gov` (páginas) | Recusa robôs de propósito. A API `api.bls.gov` responde, mas o limite diário do ambiente costuma estar esgotado. Para inflação e PIB dos EUA, use o BEA e o Fed; se o dado for só do BLS, fica **sem conferência**. |
 | `www.ibge.gov.br` e `agenciadenoticias.ibge.gov.br` | Use a API `servicodados.ibge.gov.br` (acima), que traz o link da notícia original. Cite o link da agência em `fontes:` só depois de ler o conteúdo pela API. |
-| `reuters.com`, `apnews.com`, `afp.com` | Recusam robôs (vale também para guerra e política: sem as duas agências, o fato só entra por documento oficial, e senão vai como rascunho) (401 ou 403). Para fatos políticos e de guerra, a exigência de duas agências pode não ser cumprível: o texto vai como rascunho e o pull request diz o que faltou. |
+| `reuters.com`, `apnews.com`, `afp.com` | Recusam robôs (401 ou 403). Fato político e de guerra entra por documento oficial ou pelos jornais que abrem (manual, seção "Jornais"). |
 | `oecd.org`, `iea.org` (páginas) | Use a API da OCDE (acima); da AIE, só o que o `ler-pagina.mjs` conseguir abrir. |
 | `api.bcb.gov.br` (séries SGS) | Sem resposta neste ambiente. Use os endereços do BC acima. |
 
