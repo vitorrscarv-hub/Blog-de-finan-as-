@@ -1,6 +1,6 @@
 ---
 name: pauta-diaria
-description: Edição diária do Grafous (segunda a sábado, 10h30 e 18h45 de São Paulo, 3 matérias por dia num só pull request) e a Matéria indicada pontual. Use quando a tarefa agendada da manhã ou da noite disparar, ou quando Vitor pedir uma matéria pontual.
+description: Edição diária do Grafous (segunda a sábado, 9h15 e 18h45 de São Paulo, 3 matérias por dia, em um pull request por dia, ou dois se a manhã já tiver sido publicada) e a Matéria indicada pontual. Use quando a tarefa agendada da manhã ou da noite disparar, ou quando Vitor pedir uma matéria pontual.
 ---
 
 # Edição diária: editor-chefe
@@ -21,14 +21,16 @@ Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faç
 
 | Turno | Quando | Matérias |
 | --- | --- | --- |
-| `manha` | segunda a sábado, 10h30 | 1 de **Política Brasil** e 1 de **Brasil ou Mercado**. Se `hoje.mjs` apontar matéria obrigatória (IPCA, ata do Copom), ela ocupa a vaga de Brasil ou Mercado. Segunda: também o calendário de proventos. |
+| `manha` | segunda a sábado, 9h15 (depois da ata do Copom das 8h e do IBGE das 9h; o pull request fica pronto perto da abertura da bolsa, às 10h) | 1 de **Política Brasil** e 1 de **Brasil ou Mercado**. Se `hoje.mjs` apontar matéria obrigatória (IPCA, ata do Copom), ela ocupa a vaga de Brasil ou Mercado. Segunda: também o calendário de proventos. |
 | `noite` | segunda a sábado, 18h45 | 1 com o **fato do dia**: em dia útil, o que marcou o fechamento do mercado; no sábado, o fato mais relevante do dia. Se `hoje.mjs` apontar a decisão do Copom, ela é a matéria. |
 
 Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publicar menos é melhor que publicar fraco. Internacional não tem vaga fixa; entra quando for o fato mais relevante da vaga.
 
 ## Passo a passo
 
-1. **Branch.** `git fetch origin` e use o branch `edicao/AAAA-MM-DD` (data de São Paulo). Se ele já existir no remoto (a manhã já rodou), faça checkout dele; senão crie a partir de `origin/main`. `npm ci`.
+1. **Branch.** `git fetch origin`. Data de São Paulo. `npm ci` depois de escolher o branch.
+   - Manhã: crie `edicao/AAAA-MM-DD` a partir de `origin/main`.
+   - Noite: veja o pull request `Edição de AAAA-MM-DD`. Se estiver **aberto**, faça checkout de `edicao/AAAA-MM-DD` e acrescente a matéria nele. Se já tiver sido **mergeado** (Vitor publicou a manhã) ou não existir, crie `edicao/AAAA-MM-DD-noite` a partir de `origin/main`. Nunca faça push num branch cujo pull request já foi mergeado.
 2. **O que o dia pede (sem IA).** `node scripts/hoje.mjs --turno=<turno>`: matéria obrigatória e sugestões.
 3. **Radar (sem IA).** `node scripts/radar.mjs --horas=14` na manhã, `--horas=8` na noite: manchetes dos jornais e o que as fontes oficiais publicaram. Na manhã, em período eleitoral, também `node scripts/pesquisas-tse.mjs --dias=7`: pesquisas para presidente registradas no TSE. Para não repetir assunto: `ls src/content/noticias | tail -20` e os títulos dos pull requests abertos.
 4. **Pauta.** Escolha os assuntos das vagas do turno pelos critérios do manual. Não pesquise na web além do necessário para abrir a fonte de cada assunto escolhido.
@@ -40,7 +42,7 @@ Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publ
    - `npm run indicadores` (valor de reserva da faixa do topo; o site já mostra o valor ao vivo).
    - `npm run build` sem erros nem avisos e `npm test`. Texto que derrube o build e não tenha conserto vai com `draft: true`, registrado no pull request.
    - Um commit por matéria (ex.: `adiciona matéria sobre a ata do Copom`) e um para indicadores, se mudaram.
-9. **Pull request.** Push do branch. Na manhã, abra o pull request `Edição de AAAA-MM-DD` para o `main`. Na noite, atualize o mesmo pull request (se ainda não existir, abra). O corpo tem uma seção por turno com, para cada matéria: vaga, título, endereço, se está publicada ou como rascunho, a tabela final do checador e quais fatos vieram de jornal; depois, vagas vazias e o motivo, o calendário (segunda) e o resultado de build e testes. Use as ferramentas `mcp__github__` (carregue com ToolSearch); se não houver, termine com o link `https://github.com/vitorrscarv-hub/Blog-de-finan-as-/compare/main...edicao/AAAA-MM-DD?expand=1` e o corpo pronto para colar.
+9. **Pull request.** Push do branch. Na manhã, abra o pull request `Edição de AAAA-MM-DD` para o `main`. Na noite, se o da manhã estiver aberto, atualize esse mesmo pull request (push no branch e uma seção nova no corpo); se não, abra `Edição de AAAA-MM-DD (noite)` a partir de `edicao/AAAA-MM-DD-noite`. O corpo tem uma seção por turno com, para cada matéria: vaga, título, endereço, se está publicada ou como rascunho, a tabela final do checador e quais fatos vieram de jornal; depois, vagas vazias e o motivo, o calendário (segunda) e o resultado de build e testes. Use as ferramentas `mcp__github__` (carregue com ToolSearch); se não houver, termine com o link `https://github.com/vitorrscarv-hub/Blog-de-finan-as-/compare/main...edicao/AAAA-MM-DD?expand=1` e o corpo pronto para colar.
 10. **Fim.** Se houver ferramenta de notificação, avise Vitor com o link. Responda com o link e uma linha por matéria.
 
 Nunca faça merge, push no `main`, force push ou deploy. Se algo impedir a edição (sem acesso de escrita, nenhuma fonte abre), responda com a primeira linha "EDIÇÃO NÃO FEITA" e o motivo exato.
