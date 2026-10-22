@@ -15,8 +15,9 @@
     "cf:exportar": "node scripts/exportar-leads.mjs",
     "marca": "node scripts/gerar-marca.mjs",
     "indicadores": "node scripts/indicadores.mjs",
-    "dolar": "node scripts/dolar-diario.mjs",
-    "agenda": "node scripts/agenda.mjs"
+    "hoje": "node scripts/hoje.mjs",
+    "radar": "node scripts/radar.mjs",
+    "revisar": "node scripts/revisar.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
