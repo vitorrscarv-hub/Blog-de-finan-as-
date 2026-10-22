@@ -3,7 +3,7 @@ export const SITE = {
   nome: 'Grafous',
   slogan: 'A informação que conecta os fatos.',
   descricao:
-    'Conteúdo educacional sobre finanças e investimentos para quem tem patrimônio relevante.',
+    'Economia, mercado e política no Brasil e no mundo, com o que cada fato muda para quem investe.',
   // Imagem usada quando um link do blog é compartilhado (WhatsApp, LinkedIn etc.). 1200x630.
   imagemPadrao: '/og-padrao.png',
   autor: {
