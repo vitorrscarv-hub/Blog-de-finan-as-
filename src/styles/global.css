@@ -151,6 +151,32 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .indicador strong { font-weight: 700; }
 .indicador .valor { font-variant-numeric: tabular-nums; }
 
+/* Tarja de cotações: fundo marinho nos dois modos, então as cores de alta e baixa são as claras */
+.tarja { background: var(--barra); color: var(--barra-texto); font-size: .8rem; display: none; }
+.tarja.pronta { display: block; }
+.tarja-linha { display: flex; align-items: center; gap: 14px; min-height: 34px; }
+.tarja-rotulo { flex: none; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .7rem; color: var(--marca-texto); }
+.tarja-rotulo small { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--barra-suave); margin-left: 4px; }
+.tarja-janela { flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent); }
+.tarja-janela:focus-visible { outline: 2px solid var(--marca-texto); outline-offset: 2px; }
+.tarja-trilho { display: flex; width: max-content; animation: tarja-rola var(--duracao, 60s) linear infinite; }
+.tarja-janela:hover .tarja-trilho, .tarja-janela:focus-within .tarja-trilho, .tarja-janela:focus .tarja-trilho { animation-play-state: paused; }
+.tarja-copia { display: flex; flex: none; }
+.tarja-item { display: flex; gap: 6px; align-items: baseline; white-space: nowrap; padding: 0 16px; color: inherit; text-decoration: none; font-variant-numeric: tabular-nums; }
+.tarja-item b { font-weight: 700; }
+.tarja-item .var { font-size: .75rem; }
+.tarja-alta .var { color: #6fd39b; }
+.tarja-baixa .var { color: #f47a70; }
+.tarja-igual .var { color: var(--barra-suave); }
+.tarja-fonte { flex: none; display: none; color: var(--barra-suave); font-size: .7rem; }
+@media (min-width: 1000px) { .tarja-fonte { display: block; } }
+@keyframes tarja-rola { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .tarja-trilho { animation: none; }
+  .tarja-janela { overflow-x: auto; scrollbar-width: thin; }
+  .tarja-copia[aria-hidden='true'] { display: none; }
+}
+
 /* Blocos de página */
 .bloco { padding: 32px 0 8px; }
 .bloco-titulo {

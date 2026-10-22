@@ -1,0 +1,117 @@
+---
+import { SITE } from '../site.config';
+---
+{SITE.tarja.ativo && (
+  <section class="tarja" aria-label="Cotações" data-endpoint={SITE.tarja.endpoint} data-intervalo={SITE.tarja.intervaloSegundos} data-ptax-url={SITE.tarja.ptaxUrl}>
+    <div class="container tarja-linha">
+      <span class="tarja-rotulo">Cotações <small>atraso de 15 min</small></span>
+      <div class="tarja-janela" tabindex="0" role="group" aria-label="Cotações do Ibovespa, de ações do índice e do dólar PTAX">
+        <div class="tarja-trilho" data-trilho></div>
+      </div>
+      <span class="tarja-fonte">B3 e Banco Central. Informativo, não é recomendação.</span>
+    </div>
+  </section>
+)}
+
+<script>
+  const secao = document.querySelector<HTMLElement>('.tarja');
+
+  interface Item { simbolo: string; nome: string; preco: number; variacao: number | null }
+  interface Ptax { valor: number; variacao: number | null; data: string | null }
+  interface Resposta { itens: Item[]; ptax: Ptax | null }
+
+  const NUM = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const PONTOS = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
+  const PTAX = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+
+  const sinal = (v: number | null) => (v === null || Math.abs(v) < 0.005 ? 'igual' : v > 0 ? 'alta' : 'baixa');
+  const seta = { alta: '▲', baixa: '▼', igual: '' } as const;
+  const variacaoTexto = (v: number | null) => (v === null ? '' : `${v > 0 ? '+' : ''}${NUM.format(v)}%`);
+
+  const linha = (id: string, rotulo: string, nomeCompleto: string, valor: string, variacao: number | null, href?: string) => {
+    const tipo = sinal(variacao);
+    const el = document.createElement(href ? 'a' : 'span');
+    el.className = `tarja-item tarja-${tipo}`;
+    el.dataset.id = id;
+    el.title = nomeCompleto;
+    if (href) {
+      (el as HTMLAnchorElement).href = href;
+      (el as HTMLAnchorElement).rel = 'noopener';
+      (el as HTMLAnchorElement).target = '_blank';
+    }
+    el.innerHTML = `<b></b><span class="valor"></span><span class="var"></span>`;
+    preencher(el, rotulo, valor, variacao);
+    return el;
+  };
+
+  const preencher = (el: Element, rotulo: string, valor: string, variacao: number | null) => {
+    const tipo = sinal(variacao);
+    el.className = el.className.replace(/tarja-(alta|baixa|igual)/, `tarja-${tipo}`);
+    el.querySelector('b')!.textContent = rotulo;
+    el.querySelector('.valor')!.textContent = valor;
+    el.querySelector('.var')!.textContent = `${seta[tipo]} ${variacaoTexto(variacao)}`.trim();
+  };
+
+  const lista = (r: Resposta) => [
+    ...r.itens.map((i) => ({
+      id: i.simbolo,
+      rotulo: i.simbolo === 'IBOV' ? 'Ibovespa' : i.simbolo,
+      nome: i.nome,
+      valor: i.simbolo === 'IBOV' ? `${PONTOS.format(i.preco)} pts` : NUM.format(i.preco),
+      variacao: i.variacao,
+      href: undefined as string | undefined,
+    })),
+    ...(r.ptax
+      ? [{ id: 'PTAX', rotulo: 'Dólar PTAX', nome: `PTAX de venda do Banco Central${r.ptax.data ? `, ${r.ptax.data}` : ''}`, valor: `R$ ${PTAX.format(r.ptax.valor)}`, variacao: r.ptax.variacao, href: secao?.dataset.ptaxUrl }]
+      : []),
+  ];
+
+  async function iniciar(el: HTMLElement) {
+    const trilho = el.querySelector<HTMLElement>('[data-trilho]')!;
+    let montada = false;
+
+    async function atualizar() {
+      if (document.hidden) return;
+      try {
+        const r = await fetch(el.dataset.endpoint!, { headers: { Accept: 'application/json' } });
+        if (!r.ok) throw new Error(String(r.status));
+        const dados = (await r.json()) as Resposta;
+        const itens = lista(dados);
+        if (itens.length === 0) throw new Error('vazio');
+        if (!montada) {
+          // Duas cópias iguais: a rolagem anda metade da largura e recomeça sem salto. A segunda é só visual.
+          for (const copia of [0, 1]) {
+            const ul = document.createElement('div');
+            ul.className = 'tarja-copia';
+            if (copia === 1) ul.setAttribute('aria-hidden', 'true');
+            for (const i of itens) {
+              const item = linha(i.id, i.rotulo, i.nome, i.valor, i.variacao, i.href);
+              if (copia === 1) item.tabIndex = -1;
+              ul.append(item);
+            }
+            trilho.append(ul);
+          }
+          el.classList.add('pronta');
+          requestAnimationFrame(() => {
+            const largura = trilho.firstElementChild!.getBoundingClientRect().width;
+            trilho.style.setProperty('--duracao', `${Math.max(30, Math.round(largura / 45))}s`);
+          });
+          montada = true;
+        } else {
+          // Atualiza no lugar, sem refazer a lista: a rolagem não reinicia.
+          for (const i of itens) {
+            trilho.querySelectorAll(`[data-id="${i.id}"]`).forEach((n) => preencher(n, i.rotulo, i.valor, i.variacao));
+          }
+        }
+      } catch {
+        // Fonte fora do ar: mantém o que já está na tela; se nunca carregou, a tarja continua escondida.
+      }
+    }
+
+    await atualizar();
+    setInterval(atualizar, Math.max(30, Number(el.dataset.intervalo) || 60) * 1000);
+    document.addEventListener('visibilitychange', () => !document.hidden && atualizar());
+  }
+
+  if (secao) iniciar(secao);
+</script>
