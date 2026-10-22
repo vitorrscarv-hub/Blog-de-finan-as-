@@ -15,7 +15,7 @@ src/
   pages/                 home, listas (com filtro por editoria), artigos, calendário de proventos, privacidade, RSS e 404
   scripts/formatos.ts    datas em pt-BR, ordenação, rascunhos e tempo de leitura
   styles/global.css      todo o CSS do site, com modo escuro
-  data/indicadores.json  valores da faixa de indicadores (Selic, IPCA, dólar), com fonte e data
+  data/indicadores.json  valores de reserva da faixa de indicadores (Selic, IPCA, dólar), com fonte e data
 public/                  favicon e imagem padrão de compartilhamento (og-padrao.png)
 functions/api/lead.js    recebe o cadastro (POST /api/lead) e grava no D1
 db/schema.sql            tabela de cadastros
@@ -32,7 +32,7 @@ O nome do blog (Grafous) e o slogan ficam em `SITE.nome` e `SITE.slogan`, em `sr
 
 Layout editorial próprio: barra superior escura, grade com filetes finos em vez de caixas, títulos na fonte Archivo (condensada) e texto corrido na Source Serif 4. As fontes vêm dos pacotes `@fontsource-variable` e são servidas pelo próprio site, sem Google Fonts. Cores e tamanhos ficam nas variáveis do topo de `src/styles/global.css`, com versão para o modo escuro.
 
-A faixa de indicadores abaixo do menu (Selic, IPCA em 12 meses, dólar PTAX) lê `src/data/indicadores.json`. Cada item precisa de `nome`, `valor`, `data`, `fonte` e `url` (https). Item incompleto não aparece, e a faixa some se o arquivo estiver vazio. O arquivo é atualizado por `npm run indicadores`, sem IA, direto do Banco Central e do IBGE (a rotina automática abaixo roda esse comando nas datas de divulgação).
+A faixa de indicadores abaixo do menu (Selic, IPCA em 12 meses, dólar PTAX) mostra os valores ao vivo: assim que a página abre, ela troca o que veio no build pelo que a função `/api/cotacoes` leu no Banco Central e no IBGE (sem IA e sem pull request). O valor gravado no build, em `src/data/indicadores.json`, é a reserva para página sem JavaScript ou fonte fora do ar; `npm run indicadores` o atualiza, e a edição diária roda esse comando antes de cada commit. Cada item precisa de `nome`, `valor`, `data`, `fonte` e `url` (https); item incompleto não aparece.
 
 ### Tarja de cotações
 
@@ -42,19 +42,6 @@ Abaixo da faixa de indicadores há uma tarja em movimento com o Ibovespa, 12 aç
 - `SITE.tarja.ativo` (em `src/site.config.ts`) liga e desliga a tarja. Se a fonte falhar, a tarja some em vez de mostrar valor velho como se fosse atual.
 - A tarja anima em qualquer aparelho, inclusive com "reduzir movimento" ligado no sistema. Um clique ou toque (ou Enter/Espaço) para a rolagem e outro retoma.
 - Aviso de risco: a API da B3 usada aqui é pública, mas não documentada nem contratada. Se a B3 mudar ou bloquear, só a tarja é afetada. A alternativa paga e licenciada é o feed de dados da própria B3 (UP2DATA) ou um provedor como a brapi.
-
-### Rotinas de dados (sem IA)
-
-`.github/workflows/rotinas.yml` roda só na hora em que a fonte publica e abre pull request apenas se algo mudou (nunca faz merge):
-
-| Rotina | Quando (Brasília) | O que faz |
-| --- | --- | --- |
-| `dolar` | 13h20 e 13h50, dias úteis | Gera a nota do dólar PTAX por modelo (`scripts/dolar-diario.mjs`) e atualiza o indicador. Sem PTAX no dia (feriado) ou nota já existente, não faz nada. |
-| `copom` | 18h50 e 19h50, quartas | Atualiza a Selic se a decisão saiu (o Copom não tem API de calendário; a detecção é por mudança). |
-| `ibge` | 9h25 a 12h25, dias úteis | Se o calendário do IBGE (`src/data/agenda.json`) marcou uma divulgação nas últimas 3 horas, atualiza o IPCA. |
-| `agenda` | segunda, 6h05 | Renova `src/data/agenda.json` com as divulgações dos próximos 60 dias. |
-
-Pré-requisito único: em Settings > Actions > General, marcar "Allow GitHub Actions to create and approve pull requests". Pull requests abertos pelo Actions não disparam o CI sozinhos; a rotina do dólar roda `npm run build` antes de abrir o PR. Para testar à mão: Actions > Rotinas de dados > Run workflow. Para ver o que vem pela frente: `npm run agenda -- --proximos=30`.
 
 ## Como rodar
 
@@ -114,33 +101,33 @@ O build falha, com a mensagem de erro em português, se faltar título ou descri
 
 Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md` e `src/content/guias/tesouro-ipca-marcacao-a-mercado.md`) servem só para mostrar o formato. Apague os dois antes do lançamento, de preferência no mesmo pull request em que entrarem os primeiros textos reais. Os testes não dependem deles: acham os artigos pelas listas do site e só precisam de pelo menos dois textos publicados com `gate: true`.
 
-## Pauta semanal automática
+## Edição diária automática
 
-Duas vezes por semana, de manhã (6h56, horário de Brasília), uma tarefa agendada do Claude Code monta a pauta e abre um pull request chamado "Pauta da semana AAAA-MM-DD (...)":
+De segunda a sábado, duas tarefas agendadas do Claude Code fazem a edição do dia num só pull request, "Edição de AAAA-MM-DD":
 
-- **segunda, Brasil e mercado:** 3 notícias do Brasil, 2 de Mercado (ações, fusões e aquisições, recuperação judicial de empresas relevantes), 1 guia e o calendário de proventos;
-- **sexta, Internacional:** 5 notícias (Rússia e Ucrânia, Irã e Oriente Médio, duas potências em rodízio entre Estados Unidos, China, França, Reino Unido, Alemanha, Itália, Japão, Índia e outras, e bancos centrais e economia global) e o calendário de proventos.
+- **10h30:** 1 matéria de Política Brasil (em período eleitoral, as pesquisas para presidente registradas no TSE) e 1 de Brasil ou Mercado. Em dia de IPCA ou de ata do Copom, essa segunda matéria é o evento. Na segunda, também o calendário de proventos.
+- **18h45:** 1 matéria com o fato do dia (o fechamento do mercado; no sábado, o fato mais relevante). Em dia de decisão do Copom, é a decisão.
 
-Além dos dois ciclos há o **plantão**: nos dias úteis (8h07, 12h07 e 17h07, horário de Brasília) uma tarefa varre as fontes oficiais com `node scripts/radar.mjs` e só abre pull request quando acontece algo que o leitor precisa entender no mesmo dia (decisão de juros, dado de grande efeito, mudança de regra, fato relevante de empresa grande, sanção). Máximo de 2 textos por plantão e 3 por dia; sem nada relevante, não abre nada. O aviso chega como notificação da tarefa e o pull request "Plantão AAAA-MM-DD HH:MM: assunto" traz o texto pronto para você revisar e mesclar.
+Guias e assuntos escolhidos por você vêm como **Matéria indicada pontual**, com pull request próprio.
 
-O trabalho é dividido como numa redação, com agentes definidos em `.claude/agents/`:
+Para gastar o mínimo de IA, o que é dado vira script e a IA só escreve:
 
-| Integrante | Papel |
+| Etapa | Como |
 | --- | --- |
-| Editor-chefe | a sessão principal; coordena, decide, roda build e testes e abre o pull request (`.claude/skills/pauta-semanal/SKILL.md`) |
-| Pauteiro | escolhe os fatos do ciclo (Brasil, Mercado, guia ou as 5 vagas internacionais) e os candidatos ao calendário, com as fontes primárias |
-| Repórter | escreve cada texto; um repórter por texto, todos em paralelo |
-| Calendarista | monta as linhas do calendário de proventos (dividendos, JCP e rendimentos de fundos imobiliários) a partir de avisos e comunicados oficiais |
-| Checador | confere cada número do texto e de cada linha do calendário na fonte oficial e corrige, remove ou marca como rascunho |
-| Revisor | ajusta estilo, tom, neutralidade política e conformidade (sem recomendação, sem promessa, sem travessão) |
+| O que o dia pede | `node scripts/hoje.mjs`: IPCA pelo calendário do IBGE; ata e decisão do Copom pelas APIs do Banco Central |
+| Pauta | `node scripts/radar.mjs`: manchetes dos jornais (Valor, Folha, Estadão, G1, Money Times, InfoMoney, Poder360) e das fontes oficiais |
+| Pesquisas eleitorais | `node scripts/pesquisas-tse.mjs`: registro das pesquisas para presidente nos dados abertos do TSE |
+| Texto | o editor-chefe (a própria sessão), uma matéria por vez |
+| Checagem | um agente `checador` por matéria (`.claude/agents/checador.md`) |
+| Revisão | `node scripts/revisar.mjs`: travessão, emoji, expressões proibidas, teaser, fontes e registro de pesquisa eleitoral |
+| Calendário (segunda) | agente `calendarista`, a partir de `node scripts/proventos-b3.mjs` |
+| Taxas e dólar do topo | função `/api/cotacoes`, ao vivo, sem IA e sem pull request |
 
-A editoria internacional cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro (câmbio, juros, petróleo, bolsas), com neutralidade: o blog não toma partido de governo, país ou lado de guerra. Como Reuters, AP e AFP recusam robôs neste ambiente, fato de guerra só entra por documento oficial (ONU, AIEA, governos, sanções publicadas); sem isso, o texto vai como rascunho.
-
-A editoria Mercado trata só de empresas relevantes e só do fato, sem preço-alvo e sem opinar sobre negócio.
+O fluxo está em `.claude/skills/pauta-diaria/SKILL.md` e as regras de conteúdo em `.claude/skills/pauta-diaria/manual-de-redacao.md`. As tarefas agendadas só chamam a skill: para mudar vagas, tom ou fontes, edite o manual por pull request.
 
 ### Calendário de proventos
 
-A página `/calendario/` lê `src/data/calendario.json`, que a pauta atualiza nos dois ciclos: dividendos e JCP de ações e rendimentos de fundos imobiliários, cada linha com valor, datas e a fonte aberta. O build falha se uma linha estiver incompleta (`src/scripts/calendario.ts`). É informativo: sem ranking de pagadores, sem projeção, sem indicação de compra ou venda. Para editar à mão, siga o formato do arquivo (`acoes`: empresa, ticker, tipo `Dividendo` ou `JCP`, `valorPorAcao`, `dataCom`, `dataPagamento`, `fonte`; `fiis`: fundo, ticker, `valorPorCota`, `dataBase`, `dataPagamento`, `fonte`).
+A página `/calendario/` lê `src/data/calendario.json`, que a edição de segunda de manhã atualiza: dividendos e JCP de ações e rendimentos de fundos imobiliários, cada linha com valor, datas e a fonte aberta. O build falha se uma linha estiver incompleta (`src/scripts/calendario.ts`). É informativo: sem ranking de pagadores, sem projeção, sem indicação de compra ou venda. Para editar à mão, siga o formato do arquivo (`acoes`: empresa, ticker, tipo `Dividendo` ou `JCP`, `valorPorAcao`, `dataCom`, `dataPagamento`, `fonte`; `fiis`: fundo, ticker, `valorPorCota`, `dataBase`, `dataPagamento`, `fonte`).
 
 Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code precisa de acesso a elas: nível **Limitado** (Custom, na documentação), com a caixa de gerenciadores de pacotes marcada, e a lista abaixo em **Domínios permitidos** (menu do ambiente na barra de título da sessão, Edit). A regra vale pelo nome exato do endereço, então use o curinga `*.` para cobrir o "www" e os outros subdomínios. Cada domínio vale também sem o curinga, e a lista funciona com os dois.
 
@@ -149,11 +136,13 @@ Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code pr
 - Potências (ampliação internacional): `*.gov.uk`, `*.bankofengland.co.uk`, `*.ons.gov.uk`, `*.bundesbank.de`, `*.destatis.de`, `*.banque-france.fr`, `*.insee.fr`, `*.bancaditalia.it`, `*.istat.it`, `*.cbr.ru`, `*.kremlin.ru`, `*.whitehouse.gov`, `*.iaea.org`, `*.unocha.org`
 - Exterior: `*.federalreserve.gov`, `*.bls.gov`, `*.bea.gov`, `*.treasury.gov`, `*.europa.eu`, `*.imf.org`, `*.worldbank.org`, `*.oecd.org`, `*.eia.gov`, `*.iea.org`, `*.opec.org`, `*.un.org`
 - Opcional, para ouvir os dois lados dos conflitos e outras fontes oficiais (hoje recusados pelo proxy do ambiente): `*.mid.ru`, `*.government.ru`, `*.minfin.gov.ru`, `*.rosstat.gov.ru`, `*.president.gov.ua`, `*.mfa.gov.ua`, `*.bank.gov.ua`, `*.president.ir`, `*.mfa.ir`, `*.cbi.ir`, `*.nato.int`, `*.state.gov`, `*.defense.gov`, `*.economie.gouv.fr`, `*.gouvernement.fr`, `*.bundesregierung.de`
+- Jornais (radar da pauta e fatos políticos atribuídos): `*.moneytimes.com.br`, `*.infomoney.com.br`, `*.poder360.com.br`, `*.globo.com`, `*.folha.uol.com.br`, `*.estadao.com.br`
+- Pesquisas eleitorais (registro no TSE): `*.tse.jus.br`
 - Agências (fatos políticos e de guerra): `*.reuters.com`, `*.apnews.com`, `*.afp.com`
 
-Neste ambiente o WebFetch não resolve endereços, então a redação lê as fontes pelo terminal: `node scripts/ler-pagina.mjs <url>` (Chromium de verdade, para páginas com JavaScript) e `curl` para APIs. O guia `.claude/skills/pauta-semanal/acesso-as-fontes.md` lista os endereços de dados que funcionam (Selic, dólar PTAX, Focus, IPCA, BCE, OCDE, Banco Mundial) e os sites que bloqueiam robôs (BLS, páginas do IBGE, Reuters, AP), nos quais o dado fica sem conferência em vez de se tentar contornar o bloqueio.
+Neste ambiente o WebFetch não resolve endereços, então a redação lê as fontes pelo terminal: `node scripts/ler-pagina.mjs <url>` (Chromium de verdade, para páginas com JavaScript) e `curl` para APIs. O guia `.claude/skills/pauta-diaria/acesso-as-fontes.md` lista os endereços de dados que funcionam (Selic, dólar PTAX, Focus, IPCA, BCE, OCDE, Banco Mundial) e os sites que bloqueiam robôs (BLS, páginas do IBGE, Reuters, AP), nos quais o dado fica sem conferência em vez de se tentar contornar o bloqueio.
 
-Todos seguem o manual de redação em `.claude/skills/pauta-semanal/manual-de-redacao.md`. Para mudar critérios de pauta, tamanho ou tom, edite o manual por pull request. Você é o publisher: só o seu merge publica.
+Todos seguem o manual de redação em `.claude/skills/pauta-diaria/manual-de-redacao.md`. Para mudar critérios de pauta, tamanho ou tom, edite o manual por pull request. Você é o publisher: só o seu merge publica.
 
 O que você faz:
 
@@ -162,7 +151,7 @@ O que você faz:
 3. Se quiser mudar algo, edite o arquivo no próprio PR ou escreva um comentário pedindo a alteração.
 4. Aperte Merge. O site é publicado em um ou dois minutos.
 
-Textos com algum dado que a rotina não conseguiu conferir na fonte oficial vêm com `draft: true`. Eles não aparecem na prévia nem no site, mesmo depois do merge, até alguém conferir o dado e trocar para `draft: false`.
+Textos com algum dado que a redação não conseguiu conferir na fonte oficial vêm com `draft: true`. Eles não aparecem na prévia nem no site, mesmo depois do merge, até alguém conferir o dado e trocar para `draft: false`.
 
 ## Como funciona o pop-up de cadastro
 
@@ -280,6 +269,6 @@ O GitHub Actions (`.github/workflows/ci.yml`) roda o build e todos os testes em 
 
 ## Edições de outros países
 
-O Grafous está pronto para ganhar edições em outros países. Os modelos de redação ficam em `.claude/skills/pauta-semanal/edicoes/`, todos desligados: Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália. Cada modelo traz leitor e idioma, pauta e editorias locais, fontes oficiais, regras locais sobre conteúdo financeiro e dados pessoais, aviso legal no idioma do país (para revisão de advogado local), domínios a liberar na rede e as pendências antes de ativar.
+O Grafous está pronto para ganhar edições em outros países. Os modelos de redação ficam em `.claude/skills/pauta-diaria/edicoes/`, todos desligados: Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália. Cada modelo traz leitor e idioma, pauta e editorias locais, fontes oficiais, regras locais sobre conteúdo financeiro e dados pessoais, aviso legal no idioma do país (para revisão de advogado local), domínios a liberar na rede e as pendências antes de ativar.
 
 O registro com código, idioma, fuso, horário da pauta e a chave de ativação está em `edicoes/edicoes.json`. O passo a passo para ligar uma edição, do parecer jurídico à tarefa agendada, está em `edicoes/COMO-ATIVAR.md`. Para incluir um país novo, copie um dos modelos, mantenha as mesmas seções e acrescente a linha no registro; `tests/unit/edicoes.test.js` confere se nada ficou faltando.

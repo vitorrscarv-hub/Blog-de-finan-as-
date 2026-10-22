@@ -32,11 +32,11 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 - Painel oculto em `/painel-grafous/` (`src/pages/painel-grafous/`), dados em `functions/api/admin/resumo.js` (exige `ADMIN_TOKEN`, segredo do Cloudflare; nunca versionar) e medição em `src/scripts/medir.ts` + `functions/api/evento.js` (tabela `visitas` em `db/schema.sql`). Sem link no site, fora do sitemap, com `noindex`.
 - A medição não pode guardar IP, user agent, nome, e-mail nem cookie, e tem de respeitar DNT e Global Privacy Control. Não ligar o identificador de leitor ao cadastro (lead) sem pedido explícito e revisão da política de privacidade.
 
-## Pauta semanal
+## Edição diária
 
-A pauta tem dois ciclos por semana: segunda (3 notícias do Brasil, 2 de Mercado e 1 guia) e sexta (5 internacionais), e a **Matéria indicada pontual** (assunto escolhido por Vitor, fora dos ciclos; ver SKILL.md; só nela, fato político ou de evento pode vir de jornal de grande repercussão, atribuído no texto, nunca dado econômico), e o plantão (`node scripts/radar.mjs`, até 2 textos por rodada, só com fato que passe nos critérios do manual) cobre o que não pode esperar; os ciclos atualizam o calendário de proventos (`src/data/calendario.json`, página `/calendario/`). Segue `.claude/skills/pauta-semanal/SKILL.md` (editor-chefe) com os agentes de `.claude/agents/` (pauteiro, repórter, checador, calendarista, revisor) e o manual `.claude/skills/pauta-semanal/manual-de-redacao.md`: todo dado conferido na fonte primária, neutralidade em política e conflitos, texto sem conferência vai com `draft: true`, e o pull request termina sem merge, porque publicar é decisão de Vitor.
+Três matérias por dia, de segunda a sábado, em dois turnos (10h30: Política Brasil e Brasil ou Mercado; 18h45: fato do dia), num só pull request por dia; IPCA, ata e decisão do Copom viram matéria no dia, apontados por `scripts/hoje.mjs`. A **Matéria indicada pontual** (assunto e guias escolhidos por Vitor) tem pull request próprio. O fluxo está só em `.claude/skills/pauta-diaria/SKILL.md` e as regras de conteúdo só no manual `.claude/skills/pauta-diaria/manual-de-redacao.md` (jornais como radar e fonte atribuída de fato político, nunca de dado econômico; pesquisa eleitoral só com registro no TSE; neutralidade total). Não repetir essas regras em outro lugar, nem nos prompts das tarefas agendadas: eles só chamam a skill. Taxas e dólar do topo do site vêm de API, sem IA e sem pull request.
 
-Edições de outros países (Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália) têm modelo de redação pronto em `.claude/skills/pauta-semanal/edicoes/`, todas inativas. Só a edição Brasil está ativa; ativar outra segue `edicoes/COMO-ATIVAR.md`, começando pelo parecer jurídico do país, e nunca por iniciativa própria.
+Edições de outros países (Portugal, Estados Unidos, Reino Unido, África do Sul, Índia, China, Japão e Austrália) têm modelo de redação pronto em `.claude/skills/pauta-diaria/edicoes/`, todas inativas. Só a edição Brasil está ativa; ativar outra segue `edicoes/COMO-ATIVAR.md`, começando pelo parecer jurídico do país, e nunca por iniciativa própria.
 
 ## Segredos
 
@@ -45,7 +45,7 @@ Nunca versionar ids reais de banco, tokens, senhas ou `.dev.vars`. O `wrangler.t
 ## Fluxo de trabalho
 
 - Trabalhar sempre em branch e entregar por pull request para o `main`. Nunca fazer commit ou push direto no `main`, force push, apagar branches ou deploy manual no Cloudflare.
-- Merge de pull request só com autorização explícita de Vitor, dada naquela conversa para aquele PR ("faça o merge"). Antes, conferir que o CI passou e que o PR não tem conflito, e mergear com `expectedHeadSha` para garantir que é o commit revisado. Autorização de um PR não vale para os outros. As rotinas automáticas e a pauta semanal continuam terminando sem merge.
+- Merge de pull request só com autorização explícita de Vitor, dada naquela conversa para aquele PR ("faça o merge"). Antes, conferir que o CI passou e que o PR não tem conflito, e mergear com `expectedHeadSha` para garantir que é o commit revisado. Autorização de um PR não vale para os outros. A edição diária e a Matéria indicada pontual terminam sem merge.
 - Commits curtos, em português, um por etapa.
 - Antes de concluir qualquer tarefa, rodar `npm run build` (sem erros nem avisos) e `npm test`. Se algo falhar, corrigir ou dizer claramente o que falhou.
 - Para conferir o visual, tirar capturas em 390x780 e 1280x800, nos modos claro e escuro, e não versionar as capturas (`capturas/` está no `.gitignore`).

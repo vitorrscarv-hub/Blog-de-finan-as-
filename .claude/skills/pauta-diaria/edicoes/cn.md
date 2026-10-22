@@ -1,6 +1,6 @@
 # Edição China (inativa)
 
-Complementa o manual comum (`../manual-de-redacao.md`). Nesta edição, as seções abaixo substituem "Leitor", "Pauta da semana" e as fontes do Brasil; o resto do manual comum vale igual, adaptado ao chinês simplificado.
+Complementa o manual comum (`../manual-de-redacao.md`). Nesta edição, as seções abaixo substituem "Leitor", "Edição diária" (por esta pauta semanal) e as fontes do Brasil; o resto do manual comum vale igual, adaptado ao chinês simplificado.
 
 ## Situação
 

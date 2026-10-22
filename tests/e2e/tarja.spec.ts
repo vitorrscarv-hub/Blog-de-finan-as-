@@ -77,3 +77,13 @@ test('clique para a rolagem e outro clique retoma', async ({ page }) => {
   expect(await estado()).toBe('running');
   await expect(janela).toHaveAttribute('aria-pressed', 'false');
 });
+
+test('faixa de indicadores troca o valor do build pelo da função', async ({ page }) => {
+  await simularB3(page);
+  const indicadores = [{ nome: 'Selic', valor: '12,50% a.a.', data: 'desde 5 nov 2026' }];
+  await page.route('**/api/cotacoes', (r) => r.fulfill({ json: { ...resposta, indicadores } }));
+  await page.goto('/');
+  const selic = page.locator('.indicador[data-nome="Selic"]');
+  await expect(selic.locator('.valor')).toHaveText('12,50% a.a.');
+  await expect(selic.locator('.meta')).toHaveText('desde 5 nov 2026');
+});

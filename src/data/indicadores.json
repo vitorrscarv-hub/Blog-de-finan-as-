@@ -1,5 +1,5 @@
 {
-  "_comentario": "Faixa de indicadores no topo do site. Só aparece item com valor, data e url da fonte oficial conferidos. A pauta semanal atualiza este arquivo.",
+  "_comentario": "Faixa de indicadores no topo do site. No navegador, os valores são trocados pelos da função /api/cotacoes (Banco Central e IBGE ao vivo); este arquivo é a reserva gravada no build, atualizada por npm run indicadores. Só aparece item com valor, data e url da fonte oficial.",
   "itens": [
     {
       "nome": "Selic",
@@ -17,8 +17,8 @@
     },
     {
       "nome": "Dólar PTAX",
-      "valor": "R$ 5,0140",
-      "data": "20 out 2026",
+      "valor": "R$ 5,0383",
+      "data": "22 out 2026",
       "fonte": "Banco Central",
       "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='10-16-2026'&$format=json"
     }
