@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { lerCotacaoReserva, URL_RESERVA, lerCotacaoB3, lerPtax, pregaoAberto, segundosDeCache, urlPtax } from '../../functions/_lib/cotacoes.js';
+import { lerCotacaoB3, lerPtax, pregaoAberto, segundosDeCache, urlPtax } from '../../functions/_lib/cotacoes.js';
 
 // Formato real da resposta de cotacao.b3.com.br (campos reduzidos).
 const b3 = (extra = {}) => ({
@@ -58,12 +58,3 @@ test('cache curto no pregão e longo fora dele', () => {
   assert.equal(segundosDeCache(new Date('2026-10-24T15:00:00Z')), 900);
 });
 
-test('fonte de reserva: preço, variação sobre o fechamento anterior e endereço do índice e da ação', () => {
-  const r = lerCotacaoReserva({ chart: { result: [{ meta: { regularMarketPrice: 58.09, chartPreviousClose: 58.0, longName: 'Petroleo  Brasileiro' } }] } }, 'PETR4');
-  assert.equal(r.simbolo, 'PETR4');
-  assert.equal(r.nome, 'Petroleo Brasileiro');
-  assert.ok(Math.abs(r.variacao - 0.155172) < 1e-4);
-  assert.equal(lerCotacaoReserva({}, 'X'), null);
-  assert.match(URL_RESERVA('IBOV'), /chart\/%5EBVSP\?/);
-  assert.match(URL_RESERVA('PETR4'), /chart\/PETR4\.SA\?/);
-});
