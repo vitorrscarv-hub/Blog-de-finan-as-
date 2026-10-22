@@ -10,7 +10,8 @@ const PROIBIDAS = [
 ];
 // Institutos de pesquisa eleitoral: texto que cita um deles com números precisa trazer o registro no TSE.
 const INSTITUTOS = /\b(Datafolha|Quaest|AtlasIntel|Ipec|Paraná Pesquisas|Futura|Ipespe|Real Time Big Data|Nexus|MDA|Vox Populi|Gerp)\b/;
-const REGISTRO_TSE = /\bBR-\d{5}\/\d{4}\b/;
+// Aceita o formato da divulgação (BR-05908/2026) e o do registro nos dados abertos (BR059082026).
+const REGISTRO_TSE = /\bBR-?\d{5}\/?\d{4}\b/;
 
 const escapar = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 

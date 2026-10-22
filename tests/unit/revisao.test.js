@@ -34,6 +34,7 @@ test('teaser sem [LINK] e matéria sem fontes', () => {
 test('pesquisa eleitoral com números exige o registro no TSE', () => {
   assert.ok(revisar(texto(`${corpoOk} Na Quaest, o candidato A tem 45% e o B, 41%.`)).erros.some((e) => e.includes('registro no TSE')));
   assert.deepEqual(revisar(texto(`${corpoOk} Na Quaest (registro BR-01234/2026), A tem 45% e B, 41%.`)).erros, []);
+  assert.deepEqual(revisar(texto(`${corpoOk} Na Quaest (registro BR012342026), A tem 45% e B, 41%.`)).erros, []);
 });
 
 test('tamanho fora da faixa e rascunho viram aviso, não erro', () => {

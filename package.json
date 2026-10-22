@@ -17,7 +17,8 @@
     "indicadores": "node scripts/indicadores.mjs",
     "hoje": "node scripts/hoje.mjs",
     "radar": "node scripts/radar.mjs",
-    "revisar": "node scripts/revisar.mjs"
+    "revisar": "node scripts/revisar.mjs",
+    "pesquisas": "node scripts/pesquisas-tse.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
