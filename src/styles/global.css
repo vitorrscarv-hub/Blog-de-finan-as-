@@ -158,7 +158,8 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .tarja-janela { flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent); }
 .tarja-janela:focus-visible { outline: 2px solid var(--marca-texto); outline-offset: 2px; }
 .tarja-trilho { display: flex; width: max-content; animation: tarja-rola var(--duracao, 60s) linear infinite; }
-.tarja-janela:hover .tarja-trilho, .tarja-janela:focus-within .tarja-trilho, .tarja-janela:focus .tarja-trilho { animation-play-state: paused; }
+.tarja-janela { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.tarja-janela.parada .tarja-trilho { animation-play-state: paused; }
 .tarja-copia { display: flex; flex: none; }
 .tarja-item { display: flex; gap: 6px; align-items: baseline; white-space: nowrap; padding: 0 16px; color: inherit; text-decoration: none; font-variant-numeric: tabular-nums; }
 .tarja-item b { font-weight: 700; }
