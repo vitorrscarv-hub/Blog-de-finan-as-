@@ -13,6 +13,9 @@ import { SITE } from '../site.config';
 )}
 
 <script>
+  import papeis from '../data/tarja.json';
+  import { URL_B3, lerCotacaoB3 } from '../../functions/_lib/cotacoes.js';
+
   const secao = document.querySelector<HTMLElement>('.tarja');
 
   interface Item { simbolo: string; nome: string; preco: number; variacao: number | null }
@@ -67,43 +70,58 @@ import { SITE } from '../site.config';
 
   async function iniciar(el: HTMLElement) {
     const trilho = el.querySelector<HTMLElement>('[data-trilho]')!;
-    let montada = false;
+
+    let ids = '';
+
+    // Ações e índice: direto da B3 no navegador do leitor (a B3 libera CORS e recusa consultas vindas da Cloudflare).
+    // PTAX: pela função /api/cotacoes, que lê o Banco Central. Cada fonte falha sozinha.
+    const daB3 = (s: string) =>
+      fetch(URL_B3(s), { headers: { Accept: 'application/json' } })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((j) => (j ? (lerCotacaoB3(j) as Item | null) : null))
+        .catch(() => null);
+    const daFuncao = () =>
+      fetch(el.dataset.endpoint!, { headers: { Accept: 'application/json' } })
+        .then((r) => (r.ok ? (r.json() as Promise<Resposta>) : null))
+        .catch(() => null);
+
+    function montar(itens: ReturnType<typeof lista>) {
+      trilho.replaceChildren();
+      // Duas cópias iguais: a rolagem anda metade da largura e recomeça sem salto. A segunda é só visual.
+      for (const copia of [0, 1]) {
+        const ul = document.createElement('div');
+        ul.className = 'tarja-copia';
+        if (copia === 1) ul.setAttribute('aria-hidden', 'true');
+        for (const i of itens) {
+          const item = linha(i.id, i.rotulo, i.nome, i.valor, i.variacao, i.href);
+          if (copia === 1) item.tabIndex = -1;
+          ul.append(item);
+        }
+        trilho.append(ul);
+      }
+      el.classList.add('pronta');
+      requestAnimationFrame(() => {
+        const largura = trilho.firstElementChild!.getBoundingClientRect().width;
+        trilho.style.setProperty('--duracao', `${Math.max(15, Math.round(largura / 100))}s`);
+      });
+    }
 
     async function atualizar() {
       if (document.hidden) return;
-      try {
-        const r = await fetch(el.dataset.endpoint!, { headers: { Accept: 'application/json' } });
-        if (!r.ok) throw new Error(String(r.status));
-        const dados = (await r.json()) as Resposta;
-        const itens = lista(dados);
-        if (itens.length === 0) throw new Error('vazio');
-        if (!montada) {
-          // Duas cópias iguais: a rolagem anda metade da largura e recomeça sem salto. A segunda é só visual.
-          for (const copia of [0, 1]) {
-            const ul = document.createElement('div');
-            ul.className = 'tarja-copia';
-            if (copia === 1) ul.setAttribute('aria-hidden', 'true');
-            for (const i of itens) {
-              const item = linha(i.id, i.rotulo, i.nome, i.valor, i.variacao, i.href);
-              if (copia === 1) item.tabIndex = -1;
-              ul.append(item);
-            }
-            trilho.append(ul);
-          }
-          el.classList.add('pronta');
-          requestAnimationFrame(() => {
-            const largura = trilho.firstElementChild!.getBoundingClientRect().width;
-            trilho.style.setProperty('--duracao', `${Math.max(15, Math.round(largura / 100))}s`);
-          });
-          montada = true;
-        } else {
-          // Atualiza no lugar, sem refazer a lista: a rolagem não reinicia.
-          for (const i of itens) {
-            trilho.querySelectorAll(`[data-id="${i.id}"]`).forEach((n) => preencher(n, i.rotulo, i.valor, i.variacao));
-          }
+      const [b3, funcao] = await Promise.all([Promise.all([papeis.indice, ...papeis.acoes].map(daB3)), daFuncao()]);
+      const doNavegador = b3.filter((i): i is Item => i !== null);
+      // Se a B3 não respondeu no navegador, usa o que a função conseguiu (se conseguiu).
+      const itens = lista({ itens: doNavegador.length ? doNavegador : (funcao?.itens ?? []), ptax: funcao?.ptax ?? null });
+      if (itens.length === 0) return; // nada a mostrar: mantém o que já está na tela, ou a tarja escondida
+      const novosIds = itens.map((i) => i.id).join(',');
+      if (novosIds !== ids) {
+        montar(itens);
+        ids = novosIds;
+      } else {
+        // Atualiza no lugar, sem refazer a lista: a rolagem não reinicia.
+        for (const i of itens) {
+          trilho.querySelectorAll(`[data-id="${i.id}"]`).forEach((n) => preencher(n, i.rotulo, i.valor, i.variacao));
         }
-      } catch {
-        // Fonte fora do ar: mantém o que já está na tela; se nunca carregou, a tarja continua escondida.
       }
     }
 
