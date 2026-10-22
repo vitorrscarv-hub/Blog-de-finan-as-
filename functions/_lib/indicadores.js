@@ -30,6 +30,6 @@ export function itensIndicadores({ selic, ipca, ptax }) {
   return [
     selic && { nome: 'Selic', valor: `${virgula(selic.meta, 2)}% a.a.`, data: `desde ${diaCurto(selic.desde)}` },
     ipca && { nome: 'IPCA 12m', valor: `${virgula(ipca.valor, 2)}%`, data: mesAno(ipca.mes, ipca.ano) },
-    ptax && { nome: 'Dólar PTAX', valor: `R$ ${virgula(ptax.valor, 4)}`, data: diaCurto(ptax.data) },
+    ptax && { nome: 'Dólar PTAX', valor: `R$ ${virgula(ptax.valor, 4)}`, data: ptax.parcial ? `${diaCurto(ptax.data)}, ${ptax.hora.replace(':', 'h')} (parcial)` : diaCurto(ptax.data) },
   ].filter(Boolean);
 }

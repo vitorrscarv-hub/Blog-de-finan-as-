@@ -12,7 +12,7 @@ test('leitura da Selic e do IPCA nas respostas do Banco Central e do IBGE', () =
 
 test('itens da faixa no formato de indicadores.json; o que falta fica de fora', () => {
   assert.deepEqual(
-    itensIndicadores({ selic: { meta: 13.75, desde: '2026-09-17' }, ipca: { valor: 4.58, mes: 9, ano: 2026 }, ptax: { valor: 5.0383, data: '2026-10-22' } }),
+    itensIndicadores({ selic: { meta: 13.75, desde: '2026-09-17' }, ipca: { valor: 4.58, mes: 9, ano: 2026 }, ptax: { valor: 5.0383, data: '2026-10-22', hora: '13:12', parcial: false } }),
     [
       { nome: 'Selic', valor: '13,75% a.a.', data: 'desde 17 set 2026' },
       { nome: 'IPCA 12m', valor: '4,58%', data: 'set 2026' },
@@ -20,6 +20,7 @@ test('itens da faixa no formato de indicadores.json; o que falta fica de fora', 
     ]
   );
   assert.deepEqual(itensIndicadores({ selic: null, ipca: null, ptax: null }), []);
+  assert.equal(itensIndicadores({ ptax: { valor: 5.0414, data: '2026-10-22', hora: '12:04', parcial: true } })[0].data, '22 out 2026, 12h04 (parcial)');
   assert.equal(diaCurto('2026-03-01'), '1 mar 2026');
 });
 

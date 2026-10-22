@@ -2,7 +2,7 @@
 import { SITE } from '../site.config';
 ---
 {SITE.tarja.ativo && (
-  <section class="tarja" aria-label="Cotações" data-endpoint={SITE.tarja.endpoint} data-intervalo={SITE.tarja.intervaloSegundos} data-ptax-url={SITE.tarja.ptaxUrl}>
+  <section class="tarja" aria-label="Cotações" data-endpoint={SITE.tarja.endpoint} data-intervalo={SITE.tarja.intervaloSegundos} data-velocidade={SITE.tarja.velocidade} data-ptax-url={SITE.tarja.ptaxUrl}>
     <div class="container tarja-linha">
       <div class="tarja-janela" tabindex="0" role="button" aria-pressed="false" aria-label="Cotações do Ibovespa, de ações do índice e do dólar PTAX. Clique para parar ou continuar a rolagem.">
         <div class="tarja-trilho" data-trilho></div>
@@ -20,7 +20,7 @@ import { SITE } from '../site.config';
   const secao = document.querySelector<HTMLElement>('.tarja');
 
   interface Item { simbolo: string; nome: string; preco: number; variacao: number | null }
-  interface Ptax { valor: number; variacao: number | null; data: string | null }
+  interface Ptax { valor: number; variacao: number | null; data: string | null; hora?: string; parcial?: boolean }
   interface Resposta { itens: Item[]; ptax: Ptax | null }
 
   const NUM = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -65,7 +65,7 @@ import { SITE } from '../site.config';
       href: undefined as string | undefined,
     })),
     ...(r.ptax
-      ? [{ id: 'PTAX', rotulo: 'Dólar PTAX', nome: `PTAX de venda do Banco Central${r.ptax.data ? `, ${r.ptax.data}` : ''}`, valor: `R$ ${PTAX.format(r.ptax.valor)}`, variacao: r.ptax.variacao, href: secao?.dataset.ptaxUrl }]
+      ? [{ id: 'PTAX', rotulo: 'Dólar PTAX', nome: `PTAX de venda do Banco Central${r.ptax.data ? `, ${r.ptax.data}` : ''}${r.ptax.parcial ? `, boletim das ${r.ptax.hora} (parcial)` : ''}`, valor: `R$ ${PTAX.format(r.ptax.valor)}`, variacao: r.ptax.variacao, href: secao?.dataset.ptaxUrl }]
       : []),
   ];
 
@@ -100,7 +100,7 @@ import { SITE } from '../site.config';
       el.classList.add('pronta');
       requestAnimationFrame(() => {
         const largura = trilho.firstElementChild!.getBoundingClientRect().width;
-        trilho.style.setProperty('--duracao', `${Math.max(15, Math.round(largura / 90))}s`);
+        trilho.style.setProperty('--duracao', `${Math.max(20, Math.round(largura / (Number(el.dataset.velocidade) || 45)))}s`);
       });
     }
 

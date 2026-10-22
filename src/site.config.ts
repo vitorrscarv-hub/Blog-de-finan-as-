@@ -33,6 +33,8 @@ export const SITE = {
     ativo: true,
     endpoint: '/api/cotacoes',
     intervaloSegundos: 60,
+    // Velocidade da rolagem, em pixels por segundo. Menor = mais lenta.
+    velocidade: 45,
     ptaxUrl: 'https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes',
   },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.

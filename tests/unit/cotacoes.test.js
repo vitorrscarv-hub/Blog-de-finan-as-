@@ -25,24 +25,40 @@ test('descarta resposta sem preço ou malformada', () => {
   assert.equal(lerCotacaoB3(b3({ SctyQtn: { curPrc: '58,09' } })), null);
 });
 
-test('PTAX: valor, variação sobre o fechamento anterior e data', () => {
-  const r = lerPtax({ value: [{ cotacaoVenda: 5.1, dataHoraCotacao: '2026-10-20 13:09:36.25' }, { cotacaoVenda: 5.0, dataHoraCotacao: '2026-10-19 13:10:00.1' }] });
-  assert.equal(r.valor, 5.1);
-  assert.equal(r.data, '2026-10-20');
-  assert.ok(Math.abs(r.variacao - 2) < 1e-9);
+const boletim = (venda, quando, tipo) => ({ cotacaoVenda: venda, dataHoraCotacao: quando, tipoBoletim: tipo });
+
+test('PTAX antes do fechamento: boletim mais recente, parcial, comparado com o fechamento anterior', () => {
+  const r = lerPtax({ value: [
+    boletim(5.0414, '2026-10-22 12:04:11.7', 'Intermediário'),
+    boletim(5.0391, '2026-10-22 10:06:13.2', 'Abertura'),
+    boletim(5.0277, '2026-10-21 13:08:17.0', 'Fechamento'),
+    boletim(5.0352, '2026-10-21 13:08:16.7', 'Intermediário'),
+  ] });
+  assert.equal(r.valor, 5.0414);
+  assert.equal(r.parcial, true);
+  assert.equal(r.hora, '12:04');
+  assert.equal(r.data, '2026-10-22');
+  assert.ok(Math.abs(r.variacao - ((5.0414 - 5.0277) / 5.0277) * 100) < 1e-9);
 });
 
-test('PTAX com um só fechamento não inventa variação; vazio vira null', () => {
-  assert.equal(lerPtax({ value: [{ cotacaoVenda: 5.014, dataHoraCotacao: '2026-10-20 13:09:36' }] }).variacao, null);
+test('PTAX depois do fechamento: valor de fechamento, não parcial', () => {
+  const r = lerPtax({ value: [boletim(5.0383, '2026-10-22 13:12:09.3', 'Fechamento'), boletim(5.0363, '2026-10-22 13:12:09.2', 'Intermediário'), boletim(5.0277, '2026-10-21 13:08:17.0', 'Fechamento')] });
+  assert.equal(r.valor, 5.0383);
+  assert.equal(r.parcial, false);
+  assert.ok(Math.abs(r.variacao - ((5.0383 - 5.0277) / 5.0277) * 100) < 1e-9);
+});
+
+test('PTAX sem fechamento anterior não inventa variação; vazio vira null', () => {
+  assert.equal(lerPtax({ value: [boletim(5.014, '2026-10-20 13:09:36', 'Fechamento')] }).variacao, null);
   assert.equal(lerPtax({ value: [] }), null);
   assert.equal(lerPtax({}), null);
 });
 
-test('url da PTAX usa MM-DD-AAAA e pede só o fechamento de venda', () => {
+test('url da PTAX usa MM-DD-AAAA e pede os boletins do dia', () => {
   const u = urlPtax(new Date('2026-10-21T12:00:00Z'));
   assert.match(u, /@di='10-07-2026'&@df='10-21-2026'/);
-  assert.match(u, /CotacaoMoedaPeriodoFechamento/);
-  assert.match(u, /\$select=cotacaoVenda,dataHoraCotacao/);
+  assert.match(u, /CotacaoMoedaPeriodo\(/);
+  assert.match(u, /tipoBoletim/);
 });
 
 test('pregão: dia útil, 10h às 18h de Brasília', () => {
