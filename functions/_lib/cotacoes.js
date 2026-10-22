@@ -16,6 +16,10 @@ export const urlPtax = (hoje = new Date()) => {
   );
 };
 
+// Fonte de reserva, usada quando a B3 recusa a consulta. Mesmo atraso de 15 minutos nos papéis da B3.
+export const URL_RESERVA = (simbolo) =>
+  `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(simbolo === 'IBOV' ? '^BVSP' : `${simbolo}.SA`)}?range=1d&interval=1d`;
+
 const numero = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
 
 // Resposta da B3 -> { simbolo, nome, preco, variacao }. Devolve null se faltar preço ou se não for do Ibovespa.
@@ -30,6 +34,21 @@ export function lerCotacaoB3(json, { exigirIndice = true } = {}) {
     preco,
     variacao: numero(q.SctyQtn.prcFlcn),
     hora: json?.Msg?.dtTm ?? null,
+  };
+}
+
+// Resposta da fonte de reserva -> mesmo formato. A variação vem do fechamento anterior.
+export function lerCotacaoReserva(json, simbolo) {
+  const m = json?.chart?.result?.[0]?.meta;
+  const preco = numero(m?.regularMarketPrice);
+  if (preco === null || preco <= 0) return null;
+  const anterior = numero(m.chartPreviousClose) ?? numero(m.previousClose);
+  return {
+    simbolo,
+    nome: String(m.longName ?? m.shortName ?? simbolo).replace(/\s+/g, ' ').trim(),
+    preco,
+    variacao: anterior ? ((preco - anterior) / anterior) * 100 : null,
+    hora: null,
   };
 }
 

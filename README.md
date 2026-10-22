@@ -36,9 +36,9 @@ A faixa de indicadores abaixo do menu (Selic, IPCA em 12 meses, dólar PTAX) lê
 
 ### Tarja de cotações
 
-Abaixo da faixa de indicadores há uma tarja em movimento com o Ibovespa, 12 ações do índice e o dólar PTAX. O navegador lê `/api/cotacoes` (`functions/api/cotacoes.js`) a cada 60 segundos com a aba aberta. A função consulta a B3 (`cotacao.b3.com.br`, a mesma consulta pública do site da B3, com 15 minutos de atraso, sem chave) e o Olinda do Banco Central, e guarda a resposta na borda da Cloudflare por 60 segundos no pregão e 15 minutos fora dele: o número de leitores não aumenta as consultas às fontes. Não usa banco, chave nem segredo.
+Abaixo da faixa de indicadores há uma tarja em movimento com o Ibovespa, 12 ações do índice e o dólar PTAX. O navegador lê `/api/cotacoes` (`functions/api/cotacoes.js`) a cada 60 segundos com a aba aberta. A função consulta a B3 (`cotacao.b3.com.br`, a mesma consulta pública do site da B3, com 15 minutos de atraso, sem chave) e o Olinda do Banco Central. Se a B3 recusar a consulta, cada papel cai numa fonte de reserva (Yahoo Finance, também pública e não oficial). Para saber qual fonte respondeu, abra `/api/cotacoes` e leia o campo `diagnostico`. A resposta fica guardada na borda da Cloudflare por 60 segundos no pregão e 15 minutos fora dele: o número de leitores não aumenta as consultas às fontes. Não usa banco, chave nem segredo.
 
-- A lista de papéis fica em `src/data/tarja.json`; a função descarta o que não for componente do Ibovespa. É informativa: sem ranking, sem destaque de alta ou baixa e sem recomendação (o aviso está na própria tarja).
+- A lista de papéis fica em `src/data/tarja.json`; a função descarta o que não for componente do Ibovespa. É informativa: sem ranking, sem destaque de alta ou baixa e sem recomendação (o aviso de atraso de até 15 minutos fica no rodapé).
 - `SITE.tarja.ativo` (em `src/site.config.ts`) liga e desliga a tarja. Se a fonte falhar, a tarja some em vez de mostrar valor velho como se fosse atual.
 - Com "reduzir movimento" ativado no aparelho, a tarja não anima e vira uma faixa rolável.
 - Aviso de risco: a API da B3 usada aqui é pública, mas não documentada nem contratada. Se a B3 mudar ou bloquear, só a tarja é afetada. A alternativa paga e licenciada é o feed de dados da própria B3 (UP2DATA) ou um provedor como a brapi.

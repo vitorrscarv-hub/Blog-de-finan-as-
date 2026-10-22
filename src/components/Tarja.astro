@@ -4,11 +4,10 @@ import { SITE } from '../site.config';
 {SITE.tarja.ativo && (
   <section class="tarja" aria-label="Cotações" data-endpoint={SITE.tarja.endpoint} data-intervalo={SITE.tarja.intervaloSegundos} data-ptax-url={SITE.tarja.ptaxUrl}>
     <div class="container tarja-linha">
-      <span class="tarja-rotulo">Cotações <small>atraso de 15 min</small></span>
       <div class="tarja-janela" tabindex="0" role="group" aria-label="Cotações do Ibovespa, de ações do índice e do dólar PTAX">
         <div class="tarja-trilho" data-trilho></div>
       </div>
-      <span class="tarja-fonte">B3 e Banco Central. Informativo, não é recomendação.</span>
+      <span class="tarja-fonte">B3 e Banco Central</span>
     </div>
   </section>
 )}
@@ -94,7 +93,7 @@ import { SITE } from '../site.config';
           el.classList.add('pronta');
           requestAnimationFrame(() => {
             const largura = trilho.firstElementChild!.getBoundingClientRect().width;
-            trilho.style.setProperty('--duracao', `${Math.max(30, Math.round(largura / 45))}s`);
+            trilho.style.setProperty('--duracao', `${Math.max(15, Math.round(largura / 100))}s`);
           });
           montada = true;
         } else {
