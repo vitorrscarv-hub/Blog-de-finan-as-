@@ -61,3 +61,19 @@ test('sem a PTAX, a tarja mostra só as ações da B3', async ({ page }) => {
   await expect(primeira).toContainText('PETR4');
   await expect(primeira).not.toContainText('PTAX');
 });
+
+test('clique para a rolagem e outro clique retoma', async ({ page }) => {
+  await simularB3(page);
+  await page.route('**/api/cotacoes', (r) => r.fulfill({ json: resposta }));
+  await page.goto('/');
+  const janela = page.locator('.tarja-janela');
+  const estado = () => page.locator('.tarja-trilho').evaluate((e) => getComputedStyle(e).animationPlayState);
+  await expect(page.locator('.tarja.pronta')).toBeVisible();
+  expect(await estado()).toBe('running');
+  await janela.click({ position: { x: 5, y: 5 } });
+  expect(await estado()).toBe('paused');
+  await expect(janela).toHaveAttribute('aria-pressed', 'true');
+  await janela.click({ position: { x: 5, y: 5 } });
+  expect(await estado()).toBe('running');
+  await expect(janela).toHaveAttribute('aria-pressed', 'false');
+});
