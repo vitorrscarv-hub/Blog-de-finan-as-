@@ -11,8 +11,7 @@
 import { urlPtax, lerPtax, segundosDeCache } from '../_lib/cotacoes.js';
 import { URL_SELIC, URL_IPCA, lerSelic, lerIpca12m, itensIndicadores } from '../_lib/indicadores.js';
 
-const diagnostico = {};
-async function ler(nome, url, ler) {
+async function ler(diagnostico, nome, url, ler) {
   try {
     const r = await fetch(url, { headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(5000) });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -31,10 +30,11 @@ export async function onRequestGet({ request, waitUntil }) {
   const guardada = await cache.match(chave);
   if (guardada) return guardada;
 
+  const diagnostico = {};
   const [ptax, selic, ipca] = await Promise.all([
-    ler('ptax', urlPtax(), lerPtax),
-    ler('selic', URL_SELIC, lerSelic),
-    ler('ipca', URL_IPCA, lerIpca12m),
+    ler(diagnostico, 'ptax', urlPtax(), lerPtax),
+    ler(diagnostico, 'selic', URL_SELIC, lerSelic),
+    ler(diagnostico, 'ipca', URL_IPCA, lerIpca12m),
   ]);
   const indicadores = itensIndicadores({ selic, ipca, ptax });
   const algum = indicadores.length > 0;
