@@ -105,7 +105,7 @@ Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md
 
 De segunda a sábado, duas tarefas agendadas do Claude Code fazem a edição do dia num só pull request, "Edição de AAAA-MM-DD":
 
-- **10h30:** 1 matéria de Política Brasil (em período eleitoral, as pesquisas para presidente registradas no TSE) e 1 de Brasil ou Mercado. Em dia de IPCA ou de ata do Copom, essa segunda matéria é o evento. Na segunda, também o calendário de proventos.
+- **9h15:** 1 matéria de Política Brasil (em período eleitoral, as pesquisas para presidente registradas no TSE) e 1 de Brasil ou Mercado. Em dia de IPCA ou de ata do Copom, essa segunda matéria é o evento. Na segunda, também o calendário de proventos.
 - **18h45:** 1 matéria com o fato do dia (o fechamento do mercado; no sábado, o fato mais relevante). Em dia de decisão do Copom, é a decisão.
 
 Guias e assuntos escolhidos por você vêm como **Matéria indicada pontual**, com pull request próprio.
