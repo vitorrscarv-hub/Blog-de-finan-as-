@@ -42,15 +42,15 @@ test('tarja fica escondida quando todas as fontes falham', async ({ page }) => {
   await expect(page.locator('.tarja')).toBeHidden();
 });
 
-test('com movimento reduzido a tarja não anima e a cópia some', async ({ page }) => {
+test('com movimento reduzido a tarja anima igual (o clique para)', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await simularB3(page);
   await page.route('**/api/cotacoes', (r) => r.fulfill({ json: resposta }));
   await page.goto('/');
-  const trilho = page.locator('.tarja-trilho');
+  const trilho = page.locator('.tarja.pronta .tarja-trilho');
   await expect(trilho).toBeVisible();
-  expect(await trilho.evaluate((e) => getComputedStyle(e).animationName)).toBe('none');
-  await expect(page.locator('.tarja-copia[aria-hidden="true"]')).toBeHidden();
+  expect(await trilho.evaluate((e) => getComputedStyle(e).animationName)).toBe('tarja-rola');
+  expect(await page.locator('.tarja-janela').evaluate((e) => getComputedStyle(e).overflowX)).toBe('hidden');
 });
 
 test('sem a PTAX, a tarja mostra só as ações da B3', async ({ page }) => {

@@ -40,7 +40,7 @@ Abaixo da faixa de indicadores há uma tarja em movimento com o Ibovespa, 12 aç
 
 - A lista de papéis fica em `src/data/tarja.json`; a função descarta o que não for componente do Ibovespa. É informativa: sem ranking, sem destaque de alta ou baixa e sem recomendação (o aviso de atraso de até 15 minutos fica no rodapé).
 - `SITE.tarja.ativo` (em `src/site.config.ts`) liga e desliga a tarja. Se a fonte falhar, a tarja some em vez de mostrar valor velho como se fosse atual.
-- Com "reduzir movimento" ativado no aparelho, a tarja não anima e vira uma faixa rolável.
+- A tarja anima em qualquer aparelho, inclusive com "reduzir movimento" ligado no sistema. Um clique ou toque (ou Enter/Espaço) para a rolagem e outro retoma.
 - Aviso de risco: a API da B3 usada aqui é pública, mas não documentada nem contratada. Se a B3 mudar ou bloquear, só a tarja é afetada. A alternativa paga e licenciada é o feed de dados da própria B3 (UP2DATA) ou um provedor como a brapi.
 
 ### Rotinas de dados (sem IA)
