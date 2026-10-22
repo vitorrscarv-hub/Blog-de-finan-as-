@@ -44,7 +44,8 @@ Nunca versionar ids reais de banco, tokens, senhas ou `.dev.vars`. O `wrangler.t
 
 ## Fluxo de trabalho
 
-- Trabalhar sempre em branch e entregar por pull request para o `main`. Nunca fazer commit ou push direto no `main`, merge, force push, apagar branches ou deploy manual no Cloudflare.
+- Trabalhar sempre em branch e entregar por pull request para o `main`. Nunca fazer commit ou push direto no `main`, force push, apagar branches ou deploy manual no Cloudflare.
+- Merge de pull request só com autorização explícita de Vitor, dada naquela conversa para aquele PR ("faça o merge"). Antes, conferir que o CI passou e que o PR não tem conflito, e mergear com `expectedHeadSha` para garantir que é o commit revisado. Autorização de um PR não vale para os outros. As rotinas automáticas e a pauta semanal continuam terminando sem merge.
 - Commits curtos, em português, um por etapa.
 - Antes de concluir qualquer tarefa, rodar `npm run build` (sem erros nem avisos) e `npm test`. Se algo falhar, corrigir ou dizer claramente o que falhou.
 - Para conferir o visual, tirar capturas em 390x780 e 1280x800, nos modos claro e escuro, e não versionar as capturas (`capturas/` está no `.gitignore`).
