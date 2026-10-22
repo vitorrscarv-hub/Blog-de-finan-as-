@@ -170,11 +170,6 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .tarja-fonte { flex: none; display: none; color: var(--barra-suave); font-size: .7rem; }
 @media (min-width: 1000px) { .tarja-fonte { display: block; } }
 @keyframes tarja-rola { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) {
-  .tarja-trilho { animation: none; }
-  .tarja-janela { overflow-x: auto; scrollbar-width: thin; }
-  .tarja-copia[aria-hidden='true'] { display: none; }
-}
 
 /* Blocos de página */
 .bloco { padding: 32px 0 8px; }
