@@ -12,7 +12,7 @@ const itens = ((dados as { itens?: Indicador[] }).itens ?? []).filter(
   <aside class="indicadores" aria-label="Indicadores">
     <div class="container">
       {itens.map((i) => (
-        <a class="indicador" href={i.url} rel="noopener" target="_blank" title={`${i.fonte}, ${i.data}`}>
+        <a class="indicador" data-nome={i.nome} href={i.url} rel="noopener" target="_blank" title={`${i.fonte}, ${i.data}`}>
           <strong>{i.nome}</strong>
           <span class="valor">{i.valor}</span>
           <span class="meta">{i.data}</span>
@@ -21,3 +21,18 @@ const itens = ((dados as { itens?: Indicador[] }).itens ?? []).filter(
     </div>
   </aside>
 )}
+
+<script>
+  // Troca os valores gravados no build pelos da função (Banco Central e IBGE ao vivo). Sem resposta, fica o do build.
+  import { buscarFuncao } from '../scripts/cotacoes';
+
+  buscarFuncao().then((r) => {
+    for (const i of r?.indicadores ?? []) {
+      const el = document.querySelector<HTMLAnchorElement>(`.indicador[data-nome="${CSS.escape(i.nome)}"]`);
+      if (!el) continue;
+      el.querySelector('.valor')!.textContent = i.valor;
+      el.querySelector('.meta')!.textContent = i.data;
+      el.title = el.title.replace(/, .*$/, `, ${i.data}`);
+    }
+  });
+</script>

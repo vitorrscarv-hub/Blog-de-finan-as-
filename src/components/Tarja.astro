@@ -15,6 +15,7 @@ import { SITE } from '../site.config';
 <script>
   import papeis from '../data/tarja.json';
   import { URL_B3, lerCotacaoB3 } from '../../functions/_lib/cotacoes.js';
+  import { buscarFuncao } from '../scripts/cotacoes';
 
   const secao = document.querySelector<HTMLElement>('.tarja');
 
@@ -80,10 +81,7 @@ import { SITE } from '../site.config';
         .then((r) => (r.ok ? r.json() : null))
         .then((j) => (j ? (lerCotacaoB3(j) as Item | null) : null))
         .catch(() => null);
-    const daFuncao = () =>
-      fetch(el.dataset.endpoint!, { headers: { Accept: 'application/json' } })
-        .then((r) => (r.ok ? (r.json() as Promise<Resposta>) : null))
-        .catch(() => null);
+    const daFuncao = () => buscarFuncao() as Promise<Resposta | null>;
 
     function montar(itens: ReturnType<typeof lista>) {
       trilho.replaceChildren();

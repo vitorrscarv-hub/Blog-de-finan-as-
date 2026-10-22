@@ -1,10 +1,29 @@
-// Cloudflare Pages Function: PTAX da tarja de cotações do topo do site.
+// Cloudflare Pages Function: dados ao vivo do topo do site.
 // Rota: GET /api/cotacoes
 //
-// Só o dólar PTAX (Olinda do Banco Central). O Ibovespa e as ações são lidos pelo navegador do leitor direto na B3
-// (src/components/Tarja.astro): a B3 libera CORS, mas recusa consultas vindas da Cloudflare, onde esta função roda.
+// Lê o dólar PTAX e a meta Selic (Banco Central) e o IPCA em 12 meses (IBGE). Devolve:
+//   ptax         para a tarja de cotações
+//   indicadores  para a faixa de indicadores, no formato de src/data/indicadores.json
+// O Ibovespa e as ações são lidos pelo navegador do leitor direto na B3 (src/components/Tarja.astro): a B3 libera
+// CORS, mas recusa consultas vindas da Cloudflare, onde esta função roda.
 // A resposta fica guardada na borda da Cloudflare (60 s no pregão, 15 min fora dele). Não usa banco, chave nem segredo.
+// O campo "diagnostico" diz, por fonte, "ok" ou o motivo da falha: abra /api/cotacoes para ver.
 import { urlPtax, lerPtax, segundosDeCache } from '../_lib/cotacoes.js';
+import { URL_SELIC, URL_IPCA, lerSelic, lerIpca12m, itensIndicadores } from '../_lib/indicadores.js';
+
+const diagnostico = {};
+async function ler(nome, url, ler) {
+  try {
+    const r = await fetch(url, { headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(5000) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const v = ler(await r.json());
+    diagnostico[nome] = v ? 'ok' : 'resposta sem dado';
+    return v;
+  } catch (e) {
+    diagnostico[nome] = e.name === 'TimeoutError' ? 'tempo esgotado' : e.message;
+    return null;
+  }
+}
 
 export async function onRequestGet({ request, waitUntil }) {
   const cache = caches.default;
@@ -12,20 +31,17 @@ export async function onRequestGet({ request, waitUntil }) {
   const guardada = await cache.match(chave);
   if (guardada) return guardada;
 
-  let ptax = null;
-  let diagnostico = 'ok';
-  try {
-    const r = await fetch(urlPtax(), { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(5000) });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    ptax = lerPtax(await r.json());
-    if (!ptax) diagnostico = 'resposta sem PTAX';
-  } catch (e) {
-    diagnostico = e.name === 'TimeoutError' ? 'tempo esgotado' : e.message;
-  }
+  const [ptax, selic, ipca] = await Promise.all([
+    ler('ptax', urlPtax(), lerPtax),
+    ler('selic', URL_SELIC, lerSelic),
+    ler('ipca', URL_IPCA, lerIpca12m),
+  ]);
+  const indicadores = itensIndicadores({ selic, ipca, ptax });
+  const algum = indicadores.length > 0;
 
-  const resposta = new Response(JSON.stringify({ atualizadoEm: new Date().toISOString(), itens: [], ptax, diagnostico: { bancoCentral: diagnostico } }), {
-    status: ptax ? 200 : 502,
-    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': `public, max-age=${ptax ? segundosDeCache() : 15}` },
+  const resposta = new Response(JSON.stringify({ atualizadoEm: new Date().toISOString(), itens: [], ptax, indicadores, diagnostico }), {
+    status: algum ? 200 : 502,
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': `public, max-age=${algum ? segundosDeCache() : 15}` },
   });
   waitUntil(cache.put(chave, resposta.clone()));
   return resposta;
