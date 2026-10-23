@@ -144,4 +144,14 @@ test('404, RSS e sitemap', async ({ page, request }) => {
 
   const sitemap = await request.get('/sitemap-index.xml');
   expect(sitemap.ok()).toBe(true);
+  expect(await (await request.get('/sitemap-0.xml')).text()).toMatch(/<lastmod>\d{4}-\d{2}-\d{2}/);
+
+  const robots = await (await request.get('/robots.txt')).text();
+  expect(robots).toContain('Sitemap: https://grafous.com.br/sitemap-index.xml');
+  expect(robots).toContain('Sitemap: https://grafous.com.br/news-sitemap.xml');
+  expect(robots).toContain('Disallow: /api/');
+
+  const noticias = await request.get('/news-sitemap.xml');
+  expect(noticias.ok()).toBe(true);
+  expect(await noticias.text()).toContain('xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"');
 });

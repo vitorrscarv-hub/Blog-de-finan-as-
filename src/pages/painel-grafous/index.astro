@@ -44,6 +44,7 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
           <button type="button" class="leve" data-dias="90" aria-pressed="false">90 dias</button>
         </div>
         <p class="meta" id="periodo"></p>
+        <button type="button" class="leve" id="atualizar">Atualizar</button>
         <button type="button" class="leve" id="sair">Sair</button>
       </div>
 
@@ -252,7 +253,20 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
   const guardarChave = (v: string | null) => { try { v ? sessionStorage.setItem(CHAVE, v) : sessionStorage.removeItem(CHAVE); } catch {} };
   const lerChave = () => { try { return sessionStorage.getItem(CHAVE); } catch { return null; } };
 
+  // Busca os dados de novo (botão Atualizar, troca de período ou entrada) e mostra a hora da última leitura.
   async function carregar(chave: string) {
+    const botao = $<HTMLButtonElement>('atualizar');
+    botao.disabled = true;
+    botao.textContent = 'Atualizando...';
+    try {
+      await carregarDados(chave);
+    } finally {
+      botao.disabled = false;
+      botao.textContent = 'Atualizar';
+    }
+  }
+
+  async function carregarDados(chave: string) {
     erro('');
     let resp: Response;
     try {
@@ -275,6 +289,8 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
     $('entrada').hidden = true;
     $('conteudo').hidden = false;
     render(await resp.json());
+    const hora = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(new Date());
+    $('periodo').textContent += `. Atualizado às ${hora}`;
   }
 
   $<HTMLFormElement>('entrada').addEventListener('submit', (ev) => {
@@ -290,6 +306,10 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
       if (c) carregar(c);
     })
   );
+  $('atualizar').addEventListener('click', () => {
+    const c = lerChave();
+    if (c) carregar(c);
+  });
   $('sair').addEventListener('click', () => { guardarChave(null); location.reload(); });
   const salva = lerChave();
   if (salva) carregar(salva);

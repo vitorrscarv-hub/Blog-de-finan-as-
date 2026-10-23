@@ -153,6 +153,27 @@ O que você faz:
 
 Textos com algum dado que a redação não conseguiu conferir na fonte oficial vêm com `draft: true`. Eles não aparecem na prévia nem no site, mesmo depois do merge, até alguém conferir o dado e trocar para `draft: false`.
 
+## Google e outros buscadores
+
+O site entrega aos buscadores, sem nada a fazer a cada matéria:
+
+- `/robots.txt`: libera o site e aponta os dois mapas abaixo;
+- `/sitemap-index.xml`: todas as páginas, com a data da última mudança (`lastmod`, tirada de `updated` ou `date`);
+- `/news-sitemap.xml`: as notícias dos últimos 2 dias, no formato do Google News, regerado a cada publicação;
+- em cada notícia, o dado estruturado `NewsArticle` (título, datas, editora).
+
+**Uma vez só (Google Search Console):**
+
+1. Abra [search.google.com/search-console](https://search.google.com/search-console) e clique em Adicionar propriedade, tipo **Domínio**, com `grafous.com.br`.
+2. Para provar que o domínio é seu, o Google mostra um registro TXT. Como o domínio está na Cloudflare, aparece a opção de confirmar pela própria Cloudflare (Iniciar verificação): aceite e faça login na Cloudflare. Se não aparecer, copie o TXT e crie em Cloudflare, DNS, Records, Add record, tipo TXT, nome `@`.
+3. No menu Sitemaps, envie `sitemap-index.xml` e depois `news-sitemap.xml`.
+4. (Bing, DuckDuckGo e Yahoo) Em [bing.com/webmasters](https://www.bing.com/webmasters), escolha Importar do Google Search Console.
+5. (Cloudflare) Em Caching, Configuration, ligue **Crawler Hints**: a Cloudflare avisa Bing e Yandex na hora em que uma página muda (protocolo IndexNow), sem código.
+
+**A cada edição (opcional, 1 minuto):** depois do merge, o pull request traz a lista "Para pedir indexação no Google". No Search Console, cole cada endereço na barra de cima (Inspecionar URL), clique em Testar URL ativa e, se der certo, em Solicitar indexação. O Google limita esses pedidos por dia; o sitemap de notícias já faz o trabalho principal.
+
+Não use a "Indexing API" do Google para as matérias: ela é só para vagas de emprego e transmissões ao vivo, e usar para outro conteúdo vai contra as regras do Google.
+
 ## Como funciona o pop-up de cadastro
 
 **Desligado por enquanto.** `lead.ativo` em `src/site.config.ts` está em `false`: o pop-up não aparece, todos os textos abrem sem cadastro e o JSON-LD deixa de marcar conteúdo restrito. Para religar, troque para `true` (os testes de `popup.spec.ts` voltam a rodar sozinhos). A função `/api/lead` e a tabela `leads` continuam no lugar.
