@@ -4,6 +4,9 @@
 export const URL_SELIC = 'https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros';
 export const URL_IPCA = 'https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265?localidades=N1[all]';
 
+// Endereço alternativo do IBGE (API Sidra), usado quando servicodados.ibge.gov.br não responde.
+export const URL_IPCA_SIDRA = 'https://apisidra.ibge.gov.br/values/t/1737/n1/all/v/2265/p/last%201?formato=json';
+
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 
 export const virgula = (n, casas) => n.toLocaleString('pt-BR', { minimumFractionDigits: casas, maximumFractionDigits: casas });
@@ -22,6 +25,15 @@ export function lerIpca12m(json) {
   const [periodo, valor] = Object.entries(serie ?? {}).pop() ?? [];
   const n = Number(valor);
   if (!/^\d{6}$/.test(periodo ?? '') || !Number.isFinite(n)) return null;
+  return { valor: n, mes: Number(periodo.slice(4)), ano: Number(periodo.slice(0, 4)) };
+}
+
+// Mesma leitura, na resposta da API Sidra: a primeira linha é o cabeçalho; V é o valor e D3C o mês (AAAAMM).
+export function lerIpca12mSidra(json) {
+  const linha = Array.isArray(json) ? json[json.length - 1] : null;
+  const n = Number(linha?.V);
+  const periodo = String(linha?.D3C ?? '');
+  if (!/^\d{6}$/.test(periodo) || !Number.isFinite(n) || json.length < 2) return null;
   return { valor: n, mes: Number(periodo.slice(4)), ano: Number(periodo.slice(0, 4)) };
 }
 

@@ -45,7 +45,9 @@ Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publ
 9. **Pull request.** Push do branch. Na manhã, abra o pull request `Edição de AAAA-MM-DD` para o `main`. Na noite, se o da manhã estiver aberto, atualize esse mesmo pull request (push no branch e uma seção nova no corpo); se não, abra `Edição de AAAA-MM-DD (noite)` a partir de `edicao/AAAA-MM-DD-noite`. O corpo tem uma seção por turno com, para cada matéria: vaga, título, endereço, se está publicada ou como rascunho, a tabela final do checador e quais fatos vieram de jornal; depois, a lista "Para pedir indexação no Google" com o endereço completo (`https://grafous.com.br/noticias/...`) de cada matéria publicada (sem rascunho), vagas vazias e o motivo, o calendário (segunda) e o resultado de build e testes. Use as ferramentas `mcp__github__` (carregue com ToolSearch); se não houver, termine com o link `https://github.com/vitorrscarv-hub/Blog-de-finan-as-/compare/main...edicao/AAAA-MM-DD?expand=1` e o corpo pronto para colar.
 10. **Fim.** Se houver ferramenta de notificação, avise Vitor com o link. Responda com o link e uma linha por matéria.
 
-Nunca faça merge, push no `main`, force push ou deploy. Se algo impedir a edição (sem acesso de escrita, nenhuma fonte abre), responda com a primeira linha "EDIÇÃO NÃO FEITA" e o motivo exato.
+Fonte que falha não derruba a edição: registre no pull request o que não abriu e siga com as outras vagas (matéria que depende só da fonte caída fica de fora ou vai com `draft: true`). IBGE: se `servicodados.ibge.gov.br` não responder, use `apisidra.ibge.gov.br` (também do IBGE; IPCA tabela 1737, IPCA-15 tabela 3065, grupos tabela 7062).
+
+Nunca faça merge, push no `main`, force push ou deploy. Se algo impedir a edição (sem acesso de escrita ao repositório, nenhuma fonte abre), responda com a primeira linha "EDIÇÃO NÃO FEITA" e o motivo exato.
 
 ## Matéria indicada pontual
 
