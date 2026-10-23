@@ -153,5 +153,8 @@ test('404, RSS e sitemap', async ({ page, request }) => {
 
   const noticias = await request.get('/news-sitemap.xml');
   expect(noticias.ok()).toBe(true);
-  expect(await noticias.text()).toContain('xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"');
+  const xmlNoticias = await noticias.text();
+  expect(xmlNoticias).toContain('xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"');
+  // Nunca vazio: o Google acusa erro em sitemap sem <url>.
+  expect(xmlNoticias).toMatch(/<url><loc>https:\/\/grafous\.com\.br\/noticias\/[^<]+<\/loc><news:news>/);
 });
