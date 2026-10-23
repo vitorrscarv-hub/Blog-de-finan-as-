@@ -184,3 +184,17 @@ test('painel: banco vazio não quebra e a janela respeita o fuso de Brasília', 
   assert.equal(new Date(de).toISOString(), '2026-10-19T03:00:00.000Z');
   assert.equal(new Date(ate).toISOString(), '2026-10-20T03:00:00.000Z');
 });
+
+test('painel: depois da chave, diz se falta o banco, a tabela ou qual foi o erro', async () => {
+  const TOKEN = 'chave-de-teste-com-mais-de-16';
+  const pedir = (env) => onRequestGet({ request: new Request('https://x.com/api/admin/resumo', { headers: { Authorization: `Bearer ${TOKEN}` } }), env });
+  const semBanco = await pedir({ ADMIN_TOKEN: TOKEN });
+  assert.equal(semBanco.status, 500);
+  assert.equal((await semBanco.json()).erro, 'sem-banco');
+  const quebra = (msg) => ({ prepare: () => ({ bind: () => ({ all: async () => { throw new Error(msg); } }) }) });
+  assert.equal((await (await pedir({ ADMIN_TOKEN: TOKEN, DB: quebra('D1_ERROR: no such table: visitas') })).json()).erro, 'sem-tabela');
+  const outro = await (await pedir({ ADMIN_TOKEN: TOKEN, DB: quebra('D1_ERROR: database is locked') })).json();
+  assert.equal(outro.erro, 'banco');
+  assert.match(outro.detalhe, /database is locked/);
+  assert.equal((await pedir({ DB: quebra('x') })).status, 503, 'sem chave configurada nada vaza');
+});

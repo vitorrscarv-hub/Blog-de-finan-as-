@@ -170,3 +170,15 @@ test('painel: avisa quando o servidor não tem a chave configurada', async ({ pa
   await page.getByRole('button', { name: 'Entrar' }).click();
   await expect(page.getByRole('alert')).toContainText('ADMIN_TOKEN');
 });
+
+test('painel: diz o que corrigir quando o banco não está ligado ou falta a tabela', async ({ page }) => {
+  let corpo = '{"ok":false,"erro":"sem-banco"}';
+  await page.route('**/api/admin/resumo*', (route) => route.fulfill({ status: 500, contentType: 'application/json', body: corpo }));
+  await page.goto(PAINEL);
+  await page.getByLabel('Chave de acesso').fill('qualquer');
+  await page.getByRole('button', { name: 'Entrar' }).click();
+  await expect(page.getByRole('alert')).toContainText('Settings > Bindings');
+  corpo = '{"ok":false,"erro":"sem-tabela"}';
+  await page.getByRole('button', { name: 'Entrar' }).click();
+  await expect(page.getByRole('alert')).toContainText('db/schema.sql');
+});

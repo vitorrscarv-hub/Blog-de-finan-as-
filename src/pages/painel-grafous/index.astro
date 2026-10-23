@@ -262,7 +262,13 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
     }
     if (resp.status === 401) { guardarChave(null); $('conteudo').hidden = true; $('entrada').hidden = false; return erro('Chave incorreta.'); }
     if (resp.status === 503) return erro('O servidor ainda não tem a chave configurada (variável ADMIN_TOKEN no Cloudflare Pages).');
-    if (!resp.ok) return erro('Os dados só existem no site publicado no Cloudflare (ou com npm run cf:dev). Código ' + resp.status + '.');
+    if (!resp.ok) {
+      const r = (await resp.json().catch(() => ({}))) as { erro?: string; detalhe?: string };
+      if (r.erro === 'sem-banco') return erro('O site publicado não está ligado ao banco. No Cloudflare Pages, em Settings > Bindings, adicione um D1 database com o nome DB (banco blog-leads), em Production, e publique de novo (Deployments > Retry deployment).');
+      if (r.erro === 'sem-tabela') return erro('O banco ligado ao site não tem a tabela de visitas. No Console do banco que aparece em Settings > Bindings, rode o conteúdo de db/schema.sql.');
+      if (r.erro === 'banco') return erro('Falha ao ler o banco: ' + (r.detalhe ?? 'sem detalhe') + '.');
+      return erro('Os dados só existem no site publicado no Cloudflare (ou com npm run cf:dev). Código ' + resp.status + '.');
+    }
     guardarChave(chave);
     // O navegador de quem entra aqui deixa de ser contado como leitor.
     try { localStorage.setItem(CHAVE_IGNORAR, '1'); } catch {}
