@@ -37,11 +37,14 @@ export async function onRequestGet({ request, env }) {
 
   const pedido = Number(new URL(request.url).searchParams.get('dias'));
   const dias = PERIODOS.includes(pedido) ? pedido : 30;
+  // Daqui em diante a chave já conferiu: o motivo da falha pode ir na resposta, para o painel dizer o que corrigir.
+  if (!env.DB) return json({ ok: false, erro: 'sem-banco' }, 500);
   try {
     return json({ ok: true, ...(await resumir(env.DB, dias)) });
   } catch (e) {
     console.error('Falha ao montar o resumo', e);
-    return json({ ok: false, erro: 'banco' }, 500);
+    const detalhe = String(e?.message ?? e).slice(0, 200);
+    return json({ ok: false, erro: /no such table/i.test(detalhe) ? 'sem-tabela' : 'banco', detalhe }, 500);
   }
 }
 
