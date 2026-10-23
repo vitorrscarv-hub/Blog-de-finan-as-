@@ -13,11 +13,11 @@ test('home lista notícias e guias com a data em pt-BR', async ({ page }) => {
   await expect(page.locator('header.topo .marca')).toHaveText('Grafous');
   await expect(page.getByRole('heading', { name: 'Notícias da semana' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Guias', exact: true })).toBeVisible();
-  // Capa: manchete + coluna "Mais notícias" + fileira, no máximo 6 notícias; guias, no máximo 3.
+  // Capa: manchete + coluna "Mais notícias" + fileira, no máximo 7 notícias; guias, no máximo 3.
   const capa = page.locator('.capa');
   const noticiasNaCapa = await capa.locator('.manchete, .mais li, .fileira .card').count();
   expect(noticiasNaCapa).toBeGreaterThan(0);
-  expect(noticiasNaCapa).toBeLessThanOrEqual(6);
+  expect(noticiasNaCapa).toBeLessThanOrEqual(7);
   await expect(capa.locator('.manchete')).toHaveCount(1);
   expect(await page.locator('section[aria-labelledby="titulo-guias"] .card').count()).toBeLessThanOrEqual(3);
   const data = capa.locator('time').first();

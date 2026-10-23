@@ -37,6 +37,12 @@ export const SITE = {
     velocidade: 45,
     ptaxUrl: 'https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes',
   },
+  // Capa: quantas notícias vão na coluna "Mais notícias" (a fileira de baixo tem sempre 3) e matérias fixadas
+  // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete.
+  capa: {
+    maisNoticias: 3,
+    fixadas: { '2026-10-23-volume-puts-b3-pico-7-8-outubro': 3 } as Record<string, number>,
+  },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
   // Respeita "Não rastrear" (DNT) e o Global Privacy Control. O painel mora na pasta src/pages/painel-grafous/:
   // se mudar o endereço, renomeie a pasta e ajuste `painel` aqui.

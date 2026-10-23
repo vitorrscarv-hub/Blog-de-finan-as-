@@ -5,11 +5,16 @@ import CardPost from '../components/CardPost.astro';
 import { SITE } from '../site.config';
 import { dataBR, dataCurta, porData, publicado, slugEditoria } from '../scripts/formatos';
 
-const noticias = (await getCollection('noticias', publicado)).sort(porData).slice(0, 6);
-// Capa: manchete, 2 notícias na coluna ao lado e as outras 3 numa fileira embaixo.
-const [manchete, ...resto] = noticias;
-const mais = resto.slice(0, 2);
-const fileira = resto.slice(2);
+const noticias = (await getCollection('noticias', publicado)).sort(porData);
+// Capa: manchete, a coluna "Mais notícias" ao lado e 3 notícias numa fileira embaixo.
+// Matéria fixada (SITE.capa.fixadas) entra na posição pedida da coluna; as outras seguem por data.
+const { maisNoticias, fixadas } = SITE.capa;
+const fixas = noticias.filter((n) => n.id in fixadas).sort((a, b) => fixadas[a.id] - fixadas[b.id]);
+const [manchete, ...resto] = noticias.filter((n) => !(n.id in fixadas));
+const livres = Math.max(0, maisNoticias - fixas.length);
+const mais = resto.slice(0, livres);
+for (const n of fixas) mais.splice(fixadas[n.id] - 1, 0, n);
+const fileira = resto.slice(livres, livres + 3);
 const guias = (await getCollection('guias', publicado)).sort(porData).slice(0, 3);
 
 const jsonLd = {
