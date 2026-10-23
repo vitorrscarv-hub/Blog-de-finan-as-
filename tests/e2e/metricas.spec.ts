@@ -182,3 +182,21 @@ test('painel: diz o que corrigir quando o banco não está ligado ou falta a tab
   await page.getByRole('button', { name: 'Entrar' }).click();
   await expect(page.getByRole('alert')).toContainText('db/schema.sql');
 });
+
+test('painel: botão Atualizar busca os dados de novo e mostra a hora', async ({ page }) => {
+  let pedidos = 0;
+  await page.route('**/api/admin/resumo*', (route) => {
+    pedidos++;
+    const corpo = { ...RESUMO, totais: { ...RESUMO.totais, visitas: pedidos === 1 ? 120 : 121 } };
+    return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(corpo) });
+  });
+  await page.goto(PAINEL);
+  await page.getByLabel('Chave de acesso').fill('qualquer');
+  await page.getByRole('button', { name: 'Entrar' }).click();
+  await expect(page.locator('#kpis')).toContainText('120');
+  await expect(page.locator('#periodo')).toContainText('Atualizado às');
+  await page.getByRole('button', { name: 'Atualizar' }).click();
+  await expect(page.locator('#kpis')).toContainText('121');
+  expect(pedidos).toBe(2);
+  await expect(page.getByRole('button', { name: 'Atualizar' })).toBeEnabled();
+});
