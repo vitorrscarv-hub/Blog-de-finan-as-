@@ -17,6 +17,7 @@ Só faça requisições de leitura (GET) às fontes oficiais listadas no manual 
 | Dólar PTAX | `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='MM-DD-AAAA'&$format=json` | `cotacaoVenda`. Sábado, domingo e feriado voltam vazios: tente o dia útil anterior. |
 | Expectativas do Boletim Focus | `https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais?$top=5&$orderby=Data%20desc&$format=json` (também `ExpectativasMercadoSelic`, `ExpectativasMercadoMensais`) | JSON OData; filtre por `Indicador` e `Data`. |
 | IPCA | `https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/63\|69\|2265?localidades=N1[all]` (use `curl -g`) | 63 = variação do mês, 69 = no ano, 2265 = em 12 meses. Em 19/10/2026: setembro 0,82%, 12 meses 4,58%. |
+| IPCA e IPCA-15 pela API Sidra (alternativa quando `servicodados` cai; testado em 23/10/2026) | `https://apisidra.ibge.gov.br/values/t/3065/n1/all/v/355,356,1120/p/last%203?formato=json` (IPCA-15) e `.../t/1737/n1/all/v/63,69,2265/p/last%201?formato=json` (IPCA) | Primeira linha do JSON é o cabeçalho; `V` é o valor, `D3N` o mês. Grupos e itens: tabela 7062, `c315/all`. |
 | Notícias do IBGE | `https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=10` | JSON com título, data e link da página original. |
 | Páginas do Banco Central, Tesouro Direto, Anbima, B3, gov.br | `node scripts/ler-pagina.mjs <url>` | Algumas páginas do BC dependem de API interna e podem vir vazias; prefira os endereços acima. |
 

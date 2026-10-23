@@ -4,7 +4,7 @@
 // de reserva gravado no build (página sem JavaScript ou função fora do ar). A edição diária roda este script antes do commit.
 // Só troca valor e data do que mudou; item cuja fonte não respondeu fica como estava.
 import { readFileSync, writeFileSync } from 'node:fs';
-import { baixarJson, URL_SELIC, URL_IPCA, lerSelic, lerIpca12m, itensIndicadores } from './lib/oficiais.mjs';
+import { baixarJson, URL_SELIC, URL_IPCA, URL_IPCA_SIDRA, lerSelic, lerIpca12m, lerIpca12mSidra, itensIndicadores } from './lib/oficiais.mjs';
 import { urlPtax, lerPtax } from '../functions/_lib/cotacoes.js';
 
 const ARQUIVO = new URL('../src/data/indicadores.json', import.meta.url);
@@ -20,7 +20,7 @@ const tentar = (nome, fn) => {
 const novos = Object.fromEntries(
   itensIndicadores({
     selic: tentar('Selic', () => lerSelic(baixarJson(URL_SELIC))),
-    ipca: tentar('IPCA', () => lerIpca12m(baixarJson(URL_IPCA))),
+    ipca: tentar('IPCA', () => lerIpca12m(baixarJson(URL_IPCA))) ?? tentar('IPCA (Sidra)', () => lerIpca12mSidra(baixarJson(URL_IPCA_SIDRA))),
     ptax: tentar('PTAX', () => lerPtax(baixarJson(urlPtax()))),
   }).map((i) => [i.nome, i])
 );

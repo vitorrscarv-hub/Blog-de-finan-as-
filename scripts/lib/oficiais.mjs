@@ -3,7 +3,7 @@
 // As regras de leitura são as mesmas da função da Cloudflare (functions/_lib/indicadores.js).
 import { execFileSync } from 'node:child_process';
 
-export { URL_SELIC, URL_IPCA, lerSelic, lerIpca12m, itensIndicadores } from '../../functions/_lib/indicadores.js';
+export { URL_SELIC, URL_IPCA, URL_IPCA_SIDRA, lerSelic, lerIpca12m, lerIpca12mSidra, itensIndicadores } from '../../functions/_lib/indicadores.js';
 
 export const baixarJson = (url) =>
   JSON.parse(

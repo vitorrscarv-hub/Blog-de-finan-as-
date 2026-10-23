@@ -9,7 +9,7 @@
 // A resposta fica guardada na borda da Cloudflare (60 s no pregão, 15 min fora dele). Não usa banco, chave nem segredo.
 // O campo "diagnostico" diz, por fonte, "ok" ou o motivo da falha: abra /api/cotacoes para ver.
 import { urlPtax, lerPtax, segundosDeCache } from '../_lib/cotacoes.js';
-import { URL_SELIC, URL_IPCA, lerSelic, lerIpca12m, itensIndicadores } from '../_lib/indicadores.js';
+import { URL_SELIC, URL_IPCA, URL_IPCA_SIDRA, lerSelic, lerIpca12m, lerIpca12mSidra, itensIndicadores } from '../_lib/indicadores.js';
 
 async function ler(diagnostico, nome, url, ler) {
   try {
@@ -34,7 +34,8 @@ export async function onRequestGet({ request, waitUntil }) {
   const [ptax, selic, ipca] = await Promise.all([
     ler(diagnostico, 'ptax', urlPtax(), lerPtax),
     ler(diagnostico, 'selic', URL_SELIC, lerSelic),
-    ler(diagnostico, 'ipca', URL_IPCA, lerIpca12m),
+    // IPCA: se o endereço principal do IBGE cair, lê o alternativo.
+    ler(diagnostico, 'ipca', URL_IPCA, lerIpca12m).then((v) => v ?? ler(diagnostico, 'ipca-sidra', URL_IPCA_SIDRA, lerIpca12mSidra)),
   ]);
   const indicadores = itensIndicadores({ selic, ipca, ptax });
   const algum = indicadores.length > 0;

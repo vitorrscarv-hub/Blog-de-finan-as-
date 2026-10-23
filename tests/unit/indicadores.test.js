@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { lerSelic, lerIpca12m, itensIndicadores, diaCurto } from '../../functions/_lib/indicadores.js';
+import { lerSelic, lerIpca12m, lerIpca12mSidra, itensIndicadores, diaCurto } from '../../functions/_lib/indicadores.js';
 import { decodificar, lerRss } from '../../scripts/lib/rss.mjs';
 
 test('leitura da Selic e do IPCA nas respostas do Banco Central e do IBGE', () => {
@@ -32,4 +32,11 @@ test('RSS: lê título, link e data, com CDATA, entidades e codificação latin1
   const itens = lerRss(decodificar(Buffer.from(xml, 'latin1')));
   assert.deepEqual(itens.map((i) => i.titulo), ['IPCA & câmbio', 'Copom mantém Selic']);
   assert.equal(itens[1].link, 'https://a.com/1');
+});
+
+test('IPCA 12m pelo endereço alternativo do IBGE (Sidra)', () => {
+  const sidra = [{ V: 'Valor', D3C: 'Mês (Código)' }, { V: '4.58', D3C: '202609' }];
+  assert.deepEqual(lerIpca12mSidra(sidra), { valor: 4.58, mes: 9, ano: 2026 });
+  assert.equal(lerIpca12mSidra([{ V: 'Valor', D3C: 'Mês (Código)' }]), null);
+  assert.equal(lerIpca12mSidra({}), null);
 });
