@@ -1,7 +1,7 @@
 ---
 title: "Cinco operações em puts do Ibovespa somam R$ 5,7 bi e concentram 29% do volume na B3"
-description: "Em 23 pregões, cinco operações em puts do Ibovespa somaram R$ 5,7 bi, 29% do volume de puts. Sem elas, o movimento de 7 e 8/10 fica abaixo da média."
-date: 2026-10-23T10:55:00-03:00
+description: "Em 23 pregões, cinco operações em puts do Ibovespa somaram R$ 5,7 bi, 29% do volume de puts. Veja o que dizem os dados."
+date: 2026-10-23
 editoria: "Mercado"
 keywords: ["opções", "puts", "Ibovespa", "B3", "proteção"]
 teaser: "Os dados da B3 mostram que o salto no volume de puts em 25/09, 7/10 e 8/10 vem de cinco grandes operações em opções do Ibovespa. Entenda o que isso diz, e o que não diz, sobre a procura por proteção. [LINK]"
@@ -14,7 +14,7 @@ draft: false
 gate: true
 ---
 
-A procura por proteção contra queda tem um sinal visível nos dados da B3, mas ele é mais concentrado do que parece. Entre 21 de setembro e 22 de outubro (23 pregões), os investidores negociaram R$ 19,4 bilhões em prêmios de puts, as opções de venda usadas para se proteger de quedas. Cinco operações, todas em opções do Ibovespa, responderam por R$ 5,7 bilhões, ou 29% do total. Foram elas que fizeram de 25 de setembro, 7 e 8 de outubro os dias de maior volume. Sem essas cinco, os três dias ficam abaixo da média do período.
+A procura por proteção contra queda tem um sinal visível nos dados da B3, mas ele é mais concentrado do que parece. Entre 21 de setembro e 22 de outubro (23 pregões), os investidores negociaram R$ 19,4 bilhões em prêmios de puts, as opções de venda usadas para se proteger de quedas. Cinco operações, todas em opções do Ibovespa, responderam por R$ 5,7 bilhões, ou 29% do total. Foram elas que fizeram de 25 de setembro, 7 e 8 de outubro os dias de maior volume.
 
 ## O que são as cinco operações
 
