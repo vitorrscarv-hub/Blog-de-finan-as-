@@ -118,6 +118,16 @@ Um arquivo por texto, no formato do README ("Como publicar um texto"):
 - Sem detalhe gráfico de violência e sem especular sobre o rumo militar ou o resultado de eleições (pesquisa é retrato do período de campo, não previsão).
 - O assunto do texto é o efeito econômico e financeiro. A política entra na medida em que explica esse efeito.
 
+## Matéria indicada pontual com linha editorial
+
+Vale só para a Matéria indicada pontual, e só quando Vitor pedir um ângulo ou uma tese. Na edição diária continuam valendo a neutralidade e as seções "Tom e estilo" e "Política e conflitos" sem exceção.
+
+- Liberado: tomar posição, defender uma tese, escolher o enquadramento e o que vai em destaque (spin), usar adjetivo e escrever em tom profissional de análise ou de opinião, no ângulo que Vitor pedir. A seção "Política e conflitos" não se aplica a esses textos.
+- O texto se identifica como análise: o primeiro parágrafo deixa claro que é a leitura da redação sobre o assunto, e o título não se apresenta como fato neutro.
+- Os fatos continuam verdadeiros. Enquadrar e escolher a ênfase pode; inventar, distorcer número, tirar citação de contexto ou omitir um dado que inverte a conclusão, não. Cada dado tem fonte aberta e passa pelo `checador`.
+- Continuam proibidos: tudo de "O que nunca pode sair" (indicação de compra ou venda, promessa de retorno, preço-alvo, previsão como fato), notícia falsa ou ataque pessoal, e pesquisa eleitoral sem registro no TSE.
+- Eleições: no dia da votação, nenhum texto a favor ou contra candidato. Durante a campanha, texto que favoreça ou ataque candidato tem risco jurídico (a lei eleitoral veda o anonimato nessas manifestações, e as matérias do blog não têm assinatura); antes de publicar, avise Vitor desse risco no pull request.
+
 ## O que nunca pode sair
 
 - Promessa de retorno ou de ganho.
