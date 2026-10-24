@@ -8,12 +8,18 @@ teaser: "Uma análise assinada, com a linha do tempo completa: mensalão, Petrob
 fontes:
   - titulo: "Poder360: Bloco do 22 toma ruas de capitais no Nordeste a 3 dias do 2º turno (22/10/2026)"
     url: "https://www.poder360.com.br/poder-eleicoes-2026/bloco-do-22-toma-ruas-de-capitais-no-nordeste-a-3-dias-do-2o-turno/"
+  - titulo: "InfoMoney: Lula e Flávio encerram campanha com atos no Sudeste e disputa por eleitores ausentes (24/10/2026)"
+    url: "https://www.infomoney.com.br/politica/lula-e-flavio-encerram-campanha-com-atos-no-sudeste-e-disputa-por-eleitores-ausentes/"
   - titulo: "Poder360: Lula é condenado a 9 anos e 6 meses de prisão no processo do tríplex (12/07/2017)"
     url: "https://www.poder360.com.br/eleicoes/lula-e-condenado-a-9-anos-e-6-meses-de-prisao-no-processo-do-triplex/"
   - titulo: "Poder360: Lula e o processo do triplex, da denúncia à decretação de prisão (05/04/2018)"
     url: "https://www.poder360.com.br/justica/lula-e-o-processo-do-triplex-da-denuncia-a-decretacao-de-prisao/"
+  - titulo: "Poder360: Por unanimidade, TRF-4 mantém condenação e aumenta pena de Lula na Lava Jato (24/01/2018)"
+    url: "https://www.poder360.com.br/justica/por-unanimidade-trf-4-mantem-condenacao-e-aumenta-pena-de-lula-na-lava-jato/"
   - titulo: "Poder360: STJ reduz pena de Lula no caso tríplex do Guarujá (23/04/2019)"
     url: "https://www.poder360.com.br/justica/stj-forma-maioria-por-reducao-de-pena-de-lula-no-caso-triplex-do-guaruja/"
+  - titulo: "Poder360: Lula livre, ex-presidente deixa a prisão em Curitiba (08/11/2019)"
+    url: "https://www.poder360.com.br/justica/lula-livre-ex-presidente-deixa-a-prisao-em-curitiba/"
   - titulo: "Poder360: Fachin anula ações contra Lula em Curitiba e devolve direitos políticos ao petista (08/03/2021)"
     url: "https://www.poder360.com.br/justica/fachin-anula-todos-os-atos-processuais-contra-lula-realizados-em-curitiba/"
   - titulo: "Poder360: Justiça arquiva caso do tríplex contra Lula (28/01/2022)"
@@ -60,7 +66,7 @@ gate: true
 
 **Por Vitor Reis de Carvalho.** Este texto é uma análise de opinião, assinada, com a leitura do autor sobre os fatos. Os fatos citados têm fonte, listada na linha de fontes logo abaixo do título.
 
-Na noite de quinta-feira (22), a avenida Boa Viagem, no Recife, recebeu uma caminhada de apoiadores de Flávio Bolsonaro vestidos de verde e amarelo. Neste sábado (24), às 14h, segundo a agenda divulgada, a Barra da Tijuca, no Rio, recebe o último ato de rua da campanha de Flávio Bolsonaro. No Nordeste, região onde o PT tradicionalmente leva vantagem, e no Rio, a mensagem foi a mesma: há uma parte grande do país que quer um Estado democrático, com eleição, imprensa livre e tribunais, mas governado por valores de direita. Ordem. Responsabilidade com o dinheiro público. Tolerância zero com a corrupção.
+Na noite de quinta-feira (22), Boa Viagem, no Recife, recebeu uma caminhada de apoiadores de Flávio Bolsonaro vestidos de verde e amarelo. Neste sábado (24), à tarde, segundo a agenda divulgada por aliados e citada pelo InfoMoney, a Barra da Tijuca, no Rio, recebe o último ato de rua da campanha de Flávio Bolsonaro. No Nordeste, região onde o PT tradicionalmente leva vantagem, e no Rio, a mensagem foi a mesma: há uma parte grande do país que quer um Estado democrático, com eleição, imprensa livre e tribunais, mas governado por valores de direita. Ordem. Responsabilidade com o dinheiro público. Tolerância zero com a corrupção.
 
 A tese deste texto é simples: esse desejo não nasceu do nada. Ele tem memória. E a memória tem datas, números e nomes.
 
@@ -68,7 +74,7 @@ A tese deste texto é simples: esse desejo não nasceu do nada. Ele tem memória
 
 O ato do Recife fez parte do chamado "Bloco do 22", uma série de caminhadas de apoio a Flávio Bolsonaro. Segundo o Poder360, a concentração foi às 19h22, na Pracinha de Boa Viagem, com a presença do deputado federal Nikolas Ferreira (PL-MG). O percurso terminou no parque Dona Lindu, que leva o nome da mãe de Lula. No mesmo dia, houve atos em Maceió e em Mossoró.
 
-O ato da Barra da Tijuca sai da Praça do Ó e deve terminar em frente ao condomínio onde Jair Bolsonaro tem casa. É o encerramento da campanha de rua.
+O ato da Barra da Tijuca, segundo o InfoMoney, sai da Praça do Ó e deve terminar na residência de Jair Bolsonaro. É o encerramento da campanha de rua.
 
 > **O que fica:** o Nordeste, reduto histórico do PT, teve atos da direita nas suas capitais na última semana da campanha. A direita foi para a rua no território do adversário.
 
@@ -76,10 +82,10 @@ O ato da Barra da Tijuca sai da Praça do Ó e deve terminar em frente ao condom
 
 Porque ela não foi um episódio. Foi uma sequência. Ao longo de pouco mais de uma década, o Brasil viu o mensalão, o petrolão, o maior caso de suborno internacional já registrado e um ex-presidente preso. Depois, viu boa parte disso anulada. Quem viveu esse período lembra das duas coisas: dos fatos e das anulações. A linha do tempo abaixo junta as duas.
 
-<figure class="linha-do-tempo">
+<figure class="linha-do-tempo" style="margin:1.6em 0">
 <svg viewBox="0 0 360 760" width="100%" role="img" aria-labelledby="ldt-titulo" style="max-width:560px;display:block;margin:0 auto;color:currentColor;font-family:inherit">
 <title id="ldt-titulo">Linha do tempo dos escândalos e das decisões judiciais, de 2005 a 2024</title>
-<line x1="58" y1="20" x2="58" y2="745" stroke="currentColor" stroke-opacity="0.3" stroke-width="2"/>
+<line x1="58" y1="20" x2="58" y2="660" stroke="currentColor" stroke-opacity="0.3" stroke-width="2"/>
 <g font-size="13" fill="currentColor">
 <circle cx="58" cy="30" r="6" style="fill:var(--destaque)"/><text x="10" y="35" font-weight="700">2005</text><text x="74" y="29">Mensalão vem a público</text><text x="74" y="45" font-size="11.5" fill-opacity="0.75">pagamentos a deputados da base</text>
 <circle cx="58" cy="85" r="6" style="fill:var(--destaque)"/><text x="10" y="90" font-weight="700">2012</text><text x="74" y="84">STF condena Dirceu, Genoino e Delúbio</text><text x="74" y="100" font-size="11.5" fill-opacity="0.75">Ação Penal 470</text>
@@ -97,7 +103,7 @@ Porque ela não foi um episódio. Foi uma sequência. Ao longo de pouco mais de 
 <circle cx="74" cy="728" r="6" fill="none" stroke="currentColor" stroke-width="2"/><text x="86" y="733" font-size="11.5">anulação, arquivamento ou suspensão</text>
 </g>
 </svg>
-<figcaption>Linha do tempo montada com as fontes listadas no topo da página.</figcaption>
+<figcaption style="font-size:.85rem">Linha do tempo montada com as fontes da linha de fontes, abaixo do título.</figcaption>
 </figure>
 
 ## 2005: o mensalão
@@ -136,14 +142,14 @@ O triplex do Guarujá é o caso que levou Lula à prisão. Vale olhar a sequênc
 - **4 e 5 de abril de 2018:** o STF negou, por 6 votos a 5, o habeas corpus preventivo, e Moro decretou a prisão. Lula foi preso em 7 de abril.
 - **23 de abril de 2019:** a 5ª Turma do STJ, por unanimidade dos quatro ministros que votaram, manteve a condenação e fixou a pena em 8 anos, 10 meses e 20 dias, com indenização de R$ 2.424.991 pelas vantagens que o tribunal considerou "comprovadamente" recebidas.
 
-Três instâncias, quatro anos, a mesma conclusão: condenação. Oito juízes, em Curitiba, em Porto Alegre e em Brasília, olharam as provas e votaram pela condenação. É isso que muita gente lembra.
+Três instâncias, de 2017 a 2019, a mesma conclusão: condenação. Oito juízes, em Curitiba, em Porto Alegre e em Brasília, votaram pela condenação. É isso que muita gente lembra.
 
 No caso do sítio de Atibaia, a história foi parecida. A juíza Gabriela Hardt condenou Lula a 12 anos e 11 meses, sob a acusação de ter recebido R$ 1 milhão da Odebrecht e da OAS em reformas no sítio. Em 27 de novembro de 2019, o TRF4, por unanimidade, aumentou a pena para 17 anos, 1 mês e 10 dias.
 
 **O que veio depois, e precisa ser dito:**
 
 - **8 de novembro de 2019:** Lula deixou a prisão, depois de 580 dias, quando o STF decidiu que a pena só pode ser cumprida depois de esgotados os recursos.
-- **8 de março de 2021:** o ministro Edson Fachin anulou as quatro ações penais contra Lula em Curitiba (triplex, Atibaia e duas sobre o Instituto Lula). O motivo não foi a falta de provas. Foi a competência: para Fachin, os casos não tinham relação direta só com a Petrobras e não deveriam ter corrido em Curitiba. Lula recuperou os direitos políticos.
+- **8 de março de 2021:** o ministro Edson Fachin anulou as quatro ações penais contra Lula em Curitiba (triplex, Atibaia e duas sobre o Instituto Lula). O motivo não foi a falta de provas. Foi a competência: para Fachin, os fatos não tinham relação direta com o esquema de desvios na Petrobras e não deveriam ter corrido em Curitiba. Lula recuperou os direitos políticos.
 - **Março e junho de 2021:** a 2ª Turma do STF declarou Moro parcial no caso de Lula, e o plenário confirmou.
 - **27 de janeiro de 2022:** a Justiça Federal de Brasília arquivou o caso do triplex. O MPF disse que as provas não podiam ser reaproveitadas, por causa da decisão do STF, e que os crimes estavam prescritos: para quem tem mais de 70 anos, o prazo cai pela metade. O caso de Atibaia teve nova denúncia rejeitada em agosto de 2021.
 
@@ -175,13 +181,13 @@ Dilma Rousseff foi a sucessora escolhida por Lula. Os números do seu segundo ma
 
 Foram dois anos seguidos de queda do PIB. A inflação passou de dois dígitos. O desemprego quase dobrou e seguiu subindo até 13,9% no começo de 2017, já depois da saída de Dilma, afastada provisoriamente pelo Senado em maio de 2016 e em definitivo em agosto.
 
-Em março de 2016, Dilma nomeou Lula ministro da Casa Civil. O ministro Gilmar Mendes, do STF, suspendeu a posse em 18 de março, entendendo que a nomeação tinha o objetivo de tirar as investigações das mãos de Sergio Moro, segundo a Agência Brasil. Em 31 de agosto de 2016, o Senado afastou Dilma em definitivo, por 61 votos a 20. O motivo foi crime de responsabilidade fiscal, as chamadas pedaladas e créditos sem autorização do Congresso, e não corrupção. Mas o país que assistiu ao impeachment era o mesmo país em recessão, com a Lava Jato na televisão todas as noites.
+Em março de 2016, Dilma nomeou Lula ministro da Casa Civil. O ministro Gilmar Mendes, do STF, suspendeu a posse em 18 de março, entendendo que a nomeação tinha o objetivo de tirar as investigações das mãos de Sergio Moro, segundo a Agência Brasil. Em 31 de agosto de 2016, o Senado afastou Dilma em definitivo, por 61 votos a 20. O motivo foi crime de responsabilidade, pelas chamadas pedaladas fiscais e por créditos sem autorização do Congresso, e não corrupção. Mas o país que assistiu ao impeachment era o mesmo país em recessão, com a Lava Jato na televisão todas as noites.
 
 > **O que fica:** PIB caiu 3,5% e 3,3%, inflação de 10,67%, desemprego de 6,6% para 12,1%. Lula nomeado para a Casa Civil no meio da Lava Jato, posse suspensa pelo STF.
 
 ## O PT, o socialismo e o Foro de São Paulo
 
-O PT foi fundado em 10 de fevereiro de 1980, no Colégio Sion, em São Paulo. O manifesto de fundação, divulgado pela Fundação Perseu Abramo, ligada ao partido, fala em construir uma sociedade igualitária, "sem exploradores e sem explorados", linguagem da tradição socialista.
+O PT foi fundado em 10 de fevereiro de 1980, no Colégio Sion, em São Paulo. O manifesto de fundação, divulgado pela Fundação Perseu Abramo, ligada ao partido, fala em construir uma sociedade igualitária, "onde não haja explorados nem exploradores", linguagem da tradição socialista.
 
 Em 1990, um ano depois da queda do Muro de Berlim, Lula e Fidel Castro fundaram o Foro de São Paulo, que reuniu na primeira reunião 48 partidos e organizações de esquerda da região, segundo o Poder360. Em agosto de 2026, na convenção que confirmou sua candidatura, o próprio Lula contou a história: "Quando criei o Foro de São Paulo em 1990". Disse que a ideia era levar a esquerda latino-americana a disputar eleições em vez de pegar em armas. E listou as vitórias: Chile, Equador, Venezuela, Uruguai, Argentina, Brasil. O próprio Poder360 observou que alguns países da região viveram, sob governos de esquerda, regimes autoritários ou processos de erosão democrática.
 
