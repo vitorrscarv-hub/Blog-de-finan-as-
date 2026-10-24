@@ -64,7 +64,7 @@ draft: false
 gate: true
 ---
 
-**Por Vitor Reis de Carvalho.** Este texto é uma análise de opinião, assinada, com a leitura do autor sobre os fatos. Os fatos citados têm fonte, listada na linha de fontes logo abaixo do título.
+**Por Vitor RC.** Este texto é uma análise de opinião, assinada, com a leitura do autor sobre os fatos. Os fatos citados têm fonte, listada na linha de fontes logo abaixo do título.
 
 Na noite de quinta-feira (22), Boa Viagem, no Recife, recebeu uma caminhada de apoiadores de Flávio Bolsonaro vestidos de verde e amarelo. Neste sábado (24), à tarde, segundo a agenda divulgada por aliados e citada pelo InfoMoney, a Barra da Tijuca, no Rio, recebe o último ato de rua da campanha de Flávio Bolsonaro. No Nordeste, região onde o PT tradicionalmente leva vantagem, e no Rio, a mensagem foi a mesma: há uma parte grande do país que quer um Estado democrático, com eleição, imprensa livre e tribunais, mas governado por valores de direita. Ordem. Responsabilidade com o dinheiro público. Tolerância zero com a corrupção.
 
