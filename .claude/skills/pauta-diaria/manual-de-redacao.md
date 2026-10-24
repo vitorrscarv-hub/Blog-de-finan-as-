@@ -132,6 +132,6 @@ Vale só para a Matéria indicada pontual, e só quando Vitor pedir um ângulo o
 
 - Promessa de retorno ou de ganho.
 - Indicação de compra ou venda de ativo, fundo ou título específico. Nada de "vale a pena", "é hora de", "aproveite", "o investidor deve". Explique o mecanismo e os pontos a considerar conforme o perfil.
-- Vitor citado no corpo do texto, apresentado como economista ou assessor, ou ligado a alguma instituição financeira.
+- Vitor citado no corpo do texto (exceto a assinatura "Por Vitor Reis de Carvalho." na primeira linha de uma análise assinada que ele pedir), apresentado como economista ou assessor, ou ligado a alguma instituição financeira.
 - Nas notícias de Mercado e no calendário: preço-alvo, "ação barata", ranking de pagadores de proventos, projeção de dividendos futuros, opinião sobre se um negócio de M&A foi bom ou mau.
 - Previsão apresentada como fato. Projeção só com a fonte (ex.: "o Boletim Focus de [data] projeta...").

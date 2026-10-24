@@ -53,7 +53,12 @@ test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO
   await expect(page.locator('.aviso')).toContainText('Rentabilidade passada não garante rentabilidade futura');
   await expect(page.locator('.aviso')).toContainText('perfil');
   await expect(page.locator('.aviso')).toContainText('inteligência artificial');
-  await expect(page.locator('body')).not.toContainText(/Vitor/);
+  // O nome do autor só aparece no corpo de uma análise assinada, que começa com "Por Vitor Reis de Carvalho.".
+  for (const parte of ['header.topo', '.artigo-cabecalho', '.aviso', 'footer']) {
+    await expect(page.locator(parte).first()).not.toContainText(/Vitor/);
+  }
+  const corpo = (await page.locator('.artigo-corpo').textContent()) ?? '';
+  if (/Vitor/.test(corpo)) expect(corpo.trim()).toMatch(/^Por Vitor Reis de Carvalho\./);
 
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new RegExp(`${href}$`));
   await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content', 'article');
