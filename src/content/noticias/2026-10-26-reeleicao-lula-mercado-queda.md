@@ -20,8 +20,6 @@ draft: false
 gate: true
 ---
 
-Este texto é uma análise, com a leitura da redação sobre a reação do mercado. Foi escrito antes da abertura da B3, às 10h desta segunda-feira (26), com os preços negociados no exterior durante a madrugada.
-
 Lula foi reeleito no domingo (25) com 51,79% dos votos válidos, contra 48,21% de Flávio Bolsonaro, segundo o TSE. O mercado não esperou a B3 abrir para dar o seu veredito. Em Nova York, o EWZ, fundo que replica as principais ações brasileiras, caía 27,26%, a US$ 30,98, na manhã desta segunda, segundo o Money Times. Na noite de domingo, às 21h52, a queda já era de 17,97%, segundo o Poder360. Na Bolsa de Chicago, o contrato futuro mais próximo do real recuava perto de 10% contra o dólar, e instrumentos ligados a ações brasileiras na Ásia caíam até 14%, segundo o Money Times. Nas negociações no exterior, a Petrobras recuava 16%.
 
 É um sinal claro: o investidor estrangeiro, que não vota no Brasil mas financia a dívida e as empresas do país, saiu primeiro.
