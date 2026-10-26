@@ -41,7 +41,7 @@ export const SITE = {
   // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete.
   capa: {
     maisNoticias: 3,
-    fixadas: { '2026-10-23-volume-puts-b3-pico-7-8-outubro': 3 } as Record<string, number>,
+    fixadas: { '2026-10-24-csn-venda-csn-cimentos-divida': 1, '2026-10-23-volume-puts-b3-pico-7-8-outubro': 3 } as Record<string, number>,
   },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
   // Respeita "Não rastrear" (DNT) e o Global Privacy Control. O painel mora na pasta src/pages/painel-grafous/:
