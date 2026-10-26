@@ -14,7 +14,7 @@ const { endpoint, origem, chamada } = SITE.contatoEspecialista;
     </div>
     <div class="campo">
       <label for="ce-whatsapp">WhatsApp com DDD</label>
-      <input id="ce-whatsapp" name="whatsapp" type="tel" autocomplete="tel-national" inputmode="numeric" placeholder="(11) 91234-5678" required maxlength="16" />
+      <input id="ce-whatsapp" name="whatsapp" type="tel" autocomplete="tel-national" inputmode="numeric" placeholder="(00) 00000-0000" required maxlength="16" />
     </div>
     <div class="campo">
       <label for="ce-email">E-mail</label>
@@ -82,7 +82,7 @@ const { endpoint, origem, chamada } = SITE.contatoEspecialista;
       ev.preventDefault();
       const d = digitos(whats.value);
       if (nome.value.trim().length < 2) return falha(nome, 'Informe seu nome.');
-      if (!/^[1-9]{2}\d{8,9}$/.test(d)) return falha(whats, 'Informe um WhatsApp com DDD, como (11) 91234-5678.');
+      if (!/^[1-9]{2}\d{8,9}$/.test(d)) return falha(whats, 'Informe um WhatsApp com DDD.');
       if (!EMAIL_RE.test(email.value.trim())) return falha(email, 'Informe um e-mail válido.');
       if (!consentimento.checked) return falha(consentimento, 'Marque a autorização para continuar.');
       falha(null, '');
