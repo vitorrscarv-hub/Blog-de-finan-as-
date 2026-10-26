@@ -2,7 +2,7 @@
 // Rota: GET /api/admin/resumo?dias=7|30|90   com o cabeçalho  Authorization: Bearer <ADMIN_TOKEN>
 //
 // Variáveis e vínculos:
-//   DB            vínculo D1 (tabela "visitas" em db/schema.sql)
+//   DB            vínculo D1 (tabelas "visitas" e "leads" em db/schema.sql)
 //   ADMIN_TOKEN   segredo definido no painel do Cloudflare Pages (Variables and Secrets, tipo Secret).
 //                 Use um valor longo e aleatório (32 caracteres ou mais). Sem ele, a rota responde 503.
 // Para uma camada a mais, proteja /painel-grafous/* e /api/admin/* com o Cloudflare Access.
@@ -30,6 +30,23 @@ export async function tokenConfere(recebido, esperado) {
   return dif === 0;
 }
 
+// Cadastros do período (pop-up e formulário de especialista), do mais novo para o mais antigo.
+// Ficam fora do resumo de audiência: a medição continua anônima e não é ligada a estes dados.
+// Se a tabela não existir ou a consulta falhar, o painel mostra a audiência mesmo assim.
+export async function contatos(db, dias) {
+  const desde = new Date(Date.now() - dias * 86400_000).toISOString();
+  try {
+    const { results } = await db
+      .prepare('SELECT nome, email, whatsapp, origem, pagina, criado_em FROM leads WHERE criado_em >= ?1 ORDER BY criado_em DESC LIMIT 500')
+      .bind(desde)
+      .all();
+    return results ?? [];
+  } catch (e) {
+    console.error('Falha ao ler os contatos', e);
+    return [];
+  }
+}
+
 export async function onRequestGet({ request, env }) {
   if (!env.ADMIN_TOKEN || String(env.ADMIN_TOKEN).length < 16) return json({ ok: false, erro: 'nao-configurado' }, 503);
   const recebido = (request.headers.get('Authorization') ?? '').replace(/^Bearer\s+/i, '');
@@ -40,7 +57,8 @@ export async function onRequestGet({ request, env }) {
   // Daqui em diante a chave já conferiu: o motivo da falha pode ir na resposta, para o painel dizer o que corrigir.
   if (!env.DB) return json({ ok: false, erro: 'sem-banco' }, 500);
   try {
-    return json({ ok: true, ...(await resumir(env.DB, dias)) });
+    const resumo = await resumir(env.DB, dias);
+    return json({ ok: true, ...resumo, contatos: await contatos(env.DB, dias) });
   } catch (e) {
     console.error('Falha ao montar o resumo', e);
     const detalhe = String(e?.message ?? e).slice(0, 200);
