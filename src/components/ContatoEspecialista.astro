@@ -1,0 +1,114 @@
+---
+// Formulário de contato com especialista em investimentos, no fim das matérias listadas em SITE.contatoEspecialista.
+// Usa o mesmo cadastro do pop-up (/api/lead), com a origem própria, para aparecer separado no painel.
+import { SITE } from '../site.config';
+const { endpoint, origem, chamada } = SITE.contatoEspecialista;
+---
+<section class="contato-especialista" aria-labelledby="ce-titulo" data-endpoint={endpoint} data-origem={origem}>
+  <h2 id="ce-titulo">Fale com um especialista</h2>
+  <p>{chamada}</p>
+  <form id="ce-form" novalidate>
+    <div class="campo">
+      <label for="ce-nome">Nome</label>
+      <input id="ce-nome" name="nome" autocomplete="name" required minlength="2" maxlength="120" />
+    </div>
+    <div class="campo">
+      <label for="ce-whatsapp">WhatsApp com DDD</label>
+      <input id="ce-whatsapp" name="whatsapp" type="tel" autocomplete="tel-national" inputmode="numeric" placeholder="(11) 91234-5678" required maxlength="16" />
+    </div>
+    <div class="campo">
+      <label for="ce-email">E-mail</label>
+      <input id="ce-email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" required maxlength="160" />
+    </div>
+    <div class="oculto-visual" aria-hidden="true">
+      <label for="ce-site">Não preencha este campo</label>
+      <input id="ce-site" name="site" tabindex="-1" autocomplete="off" />
+    </div>
+    <div class="consentimento">
+      <input type="checkbox" name="consentimento" id="ce-consentimento" required />
+      <label for="ce-consentimento">
+        Autorizo o compartilhamento do meu nome, WhatsApp e e-mail com a empresa parceira do {SITE.nome} indicada na política de privacidade, para que um
+        especialista entre em contato, conforme a <a href="/privacidade/" target="_blank" rel="noopener">política de privacidade</a>.
+        Posso cancelar quando quiser.
+      </label>
+    </div>
+    <p class="lead-erro" id="ce-erro" role="alert"></p>
+    <button class="botao" type="submit">Quero ser contatado</button>
+  </form>
+  <p class="ce-ok" id="ce-ok" role="status" hidden>Recebemos seus dados. Um especialista vai entrar em contato.</p>
+</section>
+
+<script>
+  const digitos = (v: string) => {
+    let d = v.replace(/\D/g, '');
+    if (d.length > 11 && d.startsWith('55')) d = d.slice(2);
+    return d.replace(/^0+/, '').slice(0, 11);
+  };
+  const mascara = (v: string) => {
+    const d = digitos(v);
+    if (d.length <= 2) return d.length ? `(${d}` : '';
+    if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+    if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+    return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+  };
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  const secao = document.querySelector<HTMLElement>('.contato-especialista');
+  if (secao) {
+    const form = secao.querySelector<HTMLFormElement>('#ce-form')!;
+    const erro = secao.querySelector<HTMLElement>('#ce-erro')!;
+    const ok = secao.querySelector<HTMLElement>('#ce-ok')!;
+    const nome = secao.querySelector<HTMLInputElement>('#ce-nome')!;
+    const whats = secao.querySelector<HTMLInputElement>('#ce-whatsapp')!;
+    const email = secao.querySelector<HTMLInputElement>('#ce-email')!;
+    const consentimento = secao.querySelector<HTMLInputElement>('#ce-consentimento')!;
+    const armadilha = secao.querySelector<HTMLInputElement>('#ce-site')!;
+    const botao = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+
+    whats.addEventListener('input', () => {
+      whats.value = mascara(whats.value);
+    });
+
+    const falha = (campo: HTMLInputElement | null, texto: string) => {
+      [nome, whats, email, consentimento].forEach((c) => c.removeAttribute('aria-invalid'));
+      if (campo) {
+        campo.setAttribute('aria-invalid', 'true');
+        campo.focus();
+      }
+      erro.textContent = texto;
+    };
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const d = digitos(whats.value);
+      if (nome.value.trim().length < 2) return falha(nome, 'Informe seu nome.');
+      if (!/^[1-9]{2}\d{8,9}$/.test(d)) return falha(whats, 'Informe um WhatsApp com DDD, como (11) 91234-5678.');
+      if (!EMAIL_RE.test(email.value.trim())) return falha(email, 'Informe um e-mail válido.');
+      if (!consentimento.checked) return falha(consentimento, 'Marque a autorização para continuar.');
+      falha(null, '');
+      botao.disabled = true;
+      try {
+        const r = await fetch(secao.dataset.endpoint || '/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome: nome.value.trim(),
+            email: email.value.trim(),
+            whatsapp: d,
+            consentimento: true,
+            site: armadilha.value,
+            pagina: location.pathname,
+            origem: secao.dataset.origem,
+          }),
+        });
+        if (!r.ok) throw new Error(String(r.status));
+        form.hidden = true;
+        ok.hidden = false;
+      } catch {
+        falha(null, 'Não foi possível enviar agora. Tente de novo em alguns minutos.');
+      } finally {
+        botao.disabled = false;
+      }
+    });
+  }
+</script>

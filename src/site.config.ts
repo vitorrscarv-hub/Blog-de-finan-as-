@@ -43,6 +43,18 @@ export const SITE = {
     maisNoticias: 3,
     fixadas: { '2026-10-23-volume-puts-b3-pico-7-8-outubro': 3 } as Record<string, number>,
   },
+  // Formulário "Fale com um especialista" no fim das matérias listadas em `paginas` (endereço da matéria).
+  // Os contatos vão para o mesmo cadastro do pop-up (/api/lead), com a origem abaixo, e aparecem no painel.
+  // Quem recebe os contatos (parceiro) aparece só na política de privacidade, nunca no formulário. false desliga o formulário em todas as páginas.
+  contatoEspecialista: {
+    ativo: true,
+    endpoint: '/api/lead',
+    origem: 'especialista-exterior',
+    parceiro: 'Gradus Investimentos',
+    chamada:
+      'Se você tem mais de 100 mil reais investidos e pode aportar 1 mil dólares ou mais por mês para construir patrimônio no exterior, preencha o formulário e um especialista irá entrar em contato.',
+    paginas: ['/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/'],
+  },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
   // Respeita "Não rastrear" (DNT) e o Global Privacy Control. O painel mora na pasta src/pages/painel-grafous/:
   // se mudar o endereço, renomeie a pasta e ajuste `painel` aqui.

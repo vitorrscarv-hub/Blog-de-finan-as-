@@ -331,6 +331,10 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
 .botao:disabled { opacity: .6; cursor: wait; }
 .lead-erro { color: var(--perigo); font-size: .85rem; min-height: 1.3em; margin: 6px 0 8px; }
 .lead-erro:empty { margin: 0 0 8px; }
+.contato-especialista { margin: 2.2em 0; padding: 22px 20px 18px; border: 1px solid var(--filete); border-top: 3px solid var(--destaque); background: var(--papel); }
+.contato-especialista h2 { margin: 0 0 8px; font-size: 1.4rem; font-stretch: 85%; }
+.contato-especialista > p { margin: 0 0 16px; font-family: var(--texto); line-height: 1.5; }
+.contato-especialista .ce-ok { margin: 0; font-weight: 700; }
 .lead-fechar { background: none; border: 0; color: var(--tinta-suave); font: inherit; font-size: .85rem; margin-top: 10px; cursor: pointer; text-decoration: underline; width: 100%; }
 .oculto-visual { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
 
@@ -425,3 +429,4 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
 .painel [hidden], .painel-entrada[hidden] { display: none !important; }
 .tabela-painel td:first-child { min-width: 210px; }
 .tabela-painel td code { font-size: .85rem; }
+#contatos { overflow-x: auto; }

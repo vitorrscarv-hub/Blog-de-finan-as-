@@ -93,6 +93,9 @@ const RESUMO = {
   dispositivos: [{ dispositivo: 'celular', visitas: 80 }, { dispositivo: 'computador', visitas: 40 }],
   paises: [{ pais: 'BR', visitas: 110 }],
   entradas: [{ caminho: '/', sessoes: 30 }],
+  contatos: [
+    { nome: 'Maria Teste', email: 'maria@exemplo.com', whatsapp: '+5511912345678', origem: 'especialista-exterior', pagina: '/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/', criado_em: '2026-10-26T15:00:00.000Z' },
+  ],
   retorno: {
     distribuicao: [{ faixa: '1', visitantes: 36 }, { faixa: '2', visitantes: 8 }, { faixa: '3 a 4', visitantes: 3 }, { faixa: '5 ou mais', visitantes: 1 }],
     recorrentes: [{ visitante: 'a1b2c3d4', visitas: 9, dias: 5, primeira: '2026-10-01 08:10', ultima: '2026-10-20 07:30', jaTinhaVisitado: true, materias: ['/noticias/2026-10-19-focus-ipca-2026-sobe-selic-fim-de-ano/'] }],
@@ -134,6 +137,11 @@ test('painel: oculto, com noindex, exige a chave e mostra as métricas', async (
   await expect(page.locator('#recorrentes')).toContainText('a1b2c3d4');
   await expect(page.locator('#origens')).toContainText('google.com');
   await expect(page.locator('#distribuicao .colunas > div')).toHaveCount(4);
+  const contatos = page.locator('#contatos table');
+  await expect(contatos).toContainText('Especialista');
+  await expect(contatos).toContainText('Maria Teste');
+  await expect(contatos).toContainText('(11) 91234-5678');
+  await expect(contatos.locator('a[href="https://wa.me/5511912345678"]')).toHaveCount(1);
 
   // Dica ao passar o mouse no gráfico.
   const svg = page.locator('#g-dias svg');

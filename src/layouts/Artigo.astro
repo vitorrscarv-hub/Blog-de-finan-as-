@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import LeadGate from '../components/LeadGate.astro';
+import ContatoEspecialista from '../components/ContatoEspecialista.astro';
 import { SITE } from '../site.config';
 import { dataBR } from '../scripts/formatos';
 import { instituicoes } from '../scripts/fontes';
@@ -85,6 +86,8 @@ if (gate) {
     <div class="artigo-corpo" data-gate={gate ? 'true' : 'false'}>
       <slot />
     </div>
+
+    {SITE.contatoEspecialista.ativo && SITE.contatoEspecialista.paginas.includes(Astro.url.pathname) && <ContatoEspecialista />}
 
     {fontes.length > 0 && (
       <section class="fontes" id="fontes">

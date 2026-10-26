@@ -94,6 +94,12 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
         </div>
       </section>
 
+      <section class="painel-secao" aria-labelledby="t-contatos">
+        <h2 id="t-contatos">Contatos recebidos</h2>
+        <p class="meta">Cadastros do período. "Especialista" são os pedidos de contato do formulário das matérias, compartilhados com o parceiro indicado na política de privacidade.</p>
+        <div id="contatos"></div>
+      </section>
+
       <p class="painel-nota">
         A medição não usa cookies, não guarda IP nem nome e não roda para quem pediu "Não rastrear". Os visitantes são
         anônimos: um código aleatório guardado no navegador, que muda se a pessoa limpar os dados do site ou trocar de
@@ -129,6 +135,7 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
     dispositivos: { dispositivo: string; visitas: number }[];
     paises: { pais: string; visitas: number }[];
     entradas: { caminho: string; sessoes: number }[];
+    contatos?: { nome: string; email: string; whatsapp: string; origem: string | null; pagina: string | null; criado_em: string }[];
     retorno: {
       distribuicao: { faixa: string; visitantes: number }[];
       recorrentes: { visitante: string; visitas: number; dias: number; primeira: string; ultima: string; jaTinhaVisitado: boolean; materias: string[] }[];
@@ -239,6 +246,16 @@ for (const g of guias) titulos[`/guias/${g.id}/`] = { titulo: g.data.title, rotu
     $('entradas').innerHTML = listaDeBarras(r.entradas.map((o) => ({ rotulo: nome(o.caminho).titulo, valor: o.sessoes })));
     $('dispositivos').innerHTML = listaDeBarras(r.dispositivos.map((o) => ({ rotulo: o.dispositivo[0].toUpperCase() + o.dispositivo.slice(1), valor: o.visitas })), undefined, T.visitas);
     $('paises').innerHTML = listaDeBarras(r.paises.map((o) => ({ rotulo: o.pais, valor: o.visitas })), undefined, T.visitas);
+
+    const c = r.contatos ?? [];
+    const tipo = (o: string | null) => (o === 'especialista-exterior' ? 'Especialista' : o ? esc(o) : 'Cadastro');
+    const quando = (iso: string) => new Date(iso).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', dateStyle: 'short', timeStyle: 'short' });
+    const fone = (w: string) => w.replace(/^\+55(\d{2})(\d{4,5})(\d{4})$/, '($1) $2-$3');
+    $('contatos').innerHTML = c.length
+      ? `<table class="tabela-painel"><thead><tr><th>Data</th><th>Tipo</th><th>Nome</th><th>WhatsApp</th><th>E-mail</th><th>Página</th></tr></thead><tbody>${c
+          .map((l) => `<tr><td>${quando(l.criado_em)}</td><td>${tipo(l.origem)}</td><td>${esc(l.nome)}</td><td><a href="https://wa.me/${esc(l.whatsapp.replace(/\D/g, ''))}" rel="noopener" target="_blank">${esc(fone(l.whatsapp))}</a></td><td><a href="mailto:${esc(l.email)}">${esc(l.email)}</a></td><td>${l.pagina ? esc(nome(l.pagina).titulo) : ''}</td></tr>`)
+          .join('')}</tbody></table>`
+      : '<p class="meta">Nenhum contato recebido neste período.</p>';
   }
 
   let dias = 30;
