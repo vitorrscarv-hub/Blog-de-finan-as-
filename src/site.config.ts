@@ -45,7 +45,7 @@ export const SITE = {
   },
   // Formulário "Fale com um especialista" no fim das matérias listadas em `paginas` (endereço da matéria).
   // Os contatos vão para o mesmo cadastro do pop-up (/api/lead), com a origem abaixo, e aparecem no painel.
-  // Quem recebe os contatos precisa estar na política de privacidade. false desliga o formulário em todas as páginas.
+  // Quem recebe os contatos (parceiro) aparece só na política de privacidade, nunca no formulário. false desliga o formulário em todas as páginas.
   contatoEspecialista: {
     ativo: true,
     endpoint: '/api/lead',

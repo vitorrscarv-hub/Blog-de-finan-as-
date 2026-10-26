@@ -2,7 +2,7 @@
 // Formulário de contato com especialista em investimentos, no fim das matérias listadas em SITE.contatoEspecialista.
 // Usa o mesmo cadastro do pop-up (/api/lead), com a origem própria, para aparecer separado no painel.
 import { SITE } from '../site.config';
-const { endpoint, origem, parceiro, chamada } = SITE.contatoEspecialista;
+const { endpoint, origem, chamada } = SITE.contatoEspecialista;
 ---
 <section class="contato-especialista" aria-labelledby="ce-titulo" data-endpoint={endpoint} data-origem={origem}>
   <h2 id="ce-titulo">Fale com um especialista</h2>
@@ -27,7 +27,7 @@ const { endpoint, origem, parceiro, chamada } = SITE.contatoEspecialista;
     <div class="consentimento">
       <input type="checkbox" name="consentimento" id="ce-consentimento" required />
       <label for="ce-consentimento">
-        Autorizo o compartilhamento do meu nome, WhatsApp e e-mail com a {parceiro}, parceira do {SITE.nome}, para que um
+        Autorizo o compartilhamento do meu nome, WhatsApp e e-mail com a empresa parceira do {SITE.nome} indicada na política de privacidade, para que um
         especialista entre em contato, conforme a <a href="/privacidade/" target="_blank" rel="noopener">política de privacidade</a>.
         Posso cancelar quando quiser.
       </label>

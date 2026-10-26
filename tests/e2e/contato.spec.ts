@@ -12,7 +12,8 @@ test('formulário de especialista valida os campos e envia com a origem própria
   await page.goto(PAGINA);
   const secao = page.locator('.contato-especialista');
   await expect(secao).toContainText(SITE.contatoEspecialista.chamada);
-  await expect(secao).toContainText(SITE.contatoEspecialista.parceiro);
+  // O nome do parceiro fica só na política de privacidade.
+  await expect(secao).not.toContainText(SITE.contatoEspecialista.parceiro);
 
   await secao.getByLabel('Nome', { exact: true }).fill('Maria Teste');
   await secao.getByLabel('WhatsApp com DDD', { exact: true }).fill('1191234');

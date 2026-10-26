@@ -20,8 +20,6 @@ draft: false
 gate: true
 ---
 
-Este texto é uma análise, com a leitura da redação sobre o risco de concentrar o patrimônio no Brasil.
-
 Nesta segunda-feira (26), o primeiro boletim da PTAX, a taxa de referência do dólar calculada pelo Banco Central, saiu a R$ 5,6052. Na sexta-feira, o fechamento tinha sido de R$ 5,0377. São 11,3% a mais em um fim de semana. Quem tinha todo o patrimônio em reais ficou, de uma hora para outra, cerca de 10% mais pobre em dólar.
 
 O movimento veio depois da reeleição de Lula e tem uma causa que o mercado repete há meses: a falta de um plano crível para conter os gastos públicos e a dívida. O Bradesco BBI projeta a dívida bruta subindo de 83,6% para 88,2% do PIB nos próximos anos, segundo o InfoMoney. O Goldman Sachs avalia que grandes reformas estruturais parecem improváveis no novo mandato, segundo o Money Times.
