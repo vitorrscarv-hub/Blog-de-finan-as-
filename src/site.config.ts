@@ -50,6 +50,7 @@ export const SITE = {
       segundos: 4,
       maximo: 6,
       materias: [
+        '2026-10-27-diversificacao-all-weather-volatilidade',
         '2026-10-27-cenario-economico-pos-eleicao',
         '2026-10-27-juros-futuros-empresas-afetadas-emprego',
         '2026-10-27-diesel-subsidio-renovado-inflacao',
@@ -73,7 +74,15 @@ export const SITE = {
     parceiro: 'Gradus Investimentos',
     chamada:
       'Se você pode aportar 1 mil dólares ou mais por mês para construir patrimônio no exterior, preencha o formulário e um especialista irá entrar em contato.',
-    paginas: ['/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/'],
+    paginas: [
+      '/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/',
+      '/noticias/2026-10-27-diversificacao-all-weather-volatilidade/',
+    ],
+    // Frase própria de uma página; sem ela, vale a `chamada` acima.
+    chamadasPorPagina: {
+      '/noticias/2026-10-27-diversificacao-all-weather-volatilidade/':
+        'Se você está preocupado com os próximos anos da nossa economia e quer se proteger com uma diversificação mais eficiente, inspirada em modelos usados por grandes gestoras internacionais, preencha o formulário e um especialista entrará em contato.',
+    } as Record<string, string>,
   },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
   // Respeita "Não rastrear" (DNT) e o Global Privacy Control. O painel mora na pasta src/pages/painel-grafous/:
