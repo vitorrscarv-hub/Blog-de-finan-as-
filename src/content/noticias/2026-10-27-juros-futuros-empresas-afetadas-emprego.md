@@ -1,6 +1,6 @@
 ---
 title: "Juros futuros acima de 15%: as empresas mais expostas e o risco para o emprego"
-description: "Varejo, construtoras, empresas endividadas e bancos lideraram a queda de 26/10, quando os juros futuros passaram de 15%. Veja os números da B3 e o efeito no emprego."
+description: "Varejo, construtoras, endividadas e bancos lideraram a queda de 26/10, com juros futuros acima de 15%. Os números da B3 e o efeito no emprego."
 date: 2026-10-27
 editoria: "Mercado"
 keywords: ["juros futuros", "DI", "varejo", "construtoras", "emprego"]
