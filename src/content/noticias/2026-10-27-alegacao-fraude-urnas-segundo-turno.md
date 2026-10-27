@@ -1,5 +1,5 @@
 ---
-title: "Alegação de milhões de votos a mais não se sustenta nos dados; Flávio troca anulação por ação contra a chapa de Lula"
+title: "Flávio troca anulação por ação contra a chapa de Lula"
 description: "O ganho de Lula entre os turnos vem dos votos de outros candidatos. Flávio desistiu da anulação e prepara ação por abuso de poder. Veja os fatos."
 date: 2026-10-27
 editoria: "Brasil"
