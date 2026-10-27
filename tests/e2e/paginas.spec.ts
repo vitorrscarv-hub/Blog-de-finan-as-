@@ -15,10 +15,10 @@ test('home lista notícias e guias com a data em pt-BR', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Guias', exact: true })).toBeVisible();
   // Capa: manchete + coluna "Mais notícias" + fileira, no máximo 7 notícias; guias, no máximo 3.
   const capa = page.locator('.capa');
-  const noticiasNaCapa = await capa.locator('.manchete, .mais li, .fileira .card').count();
+  const noticiasNaCapa = await capa.locator('.manchete:visible, .mais li, .fileira .card').count();
   expect(noticiasNaCapa).toBeGreaterThan(0);
   expect(noticiasNaCapa).toBeLessThanOrEqual(7);
-  await expect(capa.locator('.manchete')).toHaveCount(1);
+  await expect(capa.locator('.manchete:visible')).toHaveCount(1);
   expect(await page.locator('section[aria-labelledby="titulo-guias"] .card').count()).toBeLessThanOrEqual(3);
   const data = capa.locator('time').first();
   await expect(data).toHaveText(dataEsperada((await data.getAttribute('datetime'))!));

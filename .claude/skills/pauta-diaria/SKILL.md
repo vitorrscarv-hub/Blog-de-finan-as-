@@ -51,7 +51,7 @@ Nunca faça merge, push no `main`, force push ou deploy. Se algo impedir a ediç
 
 ## Matéria indicada pontual
 
-Assunto escolhido por Vitor (pedido direto ou tarefa agendada única), inclusive guias. Mesmo fluxo de uma matéria (passos 5, 6, 8), na editoria ou no tema que o assunto pedir. Branch `pontual/AAAA-MM-DD-assunto-curto` e pull request próprio, `Matéria indicada pontual: <assunto>`.
+Assunto escolhido por Vitor (pedido direto ou tarefa agendada única), inclusive guias. Mesmo fluxo de uma matéria (passos 5, 6, 8), na editoria ou no tema que o assunto pedir. Branch `pontual/AAAA-MM-DD-assunto-curto` e pull request próprio, `Matéria indicada pontual: <assunto>`. Acrescente o nome do arquivo (sem `.md`) no início de `SITE.capa.carrossel.materias` (`src/site.config.ts`), no mesmo pull request, para a matéria entrar no carrossel da manchete.
 
 ## Edições de outros países
 
