@@ -9,7 +9,8 @@ const noticias = (await getCollection('noticias', publicado)).sort(porData);
 // Capa: manchete (ou carrossel de Matérias indicadas pontuais), a coluna "Mais notícias" ao lado e 3 notícias numa fileira.
 // Matéria fixada (SITE.capa.fixadas) entra na posição pedida da coluna; as outras seguem por data.
 const { maisNoticias, fixadas, carrossel } = SITE.capa;
-const destaques = carrossel.ativo ? noticias.filter((n) => carrossel.materias.includes(n.id)).slice(0, carrossel.maximo) : [];
+// Matéria fixada na coluna fica fora do carrossel, para não aparecer duas vezes.
+const destaques = carrossel.ativo ? noticias.filter((n) => carrossel.materias.includes(n.id) && !(n.id in fixadas)).slice(0, carrossel.maximo) : [];
 const naCapa = noticias.filter((n) => !destaques.includes(n));
 const fixas = naCapa.filter((n) => n.id in fixadas).sort((a, b) => fixadas[a.id] - fixadas[b.id]);
 const semFixas = naCapa.filter((n) => !(n.id in fixadas));

@@ -38,10 +38,10 @@ export const SITE = {
     ptaxUrl: 'https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes',
   },
   // Capa: quantas notícias vão na coluna "Mais notícias" (a fileira de baixo tem sempre 3) e matérias fixadas
-  // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete.
+  // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete nem entra no carrossel.
   capa: {
     maisNoticias: 3,
-    fixadas: {} as Record<string, number>,
+    fixadas: { '2026-10-26-saida-de-dolares-patrimonio-no-exterior': 1 } as Record<string, number>,
     // Manchete em carrossel com as Matérias indicadas pontuais (nome do arquivo sem .md), da mais nova para a mais
     // antiga, até `maximo`. Matéria da lista que ainda não foi publicada é ignorada. Sem nenhuma publicada, a manchete
     // volta a ser a notícia mais recente. Troca de destaque a cada `segundos` (não roda sozinho com "reduzir movimento").
