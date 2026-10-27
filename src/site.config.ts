@@ -38,16 +38,16 @@ export const SITE = {
     ptaxUrl: 'https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes',
   },
   // Capa: quantas notícias vão na coluna "Mais notícias" (a fileira de baixo tem sempre 3) e matérias fixadas
-  // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete.
+  // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete nem entra no carrossel.
   capa: {
     maisNoticias: 3,
-    fixadas: {} as Record<string, number>,
+    fixadas: { '2026-10-26-saida-de-dolares-patrimonio-no-exterior': 1 } as Record<string, number>,
     // Manchete em carrossel com as Matérias indicadas pontuais (nome do arquivo sem .md), da mais nova para a mais
     // antiga, até `maximo`. Matéria da lista que ainda não foi publicada é ignorada. Sem nenhuma publicada, a manchete
     // volta a ser a notícia mais recente. Troca de destaque a cada `segundos` (não roda sozinho com "reduzir movimento").
     carrossel: {
       ativo: true,
-      segundos: 7,
+      segundos: 4,
       maximo: 6,
       materias: [
         '2026-10-27-cenario-economico-pos-eleicao',
@@ -72,7 +72,7 @@ export const SITE = {
     origem: 'especialista-exterior',
     parceiro: 'Gradus Investimentos',
     chamada:
-      'Se você tem mais de 100 mil reais investidos e pode aportar 1 mil dólares ou mais por mês para construir patrimônio no exterior, preencha o formulário e um especialista irá entrar em contato.',
+      'Se você pode aportar 1 mil dólares ou mais por mês para construir patrimônio no exterior, preencha o formulário e um especialista irá entrar em contato.',
     paginas: ['/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/'],
   },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
