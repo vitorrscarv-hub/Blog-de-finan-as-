@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { SITE } from '../../src/site.config';
 
-test('manchete em carrossel com as matérias pontuais: troca sozinha, setas, pontos e pausa', async ({ page }) => {
+test('manchete em carrossel com as matérias pontuais: troca sozinha, setas e pontos', async ({ page }) => {
   await page.clock.install();
   await page.goto('/');
   const destaques = page.locator('.destaques');
@@ -23,14 +23,11 @@ test('manchete em carrossel com as matérias pontuais: troca sozinha, setas, pon
   await destaques.getByRole('button', { name: 'Destaque anterior' }).click();
   await expect(slides.nth(total - 1)).toBeVisible();
 
-  // Pausa: não troca mais sozinha.
-  await page.mouse.move(0, 0);
-  await destaques.getByRole('button', { name: 'Pausar' }).click();
-  await page.mouse.move(0, 0);
-  await page.locator('body').click({ position: { x: 1, y: 1 } });
+  // Sem botão de pausa; com o mouse em cima, não troca sozinho.
+  await expect(destaques.locator('.carrossel-pausa')).toHaveCount(0);
+  await slides.nth(total - 1).hover();
   await page.clock.runFor(SITE.capa.carrossel.segundos * 3000);
   await expect(slides.nth(total - 1)).toBeVisible();
-  await expect(destaques.getByRole('button', { name: 'Continuar' })).toHaveAttribute('aria-pressed', 'true');
 
   // As matérias do carrossel não se repetem em "Mais notícias".
   const hrefsDestaque = await slides.locator('h2 a').evaluateAll((as) => as.map((a) => a.getAttribute('href')));

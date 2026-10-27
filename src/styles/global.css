@@ -200,10 +200,9 @@ a.etiqueta:hover { color: var(--destaque-forte); text-decoration: underline; }
 .carrossel-pontos { display: flex; gap: 8px; }
 .carrossel-ponto { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1px solid var(--tinta-suave); background: transparent; cursor: pointer; }
 .carrossel-ponto[aria-current='true'] { background: var(--destaque); border-color: var(--destaque); }
-.carrossel-seta, .carrossel-pausa { background: none; border: 1px solid var(--filete); color: var(--tinta); font: inherit; font-size: .85rem; padding: 4px 10px; cursor: pointer; min-height: 32px; }
+.carrossel-seta { background: none; border: 1px solid var(--filete); color: var(--tinta); font: inherit; font-size: .85rem; padding: 4px 10px; cursor: pointer; min-height: 32px; }
 .carrossel-seta { font-size: 1.1rem; line-height: 1; }
-.carrossel-pausa { margin-left: auto; }
-.carrossel-seta:hover, .carrossel-pausa:hover { border-color: var(--destaque); color: var(--destaque); }
+.carrossel-seta:hover { border-color: var(--destaque); color: var(--destaque); }
 .manchete h2 + p { max-width: 52ch; }
 .manchete h2 { font-size: clamp(2rem, 4.4vw, 3.6rem); font-stretch: 78%; line-height: 1.02; margin: 8px 0 14px; }
 .manchete h2 a { text-decoration: none; }

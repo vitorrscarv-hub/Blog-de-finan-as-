@@ -59,7 +59,6 @@ const jsonLd = {
                 ))}
               </div>
               <button type="button" class="carrossel-seta" data-passo="1" aria-label="Próximo destaque">›</button>
-              <button type="button" class="carrossel-pausa" aria-pressed="false">Pausar</button>
             </div>
           )}
         </div>
@@ -111,17 +110,16 @@ const jsonLd = {
 </Base>
 
 <script>
-  // Carrossel da manchete: troca sozinho a cada N segundos, para ao passar o mouse ou focar, tem setas, pontos e pausa.
+  // Carrossel da manchete: troca sozinho a cada N segundos, para ao passar o mouse ou focar, tem setas e pontos.
   // Com "reduzir movimento" ligado no sistema, não troca sozinho.
   const raiz = document.querySelector<HTMLElement>('.destaques');
   const slides = raiz ? Array.from(raiz.querySelectorAll<HTMLElement>('.manchete')) : [];
   if (raiz && slides.length > 1) {
     const pontos = Array.from(raiz.querySelectorAll<HTMLButtonElement>('.carrossel-ponto'));
-    const pausa = raiz.querySelector<HTMLButtonElement>('.carrossel-pausa')!;
     const segundos = Math.max(3, Number(raiz.dataset.segundos) || 7);
     let atual = 0;
     let timer: number | undefined;
-    let pausadoPeloLeitor = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const semMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
     let emFoco = false;
 
     const mostrar = (i: number) => {
@@ -135,11 +133,7 @@ const jsonLd = {
     };
     const rodar = () => {
       parar();
-      if (!pausadoPeloLeitor && !emFoco && !document.hidden) timer = window.setInterval(() => mostrar(atual + 1), segundos * 1000);
-    };
-    const marcarPausa = () => {
-      pausa.setAttribute('aria-pressed', String(pausadoPeloLeitor));
-      pausa.textContent = pausadoPeloLeitor ? 'Continuar' : 'Pausar';
+      if (!semMovimento && !emFoco && !document.hidden) timer = window.setInterval(() => mostrar(atual + 1), segundos * 1000);
     };
 
     raiz.querySelectorAll<HTMLButtonElement>('.carrossel-seta').forEach((b) =>
@@ -154,11 +148,6 @@ const jsonLd = {
         rodar();
       })
     );
-    pausa.addEventListener('click', () => {
-      pausadoPeloLeitor = !pausadoPeloLeitor;
-      marcarPausa();
-      rodar();
-    });
     raiz.addEventListener('mouseenter', () => { emFoco = true; parar(); });
     raiz.addEventListener('mouseleave', () => { emFoco = false; rodar(); });
     raiz.addEventListener('focusin', () => { emFoco = true; parar(); });
@@ -166,7 +155,6 @@ const jsonLd = {
       if (!raiz.contains(e.relatedTarget as Node)) { emFoco = false; rodar(); }
     });
     document.addEventListener('visibilitychange', rodar);
-    marcarPausa();
     rodar();
   }
 </script>

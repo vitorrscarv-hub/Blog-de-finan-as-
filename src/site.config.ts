@@ -47,7 +47,7 @@ export const SITE = {
     // volta a ser a notícia mais recente. Troca de destaque a cada `segundos` (não roda sozinho com "reduzir movimento").
     carrossel: {
       ativo: true,
-      segundos: 7,
+      segundos: 4,
       maximo: 6,
       materias: [
         '2026-10-27-cenario-economico-pos-eleicao',
@@ -72,7 +72,7 @@ export const SITE = {
     origem: 'especialista-exterior',
     parceiro: 'Gradus Investimentos',
     chamada:
-      'Se você tem mais de 100 mil reais investidos e pode aportar 1 mil dólares ou mais por mês para construir patrimônio no exterior, preencha o formulário e um especialista irá entrar em contato.',
+      'Se você pode aportar 1 mil dólares ou mais por mês para construir patrimônio no exterior, preencha o formulário e um especialista irá entrar em contato.',
     paginas: ['/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/'],
   },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
