@@ -102,11 +102,15 @@ const chamada = chamadasPorPagina[Astro.url.pathname] ?? padrao;
             origem: secao.dataset.origem,
           }),
         });
-        if (!r.ok) throw new Error(String(r.status));
+        if (!r.ok) {
+          // O código ajuda a achar a causa (ex.: "banco" = tabela de cadastros ausente no D1; "origem" = ALLOWED_ORIGIN).
+          const corpo = (await r.json().catch(() => ({}))) as { erro?: string };
+          throw new Error(corpo.erro ?? String(r.status));
+        }
         form.hidden = true;
         ok.hidden = false;
-      } catch {
-        falha(null, 'Não foi possível enviar agora. Tente de novo em alguns minutos.');
+      } catch (e) {
+        falha(null, `Não foi possível enviar agora. Tente de novo em alguns minutos. (código: ${(e as Error).message})`);
       } finally {
         botao.disabled = false;
       }

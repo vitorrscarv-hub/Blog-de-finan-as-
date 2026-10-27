@@ -47,3 +47,15 @@ test('o formulário só aparece nas matérias listadas', async ({ page }) => {
   await page.goto('/noticias/2026-10-26-reeleicao-lula-mercado-queda/');
   await expect(page.locator('.contato-especialista')).toHaveCount(0);
 });
+
+test('se o envio falhar, o formulário mostra o código do erro', async ({ page }) => {
+  await page.route('**/api/lead', (route) => route.fulfill({ status: 500, contentType: 'application/json', body: '{"ok":false,"erro":"banco"}' }));
+  await page.goto(PAGINA);
+  const secao = page.locator('.contato-especialista');
+  await secao.getByLabel('Nome', { exact: true }).fill('Maria Teste');
+  await secao.getByLabel('WhatsApp com DDD', { exact: true }).fill('11912345678');
+  await secao.getByLabel('E-mail', { exact: true }).fill('maria@exemplo.com');
+  await secao.locator('#ce-consentimento').check();
+  await secao.getByRole('button', { name: 'Quero ser contatado' }).click();
+  await expect(secao.getByRole('alert')).toContainText('código: banco');
+});
