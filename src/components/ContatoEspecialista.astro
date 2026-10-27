@@ -2,7 +2,8 @@
 // Formulário de contato com especialista em investimentos, no fim das matérias listadas em SITE.contatoEspecialista.
 // Usa o mesmo cadastro do pop-up (/api/lead), com a origem própria, para aparecer separado no painel.
 import { SITE } from '../site.config';
-const { endpoint, origem, chamada } = SITE.contatoEspecialista;
+const { endpoint, origem, chamada: padrao, chamadasPorPagina } = SITE.contatoEspecialista;
+const chamada = chamadasPorPagina[Astro.url.pathname] ?? padrao;
 ---
 <section class="contato-especialista" aria-labelledby="ce-titulo" data-endpoint={endpoint} data-origem={origem}>
   <h2 id="ce-titulo">Fale com um especialista</h2>
