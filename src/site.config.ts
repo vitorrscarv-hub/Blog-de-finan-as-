@@ -41,7 +41,27 @@ export const SITE = {
   // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete.
   capa: {
     maisNoticias: 3,
-    fixadas: { '2026-10-23-volume-puts-b3-pico-7-8-outubro': 3 } as Record<string, number>,
+    fixadas: {} as Record<string, number>,
+    // Manchete em carrossel com as Matérias indicadas pontuais (nome do arquivo sem .md), da mais nova para a mais
+    // antiga, até `maximo`. Matéria da lista que ainda não foi publicada é ignorada. Sem nenhuma publicada, a manchete
+    // volta a ser a notícia mais recente. Troca de destaque a cada `segundos` (não roda sozinho com "reduzir movimento").
+    carrossel: {
+      ativo: true,
+      segundos: 7,
+      maximo: 6,
+      materias: [
+        '2026-10-27-cenario-economico-pos-eleicao',
+        '2026-10-27-juros-futuros-empresas-afetadas-emprego',
+        '2026-10-27-diesel-subsidio-renovado-inflacao',
+        '2026-10-27-alegacao-fraude-urnas-segundo-turno',
+        '2026-10-26-saida-de-dolares-patrimonio-no-exterior',
+        '2026-10-26-reeleicao-lula-mercado-queda',
+        '2026-10-24-ruas-direita-pt-lava-jato-analise',
+        '2026-10-24-csn-venda-csn-cimentos-divida',
+        '2026-10-23-tregua-oleshky-russia-ucrania',
+        '2026-10-23-volume-puts-b3-pico-7-8-outubro',
+      ],
+    },
   },
   // Formulário "Fale com um especialista" no fim das matérias listadas em `paginas` (endereço da matéria).
   // Os contatos vão para o mesmo cadastro do pop-up (/api/lead), com a origem abaixo, e aparecem no painel.

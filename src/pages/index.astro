@@ -6,11 +6,15 @@ import { SITE } from '../site.config';
 import { dataBR, dataCurta, porData, publicado, slugEditoria } from '../scripts/formatos';
 
 const noticias = (await getCollection('noticias', publicado)).sort(porData);
-// Capa: manchete, a coluna "Mais notícias" ao lado e 3 notícias numa fileira embaixo.
+// Capa: manchete (ou carrossel de Matérias indicadas pontuais), a coluna "Mais notícias" ao lado e 3 notícias numa fileira.
 // Matéria fixada (SITE.capa.fixadas) entra na posição pedida da coluna; as outras seguem por data.
-const { maisNoticias, fixadas } = SITE.capa;
-const fixas = noticias.filter((n) => n.id in fixadas).sort((a, b) => fixadas[a.id] - fixadas[b.id]);
-const [manchete, ...resto] = noticias.filter((n) => !(n.id in fixadas));
+const { maisNoticias, fixadas, carrossel } = SITE.capa;
+const destaques = carrossel.ativo ? noticias.filter((n) => carrossel.materias.includes(n.id)).slice(0, carrossel.maximo) : [];
+const naCapa = noticias.filter((n) => !destaques.includes(n));
+const fixas = naCapa.filter((n) => n.id in fixadas).sort((a, b) => fixadas[a.id] - fixadas[b.id]);
+const semFixas = naCapa.filter((n) => !(n.id in fixadas));
+const [manchete, ...resto] = destaques.length ? [destaques[0], ...semFixas] : semFixas;
+const slides = destaques.length ? destaques : manchete ? [manchete] : [];
 const livres = Math.max(0, maisNoticias - fixas.length);
 const mais = resto.slice(0, livres);
 for (const n of fixas) mais.splice(fixadas[n.id] - 1, 0, n);
@@ -37,12 +41,28 @@ const jsonLd = {
     </div>
     {!manchete ? <p class="meta vazio">Nenhuma notícia publicada ainda.</p> : (
       <>
-        <article class="manchete">
-          <a class="etiqueta" href={`/noticias/${slugEditoria(manchete.data.editoria)}/`}>{manchete.data.editoria}</a>
-          <h2><a href={`/noticias/${manchete.id}/`}>{manchete.data.title}</a></h2>
-          <p>{manchete.data.description}</p>
-          <time class="meta" datetime={manchete.data.date.toISOString()}>{dataBR(manchete.data.date)}</time>
-        </article>
+        <div class="destaques" aria-roledescription={slides.length > 1 ? 'carrossel' : undefined} aria-label="Destaques" data-segundos={carrossel.segundos}>
+          {slides.map((n, i) => (
+            <article class="manchete" aria-roledescription={slides.length > 1 ? 'slide' : undefined} aria-label={slides.length > 1 ? `${i + 1} de ${slides.length}` : undefined} hidden={i > 0}>
+              <a class="etiqueta" href={`/noticias/${slugEditoria(n.data.editoria)}/`}>{n.data.editoria}</a>
+              <h2><a href={`/noticias/${n.id}/`}>{n.data.title}</a></h2>
+              <p>{n.data.description}</p>
+              <time class="meta" datetime={n.data.date.toISOString()}>{dataBR(n.data.date)}</time>
+            </article>
+          ))}
+          {slides.length > 1 && (
+            <div class="carrossel-controles">
+              <button type="button" class="carrossel-seta" data-passo="-1" aria-label="Destaque anterior">‹</button>
+              <div class="carrossel-pontos">
+                {slides.map((_, i) => (
+                  <button type="button" class="carrossel-ponto" data-ir={i} aria-label={`Ir para o destaque ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}></button>
+                ))}
+              </div>
+              <button type="button" class="carrossel-seta" data-passo="1" aria-label="Próximo destaque">›</button>
+              <button type="button" class="carrossel-pausa" aria-pressed="false">Pausar</button>
+            </div>
+          )}
+        </div>
         {mais.length > 0 && (
           <aside class="mais" aria-label="Mais notícias">
             <p class="rotulo">Mais notícias</p>
@@ -89,3 +109,64 @@ const jsonLd = {
     )}
   </section>
 </Base>
+
+<script>
+  // Carrossel da manchete: troca sozinho a cada N segundos, para ao passar o mouse ou focar, tem setas, pontos e pausa.
+  // Com "reduzir movimento" ligado no sistema, não troca sozinho.
+  const raiz = document.querySelector<HTMLElement>('.destaques');
+  const slides = raiz ? Array.from(raiz.querySelectorAll<HTMLElement>('.manchete')) : [];
+  if (raiz && slides.length > 1) {
+    const pontos = Array.from(raiz.querySelectorAll<HTMLButtonElement>('.carrossel-ponto'));
+    const pausa = raiz.querySelector<HTMLButtonElement>('.carrossel-pausa')!;
+    const segundos = Math.max(3, Number(raiz.dataset.segundos) || 7);
+    let atual = 0;
+    let timer: number | undefined;
+    let pausadoPeloLeitor = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let emFoco = false;
+
+    const mostrar = (i: number) => {
+      atual = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => (s.hidden = k !== atual));
+      pontos.forEach((p, k) => (k === atual ? p.setAttribute('aria-current', 'true') : p.removeAttribute('aria-current')));
+    };
+    const parar = () => {
+      clearInterval(timer);
+      timer = undefined;
+    };
+    const rodar = () => {
+      parar();
+      if (!pausadoPeloLeitor && !emFoco && !document.hidden) timer = window.setInterval(() => mostrar(atual + 1), segundos * 1000);
+    };
+    const marcarPausa = () => {
+      pausa.setAttribute('aria-pressed', String(pausadoPeloLeitor));
+      pausa.textContent = pausadoPeloLeitor ? 'Continuar' : 'Pausar';
+    };
+
+    raiz.querySelectorAll<HTMLButtonElement>('.carrossel-seta').forEach((b) =>
+      b.addEventListener('click', () => {
+        mostrar(atual + Number(b.dataset.passo));
+        rodar();
+      })
+    );
+    pontos.forEach((p) =>
+      p.addEventListener('click', () => {
+        mostrar(Number(p.dataset.ir));
+        rodar();
+      })
+    );
+    pausa.addEventListener('click', () => {
+      pausadoPeloLeitor = !pausadoPeloLeitor;
+      marcarPausa();
+      rodar();
+    });
+    raiz.addEventListener('mouseenter', () => { emFoco = true; parar(); });
+    raiz.addEventListener('mouseleave', () => { emFoco = false; rodar(); });
+    raiz.addEventListener('focusin', () => { emFoco = true; parar(); });
+    raiz.addEventListener('focusout', (e) => {
+      if (!raiz.contains(e.relatedTarget as Node)) { emFoco = false; rodar(); }
+    });
+    document.addEventListener('visibilitychange', rodar);
+    marcarPausa();
+    rodar();
+  }
+</script>
