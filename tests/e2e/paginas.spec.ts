@@ -163,3 +163,13 @@ test('404, RSS e sitemap', async ({ page, request }) => {
   // Nunca vazio: o Google acusa erro em sitemap sem <url>.
   expect(xmlNoticias).toMatch(/<url><loc>https:\/\/grafous\.com\.br\/noticias\/[^<]+<\/loc><news:news>/);
 });
+
+test('notícia termina com "Leia também", sem repetir a própria matéria', async ({ page }) => {
+  await page.goto('/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/');
+  const bloco = page.locator('.leia-tambem');
+  await expect(bloco.getByRole('heading', { name: 'Leia também' })).toBeVisible();
+  const links = await bloco.locator('h3 a').evaluateAll((as) => as.map((a) => a.getAttribute('href')));
+  expect(links.length).toBeGreaterThan(0);
+  expect(links.length).toBeLessThanOrEqual(3);
+  expect(links).not.toContain('/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/');
+});
