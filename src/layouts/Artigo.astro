@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import LeadGate from '../components/LeadGate.astro';
+import CardPost from '../components/CardPost.astro';
 import ContatoEspecialista from '../components/ContatoEspecialista.astro';
 import { SITE } from '../site.config';
 import { dataBR } from '../scripts/formatos';
@@ -17,9 +18,10 @@ interface Props {
   secao: { nome: string; href: string };
   leitura: number;
   pais?: string;
+  relacionadas?: { href: string; title: string; description: string; date: Date; etiqueta?: string }[];
 }
 
-const { title, description, date, updated, keywords, fontes, gate: gateDoTexto, secao, leitura, pais } = Astro.props;
+const { title, description, date, updated, keywords, fontes, gate: gateDoTexto, secao, leitura, pais, relacionadas = [] } = Astro.props;
 // Com o pop-up desligado em SITE.lead.ativo, nenhum texto fica restrito.
 const gate = gateDoTexto && SITE.lead.ativo;
 
@@ -106,6 +108,14 @@ if (gate) {
       apoio de inteligência artificial e revisado pela equipe técnica da redação antes da publicação.
     </p>
   </article>
+  {relacionadas.length > 0 && (
+    <section class="leia-tambem container-texto" aria-labelledby="titulo-leia-tambem">
+      <h2 id="titulo-leia-tambem">Leia também</h2>
+      <div class="grade">
+        {relacionadas.map((r) => <CardPost {...r} />)}
+      </div>
+    </section>
+  )}
   {gate && <LeadGate />}
   <div class="progresso" id="progresso" aria-hidden="true"></div>
 </Base>
