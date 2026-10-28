@@ -1,7 +1,8 @@
 // Cloudflare Pages Function: recebe os eventos de leitura do blog (medição de audiência).
 // Rota: POST /api/evento   (corpo em JSON; o navegador envia como text/plain para evitar preflight)
 //
-// Não guarda IP nem user agent. Ignora robôs, "Não rastrear" (DNT) e Global Privacy Control.
+// Não guarda IP nem user agent. Ignora robôs (pelo user agent e por redes de data center), prévias dos pull requests,
+// "Não rastrear" (DNT) e Global Privacy Control.
 // Variáveis e vínculos (os mesmos de /api/lead):
 //   DB              vínculo D1 obrigatório (tabela "visitas" em db/schema.sql)
 //   ALLOWED_ORIGIN  opcional; origens aceitas, separadas por vírgula
@@ -9,6 +10,11 @@
 const resposta = (status = 204) => new Response(null, { status, headers: { 'Cache-Control': 'no-store' } });
 
 const ROBO_RE = /bot|crawl|spider|slurp|headless|lighthouse|pagespeed|preview|monitor|facebookexternalhit|curl|wget|python|httpclient/i;
+// Redes de data center (nuvem, hospedagem, CDN): leitores reais quase nunca saem delas, robôs que rodam a página sim.
+// A rede é lida do Cloudflare (request.cf.asOrganization) só para decidir; nada disso é gravado.
+const DATACENTER_RE = /amazon|aws|google cloud|google llc|microsoft|azure|digitalocean|linode|akamai|ovh|hetzner|oracle|alibaba|tencent|vultr|contabo|scaleway|leaseweb|choopa|m247|datacamp|cloudflare/i;
+// Prévias dos pull requests (endereços *.pages.dev) usam o mesmo banco; só o site publicado é medido.
+const ehPrevia = (url) => new URL(url).hostname.endsWith('.pages.dev');
 const ID_RE = /^[A-Za-z0-9-]{8,64}$/;
 const CAMINHO_RE = /^\/[A-Za-z0-9\-._~%/]*$/;
 const PAINEL = '/painel-grafous/';
@@ -50,6 +56,7 @@ export async function onRequestPost({ request, env }) {
   // Quem pediu para não ser medido, e robôs, recebem 204 sem que nada seja gravado.
   if (request.headers.get('DNT') === '1' || request.headers.get('Sec-GPC') === '1') return resposta();
   if (!ua || ROBO_RE.test(ua)) return resposta();
+  if (ehPrevia(request.url) || DATACENTER_RE.test(request.cf?.asOrganization ?? '')) return resposta();
 
   const texto = await request.text();
   if (texto.length > LIMITE_CORPO) return resposta(413);
