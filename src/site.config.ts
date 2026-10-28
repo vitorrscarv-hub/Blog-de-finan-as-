@@ -50,6 +50,8 @@ export const SITE = {
       segundos: 4,
       maximo: 4,
       materias: [
+        '2026-10-28-correios-garantia-tesouro-emprestimo-7-bilhoes',
+        '2026-10-28-governo-avalia-iof-lci-lca-cri-cra',
         '2026-10-27-diversificacao-all-weather-volatilidade',
         '2026-10-27-juros-futuros-empresas-afetadas-emprego',
         '2026-10-27-cenario-economico-pos-eleicao',
