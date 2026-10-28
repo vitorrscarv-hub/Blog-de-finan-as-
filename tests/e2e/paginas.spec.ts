@@ -163,3 +163,13 @@ test('404, RSS e sitemap', async ({ page, request }) => {
   // Nunca vazio: o Google acusa erro em sitemap sem <url>.
   expect(xmlNoticias).toMatch(/<url><loc>https:\/\/grafous\.com\.br\/noticias\/[^<]+<\/loc><news:news>/);
 });
+
+test('seção "Seu patrimônio" está no menu, na capa e tem o formulário de contato', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#titulo-patrimonio')).toHaveText('Seu patrimônio');
+  await page.getByRole('navigation', { name: 'Principal' }).getByRole('link', { name: 'Seu patrimônio' }).click();
+  await expect(page).toHaveURL(/\/patrimonio\/$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Seu patrimônio');
+  await expect(page.locator('.grade .card').first()).toBeVisible();
+  await expect(page.locator('.contato-especialista')).toBeVisible();
+});
