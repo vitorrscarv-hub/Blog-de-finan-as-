@@ -54,8 +54,6 @@ export const SITE = {
         '2026-10-27-juros-futuros-empresas-afetadas-emprego',
         '2026-10-27-cenario-economico-pos-eleicao',
         '2026-10-26-reeleicao-lula-mercado-queda',
-        '2026-10-27-diesel-subsidio-renovado-inflacao',
-        '2026-10-27-alegacao-fraude-urnas-segundo-turno',
         '2026-10-26-saida-de-dolares-patrimonio-no-exterior',
         '2026-10-24-ruas-direita-pt-lava-jato-analise',
         '2026-10-24-csn-venda-csn-cimentos-divida',
