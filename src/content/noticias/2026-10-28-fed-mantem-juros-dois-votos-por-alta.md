@@ -1,6 +1,6 @@
 ---
 title: "Fed mantém juros em 3,75% a 4%, com dois votos a favor de alta"
-description: "O Fed manteve a taxa por 10 votos a 2; Cook e Hammack queriam subir 0,25 ponto. O comunicado diz que a inflação segue elevada e a economia cresce em ritmo forte."
+description: "O Fed manteve a taxa por 10 votos a 2; Cook e Hammack queriam subir 0,25 ponto. O comunicado diz que a inflação segue elevada e a atividade, forte."
 date: 2026-10-28
 editoria: "Internacional"
 pais: "Estados Unidos"
