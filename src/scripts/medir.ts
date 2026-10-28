@@ -39,6 +39,8 @@ export function medir() {
   if (!SITE.metricas.ativo) return;
   const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
   if (nav.doNotTrack === '1' || nav.globalPrivacyControl) return;
+  // Navegador controlado por automação (robôs que rodam a página). Em localhost fica liberado para os testes.
+  if (navigator.webdriver && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
   if (location.pathname.startsWith(SITE.metricas.painel)) return;
   try {
     if (localStorage.getItem(CHAVE_IGNORAR) === '1') return;

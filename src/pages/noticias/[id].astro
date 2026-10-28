@@ -1,14 +1,24 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Artigo from '../../layouts/Artigo.astro';
-import { minutosDeLeitura, publicado, slugEditoria } from '../../scripts/formatos';
+import { minutosDeLeitura, porData, publicado, slugEditoria } from '../../scripts/formatos';
 
 export async function getStaticPaths() {
-  const noticias = await getCollection('noticias', publicado);
-  return noticias.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+  const noticias = (await getCollection('noticias', publicado)).sort(porData);
+  return noticias.map((entry) => ({ params: { id: entry.id }, props: { entry, noticias } }));
 }
 
-const { entry } = Astro.props;
+const { entry, noticias } = Astro.props;
+// "Leia também": as 3 notícias mais parecidas (palavras-chave em comum valem 2, mesma editoria vale 1), da mais nova
+// para a mais antiga em caso de empate. Sem nenhuma em comum, entram as mais recentes da mesma editoria.
+const chaves = new Set(entry.data.keywords.map((k) => k.toLowerCase()));
+const relacionadas = noticias
+  .filter((n) => n.id !== entry.id)
+  .map((n) => ({ n, pontos: 2 * n.data.keywords.filter((k) => chaves.has(k.toLowerCase())).length + (n.data.editoria === entry.data.editoria ? 1 : 0) }))
+  .filter((r) => r.pontos > 0)
+  .sort((a, b) => b.pontos - a.pontos || porData(a.n, b.n))
+  .slice(0, 3)
+  .map(({ n }) => ({ href: `/noticias/${n.id}/`, title: n.data.title, description: n.data.description, date: n.data.date, etiqueta: n.data.editoria }));
 const { Content } = await render(entry);
 const d = entry.data;
 ---
@@ -23,6 +33,7 @@ const d = entry.data;
   secao={{ nome: `Notícias da semana · ${d.editoria}`, href: `/noticias/${slugEditoria(d.editoria)}/` }}
   leitura={minutosDeLeitura(entry.body)}
   pais={d.pais}
+  relacionadas={relacionadas}
 >
   <Content />
 </Artigo>

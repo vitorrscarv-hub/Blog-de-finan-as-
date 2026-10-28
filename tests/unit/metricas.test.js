@@ -60,6 +60,12 @@ test('evento: ignora DNT, GPC, robôs e rotas internas, sem gravar', async () =>
   ]) {
     assert.equal((await onRequestPost({ request: req, env: { DB: db } })).status, 204);
   }
+  // Prévia de pull request e rede de data center também não contam.
+  const previa = new Request('https://abc123.blog-de-finan-as.pages.dev/api/evento', { method: 'POST', body: JSON.stringify(visita()), headers: { 'User-Agent': 'Mozilla/5.0 (iPhone)' } });
+  assert.equal((await onRequestPost({ request: previa, env: { DB: db } })).status, 204);
+  const nuvem = evento(visita());
+  Object.defineProperty(nuvem, 'cf', { value: { asOrganization: 'Amazon.com, Inc.' } });
+  assert.equal((await onRequestPost({ request: nuvem, env: { DB: db } })).status, 204);
   assert.equal(db.bruto.prepare('SELECT COUNT(*) AS n FROM visitas').get().n, 0);
 });
 
