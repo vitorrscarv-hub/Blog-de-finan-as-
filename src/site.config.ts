@@ -42,27 +42,40 @@ export const SITE = {
   capa: {
     maisNoticias: 3,
     fixadas: { '2026-10-26-saida-de-dolares-patrimonio-no-exterior': 1 } as Record<string, number>,
-    // Manchete em carrossel com as Matérias indicadas pontuais (nome do arquivo sem .md), da mais nova para a mais
-    // antiga, até `maximo`. Matéria da lista que ainda não foi publicada é ignorada. Sem nenhuma publicada, a manchete
+    // Manchete em carrossel com as Matérias indicadas pontuais (nome do arquivo sem .md), na ordem desta lista, até
+    // `maximo`. Matéria da lista que ainda não foi publicada é ignorada. Sem nenhuma publicada, a manchete
     // volta a ser a notícia mais recente. Troca de destaque a cada `segundos` (não roda sozinho com "reduzir movimento").
     carrossel: {
       ativo: true,
       segundos: 4,
-      maximo: 6,
+      maximo: 4,
       materias: [
         '2026-10-27-diversificacao-all-weather-volatilidade',
-        '2026-10-27-cenario-economico-pos-eleicao',
         '2026-10-27-juros-futuros-empresas-afetadas-emprego',
+        '2026-10-27-cenario-economico-pos-eleicao',
+        '2026-10-26-reeleicao-lula-mercado-queda',
         '2026-10-27-diesel-subsidio-renovado-inflacao',
         '2026-10-27-alegacao-fraude-urnas-segundo-turno',
         '2026-10-26-saida-de-dolares-patrimonio-no-exterior',
-        '2026-10-26-reeleicao-lula-mercado-queda',
         '2026-10-24-ruas-direita-pt-lava-jato-analise',
         '2026-10-24-csn-venda-csn-cimentos-divida',
         '2026-10-23-tregua-oleshky-russia-ucrania',
         '2026-10-23-volume-puts-b3-pico-7-8-outubro',
       ],
     },
+  },
+  // Seção "Seu patrimônio" (/patrimonio/, no menu e na capa): matérias e guias escolhidos (nome do arquivo sem .md),
+  // na ordem desta lista. Os que ainda não foram publicados são ignorados. A capa mostra os `naCapa` primeiros.
+  patrimonio: {
+    naCapa: 3,
+    materias: [
+      '2026-10-26-saida-de-dolares-patrimonio-no-exterior',
+      '2026-10-27-diversificacao-all-weather-volatilidade',
+      '2026-10-27-juros-futuros-empresas-afetadas-emprego',
+      '2026-10-27-cenario-economico-pos-eleicao',
+      '2026-10-26-reeleicao-lula-mercado-queda',
+    ],
+    guias: ['come-cotas-tributacao-fundos-abertos'],
   },
   // Formulário "Fale com um especialista" no fim das matérias listadas em `paginas` (endereço da matéria).
   // Os contatos vão para o mesmo cadastro do pop-up (/api/lead), com a origem abaixo, e aparecem no painel.
@@ -80,6 +93,8 @@ export const SITE = {
     ],
     // Frase própria de uma página; sem ela, vale a `chamada` acima.
     chamadasPorPagina: {
+      '/patrimonio/':
+        'Se você quer revisar como o seu patrimônio está distribuído entre Brasil e exterior, preencha o formulário e um especialista entrará em contato.',
       '/noticias/2026-10-27-diversificacao-all-weather-volatilidade/':
         'Se você está preocupado com os próximos anos da nossa economia e quer se proteger com uma diversificação mais eficiente, inspirada em modelos usados por grandes gestoras internacionais, preencha o formulário e um especialista entrará em contato.',
     } as Record<string, string>,

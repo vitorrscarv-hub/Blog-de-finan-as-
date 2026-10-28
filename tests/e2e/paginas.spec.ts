@@ -164,6 +164,16 @@ test('404, RSS e sitemap', async ({ page, request }) => {
   expect(xmlNoticias).toMatch(/<url><loc>https:\/\/grafous\.com\.br\/noticias\/[^<]+<\/loc><news:news>/);
 });
 
+test('seção "Seu patrimônio" está no menu, na capa e tem o formulário de contato', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#titulo-patrimonio')).toHaveText('Seu patrimônio');
+  await page.getByRole('navigation', { name: 'Principal' }).getByRole('link', { name: 'Seu patrimônio' }).click();
+  await expect(page).toHaveURL(/\/patrimonio\/$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Seu patrimônio');
+  await expect(page.locator('.grade .card').first()).toBeVisible();
+  await expect(page.locator('.contato-especialista')).toBeVisible();
+});
+
 test('notícia termina com "Leia também", sem repetir a própria matéria', async ({ page }) => {
   await page.goto('/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/');
   const bloco = page.locator('.leia-tambem');

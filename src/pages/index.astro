@@ -4,13 +4,16 @@ import Base from '../layouts/Base.astro';
 import CardPost from '../components/CardPost.astro';
 import { SITE } from '../site.config';
 import { dataBR, dataCurta, porData, publicado, slugEditoria } from '../scripts/formatos';
+import { selecaoPatrimonio } from '../scripts/patrimonio';
 
 const noticias = (await getCollection('noticias', publicado)).sort(porData);
 // Capa: manchete (ou carrossel de Matérias indicadas pontuais), a coluna "Mais notícias" ao lado e 3 notícias numa fileira.
 // Matéria fixada (SITE.capa.fixadas) entra na posição pedida da coluna; as outras seguem por data.
 const { maisNoticias, fixadas, carrossel } = SITE.capa;
 // Matéria fixada na coluna fica fora do carrossel, para não aparecer duas vezes.
-const destaques = carrossel.ativo ? noticias.filter((n) => carrossel.materias.includes(n.id) && !(n.id in fixadas)).slice(0, carrossel.maximo) : [];
+const destaques = carrossel.ativo
+  ? carrossel.materias.flatMap((id) => noticias.find((n) => n.id === id && !(id in fixadas)) ?? []).slice(0, carrossel.maximo)
+  : [];
 const naCapa = noticias.filter((n) => !destaques.includes(n));
 const fixas = naCapa.filter((n) => n.id in fixadas).sort((a, b) => fixadas[a.id] - fixadas[b.id]);
 const semFixas = naCapa.filter((n) => !(n.id in fixadas));
@@ -20,7 +23,9 @@ const livres = Math.max(0, maisNoticias - fixas.length);
 const mais = resto.slice(0, livres);
 for (const n of fixas) mais.splice(fixadas[n.id] - 1, 0, n);
 const fileira = resto.slice(livres, livres + 3);
-const guias = (await getCollection('guias', publicado)).sort(porData).slice(0, 3);
+const todosGuias = (await getCollection('guias', publicado)).sort(porData);
+const guias = todosGuias.slice(0, 3);
+const patrimonio = selecaoPatrimonio(noticias, todosGuias).slice(0, SITE.patrimonio.naCapa);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -94,6 +99,18 @@ const jsonLd = {
       </>
     )}
   </section>
+
+  {patrimonio.length > 0 && (
+    <section class="bloco container" aria-labelledby="titulo-patrimonio">
+      <div class="bloco-titulo">
+        <h2 id="titulo-patrimonio">Seu patrimônio</h2>
+        <a href="/patrimonio/">Ver a seção</a>
+      </div>
+      <div class="grade">
+        {patrimonio.map((p) => <CardPost {...p} />)}
+      </div>
+    </section>
+  )}
 
   <section class="bloco container" aria-labelledby="titulo-guias">
     <div class="bloco-titulo">

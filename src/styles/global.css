@@ -442,6 +442,7 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
 .tabela-painel td:first-child { min-width: 210px; }
 .tabela-painel td code { font-size: .85rem; }
 #contatos { overflow-x: auto; }
+.patrimonio-contato { padding-bottom: 64px; }
 
 .leia-tambem { margin-top: -40px; margin-bottom: 64px; padding-top: 18px; border-top: 3px solid var(--filete-forte); }
 .leia-tambem h2 { font-family: var(--ui); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 14px; }
