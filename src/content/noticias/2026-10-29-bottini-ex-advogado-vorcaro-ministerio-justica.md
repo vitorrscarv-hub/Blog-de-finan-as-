@@ -34,7 +34,7 @@ Bottini é criminalista, do escritório Bottini & Tamasauskas. Segundo a CNN, ch
 
 Bottini deixou a defesa de Vorcaro em 13 de março de 2026, alegando motivos pessoais, e passou o caso a José Luis Oliveira Lima, segundo o Poder360. A saída veio no mesmo dia em que a Segunda Turma do STF formou maioria para manter o banqueiro preso. Segundo o Estadão, em texto publicado pelo InfoMoney, Bottini era contra uma delação premiada; o substituto era mais favorável a esse caminho, e Vorcaro passou a negociar um acordo.
 
-O nome de Bottini também aparece nas mensagens que Vorcaro mandou, em novembro de 2025, a um contato salvo como "Alexandre de Moraes BRASILIA", segundo o relatório da PF tornado público em setembro. O banqueiro contou que "o Pierpaolo" queria apresentar uma petição para saber se havia inquéritos e perguntou ao contato se valia a pena: "Não vou fazer nenhum movimento que você não achar produtivo". Não há indicação de que Bottini soubesse dessas conversas; procurado pelo Estadão, ele não se manifestou.
+O nome de Bottini também aparece nas mensagens que Vorcaro mandou, em novembro de 2025, a um contato salvo como "Alexandre de Moraes BRASILIA", segundo o relatório da PF tornado público em setembro. O banqueiro contou que "o Pierpaolo" queria apresentar uma petição para saber se havia inquéritos e perguntou ao contato se valia a pena: "Não vou fazer nenhum movimento que você não achar produtivo". Procurado pelo Estadão, Bottini não se manifestou.
 
 ## Por que pesa
 

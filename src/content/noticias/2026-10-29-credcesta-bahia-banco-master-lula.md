@@ -48,6 +48,8 @@ fontes:
     url: "https://www.poder360.com.br/poder-justica/estou-online-vorcaro-escreveu-a-moraes-na-vespera-de-ser-preso/"
   - titulo: "InfoMoney: Vídeo, mensagens e contrato: novos elementos cercam Moraes no caso Vorcaro (21/09/2026)"
     url: "https://www.infomoney.com.br/politica/video-mensagens-e-contrato-novos-elementos-cercam-moraes-no-caso-vorcaro/"
+  - titulo: "Polícia Federal: relatório da análise do celular de Daniel Vorcaro, Petição 16.662 do STF (PDF publicado pelo Poder360)"
+    url: "https://static.poder360.com.br/uploads/2026/09/pet16662_relatorio_pf_celular_vorcaro_moraes_gonet_andrei_barci.pdf"
 draft: false
 gate: true
 ---
@@ -96,7 +98,7 @@ Os valores, pelos registros da Receita enviados à CPI do Crime Organizado e obt
 | Escritórios de Antônio Rueda | Presidente nacional do União Brasil | R$ 6,4 milhões | desde 2023 |
 | Lewandowski Advocacia | Escritório de Ricardo Lewandowski, ex-ministro do STF e da Justiça de Lula | ao menos R$ 6,1 milhões | desde novembro de 2023 |
 | A&M Consultoria | Empresa de ACM Neto, ex-prefeito de Salvador | R$ 5,45 milhões | 2023 a 2025 |
-| WF Comunicação | Empresa de Fabio Wajngarten, ex-secretário de Comunicação de Bolsonaro | R$ 3,8 milhões | 2025 |
+| WF Comunicação | Empresa de Fabio Wajngarten, ex-secretário de Comunicação de Bolsonaro | ao menos R$ 3,8 milhões | 2025 |
 | Jaques Wagner | Senador (PT-BA) e então líder do governo Lula no Senado | R$ 268,7 mil | 2022 a 2025 |
 
 Somadas, as linhas da tabela passam de R$ 195 milhões. É uma fração do que o banco gastou com esse tipo de serviço: segundo o jornal O Globo, o Master declarou R$ 915,3 milhões em "serviços técnicos especializados" em 2023 e 2024, contra R$ 90 milhões do BRB na mesma rubrica.
@@ -105,7 +107,7 @@ Somadas, as linhas da tabela passam de R$ 195 milhões. É uma fração do que o
 
 A maior linha da tabela tem história própria. Em 17 de janeiro de 2024, a advogada Viviane Barci de Moraes, mulher do ministro do STF Alexandre de Moraes, mandou a Vorcaro pelo WhatsApp: "Bom dia! Segue a minuta do contrato. Abraço". Pelo contrato, o escritório receberia R$ 3,6 milhões por mês durante três anos, num total de R$ 131.275.071,72, segundo o jornal O Estado de S. Paulo, citado pelo Poder360. Foram pagos R$ 80,2 milhões até a liquidação. Em março de 2024, Vorcaro disse a uma funcionária que esse pagamento era o "mais importante" e que fosse feito "do jeito que for", segundo o relatório da PF.
 
-Em 19 de maio de 2025, a PF encontrou um segundo acordo, de R$ 50 milhões, por meio da holding Viking Participações: R$ 40 milhões seriam quitados com cotas de um jato Embraer Legacy 650 e de um helicóptero Airbus EC 155, e o restante com uso das aeronaves. O documento no relatório não tem assinaturas, e o InfoMoney informa que a contratação não se concretizou, mas o escritório já usava as aeronaves em julho de 2025. Um vídeo divulgado pelo O Globo mostra Moraes e a mulher desembarcando do Legacy no Rio em 22 de agosto de 2025; o gabinete do ministro havia negado viagens em aviões de Vorcaro. O escritório diz que contratou um táxi aéreo, que Vorcaro nunca esteve nos voos, que prestou os serviços (94 reuniões e 36 pareceres, segundo nota) e que, antes de assinar, consultou o ministro sobre impedimentos. Moraes afirma que nunca julgou causa do Master.
+A PF encontrou um segundo acordo, de R$ 50 milhões, firmado em 19 de maio de 2025 por meio da holding Viking Participações: R$ 40 milhões seriam quitados com cotas de um jato Embraer Legacy 650 e de um helicóptero Airbus EC 155, e os R$ 10 milhões restantes com reembolso de despesas operacionais e de uso das aeronaves. O documento no relatório não tem assinaturas, e o InfoMoney informa que a contratação não se concretizou, mas o escritório já usava as aeronaves em julho de 2025. Um vídeo divulgado pelo O Globo mostra Moraes e a mulher desembarcando do Legacy no Rio em 22 de agosto de 2025; o gabinete do ministro havia negado viagens em aviões de Vorcaro. O escritório diz que contratou um táxi aéreo, que Vorcaro nunca esteve nos voos, que prestou os serviços (94 reuniões e 36 pareceres, segundo nota) e que, antes de assinar, consultou o ministro sobre impedimentos. Moraes afirma que nunca julgou causa do Master.
 
 ## O encontro no Planalto
 
@@ -117,13 +119,13 @@ Em 22 de janeiro de 2025, o advogado Walfrido Warde escreveu a Vorcaro que tinha
 
 ## As mensagens ao ministro Alexandre de Moraes
 
-No celular de Vorcaro, a PF encontrou conversas com um contato salvo como "Alexandre de Moraes BRASILIA", número que o banqueiro recebeu em dezembro de 2023. O sigilo caiu em 1º de setembro de 2026, por decisão do ministro André Mendonça, relator do caso no STF. Parte das mensagens foi enviada em modo de visualização única, e as respostas do contato quase nunca foram recuperadas. O que se lê é o lado de Vorcaro, nas semanas antes da prisão, segundo o relatório da PF divulgado pelo Estadão e pelo Poder360:
+No celular de Vorcaro, a PF encontrou conversas com um contato salvo como "Alexandre de Moraes BRASILIA", número que o banqueiro recebeu em dezembro de 2023. O sigilo caiu em 1º de setembro de 2026, por decisão do ministro André Mendonça, relator do caso no STF. Parte das mensagens foi enviada em modo de visualização única, e muitas das respostas do contato não foram recuperadas. O que se lê é o lado de Vorcaro, nas semanas antes da prisão, segundo o relatório da PF divulgado pelo Estadão e pelo Poder360:
 
 - **30 de outubro de 2025**, pedindo que o contato falasse com o diretor-geral da Polícia Federal, Andrei Rodrigues, e com o procurador-geral da República, Paulo Gonet: "É importante reforçar com Andrei e Paulo pra não deixar ninguém de baixo fazer uma sacanagem que aí vai tudo pro saco." No mesmo dia, enviou os nomes de 4 delegados e 3 procuradores do caso, que disse ter recebido de amigos no Banco Central, e escreveu: "Tudo de importante no final fica no seu colo! [...] tenho certeza que cada vez mais se consolidará como a pessoa mais importante do país."
-- **4 de novembro**: "Médio a grave seria busca ou quebra de sigilo?" e "Algo que dê pra bloquear?"
+- **4 de novembro**: "Médio a grave seria busca ou quebra de sigilo?" e "Algo que dê pra bloquear?" À noite: "Pelo amor de Deus, veja se você consegue bloquear toda maldade."
 - **6 de novembro**: "Como estamos aí? Conseguiu bloquear a maldade? Isso é Brasília? Sabe o tema? Está seguro ou tem que entrar agora urgente?" No mesmo período, sobre uma petição que seu advogado, Pierpaolo Bottini, queria apresentar: "Não vou fazer nenhum movimento que você não achar produtivo."
 - **15 de novembro**: "Acha que segunda já tenho que estar fora?", "Não conseguimos reverter isso com Paulo ou Andrei?" e "E o Galípolo tá sabendo? Conseguimos fazer algo?"
-- **16 de novembro**: "Se o Andrei conseguir atrasar pra outra semana, pois tem feriado, o banco não quebra. Tenta chamar ele e sensibilizar isso se achar possível." À noite: "Pelo amor de Deus, veja se você consegue bloquear toda maldade."
+- **16 de novembro**: "Se o Andrei conseguir atrasar pra outra semana, pois tem feriado, o banco não quebra. Tenta chamar ele e sensibilizar isso se achar possível."
 - **17 de novembro**, às 17h26, horas depois de o juiz assinar a ordem de prisão: "Alguma novidade? Conseguiu ter notícia ou bloquear?" Às 20h48: "To indo assinar com os investidores de fora e estou online."
 
 Vorcaro foi preso quando se preparava para embarcar num jato particular rumo a Malta. Para os investigadores, os diálogos sugerem que Moraes pode ter compartilhado informações sensíveis sobre a investigação; é uma avaliação da PF, não uma conclusão judicial, e a própria PF diz que a análise não é exaustiva. Moraes negou a comunicação e chamou as informações de falsas. O STF começou a discutir o relatório em 15 de setembro, mas um pedido de vista do ministro Flávio Dino interrompeu o julgamento, e, até a última informação disponível, não havia decisão sobre investigar o ministro.
