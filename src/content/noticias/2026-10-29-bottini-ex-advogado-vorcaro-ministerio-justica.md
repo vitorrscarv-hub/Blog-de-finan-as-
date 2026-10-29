@@ -10,7 +10,7 @@ fontes:
     url: "https://www.cnnbrasil.com.br/blogs/caio-junqueira/politica/criminalista-pierpaolo-bottini-e-cotado-para-ministerio-da-justica/"
   - titulo: "Poder360: Advogado que defendeu Zé Dirceu e Braga Netto assume defesa de Vorcaro (13/03/2026)"
     url: "https://www.poder360.com.br/poder-justica/advogado-que-defendeu-ze-dirceu-e-braga-netto-assume-defesa-de-vorcaro/"
-  - titulo: "InfoMoney: Vorcaro muda equipe de defesa e sinaliza caminho de delação premiada (14/03/2026)"
+  - titulo: "InfoMoney: Vorcaro muda equipe de defesa e sinaliza caminho de delação premiada (13/03/2026)"
     url: "https://www.infomoney.com.br/brasil/vorcaro-muda-equipe-de-defesa-e-sinaliza-caminho-de-delacao-premiada/"
   - titulo: "Poder360: Fisco mostra pagamentos do Banco Master a políticos e ex-ministros (08/04/2026)"
     url: "https://www.poder360.com.br/poder-economia/receita-mostra-pagamentos-do-banco-master-a-politicos-e-ex-ministros/"
@@ -22,7 +22,7 @@ draft: false
 gate: true
 ---
 
-O presidente Lula avalia nomear o criminalista Pierpaolo Bottini para o Ministério da Justiça no novo mandato, segundo a CNN Brasil. Não há anúncio oficial. O nome chama atenção por um motivo: até março deste ano, Bottini era o advogado de Daniel Vorcaro, dono do Banco Master, o banco liquidado pelo Banco Central e investigado pela Polícia Federal no maior escândalo bancário do país.
+O presidente Lula avalia nomear o criminalista Pierpaolo Bottini para o Ministério da Justiça no novo mandato, segundo a CNN Brasil. Não há anúncio oficial. O nome chama atenção por um motivo: até março deste ano, Bottini era o advogado de Daniel Vorcaro, fundador do Banco Master, o banco liquidado pelo Banco Central e investigado pela Polícia Federal no que o ministro André Mendonça, do STF, chamou de maior fraude financeira da história do país.
 
 ## Quem é
 
@@ -30,11 +30,11 @@ Bottini é criminalista, do escritório Bottini & Tamasauskas. Segundo a CNN, ch
 
 ## A passagem pelo caso Master
 
-Bottini deixou a defesa de Vorcaro em 13 de março de 2026, alegando motivos pessoais, e passou o caso a José Luis Oliveira Lima, segundo o Poder360. A saída veio no mesmo dia em que a Segunda Turma do STF formou maioria para manter o banqueiro preso. Segundo o InfoMoney, Bottini era contra uma delação premiada; o substituto era mais favorável a esse caminho, e Vorcaro passou a negociar um acordo.
+Bottini deixou a defesa de Vorcaro em 13 de março de 2026, alegando motivos pessoais, e passou o caso a José Luis Oliveira Lima, segundo o Poder360. A saída veio no mesmo dia em que a Segunda Turma do STF formou maioria para manter o banqueiro preso. Segundo o Estadão, em texto publicado pelo InfoMoney, Bottini era contra uma delação premiada; o substituto era mais favorável a esse caminho, e Vorcaro passou a negociar um acordo.
 
 ## Por que pesa
 
-O Ministério da Justiça é a pasta a que a Polícia Federal está subordinada. É a mesma PF que conduz a operação Compliance Zero, que prendeu Vorcaro, chegou ao entorno do senador Jaques Wagner na Bahia e segue mapeando os pagamentos do Master a políticos. Colocar à frente dessa pasta o advogado que defendeu o principal investigado, poucos meses depois de deixar o caso, é uma escolha que o governo terá de explicar.
+O Ministério da Justiça é a pasta a que a Polícia Federal está subordinada. É a mesma PF que conduz a operação Compliance Zero, que prendeu Vorcaro, e que chegou ao entorno do senador Jaques Wagner na Bahia. Colocar à frente dessa pasta o advogado que defendeu o principal investigado, poucos meses depois de deixar o caso, é uma escolha que o governo terá de explicar.
 
 E não seria a primeira coincidência entre o Master e o ministério. O escritório de Ricardo Lewandowski, ex-ministro da Justiça de Lula, recebeu ao menos R$ 6,1 milhões do banco em pagamentos iniciados em novembro de 2023, pelos registros da Receita enviados à CPI do Crime Organizado. A assessoria de Lewandowski afirma que ele se afastou do escritório ao assumir o ministério e que a banca passou a ser controlada pela família.
 
