@@ -18,8 +18,7 @@ gate: true
 
 O Banco Central decretou nesta quinta-feira (29) a liquidação extrajudicial da MW Instituição de Pagamento Ltda., com sede em Joinville (SC), conhecida como MW Pay. A medida foi motivada, segundo a nota do Banco Central, pela constatação de "graves violações às normas que disciplinam as instituições integrantes do Sistema de Pagamentos Brasileiro (SPB) e as atividades da instituição".
 
-O BC informou que a MW tem "baixa representatividade no Sistema Financeiro Nacional", com menos de 0,0002% do ativo total. Por isso, o caso não é sobre risco para o sistema, e sim sobre fiscalização.
-
+O BC informou que a MW tem "baixa representatividade no Sistema Financeiro Nacional", com menos de 0,0002% do ativo total.
 ## O que a nota diz
 
 A nota é curta. Além do motivo, ela afirma que o Banco Central "continuará tomando todas as medidas cabíveis para apurar as responsabilidades" dentro de suas competências legais. O resultado das apurações poderá levar a medidas sancionadoras de caráter administrativo e a comunicações às autoridades competentes.
@@ -38,4 +37,4 @@ O Money Times descreve a MW como uma empresa que oferece infraestrutura de pagam
 
 ## O que muda para quem investe
 
-Pelo tamanho informado pelo Banco Central, o efeito sobre o mercado é nulo. O que o caso mostra é o perímetro da supervisão: instituições de pagamento, que não são bancos, também podem ser liquidadas quando o regulador entende que as regras do sistema de pagamentos foram violadas gravemente. A nota não trata das garantias dos recursos dos clientes da MW, e este texto não afirma nada sobre o assunto.
+O Banco Central classificou a MW como de baixa representatividade no sistema financeiro. O caso mostra que instituições de pagamento, que não são bancos, também podem ser liquidadas quando o regulador constata violações graves às normas do sistema de pagamentos. A nota não trata das garantias dos recursos dos clientes da MW, e este texto não afirma nada sobre o assunto.

@@ -16,7 +16,7 @@ gate: true
 
 O Tribunal de Contas da União (TCU) aprovou nesta quarta-feira (28), em sessão extraordinária do Plenário, o cálculo da alíquota de referência de 11,3% para a Contribuição sobre Bens e Serviços (CBS). A CBS é o tributo federal da reforma tributária que substitui o PIS e a Cofins e começa a ser cobrado efetivamente em 2027, segundo a nota do próprio TCU. O relator foi o presidente do Tribunal, ministro Vital do Rêgo.
 
-O Estadão noticiou o número com duas casas, 11,35%. A nota do TCU, que é a fonte deste texto, fala em 11,3%.
+O Estadão noticiou o número com mais casas: 11,35% no título e 11,3468% no texto. A nota do TCU, que é a fonte deste texto, fala em 11,3%. Segundo o jornal, se o Senado não se manifestar no prazo, vale a alíquota calculada pelo TCU.
 
 ## Quem faz o quê
 
@@ -34,10 +34,10 @@ Além da alíquota, o TCU calculou um redutor de 44,2% para a CBS sobre determin
 
 ## O que ainda não está decidido
 
-A nota do TCU faz uma ressalva importante: 11,3% é uma referência e não corresponde, necessariamente, ao percentual que será efetivamente cobrado dos contribuintes. A decisão final cabe ao Senado, que pode seguir o cálculo ou não.
+A nota do TCU faz uma ressalva importante: 11,3% é uma referência e não corresponde, necessariamente, ao percentual que será efetivamente cobrado dos contribuintes. A fixação da alíquota de referência cabe ao Senado, por resolução.
 
 A CBS também é só uma parte da conta. O outro tributo da reforma, o Imposto sobre Bens e Serviços (IBS), é de estados e municípios, e a definição de suas alíquotas é a próxima etapa, segundo o presidente do TCU. Ele disse que ela exigirá cooperação entre o Tribunal, o Comitê Gestor do IBS, o Ministério da Fazenda, a Receita e os entes federativos. O TCU afirma que continuará fazendo novos cálculos e atualizações durante a transição.
 
 ## O que muda para quem investe
 
-Para o investidor, o dado relevante é o calendário e o grau de definição. A alíquota da CBS é a primeira peça numérica da reforma a ganhar um valor calculado por um órgão independente da Receita, e a votação no Senado precisa acontecer em pouco mais de um mês. Empresas e setores que dependem de crédito de impostos, de regimes diferenciados ou de compras públicas vão acompanhar esse número, e também a parte dos estados e municípios, que ainda não tem valor. Enquanto o IBS não for calculado, não é possível somar as duas alíquotas e saber a carga total sobre o consumo.
+Para o investidor, o dado relevante é o calendário e o grau de definição. A alíquota da CBS ganhou um valor calculado pelo TCU, que reproduziu os números da Receita com ferramenta própria, e a votação no Senado precisa acontecer em pouco mais de um mês. Empresas e setores que dependem de crédito de impostos, de regimes diferenciados ou de compras públicas vão acompanhar esse número, e também a parte dos estados e municípios, que ainda não tem valor. Enquanto o IBS não for calculado, não é possível somar as duas alíquotas e saber a carga total sobre o consumo.
