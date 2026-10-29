@@ -86,6 +86,84 @@ Em junho de 2026, a nona fase da Compliance Zero chegou à Bahia. Segundo a deci
 
 Já preso, Vorcaro ofereceu delações que a Polícia Federal e a Procuradoria-Geral da República recusaram. Numa delas, segundo a revista Veja, ele dizia ter pago R$ 30 milhões em dinheiro vivo ligados a um filme sobre Lula para acessar fundos de pensão. A PF afirma que não existe depoimento com esse teor, Paulo Okamotto, ex-presidente do Instituto Lula, nega ter recebido dinheiro, e a campanha do presidente chamou o relato de farsa. Até aqui, é uma acusação sem prova.
 
+## O mapa das ligações
+
+Quem é quem no caso, a partir do presidente, com o cargo de cada um e a ligação com o Master:
+
+<figure class="diagrama-master" style="margin:1.6em 0">
+<svg viewBox="0 0 360 988" width="100%" role="img" aria-labelledby="dm-titulo dm-desc" style="max-width:560px;display:block;margin:0 auto;font-family:var(--ui)">
+<title id="dm-titulo">Ligações entre Lula, seus aliados e o Banco Master</title>
+<desc id="dm-desc">Lula no topo; abaixo, aliados e integrantes do governo com o cargo de cada um e a ligação com o Banco Master; na base, o Master, de Daniel Vorcaro e Augusto Lima.</desc>
+<line x1="28" y1="80" x2="28" y2="878" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="180" y1="80" x2="180" y2="92" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="92" x2="180" y2="92" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="155.0" x2="48" y2="155.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="377.0" x2="48" y2="377.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="451.0" x2="48" y2="451.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="525.0" x2="48" y2="525.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="599.0" x2="48" y2="599.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="673.0" x2="48" y2="673.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="747.0" x2="48" y2="747.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="821.0" x2="48" y2="821.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="62" y1="186" x2="62" y2="303.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="62" y1="229.0" x2="78" y2="229.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="62" y1="303.0" x2="78" y2="303.0" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="28" y1="878" x2="180" y2="878" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<line x1="180" y1="878" x2="180" y2="890" stroke-width="2" style="stroke:var(--filete-forte)"/>
+<rect x="10" y="10" width="340" height="70" rx="6" style="fill:var(--superficie);stroke:var(--destaque);stroke-width:2.5"/>
+<text x="180" y="34" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--tinta)">Luiz Inácio Lula da Silva</text>
+<text x="180" y="53" text-anchor="middle" font-size="11.5" style="fill:var(--tinta-suave)">Presidente da República (PT), reeleito em 2026</text>
+<text x="180" y="70" text-anchor="middle" font-size="11.5" style="fill:var(--destaque)">Recebeu Vorcaro no Planalto em 4/12/2024</text>
+<text x="48" y="114" font-size="10.5" font-weight="700" letter-spacing="1" style="fill:var(--tinta-suave)">GOVERNO E ALIADOS DE LULA</text>
+<rect x="48" y="124" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="143" font-size="13" font-weight="700" style="fill:var(--tinta)">Jaques Wagner</text>
+<text x="58" y="160" font-size="11.5" style="fill:var(--tinta-suave)">Senador (PT-BA), ex-líder do governo no Senado</text>
+<text x="58" y="177" font-size="11.5" style="fill:var(--destaque)">Conduziu a venda da Ebal; recebeu R$ 268,7 mil</text>
+<rect x="78" y="198" width="272" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="88" y="217" font-size="13" font-weight="700" style="fill:var(--tinta)">Bonnie Bonilha</text>
+<text x="88" y="234" font-size="11.5" style="fill:var(--tinta-suave)">Nora de Jaques Wagner</text>
+<text x="88" y="251" font-size="11.5" style="fill:var(--destaque)">BN Financeira recebeu R$ 12 mi do Master</text>
+<rect x="78" y="272" width="272" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="88" y="291" font-size="13" font-weight="700" style="fill:var(--tinta)">Eduardo Sodré Martins</text>
+<text x="88" y="308" font-size="11.5" style="fill:var(--tinta-suave)">Enteado de Jaques Wagner</text>
+<text x="88" y="325" font-size="11.5" style="fill:var(--destaque)">PF o associa a R$ 2,34 mi em planilhas</text>
+<rect x="48" y="346" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="365" font-size="13" font-weight="700" style="fill:var(--tinta)">Rui Costa</text>
+<text x="58" y="382" font-size="11.5" style="fill:var(--tinta-suave)">Ministro da Casa Civil; governador da BA até 2022</text>
+<text x="58" y="399" font-size="11.5" style="fill:var(--destaque)">Decretos do Credcesta; esteve na reunião</text>
+<rect x="48" y="420" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="439" font-size="13" font-weight="700" style="fill:var(--tinta)">Gabriel Galípolo</text>
+<text x="58" y="456" font-size="11.5" style="fill:var(--tinta-suave)">Presidente do Banco Central, indicado por Lula</text>
+<text x="58" y="473" font-size="11.5" style="fill:var(--destaque)">Esteve na reunião; o BC liquidou o Master</text>
+<rect x="48" y="494" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="513" font-size="13" font-weight="700" style="fill:var(--tinta)">Alexandre Silveira</text>
+<text x="58" y="530" font-size="11.5" style="fill:var(--tinta-suave)">Ministro de Minas e Energia</text>
+<text x="58" y="547" font-size="11.5" style="fill:var(--destaque)">Esteve na reunião de 4/12/2024</text>
+<rect x="48" y="568" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="587" font-size="13" font-weight="700" style="fill:var(--tinta)">Marco Aurélio Santana Ribeiro, o Marcola</text>
+<text x="58" y="604" font-size="11.5" style="fill:var(--tinta-suave)">Chefe do gabinete pessoal de Lula</text>
+<text x="58" y="621" font-size="11.5" style="fill:var(--destaque)">Recebeu Mantega e Vorcaro antes de Lula</text>
+<rect x="48" y="642" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="661" font-size="13" font-weight="700" style="fill:var(--tinta)">Guido Mantega</text>
+<text x="58" y="678" font-size="11.5" style="fill:var(--tinta-suave)">Ex-ministro da Fazenda de Lula e Dilma</text>
+<text x="58" y="695" font-size="11.5" style="fill:var(--destaque)">Pollaris recebeu R$ 14 mi; levou Vorcaro</text>
+<rect x="48" y="716" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="735" font-size="13" font-weight="700" style="fill:var(--tinta)">Ricardo Lewandowski</text>
+<text x="58" y="752" font-size="11.5" style="fill:var(--tinta-suave)">Ex-ministro da Justiça de Lula e do STF</text>
+<text x="58" y="769" font-size="11.5" style="fill:var(--destaque)">Escritório recebeu ao menos R$ 6,1 mi</text>
+<rect x="48" y="790" width="302" height="62" rx="5" style="fill:var(--superficie);stroke:var(--filete-forte)"/>
+<text x="58" y="809" font-size="13" font-weight="700" style="fill:var(--tinta)">Henrique Meirelles</text>
+<text x="58" y="826" font-size="11.5" style="fill:var(--tinta-suave)">Ex-presidente do BC nos governos Lula</text>
+<text x="58" y="843" font-size="11.5" style="fill:var(--destaque)">Recebeu R$ 18,5 mi do Master</text>
+<rect x="10" y="890" width="340" height="88" rx="6" style="fill:var(--superficie);stroke:var(--destaque);stroke-width:2.5"/>
+<text x="180" y="912" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--tinta)">Banco Master</text>
+<text x="180" y="932" text-anchor="middle" font-size="11.5" style="fill:var(--tinta-suave)">Daniel Vorcaro, controlador, preso pela PF</text>
+<text x="180" y="949" text-anchor="middle" font-size="11.5" style="fill:var(--tinta-suave)">Augusto Lima, sócio e ex-presidente; operou o Credcesta</text>
+<text x="180" y="966" text-anchor="middle" font-size="11.5" style="fill:var(--tinta-suave)">Liquidado pelo Banco Central em 18/11/2025</text>
+</svg>
+<figcaption style="font-size:.85rem;margin-top:.6em">Cargos atuais ou mais recentes. Valores pagos pelo Master de 2022 a 2025, pelos registros da Receita obtidos pelo Poder360; reunião de 4/12/2024 e planilhas da PF segundo o Poder360. Receber pagamento do banco não é, por si, irregularidade, e os citados dizem ter prestado serviços. Também receberam do Master, fora do governo Lula, Michel Temer, ACM Neto e o escritório de Viviane Barci de Moraes.</figcaption>
+</figure>
+
 ## O que fica
 
 Não há registro de ato de Lula na venda da Cesta do Povo nem nos decretos do Credcesta. O elo é outro: as decisões que deram ao cartão o monopólio do salário do servidor baiano foram tomadas por Jaques Wagner, então secretário de Desenvolvimento Econômico, e Rui Costa, então governador, que depois viraram líder do governo no Senado e ministro da Casa Civil de Lula. O banco que cresceu sobre esse monopólio pagou a ex-ministros e parentes de aliados do presidente, e seu dono foi recebido por Lula fora da agenda, com o futuro presidente do Banco Central na sala. Foi o mesmo Banco Central que, meses depois, liquidou o Master, e o governo cita isso como prova de isenção. A conta, porém, já estava paga por quem ficou no meio: os servidores baianos que, por decreto, não podiam sair de uma dívida a 5% ao mês.
