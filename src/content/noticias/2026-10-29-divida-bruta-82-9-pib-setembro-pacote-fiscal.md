@@ -1,6 +1,6 @@
 ---
 title: "Dívida bruta fica em 82,9% do PIB em setembro, e o Tesouro diz que prepara pacote fiscal"
-description: "O setor público teve déficit primário de R$ 5,5 bi em setembro, e os juros somaram R$ 107,5 bi. O Tesouro diz preparar medidas e nega decisão sobre IOF em LCI e LCA."
+description: "Déficit primário de R$ 5,5 bi em setembro e juros de R$ 107,5 bi. O Tesouro diz preparar medidas e nega decisão sobre IOF em LCI e LCA."
 date: 2026-10-29
 editoria: "Brasil"
 keywords: ["dívida bruta", "déficit primário", "contas públicas", "Tesouro Nacional", "IOF"]
