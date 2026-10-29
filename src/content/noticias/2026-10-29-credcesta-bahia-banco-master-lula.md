@@ -28,6 +28,14 @@ fontes:
     url: "https://www.poder360.com.br/poder-governo/lula-diz-que-povo-e-amigo-do-presidente-nao-vorcaro/"
   - titulo: "Poder360: Padilha diz que relatos de Vorcaro sobre propinas são \"farsa\" (11/10/2026)"
     url: "https://www.poder360.com.br/poder-justica/padilha-diz-que-relatos-de-vorcaro-sobre-propinas-sao-farsa/"
+  - titulo: "Banco Central (SGS 25467): taxa média mensal do consignado para trabalhadores do setor público, 2019 a 2020"
+    url: "https://api.bcb.gov.br/dados/serie/bcdata.sgs.25467/dados?formato=json&dataInicial=01/01/2019&dataFinal=31/12/2020"
+  - titulo: "Banco Central (IF.data): carteira de crédito de pessoa física e quantidade de clientes do conglomerado Máxima/Master"
+    url: "https://olinda.bcb.gov.br/olinda/servico/IFDATA/versao/v1/odata/IfDataValores(AnoMes=@AnoMes,TipoInstituicao=@TipoInstituicao,Relatorio=@Relatorio)?@AnoMes=201912&@TipoInstituicao=2&@Relatorio='11'&$format=json&$filter=CodInst%20eq%20'C0050201'"
+  - titulo: "Banco Master: demonstrações financeiras consolidadas de dezembro de 2024"
+    url: "https://static.poder360.com.br/2025/04/Banco-Master-balanco-consolidado-dez.2024.pdf"
+  - titulo: "Senado, CPI do Crime Organizado: relatório do senador Alessandro Vieira (13/04/2026)"
+    url: "https://static.poder360.com.br/2026/04/relatorio-cpi-crime-organizado-alessandro-vieira-13-abr-2026.pdf"
 draft: false
 gate: true
 ---
@@ -36,7 +44,7 @@ O ministro André Mendonça, relator do caso no Supremo Tribunal Federal, chamou
 
 ## 2014 a 2018: a estatal que ninguém queria
 
-A Empresa Baiana de Alimentos (Ebal), dona da Cesta do Povo, dava prejuízo de cerca de R$ 80 milhões por ano. No fim de 2014, o então governador Jaques Wagner, petista histórico e amigo próximo de Lula, sancionou a lei que autorizava a privatização. O leilão de janeiro de 2016, com lance mínimo de R$ 81 milhões, não teve comprador. O de março de 2018, pelo mesmo valor, também não.
+A Empresa Baiana de Alimentos (Ebal), dona da Cesta do Povo, dava prejuízo de cerca de R$ 80 milhões por ano, segundo o Poder360. No fim de 2014, o então governador Jaques Wagner, petista histórico e amigo próximo de Lula, sancionou a lei que autorizava a privatização. O leilão de janeiro de 2016, com lance mínimo de R$ 81 milhões, não teve comprador. O de março de 2018, pelo mesmo valor, também não.
 
 Na terceira tentativa, já no governo de Rui Costa e com Wagner à frente da Secretaria de Desenvolvimento Econômico, que conduzia a venda, o edital mudou. Entrou no pacote o programa Credcesta: quem levasse a Ebal levava junto o cadastro dos servidores que compravam nas lojas. E o preço mínimo caiu. Em 11 de abril de 2018, a NGV Empreendimentos arrematou a estatal, as 49 lojas e o Credcesta por R$ 15 milhões, R$ 66 milhões abaixo do lance pedido dois anos antes.
 
@@ -48,31 +56,31 @@ Quem operava a máquina era o empresário baiano Augusto Lima, o Guga, que atuav
 
 ## O preço para o servidor
 
-O servidor baiano é o cliente que todo banco quer: quase não perde o emprego e paga com desconto direto no salário. Mesmo assim, o Credcesta cobrava perto de 5% ao mês nos saques, de 4,72% a 4,98% entre 2019 e 2020, segundo o Poder360. No mesmo período, a média do consignado público medida pelo Banco Central ficava entre 1,37% e 1,59% ao mês. Um contrato anexado a uma ação judicial mostra um saque de R$ 9.118,46 com custo efetivo de 79,18% ao ano, em 68 parcelas de R$ 470,64.
+O servidor baiano é o cliente que todo banco quer: quase não perde o emprego e paga com desconto direto no salário. Mesmo assim, o Credcesta cobrava perto de 5% ao mês nos saques, de 4,72% no fim de 2019 a 4,98% no primeiro semestre de 2020, segundo o Poder360. Entre julho de 2019 e junho de 2020, a taxa média do consignado para o setor público medida pelo Banco Central ficou entre 1,37% e 1,59% ao mês. Um contrato anexado a uma ação judicial mostra um saque de R$ 9.118,46 com custo efetivo de 79,18% ao ano, em 68 parcelas de R$ 470,64.
 
 Em 13 de janeiro de 2022, um novo decreto de Rui Costa fechou a porta de saída: o direito de levar a dívida para um banco mais barato (a portabilidade) deixou de valer para o Credcesta. Rui Costa nunca explicou a decisão. Um ano depois, ele assumiria a Casa Civil do governo Lula. O Tribunal de Justiça da Bahia acumula mais de 10 mil processos de servidores contra o cartão.
 
 ## O motor do Master
 
-Com o Credcesta, o Máxima mudou de tamanho. Em 2019, os consignados eram 31,3% da carteira de pessoa física. Em 2022, chegavam a 85,4%. Os clientes com crédito ativo saltaram de 33.685 no fim de 2018 para 5,8 milhões em 2024, e o cartão chegou a 24 unidades da Federação. Em 2023, Guga, então presidente do Master, disse que o produto era 80% da carteira de varejo do banco.
+Com o Credcesta, o Máxima mudou de tamanho. Pelos dados do Banco Central, no fim de 2019 os consignados eram 31,3% da carteira de pessoa física. Em 2022, chegavam a 85,4%. Os clientes com crédito ativo saltaram de 33.685 no fim de 2018 para 5,8 milhões em 2024, e o cartão chegou a 24 unidades da Federação. Em 2023, Guga, então presidente do Master, disse ao Brazil Journal, segundo o Poder360, que o produto era 80% da carteira de varejo do banco.
 
 O segredo, porém, não era só o juro. O banco vendia as carteiras do Credcesta a outros bancos e fundos e antecipava o dinheiro. Pelos dados da Receita enviados à CPI do Crime Organizado, a revenda rendeu R$ 1,6 bilhão em 2024, contra R$ 709 milhões dos próprios juros. Com esse caixa, o Master cresceu em ritmo raro: os depósitos foram de R$ 30,5 bilhões em 2023 para R$ 49,9 bilhões em 2024, e os ativos, de R$ 36,1 bilhões para R$ 63 bilhões.
 
 ## A rede em Brasília
 
-Enquanto crescia, o Master montou uma rede de contratos com nomes de todos os lados da política. Pelos registros da Receita, a Pollaris, consultoria do ex-ministro da Fazenda Guido Mantega, recebeu R$ 14 milhões em 2024 e 2025. A BN Financeira, de Bonnie Bonilha, nora de Jaques Wagner, recebeu R$ 12 milhões de 2022 a 2025, e o próprio Wagner, então líder do governo Lula no Senado, recebeu R$ 268,6 mil como pessoa física. O escritório de Ricardo Lewandowski, ex-ministro da Justiça de Lula, recebeu ao menos R$ 6,1 milhões a partir de novembro de 2023. A lista inclui também Henrique Meirelles, Michel Temer, ACM Neto e o escritório da mulher do ministro Alexandre de Moraes. Todos dizem que prestaram serviços. Executivos de bancos ouvidos pelo O Globo classificaram os valores como fora do padrão para um banco de porte médio.
+Enquanto crescia, o Master montou uma rede de contratos com nomes de todos os lados da política. Pelos registros da Receita obtidos pelo Poder360, a Pollaris, consultoria do ex-ministro da Fazenda Guido Mantega, recebeu R$ 14 milhões em 2024 e 2025. A BN Financeira, de Bonnie Bonilha, nora de Jaques Wagner, recebeu R$ 12 milhões de 2022 a 2025, e o próprio Wagner, então líder do governo Lula no Senado, recebeu R$ 268,7 mil como pessoa física. O escritório de Ricardo Lewandowski, ex-ministro da Justiça de Lula, recebeu ao menos R$ 6,1 milhões a partir de novembro de 2023. A lista inclui também Henrique Meirelles, Michel Temer, ACM Neto e o escritório da mulher do ministro Alexandre de Moraes. Os que se manifestaram dizem que prestaram serviços. Executivos de bancos ouvidos pelo jornal O Globo classificaram os valores como fora do padrão para um banco de porte médio.
 
 ## O encontro no Planalto
 
-Em 4 de dezembro de 2024, Mantega foi ao Palácio do Planalto para uma audiência com Marco Aurélio Santana Ribeiro, o Marcola, chefe do gabinete pessoal de Lula. Levou Vorcaro. No fim, os dois pediram para falar com o presidente, e Lula os recebeu. Estavam na sala Rui Costa, Alexandre Silveira, Augusto Lima e Gabriel Galípolo, então indicado à presidência do Banco Central. O encontro ficou fora da agenda oficial, e a audiência com Marcola só foi registrada em 27 de dezembro, com o nome de Mantega e nenhum outro. Galípolo não contou ao então presidente do BC, Roberto Campos Neto, sobre a reunião.
+Em 4 de dezembro de 2024, segundo o Poder360, Mantega foi ao Palácio do Planalto para uma audiência com Marco Aurélio Santana Ribeiro, o Marcola, chefe do gabinete pessoal de Lula. Levou Vorcaro. No fim, os dois pediram para falar com o presidente, e Lula os recebeu. Estavam na sala Rui Costa, Alexandre Silveira, Augusto Lima e Gabriel Galípolo, então indicado à presidência do Banco Central. O encontro ficou fora da agenda oficial, e a audiência com Marcola só foi registrada em 27 de dezembro, com o nome de Mantega e nenhum outro. Galípolo não contou ao então presidente do BC, Roberto Campos Neto, sobre a reunião.
 
-O que se disse ali tem duas versões. A do Planalto: Vorcaro falou de concentração bancária e de perseguição, e Lula respondeu que o assunto era técnico e cabia ao Banco Central. A apurada pelo Poder360: Vorcaro contou que o BTG queria comprar o Master por R$ 1, perguntou se devia vender, e Lula criticou Campos Neto e André Esteves e recomendou que ele seguisse com o banco. Naquela época, o mercado já falava em problemas de liquidez do Master, que oferecia CDBs a 140% do CDI. Saindo da sala, Vorcaro escreveu à namorada: "Foi ótimo", "Muito forte", "3 ministros".
+O que se disse ali tem duas versões. A do Planalto: Vorcaro disse sentir-se perseguido, e Lula respondeu que eventuais denúncias deveriam ser analisadas tecnicamente pelo Banco Central. A apurada pelo Poder360: Vorcaro contou que o BTG queria comprar o Master por R$ 1, perguntou se devia vender, e Lula criticou Campos Neto e André Esteves e recomendou que ele seguisse com o banco. Naquela época, o mercado já falava em problemas de liquidez do Master, que oferecia CDBs a 140% do CDI. Saindo da sala, Vorcaro escreveu à namorada: "Foi ótimo", "Muito forte", "3 ministros".
 
-Em 22 de janeiro de 2025, o advogado Walfrido Warde escreveu a Vorcaro que tinha estado com o presidente: "Ele agradeceu mais uma vez o whisky e mandou um abraço", segundo mensagens reveladas pela jornalista Malu Gaspar. A Secom diz que houve um único encontro, que Lula não recebeu presente e não mandou recado.
+Em 22 de janeiro de 2025, o advogado Walfrido Warde escreveu a Vorcaro que tinha estado com o presidente: "Ele agradeceu mais uma vez o whisky e mandou um abraço", segundo mensagens reveladas pela jornalista Malu Gaspar. A Secom diz que houve um único encontro, que Lula não recebeu presente e não mandou recado. O Poder360, porém, relata um segundo encontro em 2025, em Minas Gerais, quando as suspeitas sobre o banco já circulavam, no qual Lula teria de novo incentivado Vorcaro a não vender o Master ao BTG.
 
 ## A queda
 
-Em março de 2025, o BRB, banco do governo do Distrito Federal, anunciou que compraria o Master. Em setembro, o Banco Central, já sob Galípolo, vetou o negócio. Em 18 de novembro de 2025, o BC liquidou o Master por "grave crise de liquidez" e "graves violações às normas", e a Polícia Federal prendeu Vorcaro na operação Compliance Zero. Mesmo assim, em julho de 2025, com as fraudes já conhecidas, o BC tinha autorizado Guga Lima a ficar com o banco Voiter, depois Pleno, levando o Credcesta junto. O Pleno foi liquidado em fevereiro de 2026.
+Em março de 2025, o BRB, banco do governo do Distrito Federal, anunciou que compraria o Master. Em setembro, o Banco Central, já sob Galípolo, vetou o negócio. Em 18 de novembro de 2025, o BC liquidou o Master por "grave crise de liquidez" e "graves violações às normas", e a Polícia Federal prendeu Vorcaro na operação Compliance Zero. Mesmo assim, em julho de 2025, o BC tinha autorizado Guga Lima a ficar com o banco Voiter, depois Pleno, levando o Credcesta junto, e o fez já sabendo de fraudes no Master, segundo o Poder360. O Pleno foi liquidado em fevereiro de 2026.
 
 Em junho de 2026, a nona fase da Compliance Zero chegou à Bahia. Segundo a decisão de Mendonça, a PF registrou uma transferência de R$ 3,5 milhões da PKL One à BN Financeira em outubro de 2025 e planilhas com pagamentos de mais de R$ 2,34 milhões a "Dudu", que os investigadores associam a Eduardo Sodré Martins, enteado de Wagner. O senador nega ter recebido propina. A defesa de Guga Lima diz que ele sempre agiu dentro da lei.
 
