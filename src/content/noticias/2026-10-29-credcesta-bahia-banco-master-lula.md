@@ -36,6 +36,18 @@ fontes:
     url: "https://static.poder360.com.br/2025/04/Banco-Master-balanco-consolidado-dez.2024.pdf"
   - titulo: "Senado, CPI do Crime Organizado: relatório do senador Alessandro Vieira (13/04/2026)"
     url: "https://static.poder360.com.br/2026/04/relatorio-cpi-crime-organizado-alessandro-vieira-13-abr-2026.pdf"
+  - titulo: "Poder360: Mulher de Moraes enviou contrato de R$ 131,2 mi a Vorcaro, diz jornal (01/07/2026)"
+    url: "https://www.poder360.com.br/poder-justica/mulher-de-moraes-enviou-contrato-de-r-1312-mi-a-vorcaro-diz-jornal/"
+  - titulo: "Poder360: Leia as íntegras de documentos que revelam relação de Moraes com Vorcaro (01/09/2026)"
+    url: "https://www.poder360.com.br/poder-justica/leia-as-integras-de-documentos-que-revelam-relacao-de-moraes-com-vorcaro/"
+  - titulo: "Poder360: Vorcaro pagou escritório de mulher de Moraes com aeronaves, diz PF (01/09/2026)"
+    url: "https://www.poder360.com.br/poder-justica/vorcaro-pagou-escritorio-de-mulher-de-moraes-com-aeronaves-diz-pf/"
+  - titulo: "Poder360: Leia o que a PF diz que Vorcaro conversou com Moraes (01/09/2026)"
+    url: "https://www.poder360.com.br/poder-justica/leia-o-que-a-pf-diz-que-vorcaro-conversou-com-moraes/"
+  - titulo: "Poder360: \"Estou online\": Vorcaro escreveu a Moraes na véspera de ser preso (01/09/2026)"
+    url: "https://www.poder360.com.br/poder-justica/estou-online-vorcaro-escreveu-a-moraes-na-vespera-de-ser-preso/"
+  - titulo: "InfoMoney: Vídeo, mensagens e contrato: novos elementos cercam Moraes no caso Vorcaro (21/09/2026)"
+    url: "https://www.infomoney.com.br/politica/video-mensagens-e-contrato-novos-elementos-cercam-moraes-no-caso-vorcaro/"
 draft: false
 gate: true
 ---
@@ -68,7 +80,32 @@ O segredo, porém, não era só o juro. O banco vendia as carteiras do Credcesta
 
 ## A rede em Brasília
 
-Enquanto crescia, o Master montou uma rede de contratos com nomes de todos os lados da política. Pelos registros da Receita obtidos pelo Poder360, a Pollaris, consultoria de Guido Mantega, ex-ministro da Fazenda dos governos Lula e Dilma, recebeu R$ 14 milhões em 2024 e 2025. A BN Financeira, de Bonnie Bonilha, nora de Jaques Wagner, recebeu R$ 12 milhões de 2022 a 2025, e o próprio Wagner, senador, ex-governador da Bahia e então líder do governo Lula no Senado, recebeu R$ 268,7 mil como pessoa física. O escritório de Ricardo Lewandowski, ex-ministro do Supremo e ex-ministro da Justiça de Lula, recebeu ao menos R$ 6,1 milhões a partir de novembro de 2023. A lista inclui também Henrique Meirelles, ex-presidente do Banco Central nos primeiros mandatos de Lula e ex-ministro da Fazenda de Temer; Michel Temer, ex-presidente da República; ACM Neto, ex-prefeito de Salvador; e o escritório da advogada Viviane Barci de Moraes, mulher do ministro do Supremo Alexandre de Moraes. Os que se manifestaram dizem que prestaram serviços. Executivos de bancos ouvidos pelo jornal O Globo classificaram os valores como fora do padrão para um banco de porte médio.
+Enquanto crescia, o Master montou uma rede de contratos com nomes de todos os lados da política, de aliados de Lula a adversários dele, passando pela família de um ministro do Supremo. Os que se manifestaram dizem que prestaram serviços. Executivos de bancos ouvidos pelo jornal O Globo classificaram os valores como fora do padrão para um banco de porte médio.
+
+Os valores, pelos registros da Receita enviados à CPI do Crime Organizado e obtidos pelo Poder360:
+
+| Quem recebeu | Cargo ou função | Valor pago pelo Master | Período |
+| --- | --- | --- | --- |
+| Barci de Moraes Advogados | Escritório de Viviane Barci de Moraes, mulher do ministro do STF Alexandre de Moraes | R$ 80,2 milhões | 2024 e 2025 |
+| Massa Intermediação e Gralha Azul | Grupo Massa, do apresentador Ratinho, pai do governador do Paraná, Ratinho Junior (PSD) | R$ 24 milhões | 2022 a 2025 |
+| Henrique Meirelles | Ex-presidente do BC nos governos Lula e ex-ministro da Fazenda de Temer | R$ 18,5 milhões | 2024 e 2025 |
+| MV Projetos e Consultoria | Empresa de Marconi Perillo, ex-governador de Goiás e presidente do PSDB de 2023 a 2025 | R$ 14,5 milhões | 2022 a 2025 |
+| Pollaris Consultoria | Empresa de Guido Mantega, ex-ministro da Fazenda de Lula e Dilma | R$ 14 milhões | 2024 e 2025 |
+| BN Financeira | Empresa de Bonnie Bonilha, nora do senador Jaques Wagner (PT-BA) | R$ 12 milhões | 2022 a 2025 |
+| Escritório de Michel Temer | Ex-presidente da República | R$ 10 milhões | 2025 |
+| Escritórios de Antônio Rueda | Presidente nacional do União Brasil | R$ 6,4 milhões | desde 2023 |
+| Lewandowski Advocacia | Escritório de Ricardo Lewandowski, ex-ministro do STF e da Justiça de Lula | ao menos R$ 6,1 milhões | desde novembro de 2023 |
+| A&M Consultoria | Empresa de ACM Neto, ex-prefeito de Salvador | R$ 5,45 milhões | 2023 a 2025 |
+| WF Comunicação | Empresa de Fabio Wajngarten, ex-secretário de Comunicação de Bolsonaro | R$ 3,8 milhões | 2025 |
+| Jaques Wagner | Senador (PT-BA) e então líder do governo Lula no Senado | R$ 268,7 mil | 2022 a 2025 |
+
+Somadas, as linhas da tabela passam de R$ 195 milhões. É uma fração do que o banco gastou com esse tipo de serviço: segundo o jornal O Globo, o Master declarou R$ 915,3 milhões em "serviços técnicos especializados" em 2023 e 2024, contra R$ 90 milhões do BRB na mesma rubrica.
+
+## O contrato com o escritório da mulher de Moraes
+
+A maior linha da tabela tem história própria. Em 17 de janeiro de 2024, a advogada Viviane Barci de Moraes, mulher do ministro do STF Alexandre de Moraes, mandou a Vorcaro pelo WhatsApp: "Bom dia! Segue a minuta do contrato. Abraço". Pelo contrato, o escritório receberia R$ 3,6 milhões por mês durante três anos, num total de R$ 131.275.071,72, segundo o jornal O Estado de S. Paulo, citado pelo Poder360. Foram pagos R$ 80,2 milhões até a liquidação. Em março de 2024, Vorcaro disse a uma funcionária que esse pagamento era o "mais importante" e que fosse feito "do jeito que for", segundo o relatório da PF.
+
+Em 19 de maio de 2025, a PF encontrou um segundo acordo, de R$ 50 milhões, por meio da holding Viking Participações: R$ 40 milhões seriam quitados com cotas de um jato Embraer Legacy 650 e de um helicóptero Airbus EC 155, e o restante com uso das aeronaves. O documento no relatório não tem assinaturas, e o InfoMoney informa que a contratação não se concretizou, mas o escritório já usava as aeronaves em julho de 2025. Um vídeo divulgado pelo O Globo mostra Moraes e a mulher desembarcando do Legacy no Rio em 22 de agosto de 2025; o gabinete do ministro havia negado viagens em aviões de Vorcaro. O escritório diz que contratou um táxi aéreo, que Vorcaro nunca esteve nos voos, que prestou os serviços (94 reuniões e 36 pareceres, segundo nota) e que, antes de assinar, consultou o ministro sobre impedimentos. Moraes afirma que nunca julgou causa do Master.
 
 ## O encontro no Planalto
 
@@ -77,6 +114,19 @@ Em 4 de dezembro de 2024, segundo o Poder360, Guido Mantega, ex-ministro da Faze
 O que se disse ali tem duas versões. A do Planalto: Vorcaro disse sentir-se perseguido, e Lula respondeu que eventuais denúncias deveriam ser analisadas tecnicamente pelo Banco Central. A apurada pelo Poder360: Vorcaro contou que o BTG queria comprar o Master por R$ 1, perguntou se devia vender, e Lula criticou Campos Neto e André Esteves, presidente-executivo do BTG Pactual, e recomendou que ele seguisse com o banco. Naquela época, o mercado já falava em problemas de liquidez do Master, que oferecia CDBs a 140% do CDI. Saindo da sala, Vorcaro escreveu à namorada: "Foi ótimo", "Muito forte", "3 ministros".
 
 Em 22 de janeiro de 2025, o advogado Walfrido Warde escreveu a Vorcaro que tinha estado com o presidente: "Ele agradeceu mais uma vez o whisky e mandou um abraço", segundo mensagens reveladas pela jornalista Malu Gaspar. A Secom, Secretaria de Comunicação Social da Presidência, diz que houve um único encontro, que Lula não recebeu presente e não mandou recado. O Poder360, porém, relata um segundo encontro em 2025, em Minas Gerais, quando as suspeitas sobre o banco já circulavam, no qual Lula teria de novo incentivado Vorcaro a não vender o Master ao BTG.
+
+## As mensagens ao ministro Alexandre de Moraes
+
+No celular de Vorcaro, a PF encontrou conversas com um contato salvo como "Alexandre de Moraes BRASILIA", número que o banqueiro recebeu em dezembro de 2023. O sigilo caiu em 1º de setembro de 2026, por decisão do ministro André Mendonça, relator do caso no STF. Parte das mensagens foi enviada em modo de visualização única, e as respostas do contato quase nunca foram recuperadas. O que se lê é o lado de Vorcaro, nas semanas antes da prisão, segundo o relatório da PF divulgado pelo Estadão e pelo Poder360:
+
+- **30 de outubro de 2025**, pedindo que o contato falasse com o diretor-geral da Polícia Federal, Andrei Rodrigues, e com o procurador-geral da República, Paulo Gonet: "É importante reforçar com Andrei e Paulo pra não deixar ninguém de baixo fazer uma sacanagem que aí vai tudo pro saco." No mesmo dia, enviou os nomes de 4 delegados e 3 procuradores do caso, que disse ter recebido de amigos no Banco Central, e escreveu: "Tudo de importante no final fica no seu colo! [...] tenho certeza que cada vez mais se consolidará como a pessoa mais importante do país."
+- **4 de novembro**: "Médio a grave seria busca ou quebra de sigilo?" e "Algo que dê pra bloquear?"
+- **6 de novembro**: "Como estamos aí? Conseguiu bloquear a maldade? Isso é Brasília? Sabe o tema? Está seguro ou tem que entrar agora urgente?" No mesmo período, sobre uma petição que seu advogado, Pierpaolo Bottini, queria apresentar: "Não vou fazer nenhum movimento que você não achar produtivo."
+- **15 de novembro**: "Acha que segunda já tenho que estar fora?", "Não conseguimos reverter isso com Paulo ou Andrei?" e "E o Galípolo tá sabendo? Conseguimos fazer algo?"
+- **16 de novembro**: "Se o Andrei conseguir atrasar pra outra semana, pois tem feriado, o banco não quebra. Tenta chamar ele e sensibilizar isso se achar possível." À noite: "Pelo amor de Deus, veja se você consegue bloquear toda maldade."
+- **17 de novembro**, às 17h26, horas depois de o juiz assinar a ordem de prisão: "Alguma novidade? Conseguiu ter notícia ou bloquear?" Às 20h48: "To indo assinar com os investidores de fora e estou online."
+
+Vorcaro foi preso quando se preparava para embarcar num jato particular rumo a Malta. Para os investigadores, os diálogos sugerem que Moraes pode ter compartilhado informações sensíveis sobre a investigação; é uma avaliação da PF, não uma conclusão judicial, e a própria PF diz que a análise não é exaustiva. Moraes negou a comunicação e chamou as informações de falsas. O STF começou a discutir o relatório em 15 de setembro, mas um pedido de vista do ministro Flávio Dino interrompeu o julgamento, e, até a última informação disponível, não havia decisão sobre investigar o ministro.
 
 ## A queda
 
