@@ -1,6 +1,6 @@
 ---
 title: "Banco Central liquida a MW Instituição de Pagamento, de Joinville"
-description: "O BC decretou a liquidação extrajudicial da MW por graves violações às normas do sistema de pagamentos. A instituição tem menos de 0,0002% do ativo do sistema."
+description: "O BC liquidou a MW por graves violações às normas do sistema de pagamentos. A instituição tem menos de 0,0002% do ativo do sistema financeiro."
 date: 2026-10-29
 editoria: "Brasil"
 keywords: ["Banco Central", "liquidação extrajudicial", "instituição de pagamento", "Pix", "MW Pay"]
