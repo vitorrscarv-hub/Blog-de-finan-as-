@@ -50,6 +50,9 @@ export const SITE = {
       segundos: 4,
       maximo: 4,
       materias: [
+        '2026-10-29-credcesta-bahia-banco-master-lula',
+        '2026-10-29-maiores-perdas-bolsa-reeleicao-lula',
+        '2026-10-29-bottini-ex-advogado-vorcaro-ministerio-justica',
         '2026-10-28-correios-garantia-tesouro-emprestimo-7-bilhoes',
         '2026-10-28-governo-avalia-iof-lci-lca-cri-cra',
         '2026-10-27-diversificacao-all-weather-volatilidade',
