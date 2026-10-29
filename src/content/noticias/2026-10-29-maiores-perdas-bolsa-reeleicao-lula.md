@@ -1,5 +1,5 @@
 ---
-title: "Três pregões, 16,6% a menos: as empresas que mais perderam na bolsa desde a reeleição de Lula"
+title: "As empresas que mais perderam na bolsa desde a reeleição de Lula"
 description: "Vamos, Magazine Luiza, Cosan e Hapvida perderam mais da metade do valor desde 23/10. Risco fiscal, IOF e crise política explicam a queda."
 date: 2026-10-29
 editoria: "Mercado"
@@ -9,7 +9,11 @@ fontes:
   - titulo: "B3: Informações Consolidadas de Negócios, 23/10, 26/10 e 28/10/2026"
     url: "https://arquivos.b3.com.br/"
   - titulo: "B3: carteira do dia do Ibovespa (29/10/2026)"
-    url: "https://sistemaswebb3-listados.b3.com.br/indexPage/day/IBOV?language=pt-br"
+    url: "https://sistemaswebb3-listados.b3.com.br/indexProxy/indexCall/GetPortfolioDay/eyJsYW5ndWFnZSI6InB0LWJyIiwicGFnZU51bWJlciI6MSwicGFnZVNpemUiOjEyMCwiaW5kZXgiOiJJQk9WIiwic2VnbWVudCI6IjEifQ=="
+  - titulo: "B3: fechamentos diários do Ibovespa em 2026"
+    url: "https://sistemaswebb3-listados.b3.com.br/indexStatisticsProxy/IndexCall/GetPortfolioDay/eyJpbmRleCI6IklCT1YiLCJsYW5ndWFnZSI6InB0LWJyIiwieWVhciI6IjIwMjYifQ=="
+  - titulo: "B3: fechamentos diários do Índice Financeiro (IFNC) em 2026"
+    url: "https://sistemaswebb3-listados.b3.com.br/indexStatisticsProxy/IndexCall/GetPortfolioDay/eyJpbmRleCI6IklGTkMiLCJsYW5ndWFnZSI6InB0LWJyIiwieWVhciI6IjIwMjYifQ=="
   - titulo: "InfoMoney: Por que Ibovespa caiu 2,7% hoje após terça mais tranquila no mercado (28/10/2026)"
     url: "https://www.infomoney.com.br/mercados/ibovespa-estresse-continua-por-que-indice-cai-forte-apos-terca-mais-tranquila-no-mercado-28102026/"
   - titulo: "InfoMoney: Ibovespa desaba 13% após eleição, em dia de circuit breaker; dólar dispara (26/10/2026)"
@@ -22,7 +26,7 @@ draft: false
 gate: true
 ---
 
-Na sexta-feira antes do segundo turno, o Ibovespa fechou em 205.082 pontos. Na quarta-feira (28), terminou em 171.006,10, segundo o InfoMoney. São 16,6% a menos em três pregões. Das 76 ações que compõem o índice, 72 caíram no período, pelos dados da B3. Não foi uma correção localizada: foi o mercado inteiro reprecificando o Brasil dos próximos quatro anos.
+Na sexta-feira antes do segundo turno, o Ibovespa fechou em 205.082,56 pontos. Na quarta-feira (28), terminou em 171.006,10, segundo a B3. São 16,6% a menos em três pregões. Das 76 ações que compõem o índice, 72 caíram no período, pelos dados da B3. Não foi uma correção localizada: foi o mercado inteiro reprecificando o Brasil dos próximos quatro anos.
 
 ## Quem mais perdeu
 
@@ -54,15 +58,15 @@ A lista não é aleatória. Varejo, construtoras, locadoras, educação e saúde
 
 ## O risco fiscal
 
-O mercado esperava, depois da eleição, um sinal de controle de gastos. O que veio foi o contrário. Na quarta, circulou a notícia de que a equipe econômica estuda cobrar IOF sobre LCI, LCA, CRI, CRA e debêntures incentivadas, aplicações hoje livres de imposto de renda. "O que dá esse tom mais negativo à Bolsa é essa ideia de tributação em títulos isentos", disse ao InfoMoney Luciano França, da Paramis Avantgarde, lembrando que o efeito chega a construtoras e infraestrutura, que se financiam com esses papéis.
+O mercado esperava, depois da eleição, um sinal de controle de gastos. O que veio foi o contrário. Na quarta, segundo O Globo, citado pelo Money Times, a equipe econômica estudava cobrar IOF sobre LCI, LCA, CRI, CRA e debêntures incentivadas, aplicações hoje livres de imposto de renda. "O que dá esse tom mais negativo à Bolsa é essa ideia de tributação em títulos isentos", disse ao InfoMoney Luciano França, da Paramis Avantgarde, lembrando que o efeito chega a empresas que se financiam com esses papéis, como as do setor imobiliário e de infraestrutura.
 
-O ministro da Fazenda ainda não foi escolhido, e o plano para buscar o centro da meta fiscal em 2027 ainda é um projeto. "O mercado espera algum sinal sobre austeridade fiscal. O governo parece não reagir muito neste sentido", disse Gabriel Gonçalves, da Ghia Multi Family Office. Para Lucas Xavier, da AW Capital, "quanto mais tempo o governo demorar para sinalizar algo do tipo, mais tendemos a ver desvalorizações relevantes". Os analistas do Itaú BBA escreveram que a máxima "caiu, comprou" não se aplica automaticamente ao momento.
+O mercado ainda espera a indicação para o Ministério da Fazenda, segundo o Money Times, e o plano para buscar o centro da meta fiscal em 2027 ainda é um projeto de lei complementar em preparação, segundo o InfoMoney. "O mercado espera algum sinal sobre austeridade fiscal. O governo parece não reagir muito neste sentido", disse Gabriel Gonçalves, da Ghia Multi Family Office. Para Lucas Xavier, da AW Capital, "quanto mais tempo o governo demorar para sinalizar algo do tipo, mais tendemos a ver desvalorizações relevantes". Os analistas do Itaú BBA escreveram que a máxima "caiu, comprou" não se aplica automaticamente ao momento.
 
 ## O clima político
 
 Ao risco fiscal somou-se um ambiente político de confronto aberto. O resultado da eleição foi proclamado pelo TSE às 21h09 de domingo (25). Às 21h16, sete minutos depois, a Polícia Federal assinou o pedido para apreender os passaportes de Flávio Bolsonaro, o candidato derrotado, numa investigação sobre suspeita de lavagem de dinheiro e evasão de divisas. O ministro Alexandre de Moraes autorizou no mesmo dia, segundo o Poder360.
 
-Flávio não entregou os passaportes. Saiu do país pela Argentina na noite de terça e desembarcou em Miami na quarta, de onde divulgou uma carta em que diz ter deixado o Brasil para escapar de "um regime de exceção" e alega fraude na eleição, sem apresentar provas. Para o Citi, citado pelo InfoMoney, o episódio reduz quase a zero a chance de contestação do resultado. Para quem investe, o recado é outro: o país sai da eleição com o principal líder da oposição fora do território, sob investigação aberta minutos depois da apuração, e com um governo que ainda não disse como vai fechar as contas.
+Flávio não entregou os passaportes. Saiu do país pela Argentina na noite de terça e desembarcou em Miami na quarta, de onde divulgou uma carta em que alega fraude na eleição, sem apresentar provas. Disse ter deixado o Brasil para sair de "um regime de exceção". Para o Citi, citado pelo InfoMoney, o episódio reduz quase a zero a chance de contestação do resultado. Para quem investe, o recado é outro: o país sai da eleição com o principal líder da oposição fora do território, sob investigação aberta minutos depois da apuração, e com um governo que ainda não disse como vai fechar as contas.
 
 ## O que os números dizem
 
