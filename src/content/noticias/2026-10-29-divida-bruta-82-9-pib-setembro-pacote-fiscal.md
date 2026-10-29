@@ -16,7 +16,7 @@ draft: false
 gate: true
 ---
 
-A Dívida Bruta do Governo Geral (DBGG) ficou em 82,9% do PIB em setembro, o equivalente a R$ 11,1 trilhões, o mesmo percentual de agosto, segundo as estatísticas fiscais que o Banco Central divulgou nesta quinta-feira (29). A DBGG reúne governo federal, INSS e governos estaduais e municipais. Os jornais, entre eles a Folha e o g1, destacaram que é o nível mais alto desde 2021.
+A Dívida Bruta do Governo Geral (DBGG) ficou em 82,9% do PIB em setembro, o equivalente a R$ 11,1 trilhões, o mesmo percentual de agosto, segundo as estatísticas fiscais que o Banco Central divulgou nesta quinta-feira (29). A DBGG reúne governo federal, INSS e governos estaduais e municipais. O g1 destacou, na manchete, que é o maior nível em cinco anos e meio.
 
 No mesmo dia, o secretário do Tesouro Nacional, Daniel Leal, afirmou que a equipe econômica trabalha num pacote de medidas para o próximo governo, segundo o g1. É a conjunção dos dois fatos que dá o contexto do dia.
 
@@ -32,15 +32,11 @@ Somando o primário e os juros, o déficit nominal foi de R$ 113,0 bilhões no m
 
 A Dívida Líquida do Setor Público (DLSP) atingiu 70,0% do PIB (R$ 9,4 trilhões), alta de 0,7 ponto percentual no mês, em grande parte por causa dos juros apropriados (0,8 ponto). No ano, a DLSP subiu 4,7 pontos percentuais do PIB.
 
-Na DBGG, o aumento no ano é de 4,3 pontos percentuais do PIB. O Banco Central decompõe: os juros nominais incorporados somaram 7,2 pontos e as emissões líquidas de dívida, 1,1 ponto, enquanto o crescimento do PIB nominal reduziu a relação em 3,9 pontos. Em setembro, a dívida ficou estável em relação ao PIB porque os resgates líquidos (-0,4 ponto) e o crescimento do PIB nominal (-0,4 ponto) compensaram os juros do mês (0,8 ponto).
-
 ## O que o Tesouro disse
 
 Segundo o g1, Daniel Leal afirmou que o pacote para o governo que começa em 2027 será apresentado "oportunamente" pelo ministro da Fazenda e pelo presidente da República, e que não quis antecipar propostas. "A gente está discutindo vários temas e vamos continuar falando sobre eles", disse, de acordo com o jornal.
 
-Ele também comentou a notícia, publicada por jornais na véspera, de que o governo estudaria cobrar IOF sobre títulos hoje isentos, como LCI e LCA. Para Leal, não há "uma medida pronta para ser feita" e a discussão de fato, para endereçar com alguma medida, não existe até hoje. Ele disse que o debate sobre o tema acontece sempre, com impactos sendo mensurados.
-
-Ou seja, o relato do dia 28 de uma avaliação do governo segue sem decisão anunciada, e agora há uma declaração oficial de que não há medida pronta.
+Ele também comentou a informação de que o governo estudaria cobrar IOF sobre títulos hoje isentos, como LCI e LCA. Para Leal, não há "uma medida pronta para ser feita" e a discussão de fato, para endereçar com alguma medida, não existe até hoje. Ele disse que o debate sobre o tema acontece sempre, com impactos sendo mensurados.
 
 ## Para o investidor
 
