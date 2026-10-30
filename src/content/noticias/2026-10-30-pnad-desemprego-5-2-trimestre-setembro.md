@@ -32,6 +32,10 @@ A série do IBGE mostra que o ano de 2026 teve um pico no começo. A taxa subiu 
 
 Ou seja, o dado de setembro retoma o nível de fim de 2025, mas ainda não alcança a mínima histórica de 5,1%.
 
+## Como o trimestre se compara ao longo da série
+
+Olhando só o trimestre de julho a setembro de cada ano, a taxa de desocupação era de 7,1% em 2012 e chegou a 14,9% em 2020, no ano da pandemia. Depois veio uma queda em sequência: 12,7% em 2021, 8,7% em 2022, 7,7% em 2023, 6,4% em 2024, 5,6% em 2025 e 5,2% em 2026. São seis trimestres de julho a setembro seguidos em queda, segundo a mesma série do IBGE.
+
 ## Quantas pessoas trabalham
 
 A população ocupada chegou a 103,6 milhões de pessoas no trimestre até setembro. São 581 mil pessoas a mais que no trimestre encerrado em junho (103,1 milhões) e 1,2 milhão a mais que um ano antes (102,4 milhões), o que corresponde a uma alta de 1,2% em 12 meses.
