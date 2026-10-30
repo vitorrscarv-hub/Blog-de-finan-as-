@@ -1,6 +1,6 @@
 ---
 title: "Governo Central tem superávit de R$ 4,8 bilhões em setembro, com ajuda de R$ 12,8 bilhões em precatórios cancelados"
-description: "O Tesouro registrou superávit primário em setembro, acima da mediana do Prisma Fiscal, que previa déficit. O Tesouro cita o cancelamento de R$ 12,8 bi em precatórios."
+description: "Superávit primário acima do esperado pelo Prisma Fiscal, que previa déficit. O Tesouro cita o cancelamento de R$ 12,8 bi em precatórios."
 date: 2026-10-30
 editoria: "Brasil"
 keywords: ["resultado primário", "Governo Central", "Tesouro Nacional", "precatórios", "contas públicas"]
