@@ -50,6 +50,7 @@ export const SITE = {
       segundos: 4,
       maximo: 4,
       materias: [
+        '2026-10-30-binance-ataque-hacker-6-bilhoes',
         '2026-10-29-credcesta-bahia-banco-master-lula',
         '2026-10-29-maiores-perdas-bolsa-reeleicao-lula',
         '2026-10-29-bottini-ex-advogado-vorcaro-ministerio-justica',
