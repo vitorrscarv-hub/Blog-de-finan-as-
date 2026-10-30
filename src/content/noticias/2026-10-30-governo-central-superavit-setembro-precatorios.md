@@ -12,7 +12,7 @@ draft: false
 gate: true
 ---
 
-O Governo Central, que reúne Tesouro Nacional, Previdência Social e Banco Central, registrou superávit primário de R$ 4,839 bilhões em setembro, segundo o boletim Resultado do Tesouro Nacional (RTN) divulgado na quinta-feira (29). No mesmo mês de 2025, houve déficit de R$ 14,4 bilhões, em valores correntes. O resultado ficou acima da mediana das expectativas do Prisma Fiscal, do Ministério da Fazenda, que apontava déficit de R$ 7,5 bilhões, e foi o maior superávit para um mês de setembro desde 2023.
+O Governo Central registrou superávit primário de R$ 4,839 bilhões em setembro, segundo o boletim Resultado do Tesouro Nacional (RTN) divulgado na quinta-feira (29). No mesmo mês de 2025, houve déficit de R$ 14,4 bilhões, em valores correntes. O resultado ficou acima da mediana das expectativas do Prisma Fiscal, do Ministério da Fazenda, que apontava déficit de R$ 7,5 bilhões, e foi o maior superávit para um mês de setembro desde 2023.
 
 O resultado primário é a diferença entre receitas e despesas antes do pagamento de juros da dívida.
 
@@ -38,7 +38,7 @@ As despesas totais de janeiro a setembro somaram R$ 1,965 trilhão, contra R$ 1,
 
 ## O que olhar
 
-O resultado de setembro foi melhor que o esperado pelo mercado, e o Tesouro aponta uma receita pontual de R$ 12,8 bilhões entre os fatores. A nota não indica que esse tipo de receita se repita. Por isso o dado do mês isolado diz menos sobre a trajetória fiscal que o acumulado de 12 meses, que segue em déficit.
+O resultado de setembro foi melhor que o esperado pela mediana do Prisma Fiscal, e o Tesouro aponta o cancelamento de R$ 12,8 bilhões em precatórios entre os fatores. A nota não indica que esse tipo de receita se repita. Por isso o dado do mês isolado diz menos sobre a trajetória fiscal que o acumulado de 12 meses, que segue em déficit.
 
 Tanto no mês (13,6% contra 2,4%) quanto no acumulado do ano (6,5% contra 5,4%), a receita líquida cresceu em termos reais mais que a despesa. Quem acompanha a dívida pública costuma olhar essa relação ao longo de vários meses, e não um único resultado.
 
