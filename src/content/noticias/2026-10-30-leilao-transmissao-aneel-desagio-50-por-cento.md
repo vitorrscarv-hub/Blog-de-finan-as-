@@ -37,12 +37,13 @@ A Aneel divulgou, ao longo da tarde, o resultado de cada lote. Pelos avisos publ
 - Lote 1: Neoenergia Transmissão, na Bahia, com instalações estimadas em R$ 493,1 milhões.
 - Lote 2: EDP Transmissão Goiás, para uma subestação e 126 km de linhas em Goiás e na Bahia.
 - Lote 3: CYMI Construções e Participações RJI, com linhas e subestação em São Paulo.
+- Lote 4: Celeo Redes Brasil, com empreendimentos em três estados que a Aneel considera estruturais para a integração Brasil-Bolívia.
 - Lote 5: CYMI Construções e Participações, no Paraná, para a região metropolitana de Curitiba.
 - Lote 6: COX Brasil, para reforçar a rede no oeste e no sudoeste do Paraná.
 - Lote 7: Neoenergia Transmissão, na Paraíba.
 - Lote 8: Celeo Redes Brasil, com investimento estimado de R$ 753,2 milhões.
 
-O lote 4 não aparecia na lista de notícias da agência no momento da consulta, e a relação completa, com os lances de cada vencedor, está na página do resultado que a Aneel indica na nota. Este texto se limita ao que a agência publicou.
+A relação completa, com os lances de cada vencedor, está na página do resultado que a Aneel indica na nota. Este texto se limita ao que a agência publicou.
 
 ## O que muda para quem investe
 
