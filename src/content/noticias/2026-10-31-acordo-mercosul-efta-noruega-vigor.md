@@ -1,6 +1,6 @@
 ---
 title: "Acordo Mercosul-EFTA passa a valer entre Brasil e Noruega em 1º de novembro"
-description: "O acordo zera tarifas da Noruega para vestuário, óleos vegetais e alimentos. Segundo o MDIC, 99,8% das exportações brasileiras ao país terão livre comércio."
+description: "O acordo zera tarifas da Noruega para vestuário, óleos vegetais e alimentos. Segundo o MDIC, 99,8% das exportações do Brasil ao país terão livre comércio."
 date: 2026-10-31
 editoria: "Internacional"
 pais: "Noruega"
