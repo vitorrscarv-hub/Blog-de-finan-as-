@@ -13,14 +13,14 @@ fontes:
   - titulo: "Banco Central, API Olinda: PTAX de venda, de 30/09 a 30/10/2026"
     url: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo(moeda=@m,dataInicial=@di,dataFinalCotacao=@df)?@m='USD'&@di='09-30-2026'&@df='10-30-2026'&$format=json"
   - titulo: "Banco Central, Boletim Focus: expectativas de Selic por reunião do Copom (23/10/2026)"
-    url: "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoSelic?$top=20&$orderby=Data%20desc&$format=json"
+    url: "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoSelic?$top=10&$filter=Reuniao%20eq%20'R7/2026'&$orderby=Data%20desc&$format=json"
   - titulo: "Banco Central, SGS: meta Selic, série 432"
     url: "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/1?formato=json"
   - titulo: "Money Times: Copom e payroll dividem atenções em semana mais curta no Brasil (01/11/2026)"
     url: "https://www.moneytimes.com.br/queda-da-selic-copom-e-payroll-dividem-atencoes-em-semana-mais-curta-no-brasil-veja-a-agenda/"
   - titulo: "Money Times: Lula 4 ou \"Dilma 3\"? Rogério Xavier, da SPX Capital, alerta para riscos da política econômica (01/11/2026)"
     url: "https://www.moneytimes.com.br/lula-4-ou-dilma-3-rogerio-xavier-da-spx-capital-alerta-para-riscos-da-politica-economica-lmrs/"
-  - titulo: "Poder360: Leia o que disse Lara Resende sobre acabar com os juros"
+  - titulo: "Poder360: Leia o que disse Lara Resende sobre acabar com os juros (02/11/2026)"
     url: "https://www.poder360.com.br/poder-economia/leia-o-que-disse-lara-resende-sobre-acabar-com-os-juros/"
 draft: false
 gate: true
@@ -32,19 +32,19 @@ O mercado esperava do governo um plano para os gastos. O que veio foi uma ofensi
 
 ## "Chantagem, terrorismo e especulação"
 
-Segundo a Folha de S.Paulo, integrantes do governo e do PT intensificaram no fim de semana as críticas ao que chamam de "chantagem, terrorismo e especulação" do mercado financeiro. Na sexta, o ex-ministro da Casa Civil e senador eleito Rui Costa disse que há "muito de especulação, de busca de ganhos extraordinários" na formação de preços. No sábado, o ministro da Secretaria-Geral da Presidência, Guilherme Boulos, afirmou: "Você não pode contrapor uma chantagem de mercado à vontade popular. Isso é anular a democracia". No domingo, Lula gravou um vídeo para dizer que nenhum programa social será cortado.
+Segundo a Folha de S.Paulo, integrantes do governo e do PT intensificaram desde sexta-feira as críticas ao que chamam de "chantagem, terrorismo e especulação" do mercado financeiro. Na sexta, o ex-ministro da Casa Civil e senador eleito Rui Costa disse que há "muito de especulação, de busca de ganhos extraordinários" na formação de preços. No sábado, o ministro da Secretaria-Geral da Presidência, Guilherme Boulos, afirmou: "Você não pode contrapor uma chantagem de mercado à vontade popular. Isso é anular a democracia". No domingo, Lula divulgou um vídeo para dizer que nenhum programa social será cortado.
 
-A ex-ministra Gleisi Hoffmann, ex-presidente do PT, foi além e usou um artigo do economista André Lara Resende, um dos pais do Plano Real, para acusar os analistas de "confundir o interesse dos rentistas com a racionalidade econômica". No texto, Lara Resende sustenta que a Selic alta é a principal causa do desequilíbrio fiscal, segundo o Poder360. O rumor de que ele se reuniria com Lula foi tão mal recebido que o ministro da Fazenda, Dario Durigan, precisou negar que o governo estude tabelar juros.
+A ex-ministra Gleisi Hoffmann, ex-presidente do PT, foi além e usou um artigo do economista André Lara Resende, um dos pais do Plano Real, que acusa os analistas do mercado de "confundir o interesse dos rentistas com a racionalidade econômica". Para Gleisi, o texto é "fundamental para enfrentar essa ofensiva terrorista sobre a política fiscal brasileira". No artigo, publicado em 25 de setembro, Lara Resende sustenta que a Selic alta é a principal causa do desequilíbrio fiscal, segundo o Poder360. O rumor de que ele se reuniria com Lula foi tão mal recebido que o ministro da Fazenda, Dario Durigan, precisou negar que o governo estude tabelar juros.
 
 ## O alvo é o Banco Central
 
-O próprio Lula deixou claro onde está o incômodo. "Você não pode ser presidente da República e não poder discutir a política monetária, porque o Banco Central é independente", disse, segundo a Folha. A lei de 2021 que deu autonomia ao BC existe justamente para separar a decisão sobre os juros do calendário político: os mandatos dos diretores não coincidem com o do presidente da República.
+O próprio Lula deixou claro onde está o incômodo. Em sabatina ao SBT, em 19 de outubro, ele disse: "Você não pode ser presidente da República e não poder discutir a política monetária, porque o Banco Central é independente", segundo a Folha. A lei de 2021 que deu autonomia ao BC existe justamente para separar a decisão sobre os juros do calendário político: os mandatos dos diretores não coincidem com o do presidente da República.
 
-A pressão chega no pior momento. Antes da eleição, o Boletim Focus de 23 de outubro projetava um corte da Selic para 13,50% nesta reunião, pelos dados do Banco Central. Depois do choque, a maioria dos economistas passou a apostar que o Copom interrompa o ciclo de cortes iniciado em março, segundo a Folha. O dólar mais caro encarece importados e combustíveis, os juros futuros subiram e a incerteza fiscal aumentou. Cortar juros nesse cenário, ou parecer ceder ao governo, pode custar ao BC a credibilidade que segura as expectativas de inflação.
+A pressão chega no pior momento. Antes da eleição, o Boletim Focus de 23 de outubro projetava um corte da Selic para 13,50% nesta reunião, pelos dados do Banco Central. Depois do choque, a maioria dos economistas passou a apostar que o Copom interrompa o ciclo de cortes iniciado em março, segundo a Folha. O dólar mais caro encarece importados e combustíveis, os juros futuros sofreram estresse e a incerteza fiscal aumentou, segundo a Folha. Cortar juros nesse cenário, ou parecer ceder ao governo, pode custar ao BC a credibilidade que segura as expectativas de inflação.
 
 ## Lula 4 ou "Dilma 3"
 
-Rogério Xavier, sócio-fundador da SPX Capital, resumiu a dúvida do mercado numa pergunta: o país terá um "Lula 4" ou, aos poucos, uma espécie de "Dilma 3"? Em texto citado pelo Money Times, ele diz que não espera um programa anunciado, mas um processo. "Uma decisão de cada vez, diante de alternativas que vão se estreitando", escreveu. O risco que ele aponta é o governo buscar estímulos por bancos públicos, subsídios e garantias, em vez de cortar gastos, e o Estado acabar tolerando inflação mais alta para lidar com o custo da dívida.
+Rogério Xavier, sócio-fundador da SPX Capital, resumiu a dúvida do mercado numa pergunta: o país terá um "Lula 4" ou, aos poucos, uma espécie de "Dilma 3"? Em texto citado pelo Money Times, ele diz que essa guinada, se vier, pode surgir não como um programa anunciado, mas como um processo. "Uma decisão de cada vez, diante de alternativas que vão se estreitando", escreveu. O risco que ele aponta é o governo buscar estímulos por bancos públicos, subsídios e garantias, em vez de cortar gastos, e o Estado acabar tolerando inflação mais alta para lidar com o custo da dívida.
 
 Xavier faz questão de dizer que não há destino inevitável: um programa fiscal crível, segundo ele, ainda pode reduzir o custo do dinheiro e mudar o humor. Até agora, porém, o programa não apareceu. O que apareceu foi a tentativa de transferir ao mercado e ao Banco Central a responsabilidade por uma desconfiança que nasce das contas públicas.
 
