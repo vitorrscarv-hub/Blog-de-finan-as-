@@ -36,4 +36,4 @@ A deputada federal Gleisi Hoffmann (PT-PR), ex-ministra de Lula, defendeu o arti
 
 A taxa Selic está em 13,75% ao ano, meta vigente desde 17 de setembro, segundo o Banco Central. A taxa é definida pelo Comitê de Política Monetária (Copom), segundo o g1.
 
-O que há de concreto na reportagem são três fatos: um economista publicou uma proposta, aliados de Lula a debatem em público, e o ministro da Fazenda e o presidente do BNDES dizem que ela não está em discussão no governo. Mercadante disse que o presidente ainda vai definir a equipe econômica. Este texto não avalia o mérito da proposta, não indica o efeito que ela teria sobre juros ou câmbio e não projeta o que o governo fará.
+O que há de concreto na reportagem são três fatos: um economista publicou uma proposta, uma aliada de Lula a defende em público, e o ministro da Fazenda e o presidente do BNDES dizem que ela não está em discussão no governo. Mercadante disse que o presidente ainda vai definir a equipe econômica. Este texto não avalia o mérito da proposta, não indica o efeito que ela teria sobre juros ou câmbio e não projeta o que o governo fará.
