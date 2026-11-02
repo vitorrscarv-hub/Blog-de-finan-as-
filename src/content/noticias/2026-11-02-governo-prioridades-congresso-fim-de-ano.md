@@ -20,7 +20,7 @@ O governo do presidente Luiz Inácio Lula da Silva (PT) quer aprovar quatro medi
 
 A proposta cria na Constituição o Sistema Único de Segurança Pública (Susp), para integrar ações da União, dos estados, do Distrito Federal e dos municípios. Também torna obrigatório o repasse de 50% dos recursos do Fundo Nacional de Segurança Pública e do Fundo Penitenciário Nacional aos estados e ao Distrito Federal, de acordo com o Poder360.
 
-A votação foi retirada do plenário em 15 de outubro por um impasse sobre emendas que mudam a idade de responsabilização criminal. Pelo Poder360, o líder da oposição, Rogério Marinho (PL-RN), propôs reduzir de 18 para 16 anos na maioria dos crimes e para 14 em casos específicos. O líder do PT, Camilo Santana (CE), apresentou emenda que reduz para 16 anos só nos crimes hediondos. O g1 informa que a posição do governo segue sendo não votar a maioridade penal junto com a PEC, e que uma PEC precisa de ao menos 49 votos entre os senadores, em dois turnos.
+Segundo o Poder360, a votação foi retirada do plenário em 15 de outubro por um impasse sobre emendas que mudam a idade de responsabilização criminal. Pelo Poder360, o líder da oposição, Rogério Marinho (PL-RN), propôs reduzir de 18 para 16 anos na maioria dos crimes e para 14 em casos específicos. O líder do PT, Camilo Santana (CE), apresentou emenda que reduz para 16 anos só nos crimes hediondos. O g1 informa que a posição do governo segue sendo não votar a maioridade penal junto com a PEC, e que uma PEC precisa de ao menos 49 votos entre os senadores, em dois turnos.
 
 ## PEC da Tarifa Zero
 
@@ -32,10 +32,10 @@ A Medida Provisória 1.394 de 2026, assinada em 25 de setembro, proibiu a explor
 
 ## Orçamento de 2027
 
-É a pauta mais atrasada. A Lei de Diretrizes Orçamentárias (LDO), que fixa a meta fiscal e as regras de gastos do ano seguinte, ainda não foi aprovada, e a Comissão Mista de Orçamento, instalada em junho, não tem relatores definidos. O presidente da comissão, deputado Domingos Neto (PSD-CE), disse em 27 de outubro que aguarda o envio dos projetos pelo presidente do Senado, conforme o Poder360. Neste ano, os relatores da LDO e da LOA serão senadores.
+Segundo o Poder360, a tramitação está em estágio inicial. A Lei de Diretrizes Orçamentárias (LDO), que fixa a meta fiscal e as regras de gastos do ano seguinte, ainda não foi aprovada, e a Comissão Mista de Orçamento, instalada em junho, não tem relatores definidos. O presidente da comissão, deputado Domingos Neto (PSD-CE), disse em 27 de outubro que aguarda o envio dos projetos pelo presidente do Senado, conforme o Poder360. Neste ano, os relatores da LDO e da LOA serão senadores.
 
 O ministro do Planejamento, Bruno Moretti, afirmou que a meta fiscal de 2027 é inegociável e que as medidas recentes do governo não comprometem o planejamento. O Poder360 lista, entre elas, o reajuste de 15% no benefício do Bolsa Família e o Desenrola Brasil 3. Este texto não confere o valor da meta na peça oficial e não o reproduz.
 
 ## O que acompanhar
 
-Para quem investe, o ponto é o calendário: as propostas precisam ser votadas até o fim do ano, e a do Orçamento ainda nem tem relatores. O Poder360 também aponta que o presidente do Senado, Davi Alcolumbre (União Brasil-AP), tem aceitado pautas do governo, como a PEC do fim da escala 6x1 e o projeto que amplia o teto de faturamento do MEI, mas que o PL pode disputar a presidência da Casa em 2027. Este texto não projeta quais propostas serão aprovadas.
+Para quem investe, o ponto é o calendário: o governo quer as propostas votadas até o fim do ano, e a do Orçamento ainda nem tem relatores. O Poder360 também aponta que o presidente do Senado, Davi Alcolumbre (União Brasil-AP), tem aceitado pautas do governo, como a PEC do fim da escala 6x1 e o projeto que amplia o teto de faturamento do MEI, mas que o PL pode disputar a presidência da Casa em 2027. Este texto não projeta quais propostas serão aprovadas.
