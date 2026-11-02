@@ -1,6 +1,6 @@
 ---
 title: "Governo quer votar PEC da Segurança, MP das bets e Orçamento de 2027 antes do fim do ano"
-description: "Segundo o Poder360, o PT quer aprovar quatro medidas em 2026, antes de o PL ter as maiores bancadas. A PEC da Segurança está na pauta do Senado de terça (3)."
+description: "Segundo o Poder360, o PT quer aprovar quatro medidas em 2026, antes de o PL ter as maiores bancadas. A PEC da Segurança vai ao Senado na terça (3)."
 date: 2026-11-02
 editoria: "Brasil"
 keywords: ["Congresso", "Orçamento 2027", "MP das bets", "PEC da Segurança", "meta fiscal"]
