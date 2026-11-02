@@ -1,6 +1,6 @@
 ---
 title: "Ministro da Fazenda nega que tabelar juros ou queimar reservas esteja em avaliação no governo Lula"
-description: "Durigan e Mercadante dizem que não há proposta de tabelar a Selic em discussão. A frase vem após a repercussão de um possível encontro de Lula com Lara Resende."
+description: "Durigan e Mercadante dizem que não há proposta de tabelar a Selic em discussão, após a repercussão de um possível encontro de Lula com Lara Resende."
 date: 2026-11-02
 editoria: "Brasil"
 keywords: ["Selic", "tabelamento de juros", "André Lara Resende", "Fazenda", "reservas cambiais"]
