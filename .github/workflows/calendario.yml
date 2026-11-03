@@ -1,0 +1,79 @@
+name: Robô do calendário de proventos
+
+# Atualiza src/data/calendario.json com os dados da B3 (scripts/atualizar-calendario.mjs, sem IA) e abre ou atualiza
+# um pull request no branch robo/calendario. O merge continua sendo do Vitor.
+on:
+  schedule:
+    # Segunda a sexta, 7h10 de Brasília (10h10 UTC).
+    - cron: '10 10 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: robo-calendario
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ASTRO_TELEMETRY_DISABLED: 1
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      BRANCH: robo/calendario
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - name: Preparar o branch do robô
+        run: |
+          git config user.name "robo-calendario"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin "$BRANCH" > /dev/null; then
+            git checkout -B "$BRANCH" "origin/$BRANCH"
+            git merge --no-edit origin/main
+          else
+            git checkout -b "$BRANCH" origin/main
+          fi
+
+      - name: Atualizar o calendário
+        run: node scripts/atualizar-calendario.mjs | tee robo.log
+
+      - name: Conferir e enviar
+        run: |
+          if git diff --quiet -- src/data/calendario.json; then
+            echo "Nada mudou no calendário."
+            exit 0
+          fi
+          node --test tests/unit/calendario.test.js
+          npm run build
+          git add src/data/calendario.json
+          git commit -m "atualiza calendário de proventos com dados da B3"
+          git push -u origin "$BRANCH"
+          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            {
+              echo "Atualização automática do calendário de proventos com os dados da B3 (\`scripts/atualizar-calendario.mjs\`, sem IA)."
+              echo
+              echo "Resumo da última rodada:"
+              echo
+              echo '```'
+              cat robo.log
+              echo '```'
+              echo
+              echo "Linhas marcadas como FORA parecem prazo-limite (\"pagamento até\") e só entram depois de conferidas no aviso aos acionistas."
+            } > corpo.md
+            gh pr create --base main --head "$BRANCH" --title "Calendário de proventos: atualização automática" --body-file corpo.md
+          else
+            gh pr comment "$BRANCH" --body "Nova rodada do robô em $(date -u +%Y-%m-%d). Resumo: $(tr '\n' ' ' < robo.log | cut -c1-1500)"
+          fi
