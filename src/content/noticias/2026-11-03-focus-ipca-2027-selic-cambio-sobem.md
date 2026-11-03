@@ -1,6 +1,6 @@
 ---
 title: "Focus eleva a projeção do IPCA de 2027 para 4,76% e a da Selic do fim de 2027 para 12,50%"
-description: "No Boletim Focus com dados de 30/10, o IPCA de 2027 foi de 4,34% para 4,76%, a Selic de 2027 de 11,75% para 12,50% e o dólar de 2026 de R$ 5,05 para R$ 5,34."
+description: "No Focus de 30/10, o IPCA de 2027 foi de 4,34% para 4,76%, a Selic de 2027 de 11,75% para 12,50% e o dólar de 2026 de R$ 5,05 para R$ 5,34."
 date: 2026-11-03
 editoria: "Brasil"
 keywords: ["Boletim Focus", "IPCA 2027", "Selic", "projeção de câmbio", "PIB"]
