@@ -38,4 +38,4 @@ O aproveitamento do gás natural foi de 98,2% em setembro. Foram disponibilizado
 
 O boletim traz volume produzido, e não preço, receita ou lucro de nenhuma empresa. A produção maior é um dado de oferta: o que ela representa para a receita de uma companhia depende da cotação do petróleo, do câmbio, dos custos e dos impostos e participações, que a ANP não trata na nota. Quem acompanha o setor costuma cruzar o volume com os resultados trimestrais e os comunicados de cada empresa, e este texto não faz essa conta nem compara empresas.
 
-A ANP também mantém o boletim em formato interativo, em que é possível alterar o mês de referência e filtrar por campo, estado e bacia,.
+A ANP também mantém o boletim em formato interativo, em que é possível alterar o mês de referência e filtrar por campo, estado e bacia.
