@@ -1,6 +1,102 @@
 {
-  "atualizado": "2026-10-19",
+  "atualizado": "2026-11-03",
   "acoes": [
+    {
+      "empresa": "Bradesco",
+      "ticker": "BBDC3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.017249826,
+      "dataCom": "2026-10-01",
+      "dataPagamento": "2026-11-03",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de BRADESCO (BBDC), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJCREMiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Bradesco",
+      "ticker": "BBDC4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.018974809,
+      "dataCom": "2026-10-01",
+      "dataPagamento": "2026-11-03",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de BRADESCO (BBDC), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJCREMiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Itaú Unibanco",
+      "ticker": "ITUB4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.018182,
+      "dataCom": "2026-09-30",
+      "dataPagamento": "2026-11-03",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de ITAUUNIBANCO (ITUB), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IklUVUIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Allos",
+      "ticker": "ALOS3",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.291918638,
+      "dataCom": "2026-10-22",
+      "dataPagamento": "2026-11-04",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de ALLOS (ALOS), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkFMT1MiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Copasa",
+      "ticker": "CSMG3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.2556463313,
+      "dataCom": "2026-09-21",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de COPASA (CSMG), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkNTTUciLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Santander Brasil",
+      "ticker": "SANB11",
+      "tipo": "JCP",
+      "valorPorAcao": 0.40100389962,
+      "dataCom": "2026-10-20",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de SANTANDER BR (SANB), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlNBTkIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Localiza",
+      "ticker": "RENT3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.556580414,
+      "dataCom": "2026-09-25",
+      "dataPagamento": "2026-11-18",
+      "fonte": {
+        "titulo": "Localiza, Comunicado ao Mercado de 25/09/2026: JCP, valor por ação",
+        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1571759&numSequencia=1096465&numVersao=1"
+      }
+    },
+    {
+      "empresa": "Petrobras",
+      "ticker": "PETR3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.67407131,
+      "dataCom": "2026-08-21",
+      "dataPagamento": "2026-11-23",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de PETROBRAS (PETR), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlBFVFIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
     {
       "empresa": "Petrobras",
       "ticker": "PETR4",
@@ -11,6 +107,126 @@
       "fonte": {
         "titulo": "Petrobras, Fato Relevante de 06/08/2026: remuneração aos acionistas (primeira parcela, JCP)",
         "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1553780&numSequencia=1078486&numVersao=1"
+      }
+    },
+    {
+      "empresa": "Taesa",
+      "ticker": "TAEE11",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.24076375464,
+      "dataCom": "2026-08-14",
+      "dataPagamento": "2026-11-26",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de TAESA (TAEE), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlRBRUUiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Taesa",
+      "ticker": "TAEE11",
+      "tipo": "JCP",
+      "valorPorAcao": 0.35947457988,
+      "dataCom": "2026-08-14",
+      "dataPagamento": "2026-11-26",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de TAESA (TAEE), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlRBRUUiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Rumo",
+      "ticker": "RAIL3",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.10840223172,
+      "dataCom": "2026-04-28",
+      "dataPagamento": "2026-11-30",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de RUMO S.A. (RAIL), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlJBSUwiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Itaú Unibanco",
+      "ticker": "ITUB4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.018182,
+      "dataCom": "2026-10-30",
+      "dataPagamento": "2026-12-01",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de ITAUUNIBANCO (ITUB), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IklUVUIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Raia Drogasil",
+      "ticker": "RADL3",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.02722277,
+      "dataCom": "2026-07-03",
+      "dataPagamento": "2026-12-01",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de RAIADROGASIL (RADL), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlJBREwiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Raia Drogasil",
+      "ticker": "RADL3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.088359621,
+      "dataCom": "2026-07-03",
+      "dataPagamento": "2026-12-01",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de RAIADROGASIL (RADL), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlJBREwiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Raia Drogasil",
+      "ticker": "RADL3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.08601480302,
+      "dataCom": "2026-04-06",
+      "dataPagamento": "2026-12-01",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de RAIADROGASIL (RADL), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlJBREwiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "ISA Energia",
+      "ticker": "ISAE4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.188959,
+      "dataCom": "2026-10-08",
+      "dataPagamento": "2026-12-07",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de ISA ENERGIA (ISAE), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IklTQUUiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Petrobras",
+      "ticker": "PETR3",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.47156696,
+      "dataCom": "2026-08-21",
+      "dataPagamento": "2026-12-21",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de PETROBRAS (PETR), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlBFVFIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Petrobras",
+      "ticker": "PETR3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.20250435,
+      "dataCom": "2026-08-21",
+      "dataPagamento": "2026-12-21",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de PETROBRAS (PETR), consulta ao cadastro da companhia em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlBFVFIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
       }
     },
     {
@@ -38,18 +254,6 @@
       }
     },
     {
-      "empresa": "Localiza",
-      "ticker": "RENT3",
-      "tipo": "JCP",
-      "valorPorAcao": 0.556580414,
-      "dataCom": "2026-09-25",
-      "dataPagamento": "2026-11-18",
-      "fonte": {
-        "titulo": "Localiza, Comunicado ao Mercado de 25/09/2026: JCP, valor por ação",
-        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1571759&numSequencia=1096465&numVersao=1"
-      }
-    },
-    {
       "empresa": "WEG",
       "ticker": "WEGE3",
       "tipo": "JCP",
@@ -64,58 +268,696 @@
   ],
   "fiis": [
     {
-      "fundo": "FII XP MALLS",
-      "ticker": "XPML11",
+      "fundo": "FII HSI CRI",
+      "ticker": "HSAF11",
+      "valorPorCota": 0.95,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HSAF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhTQUYiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HSI MALL",
+      "ticker": "HSML11",
+      "valorPorCota": 0.75,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HSML, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhTTUwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HOTEL MX",
+      "ticker": "HTMX11",
+      "valorPorCota": 1.2,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HTMX, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhUTVgiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII LIFE",
+      "ticker": "LIFE11",
+      "valorPorCota": 0.115,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo LIFE, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkxJRkUiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII LVBI VBI",
+      "ticker": "LVBI11",
+      "valorPorCota": 0.8,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo LVBI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkxWQkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII POLO CRI",
+      "ticker": "PORD11",
+      "valorPorCota": 0.0935,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo PORD, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlBPUkQiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII PVBI VBI",
+      "ticker": "PVBI11",
+      "valorPorCota": 0.37,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo PVBI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlBWQkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII RIZA TX",
+      "ticker": "RZTR11",
+      "valorPorCota": 0.85,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo RZTR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJaVFIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VALOR HE",
+      "ticker": "VGHF11",
+      "valorPorCota": 0.05,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VGHF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZHSEYiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VGRI",
+      "ticker": "VGRI11",
+      "valorPorCota": 0.075,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VGRI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZHUkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HABIT II",
+      "ticker": "HABT11",
       "valorPorCota": 0.92,
-      "dataBase": "2026-10-16",
-      "dataPagamento": "2026-10-23",
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-12",
       "fonte": {
-        "titulo": "B3: rendimentos do fundo XPML, consulta à base de proventos da B3 em 19/10/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQTUwiLCJ0eXBlRnVuZCI6N30="
+        "titulo": "B3: rendimentos do fundo HABT, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhBQlQiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
-      "fundo": "FII BTLG",
-      "ticker": "BTLG11",
-      "valorPorCota": 0.81,
-      "dataBase": "2026-10-15",
-      "dataPagamento": "2026-10-23",
+      "fundo": "FII CI IPCA",
+      "ticker": "ICRI11",
+      "valorPorCota": 1.05,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-12",
       "fonte": {
-        "titulo": "B3: rendimentos do fundo BTLG, consulta à base de proventos da B3 em 19/10/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJUTEciLCJ0eXBlRnVuZCI6N30="
+        "titulo": "B3: rendimentos do fundo ICRI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IklDUkkiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
-      "fundo": "FII ALIANZA",
-      "ticker": "ALZR11",
-      "valorPorCota": 0.084,
-      "dataBase": "2026-10-16",
-      "dataPagamento": "2026-10-23",
+      "fundo": "FII ITRI",
+      "ticker": "ITRI11",
+      "valorPorCota": 0.75,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-12",
       "fonte": {
-        "titulo": "B3: rendimentos do fundo ALZR, consulta à base de proventos da B3 em 19/10/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkFMWlIiLCJ0eXBlRnVuZCI6N30="
+        "titulo": "B3: rendimentos do fundo ITRI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IklUUkkiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
-      "fundo": "FII BTG SHOP",
-      "ticker": "BPML11",
-      "valorPorCota": 0.92,
-      "dataBase": "2026-10-16",
-      "dataPagamento": "2026-10-23",
+      "fundo": "FII KINEA UN",
+      "ticker": "KNUQ11",
+      "valorPorCota": 1.06,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-12",
       "fonte": {
-        "titulo": "B3: rendimentos do fundo BPML, consulta à base de proventos da B3 em 19/10/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJQTUwiLCJ0eXBlRnVuZCI6N30="
+        "titulo": "B3: rendimentos do fundo KNUQ, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOVVEiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
-      "fundo": "FII MAUA",
-      "ticker": "MCCI11",
+      "fundo": "FII BBIG",
+      "ticker": "BBIG11",
+      "valorPorCota": 0.04,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo BBIG, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJCSUciLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII BEES CRI",
+      "ticker": "BCRI11",
+      "valorPorCota": 0.7,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo BCRI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJDUkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA CR",
+      "ticker": "KCRE11",
+      "valorPorCota": 0.07,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KCRE, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktDUkUiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA RI",
+      "ticker": "KNCR11",
+      "valorPorCota": 1.1,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNCR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOQ1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA RI",
+      "ticker": "KNCR11",
+      "valorPorCota": 0.47,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNCR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOQ1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA RI",
+      "ticker": "KNCR11",
+      "valorPorCota": 0.2,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNCR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOQ1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA HY",
+      "ticker": "KNHY11",
+      "valorPorCota": 0.86,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNHY, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOSFkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA IP",
+      "ticker": "KNIP11",
+      "valorPorCota": 0.71,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNIP, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOSVAiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA SC",
+      "ticker": "KNSC11",
+      "valorPorCota": 0.08,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNSC, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOU0MiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII RIOB VA",
+      "ticker": "RBVA11",
+      "valorPorCota": 0.09,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo RBVA, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJCVkEiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII RIOB RC",
+      "ticker": "RCRB11",
+      "valorPorCota": 1.3,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo RCRB, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJDUkIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII RBR PR",
+      "ticker": "RPRI11",
+      "valorPorCota": 0.9,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo RPRI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJQUkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VECTIS",
+      "ticker": "VCJR11",
+      "valorPorCota": 0.82,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VCJR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZDSlIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII FATOR VE",
+      "ticker": "VRTA11",
+      "valorPorCota": 0.85,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-13",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VRTA, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZSVEEiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII BRESCO",
+      "ticker": "BRCO11",
+      "valorPorCota": 0.91,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo BRCO, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkJSQ08iLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII CYRELA",
+      "ticker": "CYCR11",
+      "valorPorCota": 0.106,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo CYCR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkNZQ1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII G TOWERS",
+      "ticker": "GTWR11",
+      "valorPorCota": 0.9,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo GTWR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkdUV1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HTOPFOF3",
+      "ticker": "HFOF11",
+      "valorPorCota": 0.06,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HFOF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhGT0YiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HEDGEBS",
+      "ticker": "HGBS11",
+      "valorPorCota": 0.17,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HGBS, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhHQlMiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HGCR PAX",
+      "ticker": "HGCR11",
       "valorPorCota": 1,
-      "dataBase": "2026-10-13",
-      "dataPagamento": "2026-10-20",
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
       "fonte": {
-        "titulo": "B3: rendimentos do fundo MCCI, consulta à base de proventos da B3 em 19/10/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1DQ0kiLCJ0eXBlRnVuZCI6N30="
+        "titulo": "B3: rendimentos do fundo HGCR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhHQ1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HGLG PAX",
+      "ticker": "HGLG11",
+      "valorPorCota": 1.17,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HGLG, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhHTEciLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HGRE PAX",
+      "ticker": "HGRE11",
+      "valorPorCota": 0.85,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HGRE, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhHUkUiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HGRU PAX",
+      "ticker": "HGRU11",
+      "valorPorCota": 0.95,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HGRU, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhHUlUiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII HSI LOG",
+      "ticker": "HSLG11",
+      "valorPorCota": 0.65,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo HSLG, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhTTEciLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII JS A FIN",
+      "ticker": "JSAF11",
+      "valorPorCota": 0.08,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo JSAF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkpTQUYiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII JS REAL",
+      "ticker": "JSRE11",
+      "valorPorCota": 0.5,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo JSRE, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkpTUkUiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEAFOF",
+      "ticker": "KFOF11",
+      "valorPorCota": 0.8,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KFOF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktGT0YiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA",
+      "ticker": "KNRI11",
+      "valorPorCota": 1.1,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNRI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOUkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KORE",
+      "ticker": "KORE11",
+      "valorPorCota": 0.6,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KORE, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktPUkUiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII MERITO I",
+      "ticker": "MFII11",
+      "valorPorCota": 0.3,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo MFII, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1GSUkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII MAXI REN",
+      "ticker": "MXRF11",
+      "valorPorCota": 0.095,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo MXRF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1YUkYiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII OURI JPP",
+      "ticker": "OUJP11",
+      "valorPorCota": 1.5,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo OUJP, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik9VSlAiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII PMLL PAX",
+      "ticker": "PMLL11",
+      "valorPorCota": 1,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo PMLL, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlBNTEwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII RBRL PAX",
+      "ticker": "RBRL11",
+      "valorPorCota": 0.6,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo RBRL, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJCUkwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII TEL PROP",
+      "ticker": "TEPP11",
+      "valorPorCota": 0.068,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo TEPP, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlRFUFAiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII TG ATIVO",
+      "ticker": "TGAR11",
+      "valorPorCota": 0.46,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo TGAR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlRHQVIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII SDI LOG",
+      "ticker": "TRBL11",
+      "valorPorCota": 0.44,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo TRBL, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlRSQkwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII TRX REAL",
+      "ticker": "TRXF11",
+      "valorPorCota": 0.93,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo TRXF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlRSWEYiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII TIVIO RI",
+      "ticker": "TVRI11",
+      "valorPorCota": 1.05,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo TVRI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlRWUkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII URCA REN",
+      "ticker": "URPR11",
+      "valorPorCota": 0.3,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo URPR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlVSUFIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII URCA REN",
+      "ticker": "URPR11",
+      "valorPorCota": 0.077,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo URPR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlVSUFIiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VINCI LG",
+      "ticker": "VILG11",
+      "valorPorCota": 0.82,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VILG, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZJTEciLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VINCI OF",
+      "ticker": "VINO11",
+      "valorPorCota": 0.046,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VINO, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZJTk8iLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VINCI SC",
+      "ticker": "VISC11",
+      "valorPorCota": 0.84,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VISC, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZJU0MiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII WHG REAL",
+      "ticker": "WHGR11",
+      "valorPorCota": 0.1,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo WHGR, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IldIR1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII XP CRED",
+      "ticker": "XPCI11",
+      "valorPorCota": 0.82,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo XPCI, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQQ0kiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII XP LOG",
+      "ticker": "XPLG11",
+      "valorPorCota": 0.82,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo XPLG, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQTEciLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII XP SELEC",
+      "ticker": "XPSF11",
+      "valorPorCota": 0.07,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo XPSF, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQU0YiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII MANATI",
+      "ticker": "MANA11",
+      "valorPorCota": 0.11,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-24",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo MANA, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1BTkEiLCJ0eXBlRnVuZCI6N30="
       }
     }
   ]
