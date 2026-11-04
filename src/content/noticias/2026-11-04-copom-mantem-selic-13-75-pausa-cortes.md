@@ -1,6 +1,6 @@
 ---
 title: "Copom mantém a Selic em 13,75% ao ano e interrompe a sequência de cortes"
-description: "O Copom manteve a meta Selic em 13,75% após três reduções seguidas. O comunicado cita cenário externo adverso, inflação acima do teto da tolerância e riscos altistas."
+description: "O Copom manteve a meta Selic em 13,75% após três cortes. O comunicado cita cenário externo adverso, inflação acima do teto de tolerância e riscos altistas."
 date: 2026-11-04
 editoria: "Brasil"
 keywords: ["Copom", "Selic", "taxa de juros", "inflação", "política monetária"]
