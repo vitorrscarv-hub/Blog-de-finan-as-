@@ -20,9 +20,9 @@ O Senado aprovou nesta terça-feira (3) a proposta de emenda à Constituição (
 
 De acordo com o g1, a PEC insere na Constituição o Sistema Único de Segurança Pública (Susp), criado por lei em 2018 para a atuação conjunta de União, estados e municípios, e dá mais poder à União para coordenar as ações e fixar diretrizes nacionais de combate ao crime organizado. União, estados e Distrito Federal poderão legislar sobre segurança pública, inclusive sobre forças-tarefa intergovernamentais, a organização das polícias e guardas municipais e o sistema socioeducativo.
 
-Entre as medidas citadas pelo g1:
+Sobre o combate a crimes violentos e facções criminosas, que o g1 chama de ponto central, a reportagem cita estas medidas:
 
-- prisão obrigatória em estabelecimento de segurança máxima ou de natureza especial para crimes violentos e facções, com restrição ou proibição de progressão de regime, de liberdade provisória (com ou sem fiança) e de saída temporária;
+- prisão obrigatória em estabelecimento de segurança máxima ou de natureza especial, com restrição ou proibição de progressão de regime, de liberdade provisória (com ou sem fiança) e de saída temporária;
 - expropriação de bens, direitos ou valores econômicos ligados a atividades criminosas, nas regras para organizações criminosas, paramilitares e milícias privadas;
 - criação de polícias municipais para o policiamento ostensivo e comunitário;
 - ampliação da atuação da Polícia Rodoviária Federal em hidrovias e ferrovias, e manutenção da Polícia Federal e da PRF sob competência privativa da União.
@@ -42,7 +42,7 @@ As duas propostas, segundo o g1:
 
 Na mesma terça-feira, líderes do Senado fecharam um acordo para acelerar a votação do tema, e parte deles espera votar já nesta quarta-feira (4), informa o g1. O líder do MDB, Eduardo Braga (AM), sugeriu um requerimento de urgência para votar a PEC de Camilo Santana. O líder do PL, Carlos Portinho (RJ), disse que defenderá a votação em dois turnos e que o partido insistirá nos 14 anos, mas reconhece que ainda não há acordo sobre qual texto será votado.
 
-A líder do governo, Teresa Leitão (PT-PE), disse ao g1 que é preciso aguardar o que vai ser apresentado e que o debate "não pode ser feito de afogadilho", por ter relação com constitucionalidade. O presidente do Senado, Davi Alcolumbre (União-AP), havia defendido enviar o tema à Comissão de Constituição e Justiça (CCJ), e Braga discordou, segundo a reportagem.
+A líder do governo, Teresa Leitão (PT-PE), disse, segundo o g1, que é preciso aguardar o que vai ser apresentado e que o debate "não pode ser feito de afogadilho", por ter relação com constitucionalidade. O presidente do Senado, Davi Alcolumbre (União-AP), havia defendido enviar o tema à Comissão de Constituição e Justiça (CCJ), e Braga discordou, segundo a reportagem.
 
 ## O que acompanhar
 
