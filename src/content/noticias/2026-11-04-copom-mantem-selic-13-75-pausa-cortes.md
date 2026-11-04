@@ -40,7 +40,7 @@ O Copom explica que, nesse cenário, a trajetória da Selic vem da pesquisa Focu
 
 ## Os riscos apontados
 
-Segundo o comunicado, os riscos para a inflação, de alta e de baixa, "permanecem mais elevados que o usual, com assimetria altista". Entre os de alta, o Copom cita a desancoragem das expectativas por período mais prolongado, a inflação de serviços mais resiliente que a projetada, uma combinação de políticas externa e interna com impacto inflacionário maior que o esperado (por exemplo, com câmbio persistentemente mais depreciado) e estímulos à demanda, em especial ao consumo. Entre os de baixa, cita uma desaceleração mais acentuada da atividade doméstica e uma desaceleração global mais pronunciada.
+Segundo o comunicado, os riscos para a inflação, de alta e de baixa, "permanecem mais elevados que o usual, com assimetria altista". Entre os de alta, o Copom cita a desancoragem das expectativas por período mais prolongado, a inflação de serviços mais resiliente que a projetada, uma combinação de políticas externa e interna com impacto inflacionário maior que o esperado (por exemplo, com câmbio persistentemente mais depreciado) e estímulos à demanda, em especial ao consumo. Entre os de baixa, cita uma desaceleração mais acentuada da atividade doméstica, uma desaceleração global mais pronunciada e uma redução nos preços das commodities com efeitos desinflacionários.
 
 O Comitê diz que segue acompanhando como a política fiscal doméstica afeta a política monetária e os ativos financeiros, e que monitora com atenção a desancoragem das expectativas de longo prazo.
 
@@ -50,4 +50,4 @@ O Copom afirma que a manutenção é compatível com a estratégia de convergên
 
 ## O que acompanhar
 
-O Focus de 30 de outubro, publicado em 3 de novembro, trazia mediana de 13,50% para a Selic do fim de 2026, 12,50% para 2027 e 11,00% para 2028. O comunicado não dá indicação sobre as próximas reuniões nem sobre quando os cortes poderão ser retomados, e este texto também não projeta o caminho dos juros. Quem acompanha renda fixa costuma olhar, depois de cada decisão, a ata do Copom, que o Banco Central publica na semana seguinte.
+O Focus com data de 30 de outubro trazia mediana de 13,50% para a Selic do fim de 2026, 12,50% para 2027 e 11,00% para 2028. O comunicado não dá indicação sobre as próximas reuniões nem sobre quando os cortes poderão ser retomados, e este texto também não projeta o caminho dos juros. Quem acompanha renda fixa costuma olhar, depois de cada decisão, a ata do Copom, que o Banco Central publica na semana seguinte.
