@@ -50,6 +50,7 @@ export const SITE = {
       segundos: 4,
       maximo: 5,
       materias: [
+        '2026-11-04-copom-mantem-selic-13-75-pausa-cortes',
         '2026-11-02-copom-governo-ofensiva-mercado',
         '2026-11-02-mercado-bitcoin-incidente-binance-saques',
         '2026-11-02-eleicoes-eua-midterms-dolar-juros-brasil',
