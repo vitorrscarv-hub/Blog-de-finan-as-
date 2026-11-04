@@ -1,6 +1,6 @@
 ---
 title: "Senado aprova a PEC da Segurança Pública, e a redução da maioridade penal passa a tramitar em separado"
-description: "O Senado aprovou a PEC da Segurança sem a maioridade penal. Líderes combinaram acelerar a votação desse tema, e ainda não há acordo sobre qual texto vai a voto."
+description: "O Senado aprovou a PEC da Segurança sem a maioridade penal. Líderes combinaram acelerar esse tema, mas não há acordo sobre qual texto vai a voto."
 date: 2026-11-04
 editoria: "Brasil"
 keywords: ["PEC da Segurança", "Senado", "Congresso", "maioridade penal", "Susp"]
