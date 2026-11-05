@@ -32,8 +32,8 @@ Dentro da transformação, as maiores quedas mensais foram em impressão e repro
 
 Entre as grandes categorias econômicas, o IBGE registra queda de 1,9% em bens de capital, de 0,7% em bens intermediários e de 0,8% em bens de consumo. Dentro do consumo, os bens duráveis subiram 0,7%, e os semiduráveis e não duráveis caíram 1,2%.
 
-## O que o dado se relaciona
+## O contexto da decisão do Copom
 
-O comunicado do Copom de quarta-feira (4) descreve os indicadores recentes como apontando para uma "moderação mais acentuada da atividade econômica, principalmente em setores mais cíclicos", e a Selic foi mantida em 13,75% ao ano. A produção industrial é um desses indicadores, mas o comunicado não cita a PIM-PF de setembro, divulgada depois, e este texto não atribui a decisão do Banco Central a ela.
+O comunicado do Copom de quarta-feira (4) descreve os indicadores recentes como apontando para uma "moderação mais acentuada da atividade econômica, principalmente em setores mais cíclicos", e a Selic foi mantida em 13,75% ao ano. O comunicado não cita a PIM-PF de setembro, divulgada depois, e este texto não atribui a decisão do Banco Central a esse dado.
 
 A PIM-PF mede o volume produzido pela indústria, e não lucro, vendas ou preços de nenhuma empresa. Este texto não projeta o resultado de outubro nem o do PIB.
