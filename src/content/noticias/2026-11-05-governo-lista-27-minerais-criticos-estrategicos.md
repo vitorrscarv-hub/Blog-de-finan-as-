@@ -1,5 +1,5 @@
 ---
-title: "Conselho aprova a lista de 27 minerais críticos e estratégicos, que dá acesso a fomento do governo"
+title: "Conselho aprova a lista de 27 minerais críticos e estratégicos, critério para o fomento do governo"
 description: "O CIMCE aprovou a lista de 27 minerais, em três classes. Só projetos com esses minerais, no cadastro nacional, poderão receber apoio do governo, diz o MME."
 date: 2026-11-05
 editoria: "Brasil"
