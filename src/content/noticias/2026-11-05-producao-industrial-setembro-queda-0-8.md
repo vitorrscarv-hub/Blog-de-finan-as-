@@ -16,7 +16,7 @@ draft: false
 gate: true
 ---
 
-A produção industrial brasileira caiu 0,8% em setembro na comparação com agosto, já descontados os efeitos sazonais, segundo a Pesquisa Industrial Mensal (PIM-PF) do IBGE, divulgada nesta quinta-feira (5). Na comparação com setembro de 2025, a queda foi de 2,5%. No acumulado de janeiro a setembro, a produção está 0,4% acima do mesmo período de 2025, e em 12 meses a alta é de 0,2%.
+A produção industrial brasileira caiu 0,8% em setembro na comparação com agosto, já descontados os efeitos sazonais, segundo a Pesquisa Industrial Mensal (PIM-PF) do IBGE. Na comparação com setembro de 2025, a queda foi de 2,5%. No acumulado de janeiro a setembro, a produção está 0,4% acima do mesmo período de 2025, e em 12 meses a alta é de 0,2%.
 
 ## A sequência dos últimos meses
 
@@ -34,6 +34,6 @@ Entre as grandes categorias econômicas, o IBGE registra queda de 1,9% em bens d
 
 ## O contexto da decisão do Copom
 
-O comunicado do Copom de quarta-feira (4) descreve os indicadores recentes como apontando para uma "moderação mais acentuada da atividade econômica, principalmente em setores mais cíclicos", e a Selic foi mantida em 13,75% ao ano. O comunicado não cita a PIM-PF de setembro, divulgada depois, e este texto não atribui a decisão do Banco Central a esse dado.
+O comunicado do Copom de quarta-feira (4) descreve os indicadores recentes como apontando para uma "moderação mais acentuada da atividade econômica, principalmente em setores mais cíclicos", e a Selic foi mantida em 13,75% ao ano. O comunicado não cita a PIM-PF de setembro, e este texto não atribui a decisão do Banco Central a esse dado.
 
 A PIM-PF mede o volume produzido pela indústria, e não lucro, vendas ou preços de nenhuma empresa. Este texto não projeta o resultado de outubro nem o do PIB.
