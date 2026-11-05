@@ -28,9 +28,13 @@ A divisão por setores mostra movimentos opostos. As indústrias extrativas cres
 
 Dentro da transformação, as maiores quedas mensais foram em impressão e reprodução de gravações (6,3%), coque, derivados do petróleo e biocombustíveis (4,2%), móveis (3,4%), produtos farmoquímicos e farmacêuticos (3,1%) e produtos de minerais não metálicos (2,6%). Fabricação de produtos do fumo teve a maior alta no mês (20,3%), e produtos químicos subiram 1,7%. Veículos automotores caíram 1,2% sobre agosto, mas ficaram 7,3% acima de setembro de 2025.
 
+Na comparação com setembro de 2025, o quadro das atividades é mais disperso. Entre as que mais recuaram estão impressão e reprodução de gravações (30,9%), farmoquímicos e farmacêuticos (17,0%), vestuário (12,2%), produtos de informática, eletrônicos e ópticos (9,0%) e máquinas e equipamentos (8,9%). Alimentos ficaram 5,9% abaixo, com queda de 1,7% sobre agosto. Entre as que ficaram acima, além de veículos (7,3%), aparecem manutenção, reparação e instalação de máquinas (4,9%), máquinas, aparelhos e materiais elétricos (3,0%), bebidas (2,5%) e metalurgia (1,9%).
+
 ## Por tipo de bem
 
 Entre as grandes categorias econômicas, o IBGE registra queda de 1,9% em bens de capital, de 0,7% em bens intermediários e de 0,8% em bens de consumo. Dentro do consumo, os bens duráveis subiram 0,7%, e os semiduráveis e não duráveis caíram 1,2%.
+
+Sobre setembro de 2025, os bens de capital recuaram 4,9%, os intermediários 1,3% e os de consumo 4,8%. Nesse último grupo, os duráveis subiram 3,8%, e os semiduráveis e não duráveis caíram 6,3%. No acumulado de janeiro a setembro, bens de capital estão 5,0% abaixo do mesmo período de 2025, bens intermediários 1,2% acima, e bens de consumo 0,2% abaixo (duráveis, alta de 2,5%; semiduráveis e não duráveis, queda de 0,7%).
 
 ## O contexto da decisão do Copom
 
