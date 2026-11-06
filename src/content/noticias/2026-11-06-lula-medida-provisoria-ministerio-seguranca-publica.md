@@ -1,6 +1,6 @@
 ---
 title: "Lula diz que criará o Ministério da Segurança Pública por medida provisória"
-description: "Lula disse que enviará uma MP para criar o ministério e reúne os ministros da Justiça e da Casa Civil. Não há data nem nome para comandar a pasta."
+description: "Lula disse que enviará uma MP para criar o ministério. Segundo o g1, reúne os ministros da Justiça e da Casa Civil; não há data nem nome para a pasta."
 date: 2026-11-06
 editoria: "Brasil"
 keywords: ["Ministério da Segurança Pública", "medida provisória", "PEC da Segurança", "Congresso", "governo Lula"]
@@ -14,11 +14,11 @@ draft: false
 gate: true
 ---
 
-O presidente Luiz Inácio Lula da Silva (PT) afirmou na quinta-feira (5) que vai enviar uma medida provisória (MP) criando o Ministério da Segurança Pública e que, nesta sexta-feira (6), começam as discussões sobre a pasta, segundo o Estadão. A declaração foi dada numa transmissão ao vivo no canal do presidente no YouTube, ao lado do deputado André Janones (Rede-MG), que o jornal diz ter reunido cerca de 500 mil espectadores. O g1 informa que Lula faz nesta sexta uma reunião sobre o tema.
+O presidente Luiz Inácio Lula da Silva (PT) afirmou na quinta-feira (5) que vai enviar uma medida provisória (MP) criando o Ministério da Segurança Pública e que, nesta sexta-feira (6), começam as discussões sobre a pasta, segundo o Estadão. A declaração foi dada numa transmissão ao vivo no canal do presidente no YouTube, ao lado do deputado André Janones (Rede-MG), que o jornal diz ter reunido cerca de 500 mil espectadores. O g1 informa que Lula faz nesta sexta uma reunião sobre o tema. Os dois jornais divergem sobre quem participa, como mostra a seção seguinte.
 
 ## O que o g1 e o Estadão informam
 
-De acordo com o g1, Lula deve se reunir com o ministro da Justiça, Wellington César Lima e Silva, e com a ministra da Casa Civil, Miriam Belchior, para discutir a recriação do ministério e a MP que deve ser enviada ao Congresso. O jornal lembra que a pasta existiu no governo de Michel Temer e que a criação de um ministério específico é uma promessa de Lula, que constava do programa de governo da campanha de 2026.
+De acordo com o g1, Lula deve se reunir com o ministro da Justiça, Wellington César Lima e Silva, e com a ministra da Casa Civil, Miriam Belchior, para discutir a recriação do ministério e a MP que deve ser enviada ao Congresso. O Estadão, por sua vez, relata que Lula disse que a reunião desta sexta teria os ministros da Casa Civil, Miriam Belchior, da Fazenda, Dario Durigan, e do Planejamento, Bruno Moretti, sem citar o ministro da Justiça. O g1 lembra que a pasta existiu no governo de Michel Temer e que a criação de um ministério específico é uma promessa de Lula, que constava do programa de governo da campanha de 2026.
 
 O g1 diz que o presidente reforçou a promessa depois da aprovação, pelo Senado, da PEC da Segurança Pública, na terça-feira (3), que seguiu para promulgação. Ao comemorar a aprovação, Lula afirmou que o novo ministério terá foco em inteligência, planejamento e cooperação com estados e municípios no enfrentamento a facções criminosas e milícias, segundo a reportagem. O presidente não informou quem comandará a pasta, e o governo ainda não disse quando ela será recriada.
 
