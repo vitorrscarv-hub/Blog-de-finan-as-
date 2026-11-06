@@ -1,6 +1,6 @@
 ---
 title: "Gecex prorroga até 31 de dezembro o imposto de 12% sobre a exportação de petróleo bruto"
-description: "O Gecex prorrogou o imposto de 12% sobre a exportação de petróleo bruto, em vigor desde março. Valerá até 31/12, e o governo cita o abastecimento de diesel."
+description: "O Gecex prorrogou o imposto de 12% sobre a exportação de petróleo bruto, em vigor desde março. Valerá até 31/12; o governo cita o abastecimento de diesel."
 date: 2026-11-06
 editoria: "Brasil"
 keywords: ["imposto de exportação", "petróleo", "Camex", "Gecex", "diesel"]
