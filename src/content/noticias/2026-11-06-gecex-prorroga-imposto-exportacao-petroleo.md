@@ -1,6 +1,6 @@
 ---
 title: "Gecex prorroga até 31 de dezembro o imposto de 12% sobre a exportação de petróleo bruto"
-description: "O Gecex prorrogou o imposto de 12% às exportações de petróleo bruto, em vigor desde março. A medida valerá até 31/12, e o governo cita o abastecimento de diesel."
+description: "O Gecex prorrogou o imposto de 12% sobre a exportação de petróleo bruto, em vigor desde março. Valerá até 31/12, e o governo cita o abastecimento de diesel."
 date: 2026-11-06
 editoria: "Brasil"
 keywords: ["imposto de exportação", "petróleo", "Camex", "Gecex", "diesel"]
@@ -24,7 +24,7 @@ O g1 acrescenta que, em março, o governo elevou o imposto de zero para 12%, com
 
 ## Como funciona a decisão
 
-O Gecex é o órgão da Camex responsável pelas decisões sobre medidas de comércio exterior, incluindo alterações tarifárias, e a Camex é vinculada ao MDIC, conforme o g1. A íntegra das deliberações será publicada na página da Camex, informa o ministério, e este texto se baseia na nota do MDIC e na reportagem, e não no texto da resolução.
+O Gecex é o órgão da Camex responsável pelas decisões sobre medidas de comércio exterior, incluindo alterações tarifárias, e a Camex é vinculada ao MDIC, conforme o g1. A íntegra das deliberações será publicada na página da Camex, informa o ministério, e este texto se baseia na nota do MDIC e na reportagem do g1, e não no texto da resolução, que não foi consultada. Por isso, detalhes como a data exata de publicação da norma e eventuais exceções à cobrança não estão aqui.
 
 ## O que mais o Gecex decidiu
 
