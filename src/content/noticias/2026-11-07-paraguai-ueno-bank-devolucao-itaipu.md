@@ -21,7 +21,7 @@ O Banco Central do Paraguai (BCP) informou neste sábado (7) que 1,2 milhão de 
 
 ## O que o BCP informou
 
-Em entrevista coletiva no Palácio López, após reunião de emergência do presidente interino, Pedro Alliana, com ministros e a diretoria do BCP, as autoridades detalharam a devolução, segundo o g1. O ministro da Economia e Finanças, Óscar Lovera, disse que o governo mobilizou todas as frentes para responder rápido e tranquilizar os poupadores afetados. O presidente do BCP, Pedro Acosta, afirmou que o banco central analisa alternativas para os depositantes cujos saldos passavam do limite coberto pela garantia.
+Em entrevista coletiva no Palácio López, após reunião de emergência do presidente interino, Pedro Alliana, com ministros e a diretoria do BCP, as autoridades detalharam a devolução, segundo o g1. O ministro da Economia e Finanças, Óscar Lovera, disse que o governo mobilizou todas as frentes para responder rápido e tranquilizar os poupadores afetados. O presidente interino do BCP, Pedro Acosta, afirmou que o banco central analisa alternativas para os depositantes cujos saldos passavam do limite coberto pela garantia.
 
 O Estadão acrescenta que, segundo o BCP, 1,87 milhão de contas tinham saldo no banco, e não 3 milhões, como se estimava, o que indicaria que pelo menos 60% dos depositantes já foram reembolsados. O pagamento é feito por fases e com condições: a primeira etapa atende depósitos de até 10 milhões de guaranis (cerca de R$ 8,8 mil), sem dívida com o banco e com conta ativa em outra instituição, e a segunda, saldos entre 10 milhões e 121,7 milhões de guaranis (cerca de R$ 107 mil), com as mesmas condições. O jornal registra que usuários nas redes sociais contestam as informações e relatam dificuldade para pedir o reembolso, sem que o BCP tenha respondido a isso na reportagem.
 
@@ -35,9 +35,9 @@ O Estadão diz que a administração brasileira da Itaipu afirma não ter recurs
 
 ## Como a crise chegou até aqui
 
-Segundo o g1, o Ueno é o maior banco digital do Paraguai e principal emissor de cartões de crédito do país. Ajustes nos balanços fizeram o índice de solvência cair para menos da metade do mínimo exigido, e o BCP interveio, interrompendo o acesso dos correntistas aos depósitos. O Ministério Público pediu investigação criminal e a prisão de oito pessoas ligadas ao banco, e 27 pessoas são investigadas por suspeita de fraude e estelionato, conforme a reportagem. O g1 diz que o Ueno administrava cerca de US$ 850 milhões em recursos públicos.
+Segundo o g1, o Ueno é o maior banco digital do Paraguai e principal emissor de cartões de crédito do país. Ajustes nos balanços fizeram o índice de solvência cair para menos da metade do mínimo exigido, e o BCP interveio, interrompendo o acesso dos correntistas aos depósitos. O Ministério Público pediu investigação criminal e determinou a prisão de oito pessoas ligadas ao banco, e 27 pessoas são investigadas por suspeita de fraude e estelionato, conforme a reportagem. O g1 diz que o Ueno administrava cerca de US$ 850 milhões em recursos públicos.
 
-O g1 informa que o presidente do BCP, Carlos Carvallo, renunciou na terça-feira (3), que o então presidente Santiago Peña sofreu impeachment e foi destituído na sexta-feira (6) e que sua prisão foi decretada por envolvimento no caso. O Estadão registra que Peña foi sócio do banco.
+O g1 informa que o presidente do BCP, Carlos Carvallo, renunciou na terça-feira (3), que o então presidente Santiago Peña sofreu impeachment e foi destituído na sexta-feira (6) e que sua prisão foi decretada por envolvimento no caso. O Estadão registra que Peña foi acionista do grupo controlador do banco até meados de 2025.
 
 ## O que acompanhar
 
