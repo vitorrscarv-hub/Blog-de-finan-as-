@@ -50,6 +50,13 @@ export const SITE = {
       segundos: 4,
       maximo: 5,
       materias: [
+        '2026-11-07-paraguai-ueno-bank-devolucao-itaipu',
+        '2026-11-06-balanca-comercial-outubro-superavit-9-3-bi',
+        '2026-11-06-gecex-prorroga-imposto-exportacao-petroleo',
+        '2026-11-06-lula-medida-provisoria-ministerio-seguranca-publica',
+        '2026-11-05-governo-lista-27-minerais-criticos-estrategicos',
+        '2026-11-05-producao-industrial-setembro-queda-0-8',
+        '2026-11-04-senado-aprova-pec-seguranca-maioridade-penal',
         '2026-11-04-copom-mantem-selic-13-75-pausa-cortes',
         '2026-11-02-copom-governo-ofensiva-mercado',
         '2026-11-02-mercado-bitcoin-incidente-binance-saques',
