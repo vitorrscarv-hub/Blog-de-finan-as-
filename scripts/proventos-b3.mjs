@@ -4,39 +4,19 @@
 //   --urls acrescenta a consulta (url https) de cada linha, para citar em `fonte`.
 //   acoes : empresas do Ibovespa com dividendo ou JCP aprovado nos últimos --dias (valor, data com e aprovação).
 //           A B3 não informa a data de pagamento das ações: ela sai do aviso aos acionistas (RAD).
-// Só leitura (GET), com curl (respeita o proxy do ambiente). A B3 recusa o navegador na página inicial desse
-// domínio, mas responde às consultas de dados; se uma consulta falhar, o item aparece como aviso.
+// Só leitura (GET), pela biblioteca scripts/lib/b3.mjs; se uma consulta falhar, o item aparece como aviso.
+// Para atualizar o calendário sem IA, use scripts/atualizar-calendario.mjs (o robô).
 // O resultado aponta candidatos: a linha só entra em src/data/calendario.json depois de o valor e as datas
 // serem conferidos no documento do administrador ou da companhia.
-import { execFileSync } from 'node:child_process';
+import { consulta, urlDe, dia, carteira, emLotes } from './lib/b3.mjs';
 
 const arg = (n, p) => (process.argv.find((a) => a.startsWith(`--${n}=`)) ?? '').split('=')[1] ?? p;
 const so = arg('so', 'todos');
 const dias = Number(arg('dias', 45));
 const comUrls = process.argv.includes('--urls');
-const BASE = 'https://sistemaswebb3-listados.b3.com.br';
-
-const urlDe = (rota, params) => `${BASE}/${rota}/${Buffer.from(JSON.stringify(params)).toString('base64')}`;
-const consulta = (rota, params) => {
-  const url = urlDe(rota, params);
-  const saida = execFileSync('curl', ['-g', '-sS', '-L', '--fail', '--max-time', '30', '-H', 'User-Agent: Mozilla/5.0', '-H', 'Accept: application/json', url], { maxBuffer: 64 * 1024 * 1024 });
-  const texto = saida.toString('utf8');
-  const json = JSON.parse(texto);
-  // A rota de detalhe de fundo devolve o JSON como texto dentro de um texto.
-  return typeof json === 'string' ? JSON.parse(json) : json;
-};
-const dia = (s) => (/^(\d{2})\/(\d{2})\/(\d{4})$/.test(s ?? '') ? `${s.slice(6)}-${s.slice(3, 5)}-${s.slice(0, 2)}` : null);
 const hoje = new Date().toISOString().slice(0, 10);
 const desde = new Date(Date.now() - dias * 86400_000).toISOString().slice(0, 10);
 
-// Executa em lotes pequenos, para não martelar o servidor.
-async function emLotes(itens, n, fn) {
-  const saida = [];
-  for (let i = 0; i < itens.length; i += n) saida.push(...(await Promise.all(itens.slice(i, i + n).map(async (x) => { try { return await fn(x); } catch (e) { return { aviso: `${x}: ${e.message.split('\n')[0]}` }; } }))));
-  return saida;
-}
-const carteira = (indice) =>
-  consulta('indexProxy/indexCall/GetPortfolioDay', { language: 'pt-br', pageNumber: 1, pageSize: 200, index: indice, segment: '1' }).results.map((r) => r.cod);
 const valor = (v) => v.replace(/0+$/, '').replace(/,$/, '');
 
 if (so === 'todos' || so === 'fiis') {

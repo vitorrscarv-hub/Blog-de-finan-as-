@@ -13,7 +13,7 @@ Economia de tokens é regra: script antes de IA, leitura curta (radar e `hoje.mj
 | --- | --- |
 | você (editor-chefe) | escolhe a pauta pelo radar, escreve as matérias, roda revisão, build e testes, abre ou atualiza o pull request |
 | `checador` (`.claude/agents/checador.md`) | confere cada dado de uma matéria na fonte e corrige ou marca rascunho; um por matéria, em paralelo |
-| `calendarista` (`.claude/agents/calendarista.md`) | só na manhã de segunda: atualiza o calendário de proventos |
+| `calendarista` (`.claude/agents/calendarista.md`) | só quando Vitor pedir: confere no aviso aos acionistas as linhas que o robô do calendário deixou de fora |
 
 Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faça o papel deles você mesmo, lendo o arquivo do agente como instrução.
 
@@ -21,7 +21,7 @@ Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faç
 
 | Turno | Quando | Matérias |
 | --- | --- | --- |
-| `manha` | segunda a sábado, 9h15 (depois da ata do Copom das 8h e do IBGE das 9h; o pull request fica pronto perto da abertura da bolsa, às 10h) | 1 de **Política Brasil** e 1 de **Brasil ou Mercado**. Se `hoje.mjs` apontar matéria obrigatória (IPCA, ata do Copom), ela ocupa a vaga de Brasil ou Mercado. Segunda: também o calendário de proventos. |
+| `manha` | segunda a sábado, 9h15 (depois da ata do Copom das 8h e do IBGE das 9h; o pull request fica pronto perto da abertura da bolsa, às 10h) | 1 de **Política Brasil** e 1 de **Brasil ou Mercado**. Se `hoje.mjs` apontar matéria obrigatória (IPCA, ata do Copom), ela ocupa a vaga de Brasil ou Mercado. |
 | `noite` | segunda a sábado, 18h45 | 1 com o **fato do dia**: em dia útil, o que marcou o fechamento do mercado; no sábado, o fato mais relevante do dia. Se `hoje.mjs` apontar a decisão do Copom, ela é a matéria. |
 
 Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publicar menos é melhor que publicar fraco. Internacional não tem vaga fixa; entra quando for o fato mais relevante da vaga.
@@ -36,13 +36,13 @@ Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publ
 4. **Pauta.** Escolha os assuntos das vagas do turno pelos critérios do manual. Não pesquise na web além do necessário para abrir a fonte de cada assunto escolhido.
 5. **Escrever.** Uma matéria por vez, no formato do manual, com os dados lidos na fonte aberta nesta sessão. Para cada matéria, anote a tabela "dado | valor no texto | url da fonte".
 6. **Checar.** Chame um `checador` por matéria (em paralelo), com o caminho do arquivo e a tabela.
-7. **Calendário (só na manhã de segunda).** Em paralelo com a checagem, chame o `calendarista` com a data. Um commit separado: `atualiza calendário de proventos`.
+7. **Calendário.** Não faz parte da edição: o robô `scripts/atualizar-calendario.mjs` (GitHub Actions, segunda a sexta) atualiza o calendário de proventos sem IA, em pull request próprio.
 8. **Fechar.**
    - `node scripts/revisar.mjs`: corrija todo erro; aviso, avalie.
    - `npm run indicadores` (valor de reserva da faixa do topo; o site já mostra o valor ao vivo).
    - `npm run build` sem erros nem avisos e `npm test`. Texto que derrube o build e não tenha conserto vai com `draft: true`, registrado no pull request.
    - Um commit por matéria (ex.: `adiciona matéria sobre a ata do Copom`) e um para indicadores, se mudaram.
-9. **Pull request.** Push do branch. Na manhã, abra o pull request `Edição de AAAA-MM-DD` para o `main`. Na noite, se o da manhã estiver aberto, atualize esse mesmo pull request (push no branch e uma seção nova no corpo); se não, abra `Edição de AAAA-MM-DD (noite)` a partir de `edicao/AAAA-MM-DD-noite`. O corpo tem uma seção por turno com, para cada matéria: vaga, título, endereço, se está publicada ou como rascunho, a tabela final do checador e quais fatos vieram de jornal; depois, a lista "Para pedir indexação no Google" com o endereço completo (`https://grafous.com.br/noticias/...`) de cada matéria publicada (sem rascunho), vagas vazias e o motivo, o calendário (segunda) e o resultado de build e testes. Use as ferramentas `mcp__github__` (carregue com ToolSearch); se não houver, termine com o link `https://github.com/vitorrscarv-hub/Blog-de-finan-as-/compare/main...edicao/AAAA-MM-DD?expand=1` e o corpo pronto para colar.
+9. **Pull request.** Push do branch. Na manhã, abra o pull request `Edição de AAAA-MM-DD` para o `main`. Na noite, se o da manhã estiver aberto, atualize esse mesmo pull request (push no branch e uma seção nova no corpo); se não, abra `Edição de AAAA-MM-DD (noite)` a partir de `edicao/AAAA-MM-DD-noite`. O corpo tem uma seção por turno com, para cada matéria: vaga, título, endereço, se está publicada ou como rascunho, a tabela final do checador e quais fatos vieram de jornal; depois, a lista "Para pedir indexação no Google" com o endereço completo (`https://grafous.com.br/noticias/...`) de cada matéria publicada (sem rascunho), vagas vazias e o motivo e o resultado de build e testes. Use as ferramentas `mcp__github__` (carregue com ToolSearch); se não houver, termine com o link `https://github.com/vitorrscarv-hub/Blog-de-finan-as-/compare/main...edicao/AAAA-MM-DD?expand=1` e o corpo pronto para colar.
 10. **Fim.** Se houver ferramenta de notificação, avise Vitor com o link. Responda com o link e uma linha por matéria.
 
 Fonte que falha não derruba a edição: registre no pull request o que não abriu e siga com as outras vagas (matéria que depende só da fonte caída fica de fora ou vai com `draft: true`). IBGE: se `servicodados.ibge.gov.br` não responder, use `apisidra.ibge.gov.br` (também do IBGE; IPCA tabela 1737, IPCA-15 tabela 3065, grupos tabela 7062).

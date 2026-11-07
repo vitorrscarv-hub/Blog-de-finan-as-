@@ -370,12 +370,27 @@ body.travado { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden
 }
 
 /* Calendário de proventos */
-.tabela-rolavel { overflow-x: auto; margin: 12px 0 8px; border-top: 2px solid var(--filete-forte); }
-.tabela-rolavel:focus-visible { outline-offset: 0; }
+.tabela-rolavel {
+  /* Calendário de proventos: cartão claro (creme e dourado) para destacar a tabela, nos modos claro e escuro. */
+  --tp-fundo: #fdf8ec; --tp-cabecalho: #f3e3b8; --tp-listra: #f8eed3; --tp-borda: #e2cf9c;
+  --tp-tinta: #1b2230; --tp-suave: #5a5040; --tp-link: #6e5212;
+  overflow-x: auto; margin: 14px 0 10px;
+  background: var(--tp-fundo); color: var(--tp-tinta);
+  border: 1px solid var(--tp-borda); border-top: 4px solid #d4b46a; border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(19, 28, 43, .08);
+}
+.tabela-rolavel:focus-visible { outline-offset: 2px; }
 .tabela-proventos { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: .92rem; font-variant-numeric: tabular-nums; }
-.tabela-proventos th, .tabela-proventos td { padding: 10px 14px 10px 0; border-bottom: 1px solid var(--filete); text-align: left; vertical-align: top; white-space: nowrap; }
-.tabela-proventos thead th { font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-suave); font-weight: 700; }
-.tabela-proventos tbody th { font-weight: 600; }
+.tabela-proventos th, .tabela-proventos td { padding: 11px 14px; border-bottom: 1px solid var(--tp-borda); text-align: left; vertical-align: top; white-space: nowrap; }
+.tabela-proventos thead th { background: var(--tp-cabecalho); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--tp-tinta); font-weight: 700; }
+.tabela-proventos tbody tr:nth-child(even) { background: var(--tp-listra); }
+.tabela-proventos tbody tr:hover { background: #f0dfae; }
+.tabela-proventos tbody tr:last-child > * { border-bottom: 0; }
+.tabela-proventos tbody th { font-weight: 600; color: var(--tp-tinta); }
+.tabela-proventos .meta { color: var(--tp-suave); }
+.tabela-proventos td:nth-last-child(2) { font-weight: 700; }
+.tabela-proventos a { color: var(--tp-link); }
+.tabela-proventos a:hover { color: var(--tp-tinta); }
 .nota-calendario { margin: 36px 0 12px; padding: 16px 0 0; border-top: 1px solid var(--filete); max-width: 70ch; color: var(--tinta-suave); font-size: .92rem; }
 .nota-calendario h2 { font-size: 1rem; font-stretch: 85%; margin: 0 0 8px; color: var(--tinta); }
 .nota-calendario ul { margin: 0; padding-left: 1.1em; }
