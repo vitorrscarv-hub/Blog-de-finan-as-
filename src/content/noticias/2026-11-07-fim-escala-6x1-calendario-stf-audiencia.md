@@ -34,7 +34,7 @@ O Valor ouviu o advogado trabalhista Fabiano Zavanella, do escritório Rocha Cal
 - **Distribuição no mês.** Por convenção ou acordo coletivo, os descansos podem ser distribuídos ao longo do mês, desde que haja ao menos um repouso por semana. O advogado calcula o mínimo mensal em 9 repousos nos meses de 30 ou 31 dias e 8 em fevereiro.
 - **Feriados.** O feriado continua sendo descanso próprio e não substitui nenhum dos dois repousos da semana.
 - **Horas extras.** Na fase de 42 horas em cinco dias (8h24 por dia), o advogado aponta controvérsia: uma leitura permite até duas horas extras por dia, e outra, por tratar as 10 horas diárias como teto, deixa 1h36 de horas extras.
-- **Benefícios.** Segundo ele, o vale-refeição pago por dia trabalhado pode diminuir se assim a convenção coletiva dispuser, e o vale-transporte tende a cair na proporção dos dias de deslocamento.
+- **Benefícios.** Segundo ele, o vale-refeição pago por dia trabalhado pode, em regra, diminuir, se a convenção coletiva fixa o valor por dia trabalhado; se o benefício vem do contrato ou do regulamento interno, ou é pago em valor mensal fixo, a redução pode configurar alteração contratual lesiva. O vale-transporte cobre os dias de deslocamento e cai na mesma proporção, sem configurar redução salarial.
 - **Banco de horas.** Cláusulas incompatíveis com a emenda perdem efeito em 16 de dezembro de 2026, segundo o advogado.
 
 O advogado recomenda que as empresas cumpram o calendário de 16 de dezembro sem contar com uma suspensão, e diz que, se houver decisão cautelar, será preciso ler o alcance exato antes de qualquer reversão.
