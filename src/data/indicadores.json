@@ -4,7 +4,7 @@
     {
       "nome": "Selic",
       "valor": "13,75% a.a.",
-      "data": "desde 17 set 2026",
+      "data": "desde 5 nov 2026",
       "fonte": "Banco Central",
       "url": "https://www.bcb.gov.br/api/servico/sitebcb/historicotaxasjuros"
     },
@@ -17,8 +17,8 @@
     },
     {
       "nome": "Dólar PTAX",
-      "valor": "R$ 5,4212",
-      "data": "30 out 2026",
+      "valor": "R$ 5,4778",
+      "data": "4 nov 2026",
       "fonte": "Banco Central",
       "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='10-16-2026'&$format=json"
     }
