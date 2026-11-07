@@ -105,7 +105,7 @@ Os dois arquivos de exemplo (`src/content/noticias/2026-10-12-exemplo-noticia.md
 
 De segunda a sábado, duas tarefas agendadas do Claude Code fazem a edição do dia num pull request, "Edição de AAAA-MM-DD" (se você já tiver publicado a manhã, a noite abre um segundo, "Edição de AAAA-MM-DD (noite)"):
 
-- **9h15:** 1 matéria de Política Brasil (em período eleitoral, as pesquisas para presidente registradas no TSE) e 1 de Brasil ou Mercado. Em dia de IPCA ou de ata do Copom, essa segunda matéria é o evento. Na segunda, também o calendário de proventos.
+- **9h15:** 1 matéria de Política Brasil (em período eleitoral, as pesquisas para presidente registradas no TSE) e 1 de Brasil ou Mercado. Em dia de IPCA ou de ata do Copom, essa segunda matéria é o evento.
 - **18h45:** 1 matéria com o fato do dia (o fechamento do mercado; no sábado, o fato mais relevante). Em dia de decisão do Copom, é a decisão.
 
 Guias e assuntos escolhidos por você vêm como **Matéria indicada pontual**, com pull request próprio.
@@ -120,19 +120,23 @@ Para gastar o mínimo de IA, o que é dado vira script e a IA só escreve:
 | Texto | o editor-chefe (a própria sessão), uma matéria por vez |
 | Checagem | um agente `checador` por matéria (`.claude/agents/checador.md`) |
 | Revisão | `node scripts/revisar.mjs`: travessão, emoji, expressões proibidas, teaser, fontes e registro de pesquisa eleitoral |
-| Calendário (segunda) | agente `calendarista`, a partir de `node scripts/proventos-b3.mjs` |
+| Calendário de proventos | robô `node scripts/atualizar-calendario.mjs` (GitHub Actions, segunda a sexta às 7h10), sem IA |
 | Taxas e dólar do topo | função `/api/cotacoes`, ao vivo, sem IA e sem pull request |
 
 O fluxo está em `.claude/skills/pauta-diaria/SKILL.md` e as regras de conteúdo em `.claude/skills/pauta-diaria/manual-de-redacao.md`. As tarefas agendadas só chamam a skill: para mudar vagas, tom ou fontes, edite o manual por pull request.
 
 ### Calendário de proventos
 
-A página `/calendario/` lê `src/data/calendario.json`, que a edição de segunda de manhã atualiza: dividendos e JCP de ações e rendimentos de fundos imobiliários, cada linha com valor, datas e a fonte aberta. O build falha se uma linha estiver incompleta (`src/scripts/calendario.ts`). É informativo: sem ranking de pagadores, sem projeção, sem indicação de compra ou venda. Para editar à mão, siga o formato do arquivo (`acoes`: empresa, ticker, tipo `Dividendo` ou `JCP`, `valorPorAcao`, `dataCom`, `dataPagamento`, `fonte`; `fiis`: fundo, ticker, `valorPorCota`, `dataBase`, `dataPagamento`, `fonte`).
+A página `/calendario/` lê `src/data/calendario.json`, que o robô do calendário atualiza: dividendos e JCP de ações e rendimentos de fundos imobiliários, cada linha com valor, datas e a fonte aberta. O build falha se uma linha estiver incompleta (`src/scripts/calendario.ts`). É informativo: sem ranking de pagadores, sem projeção, sem indicação de compra ou venda. 
+
+**Robô do calendário.** O workflow `.github/workflows/calendario.yml` roda de segunda a sexta, às 7h10 de Brasília (ou na hora, pelo botão "Run workflow" da aba Actions), o script `scripts/atualizar-calendario.mjs`, sem IA: tira o que já foi pago, lê na B3 os dividendos e JCP das empresas do Ibovespa e os rendimentos dos fundos do IFIX com pagamento nos próximos 60 dias, valida e abre (ou atualiza) o pull request "Calendário de proventos: atualização automática" no branch `robo/calendario`. O merge continua sendo seu. Pagamento que parece prazo-limite ("até 31/12") fica de fora e aparece como FORA no resumo do pull request. Para o robô abrir pull request, o repositório precisa da opção Settings > Actions > General > Workflow permissions > "Allow GitHub Actions to create and approve pull requests". Pull request aberto pelo robô não dispara o CI (regra do GitHub para o token do Actions); por isso o próprio robô roda o teste do calendário e o build antes de enviar. Para rodar à mão: `node scripts/atualizar-calendario.mjs --seco` mostra o que mudaria sem gravar.
+
+Para editar à mão, siga o formato do arquivo (`acoes`: empresa, ticker, tipo `Dividendo` ou `JCP`, `valorPorAcao`, `dataCom`, `dataPagamento`, `fonte`; `fiis`: fundo, ticker, `valorPorCota`, `dataBase`, `dataPagamento`, `fonte`).
 
 Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code precisa de acesso a elas: nível **Limitado** (Custom, na documentação), com a caixa de gerenciadores de pacotes marcada, e a lista abaixo em **Domínios permitidos** (menu do ambiente na barra de título da sessão, Edit). A regra vale pelo nome exato do endereço, então use o curinga `*.` para cobrir o "www" e os outros subdomínios. Cada domínio vale também sem o curinga, e a lista funciona com os dois.
 
 - Brasil: `*.bcb.gov.br`, `*.ibge.gov.br`, `*.tesourodireto.com.br`, `*.gov.br`, `*.in.gov.br`, `*.anbima.com.br`, `*.b3.com.br` (a CVM, com os dados abertos e o RAD, entra em `*.gov.br`). Para Mercado e calendário, páginas de relações com investidores das empresas (ex.: `ri.empresa.com.br`) precisam ser liberadas quando a pauta pedir.
-- Fundos imobiliários: os rendimentos vêm da API de proventos da B3 (`sistemaswebb3-listados.b3.com.br`, em `*.b3.com.br`), pelo script `node scripts/proventos-b3.mjs`.
+- Calendário: proventos de ações e fundos vêm da API da B3 (`sistemaswebb3-listados.b3.com.br`, em `*.b3.com.br`), pelos scripts `node scripts/atualizar-calendario.mjs` (robô) e `node scripts/proventos-b3.mjs` (lista de candidatos).
 - Potências (ampliação internacional): `*.gov.uk`, `*.bankofengland.co.uk`, `*.ons.gov.uk`, `*.bundesbank.de`, `*.destatis.de`, `*.banque-france.fr`, `*.insee.fr`, `*.bancaditalia.it`, `*.istat.it`, `*.cbr.ru`, `*.kremlin.ru`, `*.whitehouse.gov`, `*.iaea.org`, `*.unocha.org`
 - Exterior: `*.federalreserve.gov`, `*.bls.gov`, `*.bea.gov`, `*.treasury.gov`, `*.europa.eu`, `*.imf.org`, `*.worldbank.org`, `*.oecd.org`, `*.eia.gov`, `*.iea.org`, `*.opec.org`, `*.un.org`
 - Opcional, para ouvir os dois lados dos conflitos e outras fontes oficiais (hoje recusados pelo proxy do ambiente): `*.mid.ru`, `*.government.ru`, `*.minfin.gov.ru`, `*.rosstat.gov.ru`, `*.president.gov.ua`, `*.mfa.gov.ua`, `*.bank.gov.ua`, `*.president.ir`, `*.mfa.ir`, `*.cbi.ir`, `*.nato.int`, `*.state.gov`, `*.defense.gov`, `*.economie.gouv.fr`, `*.gouvernement.fr`, `*.bundesregierung.de`

@@ -57,9 +57,9 @@ Sem vaga fixa: entra quando for o fato mais relevante da vaga Brasil ou Mercado 
 
 ### Calendário de proventos
 
-Roda na manhã de segunda e mexe só em `src/data/calendario.json` (página `/calendario/`).
+Atualizado pelo robô `scripts/atualizar-calendario.mjs` (GitHub Actions, segunda a sexta, sem IA), que mexe só em `src/data/calendario.json` (página `/calendario/`).
 
-- Ações: dividendos e JCP de empresas relevantes (mesmo critério da editoria Mercado) com pagamento nas próximas semanas, lidos nos avisos aos acionistas e comunicados ao mercado (dados abertos da CVM, RI da empresa). Cada linha tem empresa, ticker, tipo, valor bruto por ação, data com, data de pagamento e a fonte.
+- Ações: dividendos e JCP das empresas do Ibovespa com pagamento nos próximos 60 dias, lidos no cadastro de proventos da companhia na B3 (valor, data com e data de pagamento declarados pela empresa) ou no aviso aos acionistas (dados abertos da CVM, RI da empresa). Pagamento que parece prazo-limite (em 30 ou 31 de dezembro, ou mais de 8 meses depois da data com) fica de fora até ser conferido no aviso. Cada linha tem empresa, ticker, tipo, valor bruto por ação, data com, data de pagamento e a fonte.
 - Fundos imobiliários: rendimento por cota, data-base e data de pagamento, lidos na consulta de proventos da B3 (`scripts/proventos-b3.mjs`) ou no comunicado do administrador. Fundo relevante: componente do IFIX ou com grande base de cotistas.
 - Só entra linha com valor, as duas datas e uma fonte aberta nesta sessão. Pagamento "a definir", valor estimado ou data não confirmada ficam de fora.
 - Linha com pagamento anterior à data da pauta sai da lista. O campo `atualizado` leva a data da pauta.
