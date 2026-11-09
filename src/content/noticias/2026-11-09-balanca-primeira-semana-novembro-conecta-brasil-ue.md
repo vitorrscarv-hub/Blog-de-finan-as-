@@ -4,7 +4,7 @@ description: "Exportações de US$ 7,2 bi e importações de US$ 5,8 bi deram su
 date: 2026-11-09
 editoria: "Brasil"
 keywords: ["balança comercial", "exportações", "importações", "acordo Mercosul-UE", "MDIC"]
-teaser: "O MDIC informa superávit de US$ 1,4 bilhão na primeira semana de novembro e apresenta na terça a plataforma Conecta Brasil – UE. Os números e o que a nota não diz. [LINK]"
+teaser: "O MDIC informa superávit de US$ 1,4 bilhão na primeira semana de novembro e apresenta na terça a plataforma Conecta Brasil-UE. Os números e o que a nota não diz. [LINK]"
 fontes:
   - titulo: "MDIC: Primeira semana de novembro alcança superávit de US$ 1,4 bilhão (09/11/2026)"
     url: "https://www.gov.br/mdic/pt-br/assuntos/noticias/2026/novembro/primeira-semana-de-novembro-alcanca-superavit-de-us-1-4-bilhao"
@@ -32,9 +32,9 @@ Na média diária de exportações, comparada a novembro de 2025, o MDIC registr
 
 Nas importações, também pela média diária, o crescimento foi de US$ 5,58 milhões (26,6%) na agropecuária, de US$ 30,55 milhões (60,9%) na indústria extrativa e de US$ 244,31 milhões (22,2%) nos produtos da indústria de transformação.
 
-## A plataforma Conecta Brasil – UE
+## A plataforma Conecta Brasil-UE
 
-Em outra nota, o MDIC informa que apresenta nesta terça-feira (10) a plataforma Conecta Brasil – UE, construída em parceria com o Banco Interamericano de Desenvolvimento (BID), para orientar empresas e operadores do comércio exterior sobre as oportunidades do acordo Mercosul-União Europeia. O lançamento ocorre na 6ª reunião ordinária do Comitê Nacional de Promoção da Cultura Exportadora, às 14h30, no Salão Nobre do Bloco K da Esplanada dos Ministérios, em Brasília.
+Em outra nota, o MDIC informa que apresenta nesta terça-feira (10) a plataforma Conecta Brasil-UE, construída em parceria com o Banco Interamericano de Desenvolvimento (BID), para orientar empresas e operadores do comércio exterior sobre as oportunidades do acordo Mercosul-União Europeia. O lançamento ocorre na 6ª reunião ordinária do Comitê Nacional de Promoção da Cultura Exportadora, às 14h30, no Salão Nobre do Bloco K da Esplanada dos Ministérios, em Brasília.
 
 No mesmo evento será lançada a segunda fase da Janela Única de Investimentos do Brasil, com novos serviços e funcionalidades para que investidores estrangeiros possam planejar e executar negócios no país, segundo o ministério. Participam o ministro substituto do MDIC, Rodrigo Zerbone, a secretária-executiva da Camex, Juliana Volpi, e a secretária de Comércio Exterior, Tatiana Prazeres. A nota não detalha o conteúdo da plataforma nem os serviços da nova fase da Janela Única.
 
