@@ -4,7 +4,7 @@ description: "Lula disse que dívida e juros o preocupam e que preservará as re
 date: 2026-11-09
 editoria: "Brasil"
 keywords: ["Lula", "pronunciamento", "responsabilidade fiscal", "dívida pública", "juros"]
-teaser: "Lula disse se preocupar com a dívida e os juros e reafirmou a responsabilidade fiscal, ao lado de novas medidas. O que disse e o que não detalhou. [LINK]"
+teaser: "Lula disse se preocupar com a dívida e os juros e reafirmou a responsabilidade fiscal, e citou medidas sociais. O que disse e o que não detalhou. [LINK]"
 fontes:
   - titulo: "g1: Veja a íntegra do pronunciamento de Lula em rede nacional de rádio e TV neste domingo (08/11/2026)"
     url: "https://g1.globo.com/politica/noticia/2026/11/08/leia-a-integra-do-pronunciamento-de-lula-em-rede-nacional-de-radio-e-tv.ghtml"
@@ -33,7 +33,7 @@ O presidente também listou compromissos e propostas, segundo a íntegra:
 - universalizar a educação integral e o Pé-de-Meia, e criar o Pé-de-Meia Universitário;
 - uma medida provisória para criar o Ministério da Segurança Pública, após a aprovação da PEC da Segurança.
 
-O discurso não traz valores, fonte de recursos nem cronograma para essas medidas. Lula também citou como realizações a isenção do Imposto de Renda para quem ganha até R$ 5 mil (o texto diz "zeramos o Imposto de Renda para quem ganha até R$ 5 mil") e a aprovação do fim da escala 6x1 sem redução de salário. Esses são os termos do pronunciamento, e este texto não os confere em fontes oficiais.
+O discurso não traz valores nem fonte de recursos para essas medidas e, além do início da isenção da cesta básica no ano que vem, não informa prazos. Lula também citou como realizações a isenção do Imposto de Renda para quem ganha até R$ 5 mil (o texto diz "zeramos o Imposto de Renda para quem ganha até R$ 5 mil") e a aprovação do fim da escala 6x1 sem redução de salário. Esses são os termos do pronunciamento, e este texto não os confere em fontes oficiais.
 
 ## Reforma política e do Judiciário
 
@@ -45,4 +45,4 @@ O Estadão ouviu economistas que criticaram o discurso. Sérgio Vale, economista
 
 ## O que acompanhar
 
-O ponto em aberto, segundo as duas reportagens, é como o governo conciliará as promessas com as regras fiscais que o presidente disse preservar, o que depende de propostas que ainda não foram apresentadas. Este texto não avalia o mérito das medidas nem projeta o efeito sobre as contas públicas, os juros ou o câmbio.
+Segundo o g1, o presidente não detalhou como vai controlar os gastos, e os dois entrevistados do Estadão apontam a falta dessa indicação. Na íntegra, não há detalhamento de como as medidas citadas serão conciliadas com as regras fiscais que ele disse preservar. Este texto não avalia o mérito das medidas nem projeta o efeito sobre as contas públicas, os juros ou o câmbio.
