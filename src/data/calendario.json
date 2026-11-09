@@ -1,54 +1,6 @@
 {
-  "atualizado": "2026-11-03",
+  "atualizado": "2026-11-09",
   "acoes": [
-    {
-      "empresa": "Bradesco",
-      "ticker": "BBDC3",
-      "tipo": "JCP",
-      "valorPorAcao": 0.017249826,
-      "dataCom": "2026-10-01",
-      "dataPagamento": "2026-11-03",
-      "fonte": {
-        "titulo": "B3: proventos em dinheiro de BRADESCO (BBDC), consulta ao cadastro da companhia em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJCREMiLCJsYW5ndWFnZSI6InB0LWJyIn0="
-      }
-    },
-    {
-      "empresa": "Bradesco",
-      "ticker": "BBDC4",
-      "tipo": "JCP",
-      "valorPorAcao": 0.018974809,
-      "dataCom": "2026-10-01",
-      "dataPagamento": "2026-11-03",
-      "fonte": {
-        "titulo": "B3: proventos em dinheiro de BRADESCO (BBDC), consulta ao cadastro da companhia em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJCREMiLCJsYW5ndWFnZSI6InB0LWJyIn0="
-      }
-    },
-    {
-      "empresa": "Itaú Unibanco",
-      "ticker": "ITUB4",
-      "tipo": "JCP",
-      "valorPorAcao": 0.018182,
-      "dataCom": "2026-09-30",
-      "dataPagamento": "2026-11-03",
-      "fonte": {
-        "titulo": "B3: proventos em dinheiro de ITAUUNIBANCO (ITUB), consulta ao cadastro da companhia em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IklUVUIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
-      }
-    },
-    {
-      "empresa": "Allos",
-      "ticker": "ALOS3",
-      "tipo": "Dividendo",
-      "valorPorAcao": 0.291918638,
-      "dataCom": "2026-10-22",
-      "dataPagamento": "2026-11-04",
-      "fonte": {
-        "titulo": "B3: proventos em dinheiro de ALLOS (ALOS), consulta ao cadastro da companhia em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkFMT1MiLCJsYW5ndWFnZSI6InB0LWJyIn0="
-      }
-    },
     {
       "empresa": "Copasa",
       "ticker": "CSMG3",
@@ -71,6 +23,18 @@
       "fonte": {
         "titulo": "B3: proventos em dinheiro de SANTANDER BR (SANB), consulta ao cadastro da companhia em 03/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlNBTkIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Caixa Seguridade",
+      "ticker": "CXSE3",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.35,
+      "dataCom": "2026-11-03",
+      "dataPagamento": "2026-11-17",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de CAIXA SEGURI (CXSE), consulta ao cadastro da companhia em 09/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkNYU0UiLCJsYW5ndWFnZSI6InB0LWJyIn0="
       }
     },
     {
@@ -143,6 +107,30 @@
       "fonte": {
         "titulo": "B3: proventos em dinheiro de RUMO S.A. (RAIL), consulta ao cadastro da companhia em 03/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlJBSUwiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Bradesco",
+      "ticker": "BBDC3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.017249826,
+      "dataCom": "2026-11-03",
+      "dataPagamento": "2026-12-01",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de BRADESCO (BBDC), consulta ao cadastro da companhia em 09/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJCREMiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Bradesco",
+      "ticker": "BBDC4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.018974809,
+      "dataCom": "2026-11-03",
+      "dataPagamento": "2026-12-01",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de BRADESCO (BBDC), consulta ao cadastro da companhia em 09/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJCREMiLCJsYW5ndWFnZSI6InB0LWJyIn0="
       }
     },
     {
@@ -268,6 +256,17 @@
   ],
   "fiis": [
     {
+      "fundo": "FII GUARDIAN",
+      "ticker": "GARE11",
+      "valorPorCota": 0.083,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-09",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo GARE, consulta ao cadastro do fundo em 09/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkdBUkUiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
       "fundo": "FII HSI CRI",
       "ticker": "HSAF11",
       "valorPorCota": 0.95,
@@ -378,6 +377,17 @@
       }
     },
     {
+      "fundo": "FII GGR ZAG",
+      "ticker": "GGRC11",
+      "valorPorCota": 0.1,
+      "dataBase": "2026-11-03",
+      "dataPagamento": "2026-11-10",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo GGRC, consulta ao cadastro do fundo em 09/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkdHUkMiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
       "fundo": "FII HABIT II",
       "ticker": "HABT11",
       "valorPorCota": 0.92,
@@ -408,6 +418,17 @@
       "fonte": {
         "titulo": "B3: rendimentos do fundo ITRI, consulta ao cadastro do fundo em 03/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IklUUkkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII KINEA HF",
+      "ticker": "KNHF11",
+      "valorPorCota": 1,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-12",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo KNHF, consulta ao cadastro do fundo em 09/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOSEYiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
@@ -595,6 +616,17 @@
       "fonte": {
         "titulo": "B3: rendimentos do fundo CYCR, consulta ao cadastro do fundo em 03/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkNZQ1IiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII ATHENA I",
+      "ticker": "FATN11",
+      "valorPorCota": 0.8,
+      "dataBase": "2026-11-06",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo FATN, consulta ao cadastro do fundo em 09/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkZBVE4iLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
@@ -891,6 +923,17 @@
       "dataPagamento": "2026-11-16",
       "fonte": {
         "titulo": "B3: rendimentos do fundo VINO, consulta ao cadastro do fundo em 03/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZJTk8iLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VINCI OF",
+      "ticker": "VINO11",
+      "valorPorCota": 0.045,
+      "dataBase": "2026-10-30",
+      "dataPagamento": "2026-11-16",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VINO, consulta ao cadastro do fundo em 09/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZJTk8iLCJ0eXBlRnVuZCI6N30="
       }
     },
