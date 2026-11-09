@@ -1,6 +1,6 @@
 ---
 title: "Balança tem superávit de US$ 1,4 bilhão na primeira semana de novembro, e o MDIC lança plataforma sobre a UE"
-description: "Exportações de US$ 7,2 bi e importações de US$ 5,8 bi deram superávit de US$ 1,4 bi na 1ª semana de novembro, segundo o MDIC, que lança plataforma sobre a UE."
+description: "Exportações de US$ 7,2 bi e importações de US$ 5,8 bi deram superávit de US$ 1,4 bi na 1ª semana de novembro, segundo o MDIC."
 date: 2026-11-09
 editoria: "Brasil"
 keywords: ["balança comercial", "exportações", "importações", "acordo Mercosul-UE", "MDIC"]
