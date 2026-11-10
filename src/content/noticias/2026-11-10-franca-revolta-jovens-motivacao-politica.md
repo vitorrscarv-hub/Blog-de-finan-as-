@@ -43,6 +43,16 @@ fontes:
     url: "https://www.lefigaro.fr/conso/carburants-la-deuxieme-campagne-d-aide-grands-rouleurs-ouvre-ce-mardi-comment-en-beneficier-20261027"
   - titulo: "Le Figaro: \"Fruto da extrema esquerda mélenchonista\", sede do RN na Gironda incendiada por manifestantes (09/11/2026)"
     url: "https://www.lefigaro.fr/bordeaux/le-fruit-de-l-extreme-gauche-melenchoniste-la-permanence-du-rn-de-la-gironde-incendiee-par-des-manifestants-20261109"
+  - titulo: "Le Figaro: as intenções de contratação caem 6,5% em 2026, segundo o France Travail (21/04/2026)"
+    url: "https://www.lefigaro.fr/flash-eco/emploi-les-intentions-de-recrutement-en-baisse-de-6-5-en-2026-selon-france-travail-20260421"
+  - titulo: "Le Figaro: os setores que vão contratar em 2026 apesar da queda das intenções de contratação (21/04/2026)"
+    url: "https://www.lefigaro.fr/conjoncture/une-chute-de-6-5-des-intentions-de-recrutement-ces-secteurs-qui-embaucheront-quand-meme-en-2026-20260421"
+  - titulo: "Le Figaro: \"44% das empresas têm dificuldades importantes para contratar\", diz o diretor-geral do France Travail (27/10/2026)"
+    url: "https://www.lefigaro.fr/vie-professionnelle/44-des-entreprises-rencontrent-des-difficultes-importantes-de-recrutement-l-etonnant-paradoxe-souligne-par-le-directeur-general-de-france-travail-20261027"
+  - titulo: "Le Figaro: a inserção dos jovens diplomados cada vez mais difícil, segundo a Apec (04/11/2025)"
+    url: "https://www.lefigaro.fr/conjoncture/l-insertion-des-jeunes-diplomes-de-plus-en-plus-difficile-20251104"
+  - titulo: "Le Figaro: quase 30% menos contratações nas profissões mais expostas à IA, estudo do Banco da França e da HEC (08/10/2026)"
+    url: "https://www.lefigaro.fr/vie-professionnelle/pres-de-30-d-embauche-en-moins-dans-les-metiers-les-plus-exposes-cette-etude-confirme-que-l-intelligence-artificielle-a-fait-basculer-l-emploi-des-jeunes-20261008"
 draft: false
 gate: true
 ---
@@ -93,6 +103,31 @@ Os indícios de uso político do movimento são numerosos e públicos:
 - **Os sindicatos.** Questionada sobre apoio a Mélenchon, Sophie Binet, da CGT, disse que o programa da LFI contém "reivindicações da CGT", acrescentou que vê outros partidos fazendo o mesmo e não declarou apoio, segundo o Le Figaro.
 
 Há também o outro lado. A CFDT, central moderada, cobrou resposta às reivindicações, pediu 100 euros a mais no salário mínimo e condenou a violência, segundo o Le Figaro. O Renouveau lycéen, que ficou na mesa com o governo, também pediu a continuação da mobilização. E os números do Insee mostram que o desemprego dos jovens e a conta de energia pioraram de verdade.
+
+## Há emprego para o jovem francês?
+
+Os números da procura por trabalhadores ajudam a medir se a angústia com o futuro tem fundamento. A pesquisa anual de intenções de contratação do France Travail, o serviço público de emprego, ouviu 1,77 milhão de estabelecimentos entre outubro e dezembro de 2025. Os resultados, publicados em abril e relatados pelo Le Figaro:
+
+| Pesquisa de intenções de contratação de 2026 (France Travail) | |
+| --- | --- |
+| Projetos de contratação | 2,27 milhões, queda de 6,5%, o menor nível desde 2018 |
+| Em relação ao pico de 2023 (3,04 milhões) | 764 mil a menos |
+| Empresas que pretendem contratar | 23,3% |
+| Vagas com contrato por tempo indeterminado | 41% (eram 43,8% em 2025) |
+| Contratos de menos de seis meses | 41,8% (eram 36,7%) |
+| Contratações vistas como difíceis pelas empresas | 43,8% |
+
+As vagas mais procuradas não são as que um universitário imagina. No topo estão 97,1 mil auxiliares de cozinha e funcionários de restaurante, quase 40% delas sazonais; 93,8 mil garçons, 67,4% sazonais; e 83,8 mil trabalhadores de vinhedos e pomares, 95,2% sazonais. O piso legal de qualquer uma dessas vagas é o salário mínimo, hoje de 1.477 euros líquidos por mês, cerca de R$ 9,2 mil.
+
+Para quem sai da universidade, o quadro é pior. Segundo a Apec, associação que acompanha o emprego de nível superior, as contratações de profissionais em início de carreira caíram 19% em 2024 e deveriam cair mais 16% em 2025; 84% dos recém-formados com mestrado disseram ter tido dificuldade para achar emprego, e um quarto chama o trabalho atual de "emprego para pagar as contas", segundo o Le Figaro. Um estudo do Banco da França e da HEC mostra que, desde o lançamento do ChatGPT, as contratações em contrato fixo de jovens de 21 a 29 anos caíram 28,3% nas profissões mais expostas à inteligência artificial, como tradução, jornalismo, análise financeira e programação.
+
+Ao mesmo tempo, o diretor-geral do France Travail, Thibaut Guilluy, diz que 44% das empresas têm dificuldade importante para contratar, o que representaria de 200 mil a 300 mil vagas não preenchidas, sobretudo na construção, segundo o Le Figaro.
+
+## A opinião do Grafous
+
+A angústia do jovem francês é séria e tem números: menos vagas, mais contratos curtos, o primeiro emprego de nível superior encolhendo e a inteligência artificial ocupando as tarefas que antes iam para os iniciantes. Quem diz que o protesto é só capricho de estudante ignora esses dados.
+
+O que não faz sentido é o remédio que sobrou na pauta. As vagas abertas estão na cozinha, no salão, no campo e na obra, e as que somem são justamente as de escritório de nível superior. Acabar com a seleção do Parcoursup e abrir mais 150 mil vagas na universidade, como propõe Mélenchon, empurra mais jovens para o diploma cujo mercado mais encolhe, sem resolver a falta de quem queira as vagas que existem. É uma promessa que rende voto em abril de 2027, não emprego em 2028. A causa é legítima; a pauta, como está, é de campanha.
 
 ## O que fica
 
