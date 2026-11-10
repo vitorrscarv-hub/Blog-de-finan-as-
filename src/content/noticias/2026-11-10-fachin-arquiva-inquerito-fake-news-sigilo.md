@@ -1,6 +1,6 @@
 ---
 title: "Fachin arquiva o inquérito das fake news e mantém sigilo parcial de dados sensíveis"
-description: "Fachin arquivou o inquérito das fake news a pedido da PGR. Só os dados sensíveis ficam sob sigilo até serem separados; os desdobramentos seguem individuais."
+description: "Fachin arquivou o inquérito das fake news a pedido da PGR. O sigilo dos autos segue até a separação dos dados sensíveis."
 date: 2026-11-10
 editoria: "Brasil"
 keywords: ["STF", "inquérito das fake news", "Fachin", "PGR", "Judiciário"]
