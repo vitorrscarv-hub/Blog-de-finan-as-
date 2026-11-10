@@ -1,6 +1,6 @@
 ---
 title: "Ata do Copom: expectativas desancoradas exigem restrição monetária maior e por mais tempo"
-description: "Pela ata da 282ª reunião, expectativas desancoradas exigem restrição maior e por mais tempo. Petróleo, El Niño, fim da 6x1 e câmbio são citados como choques."
+description: "Pela ata do Copom, expectativas desancoradas exigem restrição maior e por mais tempo. Petróleo, El Niño, fim da 6x1 e câmbio são citados como choques."
 date: 2026-11-10
 editoria: "Brasil"
 keywords: ["ata do Copom", "Selic", "expectativas de inflação", "choques de oferta", "política fiscal"]
