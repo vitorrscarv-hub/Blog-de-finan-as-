@@ -16,6 +16,10 @@ fontes:
     url: "https://valor.globo.com/financas/noticia/2026/11/10/ibovespa-recua-com-incertezas-sobre-politica-fiscal-no-brasil-e-aversao-a-risco-no-exterior.ghtml"
   - titulo: "Valor: Juros curtos fecham em queda e longos sobem com ata do Copom e pressão externa (10/11/2026)"
     url: "https://valor.globo.com/financas/noticia/2026/11/10/juros-curtos-fecham-em-queda-e-longos-sobem-com-ata-do-copom-e-pressao-externa.ghtml"
+  - titulo: "G1: Galípolo diz que percepção de risco dos investidores ajuda a explicar juros altos no Brasil (10/11/2026)"
+    url: "https://g1.globo.com/economia/noticia/2026/11/10/galipolo-juros-confianca-mercado-economia-cambio.ghtml"
+  - titulo: "Banco Central: Ata da 282ª reunião do Copom (publicada em 10/11/2026)"
+    url: "https://www.bcb.gov.br/publicacoes/atascopom"
 draft: false
 gate: true
 ---
