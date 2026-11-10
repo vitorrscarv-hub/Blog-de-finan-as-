@@ -1,13 +1,19 @@
 ---
 title: "A inflação volta a assustar: Itaú, Bradesco e XP veem IPCA acima do teto até 2027"
-description: "Os grandes bancos elevaram a inflação de 2027 para até 6,1% e tiraram os cortes da Selic. O Focus mostra expectativas se afastando da meta até 2030."
+description: "Os grandes bancos elevaram a inflação de 2027 para até 6,1% e adiaram os cortes da Selic. O Focus mostra expectativas se afastando da meta até 2030."
 date: 2026-11-10
 editoria: "Brasil"
 keywords: ["inflação", "IPCA", "Focus", "Selic", "projeções"]
-teaser: "Em duas semanas, as grandes casas refizeram as contas: inflação acima do teto em 2026 e 2027, Selic parada em 13,75% e PIB perto de zero. O que está por trás e o que pode piorar. [LINK]"
+teaser: "Em pouco mais de uma semana, as grandes casas refizeram as contas: inflação acima do teto em 2026 e 2027, Selic parada em 13,75% e PIB perto de zero. O que está por trás e o que pode piorar. [LINK]"
 fontes:
   - titulo: "Banco Central, Boletim Focus: expectativas anuais de IPCA (23/10 a 06/11/2026)"
     url: "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais?$top=60&$orderby=Data%20desc&$format=json&$filter=Indicador%20eq%20'IPCA'%20and%20baseCalculo%20eq%200"
+  - titulo: "Banco Central: metas para a inflação"
+    url: "https://www.bcb.gov.br/controleinflacao/metainflacao"
+  - titulo: "Banco Central: dólar PTAX de 23/10/2026"
+    url: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='10-23-2026'&$format=json"
+  - titulo: "Banco Central: dólar PTAX de 06/11/2026"
+    url: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='11-06-2026'&$format=json"
   - titulo: "IBGE, API Sidra: IPCA acumulado em 12 meses, tabela 1737"
     url: "https://apisidra.ibge.gov.br/values/t/1737/n1/all/v/63,2265/p/last%202?formato=json"
   - titulo: "Money Times: Itaú piora cenário para 2027 e descarta cortes nos juros (05/11/2026)"
@@ -22,7 +28,7 @@ draft: false
 gate: true
 ---
 
-Em duas semanas, as maiores casas de análise do país refizeram as contas da economia brasileira, e o resultado é o mesmo em todas: inflação mais alta, juros parados por mais tempo e crescimento perto de zero. Itaú, Bradesco e XP passaram a ver o IPCA acima do teto da meta não só neste ano, mas também em 2027. O mercado como um todo foi atrás, e o que mais preocupa não é a inflação do próximo ano, e sim a dos anos seguintes.
+Em pouco mais de uma semana, as maiores casas de análise do país refizeram as contas da economia brasileira, e o resultado é o mesmo em todas: inflação mais alta, juros parados por mais tempo e crescimento perto de zero. Itaú, Bradesco e XP passaram a ver o IPCA acima do teto da meta não só neste ano, mas também em 2027. O mercado como um todo foi atrás, e o que mais preocupa não é a inflação do próximo ano, e sim a dos anos seguintes.
 
 ## O que as grandes casas esperam
 
@@ -40,7 +46,7 @@ A meta de inflação é de 3%, com tolerância até 4,5%. As três projeções p
 
 ## Por que as contas pioraram
 
-As casas apontam os mesmos motores. O primeiro é o câmbio: o real perdeu valor depois da eleição, e um dólar mais caro encarece importados, insumos e combustíveis. O Itaú atribui a revisão ao "aumento do prêmio de risco doméstico, diante das incertezas sobre a trajetória das contas públicas". A XP diz que a desvalorização "reflete, em parte, dúvidas sobre a gestão fiscal nos próximos anos".
+As casas apontam os mesmos motores. O primeiro é o câmbio: o real perdeu valor depois da eleição, e um dólar mais caro encarece importados, insumos e combustíveis. O Itaú atribui a revisão do câmbio a um prêmio de risco doméstico maior, ligado à incerteza sobre a trajetória das contas públicas. Para a XP, a desvalorização se explica em parte pelas dúvidas sobre a gestão fiscal dos próximos anos, segundo o Money Times.
 
 O segundo são os combustíveis. O Itaú já considera a volta do PIS/Cofins sobre a gasolina, o fim da subvenção ao diesel no segundo semestre e reajuste de ICMS. O Bradesco trabalha com o Brent caindo de perto de US$ 105 para US$ 75 ao longo de 2027; se isso não acontecer, a pressão sobre preços e contas públicas aumenta.
 
@@ -54,12 +60,12 @@ Isso tem um nome técnico: desancoragem das expectativas. Quando o mercado passa
 
 ## Juros parados, economia parada
 
-O Itaú e a XP agora projetam a Selic em 13,75% durante todo o ano de 2027. O Bradesco vê cortes só no segundo semestre, levando a taxa a 12,75%. A XP não descarta nova alta: "Caso a moeda brasileira continue perdendo valor, a avaliação é que o Copom poderá precisar apertar ainda mais a política monetária", segundo o Money Times.
+O Itaú e a XP agora projetam a Selic em 13,75% durante todo o ano de 2027. O Bradesco vê cortes só no segundo semestre, levando a taxa a 12,75%. A XP não descarta nova alta: se o real continuar perdendo valor, o Copom pode ter de apertar ainda mais os juros, segundo o Money Times.
 
 O custo aparece no crescimento. As três casas veem o PIB de 2027 entre 0,3% e 0,5%, perto da estagnação, e o desemprego subindo para 6,4% a 6,8% no fim do ano, segundo o InfoMoney. Inflação alta com economia fraca é a pior combinação para a renda das famílias, e o Itaú lembra que o impacto é maior sobre a população de menor renda.
 
 ## O que pode mudar o quadro
 
-Todas as casas apontam a mesma saída: um ajuste fiscal crível. O Itaú calcula que o esforço para estabilizar a dívida é de cerca de 4 pontos percentuais do PIB e defende cortar despesas obrigatórias e benefícios tributários. O Bradesco diz que medidas que deem credibilidade à meta fiscal "poderiam ajudar a estabilizar ou até valorizar o real" e abrir espaço para juros menores. A dívida bruta, segundo as três, deve chegar perto de 88% do PIB no fim de 2027.
+Itaú e Bradesco apontam a mesma saída: um ajuste fiscal crível. O Itaú calcula que o esforço para estabilizar a dívida é de cerca de 4 pontos percentuais do PIB e defende cortar despesas obrigatórias e benefícios tributários. Para o Bradesco, medidas que deem credibilidade à meta fiscal poderiam estabilizar o real, ou até valorizá-lo, e abrir espaço para juros menores. A dívida bruta deve terminar 2027 entre 87,9% (Itaú) e 88,7% do PIB (Bradesco), segundo o InfoMoney.
 
 É esse ajuste que o mercado cobra do governo. Enquanto ele não vier em números, a conta da desconfiança continua sendo paga em dólar caro, juros altos e inflação acima da meta, e ela chega primeiro ao bolso de quem tem menos.
