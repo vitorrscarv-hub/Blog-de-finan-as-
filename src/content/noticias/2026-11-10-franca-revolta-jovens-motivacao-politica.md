@@ -13,6 +13,12 @@ fontes:
     url: "https://www.insee.fr/fr/statistiques/fichier/version-html/9032359/IR192_Chomage_2T2026.pdf"
   - titulo: "BCE: taxa de referência do euro em reais (série EXR), 10/11/2026"
     url: "https://data-api.ecb.europa.eu/service/data/EXR/D.BRL.EUR.SP00.A?lastNObservations=3&format=csvdata"
+  - titulo: "BCE: rendimento de longo prazo dos títulos do governo francês (série IRS, médias mensais)"
+    url: "https://data-api.ecb.europa.eu/service/data/IRS/M.FR.L.L40.CI.0000.EUR.N.Z?lastNObservations=14&format=csvdata"
+  - titulo: "Eliseu: pronunciamento do presidente da República aos franceses (18/10/2026)"
+    url: "https://www.elysee.fr/emmanuel-macron/2026/10/18/adresse-aux-francais-7"
+  - titulo: "Le Figaro: as datas dos dois turnos da eleição presidencial de 2027 (14/10/2026)"
+    url: "https://www.lefigaro.fr/elections/presidentielles/presidentielle-2027-quand-auront-lieu-les-deux-tours-de-l-election-20261014"
   - titulo: "Le Figaro: Quem são de fato os líderes estudantis que pedem a continuação dos bloqueios (04/11/2026)"
     url: "https://www.lefigaro.fr/actualite-france/qui-sont-vraiment-les-chefs-de-file-etudiants-qui-appellent-a-poursuivre-les-blocus-20261104"
   - titulo: "Le Figaro: Pode-se abolir o Parcoursup e abrir 150 mil vagas, como quer Jean-Luc Mélenchon? (17/10/2026)"
@@ -41,7 +47,7 @@ draft: false
 gate: true
 ---
 
-A França vive há dois meses uma onda de protestos de estudantes. Começou com bloqueios de escolas no fim de setembro, ganhou as ruas com sindicatos e "coletes amarelos" em outubro e chegou à greve geral de 5 de novembro. Nos discursos, os jovens falam em "futuro roubado" e "vida cara". O Grafous foi atrás do que eles pedem de fato, de quanto a vida encareceu e de quem está por trás do movimento, a cinco meses da eleição presidencial de abril de 2027.
+A França vive há dois meses uma onda de protestos de estudantes. Começou com bloqueios de escolas no fim de setembro, ganhou as ruas com sindicatos e "coletes amarelos" em outubro e chegou à greve convocada pelas centrais sindicais para 5 de novembro. Nos discursos, os jovens falam do futuro e da "vida cara". O Grafous foi atrás do que eles pedem de fato, de quanto a vida encareceu e de quem está por trás do movimento, a cinco meses da eleição presidencial de abril de 2027.
 
 ## O que os estudantes pedem, em concreto
 
@@ -64,17 +70,17 @@ O custo de vida subiu de fato, mas não onde se costuma imaginar. Pelo Insee, o 
 | Serviços | 2,7% |
 | Produtos manufaturados | -0,2% |
 
-A França não tem uma cesta básica oficial como a do Dieese no Brasil. O índice de alimentação do Insee, que é o que mais se aproxima, subiu só 1,2%; frutas, verduras e outros frescos, 8%. Sem a energia, os preços teriam subido bem menos. A alta vem do gás e dos combustíveis, que o governo atribui à guerra no golfo Pérsico, um choque externo, e não de uma escalada geral de preços produzida dentro do país.
+A França não tem uma cesta básica oficial como a do Dieese no Brasil. O índice de alimentação do Insee, que é o que mais se aproxima, subiu só 1,2%; frutas, verduras e outros frescos, 8%. Sem a energia, os preços teriam subido bem menos. A alta vem do gás e dos combustíveis, cujo preço o presidente Emmanuel Macron atribuiu, em pronunciamento de 18 de outubro, ao conflito no golfo Pérsico, um choque externo, e não de uma escalada geral de preços produzida dentro do país.
 
-Para o jovem, o dado mais duro é outro. O desemprego entre 15 e 24 anos chegou a 21,6% no segundo trimestre, 2,5 pontos acima de um ano antes, pelo Insee. A taxa geral, de 8,3%, é a mais alta desde o fim de 2020. Esse é o "futuro" que aparece nos cartazes.
+Para o jovem, o dado mais duro é outro. O desemprego entre 15 e 24 anos chegou a 21,6% no segundo trimestre, 2,5 pontos acima de um ano antes, pelo Insee. A taxa geral, de 8,3%, é a mais alta desde o terceiro trimestre de 2020. Esse é o futuro de que os manifestantes falam.
 
 ## O que o governo já deu
 
 - **Educação:** reforma do Parcoursup e substituição da plataforma em 2028, 15 mil vagas a mais no ensino superior, 500 cargos de professor para reduzir as turmas do primeiro ano do ensino médio e 4 bilhões de euros para reformar escolas, segundo o Le Figaro.
-- **Salário mínimo:** alta de 1,6% em 1º de dezembro, de 1.477 para 1.502 euros líquidos por mês, cerca de R$ 9,35 mil pelo câmbio do Banco Central Europeu de 10 de novembro. É uma alta de 23 euros; a CFDT pedia 100 e a CGT, 150.
-- **Combustível:** auxílio de 100 euros por trimestre para quem usa o carro para trabalhar, estendido a 5,5 milhões de pessoas, segundo o Le Figaro.
+- **Salário mínimo:** alta de 1,6% em 1º de dezembro, anunciada pelo primeiro-ministro em 9 de novembro segundo o Le Figaro, de 1.477 para 1.502 euros líquidos por mês, cerca de R$ 9,35 mil pelo câmbio do Banco Central Europeu de 10 de novembro. É uma alta de 23 euros; a CFDT pedia 100 e a CGT, 150.
+- **Combustível:** auxílio de 100 euros, referente a outubro a dezembro, para quem usa o carro para trabalhar, com até 5,5 milhões de beneficiários potenciais, segundo números do governo citados pelo Le Figaro.
 
-Nada disso desmobilizou os líderes. "Obtivemos migalhas", disse um representante secundarista depois do encontro com o primeiro-ministro Sébastien Lecornu, lembrando que o governo "sai em seis meses".
+Nada disso desmobilizou os líderes. "Obtivemos migalhas em relação ao que pedimos", disse um representante secundarista depois do encontro com o primeiro-ministro Sébastien Lecornu, segundo o Le Figaro, lembrando que o governo "sai em seis meses".
 
 ## A política por trás
 
@@ -82,14 +88,14 @@ Os indícios de uso político do movimento são numerosos e públicos:
 
 - **O calendário.** "Sébastien Lecornu tem medo de que isso dure até a eleição presidencial, e é o que esperamos se não tivermos ganho de causa", disse Soumaya Sarré ao Le Figaro. A frase não fala em escola nem em preços: fala em eleição.
 - **A pauta.** A revogação do Parcoursup e a expansão das vagas são propostas da LFI anteriores ao auge dos protestos. Em 11 de outubro, num comício perto de Clermont-Ferrand com 10 mil pessoas, segundo os organizadores, Mélenchon disse que "esta luta dos secundaristas é fundamental para a nossa pátria". Segundo o Le Figaro, a LFI fretou ônibus de vários departamentos para o evento.
-- **A recusa ao diálogo com a direita.** Em 9 de novembro, a maior parte das organizações estudantis abandonou o comitê de reforma do Parcoursup no gabinete do primeiro-ministro porque havia um deputado do Rassemblement National, uma senadora da UDR e o sindicato estudantil de direita UNI na sala. "Nunca entraremos numa sala com a extrema direita", disse a secretária-geral da Unef. Ficaram apenas Renouveau lycéen, UNI e alguns representantes eleitos.
-- **A violência dirigida.** Em 7 de novembro, manifestantes atearam fogo à fachada da sede do RN na Gironda e picharam "LFI 27", segundo o Le Figaro.
-- **Os sindicatos.** Questionada sobre apoio a Mélenchon, Sophie Binet, da CGT, disse que o programa da LFI contém "reivindicações da CGT", mas não declarou voto.
+- **A recusa ao diálogo com a direita.** Em 9 de novembro, grande parte das organizações estudantis e secundaristas abandonou a primeira reunião do comitê de reforma do Parcoursup porque havia na sala um deputado do Rassemblement National, uma senadora da UDR e o sindicato estudantil de direita UNI, além de representantes do patronato, segundo o Le Figaro. "Nunca entraremos numa sala com a extrema direita", disse a secretária-geral da Unef. Entre as organizações de jovens, ficaram apenas Renouveau lycéen, UNI e alguns representantes eleitos do conselho nacional dos secundaristas, segundo um participante.
+- **A violência dirigida.** Em 7 de novembro, à margem de uma manifestação dos "coletes amarelos" em Bordeaux, manifestantes atearam fogo à porta de aço da sede do RN na Gironda, em Mérignac, e picharam "LFI 27", segundo o Le Figaro.
+- **Os sindicatos.** Questionada sobre apoio a Mélenchon, Sophie Binet, da CGT, disse que o programa da LFI contém "reivindicações da CGT", acrescentou que vê outros partidos fazendo o mesmo e não declarou apoio, segundo o Le Figaro.
 
-Há também o outro lado. A CFDT, central moderada, apoiou as reivindicações salariais e condenou a violência. O Renouveau lycéen, que ficou na mesa com o governo, também pediu a continuação da mobilização. E os números do Insee mostram que o desemprego dos jovens e a conta de energia pioraram de verdade.
+Há também o outro lado. A CFDT, central moderada, cobrou resposta às reivindicações, pediu 100 euros a mais no salário mínimo e condenou a violência, segundo o Le Figaro. O Renouveau lycéen, que ficou na mesa com o governo, também pediu a continuação da mobilização. E os números do Insee mostram que o desemprego dos jovens e a conta de energia pioraram de verdade.
 
 ## O que fica
 
-A revolta francesa tem duas camadas. A de baixo é real: o jovem francês enfrenta o maior desemprego em seis anos, uma conta de gás e combustível um quarto mais cara e escolas que o próprio governo admite precisar de 4 bilhões de euros em obras. A de cima é política: a pauta que sobrou depois das concessões, revogar o Parcoursup já e colocar 10 bilhões na educação, é a plataforma de um candidato, e os líderes que a sustentam dizem abertamente que a meta é chegar à eleição. A comida, ao contrário do que sugere o slogan da "vida cara", subiu pouco.
+A revolta francesa tem duas camadas. A de baixo é real: o jovem francês enfrenta desemprego de 21,6%, num país com a maior taxa geral desde 2020, uma conta de gás e combustível um quarto mais cara e escolas que o próprio governo admite precisar de 4 bilhões de euros em obras. A de cima é política: a pauta que sobrou depois das concessões, revogar o Parcoursup já e colocar 10 bilhões na educação, tem no centro uma proposta de candidato, o fim do Parcoursup, e uma das líderes que a sustentam diz abertamente esperar que o movimento dure até a eleição se não for atendido. A comida, ao contrário do que sugere o slogan da "vida cara", subiu pouco.
 
-Para o investidor brasileiro com exposição à Europa, o efeito já aparece no prêmio que o mercado cobra da França: os títulos de 10 anos do governo francês rendiam 4,44% em setembro, contra 3,51% um ano antes, como o Grafous mostrou em outubro. Quanto mais o movimento se confundir com a campanha, maior tende a ser esse prêmio até abril.
+Para o investidor brasileiro com exposição à Europa, o risco político já aparece no prêmio que o mercado cobra da França: os títulos de 10 anos do governo francês rendiam 4,44% em média em setembro, contra 3,51% um ano antes, segundo o Banco Central Europeu, como o Grafous mostrou em outubro. Quanto mais o movimento se confundir com a campanha, maior pode ficar esse prêmio até abril.
