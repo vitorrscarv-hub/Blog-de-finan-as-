@@ -62,7 +62,7 @@ Isso tem um nome técnico: desancoragem das expectativas. Quando o mercado passa
 
 O Itaú e a XP agora projetam a Selic em 13,75% durante todo o ano de 2027. O Bradesco vê cortes só no segundo semestre, levando a taxa a 12,75%. A XP não descarta nova alta: se o real continuar perdendo valor, o Copom pode ter de apertar ainda mais os juros, segundo o Money Times.
 
-O custo aparece no crescimento. As três casas veem o PIB de 2027 entre 0,3% e 0,5%, perto da estagnação, e o desemprego subindo para 6,4% a 6,8% no fim do ano, segundo o InfoMoney. Inflação alta com economia fraca é a pior combinação para a renda das famílias, e o Itaú lembra que o impacto é maior sobre a população de menor renda.
+O custo aparece no crescimento. As três casas veem o PIB de 2027 entre 0,3% e 0,5%, perto da estagnação, e o desemprego subindo para a faixa de 6,4% a 6,8% em 2027, segundo o InfoMoney. Inflação alta com economia fraca é a pior combinação para a renda das famílias, e o Itaú lembra que o impacto é maior sobre a população de menor renda.
 
 ## O que pode mudar o quadro
 
