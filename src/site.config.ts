@@ -50,6 +50,7 @@ export const SITE = {
       segundos: 4,
       maximo: 5,
       materias: [
+        '2026-11-10-franca-revolta-jovens-motivacao-politica',
         '2026-11-10-risco-inflacao-projecoes-itau-bradesco-xp',
         '2026-11-09-lula-pronunciamento-responsabilidade-fiscal-medidas',
         '2026-11-09-focus-selic-2026-13-75-ipca-2027-4-90',

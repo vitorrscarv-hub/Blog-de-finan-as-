@@ -115,7 +115,7 @@ Para gastar o mínimo de IA, o que é dado vira script e a IA só escreve:
 | Etapa | Como |
 | --- | --- |
 | O que o dia pede | `node scripts/hoje.mjs`: IPCA pelo calendário do IBGE; ata e decisão do Copom pelas APIs do Banco Central |
-| Pauta | `node scripts/radar.mjs`: manchetes dos jornais (Valor, Folha, Estadão, G1, Money Times, InfoMoney, Poder360) e das fontes oficiais |
+| Pauta | `node scripts/radar.mjs`: manchetes dos jornais (Estadão, Gazeta do Povo, O Antagonista, Revista Oeste, Valor, Folha, G1, Money Times, InfoMoney, Poder360) e das fontes oficiais |
 | Pesquisas eleitorais | `node scripts/pesquisas-tse.mjs`: registro das pesquisas para presidente nos dados abertos do TSE |
 | Texto | o editor-chefe (a própria sessão), uma matéria por vez |
 | Checagem | um agente `checador` por matéria (`.claude/agents/checador.md`) |
@@ -140,7 +140,7 @@ Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code pr
 - Potências (ampliação internacional): `*.gov.uk`, `*.bankofengland.co.uk`, `*.ons.gov.uk`, `*.bundesbank.de`, `*.destatis.de`, `*.banque-france.fr`, `*.insee.fr`, `*.bancaditalia.it`, `*.istat.it`, `*.cbr.ru`, `*.kremlin.ru`, `*.whitehouse.gov`, `*.iaea.org`, `*.unocha.org`
 - Exterior: `*.federalreserve.gov`, `*.bls.gov`, `*.bea.gov`, `*.treasury.gov`, `*.europa.eu`, `*.imf.org`, `*.worldbank.org`, `*.oecd.org`, `*.eia.gov`, `*.iea.org`, `*.opec.org`, `*.un.org`
 - Opcional, para ouvir os dois lados dos conflitos e outras fontes oficiais (hoje recusados pelo proxy do ambiente): `*.mid.ru`, `*.government.ru`, `*.minfin.gov.ru`, `*.rosstat.gov.ru`, `*.president.gov.ua`, `*.mfa.gov.ua`, `*.bank.gov.ua`, `*.president.ir`, `*.mfa.ir`, `*.cbi.ir`, `*.nato.int`, `*.state.gov`, `*.defense.gov`, `*.economie.gouv.fr`, `*.gouvernement.fr`, `*.bundesregierung.de`
-- Jornais (radar da pauta e fatos políticos atribuídos): `*.moneytimes.com.br`, `*.infomoney.com.br`, `*.poder360.com.br`, `*.globo.com`, `*.folha.uol.com.br`, `*.estadao.com.br`
+- Jornais (radar da pauta e fatos políticos atribuídos): `*.moneytimes.com.br`, `*.infomoney.com.br`, `*.poder360.com.br`, `*.globo.com`, `*.folha.uol.com.br`, `*.estadao.com.br`, `gazetadopovo.com.br`, `oantagonista.com.br`, `revistaoeste.com`
 - Pesquisas eleitorais (registro no TSE): `*.tse.jus.br`
 - Agências (fatos políticos e de guerra): `*.reuters.com`, `*.apnews.com`, `*.afp.com`
 
