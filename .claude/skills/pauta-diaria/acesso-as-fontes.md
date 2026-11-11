@@ -37,10 +37,10 @@ O documento do RAD (`rad.cvm.gov.br`) é a fonte do aviso. Muitos avisos trazem 
 
 ## Radar e agenda da edição diária (testado em 22/10/2026)
 
-- `node scripts/radar.mjs [--horas=14] [--so=jornais|oficiais] [--max=12]`: manchetes com hora e link dos jornais (Valor, Folha Mercado e Poder, Estadão Economia e Política, G1 Economia e Política, Money Times, InfoMoney, Poder360) e o que saiu nas fontes oficiais (Copom, Selic, notícias do IBGE, Fed, fatos relevantes da CVM). Fonte que falha vira uma linha de aviso. O arquivo de dados abertos da CVM atualiza com defasagem de dias: para fato do mesmo dia, abra o RAD ou o RI da empresa.
+- `node scripts/radar.mjs [--horas=14] [--so=jornais|oficiais] [--max=12]`: manchetes com hora e link dos jornais (Estadão Economia e Política, Gazeta do Povo Economia e República, O Antagonista Brasil e Economia, Revista Oeste Política e Economia, Valor, Folha Mercado e Poder, G1 Economia e Política, Money Times, InfoMoney, Poder360) e o que saiu nas fontes oficiais (Copom, Selic, notícias do IBGE, Fed, fatos relevantes da CVM). Fonte que falha vira uma linha de aviso. O arquivo de dados abertos da CVM atualiza com defasagem de dias: para fato do mesmo dia, abra o RAD ou o RI da empresa.
 - `node scripts/hoje.mjs --turno=manha|noite`: matéria obrigatória do turno (IPCA pelo calendário do IBGE; ata e decisão do Copom pelas APIs `sitebcb/copom/atas` e `sitebcb/copom/comunicados` do Banco Central). `--proximos=30` lista as próximas divulgações do IBGE.
 - `node scripts/pesquisas-tse.mjs [--dias=7]`: pesquisas para presidente registradas no TSE, pelos dados abertos (`cdn.tse.jus.br/estatistica/sead/odsele/pesquisa_eleitoral/pesquisa_eleitoral_AAAA.zip`, arquivo `_BRASIL.csv`): registro, instituto, campo, divulgação, entrevistas e, quando o registro traz, a margem. O site do TSE (`tse.jus.br`, PesqEle) recusa robôs (Access Denied da Akamai): não contornar.
-- Money Times, InfoMoney e Poder360 abrem desde a liberação na rede (22/10/2026).
+- Money Times, InfoMoney e Poder360 abrem desde a liberação na rede (22/10/2026); Gazeta do Povo, O Antagonista e Revista Oeste, desde 11/11/2026.
 
 ## Dados do exterior (funcionam)
 

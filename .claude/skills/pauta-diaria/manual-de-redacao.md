@@ -22,7 +22,7 @@ Vaga sem fato que passe nestes critérios fica vazia, com o motivo no pull reque
 
 ### Política Brasil
 
-Uma matéria por dia sobre política nacional, pelo que interessa a quem investe (agenda econômica, fiscal, Congresso, regras), com neutralidade total (seção "Política e conflitos").
+Uma matéria por dia sobre política nacional, pelo que interessa a quem investe (agenda econômica, fiscal, Congresso, regras), na linha editorial do Grafous (seção "Linha editorial: centro-direita").
 
 Em período eleitoral, a matéria acompanha as pesquisas para presidente:
 
@@ -80,7 +80,7 @@ Fatos políticos e de guerra (ataque, acordo, sanção, declaração) muitas vez
 
 Os jornais são o radar da pauta (`scripts/radar.mjs`) e podem ser fonte de fato político, de evento ou de empresa, nunca de dado econômico.
 
-- Jornais aceitos: veículos de circulação nacional ou internacional com redação própria, como Valor Econômico, Folha de S.Paulo, O Estado de S. Paulo, O Globo e G1, Money Times, InfoMoney, Poder360, Financial Times, The Economist, The New York Times, The Wall Street Journal, BBC, The Guardian, El País, Le Monde. Blog, coluna de opinião, editorial, rede social e site agregador não contam.
+- Jornais aceitos: veículos de circulação nacional ou internacional com redação própria, como Valor Econômico, Folha de S.Paulo, O Estado de S. Paulo, Gazeta do Povo, O Antagonista, Revista Oeste, O Globo e G1, Money Times, InfoMoney, Poder360, Financial Times, The Economist, The New York Times, The Wall Street Journal, BBC, The Guardian, El País, Le Monde. Blog, coluna de opinião, editorial, rede social e site agregador não contam.
 - Todo fato tirado de jornal vai atribuído no texto ("segundo o Valor", "de acordo com a Folha"), e a página aberta entra em `fontes:`. O texto é sempre próprio: nada de copiar frase, título ou estrutura da matéria do jornal.
 - Fato disputado ou número de manifestantes, vítimas ou votos: dois jornais independentes, ou um jornal mais a fonte oficial, e o texto diz quem informa cada número. Se divergirem, o texto mostra os dois.
 - Dado econômico (inflação, juros, câmbio, PIB, preço, resultado de empresa) só na fonte primária: o jornal aponta, o IBGE, o Banco Central, a B3 ou o documento da companhia confirmam.
@@ -110,9 +110,21 @@ Um arquivo por texto, no formato do README ("Como publicar um texto"):
 - Sem travessão (`—` ou `–`). Use vírgula, ponto ou parênteses.
 - Sem frase que serviria para qualquer assunto, sem parágrafo que fecha resumindo o que acabou de dizer, sem "especialistas apontam" sem dizer quem.
 
+## Linha editorial: centro-direita
+
+Vale para todo o site, na edição diária e na Matéria indicada pontual. O Grafous tem posição e não esconde: defende responsabilidade fiscal e controle de gastos, livre mercado e concorrência, Estado enxuto e eficiente, carga tributária menor, segurança jurídica e respeito a contratos, autonomia do Banco Central, ordem pública e combate ao crime, e as instituições democráticas, com liberdade de expressão e imprensa. Critica, com fatos, o que vai contra isso, seja de qual governo ou partido for.
+
+- Onde a linha aparece: na escolha da pauta, no que vai em destaque e no fecho da matéria (o parágrafo de leitura, "O que fica" ou "A leitura"). A apuração e o corpo do texto continuam descrevendo os fatos com precisão.
+- Fontes: o radar lê primeiro Estadão, Gazeta do Povo, O Antagonista e Revista Oeste, depois os demais jornais. Ler mais a imprensa de centro-direita ajuda a achar pauta; não muda a regra de fonte (seção "Jornais"): fato de jornal vai atribuído, dado econômico só na fonte primária.
+- Os fatos não mudam com a linha. Inventar, distorcer número, tirar citação de contexto ou omitir dado que inverte a conclusão é proibido. Cada dado tem fonte aberta e passa pelo `checador`.
+- O outro lado aparece: quando a matéria critica governo, partido ou pessoa, traz a resposta ou a posição dele, com fonte.
+- Adjetivo de julgamento só no fecho de leitura, e sempre amparado no fato que o texto mostrou. Sem ataque pessoal, sem apelido, sem ironia com pessoa.
+- Eleições: no dia da votação, nenhum texto a favor ou contra candidato. Durante a campanha, texto que favoreça ou ataque candidato tem risco jurídico (a lei eleitoral veda o anonimato nessas manifestações, e as matérias do blog não têm assinatura); nesse período, o fecho fala de propostas e de política econômica, não de candidato, e o pull request avisa Vitor quando houver dúvida. Pesquisa eleitoral só com registro no TSE.
+- Nada de "O que nunca pode sair": a linha editorial nunca vira indicação de compra ou venda, promessa de retorno ou previsão apresentada como fato.
+
 ## Política e conflitos
 
-- Neutralidade total: o blog não toma partido de governo, partido, país ou lado de uma guerra. Nada de adjetivo que julgue ("desastroso", "corajoso", "agressão injustificada") fora de citação atribuída.
+- Fatos políticos e de guerra levam o nome de quem os afirma. A linha editorial fica no fecho, não na descrição do fato.
 - Quando um fato for disputado, diga quem afirma o quê, com a fonte de cada lado. Em Rússia e Ucrânia e em Irã e Oriente Médio, cada afirmação de guerra leva o nome de quem a faz (governo, ministério, ONU, AIEA) e as duas partes recebem o mesmo tratamento: mesmo nível de detalhe, mesmo verbo ("afirma", "diz", "informa").
 - Não use o nome de um país como sinônimo de governo ou de povo quando a fonte fala de um governo ou de uma força armada.
 - Sem detalhe gráfico de violência e sem especular sobre o rumo militar ou o resultado de eleições (pesquisa é retrato do período de campo, não previsão).
@@ -120,7 +132,7 @@ Um arquivo por texto, no formato do README ("Como publicar um texto"):
 
 ## Matéria indicada pontual com linha editorial
 
-Vale só para a Matéria indicada pontual, e só quando Vitor pedir um ângulo ou uma tese. Na edição diária continuam valendo a neutralidade e as seções "Tom e estilo" e "Política e conflitos" sem exceção.
+Vale só para a Matéria indicada pontual, quando Vitor pedir um ângulo ou uma tese, além da linha editorial do site. Na edição diária vale a seção "Linha editorial: centro-direita", com o enquadramento restrito ao fecho.
 
 - Liberado: tomar posição, defender uma tese, escolher o enquadramento e o que vai em destaque (spin), usar adjetivo e escrever em tom profissional de análise ou de opinião, no ângulo que Vitor pedir. A seção "Política e conflitos" não se aplica a esses textos.
 - Os fatos continuam verdadeiros. Enquadrar e escolher a ênfase pode; inventar, distorcer número, tirar citação de contexto ou omitir um dado que inverte a conclusão, não. Cada dado tem fonte aberta e passa pelo `checador`.
