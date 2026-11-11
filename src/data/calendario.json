@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-10",
+  "atualizado": "2026-11-11",
   "acoes": [
     {
       "empresa": "Caixa Seguridade",
@@ -170,6 +170,30 @@
       }
     },
     {
+      "empresa": "Gerdau",
+      "ticker": "GGBR4",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.34,
+      "dataCom": "2026-11-10",
+      "dataPagamento": "2026-12-15",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de GERDAU (GGBR), consulta ao cadastro da companhia em 11/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkdHQlIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Metalúrgica Gerdau",
+      "ticker": "GOAU4",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.16,
+      "dataCom": "2026-11-10",
+      "dataPagamento": "2026-12-16",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de GERDAU MET (GOAU), consulta ao cadastro da companhia em 11/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkdPQVUiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
       "empresa": "Petrobras",
       "ticker": "PETR3",
       "tipo": "Dividendo",
@@ -231,17 +255,6 @@
     }
   ],
   "fiis": [
-    {
-      "fundo": "FII GGR ZAG",
-      "ticker": "GGRC11",
-      "valorPorCota": 0.1,
-      "dataBase": "2026-11-03",
-      "dataPagamento": "2026-11-10",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo GGRC, consulta ao cadastro do fundo em 09/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkdHUkMiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
     {
       "fundo": "FII HABIT II",
       "ticker": "HABT11",
@@ -955,6 +968,50 @@
       "fonte": {
         "titulo": "B3: rendimentos do fundo XPSF, consulta ao cadastro do fundo em 03/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQU0YiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII CLAVE IN",
+      "ticker": "CLIN11",
+      "valorPorCota": 0.9,
+      "dataBase": "2026-11-10",
+      "dataPagamento": "2026-11-17",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo CLIN, consulta ao cadastro do fundo em 11/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkNMSU4iLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII PCIP PAX",
+      "ticker": "PCIP11",
+      "valorPorCota": 0.73,
+      "dataBase": "2026-11-10",
+      "dataPagamento": "2026-11-17",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo PCIP, consulta ao cadastro do fundo em 11/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlBDSVAiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII PCIP PAX",
+      "ticker": "PCIP11",
+      "valorPorCota": 0.9697,
+      "dataBase": "2026-11-10",
+      "dataPagamento": "2026-11-17",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo PCIP, consulta ao cadastro do fundo em 11/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlBDSVAiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII PSEC PAX",
+      "ticker": "PSEC11",
+      "valorPorCota": 0.6,
+      "dataBase": "2026-11-10",
+      "dataPagamento": "2026-11-17",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo PSEC, consulta ao cadastro do fundo em 11/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlBTRUMiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
