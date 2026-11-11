@@ -35,8 +35,12 @@ O g1 registra ainda que a equipe econômica não apresentou estimativas de quant
 
 ## O contexto
 
-O g1 situa o movimento no debate fiscal posterior à eleição e lembra o pronunciamento de Lula no domingo (8), em que o presidente disse se preocupar com a dívida pública e com os juros, sem detalhar como controlaria os gastos. Segundo a reportagem, analistas de mercado avaliaram, com base nas propostas e nas declarações da campanha, que o presidente não priorizaria o ajuste das contas nos próximos quatro anos, e a equipe econômica vinha sinalizando compromisso com a meta fiscal e a revisão de benefícios tributários.
+O g1 situa o movimento no debate fiscal posterior à eleição e lembra o pronunciamento de Lula no domingo (8), em que o presidente disse se preocupar com a dívida pública e com os juros, sem detalhar como controlaria os gastos. Segundo a reportagem, analistas avaliaram que o presidente não priorizaria o ajuste nos próximos quatro anos, e a equipe econômica vinha sinalizando compromisso com a meta fiscal.
 
 ## O que acompanhar
 
-Os pontos em aberto são o texto final do projeto, o autor e o veículo (a proposta de seguro rural ou outro), a estimativa oficial de efeito e o tamanho de cada medida, já que as duas reportagens trazem totais diferentes. Este texto relata o que os jornais descrevem, não avalia o mérito das medidas e não projeta efeito sobre juros, câmbio ou contas públicas.
+Estão em aberto o texto final, o veículo (o projeto de seguro rural ou outro), a estimativa oficial e o tamanho de cada medida, já que os totais diferem.
+
+## A leitura do Grafous
+
+O que as reportagens descrevem tem dois pedaços de natureza diferente. O gatilho que reduz o limite de crescimento das despesas e o corte linear de benefícios tributários vão na direção de controle de gasto e de revisão de renúncias, que é o que o blog defende para as contas públicas,. O outro pedaço, de redução da base dos pisos e de limite às compensações, melhora o resultado no papel, mas não reduz por si só a despesa obrigatória. O g1 diz que o governo quer fazer o ajuste sem afetar as promessas de campanha de Lula, e o próprio Estadão registra que parte das medidas depende de uma PEC ainda em estudo. O que falta para a leitura fechar é o texto, a estimativa oficial e a regra de acionamento do gatilho: sem esses três itens, o anúncio é uma intenção. Este texto não avalia o efeito sobre juros, câmbio ou contas públicas.

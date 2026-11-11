@@ -50,3 +50,7 @@ O quadro por grupo mostra movimentos em sentidos diferentes dentro do mesmo mês
 ## O que o número não diz
 
 A pesquisa mede volume, e não preço. Ela também não explica por que um grupo avançou e outro recuou, e a tabela não traz as causas. Este texto não associa o resultado à Selic, ao crédito ou ao câmbio, não projeta o PIB do terceiro trimestre nem indica o que fazer com títulos de renda fixa.
+
+## A leitura do Grafous
+
+A leitura de setembro é de estabilidade no mês, com o acumulado em 12 meses ainda em 1,9%. O que chama atenção é o grupo de transportes, o único com queda em 12 meses (-0,9%), e o ritmo de desaceleração do acumulado do ano, de 1,7% para 1,5% em um mês. Para o Grafous, o que sustenta o crescimento de forma duradoura é a previsibilidade das regras e o controle dos gastos públicos, que abrem espaço para juros menores. Esta é uma leitura editorial, e o dado do IBGE descreve apenas o volume de serviços.
