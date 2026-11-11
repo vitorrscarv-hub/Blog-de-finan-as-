@@ -32,12 +32,18 @@ const dataBR = (s) => {
 
 // Jornais de grande circulação (pauta e fatos políticos atribuídos). Os três últimos dependem de liberar o domínio
 // na rede do ambiente; até lá aparecem como aviso.
+// Ordem de leitura: Estadão, Gazeta do Povo e O Antagonista primeiro (linha editorial de centro-direita do Grafous),
+// depois os demais. Todos servem só de radar e de fonte atribuída de fato político, nunca de dado econômico.
 const JORNAIS = [
+  ['Estadão: Economia', 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/economia/'],
+  ['Estadão: Política', 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/politica/'],
+  ['Gazeta do Povo: Economia', 'https://www.gazetadopovo.com.br/feed/rss/economia.xml'],
+  ['Gazeta do Povo: República', 'https://www.gazetadopovo.com.br/feed/rss/republica.xml'],
+  ['O Antagonista: Brasil', 'https://oantagonista.com.br/brasil/feed/'],
+  ['O Antagonista: Economia', 'https://oantagonista.com.br/economia/feed/'],
   ['Valor Econômico', 'https://valor.globo.com/rss/valor'],
   ['Folha: Mercado', 'https://feeds.folha.uol.com.br/mercado/rss091.xml'],
   ['Folha: Poder', 'https://feeds.folha.uol.com.br/poder/rss091.xml'],
-  ['Estadão: Economia', 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/economia/'],
-  ['Estadão: Política', 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/politica/'],
   ['G1: Economia', 'https://g1.globo.com/rss/g1/economia/'],
   ['G1: Política', 'https://g1.globo.com/rss/g1/politica/'],
   ['Money Times', 'https://www.moneytimes.com.br/feed/'],
