@@ -12,7 +12,7 @@ draft: false
 gate: true
 ---
 
-O volume de serviços no Brasil recuou 0,1% em setembro na comparação com agosto, já descontados os efeitos sazonais, segundo a Pesquisa Mensal de Serviços (PMS) do Instituto Brasileiro de Geografia e Estatística (IBGE), divulgada nesta quarta-feira (11). Em agosto, a variação havia sido de 0,0%. O índice dessazonalizado (base 2022 = 100) foi de 110,52 em agosto para 110,41 em setembro, nos dados do IBGE.
+O volume de serviços no Brasil recuou 0,1% em setembro na comparação com agosto, já descontados os efeitos sazonais, segundo a Pesquisa Mensal de Serviços (PMS) do Instituto Brasileiro de Geografia e Estatística (IBGE). Em agosto, a variação havia sido de 0,0%. O índice dessazonalizado (base 2022 = 100) foi de 110,52 em agosto para 110,41 em setembro, nos dados do IBGE.
 
 ## Os números do mês
 
