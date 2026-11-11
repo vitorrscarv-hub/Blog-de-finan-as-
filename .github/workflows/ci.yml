@@ -40,7 +40,9 @@ jobs:
         run: npm run test:unit
 
       - name: Instalar Chromium para o Playwright
-        run: npx playwright install --with-deps chromium
+        # Se o apt do runner não alcançar os espelhos do Ubuntu (falha de DNS do GitHub), instala só o navegador:
+        # a imagem ubuntu-latest já traz as bibliotecas de que o Chromium precisa.
+        run: npx playwright install --with-deps chromium || npx playwright install chromium
 
       - name: Testes do site (celular e computador)
         run: npm run test:e2e
