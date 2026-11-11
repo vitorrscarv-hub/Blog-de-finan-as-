@@ -29,7 +29,7 @@ O Estadão informa ainda que gastos obrigatórios não constitucionais também p
 
 ## O que o g1 acrescenta
 
-O g1 afirma que o governo articula com o Senado a apresentação do projeto ainda nesta semana, a partir de senadores aliados. Para o jornal, o foco está no cálculo dos pisos. Hoje, a saúde tem mínimo de 15% da Receita Corrente Líquida e a educação, de 18% da Receita Líquida de Impostos, e a proposta retiraria receitas extraordinárias de petróleo e gás da conta, mesmo quando as contas públicas estiverem no azul. O g1 explica que o texto não determina um corte direto, mas reduz a base de cálculo, e que a mudança alcançaria também o Fundo Constitucional do Distrito Federal.
+O g1 afirma que o governo articula com o Senado a apresentação do projeto ainda nesta semana, a partir de senadores aliados. Para o jornal, o foco está no cálculo dos pisos. Segundo o jornal, hoje a saúde tem mínimo de 15% da Receita Corrente Líquida e a educação, de 18% da Receita Líquida de Impostos, e a proposta retiraria receitas extraordinárias de petróleo e gás da conta, mesmo quando as contas públicas estiverem no azul. O g1 explica que o texto não determina um corte direto, mas reduz a base de cálculo, e que a mudança alcançaria também o Fundo Constitucional do Distrito Federal.
 
 O g1 registra ainda que a equipe econômica não apresentou estimativas de quanto saúde e educação deixariam de receber. O Estadão cita o presidente do Senado, Davi Alcolumbre (União-AP), que disse que o autor do projeto deve ser o senador Jaques Wagner (PT-BA) e que "o Parlamento precisa ter responsabilidade com o Brasil".
 
