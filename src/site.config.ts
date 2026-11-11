@@ -52,6 +52,9 @@ export const SITE = {
       materias: [
         '2026-11-11-governo-prepara-projeto-ajuste-fiscal-pisos-saude-educacao',
         '2026-11-11-servicos-setembro-recuo-0-1-ibge',
+        '2026-11-10-dolar-maior-nivel-desde-julho-2025-inflacao-eua-ata',
+        '2026-11-10-ata-copom-282-juros-mais-altos-por-mais-tempo',
+        '2026-11-10-fachin-arquiva-inquerito-fake-news-sigilo',
         '2026-11-10-franca-revolta-jovens-motivacao-politica',
         '2026-11-10-risco-inflacao-projecoes-itau-bradesco-xp',
         '2026-11-09-lula-pronunciamento-responsabilidade-fiscal-medidas',
