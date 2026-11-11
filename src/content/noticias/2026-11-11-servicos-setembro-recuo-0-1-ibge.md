@@ -45,6 +45,8 @@ O setor de serviços tem peso grande na atividade econômica brasileira e entra 
 
 Os dados dessazonalizados retiram efeitos de calendário e de estação, e por isso são a base da comparação mês contra mês. Já a comparação com o mesmo mês do ano anterior usa a série sem ajuste.
 
+O quadro por grupo mostra movimentos em sentidos diferentes dentro do mesmo mês: dois grupos subiram em relação a agosto (profissionais e administrativos, e outros serviços), um ficou parado (famílias) e dois caíram (informação e comunicação, e transportes). Por isso o resultado do total, de -0,1%, resume diferenças maiores entre os grupos do que o número sugere à primeira vista.
+
 ## O que o número não diz
 
 A pesquisa mede volume, e não preço. Ela também não explica por que um grupo avançou e outro recuou, e a tabela não traz as causas. Este texto não associa o resultado à Selic, ao crédito ou ao câmbio, não projeta o PIB do terceiro trimestre nem indica o que fazer com títulos de renda fixa.
