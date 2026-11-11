@@ -50,6 +50,7 @@ export const SITE = {
       segundos: 4,
       maximo: 5,
       materias: [
+        '2026-11-11-dolar-recua-ibovespa-sobe-pacote-fiscal-juros-futuros',
         '2026-11-11-governo-prepara-projeto-ajuste-fiscal-pisos-saude-educacao',
         '2026-11-11-servicos-setembro-recuo-0-1-ibge',
         '2026-11-10-dolar-maior-nivel-desde-julho-2025-inflacao-eua-ata',
@@ -57,9 +58,6 @@ export const SITE = {
         '2026-11-10-fachin-arquiva-inquerito-fake-news-sigilo',
         '2026-11-10-franca-revolta-jovens-motivacao-politica',
         '2026-11-10-risco-inflacao-projecoes-itau-bradesco-xp',
-        '2026-11-09-lula-pronunciamento-responsabilidade-fiscal-medidas',
-        '2026-11-09-focus-selic-2026-13-75-ipca-2027-4-90',
-        '2026-11-09-balanca-primeira-semana-novembro-conecta-brasil-ue',
       ],
     },
   },
