@@ -53,4 +53,4 @@ A pesquisa mede volume, e não preço. Ela também não explica por que um grupo
 
 ## A leitura do Grafous
 
-A leitura de setembro é de estabilidade no mês, com o acumulado em 12 meses ainda em 1,9%. O que chama atenção é o grupo de transportes, o único com queda em 12 meses (-0,9%), e o ritmo de desaceleração do acumulado do ano, de 1,7% para 1,5% em um mês. Para o Grafous, o que sustenta o crescimento de forma duradoura é a previsibilidade das regras e o controle dos gastos públicos, que abrem espaço para juros menores. Esta é uma leitura editorial, e o dado do IBGE descreve apenas o volume de serviços.
+A leitura de setembro é de estabilidade no mês, com o acumulado em 12 meses ainda em 1,9%. O que chama atenção é o grupo de transportes, o único com queda em 12 meses (-0,9%), e o ritmo de desaceleração do acumulado do ano, de 1,7% para 1,5% em um mês. Para o Grafous, o que sustenta o crescimento de forma duradoura é a previsibilidade das regras e o controle dos gastos públicos, que podem abrir espaço para juros menores. Esta é uma leitura editorial, não uma explicação do dado de setembro, e o IBGE descreve apenas o volume de serviços.
