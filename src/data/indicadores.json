@@ -10,8 +10,8 @@
     },
     {
       "nome": "IPCA 12m",
-      "valor": "4,58%",
-      "data": "set 2026",
+      "valor": "4,63%",
+      "data": "out 2026",
       "fonte": "IBGE",
       "url": "https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265?localidades=N1[all]"
     },

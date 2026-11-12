@@ -24,7 +24,7 @@ O g1 informa que, dos R$ 100 bilhões destinados à renegociação, pouco mais d
 
 ## O que a MP prevê
 
-Segundo a Gazeta do Povo, que cita a Agência Senado, têm acesso produtores e cooperativas com ao menos duas quebras de safra por eventos climáticos extremos, desde que as perdas tenham reduzido em no mínimo 30% a renda bruta esperada. O prazo para formalizar os contratos é de 120 dias a partir da regulamentação, prorrogável por igual período, e o pagamento pode ir até oito anos. Taxas e limites por mutuário:
+Segundo a Gazeta do Povo, têm acesso produtores e cooperativas com ao menos duas quebras de safra por eventos climáticos extremos, desde que as perdas tenham reduzido em no mínimo 30% a renda bruta esperada (dado que o jornal atribui à Agência Senado). O prazo para formalizar os contratos é de 120 dias a partir da regulamentação, prorrogável por igual período, e o pagamento pode ir até oito anos. Taxas e limites por mutuário:
 
 | Categoria | Juros ao ano | Limite por mutuário |
 | --- | --- | --- |
@@ -42,4 +42,4 @@ No campo do setor, o g1 relata críticas ao texto: a senadora Tereza Cristina (P
 
 ## A leitura do Grafous
 
-O episódio reúne dois temas que o blog acompanha. O primeiro é o custo: são R$ 100 bilhões em crédito renegociado, e a própria FPA diz que só cerca de R$ 20 bilhões foram contratados, o que mostra que o programa ainda não chegou a quem pretende atender. O segundo é o processo legislativo: a Câmara inseriu na MP assuntos alheios ao tema, como vapes, free shops e dívidas imobiliárias, e o Senado os retirou, o que reduz o risco de questionamento judicial e preserva a clareza das regras para quem contrata. Os prazos efetivos dependem da regulamentação, que vem depois da sanção. Este texto não avalia o mérito da renegociação e não projeta o efeito sobre as contas públicas ou sobre os bancos.
+O episódio reúne dois temas que o blog acompanha. O primeiro é o custo: são R$ 100 bilhões em crédito renegociado, e a própria FPA diz que só cerca de R$ 20 bilhões foram contratados, o que indica adesão ainda baixa ao programa. O segundo é o processo legislativo: a Câmara inseriu na MP assuntos alheios ao tema, como vapes, free shops e dívidas imobiliárias, e o Senado os retirou, o que reduz o risco de questionamento judicial e preserva a clareza das regras para quem contrata. Os prazos efetivos dependem da regulamentação, que vem depois da sanção. Este texto não avalia o mérito da renegociação e não projeta o efeito sobre as contas públicas ou sobre os bancos.
