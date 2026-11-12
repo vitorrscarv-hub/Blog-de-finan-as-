@@ -33,6 +33,7 @@ const d = entry.data;
   secao={{ nome: `Notícias da semana · ${d.editoria}`, href: `/noticias/${slugEditoria(d.editoria)}/` }}
   leitura={minutosDeLeitura(entry.body)}
   pais={d.pais}
+  editoria={d.editoria}
   relacionadas={relacionadas}
 >
   <Content />
