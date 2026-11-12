@@ -50,6 +50,7 @@ export const SITE = {
       segundos: 4,
       maximo: 5,
       materias: [
+        '2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora',
         '2026-11-11-governo-prepara-projeto-ajuste-fiscal-pisos-saude-educacao',
         '2026-11-11-servicos-setembro-recuo-0-1-ibge',
         '2026-11-10-dolar-maior-nivel-desde-julho-2025-inflacao-eua-ata',

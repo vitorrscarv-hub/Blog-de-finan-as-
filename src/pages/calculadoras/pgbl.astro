@@ -1,0 +1,169 @@
+---
+import Base from '../../layouts/Base.astro';
+import { REGRAS_2026 } from '../../scripts/pgbl';
+
+const r = REGRAS_2026;
+const brl = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const campos = [
+  { id: 'rendimentos', rotulo: 'Rendimentos tributáveis no ano', ajuda: 'Salários, pró-labore, aluguéis e outros rendimentos tributáveis de 2026. Não some o 13º.', exemplo: '120.000,00' },
+  { id: 'inss', rotulo: 'Contribuição ao INSS ou regime próprio no ano', ajuda: 'Está no informe de rendimentos. Sem essa contribuição, o PGBL não pode ser deduzido.', exemplo: '11.857,10' },
+  { id: 'dependentes', rotulo: 'Número de dependentes', ajuda: `Cada um deduz ${brl(r.dependente)} no ano.`, exemplo: '0', inteiro: true },
+  { id: 'saude', rotulo: 'Despesas médicas dedutíveis', ajuda: 'Consultas, planos de saúde, exames, sem limite de valor.', exemplo: '0,00' },
+  { id: 'educacao', rotulo: 'Despesas com educação', ajuda: `Escola e faculdade, limitadas a ${brl(r.instrucaoPorPessoa)} por pessoa.`, exemplo: '0,00' },
+  { id: 'pgbl', rotulo: 'Aportes em PGBL já feitos em 2026', ajuda: 'Some o que você já aplicou no ano.', exemplo: '0,00' },
+  { id: 'retido', rotulo: 'Imposto retido na fonte no ano (opcional)', ajuda: 'Também está no informe de rendimentos. Serve para estimar a restituição.', exemplo: '' },
+];
+---
+<Base
+  title="Calculadora de PGBL e restituição do IR"
+  description="Quanto um aporte em PGBL reduz o imposto de renda da declaração de 2027 e muda a sua restituição, pelas regras da Receita para 2026."
+  keywords={['PGBL', 'imposto de renda', 'restituição', 'previdência privada', 'declaração completa']}
+>
+  <section class="container-texto calculadora">
+    <header class="pagina-titulo">
+      <h1>Calculadora de PGBL e restituição</h1>
+      <p>
+        Informe os números do seu ano. A calculadora compara o imposto da declaração de 2027 (ano-calendário 2026) sem PGBL,
+        com o que você já aplicou e com o aporte no limite de 12% dos rendimentos tributáveis.
+      </p>
+    </header>
+
+    <form class="calc-form" id="calc-pgbl" novalidate>
+      {campos.map((c) => (
+        <div class="campo">
+          <label for={`pg-${c.id}`}>{c.rotulo}</label>
+          <input
+            id={`pg-${c.id}`}
+            name={c.id}
+            inputmode={c.inteiro ? 'numeric' : 'decimal'}
+            autocomplete="off"
+            placeholder={c.exemplo}
+            aria-describedby={`pg-${c.id}-ajuda`}
+          />
+          <small id={`pg-${c.id}-ajuda`}>{c.ajuda}</small>
+        </div>
+      ))}
+    </form>
+
+    <section class="calc-resultado" aria-live="polite" aria-labelledby="pg-res-titulo">
+      <h2 id="pg-res-titulo">Resultado</h2>
+      <p class="meta" id="pg-vazio">Preencha ao menos os rendimentos e a contribuição ao INSS.</p>
+      <div id="pg-saida" hidden>
+        <p class="calc-destaque">
+          Limite dedutível em 2026: <strong id="pg-limite"></strong>. Ainda cabem <strong id="pg-falta"></strong> dentro do limite.
+        </p>
+        <div class="tabela-rolavel" tabindex="0" role="region" aria-label="Comparação do imposto">
+          <table class="tabela-calc">
+            <thead>
+              <tr><th scope="col"></th><th scope="col">Sem PGBL</th><th scope="col">Com o já aplicado</th><th scope="col">Com o limite de 12%</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Modelo de declaração</th><td data-c="sem-modelo"></td><td data-c="com-modelo"></td><td data-c="lim-modelo"></td></tr>
+              <tr><th scope="row">PGBL deduzido</th><td data-c="sem-pgbl"></td><td data-c="com-pgbl"></td><td data-c="lim-pgbl"></td></tr>
+              <tr><th scope="row">Base de cálculo</th><td data-c="sem-base"></td><td data-c="com-base"></td><td data-c="lim-base"></td></tr>
+              <tr><th scope="row">Imposto devido no ano</th><td data-c="sem-imposto"></td><td data-c="com-imposto"></td><td data-c="lim-imposto"></td></tr>
+              <tr><th scope="row">Imposto a menos</th><td>-</td><td data-c="com-economia"></td><td data-c="lim-economia"></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="pg-saldo"></p>
+        <p id="pg-aviso" class="calc-aviso"></p>
+      </div>
+    </section>
+
+    <aside class="nota-calc">
+      <p>
+        Estimativa educativa com as regras da Receita Federal para 2026: tabela anual, deduções e redução da Lei 15.270/2025.
+        Não considera o 13º salário, rendimentos isentos, livro-caixa nem pensão alimentícia. O PGBL adia o imposto: no resgate,
+        o imposto incide sobre o valor total. A calculadora não indica compra ou venda de nenhum produto e nenhum dado digitado sai do seu aparelho.
+      </p>
+      <p><a href="https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026" rel="noopener" target="_blank">Tabelas da Receita Federal para 2026</a></p>
+    </aside>
+  </section>
+</Base>
+
+<script>
+  import { calcularPgbl, lerValor } from '../../scripts/pgbl';
+
+  const form = document.getElementById('calc-pgbl') as HTMLFormElement;
+  const brl = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  const ler = (nome: string) => lerValor((form.elements.namedItem(nome) as HTMLInputElement).value);
+  const poe = (c: string, texto: string) => {
+    const el = document.querySelector(`[data-c="${c}"]`);
+    if (el) el.textContent = texto;
+  };
+  const modelo = (m: string) => (m === 'completa' ? 'Completa' : 'Simplificada');
+
+  function atualizar() {
+    const rendimentos = ler('rendimentos');
+    const inss = ler('inss');
+    const vazio = document.getElementById('pg-vazio')!;
+    const saida = document.getElementById('pg-saida')!;
+    if (!rendimentos || inss === null) {
+      vazio.hidden = false;
+      saida.hidden = true;
+      return;
+    }
+    const retido = ler('retido');
+    const res = calcularPgbl({
+      rendimentos,
+      inss,
+      dependentes: Math.floor(ler('dependentes') ?? 0),
+      saude: ler('saude') ?? 0,
+      educacao: ler('educacao') ?? 0,
+      pgbl: ler('pgbl') ?? 0,
+      retido: retido ?? undefined,
+    });
+    vazio.hidden = true;
+    saida.hidden = false;
+    document.getElementById('pg-limite')!.textContent = brl(res.limite);
+    document.getElementById('pg-falta')!.textContent = brl(res.falta);
+    for (const [k, v] of [['sem', res.semPgbl], ['com', res.comAporte], ['lim', res.noLimite]] as const) {
+      poe(`${k}-modelo`, modelo(v.modelo));
+      poe(`${k}-pgbl`, brl(v.pgblDeduzido));
+      poe(`${k}-base`, brl(v.base));
+      poe(`${k}-imposto`, brl(v.imposto));
+    }
+    poe('com-economia', brl(res.economiaAporte));
+    poe('lim-economia', brl(res.economiaLimite));
+
+    const saldo = document.getElementById('pg-saldo')!;
+    if (res.saldoNoLimite === null || res.saldoSemPgbl === null) saldo.textContent = '';
+    else {
+      const frase = (v: number) => (v >= 0 ? `restituição de ${brl(v)}` : `imposto a pagar de ${brl(-v)}`);
+      saldo.textContent = `Com o imposto retido informado: sem PGBL, ${frase(res.saldoSemPgbl)}; com o limite de 12%, ${frase(res.saldoNoLimite)}.`;
+    }
+
+    const aviso = document.getElementById('pg-aviso')!;
+    if (inss === 0) aviso.textContent = 'Sem contribuição ao INSS ou a regime próprio, o PGBL não é dedutível.';
+    else if (res.economiaLimite === 0) aviso.textContent = 'Nesse caso o PGBL não reduz o imposto: a declaração simplificada ou a redução da Lei 15.270 já deixam o imposto mais baixo.';
+    else {
+      const pct = ((res.economiaLimite / Math.max(res.limite, 1)) * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+      aviso.textContent = `Cada R$ 100 aplicados no limite reduzem o imposto deste ano em cerca de R$ ${pct}. O imposto não some: ele é cobrado no resgate.`;
+    }
+  }
+
+  form.addEventListener('input', atualizar);
+  atualizar();
+</script>
+
+<style>
+  .calculadora { padding-bottom: 48px; }
+  .calc-form { display: grid; gap: 16px; margin: 24px 0 32px; }
+  .calc-form .campo { display: grid; gap: 4px; }
+  .calc-form label { font-family: var(--ui); font-weight: 600; }
+  .calc-form input {
+    font: inherit; font-family: var(--ui); padding: 10px 12px; border: 1px solid var(--filete);
+    border-radius: 4px; background: var(--superficie); color: var(--tinta); max-width: 320px;
+  }
+  .calc-form input:focus-visible { outline: 2px solid var(--destaque); outline-offset: 1px; }
+  .calc-form small { color: var(--tinta-suave); font-family: var(--ui); font-size: 0.85rem; }
+  .calc-resultado { border-top: 3px solid var(--filete-forte); padding-top: 16px; }
+  .calc-destaque { font-family: var(--ui); }
+  .tabela-calc { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: 0.92rem; }
+  .tabela-calc th, .tabela-calc td { padding: 8px 10px; border-bottom: 1px solid var(--filete); text-align: right; white-space: nowrap; }
+  .tabela-calc th[scope='row'] { text-align: left; }
+  .tabela-calc thead th { border-bottom: 2px solid var(--filete-forte); }
+  .calc-aviso { background: var(--aviso-fundo); padding: 10px 12px; font-family: var(--ui); }
+  .nota-calc { margin-top: 32px; font-size: 0.9rem; color: var(--tinta-suave); }
+</style>

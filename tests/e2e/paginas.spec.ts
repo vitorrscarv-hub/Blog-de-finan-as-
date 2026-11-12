@@ -183,3 +183,20 @@ test('notícia termina com "Leia também", sem repetir a própria matéria', asy
   expect(links.length).toBeLessThanOrEqual(3);
   expect(links).not.toContain('/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/');
 });
+
+test('calculadora de PGBL compara o imposto e a matéria aponta para ela', async ({ page }) => {
+  await page.goto('/calculadoras/pgbl/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Calculadora de PGBL e restituição');
+  await expect(page.locator('#pg-vazio')).toBeVisible();
+  await page.getByLabel('Rendimentos tributáveis no ano').fill('120.000,00');
+  await page.getByLabel('Contribuição ao INSS ou regime próprio no ano').fill('11.857,10');
+  await expect(page.locator('#pg-limite')).toHaveText(/14\.400,00/);
+  await expect(page.locator('[data-c="sem-imposto"]')).toHaveText(/17\.244,34/);
+  await expect(page.locator('[data-c="lim-economia"]')).toHaveText(/2\.369,70/);
+  await page.getByLabel('Imposto retido na fonte no ano (opcional)').fill('18000');
+  await expect(page.locator('#pg-saldo')).toContainText('restituição de');
+  await expect(page.locator('.nota-calc')).toContainText('não indica compra ou venda');
+
+  await page.goto('/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/');
+  await expect(page.locator('.artigo-corpo a[href="/calculadoras/pgbl/"]')).toHaveCount(2);
+});
