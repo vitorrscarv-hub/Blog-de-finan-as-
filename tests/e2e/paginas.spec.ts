@@ -40,7 +40,7 @@ test('rodapé traz a marca, o que o blog faz e os avisos, sem nome de pessoa', a
 test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO', async ({ page }) => {
   const [href] = await linksDe(page, '/noticias/');
   await page.goto(href);
-  await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Mercado|Internacional)$/);
+  await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Mercado|Internacional|Tecnologia)$/);
   await expect(page.locator('.linha-fina')).toBeVisible();
   const meta = page.locator('.artigo-cabecalho .assinatura');
   // Abaixo do título vai a fonte, não o nome do autor.
@@ -98,7 +98,7 @@ test('filtro de editorias em /noticias/', async ({ page }) => {
   const total = await page.locator('.card').count();
 
   let somadas = 0;
-  for (const [rotulo, caminho] of [['Brasil', '/noticias/brasil/'], ['Mercado', '/noticias/mercado/'], ['Internacional', '/noticias/internacional/']]) {
+  for (const [rotulo, caminho] of [['Brasil', '/noticias/brasil/'], ['Mercado', '/noticias/mercado/'], ['Internacional', '/noticias/internacional/'], ['Tecnologia', '/noticias/tecnologia/']]) {
     await filtro.getByRole('link', { name: rotulo }).click();
     await expect(page).toHaveURL(new RegExp(`${caminho}$`));
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(`Notícias da semana: ${rotulo}`);
@@ -182,4 +182,42 @@ test('notícia termina com "Leia também", sem repetir a própria matéria', asy
   expect(links.length).toBeGreaterThan(0);
   expect(links.length).toBeLessThanOrEqual(3);
   expect(links).not.toContain('/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/');
+});
+
+test('calculadora de PGBL calcula no botão, explica o resultado e a matéria aponta para ela', async ({ page }) => {
+  await page.goto('/calculadoras/pgbl/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Calculadora de PGBL e restituição');
+  await expect(page.locator('#pg-resultado')).toBeHidden();
+  const calcular = page.getByRole('button', { name: 'Calcular' });
+  await calcular.click();
+  await expect(page.locator('#pg-erro')).toContainText('Preencha os rendimentos');
+  const renda = page.getByLabel('Rendimentos tributáveis no ano');
+  await renda.pressSequentially('120000');
+  await expect(renda).toHaveValue('120.000');
+  const inss = page.getByLabel('INSS ou regime próprio no ano');
+  await inss.pressSequentially('11857.10');
+  await expect(inss).toHaveValue('11.857,10');
+  await page.getByLabel('Imposto retido no ano (opcional)').fill('18000');
+  await calcular.click();
+  await expect(page.locator('#pg-resultado')).toBeVisible();
+  await expect(page.locator('[data-c="sem-imposto"]')).toHaveText(/17\.244,34/);
+  await expect(page.locator('[data-c="lim-economia"]')).toHaveText(/2\.369,70/);
+  const explica = page.locator('#pg-explica');
+  await expect(explica).toContainText('até R$ 14.400,00');
+  await expect(explica).toContainText('declaração simplificada');
+  await expect(explica).toContainText('restituição de');
+  await expect(explica).toContainText('O imposto não some');
+  await expect(page.locator('.nota-calc')).toContainText('não indica compra ou venda');
+  await expect(page.locator('.contato-especialista')).toContainText('PGBL cabe no seu planejamento');
+
+  await page.goto('/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/');
+  await expect(page.locator('.artigo-corpo a[href="/calculadoras/pgbl/"]')).toHaveCount(2);
+});
+
+test('editoria Tecnologia no menu e parceiros de projetos na política de privacidade', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('nav.nav').getByRole('link', { name: 'Tecnologia' })).toHaveAttribute('href', '/noticias/tecnologia/');
+  await page.goto('/privacidade/');
+  await expect(page.getByRole('heading', { name: 'Contato sobre projetos de tecnologia' })).toBeVisible();
+  await expect(page.locator('main')).toContainText('Planni Tech e a VRC Landing Pages');
 });

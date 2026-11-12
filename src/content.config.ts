@@ -36,9 +36,12 @@ export const TEMAS = [
   'Fundamentos',
 ] as const;
 
-// Editoria das notícias. Também vira endereço: /noticias/brasil/, /noticias/mercado/ e /noticias/internacional/.
+// Editoria das notícias. Também vira endereço: /noticias/brasil/, /noticias/mercado/, /noticias/internacional/ e
+// /noticias/tecnologia/.
 // Mercado cobre empresas e ações (fatos relevantes, M&A, recuperação judicial); o calendário de proventos é outra página.
-export const EDITORIAS = ['Brasil', 'Mercado', 'Internacional'] as const;
+// Tecnologia cobre empresas e regras de tecnologia que mexem com negócios e investimentos; tem janela própria no carrossel
+// e, no fim de cada matéria, o formulário de projetos (SITE.contatoProjetos).
+export const EDITORIAS = ['Brasil', 'Mercado', 'Internacional', 'Tecnologia'] as const;
 export type Editoria = (typeof EDITORIAS)[number];
 
 const noticias = defineCollection({

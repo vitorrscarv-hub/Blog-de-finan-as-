@@ -55,6 +55,14 @@ Fatos de empresas listadas que movem o mercado ou ensinam algo ao leitor: fusõe
 
 Sem vaga fixa: entra quando for o fato mais relevante da vaga Brasil ou Mercado ou do fato do dia. Cobre economia, política e conflitos no exterior sempre pelo efeito para o investidor brasileiro: câmbio, juros (aqui e lá fora), petróleo e outras commodities, inflação importada, bolsas, investimento no exterior. Fato sem canal claro até a carteira do leitor não entra. Use `editoria: "Internacional"` e o campo `pais` (ex.: "Estados Unidos", "China") quando a notícia tratar de um país ou região.
 
+### Tecnologia
+
+Sem vaga fixa na edição diária: entra como Matéria indicada pontual ou quando for o fato mais relevante do fato do dia. Cobre tecnologia pelo que muda para empresas e investidores: resultados e estratégia de big techs e de empresas de tecnologia listadas, inteligência artificial, semicondutores, segurança digital e golpes, regulação digital (ANPD, Anatel, Congresso, União Europeia, Estados Unidos), fintechs e meios de pagamento, startups brasileiras. Lançamento de aparelho, review e rumor não entram. Use `editoria: "Tecnologia"`.
+
+- Pauta: `node scripts/radar.mjs --so=tecnologia` (G1, Folha, Estadão Link, Tecnoblog, Olhar Digital, Canaltech, TechCrunch, The Verge, Ars Technica, MIT Technology Review). Esses sites contam como jornal: fato atribuído, nunca dado econômico.
+- Número de empresa (receita, lucro, usuários, investimento) só no balanço, no comunicado ou no documento oficial (RI, SEC, CVM); regra ou multa, no órgão que decidiu.
+- Toda notícia de Tecnologia ocupa a janela de tecnologia do carrossel enquanto for a mais recente da editoria (até 7 dias) e termina com o formulário de projetos (`SITE.contatoProjetos`). O texto não cita nem recomenda as empresas parceiras do formulário.
+
 ### Calendário de proventos
 
 Atualizado pelo robô `scripts/atualizar-calendario.mjs` (GitHub Actions, segunda a sexta, sem IA), que mexe só em `src/data/calendario.json` (página `/calendario/`).
