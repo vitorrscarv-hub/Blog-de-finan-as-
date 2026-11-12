@@ -5,15 +5,15 @@ import CardPost from '../components/CardPost.astro';
 import { SITE } from '../site.config';
 import { dataBR, dataCurta, porData, publicado, slugEditoria } from '../scripts/formatos';
 import { selecaoPatrimonio } from '../scripts/patrimonio';
+import { montarDestaques } from '../scripts/carrossel';
 
 const noticias = (await getCollection('noticias', publicado)).sort(porData);
 // Capa: manchete (ou carrossel de Matérias indicadas pontuais), a coluna "Mais notícias" ao lado e 3 notícias numa fileira.
 // Matéria fixada (SITE.capa.fixadas) entra na posição pedida da coluna; as outras seguem por data.
 const { maisNoticias, fixadas, carrossel } = SITE.capa;
 // Matéria fixada na coluna fica fora do carrossel, para não aparecer duas vezes.
-const destaques = carrossel.ativo
-  ? carrossel.materias.flatMap((id) => noticias.find((n) => n.id === id && !(id in fixadas)) ?? []).slice(0, carrossel.maximo)
-  : [];
+// Com a janela de tecnologia, a notícia de Tecnologia mais recente tem lugar reservado (src/scripts/carrossel.ts).
+const destaques = montarDestaques(noticias, carrossel, fixadas);
 const naCapa = noticias.filter((n) => !destaques.includes(n));
 const fixas = naCapa.filter((n) => n.id in fixadas).sort((a, b) => fixadas[a.id] - fixadas[b.id]);
 const semFixas = naCapa.filter((n) => !(n.id in fixadas));

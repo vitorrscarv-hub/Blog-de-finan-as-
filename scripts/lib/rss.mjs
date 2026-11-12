@@ -19,10 +19,20 @@ const limpar = (s) =>
     .trim();
 const campo = (bloco, nome) => limpar(new RegExp(`<${nome}[^>]*>([\\s\\S]*?)</${nome}>`).exec(bloco)?.[1]);
 
-// -> [{ titulo, link, data (ms) }], do mais novo para o mais antigo.
+// -> [{ titulo, link, data (ms) }], do mais novo para o mais antigo. Aceita RSS (<item>) e Atom (<entry>, usado por
+// alguns sites de tecnologia, com o link em <link href> e a data em <published> ou <updated>).
 export function lerRss(xml) {
-  return [...xml.matchAll(/<item[\s>]([\s\S]*?)<\/item>/g)]
-    .map((m) => ({ titulo: campo(m[1], 'title'), link: campo(m[1], 'link'), data: Date.parse(campo(m[1], 'pubDate')) }))
+  const rss = [...xml.matchAll(/<item[\s>]([\s\S]*?)<\/item>/g)].map((m) => ({
+    titulo: campo(m[1], 'title'),
+    link: campo(m[1], 'link'),
+    data: Date.parse(campo(m[1], 'pubDate') || campo(m[1], 'dc:date')),
+  }));
+  const atom = [...xml.matchAll(/<entry[\s>]([\s\S]*?)<\/entry>/g)].map((m) => ({
+    titulo: campo(m[1], 'title'),
+    link: limpar(/<link[^>]*rel=["']alternate["'][^>]*href=["']([^"']+)["']/.exec(m[1])?.[1] ?? /<link[^>]*href=["']([^"']+)["']/.exec(m[1])?.[1]),
+    data: Date.parse(campo(m[1], 'published') || campo(m[1], 'updated')),
+  }));
+  return [...rss, ...atom]
     .filter((i) => i.titulo && i.link && Number.isFinite(i.data))
     .sort((a, b) => b.data - a.data);
 }

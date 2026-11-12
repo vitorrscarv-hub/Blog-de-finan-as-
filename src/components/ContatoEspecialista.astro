@@ -1,13 +1,33 @@
 ---
-// Formulário de contato com especialista em investimentos, no fim das matérias listadas em SITE.contatoEspecialista.
-// Usa o mesmo cadastro do pop-up (/api/lead), com a origem própria, para aparecer separado no painel.
+// Formulário de contato no fim das páginas. Dois perfis, com o mesmo cadastro do pop-up (/api/lead) e a mesma validação:
+// - "especialista" (padrão): especialista em investimentos, nas páginas de SITE.contatoEspecialista;
+// - "projetos": projetos de aplicativos, sites e softwares, no fim das notícias de Tecnologia (SITE.contatoProjetos).
+// Cada perfil manda a própria origem, para aparecer separado no painel. Os parceiros aparecem só na política de privacidade.
 import { SITE } from '../site.config';
-const { endpoint, origem, chamada: padrao, chamadasPorPagina } = SITE.contatoEspecialista;
-const chamada = chamadasPorPagina[Astro.url.pathname] ?? padrao;
+
+interface Props {
+  perfil?: 'especialista' | 'projetos';
+}
+const { perfil = 'especialista' } = Astro.props;
+const { endpoint } = SITE.contatoEspecialista;
+const esp = SITE.contatoEspecialista;
+const proj = SITE.contatoProjetos;
+const textos =
+  perfil === 'projetos'
+    ? { origem: proj.origem, titulo: proj.titulo, chamada: proj.chamada, consentimento: proj.consentimento, botao: proj.botao, ok: proj.ok, empresa: 'as empresas parceiras' }
+    : {
+        origem: esp.origem,
+        titulo: 'Fale com um especialista',
+        chamada: esp.chamadasPorPagina[Astro.url.pathname] ?? esp.chamada,
+        consentimento: 'para que um especialista entre em contato',
+        botao: 'Quero ser contatado',
+        ok: 'Recebemos seus dados. Um especialista vai entrar em contato.',
+        empresa: 'a empresa parceira',
+      };
 ---
-<section class="contato-especialista" aria-labelledby="ce-titulo" data-endpoint={endpoint} data-origem={origem}>
-  <h2 id="ce-titulo">Fale com um especialista</h2>
-  <p>{chamada}</p>
+<section class="contato-especialista" aria-labelledby="ce-titulo" data-endpoint={endpoint} data-origem={textos.origem} data-perfil={perfil}>
+  <h2 id="ce-titulo">{textos.titulo}</h2>
+  <p>{textos.chamada}</p>
   <form id="ce-form" novalidate>
     <div class="campo">
       <label for="ce-nome">Nome</label>
@@ -28,15 +48,15 @@ const chamada = chamadasPorPagina[Astro.url.pathname] ?? padrao;
     <div class="consentimento">
       <input type="checkbox" name="consentimento" id="ce-consentimento" required />
       <label for="ce-consentimento">
-        Autorizo o compartilhamento do meu nome, WhatsApp e e-mail com a empresa parceira do {SITE.nome} indicada na política de privacidade, para que um
-        especialista entre em contato, conforme a <a href="/privacidade/" target="_blank" rel="noopener">política de privacidade</a>.
+        Autorizo o compartilhamento do meu nome, WhatsApp e e-mail com {textos.empresa} do {SITE.nome} indicada{perfil === 'projetos' ? 's' : ''} na política de privacidade,
+        {textos.consentimento}, conforme a <a href="/privacidade/" target="_blank" rel="noopener">política de privacidade</a>.
         Posso cancelar quando quiser.
       </label>
     </div>
     <p class="lead-erro" id="ce-erro" role="alert"></p>
-    <button class="botao" type="submit">Quero ser contatado</button>
+    <button class="botao" type="submit">{textos.botao}</button>
   </form>
-  <p class="ce-ok" id="ce-ok" role="status" hidden>Recebemos seus dados. Um especialista vai entrar em contato.</p>
+  <p class="ce-ok" id="ce-ok" role="status" hidden>{textos.ok}</p>
 </section>
 
 <script>

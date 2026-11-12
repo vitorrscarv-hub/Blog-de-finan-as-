@@ -1,5 +1,7 @@
 // Radar da edição diária: lista, numa página só, o que os jornais e as fontes oficiais publicaram nas últimas horas.
-// Uso: node scripts/radar.mjs [--horas=14] [--so=jornais|oficiais] [--max=12]
+// Uso: node scripts/radar.mjs [--horas=14] [--so=jornais|oficiais|tecnologia] [--max=12]
+// Sem --so, lista jornais e fontes oficiais; os sites de tecnologia só aparecem com --so=tecnologia (pauta da editoria
+// Tecnologia), para não pesar na edição diária.
 // Só leitura (GET). Cada fonte que falha aparece como aviso, sem derrubar as outras.
 // O radar só aponta: o editor escolhe; fato de jornal entra atribuído, e número de economia é lido na fonte primária.
 // Substitui o antigo agente pauteiro: escolher manchete numa lista custa uma fração dos tokens de pesquisar na web.
@@ -52,12 +54,29 @@ const JORNAIS = [
   ['InfoMoney', 'https://www.infomoney.com.br/feed/'],
   ['Poder360', 'https://www.poder360.com.br/feed/'],
 ];
+// Tecnologia (editoria Tecnologia): radar de pauta. Fato tirado daqui vai atribuído; número de empresa vem do
+// balanço, do comunicado ou do documento oficial. Os sites fora da rede do ambiente aparecem como aviso até o domínio
+// ser liberado.
+const TECNOLOGIA = [
+  ['G1: Tecnologia', 'https://g1.globo.com/rss/g1/tecnologia/'],
+  ['Folha: Tec', 'https://feeds.folha.uol.com.br/tec/rss091.xml'],
+  ['Estadão: Link', 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/link/'],
+  ['Tecnoblog', 'https://tecnoblog.net/feed/'],
+  ['Olhar Digital', 'https://olhardigital.com.br/feed/'],
+  ['Canaltech', 'https://canaltech.com.br/rss/'],
+  ['TechCrunch', 'https://techcrunch.com/feed/'],
+  ['The Verge', 'https://www.theverge.com/rss/index.xml'],
+  ['Ars Technica', 'https://feeds.arstechnica.com/arstechnica/index'],
+  ['MIT Technology Review', 'https://www.technologyreview.com/feed/'],
+];
 const hhmm = (ms) => new Date(ms - 3 * 3600_000).toISOString().slice(11, 16);
-const jornais = JORNAIS.map(([nome, url]) => [`Jornal: ${nome}`, async () =>
+const lerFeeds = (lista, rotulo) => lista.map(([nome, url]) => [`${rotulo}: ${nome}`, async () =>
   lerRss(decodificar(await baixar(url, 'buffer')))
     .filter((i) => i.data >= corte)
     .map((i) => `${hhmm(i.data)} ${i.titulo} ${i.link}`),
 ]);
+const jornais = lerFeeds(JORNAIS, 'Jornal');
+const tecnologia = lerFeeds(TECNOLOGIA, 'Tecnologia');
 
 const oficiais = [
   ['Banco Central: Copom (última ata e último comunicado)', async () => {
@@ -105,7 +124,7 @@ const oficiais = [
   }],
 ];
 
-const fontes = [...(so === 'oficiais' ? [] : jornais), ...(so === 'jornais' ? [] : oficiais)];
+const fontes = so === 'tecnologia' ? tecnologia : [...(so === 'oficiais' ? [] : jornais), ...(so === 'jornais' ? [] : oficiais)];
 
 console.log(`Radar das últimas ${horas} horas (${new Date().toISOString().slice(0, 16)}Z)\n`);
 for (const [nome, ler] of fontes) {

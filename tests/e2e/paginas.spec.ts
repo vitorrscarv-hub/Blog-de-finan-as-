@@ -98,7 +98,7 @@ test('filtro de editorias em /noticias/', async ({ page }) => {
   const total = await page.locator('.card').count();
 
   let somadas = 0;
-  for (const [rotulo, caminho] of [['Brasil', '/noticias/brasil/'], ['Mercado', '/noticias/mercado/'], ['Internacional', '/noticias/internacional/']]) {
+  for (const [rotulo, caminho] of [['Brasil', '/noticias/brasil/'], ['Mercado', '/noticias/mercado/'], ['Internacional', '/noticias/internacional/'], ['Tecnologia', '/noticias/tecnologia/']]) {
     await filtro.getByRole('link', { name: rotulo }).click();
     await expect(page).toHaveURL(new RegExp(`${caminho}$`));
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(`Notícias da semana: ${rotulo}`);
@@ -212,4 +212,12 @@ test('calculadora de PGBL calcula no botão, explica o resultado e a matéria ap
 
   await page.goto('/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/');
   await expect(page.locator('.artigo-corpo a[href="/calculadoras/pgbl/"]')).toHaveCount(2);
+});
+
+test('editoria Tecnologia no menu e parceiros de projetos na política de privacidade', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('nav.nav').getByRole('link', { name: 'Tecnologia' })).toHaveAttribute('href', '/noticias/tecnologia/');
+  await page.goto('/privacidade/');
+  await expect(page.getByRole('heading', { name: 'Contato sobre projetos de tecnologia' })).toBeVisible();
+  await expect(page.locator('main')).toContainText('Planni Tech e a VRC Landing Pages');
 });
