@@ -41,6 +41,8 @@ Dos nove grupos pesquisados, dois tiveram queda e sete subiram, e estes foram os
 
 Os outros cinco grupos ficaram entre 0,07% e 0,44%. Entre os itens, o IBGE registra alta de 19,57% no tomate, de 2,27% em carnes e de 4,81% no arroz, e queda de 1,92% na energia elétrica residencial, de 9,21% na passagem aérea e de 0,56% na gasolina. Os pesos são os do IBGE para o mês: a energia elétrica residencial tem 4,26% do índice, a gasolina, 5,15%, e o tomate, 0,30%.
 
+Em outubro, a alimentação e bebidas, que responde por 21,5% do índice, variou mais de sete vezes o IPCA geral (1,04% contra 0,14%), enquanto habitação e transportes, que somam cerca de 35,7% dos pesos, tiveram variação negativa e seguraram o resultado. Em setembro, o índice havia subido 0,82%, o que torna o dado de outubro uma desaceleração em relação ao mês anterior, mas ainda uma alta, e o acumulado de 12 meses subiu 0,05 ponto percentual.
+
 ## O que o Focus trazia
 
 O Boletim Focus de 6 de novembro, o mais recente, trazia mediana de 5,22% para o IPCA de 2026, com 146 respondentes. A mediana muda a cada semana, e este texto não projeta novembro e dezembro.
