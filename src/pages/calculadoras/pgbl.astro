@@ -6,13 +6,13 @@ const r = REGRAS_2026;
 const brl = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 // Rótulos curtos e uma linha de ajuda, para o formulário inteiro caber na tela.
 const campos = [
-  { id: 'rendimentos', rotulo: 'Rendimentos tributáveis no ano', ajuda: 'Salário, pró-labore, aluguéis. Sem o 13º.', exemplo: '120.000,00', obrigatorio: true },
+  { id: 'rendimentos', rotulo: 'Rendimentos tributáveis no ano', ajuda: 'Salário, pró-labore, aluguéis. Sem o 13º.', exemplo: '120.000', obrigatorio: true },
   { id: 'inss', rotulo: 'INSS ou regime próprio no ano', ajuda: 'Está no informe de rendimentos.', exemplo: '11.857,10', obrigatorio: true },
   { id: 'dependentes', rotulo: 'Dependentes', ajuda: `${brl(r.dependente)} de dedução cada.`, exemplo: '0', inteiro: true },
-  { id: 'saude', rotulo: 'Despesas médicas', ajuda: 'Consultas, plano de saúde, exames.', exemplo: '0,00' },
-  { id: 'educacao', rotulo: 'Despesas com educação', ajuda: `Até ${brl(r.instrucaoPorPessoa)} por pessoa.`, exemplo: '0,00' },
-  { id: 'pgbl', rotulo: 'PGBL já aplicado em 2026', ajuda: 'Soma dos aportes do ano.', exemplo: '0,00' },
-  { id: 'retido', rotulo: 'Imposto retido no ano (opcional)', ajuda: 'Para estimar a restituição.', exemplo: '' },
+  { id: 'saude', rotulo: 'Despesas médicas', ajuda: 'Consultas, plano de saúde, exames.', exemplo: '0' },
+  { id: 'educacao', rotulo: 'Despesas com educação', ajuda: `Até ${brl(r.instrucaoPorPessoa)} por pessoa.`, exemplo: '0' },
+  { id: 'pgbl', rotulo: 'PGBL já aplicado em 2026', ajuda: 'Soma dos aportes do ano.', exemplo: '0' },
+  { id: 'retido', rotulo: 'Imposto retido no ano (opcional)', ajuda: 'Para estimar a restituição.', exemplo: '18.000' },
 ];
 ---
 <Base
@@ -107,7 +107,7 @@ const campos = [
 </Base>
 
 <script>
-  import { calcularPgbl, lerValor, REGRAS_2026 } from '../../scripts/pgbl';
+  import { calcularPgbl, lerValor, formatarDigitando, REGRAS_2026 } from '../../scripts/pgbl';
 
   const form = document.getElementById('calc-pgbl') as HTMLFormElement;
   const brl = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -202,6 +202,27 @@ const campos = [
     caixa.hidden = false;
     caixa.focus({ preventScroll: true });
     caixa.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Pontos de milhar automáticos enquanto o leitor digita (exceto em dependentes). O cursor fica no mesmo lugar
+  // em relação aos números à direita dele.
+  for (const campo of form.querySelectorAll<HTMLInputElement>('input[inputmode="decimal"]')) {
+    campo.addEventListener('input', (ev) => {
+      let pos = campo.selectionStart ?? campo.value.length;
+      // Ponto digitado pelo leitor (teclado que não tem vírgula) vale como vírgula decimal.
+      if ((ev as InputEvent).data === '.' && pos > 0 && campo.value[pos - 1] === '.' && !campo.value.includes(',')) {
+        campo.value = `${campo.value.slice(0, pos - 1)},${campo.value.slice(pos)}`;
+        campo.setSelectionRange(pos, pos);
+      }
+      pos = campo.selectionStart ?? campo.value.length;
+      const aDireita = campo.value.slice(pos).replace(/[^\d,]/g, '').length;
+      const novo = formatarDigitando(campo.value);
+      if (novo === campo.value) return;
+      campo.value = novo;
+      let p = novo.length;
+      for (let vistos = 0; p > 0 && vistos < aDireita; p--) if (/[\d,]/.test(novo[p - 1])) vistos++;
+      campo.setSelectionRange(p, p);
+    });
   }
 
   form.addEventListener('submit', calcular);

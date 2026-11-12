@@ -59,3 +59,17 @@ test('lê valores digitados no formato brasileiro', async () => {
   assert.equal(lerValor(''), null);
   assert.equal(lerValor('abc'), null);
 });
+
+test('máscara de digitação põe os pontos de milhar', async () => {
+  const { formatarDigitando, lerValor } = await import('../../src/scripts/pgbl.ts');
+  assert.equal(formatarDigitando('120000'), '120.000');
+  assert.equal(formatarDigitando('1234567'), '1.234.567');
+  assert.equal(formatarDigitando('999'), '999');
+  assert.equal(formatarDigitando('11857,1'), '11.857,1');
+  assert.equal(formatarDigitando('11857,105'), '11.857,10');
+  assert.equal(formatarDigitando('120.0000'), '1.200.000');
+  assert.equal(formatarDigitando(',5'), '0,5');
+  assert.equal(formatarDigitando('00120'), '120');
+  assert.equal(formatarDigitando('abc'), '');
+  assert.equal(lerValor(formatarDigitando('1234567,89')), 1234567.89);
+});

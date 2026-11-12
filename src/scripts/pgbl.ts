@@ -118,3 +118,16 @@ export function lerValor(texto: string): number | null {
   const n = Number(normal);
   return Number.isFinite(n) && n >= 0 ? n : null;
 }
+
+// Máscara de digitação: "120000" -> "120.000"; "1234567,8" -> "1.234.567,8". Só dígitos e uma vírgula com até
+// dois decimais; o leitor não precisa digitar os pontos de milhar.
+export function formatarDigitando(texto: string): string {
+  const limpo = String(texto ?? '').replace(/[^\d,]/g, '');
+  const [inteiro = '', ...resto] = limpo.split(',');
+  const temVirgula = resto.length > 0;
+  const centavos = resto.join('').slice(0, 2);
+  const digitos = inteiro.replace(/^0+(?=\d)/, '');
+  const milhar = digitos.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  if (!temVirgula) return milhar;
+  return `${milhar || '0'},${centavos}`;
+}

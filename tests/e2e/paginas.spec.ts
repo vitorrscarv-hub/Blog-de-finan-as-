@@ -191,8 +191,12 @@ test('calculadora de PGBL calcula no botão, explica o resultado e a matéria ap
   const calcular = page.getByRole('button', { name: 'Calcular' });
   await calcular.click();
   await expect(page.locator('#pg-erro')).toContainText('Preencha os rendimentos');
-  await page.getByLabel('Rendimentos tributáveis no ano').fill('120.000');
-  await page.getByLabel('INSS ou regime próprio no ano').fill('11.857,10');
+  const renda = page.getByLabel('Rendimentos tributáveis no ano');
+  await renda.pressSequentially('120000');
+  await expect(renda).toHaveValue('120.000');
+  const inss = page.getByLabel('INSS ou regime próprio no ano');
+  await inss.pressSequentially('11857.10');
+  await expect(inss).toHaveValue('11.857,10');
   await page.getByLabel('Imposto retido no ano (opcional)').fill('18000');
   await calcular.click();
   await expect(page.locator('#pg-resultado')).toBeVisible();
