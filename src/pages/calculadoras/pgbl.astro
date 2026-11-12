@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ContatoEspecialista from '../../components/ContatoEspecialista.astro';
+import { SITE } from '../../site.config';
 import { REGRAS_2026 } from '../../scripts/pgbl';
 
 const r = REGRAS_2026;
@@ -104,6 +106,11 @@ const campos = [
       <p><a href="https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026" rel="noopener" target="_blank">Tabelas da Receita Federal para 2026</a></p>
     </aside>
   </section>
+  {SITE.contatoEspecialista.ativo && (
+    <div class="container-texto patrimonio-contato">
+      <ContatoEspecialista />
+    </div>
+  )}
 </Base>
 
 <script>

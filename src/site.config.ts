@@ -90,9 +90,14 @@ export const SITE = {
     paginas: [
       '/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/',
       '/noticias/2026-10-27-diversificacao-all-weather-volatilidade/',
+      '/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/',
     ],
     // Frase própria de uma página; sem ela, vale a `chamada` acima.
     chamadasPorPagina: {
+      '/calculadoras/pgbl/':
+        'Se você quer avaliar se o PGBL cabe no seu planejamento de imposto e aposentadoria, preencha o formulário e um especialista entrará em contato.',
+      '/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/':
+        'Se você quer avaliar se o PGBL cabe no seu planejamento de imposto e aposentadoria, preencha o formulário e um especialista entrará em contato.',
       '/patrimonio/':
         'Se você quer revisar como o seu patrimônio está distribuído entre Brasil e exterior, preencha o formulário e um especialista entrará em contato.',
       '/noticias/2026-10-27-diversificacao-all-weather-volatilidade/':

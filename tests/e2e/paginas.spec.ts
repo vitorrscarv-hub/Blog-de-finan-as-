@@ -208,6 +208,7 @@ test('calculadora de PGBL calcula no botão, explica o resultado e a matéria ap
   await expect(explica).toContainText('restituição de');
   await expect(explica).toContainText('O imposto não some');
   await expect(page.locator('.nota-calc')).toContainText('não indica compra ou venda');
+  await expect(page.locator('.contato-especialista')).toContainText('PGBL cabe no seu planejamento');
 
   await page.goto('/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/');
   await expect(page.locator('.artigo-corpo a[href="/calculadoras/pgbl/"]')).toHaveCount(2);
