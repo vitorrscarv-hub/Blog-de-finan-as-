@@ -18,10 +18,12 @@ interface Props {
   secao: { nome: string; href: string };
   leitura: number;
   pais?: string;
+  // Só nas notícias; Tecnologia troca o formulário de especialista pelo de projetos.
+  editoria?: string;
   relacionadas?: { href: string; title: string; description: string; date: Date; etiqueta?: string }[];
 }
 
-const { title, description, date, updated, keywords, fontes, gate: gateDoTexto, secao, leitura, pais, relacionadas = [] } = Astro.props;
+const { title, description, date, updated, keywords, fontes, gate: gateDoTexto, secao, leitura, pais, editoria, relacionadas = [] } = Astro.props;
 // Com o pop-up desligado em SITE.lead.ativo, nenhum texto fica restrito.
 const gate = gateDoTexto && SITE.lead.ativo;
 
@@ -89,7 +91,9 @@ if (gate) {
       <slot />
     </div>
 
-    {SITE.contatoEspecialista.ativo && SITE.contatoEspecialista.paginas.includes(Astro.url.pathname) && <ContatoEspecialista />}
+    {editoria === 'Tecnologia'
+      ? SITE.contatoProjetos.ativo && <ContatoEspecialista perfil="projetos" />
+      : SITE.contatoEspecialista.ativo && SITE.contatoEspecialista.paginas.includes(Astro.url.pathname) && <ContatoEspecialista />}
 
     {fontes.length > 0 && (
       <section class="fontes" id="fontes">

@@ -24,7 +24,7 @@ Se a ferramenta Agent ou os agentes do projeto não estiverem disponíveis, faç
 | `manha` | segunda a sábado, 9h15 (depois da ata do Copom das 8h e do IBGE das 9h; o pull request fica pronto perto da abertura da bolsa, às 10h) | 1 de **Política Brasil** e 1 de **Brasil ou Mercado**. Se `hoje.mjs` apontar matéria obrigatória (IPCA, ata do Copom), ela ocupa a vaga de Brasil ou Mercado. |
 | `noite` | segunda a sábado, 18h45 | 1 com o **fato do dia**: em dia útil, o que marcou o fechamento do mercado; no sábado, o fato mais relevante do dia. Se `hoje.mjs` apontar a decisão do Copom, ela é a matéria. |
 
-Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publicar menos é melhor que publicar fraco. Internacional não tem vaga fixa; entra quando for o fato mais relevante da vaga.
+Vaga sem fato que passe no manual fica vazia, com o motivo no pull request: publicar menos é melhor que publicar fraco. Internacional e Tecnologia não têm vaga fixa; entram quando forem o fato mais relevante da vaga.
 
 ## Passo a passo
 

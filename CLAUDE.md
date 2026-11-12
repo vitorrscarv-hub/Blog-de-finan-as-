@@ -16,7 +16,7 @@ Grafous, blog educacional de finanças de Vitor Reis de Carvalho. Astro estátic
 
 ## Schema de conteúdo
 
-Manter o schema de `src/content.config.ts` como está. Campos: `title`, `description` (até 155 caracteres, o build falha se passar), `date`, `updated`, `keywords` (até 5), `teaser`, `fontes` ({titulo, url}), `draft` (padrão false), `gate` (padrão true). Notícias têm `editoria` (`Brasil`, `Mercado` ou `Internacional`, padrão `Brasil`), que define a etiqueta e as páginas `/noticias/brasil/`, `/noticias/mercado/` e `/noticias/internacional/`, e `pais` (opcional, texto livre). Guias têm `tema`, com um destes valores: Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior, Fundamentos. Mudar campo ou tema só com pedido explícito.
+Manter o schema de `src/content.config.ts` como está. Campos: `title`, `description` (até 155 caracteres, o build falha se passar), `date`, `updated`, `keywords` (até 5), `teaser`, `fontes` ({titulo, url}), `draft` (padrão false), `gate` (padrão true). Notícias têm `editoria` (`Brasil`, `Mercado`, `Internacional` ou `Tecnologia`, padrão `Brasil`), que define a etiqueta e as páginas `/noticias/brasil/`, `/noticias/mercado/`, `/noticias/internacional/` e `/noticias/tecnologia/`, e `pais` (opcional, texto livre). Guias têm `tema`, com um destes valores: Previdência, Renda fixa, Proteção e reserva, Fundos, Investimento no exterior, Fundamentos. Mudar campo ou tema só com pedido explícito.
 
 As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" apareça como 12 de outubro. Não remover o `timeZone: 'UTC'`.
 
@@ -26,6 +26,11 @@ As datas são exibidas em UTC (`src/scripts/formatos.ts`) para que "2026-10-12" 
 - Configuração em `SITE.lead` (`src/site.config.ts`): gatilho entre 30% e 40% do corpo, modo `obrigatorio` (padrão) ou `opcional`.
 - O texto completo fica sempre no HTML. Não esconder conteúdo no servidor; o JSON-LD marca `isAccessibleForFree: false` com `hasPart` em `.artigo-corpo`.
 - A validação do formulário e a de `functions/api/lead.js` precisam continuar iguais (nome, e-mail, WhatsApp com DDD de 10 ou 11 dígitos, consentimento, campo-armadilha `site`).
+
+## Tecnologia e formulário de projetos
+
+- A editoria Tecnologia tem janela própria no carrossel (`SITE.capa.carrossel.janela`): a notícia de Tecnologia mais recente, de até 7 dias, ocupa a terceira posição.
+- No fim de toda notícia de Tecnologia, o formulário de especialista dá lugar ao de projetos de aplicativos, sites e softwares (`SITE.contatoProjetos`, origem `projeto-tecnologia`), com os parceiros Planni Tech e VRC Landing Pages nomeados só na política de privacidade. A validação é a mesma do pop-up e de `functions/api/lead.js`.
 
 ## Painel de audiência
 

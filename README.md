@@ -80,7 +80,7 @@ Cabeçalho de uma notícia:
 title: "IPCA de setembro fica acima do esperado"
 description: "Até 155 caracteres. O build falha se passar disso."
 date: 2026-10-19
-editoria: "Brasil"         # ou "Mercado" ou "Internacional"; só em notícias, padrão Brasil
+editoria: "Brasil"         # ou "Mercado", "Internacional" ou "Tecnologia"; só em notícias, padrão Brasil
 pais: "Ucrânia"            # opcional; país ou região de que a notícia trata (internacionais)
 updated: 2026-10-20        # opcional
 keywords: ["IPCA setembro 2026", "inflação", "Selic"]   # até 5
@@ -95,7 +95,7 @@ gate: true       # false libera o texto sem pedir cadastro
 Texto em Markdown. Intertítulos com ##, listas, tabelas e links funcionam normalmente.
 ```
 
-As notícias aparecem em `/noticias/` e também em `/noticias/brasil/`, `/noticias/mercado/` ou `/noticias/internacional/`, conforme a `editoria`, com etiqueta no card. Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
+As notícias aparecem em `/noticias/` e também em `/noticias/brasil/`, `/noticias/mercado/`, `/noticias/internacional/` ou `/noticias/tecnologia/`, conforme a `editoria`, com etiqueta no card. Guias levam também `tema:`, com um destes valores: `Previdência`, `Renda fixa`, `Proteção e reserva`, `Fundos`, `Investimento no exterior` ou `Fundamentos`. A lista fica em `src/content.config.ts`, e a página `/guias/` segue essa ordem.
 
 O build falha, com a mensagem de erro em português, se faltar título ou description, se a description passar de 155 caracteres, se houver mais de 5 palavras-chave, se uma fonte não tiver url completa ou se o tema não estiver na lista. As datas aparecem exatamente como no cabeçalho: `2026-10-12` sai como "12 de outubro de 2026".
 
@@ -141,6 +141,7 @@ Para o checador conseguir abrir as fontes oficiais, o ambiente do Claude Code pr
 - Exterior: `*.federalreserve.gov`, `*.bls.gov`, `*.bea.gov`, `*.treasury.gov`, `*.europa.eu`, `*.imf.org`, `*.worldbank.org`, `*.oecd.org`, `*.eia.gov`, `*.iea.org`, `*.opec.org`, `*.un.org`
 - Opcional, para ouvir os dois lados dos conflitos e outras fontes oficiais (hoje recusados pelo proxy do ambiente): `*.mid.ru`, `*.government.ru`, `*.minfin.gov.ru`, `*.rosstat.gov.ru`, `*.president.gov.ua`, `*.mfa.gov.ua`, `*.bank.gov.ua`, `*.president.ir`, `*.mfa.ir`, `*.cbi.ir`, `*.nato.int`, `*.state.gov`, `*.defense.gov`, `*.economie.gouv.fr`, `*.gouvernement.fr`, `*.bundesregierung.de`
 - Jornais (radar da pauta e fatos políticos atribuídos): `*.moneytimes.com.br`, `*.infomoney.com.br`, `*.poder360.com.br`, `*.globo.com`, `*.folha.uol.com.br`, `*.estadao.com.br`, `gazetadopovo.com.br`, `oantagonista.com.br`, `revistaoeste.com`
+- Tecnologia (radar da editoria, `node scripts/radar.mjs --so=tecnologia`): `tecnoblog.net`, `olhardigital.com.br`, `canaltech.com.br`, `techcrunch.com`, `www.theverge.com`, `feeds.arstechnica.com`, `www.technologyreview.com` (G1, Folha e Estadão já estão liberados)
 - Pesquisas eleitorais (registro no TSE): `*.tse.jus.br`
 - Agências (fatos políticos e de guerra): `*.reuters.com`, `*.apnews.com`, `*.afp.com`
 

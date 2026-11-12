@@ -49,9 +49,16 @@ export const SITE = {
       ativo: true,
       segundos: 4,
       maximo: 5,
+      // Janela de tecnologia: a notícia de Tecnologia mais recente (publicada há até `dias` dias) ocupa sempre esta
+      // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
+      janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora',
         '2026-11-11-governo-prepara-projeto-ajuste-fiscal-pisos-saude-educacao',
         '2026-11-11-servicos-setembro-recuo-0-1-ibge',
+        '2026-11-10-dolar-maior-nivel-desde-julho-2025-inflacao-eua-ata',
+        '2026-11-10-ata-copom-282-juros-mais-altos-por-mais-tempo',
+        '2026-11-10-fachin-arquiva-inquerito-fake-news-sigilo',
         '2026-11-10-franca-revolta-jovens-motivacao-politica',
         '2026-11-10-risco-inflacao-projecoes-itau-bradesco-xp',
         '2026-11-09-lula-pronunciamento-responsabilidade-fiscal-medidas',
@@ -86,14 +93,33 @@ export const SITE = {
     paginas: [
       '/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/',
       '/noticias/2026-10-27-diversificacao-all-weather-volatilidade/',
+      '/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/',
     ],
     // Frase própria de uma página; sem ela, vale a `chamada` acima.
     chamadasPorPagina: {
+      '/calculadoras/pgbl/':
+        'Se você quer avaliar se o PGBL cabe no seu planejamento de imposto e aposentadoria, preencha o formulário e um especialista entrará em contato.',
+      '/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/':
+        'Se você quer avaliar se o PGBL cabe no seu planejamento de imposto e aposentadoria, preencha o formulário e um especialista entrará em contato.',
       '/patrimonio/':
         'Se você quer revisar como o seu patrimônio está distribuído entre Brasil e exterior, preencha o formulário e um especialista entrará em contato.',
       '/noticias/2026-10-27-diversificacao-all-weather-volatilidade/':
         'Se você está preocupado com os próximos anos da nossa economia e quer se proteger com uma diversificação mais eficiente, inspirada em modelos usados por grandes gestoras internacionais, preencha o formulário e um especialista entrará em contato.',
     } as Record<string, string>,
+  },
+  // Formulário de projetos de tecnologia: substitui o de especialista no fim de toda notícia de Tecnologia e capta
+  // contatos para as empresas parceiras abaixo, que desenvolvem aplicativos, sites e softwares. Os parceiros aparecem
+  // só na política de privacidade. Mesmo cadastro (/api/lead), com a origem própria, separada no painel.
+  contatoProjetos: {
+    ativo: true,
+    origem: 'projeto-tecnologia',
+    parceiros: ['Planni Tech', 'VRC Landing Pages'],
+    titulo: 'Tem um projeto de tecnologia?',
+    chamada:
+      'Se você ou a sua empresa precisa de um aplicativo, um site ou um software sob medida, preencha o formulário e a equipe de desenvolvimento parceira do Grafous entrará em contato para entender o projeto.',
+    consentimento: 'para que a equipe de desenvolvimento entre em contato sobre o meu projeto',
+    botao: 'Quero falar sobre o meu projeto',
+    ok: 'Recebemos seus dados. A equipe vai entrar em contato para entender o seu projeto.',
   },
   // Medição de audiência (painel interno). Sem cookies; só um identificador aleatório no navegador.
   // Respeita "Não rastrear" (DNT) e o Global Privacy Control. O painel mora na pasta src/pages/painel-grafous/:
