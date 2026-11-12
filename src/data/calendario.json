@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-11",
+  "atualizado": "2026-11-12",
   "acoes": [
     {
       "empresa": "Caixa Seguridade",
@@ -23,6 +23,30 @@
       "fonte": {
         "titulo": "Localiza, Comunicado ao Mercado de 25/09/2026: JCP, valor por ação",
         "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1571759&numSequencia=1096465&numVersao=1"
+      }
+    },
+    {
+      "empresa": "Bradespar",
+      "ticker": "BRAP4",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.199709857,
+      "dataCom": "2026-11-11",
+      "dataPagamento": "2026-11-23",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de BRADESPAR (BRAP), consulta ao cadastro da companhia em 12/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJSQVAiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
+      "empresa": "Bradespar",
+      "ticker": "BRAP4",
+      "tipo": "JCP",
+      "valorPorAcao": 0.643801511,
+      "dataCom": "2026-11-11",
+      "dataPagamento": "2026-11-23",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de BRADESPAR (BRAP), consulta ao cadastro da companhia em 12/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJSQVAiLCJsYW5ndWFnZSI6InB0LWJyIn0="
       }
     },
     {
@@ -1012,6 +1036,28 @@
       "fonte": {
         "titulo": "B3: rendimentos do fundo PSEC, consulta ao cadastro do fundo em 11/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlBTRUMiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII IRIM",
+      "ticker": "IRIM11",
+      "valorPorCota": 0.75,
+      "dataBase": "2026-11-11",
+      "dataPagamento": "2026-11-18",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo IRIM, consulta ao cadastro do fundo em 12/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IklSSU0iLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII RBRY PAX",
+      "ticker": "RBRY11",
+      "valorPorCota": 1,
+      "dataBase": "2026-11-11",
+      "dataPagamento": "2026-11-18",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo RBRY, consulta ao cadastro do fundo em 12/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJCUlkiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
