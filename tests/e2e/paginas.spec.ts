@@ -40,7 +40,7 @@ test('rodapé traz a marca, o que o blog faz e os avisos, sem nome de pessoa', a
 test('página de notícia tem seção, autor, data, leitura, fontes, aviso e SEO', async ({ page }) => {
   const [href] = await linksDe(page, '/noticias/');
   await page.goto(href);
-  await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Mercado|Internacional)$/);
+  await expect(page.locator('.artigo .etiqueta')).toHaveText(/^Notícias da semana · (Brasil|Mercado|Internacional|Tecnologia)$/);
   await expect(page.locator('.linha-fina')).toBeVisible();
   const meta = page.locator('.artigo-cabecalho .assinatura');
   // Abaixo do título vai a fonte, não o nome do autor.
