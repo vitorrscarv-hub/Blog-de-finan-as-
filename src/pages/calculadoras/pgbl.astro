@@ -4,14 +4,15 @@ import { REGRAS_2026 } from '../../scripts/pgbl';
 
 const r = REGRAS_2026;
 const brl = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+// Rótulos curtos e uma linha de ajuda, para o formulário inteiro caber na tela.
 const campos = [
-  { id: 'rendimentos', rotulo: 'Rendimentos tributáveis no ano', ajuda: 'Salários, pró-labore, aluguéis e outros rendimentos tributáveis de 2026. Não some o 13º.', exemplo: '120.000,00' },
-  { id: 'inss', rotulo: 'Contribuição ao INSS ou regime próprio no ano', ajuda: 'Está no informe de rendimentos. Sem essa contribuição, o PGBL só pode ser deduzido por aposentado ou pensionista (marque abaixo).', exemplo: '11.857,10' },
-  { id: 'dependentes', rotulo: 'Número de dependentes', ajuda: `Cada um deduz ${brl(r.dependente)} no ano.`, exemplo: '0', inteiro: true },
-  { id: 'saude', rotulo: 'Despesas médicas dedutíveis', ajuda: 'Consultas, planos de saúde, exames, sem limite de valor.', exemplo: '0,00' },
-  { id: 'educacao', rotulo: 'Despesas com educação', ajuda: `Escola e faculdade, limitadas a ${brl(r.instrucaoPorPessoa)} por pessoa.`, exemplo: '0,00' },
-  { id: 'pgbl', rotulo: 'Aportes em PGBL já feitos em 2026', ajuda: 'Some o que você já aplicou no ano.', exemplo: '0,00' },
-  { id: 'retido', rotulo: 'Imposto retido na fonte no ano (opcional)', ajuda: 'Também está no informe de rendimentos. Serve para estimar a restituição.', exemplo: '' },
+  { id: 'rendimentos', rotulo: 'Rendimentos tributáveis no ano', ajuda: 'Salário, pró-labore, aluguéis. Sem o 13º.', exemplo: '120.000,00', obrigatorio: true },
+  { id: 'inss', rotulo: 'INSS ou regime próprio no ano', ajuda: 'Está no informe de rendimentos.', exemplo: '11.857,10', obrigatorio: true },
+  { id: 'dependentes', rotulo: 'Dependentes', ajuda: `${brl(r.dependente)} de dedução cada.`, exemplo: '0', inteiro: true },
+  { id: 'saude', rotulo: 'Despesas médicas', ajuda: 'Consultas, plano de saúde, exames.', exemplo: '0,00' },
+  { id: 'educacao', rotulo: 'Despesas com educação', ajuda: `Até ${brl(r.instrucaoPorPessoa)} por pessoa.`, exemplo: '0,00' },
+  { id: 'pgbl', rotulo: 'PGBL já aplicado em 2026', ajuda: 'Soma dos aportes do ano.', exemplo: '0,00' },
+  { id: 'retido', rotulo: 'Imposto retido no ano (opcional)', ajuda: 'Para estimar a restituição.', exemplo: '' },
 ];
 ---
 <Base
@@ -19,59 +20,79 @@ const campos = [
   description="Quanto um aporte em PGBL reduz o imposto de renda da declaração de 2027 e muda a sua restituição, pelas regras da Receita para 2026."
   keywords={['PGBL', 'imposto de renda', 'restituição', 'previdência privada', 'declaração completa']}
 >
-  <section class="container-texto calculadora">
-    <header class="pagina-titulo">
+  <section class="container calculadora">
+    <header class="calc-topo">
       <h1>Calculadora de PGBL e restituição</h1>
-      <p>
-        Informe os números do seu ano. A calculadora compara o imposto da declaração de 2027 (ano-calendário 2026) sem PGBL,
-        com o que você já aplicou e com o aporte no limite de 12% dos rendimentos tributáveis.
-      </p>
+      <p>Compare o imposto da declaração de 2027 sem PGBL e com o aporte no limite de 12% da sua renda tributável.</p>
     </header>
 
     <form class="calc-form" id="calc-pgbl" novalidate>
-      {campos.map((c) => (
-        <div class="campo">
-          <label for={`pg-${c.id}`}>{c.rotulo}</label>
-          <input
-            id={`pg-${c.id}`}
-            name={c.id}
-            inputmode={c.inteiro ? 'numeric' : 'decimal'}
-            autocomplete="off"
-            placeholder={c.exemplo}
-            aria-describedby={`pg-${c.id}-ajuda`}
-          />
-          <small id={`pg-${c.id}-ajuda`}>{c.ajuda}</small>
+      <div class="calc-grade">
+        {campos.map((c) => (
+          <div class="campo">
+            <label for={`pg-${c.id}`}>{c.rotulo}{c.obrigatorio && <span class="obrig" aria-hidden="true"> *</span>}</label>
+            <input
+              id={`pg-${c.id}`}
+              name={c.id}
+              inputmode={c.inteiro ? 'numeric' : 'decimal'}
+              autocomplete="off"
+              placeholder={c.exemplo}
+              aria-describedby={`pg-${c.id}-ajuda`}
+              aria-required={c.obrigatorio ? 'true' : undefined}
+            />
+            <small id={`pg-${c.id}-ajuda`}>{c.ajuda}</small>
+          </div>
+        ))}
+        <div class="campo campo-marcar">
+          <label><input type="checkbox" name="aposentado" id="pg-aposentado" /> Sou aposentado ou pensionista do INSS ou de regime próprio</label>
         </div>
-      ))}
-      <div class="campo campo-marcar">
-        <label><input type="checkbox" name="aposentado" id="pg-aposentado" /> Sou aposentado ou pensionista do INSS ou de regime próprio</label>
       </div>
+      <p class="calc-erro" id="pg-erro" role="alert"></p>
+      <button class="botao calc-botao" type="submit">Calcular</button>
     </form>
 
-    <section class="calc-resultado" aria-live="polite" aria-labelledby="pg-res-titulo">
-      <h2 id="pg-res-titulo">Resultado</h2>
-      <p class="meta" id="pg-vazio">Preencha ao menos os rendimentos e a contribuição ao INSS.</p>
-      <div id="pg-saida" hidden>
-        <p class="calc-destaque">
-          Limite dedutível em 2026: <strong id="pg-limite"></strong>. Ainda cabem <strong id="pg-falta"></strong> dentro do limite.
-        </p>
-        <div class="tabela-rolavel" tabindex="0" role="region" aria-label="Comparação do imposto">
+    <section class="calc-resultado" id="pg-resultado" aria-labelledby="pg-res-titulo" tabindex="-1" hidden>
+      <h2 id="pg-res-titulo">Seu resultado</h2>
+
+      <div class="calc-cartoes">
+        <div class="cartao">
+          <span class="cartao-rotulo">Imposto sem PGBL</span>
+          <strong data-c="sem-imposto"></strong>
+          <span class="cartao-nota" data-c="sem-modelo-nota"></span>
+        </div>
+        <div class="cartao">
+          <span class="cartao-rotulo">Imposto com PGBL no limite</span>
+          <strong data-c="lim-imposto"></strong>
+          <span class="cartao-nota" data-c="lim-modelo-nota"></span>
+        </div>
+        <div class="cartao cartao-destaque">
+          <span class="cartao-rotulo">Imposto a menos</span>
+          <strong data-c="lim-economia"></strong>
+          <span class="cartao-nota" data-c="por-cem"></span>
+        </div>
+      </div>
+
+      <h3>O que esses números significam</h3>
+      <ol class="calc-explica" id="pg-explica"></ol>
+
+      <details class="calc-detalhe">
+        <summary>Ver a conta completa</summary>
+        <div class="tabela-rolavel" tabindex="0" role="region" aria-label="Conta completa">
           <table class="tabela-calc">
             <thead>
               <tr><th scope="col"></th><th scope="col">Sem PGBL</th><th scope="col">Com o já aplicado</th><th scope="col">Com o limite de 12%</th></tr>
             </thead>
             <tbody>
               <tr><th scope="row">Modelo de declaração</th><td data-c="sem-modelo"></td><td data-c="com-modelo"></td><td data-c="lim-modelo"></td></tr>
+              <tr><th scope="row">Deduções ou desconto</th><td data-c="sem-deducoes"></td><td data-c="com-deducoes"></td><td data-c="lim-deducoes"></td></tr>
               <tr><th scope="row">PGBL deduzido</th><td data-c="sem-pgbl"></td><td data-c="com-pgbl"></td><td data-c="lim-pgbl"></td></tr>
               <tr><th scope="row">Base de cálculo</th><td data-c="sem-base"></td><td data-c="com-base"></td><td data-c="lim-base"></td></tr>
-              <tr><th scope="row">Imposto devido no ano</th><td data-c="sem-imposto"></td><td data-c="com-imposto"></td><td data-c="lim-imposto"></td></tr>
-              <tr><th scope="row">Imposto a menos</th><td>-</td><td data-c="com-economia"></td><td data-c="lim-economia"></td></tr>
+              <tr><th scope="row">Imposto devido no ano</th><td data-c="sem-imposto-t"></td><td data-c="com-imposto"></td><td data-c="lim-imposto-t"></td></tr>
+              <tr><th scope="row">Imposto a menos</th><td>-</td><td data-c="com-economia"></td><td data-c="lim-economia-t"></td></tr>
             </tbody>
           </table>
         </div>
-        <p id="pg-saldo"></p>
-        <p id="pg-aviso" class="calc-aviso"></p>
-      </div>
+      </details>
     </section>
 
     <aside class="nota-calc">
@@ -86,7 +107,7 @@ const campos = [
 </Base>
 
 <script>
-  import { calcularPgbl, lerValor } from '../../scripts/pgbl';
+  import { calcularPgbl, lerValor, REGRAS_2026 } from '../../scripts/pgbl';
 
   const form = document.getElementById('calc-pgbl') as HTMLFormElement;
   const brl = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -96,79 +117,142 @@ const campos = [
     if (el) el.textContent = texto;
   };
   const modelo = (m: string) => (m === 'completa' ? 'Completa' : 'Simplificada');
+  const notaModelo = (m: string) => (m === 'completa' ? 'declaração completa' : 'declaração simplificada');
 
-  function atualizar() {
+  function calcular(ev?: Event) {
+    ev?.preventDefault();
+    const erro = document.getElementById('pg-erro')!;
+    const caixa = document.getElementById('pg-resultado')!;
     const rendimentos = ler('rendimentos');
     const inss = ler('inss');
-    const vazio = document.getElementById('pg-vazio')!;
-    const saida = document.getElementById('pg-saida')!;
     if (!rendimentos || inss === null) {
-      vazio.hidden = false;
-      saida.hidden = true;
+      erro.textContent = 'Preencha os rendimentos do ano e a contribuição ao INSS (use 0 se não contribuiu).';
+      caixa.hidden = true;
       return;
     }
+    erro.textContent = '';
     const retido = ler('retido');
+    const aplicado = ler('pgbl') ?? 0;
     const res = calcularPgbl({
       rendimentos,
       inss,
       dependentes: Math.floor(ler('dependentes') ?? 0),
       saude: ler('saude') ?? 0,
       educacao: ler('educacao') ?? 0,
-      pgbl: ler('pgbl') ?? 0,
+      pgbl: aplicado,
       retido: retido ?? undefined,
       aposentado: (form.elements.namedItem('aposentado') as HTMLInputElement).checked,
     });
-    vazio.hidden = true;
-    saida.hidden = false;
-    document.getElementById('pg-limite')!.textContent = brl(res.limite);
-    document.getElementById('pg-falta')!.textContent = brl(res.falta);
+
+    // Cartões
+    poe('sem-imposto', brl(res.semPgbl.imposto));
+    poe('sem-modelo-nota', notaModelo(res.semPgbl.modelo));
+    poe('lim-imposto', brl(res.noLimite.imposto));
+    poe('lim-modelo-nota', res.limite > 0 ? `${notaModelo(res.noLimite.modelo)}, com ${brl(res.limite)} de PGBL` : 'sem dedução possível');
+    poe('lim-economia', brl(res.economiaLimite));
+    const porCem = res.limite > 0 ? (res.economiaLimite / res.limite) * 100 : 0;
+    poe('por-cem', `R$ ${porCem.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} a cada R$ 100 aplicados`);
+
+    // Tabela completa
     for (const [k, v] of [['sem', res.semPgbl], ['com', res.comAporte], ['lim', res.noLimite]] as const) {
       poe(`${k}-modelo`, modelo(v.modelo));
+      poe(`${k}-deducoes`, brl(v.deducoes));
       poe(`${k}-pgbl`, brl(v.pgblDeduzido));
       poe(`${k}-base`, brl(v.base));
-      poe(`${k}-imposto`, brl(v.imposto));
     }
+    poe('sem-imposto-t', brl(res.semPgbl.imposto));
+    poe('com-imposto', brl(res.comAporte.imposto));
+    poe('lim-imposto-t', brl(res.noLimite.imposto));
     poe('com-economia', brl(res.economiaAporte));
-    poe('lim-economia', brl(res.economiaLimite));
+    poe('lim-economia-t', brl(res.economiaLimite));
 
-    const saldo = document.getElementById('pg-saldo')!;
-    if (res.saldoNoLimite === null || res.saldoSemPgbl === null) saldo.textContent = '';
-    else {
+    // Explicação em linguagem simples
+    const itens: string[] = [];
+    const { taxa, limite: tetoSimpl } = REGRAS_2026.descontoSimplificado;
+    if (res.limite === 0) {
+      itens.push('Sem contribuição ao INSS ou a regime próprio no ano, e sem ser aposentado ou pensionista desses regimes, o PGBL não pode ser abatido. Nesse caso ele não muda o seu imposto.');
+    } else {
+      itens.push(`<strong>Quanto você pode abater:</strong> até ${brl(res.limite)}, que são 12% dos seus rendimentos tributáveis (${brl(rendimentos)}). ${aplicado > 0 ? `Você já aplicou ${brl(aplicado)}; ainda cabem ${brl(res.falta)} dentro do limite.` : 'Você ainda não aplicou nada no ano.'} Vale o que for pago até 31 de dezembro.`);
+    }
+    itens.push(
+      res.semPgbl.modelo === 'simplificada'
+        ? `<strong>Sem PGBL:</strong> a sua melhor opção é a declaração simplificada, que troca todas as deduções por um desconto de ${Math.round(taxa * 100)}% da renda, limitado a ${brl(tetoSimpl)}. O imposto do ano fica em ${brl(res.semPgbl.imposto)}.`
+        : `<strong>Sem PGBL:</strong> a sua melhor opção já é a declaração completa, porque INSS, dependentes, saúde e educação somam ${brl(res.semPgbl.deducoes)}, mais que o desconto simplificado. O imposto do ano fica em ${brl(res.semPgbl.imposto)}.`
+    );
+    if (res.limite > 0) {
+      if (res.economiaLimite > 0) {
+        const cobrir = res.semPgbl.modelo === 'simplificada'
+          ? ' Como hoje você usa a simplificada, parte do PGBL serve só para a completa empatar com o desconto simplificado; por isso cada real abatido rende menos que a sua alíquota.'
+          : '';
+        itens.push(`<strong>Com PGBL no limite:</strong> na declaração completa, os ${brl(res.limite)} saem da base de cálculo, que cai para ${brl(res.noLimite.base)}. O imposto passa a ${brl(res.noLimite.imposto)}: são ${brl(res.economiaLimite)} a menos, ou cerca de R$ ${porCem.toLocaleString('pt-BR', { maximumFractionDigits: 2 })} para cada R$ 100 aplicados.${cobrir}`);
+        if (aplicado > 0 && aplicado < res.limite) {
+          itens.push(`<strong>Com o que você já aplicou:</strong> ${brl(aplicado)} de PGBL reduzem o imposto em ${brl(res.economiaAporte)}.${res.economiaAporte === 0 ? ' Ainda não é o bastante para a declaração completa ficar melhor que a simplificada.' : ''}`);
+        }
+      } else {
+        itens.push(`<strong>Com PGBL no limite:</strong> o imposto não muda. ${res.semPgbl.imposto === 0 ? 'Você já não paga imposto no ano, pela tabela e pela redução da Lei 15.270/2025.' : 'Mesmo com o PGBL, a declaração completa não fica melhor que a simplificada.'}`);
+      }
+    }
+    if (res.saldoSemPgbl !== null && res.saldoNoLimite !== null) {
       const frase = (v: number) => (v >= 0 ? `restituição de ${brl(v)}` : `imposto a pagar de ${brl(-v)}`);
-      saldo.textContent = `Com o imposto retido informado: sem PGBL, ${frase(res.saldoSemPgbl)}; com o limite de 12%, ${frase(res.saldoNoLimite)}.`;
+      itens.push(`<strong>Restituição:</strong> com ${brl(retido ?? 0)} de imposto retido no ano, você teria ${frase(res.saldoSemPgbl)} sem PGBL e ${frase(res.saldoNoLimite)} com o PGBL no limite. A diferença é o imposto a menos.`);
     }
+    itens.push('<strong>O imposto não some:</strong> o valor abatido é tributado no resgate, sobre o total. Na tabela regressiva, a alíquota começa em 35% e cai até 10% depois de dez anos de aplicação; na progressiva, segue a tabela do salário.');
+    document.getElementById('pg-explica')!.innerHTML = itens.map((i) => `<li>${i}</li>`).join('');
 
-    const aviso = document.getElementById('pg-aviso')!;
-    if (res.limite === 0) aviso.textContent = 'Sem contribuição ao INSS ou a regime próprio, e sem ser aposentado ou pensionista desses regimes, o PGBL não é dedutível.';
-    else if (res.economiaLimite === 0) aviso.textContent = 'Nesse caso o PGBL não reduz o imposto: a declaração simplificada ou a redução da Lei 15.270 já deixam o imposto mais baixo.';
-    else {
-      const pct = ((res.economiaLimite / Math.max(res.limite, 1)) * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
-      aviso.textContent = `Cada R$ 100 aplicados no limite reduzem o imposto deste ano em cerca de R$ ${pct}. O imposto não some: ele é cobrado no resgate.`;
-    }
+    caixa.hidden = false;
+    caixa.focus({ preventScroll: true });
+    caixa.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  form.addEventListener('input', atualizar);
-  atualizar();
+  form.addEventListener('submit', calcular);
 </script>
 
 <style>
-  .calculadora { padding-bottom: 48px; }
-  .calc-form { display: grid; gap: 16px; margin: 24px 0 32px; }
-  .calc-form .campo { display: grid; gap: 4px; }
-  .calc-form label { font-family: var(--ui); font-weight: 600; }
-  .calc-form input {
-    font: inherit; font-family: var(--ui); padding: 10px 12px; border: 1px solid var(--filete);
-    border-radius: 4px; background: var(--superficie); color: var(--tinta); max-width: 320px;
+  .calculadora { max-width: 880px; padding-bottom: 48px; }
+  .calc-topo { margin: 24px 0 16px; }
+  .calc-topo h1 { margin: 0 0 6px; }
+  .calc-topo p { margin: 0; color: var(--tinta-suave); }
+  .calc-form {
+    background: var(--superficie); border: 1px solid var(--filete); border-top: 3px solid var(--filete-forte);
+    padding: 16px; border-radius: 4px;
+  }
+  .calc-grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 16px; }
+  .calc-form .campo { display: grid; gap: 3px; align-content: start; }
+  .calc-form label { font-family: var(--ui); font-weight: 600; font-size: 0.92rem; }
+  .obrig { color: var(--destaque); }
+  .calc-form input:not([type='checkbox']) {
+    font: inherit; font-family: var(--ui); padding: 8px 10px; border: 1px solid var(--filete);
+    border-radius: 4px; background: var(--papel); color: var(--tinta); width: 100%; box-sizing: border-box;
   }
   .calc-form input:focus-visible { outline: 2px solid var(--destaque); outline-offset: 1px; }
-  .campo-marcar label { font-weight: 400; display: flex; gap: 8px; align-items: center; }
-  .calc-form small { color: var(--tinta-suave); font-family: var(--ui); font-size: 0.85rem; }
-  .calc-resultado { border-top: 3px solid var(--filete-forte); padding-top: 16px; }
-  .calc-destaque { font-family: var(--ui); }
+  .calc-form small { color: var(--tinta-suave); font-family: var(--ui); font-size: 0.8rem; }
+  .campo-marcar { grid-column: 1 / -1; }
+  .campo-marcar label { font-weight: 400; display: flex; gap: 8px; align-items: center; text-transform: none; letter-spacing: 0; }
+  @media (max-width: 599px) {
+    .calc-form { padding: 12px; }
+    .calc-grade { grid-template-columns: 1fr 1fr; gap: 10px 10px; }
+    .calc-form label { font-size: 0.74rem; }
+    .calc-form small { font-size: 0.72rem; }
+    .calc-botao { width: 100%; }
+  }
+  .calc-erro { color: var(--perigo); font-family: var(--ui); margin: 10px 0 0; min-height: 0; }
+  .calc-erro:empty { display: none; }
+  .calc-botao { margin-top: 14px; min-width: 180px; }
+  .calc-resultado { margin-top: 28px; }
+  .calc-resultado:focus { outline: none; }
+  .calc-cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 12px 0 20px; }
+  .cartao { border: 1px solid var(--filete); background: var(--superficie); padding: 12px 14px; display: grid; gap: 4px; font-family: var(--ui); }
+  .cartao strong { font-size: 1.5rem; }
+  .cartao-rotulo { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--tinta-suave); }
+  .cartao-nota { font-size: 0.85rem; color: var(--tinta-suave); }
+  .cartao-destaque { border: 2px solid var(--destaque); }
+  .cartao-destaque strong { color: var(--destaque); }
+  .calc-explica { padding-left: 1.2em; display: grid; gap: 10px; }
+  .calc-detalhe { margin-top: 16px; font-family: var(--ui); }
+  .calc-detalhe summary { cursor: pointer; font-weight: 600; padding: 6px 0; }
   .tabela-calc { width: 100%; border-collapse: collapse; font-family: var(--ui); font-size: 0.92rem; }
   .tabela-calc th, .tabela-calc td { padding: 8px 10px; border-bottom: 1px solid var(--filete); text-align: right; white-space: nowrap; }
   .tabela-calc th[scope='row'] { text-align: left; }
   .tabela-calc thead th { border-bottom: 2px solid var(--filete-forte); }
-  .calc-aviso { background: var(--aviso-fundo); padding: 10px 12px; font-family: var(--ui); }
   .nota-calc { margin-top: 32px; font-size: 0.9rem; color: var(--tinta-suave); }
 </style>

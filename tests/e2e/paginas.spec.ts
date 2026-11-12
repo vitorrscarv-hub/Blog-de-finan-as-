@@ -184,17 +184,25 @@ test('notícia termina com "Leia também", sem repetir a própria matéria', asy
   expect(links).not.toContain('/noticias/2026-10-26-saida-de-dolares-patrimonio-no-exterior/');
 });
 
-test('calculadora de PGBL compara o imposto e a matéria aponta para ela', async ({ page }) => {
+test('calculadora de PGBL calcula no botão, explica o resultado e a matéria aponta para ela', async ({ page }) => {
   await page.goto('/calculadoras/pgbl/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Calculadora de PGBL e restituição');
-  await expect(page.locator('#pg-vazio')).toBeVisible();
-  await page.getByLabel('Rendimentos tributáveis no ano').fill('120.000,00');
-  await page.getByLabel('Contribuição ao INSS ou regime próprio no ano').fill('11.857,10');
-  await expect(page.locator('#pg-limite')).toHaveText(/14\.400,00/);
+  await expect(page.locator('#pg-resultado')).toBeHidden();
+  const calcular = page.getByRole('button', { name: 'Calcular' });
+  await calcular.click();
+  await expect(page.locator('#pg-erro')).toContainText('Preencha os rendimentos');
+  await page.getByLabel('Rendimentos tributáveis no ano').fill('120.000');
+  await page.getByLabel('INSS ou regime próprio no ano').fill('11.857,10');
+  await page.getByLabel('Imposto retido no ano (opcional)').fill('18000');
+  await calcular.click();
+  await expect(page.locator('#pg-resultado')).toBeVisible();
   await expect(page.locator('[data-c="sem-imposto"]')).toHaveText(/17\.244,34/);
   await expect(page.locator('[data-c="lim-economia"]')).toHaveText(/2\.369,70/);
-  await page.getByLabel('Imposto retido na fonte no ano (opcional)').fill('18000');
-  await expect(page.locator('#pg-saldo')).toContainText('restituição de');
+  const explica = page.locator('#pg-explica');
+  await expect(explica).toContainText('até R$ 14.400,00');
+  await expect(explica).toContainText('declaração simplificada');
+  await expect(explica).toContainText('restituição de');
+  await expect(explica).toContainText('O imposto não some');
   await expect(page.locator('.nota-calc')).toContainText('não indica compra ou venda');
 
   await page.goto('/noticias/2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora/');
