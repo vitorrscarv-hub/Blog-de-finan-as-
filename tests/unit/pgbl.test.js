@@ -36,12 +36,13 @@ test('Bruno: já na completa, cada real sai da faixa de 27,5%', () => {
 });
 
 test('Carla e Diego: redução de 2026 e imposto zero', () => {
-  assert.equal(calcularPgbl(base({ rendimentos: 72000, inss: 7698.17 })).economiaLimite, 517.28);
+  assert.equal(calcularPgbl(base({ rendimentos: 72000, inss: 7698.12 })).economiaLimite, 517.27);
   assert.equal(calcularPgbl(base({ rendimentos: 60000, inss: 6018.17 })).economiaLimite, 0);
 });
 
 test('sem INSS não há dedução; aporte acima do limite não conta; restituição', () => {
   assert.equal(calcularPgbl(base({ inss: 0 })).limite, 0);
+  assert.equal(calcularPgbl(base({ inss: 0, aposentado: true })).limite, 14400);
   assert.equal(calcularPgbl(base({ pgbl: 50000 })).comAporte.pgblDeduzido, 14400);
   const r = calcularPgbl(base({ retido: 18000 }));
   assert.equal(r.saldoSemPgbl, 755.66);

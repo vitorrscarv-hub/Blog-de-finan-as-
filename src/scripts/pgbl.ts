@@ -2,7 +2,8 @@
 // Regras da Receita Federal, página "Tributação de 2026" (tabela anual, deduções e tabela de redução anual da
 // Lei 15.270/2025): https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026
 // Limite do PGBL: até 12% dos rendimentos tributáveis, só na declaração completa e para quem contribui para a
-// previdência oficial (INSS ou regime próprio). A conta é uma estimativa educativa: não considera 13º salário
+// previdência oficial (INSS ou regime próprio), ou é aposentado ou pensionista desses regimes (Perguntas e
+// Respostas IRPF 2026 da Receita, pergunta 335). A conta é uma estimativa educativa: não considera 13º salário
 // (tributado à parte), rendimentos isentos, livro-caixa, pensão alimentícia nem outras deduções.
 
 export const REGRAS_2026 = {
@@ -30,6 +31,7 @@ export type Entrada = {
   educacao: number; // despesas com instrução (somadas)
   pgbl: number; // aporte em PGBL no ano
   retido?: number; // imposto retido na fonte no ano (opcional, para estimar a restituição)
+  aposentado?: boolean; // aposentado ou pensionista do INSS ou de regime próprio: dispensado de contribuir
 };
 
 const centavos = (v: number) => Math.round(v * 100) / 100;
@@ -53,7 +55,7 @@ export function reducaoAnual(rendimentos: number, imposto: number, r = REGRAS_20
 }
 
 export function limitePgbl(e: Entrada, r = REGRAS_2026): number {
-  return e.inss > 0 ? centavos(positivo(e.rendimentos) * r.limitePgbl) : 0;
+  return e.inss > 0 || e.aposentado ? centavos(positivo(e.rendimentos) * r.limitePgbl) : 0;
 }
 
 function devido(rendimentos: number, base: number, r: typeof REGRAS_2026) {

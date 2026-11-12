@@ -6,7 +6,7 @@ const r = REGRAS_2026;
 const brl = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 const campos = [
   { id: 'rendimentos', rotulo: 'Rendimentos tributáveis no ano', ajuda: 'Salários, pró-labore, aluguéis e outros rendimentos tributáveis de 2026. Não some o 13º.', exemplo: '120.000,00' },
-  { id: 'inss', rotulo: 'Contribuição ao INSS ou regime próprio no ano', ajuda: 'Está no informe de rendimentos. Sem essa contribuição, o PGBL não pode ser deduzido.', exemplo: '11.857,10' },
+  { id: 'inss', rotulo: 'Contribuição ao INSS ou regime próprio no ano', ajuda: 'Está no informe de rendimentos. Sem essa contribuição, o PGBL só pode ser deduzido por aposentado ou pensionista (marque abaixo).', exemplo: '11.857,10' },
   { id: 'dependentes', rotulo: 'Número de dependentes', ajuda: `Cada um deduz ${brl(r.dependente)} no ano.`, exemplo: '0', inteiro: true },
   { id: 'saude', rotulo: 'Despesas médicas dedutíveis', ajuda: 'Consultas, planos de saúde, exames, sem limite de valor.', exemplo: '0,00' },
   { id: 'educacao', rotulo: 'Despesas com educação', ajuda: `Escola e faculdade, limitadas a ${brl(r.instrucaoPorPessoa)} por pessoa.`, exemplo: '0,00' },
@@ -43,6 +43,9 @@ const campos = [
           <small id={`pg-${c.id}-ajuda`}>{c.ajuda}</small>
         </div>
       ))}
+      <div class="campo campo-marcar">
+        <label><input type="checkbox" name="aposentado" id="pg-aposentado" /> Sou aposentado ou pensionista do INSS ou de regime próprio</label>
+      </div>
     </form>
 
     <section class="calc-resultado" aria-live="polite" aria-labelledby="pg-res-titulo">
@@ -113,6 +116,7 @@ const campos = [
       educacao: ler('educacao') ?? 0,
       pgbl: ler('pgbl') ?? 0,
       retido: retido ?? undefined,
+      aposentado: (form.elements.namedItem('aposentado') as HTMLInputElement).checked,
     });
     vazio.hidden = true;
     saida.hidden = false;
@@ -135,7 +139,7 @@ const campos = [
     }
 
     const aviso = document.getElementById('pg-aviso')!;
-    if (inss === 0) aviso.textContent = 'Sem contribuição ao INSS ou a regime próprio, o PGBL não é dedutível.';
+    if (res.limite === 0) aviso.textContent = 'Sem contribuição ao INSS ou a regime próprio, e sem ser aposentado ou pensionista desses regimes, o PGBL não é dedutível.';
     else if (res.economiaLimite === 0) aviso.textContent = 'Nesse caso o PGBL não reduz o imposto: a declaração simplificada ou a redução da Lei 15.270 já deixam o imposto mais baixo.';
     else {
       const pct = ((res.economiaLimite / Math.max(res.limite, 1)) * 100).toLocaleString('pt-BR', { maximumFractionDigits: 1 });
@@ -157,6 +161,7 @@ const campos = [
     border-radius: 4px; background: var(--superficie); color: var(--tinta); max-width: 320px;
   }
   .calc-form input:focus-visible { outline: 2px solid var(--destaque); outline-offset: 1px; }
+  .campo-marcar label { font-weight: 400; display: flex; gap: 8px; align-items: center; }
   .calc-form small { color: var(--tinta-suave); font-family: var(--ui); font-size: 0.85rem; }
   .calc-resultado { border-top: 3px solid var(--filete-forte); padding-top: 16px; }
   .calc-destaque { font-family: var(--ui); }
