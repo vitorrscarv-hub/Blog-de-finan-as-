@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-12",
+  "atualizado": "2026-11-13",
   "acoes": [
     {
       "empresa": "Caixa Seguridade",
@@ -279,61 +279,6 @@
     }
   ],
   "fiis": [
-    {
-      "fundo": "FII HABIT II",
-      "ticker": "HABT11",
-      "valorPorCota": 0.92,
-      "dataBase": "2026-10-30",
-      "dataPagamento": "2026-11-12",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo HABT, consulta ao cadastro do fundo em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkhBQlQiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII CI IPCA",
-      "ticker": "ICRI11",
-      "valorPorCota": 1.05,
-      "dataBase": "2026-10-30",
-      "dataPagamento": "2026-11-12",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo ICRI, consulta ao cadastro do fundo em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IklDUkkiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII ITRI",
-      "ticker": "ITRI11",
-      "valorPorCota": 0.75,
-      "dataBase": "2026-10-30",
-      "dataPagamento": "2026-11-12",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo ITRI, consulta ao cadastro do fundo em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IklUUkkiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII KINEA HF",
-      "ticker": "KNHF11",
-      "valorPorCota": 1,
-      "dataBase": "2026-10-30",
-      "dataPagamento": "2026-11-12",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo KNHF, consulta ao cadastro do fundo em 09/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOSEYiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII KINEA UN",
-      "ticker": "KNUQ11",
-      "valorPorCota": 1.06,
-      "dataBase": "2026-10-30",
-      "dataPagamento": "2026-11-12",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo KNUQ, consulta ao cadastro do fundo em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IktOVVEiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
     {
       "fundo": "FII BBIG",
       "ticker": "BBIG11",
@@ -1058,6 +1003,39 @@
       "fonte": {
         "titulo": "B3: rendimentos do fundo RBRY, consulta ao cadastro do fundo em 12/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJCUlkiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII MAUA",
+      "ticker": "MCCI11",
+      "valorPorCota": 1,
+      "dataBase": "2026-11-12",
+      "dataPagamento": "2026-11-19",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo MCCI, consulta ao cadastro do fundo em 13/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1DQ0kiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VALORAIP",
+      "ticker": "VGIP11",
+      "valorPorCota": 0.55,
+      "dataBase": "2026-11-12",
+      "dataPagamento": "2026-11-19",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VGIP, consulta ao cadastro do fundo em 13/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZHSVAiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII VALREIII",
+      "ticker": "VGIR11",
+      "valorPorCota": 0.119,
+      "dataBase": "2026-11-12",
+      "dataPagamento": "2026-11-19",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo VGIR, consulta ao cadastro do fundo em 13/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZHSVIiLCJ0eXBlRnVuZCI6N30="
       }
     },
     {
