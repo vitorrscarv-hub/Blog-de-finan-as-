@@ -10,15 +10,15 @@
     },
     {
       "nome": "IPCA 12m",
-      "valor": "4,58%",
-      "data": "set 2026",
+      "valor": "4,63%",
+      "data": "out 2026",
       "fonte": "IBGE",
       "url": "https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/-1/variaveis/2265?localidades=N1[all]"
     },
     {
       "nome": "Dólar PTAX",
-      "valor": "R$ 5,5606",
-      "data": "11 nov 2026",
+      "valor": "R$ 5,6143",
+      "data": "12 nov 2026",
       "fonte": "Banco Central",
       "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='10-16-2026'&$format=json"
     }
