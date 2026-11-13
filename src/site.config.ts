@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-13-dolar-semana-alta-2-66-ibovespa-sobe-pacote-fiscal',
         '2026-11-13-senado-aprova-texto-base-ajuste-fiscal-plp-299',
         '2026-11-13-varejo-setembro-vendas-sobem-0-2-ibge',
         '2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora',
