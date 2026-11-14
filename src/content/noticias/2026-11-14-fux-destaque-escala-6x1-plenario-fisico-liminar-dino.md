@@ -10,6 +10,8 @@ fontes:
     url: "https://valor.globo.com/politica/noticia/2026/11/14/fux-interrompe-julgamento-sobre-fim-da-6x1-e-leva-caso-ao-plenario-fisico-do-stf.ghtml"
   - titulo: "Gazeta do Povo: Fux suspende julgamento virtual sobre o fim da escala 6x1 e leva caso ao plenário do STF (14/11/2026)"
     url: "https://www.gazetadopovo.com.br/republica/fux-suspende-julgamento-fim-escala-6x1-leva-caso-plenario-stf/"
+  - titulo: "Gazeta do Povo: STF tem 4 votos para manter o fim da escala 6x1 em dezembro (13/11/2026)"
+    url: "https://www.gazetadopovo.com.br/economia/stf-tem-4-votos-para-manter-o-fim-da-escala-6x1-em-dezembro/"
   - titulo: "g1: Fux suspende julgamento sobre escala 5x2 e leva caso para plenário físico do STF (14/11/2026)"
     url: "https://g1.globo.com/politica/politico/noticia/2026/11/14/fux-suspende-julgamento-sobre-escala-5x2-e-leva-caso-para-plenario-fisico-do-stf.ghtml"
 draft: false
@@ -24,10 +26,10 @@ O julgamento havia começado na sexta-feira (13). O Valor e a Gazeta registram q
 
 ## O que segue valendo
 
-Segundo os três veículos, a liminar de Dino, proferida na quinta-feira (12), continua produzindo efeitos. Os pontos relatados:
+Segundo os três veículos, a liminar de Dino continua produzindo efeitos; a Gazeta informa que ela foi proferida na quinta-feira (12). Os pontos relatados:
 
 - a primeira etapa da transição, de 44 para 42 horas semanais e dois dias de descanso, começa em 16 de dezembro de 2026, e a jornada de 40 horas chega em dezembro de 2027;
-- na etapa intermediária, a jornada de 42 horas pode ser distribuída em cinco dias, com expedientes de até 8 horas e 24 minutos, sem adicional de hora extra sobre os 24 minutos excedentes, mesmo sem acordo coletivo até 15 de dezembro, segundo o g1 e o Valor;
+- na etapa intermediária, a jornada de 42 horas pode ser distribuída em cinco dias, com expedientes de até 8 horas e 24 minutos, sem adicional de hora extra sobre os 24 minutos excedentes, segundo o g1 e o Valor; o g1 e a Gazeta acrescentam que isso vale mesmo sem acordo coletivo até 15 de dezembro;
 - sindicatos e empresas têm 90 dias, a partir de 16 de dezembro, para revisar contrapartidas de acordos vigentes, e as folgas podem ser concedidas fora da semana e do mês previstos, se houver negociação coletiva;
 - a redução da jornada não pode provocar redução salarial, segundo o g1;
 - o Congresso tem 180 dias para disciplinar os regimes diferenciados e as regras para micro e pequenas empresas, e os contratos públicos têm 180 dias para se adaptar, segundo o Valor.
