@@ -55,6 +55,9 @@ export const SITE = {
       materias: [
         '2026-11-14-stf-quatro-votos-liminar-dino-fim-escala-6x1',
         '2026-11-14-focus-selic-ate-2030-juros-dois-digitos',
+        '2026-11-12-dolar-sobe-ibovespa-cai-banco-do-brasil-pacote-fiscal',
+        '2026-11-12-ipca-outubro-0-14-acumulado-12-meses-4-63',
+        '2026-11-12-senado-aprova-mp-renegociacao-dividas-rurais',
         '2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora',
         '2026-11-11-governo-prepara-projeto-ajuste-fiscal-pisos-saude-educacao',
         '2026-11-11-servicos-setembro-recuo-0-1-ibge',
