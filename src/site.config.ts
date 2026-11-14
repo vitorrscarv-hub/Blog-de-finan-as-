@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-14-fux-destaque-escala-6x1-plenario-fisico-liminar-dino',
         '2026-11-14-stf-quatro-votos-liminar-dino-fim-escala-6x1',
         '2026-11-14-focus-selic-ate-2030-juros-dois-digitos',
         '2026-11-12-dolar-sobe-ibovespa-cai-banco-do-brasil-pacote-fiscal',
