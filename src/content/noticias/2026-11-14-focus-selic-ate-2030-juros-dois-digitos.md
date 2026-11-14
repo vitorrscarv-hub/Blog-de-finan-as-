@@ -10,13 +10,15 @@ fontes:
     url: "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais"
   - titulo: "Banco Central: histórico da meta Selic, 282ª reunião do Copom (13,75% desde 05/11/2026)"
     url: "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros"
+  - titulo: "Banco Central: meta para a inflação (3,00% com tolerância de 1,50 ponto percentual)"
+    url: "https://www.bcb.gov.br/controleinflacao/metainflacao"
   - titulo: "g1: Mercado financeiro prevê juros de dois dígitos até 2030, ao longo dos dois mandatos de Lula (14/11/2026)"
     url: "https://g1.globo.com/economia/noticia/2026/11/14/mercado-financeiro-preve-juros-de-dois-digitos-ate-2030-ao-longo-dos-dois-mandatos-de-lula.ghtml"
 draft: false
 gate: true
 ---
 
-A mediana das projeções do Boletim Focus com dados de 6 de novembro, o mais recente, coloca a taxa Selic em 10,00% ao fim de 2030, partindo dos atuais 13,75% ao ano, segundo o Banco Central. Pela mediana, a Selic ficaria em 10% ou mais em todos os anos até 2030, ou seja, em dois dígitos durante todo o mandato que começa em 2027, de acordo com a reportagem do g1 que cita a pesquisa.
+A mediana das projeções do Boletim Focus com dados de 6 de novembro, o mais recente, coloca a taxa Selic em 10,00% ao fim de 2030, partindo dos atuais 13,75% ao ano, segundo o Banco Central. Pela mediana, a Selic ficaria em 10% ou mais ao fim de cada ano até 2030 (em 2030, exatamente 10,00%). Segundo o g1, que cita a pesquisa, se a previsão se confirmar o mandato que começa em 2027 terá juros em dois dígitos do início ao fim.
 
 ## A trajetória esperada
 
@@ -38,8 +40,8 @@ Para a inflação, o Focus de 6 de novembro traz mediana de 4,00% para o IPCA de
 
 ## O que o g1 acrescenta
 
-O g1 informa que, no início do terceiro mandato do presidente Lula, em 2023, o mercado projetava Selic abaixo de 10% já em 2024, e que a expectativa para 2030 era de 9,75% até maio deste ano. Segundo o jornal, a taxa de juro real, descontada a inflação esperada para os próximos 12 meses, é de 9,49% ao ano, a maior do mundo, e a deterioração das expectativas ocorre após déficits sucessivos nas contas públicas. O ex-secretário do Tesouro Jeferson Bittencourt, do ASA, disse ao g1 que a piora vem da "ausência do benefício da dúvida", ou seja, da descrença maior de que o governo promova um ajuste fiscal suficiente para estabilizar a dívida. São avaliações atribuídas ao jornal e ao entrevistado, e os números de juro real e de endividamento do g1 não foram conferidos aqui em fonte primária.
+O g1 informa que, no início do terceiro mandato do presidente Lula, em 2023, o mercado projetava Selic abaixo de 10% já em 2024, e que a expectativa para 2030 era de 9,75% até maio deste ano. Segundo o jornal, a taxa de juro real, descontada a inflação esperada para os próximos 12 meses, é de 9,49% ao ano, a maior do mundo, e a deterioração das expectativas ocorre após déficits sucessivos nas contas públicas. O ex-secretário do Tesouro Jeferson Bittencourt, do ASA, disse ao g1 que a piora vem da "ausência do benefício da dúvida", ou seja, da descrença maior de que o governo promova um ajuste fiscal suficiente para estabilizar a dívida. São avaliações atribuídas ao jornal e ao entrevistado, e o número de juro real do g1 não foram conferidos aqui em fonte primária.
 
 ## A leitura do Grafous
 
-A trajetória do Focus conta uma história simples: o mercado aceita que a Selic caia, mas devagar, e não acredita que chegue ao patamar de um dígito antes do fim da década. Segundo essa mediana, o ambiente de juros altos se estende por vários anos, e isso vale tanto para quem compara taxas de títulos quanto para o custo do crédito de empresas e famílias. O que pode mudar essa curva é a credibilidade fiscal e a inflação perto da meta, dois pontos em que o Grafous defende regras claras, controle de gastos e autonomia do Banco Central. Este texto relata as medianas e as leituras citadas, não projeta o caminho da Selic e não indica o que fazer com títulos de renda fixa.
+A trajetória do Focus conta uma história simples: a mediana do mercado aceita que a Selic caia, mas devagar, e não a vê abaixo de 10% ao fim de nenhum ano até 2030. Segundo essa mediana, o ambiente de juros altos se estende por vários anos, e isso vale tanto para quem compara taxas de títulos quanto para o custo do crédito de empresas e famílias. O que pode mudar essa curva é a credibilidade fiscal e a inflação perto da meta, dois pontos em que o Grafous defende regras claras, controle de gastos e autonomia do Banco Central. Este texto relata as medianas e as leituras citadas, não projeta o caminho da Selic e não indica o que fazer com títulos de renda fixa.
