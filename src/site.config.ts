@@ -53,6 +53,8 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-16-bancada-pt-projetos-dividendos-lci-lca-fortunas-moretti',
+        '2026-11-16-ibc-br-terceiro-trimestre-queda-0-9-focus-pib-selic',
         '2026-11-14-fux-destaque-escala-6x1-plenario-fisico-liminar-dino',
         '2026-11-14-stf-quatro-votos-liminar-dino-fim-escala-6x1',
         '2026-11-14-focus-selic-ate-2030-juros-dois-digitos',
@@ -60,8 +62,6 @@ export const SITE = {
         '2026-11-12-ipca-outubro-0-14-acumulado-12-meses-4-63',
         '2026-11-12-senado-aprova-mp-renegociacao-dividas-rurais',
         '2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora',
-        '2026-11-11-governo-prepara-projeto-ajuste-fiscal-pisos-saude-educacao',
-        '2026-11-11-servicos-setembro-recuo-0-1-ibge',
       ],
     },
   },
