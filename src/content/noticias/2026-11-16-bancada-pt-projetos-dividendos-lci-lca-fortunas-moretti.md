@@ -6,7 +6,7 @@ editoria: "Brasil"
 keywords: ["LCI e LCA", "dividendos", "imposto sobre grandes fortunas", "ajuste fiscal", "JCP"]
 teaser: "Deputados do PT e aliados propõem IR de 15% sobre dividendos, 7,5% sobre LCI e LCA e um imposto sobre grandes fortunas, em meio ao ajuste fiscal. O que dizem os projetos e Moretti. [LINK]"
 fontes:
-  - titulo: "Gazeta do Povo: PT apresenta pacote para tributar LCIs, LCAs e grandes fortunas e taxar em 15% lucros e dividendos (13/11/2026)"
+  - titulo: "Gazeta do Povo: PT apresenta pacote para tributar LCIs, LCAs e grandes fortunas e taxar em 15% lucros e dividendos (14/11/2026)"
     url: "https://www.gazetadopovo.com.br/economia/pt-impostos-lucros-dividendos-lci-lca-grandes-fortunas/"
   - titulo: "Gazeta do Povo: Ministro de Lula rebate críticas ao ajuste fiscal e dispara contra esquerda sectária (16/11/2026)"
     url: "https://www.gazetadopovo.com.br/republica/ministro-de-lula-rebate-criticas-ao-ajuste-fiscal-e-dispara-contra-esquerda-sectaria/"
@@ -41,4 +41,4 @@ São projetos recém-protocolados, e as reportagens não trazem relator, data de
 
 ## A leitura do Grafous
 
-As propostas buscam arrecadação onde o capital já paga ou é isento, e não contêm estimativa de quanto arrecadariam. O Grafous defende carga tributária menor, controle de gastos e segurança jurídica, e por isso vê dois problemas: trocar a conta do ajuste de despesa para tributo deixa de atacar o ritmo do gasto, e mudar a regra de aplicações já feitas, como LCI, LCA e debêntures incentivadas, afeta quem investiu confiando no regime vigente e reduz o apelo de instrumentos que financiam crédito imobiliário, agro e infraestrutura. São projetos de parlamentares da base, e o projeto do governo no Senado segue pelo caminho de contenção de despesas, segundo as reportagens. Este texto relata o que os jornais descrevem, não projeta a tramitação e não indica o que fazer com a carteira.
+As propostas buscam arrecadação onde o capital já paga ou é isento, e não contêm estimativa de quanto arrecadariam. O Grafous defende carga tributária menor, controle de gastos e segurança jurídica, e por isso vê dois problemas: trocar a conta do ajuste de despesa para tributo deixa de atacar o ritmo do gasto (Mansueto Almeida, do BTG Pactual, disse ao Money Times que são necessárias medidas mais firmes para controlar o crescimento da despesa), e mudar o regime de LCI, LCA e debêntures incentivadas mexe com a confiança de quem investiu no regime vigente e reduz o apelo de instrumentos que financiam crédito imobiliário, agro e infraestrutura. São projetos de parlamentares da base, e o projeto do governo no Senado segue pelo caminho de contenção de despesas, segundo as reportagens. Este texto relata o que os jornais descrevem, não projeta a tramitação e não indica o que fazer com a carteira.
