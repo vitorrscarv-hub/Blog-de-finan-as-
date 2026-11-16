@@ -20,7 +20,7 @@ O Índice de Atividade Econômica do Banco Central (IBC-Br), considerado uma pr�
 
 ## O que mostra o IBC-Br
 
-A série dessazonalizada do IBC-Br (base 2002 = 100 no Banco Central) teve estes valores nos últimos meses:
+A série dessazonalizada do IBC-Br no Banco Central teve estes valores nos últimos meses:
 
 | Mês | Índice | Variação sobre o mês anterior |
 | --- | --- | --- |
