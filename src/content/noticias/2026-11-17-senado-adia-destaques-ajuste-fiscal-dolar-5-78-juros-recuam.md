@@ -4,7 +4,7 @@ description: "Alcolumbre adiou os destaques do ajuste fiscal para quarta (18). O
 date: 2026-11-17
 editoria: "Mercado"
 keywords: ["ajuste fiscal", "dólar", "juros futuros", "Ibovespa", "créditos tributários"]
-teaser: "O Senado adiou para quarta os destaques do ajuste fiscal, o dólar renovou a máxima desde abril de 2025 e os juros futuros recuaram forte. Os destaques e os números do dia. [LINK]"
+teaser: "O Senado adiou para quarta os destaques do ajuste fiscal, o dólar fechou no maior nível desde abril de 2025 e os juros futuros recuaram forte. Os destaques e os números do dia. [LINK]"
 fontes:
   - titulo: "Banco Central: PTAX, cotação do dólar por dia (16/11 e 17/11/2026)"
     url: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='11-17-2026'&$format=json"
@@ -22,7 +22,7 @@ draft: false
 gate: true
 ---
 
-O presidente do Senado, Davi Alcolumbre (União-AP), adiou para quarta-feira (18) a votação dos destaques do projeto de ajuste fiscal do governo, o que frustrou a expectativa de concluir a análise e votar o texto na Câmara no mesmo dia, segundo a Gazeta do Povo e o g1. No mercado, o dólar à vista fechou a R$ 5,7824, em alta de 0,10%, de novo no maior nível desde abril de 2025, segundo o Valor Econômico. A PTAX de venda do Banco Central ficou em R$ 5,7851, contra R$ 5,7324 na véspera. Os juros futuros recuaram com força, e o Ibovespa subiu 0,31%.
+O presidente do Senado, Davi Alcolumbre (União-AP), adiou para quarta-feira (18) a votação dos destaques do projeto de ajuste fiscal do governo, segundo o g1 e a Gazeta do Povo. A Gazeta informa que o governo esperava concluir a análise no Senado e votar o texto na Câmara no mesmo dia. No mercado, o dólar à vista fechou a R$ 5,7824, em alta de 0,10%, de novo no maior nível desde abril de 2025, segundo o Valor Econômico. A PTAX de venda do Banco Central ficou em R$ 5,7851, contra R$ 5,7324 na véspera. Os juros futuros recuaram com força, e o Ibovespa subiu 0,31%.
 
 ## O adiamento no Senado
 
@@ -42,4 +42,4 @@ Os juros futuros devolveram parte do prêmio da véspera: o DI de janeiro de 202
 
 ## A leitura do Grafous
 
-O dia mostra que o ajuste fiscal está sendo decidido nos detalhes. O ponto central dos destaques, a possibilidade de o Executivo limitar créditos tributários das empresas, é também o que reúne 119 entidades contra o dispositivo, e é um tema de segurança jurídica: o contribuinte precisa saber se o crédito que tem será devolvido, em que prazo e com que correção. Do outro lado, a proposta de teto de 0,6% para o gasto e de corte até o centro da meta é o tipo de controle de despesa que o blog defende. Se o Senado retirar a restrição aos créditos e endurecer o gasto, o ajuste ganha em qualidade, e é isso que os votos de quarta vão definir. Este texto relata o que as reportagens descrevem, não projeta o dólar, os juros ou a votação e não indica compra ou venda de ativo. Os números de mercado vêm do Valor, e a B3 não foi consultada diretamente.
+O dia mostra que o ajuste fiscal está sendo decidido nos detalhes. O ponto central dos destaques, a possibilidade de o Executivo limitar créditos tributários das empresas, é também o que reúne 119 entidades contra o dispositivo, e é um tema de segurança jurídica: o contribuinte precisa saber se o crédito que tem será devolvido, em que prazo e com que correção. Do outro lado, a proposta de teto de 0,6% para o gasto e de corte até o centro da meta é o tipo de controle de despesa que o blog defende. Segurança jurídica para o contribuinte e controle de despesa são as duas pontas que o blog defende, e os destaques de quarta tratam das duas. Este texto relata o que as reportagens descrevem, não projeta o dólar, os juros ou a votação e não indica compra ou venda de ativo. Os números de mercado vêm do Valor, e a B3 não foi consultada diretamente.
