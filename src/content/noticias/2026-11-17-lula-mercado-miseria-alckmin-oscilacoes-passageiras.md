@@ -10,11 +10,13 @@ fontes:
     url: "https://revistaoeste.com/politica/lula-mercado-financeiro-quer-que-o-povo-pobre-viva-na-miseria/"
   - titulo: "Gazeta do Povo: Alckmin minimiza alta do dólar e classifica oscilações como 'passageiras' (16/11/2026)"
     url: "https://www.gazetadopovo.com.br/economia/alckmin-minimiza-alta-do-dolar-e-classifica-oscilacoes-como-passageiras/"
+  - titulo: "Banco Central: cotação PTAX do dólar em 16/11/2026"
+    url: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='11-16-2026'&$format=json"
 draft: false
 gate: true
 ---
 
-O presidente Luiz Inácio Lula da Silva (PT) afirmou na segunda-feira (16), em Madri, que "o mercado financeiro quer que o povo pobre viva na miséria", depois de um dia em que o dólar fechou a R$ 5,77, o maior valor desde abril de 2025, segundo a Revista Oeste e a Gazeta do Povo. No Brasil, o vice-presidente Geraldo Alckmin (PSB), em exercício, disse que não há razão para as oscilações do mercado e que elas serão passageiras. O Senado deve votar nesta terça-feira (17) os quatro destaques do projeto de ajuste fiscal.
+O presidente Luiz Inácio Lula da Silva (PT) afirmou na segunda-feira (16), em Madri, que "o mercado financeiro quer que o povo pobre viva na miséria", depois de um dia em que o dólar fechou a R$ 5,77, o maior valor desde abril de 2025, segundo a Revista Oeste e a Gazeta do Povo (a PTAX do Banco Central, média do dia, foi de R$ 5,7324). No Brasil, o vice-presidente Geraldo Alckmin (PSB), em exercício, disse que não há razão para as oscilações do mercado e que elas serão passageiras. O Senado deve votar nesta terça-feira (17) os quatro destaques do projeto de ajuste fiscal.
 
 ## O que disse Lula
 
@@ -26,8 +28,8 @@ A Gazeta do Povo informa que Alckmin falou a jornalistas depois de se reunir com
 
 ## O que o mercado e o Senado têm pela frente
 
-A Revista Oeste registra que o impacto do pacote sobre o resultado primário de 2027 pode chegar a R$ 60 bilhões, segundo o Planalto, valor que "é considerado insuficiente por grande parte dos economistas", e que o mercado reagiu também aos rumores de que o presidente do BNDES, Aloizio Mercadante, poderia assumir a Fazenda, que ele próprio desmentiu. O Senado deve concluir a votação do projeto nesta terça, antes de ele seguir para a Câmara, segundo os dois veículos.
+A Revista Oeste registra que o impacto do pacote sobre o resultado primário de 2027 pode chegar a R$ 60 bilhões, segundo o Planalto, valor que "é considerado insuficiente por grande parte dos economistas", e que o mercado reagiu também aos rumores de que o presidente do BNDES, Aloizio Mercadante, poderia assumir a Fazenda, que ele próprio desmentiu. O Senado deve concluir a votação do projeto nesta terça, antes de ele seguir para a Câmara, segundo a Revista Oeste, e a Gazeta do Povo confirma a votação dos quatro destaques na terça.
 
 ## A leitura do Grafous
 
-As duas falas mostram duas estratégias diante da mesma reação do mercado. A de Alckmin argumenta com fatos que o investidor reconhece (reservas, inflação, segurança jurídica) e promete superávit. A de Lula coloca o mercado como adversário dos pobres, o que não responde à dúvida que os preços expressam: se o ajuste de R$ 50 bilhões a R$ 60 bilhões é suficiente para estabilizar a dívida. O Grafous entende que a credibilidade fiscal é condição para juros menores, o que também interessa a quem tem menos, de modo que a oposição entre mercado e povo não ajuda a resolver o problema. O que decide é o que será votado e cumprido. Este texto relata as declarações, não projeta o dólar, os juros ou a votação e não indica compra ou venda de ativo.
+As duas falas mostram duas estratégias diante da mesma reação do mercado. A de Alckmin argumenta com fatos que o investidor reconhece (reservas, inflação, segurança jurídica) e promete superávit. A de Lula coloca o mercado como adversário dos pobres, o que não responde à dúvida que os preços expressam: se o ajuste de R$ 56 bilhões a R$ 60 bilhões é suficiente para estabilizar a dívida. O Grafous entende que a credibilidade fiscal é condição para juros menores, o que também interessa a quem tem menos, de modo que a oposição entre mercado e povo não ajuda a resolver o problema. O que decide é o que será votado e cumprido. Este texto relata as declarações, não projeta o dólar, os juros ou a votação e não indica compra ou venda de ativo.
