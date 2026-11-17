@@ -53,13 +53,11 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-17-lula-mercado-miseria-alckmin-oscilacoes-passageiras',
+        '2026-11-17-banco-do-brasil-governo-descarta-socorro-fazenda-regra-perdas-agro',
         '2026-11-16-dolar-dispara-5-78-ibovespa-cai-juros-sobem-fiscal',
         '2026-11-16-bancada-pt-projetos-dividendos-lci-lca-fortunas-moretti',
         '2026-11-16-ibc-br-terceiro-trimestre-queda-0-9-focus-pib-selic',
-        '2026-11-12-dolar-sobe-ibovespa-cai-banco-do-brasil-pacote-fiscal',
-        '2026-11-12-ipca-outubro-0-14-acumulado-12-meses-4-63',
-        '2026-11-12-senado-aprova-mp-renegociacao-dividas-rurais',
-        '2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora',
       ],
     },
   },
