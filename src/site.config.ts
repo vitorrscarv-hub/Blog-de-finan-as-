@@ -41,7 +41,7 @@ export const SITE = {
   // numa posição dessa coluna, pelo nome do arquivo sem .md (ex.: { '2026-10-23-assunto': 3 }). Fixada não vira manchete nem entra no carrossel.
   capa: {
     maisNoticias: 3,
-    fixadas: { '2026-10-26-saida-de-dolares-patrimonio-no-exterior': 1 } as Record<string, number>,
+    fixadas: {} as Record<string, number>,
     // Manchete em carrossel com as Matérias indicadas pontuais (nome do arquivo sem .md), na ordem desta lista, até
     // `maximo`. Matéria da lista que ainda não foi publicada é ignorada. Sem nenhuma publicada, a manchete
     // volta a ser a notícia mais recente. Troca de destaque a cada `segundos` (não roda sozinho com "reduzir movimento").
@@ -53,13 +53,14 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-18-economistas-esquerda-propoem-forcar-queda-selic-moratoria-capitais',
+        '2026-11-18-pnad-desemprego-por-estado-terceiro-trimestre-bahia-santa-catarina',
+        '2026-11-17-senado-adia-destaques-ajuste-fiscal-dolar-5-78-juros-recuam',
+        '2026-11-17-lula-mercado-miseria-alckmin-oscilacoes-passageiras',
+        '2026-11-17-banco-do-brasil-governo-descarta-socorro-fazenda-regra-perdas-agro',
         '2026-11-16-dolar-dispara-5-78-ibovespa-cai-juros-sobem-fiscal',
         '2026-11-16-bancada-pt-projetos-dividendos-lci-lca-fortunas-moretti',
         '2026-11-16-ibc-br-terceiro-trimestre-queda-0-9-focus-pib-selic',
-        '2026-11-12-dolar-sobe-ibovespa-cai-banco-do-brasil-pacote-fiscal',
-        '2026-11-12-ipca-outubro-0-14-acumulado-12-meses-4-63',
-        '2026-11-12-senado-aprova-mp-renegociacao-dividas-rurais',
-        '2026-11-12-pgbl-restituicao-imposto-de-renda-calculadora',
       ],
     },
   },
