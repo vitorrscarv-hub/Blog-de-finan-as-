@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-18-dolar-5-87-maior-em-19-meses-ata-fed-senado-rejeita-destaques',
         '2026-11-18-economistas-esquerda-propoem-forcar-queda-selic-moratoria-capitais',
         '2026-11-18-pnad-desemprego-por-estado-terceiro-trimestre-bahia-santa-catarina',
         '2026-11-17-senado-adia-destaques-ajuste-fiscal-dolar-5-78-juros-recuam',
