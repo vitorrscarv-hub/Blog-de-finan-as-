@@ -1,10 +1,10 @@
 ---
-title: "Economistas de esquerda propõem forçar a Selic para 7,5% em 12 meses; críticos citam risco para câmbio e juros"
+title: "Desenvolvimentistas propõem forçar a Selic para 7,5% em 12 meses; críticos citam risco para câmbio e juros"
 description: "Propostas de Lara Resende e Oreiro para derrubar a Selic incluem fim gradual das LFTs e moratória de 90 dias para capitais. Críticos reagem."
 date: 2026-11-18
 editoria: "Brasil"
 keywords: ["Selic", "política monetária", "ajuste fiscal", "LFT", "controle de capitais"]
-teaser: "Economistas ligados ao desenvolvimentismo defendem medidas para derrubar a Selic a 7,5% em 12 meses. Segundo a Gazeta do Povo, críticos veem risco para câmbio e juros. [LINK]"
+teaser: "Defensores do desenvolvimentismo propõem medidas para derrubar a Selic a 7,5% em 12 meses. Segundo a Gazeta do Povo, críticos veem risco para câmbio e juros. [LINK]"
 fontes:
   - titulo: "Gazeta do Povo: Setores da esquerda contrariam Lula e apostam em propostas mirabolantes para reduzir juros"
     url: "https://www.gazetadopovo.com.br/economia/ajuste-fiscal-esquerda-contraria-lula-propostas-mirabolantes-reduzir-juros/"
