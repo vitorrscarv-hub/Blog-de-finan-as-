@@ -14,7 +14,7 @@ draft: false
 gate: true
 ---
 
-Economistas ligados ao desenvolvimentismo, corrente que defende maior papel do Estado na economia, apresentaram propostas para reduzir a taxa Selic por caminhos fora do convencional, e parte da base do governo Lula criticou o pacote de ajuste fiscal. As informações são da Gazeta do Povo, que publicou duas reportagens sobre o tema nesta semana. O Grafous não consultou os textos das propostas, só a reportagem do jornal, e por isso o que segue é atribuído a ela.
+Economistas ligados ao desenvolvimentismo, corrente que defende maior papel do Estado na economia, apresentaram propostas para reduzir a taxa Selic por caminhos fora do convencional, e parte da base do governo Lula criticou o pacote de ajuste fiscal. As informações são da Gazeta do Povo: uma reportagem de 17 de novembro e um resumo em perguntas e respostas dela, publicado em 18 de novembro. O Grafous não consultou os textos das propostas, só o jornal, e por isso o que segue é atribuído a ele.
 
 ## O que propõem
 
@@ -26,7 +26,7 @@ As ideias ganharam visibilidade, segundo a reportagem, com o manifesto "As urnas
 
 ## O outro lado
 
-Os críticos ouvidos pela Gazeta do Povo são economistas de linha liberal. Julian Portilho, do Centro Mackenzie de Liberdade Econômica, disse que a queda da Bolsa e a alta do dólar indicam retirada de recursos do país diante das propostas. Esse é o diagnóstico do entrevistado, e o jornal não apresenta dados de fluxo de capitais. Aod Cunha, da PUC-RS, avalia que as medidas gerariam "um estresse absurdo no mercado, no câmbio e nos juros" sem resolver o excesso de gastos públicos.
+Julian Portilho, do Centro Mackenzie de Liberdade Econômica, disse que a queda da Bolsa e a alta do dólar indicam retirada de recursos do país diante das propostas. Esse é o diagnóstico do entrevistado, e o jornal não apresenta dados de fluxo de capitais. Aod Cunha, da PUC-RS, avalia que as medidas gerariam "um estresse absurdo no mercado, no câmbio e nos juros" sem resolver o excesso de gastos públicos.
 
 Ubiratan Jorge Iorio, da Universidade do Estado do Rio de Janeiro (UERJ), disse que a moratória transformaria o país em um "presídio para os capitais internacionais" e que o problema "está em Brasília, que gasta demais". Para ele, o caminho é cortar gastos, reduzir impostos e simplificar a regulamentação.
 
@@ -34,7 +34,7 @@ Os dois lados divergem sobre a causa dos juros altos. Os desenvolvimentistas vee
 
 ## O que ainda não se sabe
 
-Nenhuma das propostas foi adotada pelo governo, e a Gazeta do Povo não informa que a equipe econômica as tenha endossado. O jornal registra que o mercado já estava pressionado, na segunda-feira (16), por rumores sobre uma possível ida de Aloizio Mercadante para o Ministério da Fazenda. Assim, não é possível separar quanto da queda da Bolsa e da alta do dólar veio das propostas e quanto veio de outros fatores. O Grafous noticiou a alta do dólar daquela segunda-feira em outra matéria.
+A Gazeta do Povo não informa que o governo ou a equipe econômica tenha adotado ou endossado alguma das propostas. O jornal relata que parlamentares do PT apresentaram ao Congresso, na sexta-feira (13), projetos ligados a temas como a tributação de rendimentos financeiros extraordinários, mas não detalha o conteúdo deles. O jornal registra que o mercado já estava pressionado, na segunda-feira (16), por rumores sobre uma possível ida de Aloizio Mercadante para o Ministério da Fazenda. Assim, não é possível separar quanto da queda da Bolsa e da alta do dólar veio das propostas e quanto veio de outros fatores. O Grafous noticiou a alta do dólar daquela segunda-feira em outra matéria.
 
 ## A leitura do Grafous
 
