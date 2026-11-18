@@ -28,6 +28,7 @@ As maiores quedas, em pontos percentuais, entre o segundo e o terceiro trimestre
 | Alagoas | 7,9% | 6,8% | -1,1 |
 | Distrito Federal | 6,5% | 5,4% | -1,1 |
 | Ceará | 6,6% | 5,7% | -0,9 |
+| Paraíba | 5,4% | 4,5% | -0,9 |
 
 ## Onde a taxa subiu ou ficou igual
 
@@ -37,7 +38,7 @@ Ficaram iguais Roraima (5,0%), Tocantins (4,1%), Maranhão (6,0%) e São Paulo (
 
 ## Maiores e menores taxas
 
-No terceiro trimestre, as quatro maiores taxas foram as de Pernambuco (8,6%), Amapá (7,9%), Sergipe (7,4%) e Bahia (7,1%). As quatro menores foram as de Santa Catarina (2,2%), Mato Grosso do Sul (2,3%), Mato Grosso (2,6%) e Paraná (3,0%).
+No terceiro trimestre, as quatro maiores taxas foram as de Pernambuco (8,6%), Amapá (7,9%), Sergipe (7,4%) e Bahia (7,1%). As quatro menores foram as de Santa Catarina (2,2%), Mato Grosso do Sul (2,3%), Mato Grosso (2,6%) e, empatados em 3,0%, Espírito Santo e Paraná.
 
 Pernambuco, que tem a maior taxa do país, registrava 10,0% um ano antes, no terceiro trimestre de 2025. A Bahia, que há um ano tinha 8,5%, está agora em 7,1%.
 
@@ -49,4 +50,4 @@ A taxa de um estado também não diz, sozinha, nada sobre a qualidade das vagas,
 
 ## A leitura do Grafous
 
-A queda do desemprego é boa notícia, e o Grafous a registra como tal. Quando ela vem acompanhada de atividade mais fraca, como mostrou a prévia do PIB do Banco Central, vale perguntar de onde vêm as vagas. O Grafous defende que emprego durável nasce de crescimento sustentado, o que depende de segurança jurídica, regras fiscais previsíveis e um ambiente em que a empresa possa contratar sem insegurança sobre custos e regras. Esses números são retrato do trimestre e não projetam o mercado de trabalho de 2027. O texto é informativo e não indica compra ou venda de ativo.
+A queda do desemprego é boa notícia, e o Grafous a registra como tal. Vale perguntar de onde vêm as vagas. O Grafous defende que emprego durável nasce de crescimento sustentado, o que depende de segurança jurídica, regras fiscais previsíveis e um ambiente em que a empresa possa contratar sem insegurança sobre custos e regras. Esses números são retrato do trimestre e não projetam o mercado de trabalho de 2027. O texto é informativo e não indica compra ou venda de ativo.
