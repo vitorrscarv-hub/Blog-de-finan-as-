@@ -8,6 +8,8 @@ teaser: "O número de pessoas que procuram emprego há dois anos ou mais caiu a 
 fontes:
   - titulo: "IBGE, Sidra: PNAD Contínua, tabela 1616, pessoas desocupadas por tempo de procura de trabalho"
     url: "https://sidra.ibge.gov.br/tabela/1616"
+  - titulo: "IBGE, Sidra: PNAD Contínua, tabela 4099, taxa de desocupação"
+    url: "https://sidra.ibge.gov.br/tabela/4099"
 draft: false
 gate: true
 ---
