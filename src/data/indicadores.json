@@ -17,8 +17,8 @@
     },
     {
       "nome": "Dólar PTAX",
-      "valor": "R$ 5,7978",
-      "data": "18 nov 2026, 11h11 (parcial)",
+      "valor": "R$ 5,8102",
+      "data": "18 nov 2026",
       "fonte": "Banco Central",
       "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='10-16-2026'&$format=json"
     }
