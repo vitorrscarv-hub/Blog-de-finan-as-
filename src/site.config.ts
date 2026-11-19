@@ -53,14 +53,13 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-19-senado-conclui-ajuste-fiscal-69-a-2-camara-vota-segunda',
+        '2026-11-19-pnad-desempregados-ha-dois-anos-menor-numero-serie',
         '2026-11-18-economistas-esquerda-propoem-forcar-queda-selic-moratoria-capitais',
         '2026-11-18-pnad-desemprego-por-estado-terceiro-trimestre-bahia-santa-catarina',
         '2026-11-17-senado-adia-destaques-ajuste-fiscal-dolar-5-78-juros-recuam',
         '2026-11-17-lula-mercado-miseria-alckmin-oscilacoes-passageiras',
         '2026-11-17-banco-do-brasil-governo-descarta-socorro-fazenda-regra-perdas-agro',
-        '2026-11-16-dolar-dispara-5-78-ibovespa-cai-juros-sobem-fiscal',
-        '2026-11-16-bancada-pt-projetos-dividendos-lci-lca-fortunas-moretti',
-        '2026-11-16-ibc-br-terceiro-trimestre-queda-0-9-focus-pib-selic',
       ],
     },
   },
