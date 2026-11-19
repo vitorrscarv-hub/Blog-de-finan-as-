@@ -1,18 +1,6 @@
 {
-  "atualizado": "2026-11-18",
+  "atualizado": "2026-11-19",
   "acoes": [
-    {
-      "empresa": "Localiza",
-      "ticker": "RENT3",
-      "tipo": "JCP",
-      "valorPorAcao": 0.556580414,
-      "dataCom": "2026-09-25",
-      "dataPagamento": "2026-11-18",
-      "fonte": {
-        "titulo": "Localiza, Comunicado ao Mercado de 25/09/2026: JCP, valor por ação",
-        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1571759&numSequencia=1096465&numVersao=1"
-      }
-    },
     {
       "empresa": "Bradespar",
       "ticker": "BRAP4",
@@ -279,28 +267,6 @@
     }
   ],
   "fiis": [
-    {
-      "fundo": "FII IRIM",
-      "ticker": "IRIM11",
-      "valorPorCota": 0.75,
-      "dataBase": "2026-11-11",
-      "dataPagamento": "2026-11-18",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo IRIM, consulta ao cadastro do fundo em 12/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IklSSU0iLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII RBRY PAX",
-      "ticker": "RBRY11",
-      "valorPorCota": 1,
-      "dataBase": "2026-11-11",
-      "dataPagamento": "2026-11-18",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo RBRY, consulta ao cadastro do fundo em 12/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJCUlkiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
     {
       "fundo": "FII MAUA",
       "ticker": "MCCI11",
