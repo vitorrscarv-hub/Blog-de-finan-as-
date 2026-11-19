@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-19-dolar-ptax-5-89-bc-vende-1-bi-lula-sem-pressa-fazenda',
         '2026-11-19-senado-conclui-ajuste-fiscal-69-a-2-camara-vota-segunda',
         '2026-11-19-pnad-desempregados-ha-dois-anos-menor-numero-serie',
         '2026-11-18-economistas-esquerda-propoem-forcar-queda-selic-moratoria-capitais',
