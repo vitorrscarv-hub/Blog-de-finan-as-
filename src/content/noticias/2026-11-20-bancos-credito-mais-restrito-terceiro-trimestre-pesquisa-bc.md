@@ -1,5 +1,5 @@
 ---
-title: "Bancos apertaram o crédito no 3º trimestre e esperam mais restrição até dezembro, mostra pesquisa do BC"
+title: "Bancos apertaram o crédito no 3º trimestre e esperam manter a restrição até dezembro, mostra pesquisa do BC"
 description: "Na pesquisa trimestral do BC, os bancos dizem que a oferta de crédito ficou mais restrita no 3º trimestre, puxada pela inadimplência, e deve seguir assim."
 date: 2026-11-20
 editoria: "Brasil"
@@ -33,10 +33,10 @@ No crédito ao consumo, o aperto foi maior do que os próprios bancos previam. N
 
 ## Os motivos
 
-Segundo o relatório, nas grandes empresas a oferta ficou restritiva principalmente por causa do nível de inadimplência do mercado, e os bancos esperam intensificação por causa das condições da economia doméstica e do risco de crédito. Nas MPMEs, pesaram a inadimplência e a menor tolerância ao risco, parcialmente compensadas pela concorrência entre bancos. No consumo, os fatores mais citados foram a inadimplência e o custo e a disponibilidade de recursos para emprestar, e o emprego e os salários atuaram no sentido contrário.
+Segundo o relatório, nas grandes empresas a oferta ficou restritiva principalmente por causa do nível de inadimplência do mercado, e os bancos esperam intensificação por causa das condições gerais da economia doméstica e, principalmente, da inadimplência e do risco de crédito. Nas MPMEs, pesaram a inadimplência e a menor tolerância ao risco, parcialmente atenuadas pela busca de novos clientes e pela concorrência entre bancos. No consumo, os fatores em destaque foram a inadimplência e o custo e a disponibilidade de recursos para emprestar, e o emprego, os salários e a busca de novos clientes atuaram no sentido contrário.
 
 A pesquisa também registra que a inadimplência ficou acima do esperado no terceiro trimestre nos segmentos de MPMEs e de consumo. Para o quarto trimestre, os bancos esperam novo aumento do risco e da inadimplência em todos os segmentos, com destaque para as MPMEs.
 
 ## A leitura do Grafous
 
-O retrato é de crédito mais caro e mais seletivo, com a inadimplência como principal freio. Para o investidor, a pesquisa ajuda a entender o ambiente em que bancos e empresas endividadas vão operar nos próximos meses. Para o Grafous, juros altos por muito tempo são em boa parte consequência da falta de confiança na trajetória das contas públicas, e crédito mais farto e barato para empresas e famílias depende de um ajuste fiscal crível que permita ao Banco Central reduzir a Selic com segurança. Este texto relata a pesquisa e não indica compra ou venda de ações de bancos ou de qualquer ativo.
+O retrato é de crédito mais restrito e mais seletivo, com a inadimplência como principal freio. Para o investidor, a pesquisa ajuda a entender o ambiente em que bancos e empresas endividadas vão operar nos próximos meses. Para o Grafous, juros altos por muito tempo são em boa parte consequência da falta de confiança na trajetória das contas públicas, e crédito mais farto e barato para empresas e famílias depende de um ajuste fiscal crível que permita ao Banco Central reduzir a Selic com segurança. Este texto relata a pesquisa e não indica compra ou venda de ações de bancos ou de qualquer ativo.
