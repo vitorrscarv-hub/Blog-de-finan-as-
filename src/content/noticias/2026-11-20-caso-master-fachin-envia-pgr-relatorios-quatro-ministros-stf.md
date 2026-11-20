@@ -22,7 +22,7 @@ O presidente do Supremo Tribunal Federal (STF), Edson Fachin, enviou à Procurad
 
 ## O que Fachin decidiu
 
-Segundo o g1, o diretor-geral da PF, Andrei Rodrigues, entregou a Fachin na noite de quarta-feira (18) dez relatórios, um para cada integrante da Corte, além de um disco com todas as mensagens que citam ministros. Fachin arquivou seis e encaminhou quatro à PGR "para exame e avaliação das providências que entender cabíveis", com prazo de 15 dias. O presidente do STF informou que o material fica, por ora, sob sigilo.
+Segundo o g1 e o Valor, o diretor-geral da PF, Andrei Rodrigues, entregou a Fachin na noite de quarta-feira (18) dez relatórios, um sobre cada integrante da Corte; o g1 acrescenta que ele levou também um disco com todas as mensagens que citam ministros. Fachin arquivou seis e encaminhou quatro à PGR "para exame e avaliação das providências que entender cabíveis", com prazo de 15 dias. O presidente do STF informou que o material fica, por ora, sob sigilo.
 
 O Valor relata que, para Fachin, a maioria dos relatórios trazia apenas citações genéricas feitas por terceiros, sem relevância jurídica nem indício de crime por parte dos ministros. Foram arquivados os relatórios sobre o próprio Fachin e sobre Cristiano Zanin, Luiz Fux, Cármen Lúcia, Gilmar Mendes e Flávio Dino, segundo o jornal. Cada ministro recebeu na quinta-feira (19) apenas a cópia do relatório sobre si.
 
@@ -30,14 +30,14 @@ Caberá à PGR decidir se abre uma apuração, se pede novas diligências, se h�
 
 ## O pedido de Mendonça
 
-Mendonça, que é relator das investigações do Master no STF, enviou um ofício a Fachin nesta sexta. "Registro que renuncio expressamente ao sigilo relacionado às informações ali contidas e, por conseguinte, solicito à Vossa Excelência que dê ampla publicidade à íntegra dos autos", escreveu, segundo o Valor. A Folha registra que os gabinetes dos ministros não se manifestaram sobre os relatórios.
+Mendonça, apontado pelo Valor como o atual relator das apurações sobre o Master no STF (o jornal registra que, em setembro, Fachin mandou o caso inteiro para a presidência da Corte), enviou um ofício a Fachin nesta sexta. "Registro que renuncio expressamente ao sigilo relacionado às informações ali contidas e, por conseguinte, solicito à Vossa Excelência que dê ampla publicidade à íntegra dos autos", escreveu, segundo o Valor. A Folha registra que os gabinetes dos ministros não se manifestaram sobre os relatórios.
 
-Os relatórios estão sob sigilo e o Grafous não teve acesso a eles. Citação em relatório policial não é acusação: nenhum dos quatro ministros foi denunciado, e a decisão sobre os próximos passos é da PGR.
+Os relatórios estão sob sigilo e o Grafous não teve acesso a eles. Citação em relatório policial não é acusação: nenhum dos quatro ministros foi denunciado com base nesses relatórios, e a decisão sobre os próximos passos é da PGR.
 
 ## A crítica dentro da Corte
 
-Ministros ouvidos pelo Valor criticaram a decisão de Andrei de produzir relatórios individuais sobre os dez integrantes do STF. Para eles, a iniciativa colocou no mesmo plano ministros que estariam implicados e outros apenas mencionados por investigados. Segundo o g1, Andrei disse que os relatórios dos delegados que conduziam o caso foram considerados inadequados pela forma como foram produzidos, e não pelo conteúdo.
+Ministros ouvidos pelo Valor criticaram a decisão de Andrei de produzir relatórios individuais sobre os dez integrantes do STF. Para eles, a iniciativa colocou no mesmo plano ministros que estariam implicados e outros apenas mencionados por investigados. Segundo o g1, Andrei disse que os relatórios dos delegados foram considerados inadequados pela forma como foram produzidos, e não pelo conteúdo.
 
 ## A leitura do Grafous
 
-Um tribunal que julga todos precisa aceitar ser examinado com as mesmas regras. Para o Grafous, a resposta institucional correta é a que está em curso: a análise pela PGR, com prazo, e transparência na medida que a lei permitir. O pedido de Mendonça para abrir o próprio relatório aponta nessa direção. Segurança jurídica, que o investidor cobra das empresas e do governo, depende também de um Supremo que preste contas e de que as investigações sigam o devido processo. Este texto relata fatos públicos e não antecipa conclusões da PGR.
+Um tribunal que julga todos precisa aceitar ser examinado com as mesmas regras. Para o Grafous, a resposta institucional correta é a que está em curso: a análise pela PGR, com prazo, e transparência na medida em que a lei permitir. O pedido de Mendonça para abrir o próprio relatório aponta nessa direção. Segurança jurídica, que o investidor cobra das empresas e do governo, depende também de um Supremo que preste contas e de que as investigações sigam o devido processo. Este texto relata fatos públicos e não antecipa conclusões da PGR.
