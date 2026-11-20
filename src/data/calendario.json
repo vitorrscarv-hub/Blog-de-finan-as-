@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-19",
+  "atualizado": "2026-11-20",
   "acoes": [
     {
       "empresa": "Bradespar",
@@ -267,39 +267,6 @@
     }
   ],
   "fiis": [
-    {
-      "fundo": "FII MAUA",
-      "ticker": "MCCI11",
-      "valorPorCota": 1,
-      "dataBase": "2026-11-12",
-      "dataPagamento": "2026-11-19",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo MCCI, consulta ao cadastro do fundo em 13/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1DQ0kiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII VALORAIP",
-      "ticker": "VGIP11",
-      "valorPorCota": 0.55,
-      "dataBase": "2026-11-12",
-      "dataPagamento": "2026-11-19",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo VGIP, consulta ao cadastro do fundo em 13/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZHSVAiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII VALREIII",
-      "ticker": "VGIR11",
-      "valorPorCota": 0.119,
-      "dataBase": "2026-11-12",
-      "dataPagamento": "2026-11-19",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo VGIR, consulta ao cadastro do fundo em 13/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlZHSVIiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
     {
       "fundo": "FII TOPP PAX",
       "ticker": "TOPP11",
