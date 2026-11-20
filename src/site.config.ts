@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-20-relatorio-pf-mendonca-publico-sem-dialogo-direto-vorcaro',
         '2026-11-20-caso-master-fachin-envia-pgr-relatorios-quatro-ministros-stf',
         '2026-11-20-bancos-credito-mais-restrito-terceiro-trimestre-pesquisa-bc',
         '2026-11-19-senado-conclui-ajuste-fiscal-69-a-2-camara-vota-segunda',
