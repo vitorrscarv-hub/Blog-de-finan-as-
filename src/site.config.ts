@@ -56,6 +56,7 @@ export const SITE = {
         '2026-11-20-relatorio-pf-mendonca-publico-sem-dialogo-direto-vorcaro',
         '2026-11-20-caso-master-fachin-envia-pgr-relatorios-quatro-ministros-stf',
         '2026-11-20-bancos-credito-mais-restrito-terceiro-trimestre-pesquisa-bc',
+        '2026-11-19-dolar-ptax-5-89-bc-vende-1-bi-lula-sem-pressa-fazenda',
         '2026-11-19-senado-conclui-ajuste-fiscal-69-a-2-camara-vota-segunda',
         '2026-11-19-pnad-desempregados-ha-dois-anos-menor-numero-serie',
         '2026-11-18-economistas-esquerda-propoem-forcar-queda-selic-moratoria-capitais',
