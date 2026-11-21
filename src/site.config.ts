@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-21-lula-defende-ajuste-ataca-yuppies-faria-lima-elogia-moretti',
         '2026-11-21-decreto-escala-5x2-entidades-criticam-lacunas-lula-admite-judicializacao',
         '2026-11-21-fluxo-cambial-novembro-saida-canal-financeiro-bc',
         '2026-11-20-relatorio-pf-mendonca-publico-sem-dialogo-direto-vorcaro',
