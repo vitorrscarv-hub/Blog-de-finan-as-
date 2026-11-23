@@ -10,6 +10,8 @@ fontes:
     url: "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais"
   - titulo: "Valor: Mercado eleva projeções de inflação e espera Selic em 13% em 2027, aponta Focus"
     url: "https://valor.globo.com/brasil/noticia/2026/11/23/mercado-eleva-projecoes-de-inflacao-e-espera-selic-em-13percent-em-2027-aponta-focus.ghtml"
+  - titulo: "g1: Câmara vota projeto de ajuste fiscal nesta segunda; projeção de economia é de R$ 50 bilhões em 2027"
+    url: "https://g1.globo.com/politica/noticia/2026/11/23/camara-vota-projeto-de-ajuste-fiscal-nesta-segunda-projecao-de-economia-e-de-r-50-bilhoes-em-2027.ghtml"
 draft: false
 gate: true
 ---
@@ -47,4 +49,4 @@ O Focus reúne as projeções de bancos, gestoras e consultorias que respondem a
 
 ## A leitura do Grafous
 
-Inflação esperada em alta e juro que cai menos são o reflexo de expectativas que se desancoram, e isso costuma vir de dúvidas sobre as contas públicas. Para o Grafous, o caminho para juros menores passa por um ajuste fiscal crível, que a própria Câmara começa a votar nesta segunda, e por um Banco Central que preserve a autonomia para perseguir a meta. O Focus é uma mediana de projeções e muda toda semana. Este texto relata os números e não projeta a Selic nem indica compra ou venda de títulos ou de qualquer ativo.
+Inflação esperada em alta e juro que cai menos são o reflexo de expectativas que se desancoram, e isso costuma vir de dúvidas sobre as contas públicas. Para o Grafous, o caminho para juros menores passa por um ajuste fiscal crível, como o que a Câmara deve votar nesta segunda, segundo o g1, e por um Banco Central que preserve a autonomia para perseguir a meta. O Focus é uma mediana de projeções e muda toda semana. Este texto relata os números e não projeta a Selic nem indica compra ou venda de títulos ou de qualquer ativo.
