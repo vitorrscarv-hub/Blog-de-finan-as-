@@ -35,7 +35,7 @@ Segundo o g1, a Secretaria de Política Econômica (SPE) revisou assim os princi
 
 O g1 informa que, para 2026, a Fazenda reduziu as estimativas da indústria, de 1,7% para 1,4%, e dos serviços, de 1,8% para 1,7%, e elevou a da agropecuária, de 2,8% para 3,1%. Para 2027, o boletim cita juros e crédito caros por mais tempo e queda mais gradual da Selic. Na inflação, a pasta aponta o IPCA de setembro acima do previsto, o fim das subvenções ao diesel, a depreciação do câmbio, o aumento do ICMS sobre combustíveis e possíveis efeitos da escala 5x2 e da reforma tributária.
 
-A meta de inflação é de 3%, com tolerância de 1,5 ponto para cima ou para baixo. Pelas novas projeções da própria Fazenda, o IPCA ficaria acima do teto de 4,5% em 2026 e no limite em 2027.
+A meta de inflação é de 3%, com tolerância de 1,5 ponto para cima ou para baixo. Pelas novas projeções da própria Fazenda, o IPCA ficaria acima do teto de 4,5% em 2026 e exatamente no teto em 2027.
 
 ## O que disse a secretária
 
@@ -43,4 +43,4 @@ A secretária de Política Econômica, Débora Freire, afirmou que o governo nã
 
 ## A leitura do Grafous
 
-Quando o próprio governo reduz o crescimento esperado e projeta inflação no teto da meta, o diagnóstico deixa de ser só do mercado. O dólar perto de R$ 6 alimenta a inflação, e a inflação mais alta adia a queda dos juros, o que pesa sobre a atividade. Para o Grafous, a saída não passa por estímulos ao consumo, mas por um ajuste fiscal que conte com a despesa e devolva previsibilidade, para que o Banco Central possa trabalhar com expectativas ancoradas. Este texto relata a cotação e as projeções oficiais e não projeta o câmbio nem indica compra ou venda de moeda ou ativo.
+Quando o próprio governo reduz o crescimento esperado e projeta inflação no teto da meta, o diagnóstico deixa de ser só do mercado. O dólar perto de R$ 6 alimenta a inflação, e a inflação mais alta adia a queda dos juros, o que pesa sobre a atividade. Para o Grafous, a saída não passa por estímulos ao consumo, mas por um ajuste fiscal que contenha a despesa e devolva previsibilidade, para que o Banco Central possa trabalhar com expectativas ancoradas. Este texto relata a cotação e as projeções oficiais e não projeta o câmbio nem indica compra ou venda de moeda ou ativo.
