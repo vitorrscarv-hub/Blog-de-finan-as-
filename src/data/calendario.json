@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-20",
+  "atualizado": "2026-11-23",
   "acoes": [
     {
       "empresa": "Bradespar",
@@ -170,6 +170,18 @@
       }
     },
     {
+      "empresa": "Allos",
+      "ticker": "ALOS3",
+      "tipo": "Dividendo",
+      "valorPorAcao": 0.291918638,
+      "dataCom": "2026-11-19",
+      "dataPagamento": "2026-12-02",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de ALLOS (ALOS), consulta ao cadastro da companhia em 23/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkFMT1MiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
       "empresa": "ISA Energia",
       "ticker": "ISAE4",
       "tipo": "JCP",
@@ -251,6 +263,18 @@
       "fonte": {
         "titulo": "Petrobras, Fato Relevante de 06/08/2026: remuneração aos acionistas (segunda parcela, parte em JCP)",
         "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1553780&numSequencia=1078486&numVersao=1"
+      }
+    },
+    {
+      "empresa": "TIM",
+      "ticker": "TIMS3",
+      "tipo": "JCP",
+      "valorPorAcao": 0.2166801148,
+      "dataCom": "2026-09-22",
+      "dataPagamento": "2027-01-22",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de TIM (TIMS), consulta ao cadastro da companhia em 23/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlRJTVMiLCJsYW5ndWFnZSI6InB0LWJyIn0="
       }
     },
     {
