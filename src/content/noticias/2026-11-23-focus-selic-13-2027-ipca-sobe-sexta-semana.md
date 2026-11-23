@@ -43,6 +43,10 @@ A mudança mais relevante está na Selic de 2027. Com a taxa atual em 13,75%, a 
 
 Para comparação, a PTAX do dólar fechou a quinta-feira (19) em R$ 5,8889, segundo o Banco Central, acima de todas as medianas de câmbio do Focus.
 
+## A sequência da inflação de 2027
+
+Na base do Banco Central, a mediana do IPCA de 2027 era de 4,30% em 9 de outubro. Desde então subiu em todas as leituras semanais: 4,32% em 16 de outubro, 4,34% em 23 de outubro, 4,76% em 30 de outubro, 4,90% em 6 de novembro, 5,00% em 13 de novembro e 5,12% em 19 de novembro. Em seis semanas, a alta acumulada foi de 0,82 ponto percentual.
+
 ## Como ler o Focus
 
 O Focus reúne as projeções de bancos, gestoras e consultorias que respondem ao Banco Central. A mediana é o valor do meio dessas respostas e não representa a projeção do próprio Banco Central nem uma decisão do Comitê de Política Monetária (Copom).
