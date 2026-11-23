@@ -12,11 +12,15 @@ fontes:
     url: "https://g1.globo.com/economia/noticia/2026/11/23/fazenda-reduz-previsao-de-crescimento-da-economia-para-19percent-neste-ano.ghtml"
   - titulo: "Valor: Fazenda vê desaceleração em 2027, mas descarta recessão"
     url: "https://valor.globo.com/brasil/noticia/2026/11/23/fazenda-ve-desaceleracao-em-2027-mas-descarta-recessao.ghtml"
-draft: false
+  - titulo: "Ministério da Fazenda: SPE projeta crescimento de 2% para o PIB em 2026 e 2,3% em 2027 (Boletim Macrofiscal de setembro)"
+    url: "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/setembro/secretaria-de-politica-economica-projeta-crescimento-de-2-para-o-pib-em-2026-e-2-3-em-2027"
+  - titulo: "Banco Central: metas para a inflação"
+    url: "https://www.bcb.gov.br/controleinflacao/metainflacao"
+draft: true
 gate: true
 ---
 
-A PTAX do dólar, taxa de referência calculada pelo Banco Central, ficou em R$ 5,9708 na venda nesta segunda-feira (23), alta de 1,39% sobre os R$ 5,8889 de quinta-feira (19), último dia útil antes do feriado. É a maior PTAX desde 9 de abril de 2025, quando foi de R$ 6,0605, segundo a série do Banco Central. No mesmo dia, o Ministério da Fazenda divulgou o Boletim Macrofiscal com crescimento menor e inflação maior para 2026 e 2027, segundo o g1 e o Valor Econômico. O boletim não foi localizado no site da Fazenda nesta apuração, e as projeções são atribuídas aos jornais.
+A PTAX do dólar, taxa de referência calculada pelo Banco Central, ficou em R$ 5,9708 na venda nesta segunda-feira (23), alta de 1,39% sobre os R$ 5,8889 de quinta-feira (19), último dia útil antes do feriado. É a maior PTAX desde 9 de abril de 2025, quando foi de R$ 6,0605, segundo a série do Banco Central. No mesmo dia, o Ministério da Fazenda divulgou o Boletim Macrofiscal com crescimento menor e inflação maior para 2026 e 2027, segundo o g1 e o Valor Econômico. O boletim de novembro não foi localizado no site da Fazenda nesta apuração, e as novas projeções são atribuídas aos jornais; as anteriores conferem com o boletim de setembro, publicado pela Fazenda.
 
 ## A PTAX
 
