@@ -22,7 +22,7 @@ A Câmara dos Deputados aprovou na noite de segunda-feira (23) o projeto de lei 
 
 ## A votação
 
-Segundo a Gazeta do Povo, antes do mérito o requerimento de urgência foi aprovado por 318 votos a 135, e o pedido de adiamento da discussão foi rejeitado por 347 a 127. O relator, Mauro Benevides Filho (União-CE), deu parecer pela aprovação integral do texto do Senado.
+Segundo a Gazeta do Povo, antes do mérito o requerimento de urgência foi aprovado, e o pedido de adiamento da discussão foi rejeitado. O relator, Mauro Benevides Filho (União-CE), deu parecer pela aprovação integral do texto do Senado, segundo o Estadão.
 
 O Estadão registra que, no PL, 7 deputados votaram a favor e 86 contra. O PSOL orientou obstrução. O deputado Lindbergh Farias (PT-RJ) foi o único do PT a discursar contra no plenário e se absteve na votação do texto principal, segundo o jornal.
 
@@ -36,7 +36,7 @@ Segundo a Gazeta do Povo e o g1, o projeto:
 - autoriza a Receita a restringir a compensação de débitos com créditos de outros tributos, até o valor contingenciado;
 - fixa o repasse anual da Lei Kandir em R$ 2 bilhões entre 2027 e 2030, com a diferença paga de 2028 a 2030.
 
-O Estadão informa que o texto também retira da meta de 2026 até R$ 10,5 bilhões em subsídios ao diesel, o que evitaria um contingenciamento desse valor no relatório bimestral de receitas e despesas previsto para esta terça-feira (24). As estimativas de efeito em 2027 vão de R$ 50 bilhões, segundo o Estadão, a até R$ 56,1 bilhões, segundo a Gazeta do Povo e o g1, que citam números do governo e do relator no Senado. São projeções oficiais, não conferidas em documento primário.
+O Estadão informa que o texto também retira da meta de 2026 até R$ 10,5 bilhões em subsídios ao diesel, o que evitaria um contingenciamento desse valor no relatório bimestral de receitas e despesas previsto para esta terça-feira (24). As estimativas de efeito em 2027 vão de R$ 50 bilhões, segundo o Estadão, a até R$ 56 bilhões, segundo o g1, que cita o Ministério do Planejamento e o relator no Senado, ou R$ 56,1 bilhões, segundo a Gazeta do Povo. São projeções oficiais, não conferidas em documento primário.
 
 ## O que disse Motta
 
@@ -44,7 +44,7 @@ O Estadão informa que o texto também retira da meta de 2026 até R$ 10,5 bilh�
 
 ## Os dois lados
 
-Na oposição, o deputado Nikolas Ferreira (PL-MG) disse que o governo está "transferindo a conta dos cortes para a população", segundo o Estadão. À esquerda, o líder do PSOL, Tarcísio Motta (RJ), afirmou que o projeto "não mexe nos juros e poupa o andar de cima", segundo a Gazeta do Povo. Lindbergh disse que "tinha outro caminho, que é enfrentar esse discurso falso da gastança". Na defesa, o líder do União Brasil, Pedro Lucas Fernandes (MA), afirmou que o ajuste "tem o olhar voltado para a preservação das ações sociais", e o deputado Hildo Rocha (MDB-MA) citou a importância para o Orçamento de 2027, segundo o Estadão.
+Na oposição, o deputado Nikolas Ferreira (PL-MG) disse que o governo está "transferindo a conta dos cortes para a população", segundo o Estadão. À esquerda, o líder do PSOL, Tarcísio Motta (RJ), afirmou que o projeto "não mexe nos juros e poupa o andar de cima", segundo a Gazeta do Povo. Lindbergh disse que "tinha outro caminho que é enfrentar esse discurso falso da gastança", segundo a Gazeta do Povo. Na defesa, o líder do União Brasil, Pedro Lucas Fernandes (MA), afirmou que o ajuste "tem o olhar voltado para a preservação das ações sociais", e o deputado Hildo Rocha (MDB-MA) citou a importância para o Orçamento de 2027, segundo o Estadão.
 
 ## A leitura do Grafous
 
