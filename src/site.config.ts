@@ -53,14 +53,14 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-23-ptax-5-97-fazenda-corta-pib-2027-eleva-inflacao',
+        '2026-11-23-camara-vota-ajuste-fiscal-guimaraes-exonerado-texto-do-senado',
+        '2026-11-23-focus-selic-13-2027-ipca-sobe-sexta-semana',
         '2026-11-21-decreto-escala-5x2-entidades-criticam-lacunas-lula-admite-judicializacao',
         '2026-11-21-fluxo-cambial-novembro-saida-canal-financeiro-bc',
         '2026-11-20-relatorio-pf-mendonca-publico-sem-dialogo-direto-vorcaro',
         '2026-11-20-caso-master-fachin-envia-pgr-relatorios-quatro-ministros-stf',
         '2026-11-20-bancos-credito-mais-restrito-terceiro-trimestre-pesquisa-bc',
-        '2026-11-19-dolar-ptax-5-89-bc-vende-1-bi-lula-sem-pressa-fazenda',
-        '2026-11-19-senado-conclui-ajuste-fiscal-69-a-2-camara-vota-segunda',
-        '2026-11-19-pnad-desempregados-ha-dois-anos-menor-numero-serie',
       ],
     },
   },
