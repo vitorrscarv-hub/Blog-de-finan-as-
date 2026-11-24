@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-24-ptax-cai-1-9-ajuste-aprovado-relatos-nova-pec-gastos',
         '2026-11-24-camara-aprova-ajuste-fiscal-353-a-128-vai-a-sancao',
         '2026-11-23-camara-vota-ajuste-fiscal-guimaraes-exonerado-texto-do-senado',
         '2026-11-23-focus-selic-13-2027-ipca-sobe-sexta-semana',
