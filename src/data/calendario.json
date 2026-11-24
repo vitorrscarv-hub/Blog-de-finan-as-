@@ -1,54 +1,6 @@
 {
-  "atualizado": "2026-11-23",
+  "atualizado": "2026-11-24",
   "acoes": [
-    {
-      "empresa": "Bradespar",
-      "ticker": "BRAP4",
-      "tipo": "Dividendo",
-      "valorPorAcao": 0.199709857,
-      "dataCom": "2026-11-11",
-      "dataPagamento": "2026-11-23",
-      "fonte": {
-        "titulo": "B3: proventos em dinheiro de BRADESPAR (BRAP), consulta ao cadastro da companhia em 12/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJSQVAiLCJsYW5ndWFnZSI6InB0LWJyIn0="
-      }
-    },
-    {
-      "empresa": "Bradespar",
-      "ticker": "BRAP4",
-      "tipo": "JCP",
-      "valorPorAcao": 0.643801511,
-      "dataCom": "2026-11-11",
-      "dataPagamento": "2026-11-23",
-      "fonte": {
-        "titulo": "B3: proventos em dinheiro de BRADESPAR (BRAP), consulta ao cadastro da companhia em 12/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IkJSQVAiLCJsYW5ndWFnZSI6InB0LWJyIn0="
-      }
-    },
-    {
-      "empresa": "Petrobras",
-      "ticker": "PETR3",
-      "tipo": "JCP",
-      "valorPorAcao": 0.67407131,
-      "dataCom": "2026-08-21",
-      "dataPagamento": "2026-11-23",
-      "fonte": {
-        "titulo": "B3: proventos em dinheiro de PETROBRAS (PETR), consulta ao cadastro da companhia em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlBFVFIiLCJsYW5ndWFnZSI6InB0LWJyIn0="
-      }
-    },
-    {
-      "empresa": "Petrobras",
-      "ticker": "PETR4",
-      "tipo": "JCP",
-      "valorPorAcao": 0.67407131,
-      "dataCom": "2026-08-21",
-      "dataPagamento": "2026-11-23",
-      "fonte": {
-        "titulo": "Petrobras, Fato Relevante de 06/08/2026: remuneração aos acionistas (primeira parcela, JCP)",
-        "url": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1553780&numSequencia=1078486&numVersao=1"
-      }
-    },
     {
       "empresa": "Taesa",
       "ticker": "TAEE11",
@@ -182,6 +134,18 @@
       }
     },
     {
+      "empresa": "Ultrapar",
+      "ticker": "UGPA3",
+      "tipo": "Dividendo",
+      "valorPorAcao": 1,
+      "dataCom": "2026-11-23",
+      "dataPagamento": "2026-12-03",
+      "fonte": {
+        "titulo": "B3: proventos em dinheiro de ULTRAPAR (UGPA), consulta ao cadastro da companhia em 24/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetListedSupplementCompany/eyJpc3N1aW5nQ29tcGFueSI6IlVHUEEiLCJsYW5ndWFnZSI6InB0LWJyIn0="
+      }
+    },
+    {
       "empresa": "ISA Energia",
       "ticker": "ISAE4",
       "tipo": "JCP",
@@ -291,17 +255,6 @@
     }
   ],
   "fiis": [
-    {
-      "fundo": "FII TOPP PAX",
-      "ticker": "TOPP11",
-      "valorPorCota": 0.45,
-      "dataBase": "2026-11-13",
-      "dataPagamento": "2026-11-23",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo TOPP, consulta ao cadastro do fundo em 16/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlRPUFAiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
     {
       "fundo": "FII AFHI CRI",
       "ticker": "AFHI11",
@@ -498,6 +451,17 @@
       "fonte": {
         "titulo": "B3: rendimentos do fundo XPML, consulta ao cadastro do fundo em 18/11/2026",
         "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlhQTUwiLCJ0eXBlRnVuZCI6N30="
+      }
+    },
+    {
+      "fundo": "FII GAZIT",
+      "ticker": "GZIT11",
+      "valorPorCota": 0.36,
+      "dataBase": "2026-11-23",
+      "dataPagamento": "2026-11-30",
+      "fonte": {
+        "titulo": "B3: rendimentos do fundo GZIT, consulta ao cadastro do fundo em 24/11/2026",
+        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkdaSVQiLCJ0eXBlRnVuZCI6N30="
       }
     }
   ]
