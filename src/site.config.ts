@@ -54,7 +54,6 @@ export const SITE = {
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
         '2026-11-24-camara-aprova-ajuste-fiscal-353-a-128-vai-a-sancao',
-        '2026-11-23-ptax-5-97-fazenda-corta-pib-2027-eleva-inflacao',
         '2026-11-23-camara-vota-ajuste-fiscal-guimaraes-exonerado-texto-do-senado',
         '2026-11-23-focus-selic-13-2027-ipca-sobe-sexta-semana',
         '2026-11-21-decreto-escala-5x2-entidades-criticam-lacunas-lula-admite-judicializacao',
