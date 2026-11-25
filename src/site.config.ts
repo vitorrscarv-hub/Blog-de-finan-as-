@@ -53,11 +53,11 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-25-lula-reune-equipe-pec-gastos-obrigatorios-alcolumbre-pisos',
+        '2026-11-25-cni-aciona-stf-contra-decreto-portaria-escala-5x2',
         '2026-11-24-camara-aprova-ajuste-fiscal-353-a-128-vai-a-sancao',
         '2026-11-23-camara-vota-ajuste-fiscal-guimaraes-exonerado-texto-do-senado',
         '2026-11-23-focus-selic-13-2027-ipca-sobe-sexta-semana',
-        '2026-11-21-decreto-escala-5x2-entidades-criticam-lacunas-lula-admite-judicializacao',
-        '2026-11-21-fluxo-cambial-novembro-saida-canal-financeiro-bc',
       ],
     },
   },
