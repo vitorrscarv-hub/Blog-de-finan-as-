@@ -24,7 +24,7 @@ A Confederação Nacional da Indústria (CNI) pediu ao Supremo Tribunal Federal 
 
 Segundo a Gazeta do Povo, a ação mira o decreto 13.173/2026, assinado por Lula em 19 de novembro, e a portaria 2.041/2026 do Ministério do Trabalho, que detalhou as regras operacionais. O Estadão informa que os atos tratam de turnos ininterruptos de revezamento, compensação de horas, cálculo do salário-hora, horas extras, remuneração do repouso semanal e aplicação de normas coletivas.
 
-Para a CNI, a portaria não se limita a regulamentar a lei ou a executar o decreto, mas cria "regras autônomas sobre jornada, repousos, remuneração e instrumentos coletivos", segundo os dois jornais. "Respeitosamente, a atuação do Poder Executivo federal afronta o princípio constitucional da separação dos Poderes e da legalidade estrita", disse o diretor jurídico da entidade, Alexandre Vitorino, segundo o Estadão.
+Para a CNI, a portaria não se limita a regulamentar a lei ou a executar o decreto, mas cria "regras autônomas sobre jornada, repousos, remuneração e instrumentos coletivos", segundo os dois jornais. "Respeitosamente, a atuação do Poder Executivo federal afronta o princípio constitucional da separação dos Poderes e da legalidade estrita", disse o diretor jurídico da entidade, segundo o Estadão.
 
 ## A ação anterior
 

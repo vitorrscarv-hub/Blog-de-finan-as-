@@ -10,19 +10,21 @@ fontes:
     url: "https://www.estadao.com.br/economia/lula-se-reune-com-equipe-economica-nesta-quarta-para-definir-escopo-de-pec-com-novas-medidas-fiscais/"
   - titulo: "Estadão: Após projeto de ajuste fiscal, PEC com novas medidas pode gerar novo 'racha' na bancada governista"
     url: "https://www.estadao.com.br/economia/apos-projeto-de-ajuste-fiscal-pec-com-novas-medidas-pode-gerar-novo-racha-na-bancada-governista/"
+  - titulo: "Ministério do Planejamento: sancionada a Lei Complementar 239/2026, com novas ferramentas para as contas públicas"
+    url: "https://www.gov.br/planejamento/pt-br/assuntos/noticias/2026/sancionada-nesta-terca-24-11-a-lei-complementar-no-239-2026-que-promove-ajuste-nas-contas-publicas"
   - titulo: "Gazeta do Povo: Alcolumbre admite votar novo pacote de ajuste fiscal de Lula ainda neste ano"
     url: "https://www.gazetadopovo.com.br/economia/alcolumbre-admite-votar-novo-pacote-fiscal-de-lula-ainda-em-2026/"
 draft: false
 gate: true
 ---
 
-O presidente Lula se reúne nesta quarta-feira (25), às 15h, no Palácio da Alvorada, com os ministros da equipe econômica para definir o alcance de uma proposta de emenda à Constituição (PEC) com novas medidas fiscais, segundo o Estadão. O foco, de acordo com o jornal, será a contenção de despesas obrigatórias, numa segunda etapa depois do projeto de lei complementar aprovado pelo Congresso e sancionado por Lula na terça-feira (24). O presidente do Senado, Davi Alcolumbre (União-AP), disse que há tempo para votar uma PEC ainda em 2026, se houver acordo entre os líderes. O texto da proposta não foi divulgado.
+O presidente Lula se reúne nesta quarta-feira (25), às 15h, no Palácio da Alvorada, com os ministros da equipe econômica para definir o alcance de uma proposta de emenda à Constituição (PEC) com novas medidas fiscais, segundo o Estadão. O foco, de acordo com o jornal, será a contenção de despesas obrigatórias, numa segunda etapa depois do projeto de lei complementar aprovado pelo Congresso e sancionado por Lula na terça-feira (24). O presidente do Senado, Davi Alcolumbre (União-AP), disse que há tempo para votar uma PEC ainda em 2026, se houver acordo entre os líderes, segundo o Estadão. O texto da proposta não foi divulgado.
 
 ## O que se sabe da PEC
 
 O Estadão informa que Lula deu aval ao envio da PEC antes de sua viagem deste mês à Turquia, às Filipinas e à Espanha, e que a proposta deve delimitar quais despesas ficam fora do arcabouço fiscal. Segundo o jornal, uma reunião prevista para terça foi cancelada porque o presidente viajou para o funeral do jurista Fábio Konder Comparato. O ministro da Fazenda, Dario Durigan, tem defendido "medidas adicionais mais estruturais", de acordo com o Estadão.
 
-A Gazeta do Povo cita, entre as ideias em discussão que exigiriam mudança na Constituição, a redução da contribuição da União ao Fundeb, hoje de 23%, e a alteração dos percentuais mínimos de investimento em saúde e educação. Nada disso foi confirmado pelo governo. A líder do governo no Senado, Teresa Leitão (PE), confirmou a intenção de enviar a PEC, mas disse que o teor ainda está em discussão, segundo o Estadão.
+A Gazeta do Povo cita, entre as ideias em discussão que exigiriam mudança na Constituição, a redução da contribuição da União ao Fundeb, hoje de 23%, e a alteração dos percentuais mínimos de investimento em saúde e educação. O governo ainda não apresentou a proposta, segundo o jornal. A líder do governo no Senado, Teresa Leitão (PE), confirmou a intenção de enviar a PEC, mas disse que o teor ainda está em discussão, segundo o Estadão.
 
 ## O Congresso
 
@@ -32,7 +34,7 @@ A Gazeta do Povo cita, entre as ideias em discussão que exigiriam mudança na C
 
 Deputados da base disseram ao Estadão que não foram avisados nem consultados sobre a PEC. O principal receio, segundo o jornal, é que os pisos constitucionais de saúde e educação, que hoje crescem com a receita, passem a seguir as regras do arcabouço. Para a ala crítica, isso significaria cortes maiores do que os do projeto sancionado. Uma ala mais receptiva afirma, também segundo o jornal, que não haveria corte no orçamento existente, mas crescimento menor das verbas futuras, e que a PEC poderia ajudar a conter a alta do dólar e dos juros.
 
-A Gazeta do Povo informa que a lei sancionada já teve efeito em 2026: a exclusão de R$ 10,5 bilhões em subsídios ao diesel da meta contribuiu para reduzir em R$ 3,4 bilhões a contenção de despesas anunciada pela equipe econômica.
+A lei sancionada, a Lei Complementar 239/2026, também autoriza excluir do cálculo da meta fiscal até R$ 10,5 bilhões em gastos com a subvenção ao diesel, segundo o Ministério do Planejamento.
 
 ## A leitura do Grafous
 
