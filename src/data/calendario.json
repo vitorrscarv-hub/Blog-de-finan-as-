@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-24",
+  "atualizado": "2026-11-25",
   "acoes": [
     {
       "empresa": "Taesa",
@@ -255,83 +255,6 @@
     }
   ],
   "fiis": [
-    {
-      "fundo": "FII AFHI CRI",
-      "ticker": "AFHI11",
-      "valorPorCota": 0.97,
-      "dataBase": "2026-11-16",
-      "dataPagamento": "2026-11-24",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo AFHI, consulta ao cadastro do fundo em 17/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkFGSEkiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII CPSH",
-      "ticker": "CPSH11",
-      "valorPorCota": 0.11,
-      "dataBase": "2026-11-16",
-      "dataPagamento": "2026-11-24",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo CPSH, consulta ao cadastro do fundo em 17/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkNQU0giLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII CAPI SEC",
-      "ticker": "CPTS11",
-      "valorPorCota": 0.09,
-      "dataBase": "2026-11-16",
-      "dataPagamento": "2026-11-24",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo CPTS, consulta ao cadastro do fundo em 17/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IkNQVFMiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII MANATI",
-      "ticker": "MANA11",
-      "valorPorCota": 0.11,
-      "dataBase": "2026-10-30",
-      "dataPagamento": "2026-11-24",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo MANA, consulta ao cadastro do fundo em 03/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik1BTkEiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII OURI JPP",
-      "ticker": "OUJP11",
-      "valorPorCota": 0.85,
-      "dataBase": "2026-11-13",
-      "dataPagamento": "2026-11-24",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo OUJP, consulta ao cadastro do fundo em 16/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6Ik9VSlAiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII RIZA AKN",
-      "ticker": "RZAK11",
-      "valorPorCota": 1.05,
-      "dataBase": "2026-11-16",
-      "dataPagamento": "2026-11-24",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo RZAK, consulta ao cadastro do fundo em 17/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJaQUsiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
-    {
-      "fundo": "FII ARCTIUM",
-      "ticker": "RZAT11",
-      "valorPorCota": 1,
-      "dataBase": "2026-11-16",
-      "dataPagamento": "2026-11-24",
-      "fonte": {
-        "titulo": "B3: rendimentos do fundo RZAT, consulta ao cadastro do fundo em 17/11/2026",
-        "url": "https://sistemaswebb3-listados.b3.com.br/fundsProxy/fundsCall/GetListedSupplementFunds/eyJpZGVudGlmaWVyRnVuZCI6IlJaQVQiLCJ0eXBlRnVuZCI6N30="
-      }
-    },
     {
       "fundo": "FII ALIANZA",
       "ticker": "ALZR11",
