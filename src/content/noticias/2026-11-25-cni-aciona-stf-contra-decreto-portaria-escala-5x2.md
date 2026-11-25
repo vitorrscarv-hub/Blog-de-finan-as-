@@ -10,6 +10,10 @@ fontes:
     url: "https://www.estadao.com.br/economia/cni-entra-com-acao-no-stf-contra-regulamentacao-do-governo-lula-sobre-fim-da-escala-6x1/"
   - titulo: "Gazeta do Povo: CNI pede ao STF suspensão de regras do governo para escala 5x2"
     url: "https://www.gazetadopovo.com.br/economia/cni-pede-suspensao-de-regras-do-governo-lula-para-escala-5x2/"
+  - titulo: "Diário Oficial da União: Decreto nº 13.173, de 19 de novembro de 2026"
+    url: "https://www.in.gov.br/en/web/dou/-/decreto-n-13.173-de-19-de-novembro-de-2026-745538217"
+  - titulo: "Diário Oficial da União: Portaria MTE nº 2.041, de 19 de novembro de 2026"
+    url: "https://www.in.gov.br/en/web/dou/-/portaria-mte-n-2.041-de-19-de-novembro-de-2026-745783275"
 draft: false
 gate: true
 ---
@@ -24,7 +28,7 @@ Para a CNI, a portaria não se limita a regulamentar a lei ou a executar o decre
 
 ## A ação anterior
 
-A CNI já havia questionado no STF, em 4 de novembro, a emenda constitucional 141/2026, que reduziu a jornada, na ação direta de inconstitucionalidade 8042, segundo a Gazeta do Povo. Essa ação e outra da Confederação Nacional do Comércio levaram à liminar do ministro Flávio Dino que manteve a transição a partir de 16 de dezembro e permitiu distribuir as 42 horas em cinco dias de até 8 horas e 24 minutos, sem hora extra pelos minutos adicionais. O julgamento da liminar começou no plenário virtual, mas foi levado ao plenário físico por um pedido de destaque do ministro Luiz Fux, informa o jornal.
+A CNI já havia questionado no STF, em 4 de novembro, a emenda constitucional 141/2026, que reduziu a jornada, na ação direta de inconstitucionalidade 8042, segundo a Gazeta do Povo. Essa ação e outra da Confederação Nacional do Comércio levaram à liminar do ministro Flávio Dino que manteve a transição a partir de 16 de dezembro e permitiu, onde não houver acordo ou convenção coletiva até 15 de dezembro, distribuir as 42 horas em cinco dias de até 8 horas e 24 minutos, sem hora extra pelos minutos adicionais. O julgamento da liminar começou no plenário virtual, mas foi levado ao plenário físico por um pedido de destaque do ministro Luiz Fux, informa o jornal.
 
 O Estadão registra que a portaria dá 90 dias para que os auditores fiscais do trabalho orientem as empresas antes de aplicar multas.
 
