@@ -11,6 +11,10 @@ fontes:
     url: "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/11/nota-a-imprensa-sobre-as-tarifas-dos-estados-unidos-para-aeronaves-e-acucar-brasileiro"
   - titulo: "g1: Governo Lula diz estar indignado com nova proposta de tarifa dos EUA contra o Brasil e que não 'cederá a esse tipo de ameaça'"
     url: "https://g1.globo.com/economia/noticia/2026/11/25/governo-lula-diz-estar-indignado-com-nova-proposta-de-tarifa-dos-eua-contra-o-brasil-e-que-nao-cedera-a-esse-tipo-de-ameaca.ghtml"
+  - titulo: "g1: Tarifaço de Trump: EUA propõem taxa de 10% sobre aviões brasileiros e aumento de imposto sobre açúcar"
+    url: "https://g1.globo.com/economia/noticia/2026/11/25/eua-propoem-tarifas-mais-altas-sobre-importacoes-do-brasil.ghtml"
+  - titulo: "OMC: Brazil requests dispute panel regarding additional duties imposed by the United States (24/11/2026)"
+    url: "https://www.wto.org/english/news_e/news26_e/dsb_24nov26_563_e.htm"
 draft: false
 gate: true
 ---
@@ -19,7 +23,7 @@ O Escritório do Representante Comercial dos Estados Unidos (USTR) propôs nesta
 
 ## O que os EUA propõem
 
-Segundo o g1, a proposta foi anunciada pelo representante comercial americano, Jamieson Greer, e altera medidas adotadas depois de uma investigação com base na Seção 301 da Lei de Comércio americana, que levou em julho a uma tarifa adicional de 25% sobre produtos brasileiros. Na época, aeronaves prontas e parte das exportações de açúcar acima das cotas ficaram numa lista de exceções. Com a mudança, os aviões passariam a pagar 10%. O jornal observa que a medida pode afetar especialmente a Embraer.
+Segundo o g1, a proposta foi anunciada pelo representante comercial americano, Jamieson Greer, e altera medidas adotadas depois de uma investigação com base na Seção 301 da Lei de Comércio americana, que levou em julho a uma tarifa adicional de 25% sobre produtos brasileiros. Na época, aeronaves prontas e parte das exportações de açúcar acima das cotas ficaram numa lista de exceções. Com a mudança, os aviões passariam a pagar 10%. O jornal observa que a medida pode afetar especialmente a Embraer. No caso do açúcar, a nova tarifa valeria para o produto importado acima das cotas de todos os exportadores sujeitos à medida, não só do Brasil, segundo o g1.
 
 Greer afirmou, segundo o g1, que o Brasil não respondeu às reclamações apresentadas em mais de um ano de negociações, e que as novas tarifas buscam pressionar o país a mudar práticas que os EUA consideram prejudiciais. Entre os temas citados pelos americanos ao longo da disputa estão o Pix, o etanol, a propriedade intelectual e o desmatamento, de acordo com o jornal.
 
@@ -31,9 +35,9 @@ O governo afirma que a recomendação busca pressionar por "alterações em medi
 
 ## A disputa na OMC
 
-O g1 lembra que o Brasil levou o caso à Organização Mundial do Comércio em julho e, sem acordo nas consultas, pediu a criação de um painel para julgar a disputa. Os EUA bloquearam o primeiro pedido na terça-feira da semana passada, segundo o jornal. Numa segunda tentativa, a criação do painel só pode ser barrada por consenso de todos os membros.
+O g1 lembra que o Brasil levou o caso à Organização Mundial do Comércio em julho e, sem acordo nas consultas, pediu a criação de um painel para julgar a disputa. Os EUA se opuseram ao primeiro pedido nesta terça-feira (24), na reunião do Órgão de Solução de Controvérsias, segundo o resumo publicado pela OMC; o governo americano disse ali que as investigações tratam de preocupações antigas com políticas brasileiras e que segue disposto a negociar. Numa segunda tentativa, a criação do painel só pode ser barrada por consenso de todos os membros, lembra o g1.
 
-A proposta americana ainda é uma recomendação, e o g1 não informa prazo para entrar em vigor.
+A proposta americana ainda é uma recomendação. Segundo o g1, as medidas não têm data para entrar em vigor e serão discutidas em audiência pública em janeiro.
 
 ## A leitura do Grafous
 
