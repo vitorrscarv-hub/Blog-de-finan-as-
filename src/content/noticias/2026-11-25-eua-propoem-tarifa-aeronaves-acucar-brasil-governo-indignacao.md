@@ -1,6 +1,6 @@
 ---
 title: "EUA propõem tarifa de 10% sobre aeronaves brasileiras e mais imposto sobre o açúcar; governo diz que 'não cederá a ameaça'"
-description: "O USTR propôs tarifa de 10% sobre aviões do Brasil e alta no imposto sobre o açúcar, segundo o g1. Em nota, o governo fala em indignação e cita reciprocidade."
+description: "O USTR propôs tarifa de 10% sobre aviões do Brasil e alta no imposto do açúcar, segundo o g1. Em nota, o governo fala em indignação e cita reciprocidade."
 date: 2026-11-25
 editoria: "Internacional"
 pais: "Estados Unidos"
