@@ -12,6 +12,10 @@ fontes:
     url: "https://sidra.ibge.gov.br/tabela/7062"
   - titulo: "Valor: IPCA-15 aumenta 0,22% em novembro e acumula alta de 4,64% em 12 meses"
     url: "https://valor.globo.com/brasil/noticia/2026/11/26/ipca-15-aumenta-022percent-em-novembro-e-acumula-alta-de-464percent-em-12-meses.ghtml"
+  - titulo: "Banco Central: Metas para a inflação"
+    url: "https://www.bcb.gov.br/controleinflacao/metainflacao"
+  - titulo: "Banco Central: cotação PTAX do dólar (23/10 e 25/11/2026)"
+    url: "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@i,dataFinalCotacao=@f)?@i='10-23-2026'&@f='11-25-2026'&$format=json"
 draft: false
 gate: true
 ---
@@ -44,11 +48,15 @@ Dos nove grupos pesquisados, cinco subiram em novembro. A alimentação teve a m
 
 Pelo cálculo de variação vezes peso, alimentação e bebidas responderam por cerca de 0,33 ponto percentual do índice, número que o IBGE também informa em nota citada pelo Valor Econômico. Transportes, com queda de 0,71%, tiraram cerca de 0,14 ponto. Sem a queda dos transportes, o índice teria subido mais.
 
+## Um ano antes
+
+Em novembro de 2025, o IPCA-15 acumulado em 12 meses estava em 4,50%, exatamente no teto, depois de 5,32% em setembro e 4,94% em outubro daquele ano, segundo a mesma tabela do IBGE. Ou seja, naqueles meses de 2025 a prévia vinha caindo em direção ao teto, enquanto em 2026 o movimento foi o contrário: de 4,47% em setembro para 4,64% em novembro. A diferença de um ano para outro está na composição: em novembro de 2026, a alta concentrou-se nos alimentos, enquanto transportes, habitação e saúde ajudaram a segurar o índice.
+
 ## Por que importa
 
 O IPCA-15 é a prévia do IPCA, que é a medida oficial usada na meta. A meta de inflação é de 3%, com tolerância de 1,5 ponto percentual para cima ou para baixo. Com 4,64% em 12 meses, a prévia segue acima do limite superior, como já estava em outubro.
 
-A alta dos alimentos aparece num mês em que o dólar subiu: a PTAX passou de R$ 5,0377 em 23 de outubro para R$ 5,8825 em 25 de novembro, segundo o Banco Central. O IBGE não atribui o resultado ao câmbio, e o efeito da moeda sobre os preços costuma aparecer com defasagem, por isso não é possível separar quanto da alta veio do dólar.
+A alta dos alimentos aparece num mês em que o dólar subiu: a PTAX passou de R$ 5,0377 em 23 de outubro, último dia útil antes do segundo turno da eleição, para R$ 5,8825 em 25 de novembro, segundo o Banco Central. O IBGE não atribui o resultado ao câmbio, e o efeito da moeda sobre os preços costuma aparecer com defasagem, por isso não é possível separar quanto da alta veio do dólar.
 
 ## A leitura do Grafous
 
