@@ -4,7 +4,7 @@ description: "O IPCA-15 subiu 0,22% em novembro, após 0,32% em outubro. Em 12 m
 date: 2026-11-26
 editoria: "Brasil"
 keywords: ["IPCA-15", "inflação", "IBGE", "alimentos", "meta de inflação"]
-teaser: "A prévia da inflação subiu 0,22% em novembro, puxada por alimentos, que tiveram alta de 1,51%. Em 12 meses, o IPCA-15 foi a 4,64%, acima do teto de 4,50%. Os grupos. [LINK]"
+teaser: "A prévia da inflação subiu 0,22% em novembro, puxada por alimentos, que tiveram alta de 1,51%. Em 12 meses, o IPCA-15 foi a 4,64%, acima do teto de 4,50%. [LINK]"
 fontes:
   - titulo: "IBGE, Sidra: IPCA-15, tabela 3065 (variação mensal, no ano e em 12 meses)"
     url: "https://sidra.ibge.gov.br/tabela/3065"
@@ -46,10 +46,10 @@ Pelo cálculo de variação vezes peso, alimentação e bebidas responderam por 
 
 ## Por que importa
 
-O IPCA-15 coleta preços aproximadamente da segunda quinzena do mês anterior até a primeira do mês de referência e antecipa a tendência do IPCA, que é a medida oficial usada na meta. A meta de inflação é de 3%, com tolerância de 1,5 ponto percentual para cima ou para baixo. Com 4,64% em 12 meses, a prévia segue acima do limite superior, como já estava em outubro.
+O IPCA-15 é a prévia do IPCA, que é a medida oficial usada na meta. A meta de inflação é de 3%, com tolerância de 1,5 ponto percentual para cima ou para baixo. Com 4,64% em 12 meses, a prévia segue acima do limite superior, como já estava em outubro.
 
 A alta dos alimentos aparece num mês em que o dólar subiu: a PTAX passou de R$ 5,0377 em 23 de outubro para R$ 5,8825 em 25 de novembro, segundo o Banco Central. O IBGE não atribui o resultado ao câmbio, e o efeito da moeda sobre os preços costuma aparecer com defasagem, por isso não é possível separar quanto da alta veio do dólar.
 
 ## A leitura do Grafous
 
-Inflação acima do teto, alimentos em alta e dólar perto de R$ 6 formam a combinação que mais pesa no orçamento das famílias e que obriga o Banco Central a manter os juros altos por mais tempo. Para o Grafous, a forma mais barata de trazer a inflação de volta à meta é reduzir a incerteza fiscal, o que alivia o câmbio e dá ao Banco Central espaço para agir com credibilidade. Este texto relata os dados do IBGE e não projeta a inflação nem a Selic e não indica compra ou venda de títulos ou de qualquer ativo.
+Inflação acima do teto, alimentos em alta e dólar perto de R$ 6 formam a combinação que mais pesa no orçamento das famílias e que entra nas decisões de juros do Banco Central. Para o Grafous, a forma mais barata de trazer a inflação de volta à meta é reduzir a incerteza fiscal, o que alivia o câmbio e dá ao Banco Central espaço para agir com credibilidade. Este texto relata os dados do IBGE e não projeta a inflação nem a Selic e não indica compra ou venda de títulos ou de qualquer ativo.
