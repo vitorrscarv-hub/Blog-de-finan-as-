@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-26-trabuco-volta-alvorada-resposta-lula-ptax-cai-2-3',
         '2026-11-26-lula-sonda-trabuco-fazenda-banqueiro-avalia',
         '2026-11-26-ipca-15-novembro-0-22-12-meses-4-64-alimentos',
         '2026-11-25-eua-propoem-tarifa-aeronaves-acucar-brasil-governo-indignacao',
