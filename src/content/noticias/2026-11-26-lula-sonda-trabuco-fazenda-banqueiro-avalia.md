@@ -16,11 +16,11 @@ draft: false
 gate: true
 ---
 
-O presidente Lula sondou Luiz Carlos Trabuco Cappi, presidente do Conselho de Administração do Bradesco, para comandar o Ministério da Fazenda no quarto mandato, segundo o Estadão. O banqueiro não deu resposta e ainda avalia a proposta, informa o jornal. Os dois se reuniram na segunda-feira (23) no Palácio da Alvorada, em encontro fora da agenda oficial do presidente, segundo o Estadão e a Gazeta do Povo. O governo não confirmou o convite. A Gazeta do Povo registra que a reunião foi revelada pela coluna de Igor Gadelha, no portal Metrópoles.
+O presidente Lula sondou Luiz Carlos Trabuco Cappi, presidente do Conselho de Administração do Bradesco, para comandar o Ministério da Fazenda no quarto mandato, segundo o Estadão. O banqueiro não deu resposta e ainda avalia a proposta, informa o jornal. Os dois se reuniram na segunda-feira (23) no Palácio da Alvorada, em encontro fora da agenda oficial do presidente, segundo o Estadão e a Gazeta do Povo. Procurado pelo Estadão, Trabuco não respondeu. A Gazeta do Povo registra que a reunião foi revelada pela coluna de Igor Gadelha, no portal Metrópoles.
 
 ## O que se sabe
 
-O Estadão relata que, nos últimos dias, Trabuco também conversou com o ex-ministro Fernando Haddad, em São Paulo, esteve na sede do PT em Brasília com o presidente do partido, Edinho Silva, e se reuniu no dia 18 com o presidente do BNDES, Aloizio Mercadante. Na quarta-feira (25), em sessão solene na Câmara em homenagem ao fundador do Bradesco, Amador Aguiar, ele desconversou ao ser perguntado sobre a Fazenda. "Estamos aqui hoje para tratar da fundação", respondeu, segundo o jornal.
+O Estadão relata que, há cerca de dez dias, Trabuco também conversou com o ex-ministro Fernando Haddad, em São Paulo, esteve na semana passada na sede do PT em Brasília com o presidente do partido, Edinho Silva, e se reuniu no dia 18 com o presidente do BNDES, Aloizio Mercadante. Na quarta-feira (25), em sessão solene na Câmara em homenagem ao fundador do Bradesco, Amador Aguiar, ele desconversou ao ser perguntado sobre a Fazenda. "Estamos aqui hoje para tratar da fundação", respondeu, segundo o jornal.
 
 A interlocutores, Trabuco tem dito que não será ministro, segundo o Estadão. Em outra reportagem, o jornal afirma que pessoas próximas dele têm dificuldade em dizer se aceitará ou não, e que um interlocutor tem "dúvidas" se ele vai recusar de novo. Em 2014, Trabuco recusou o mesmo convite da então presidente Dilma Rousseff e apoiou a indicação de Joaquim Levy, que trabalhava no Bradesco, lembra a Gazeta do Povo.
 
@@ -34,7 +34,7 @@ Trabuco, de 75 anos, começou no Bradesco aos 17 anos como escriturário e foi p
 
 Também são citados para a Fazenda o vice-presidente Geraldo Alckmin (PSB), o atual ministro, Dario Durigan, o ministro do Planejamento, Bruno Moretti, e o governador reeleito do Piauí, Rafael Fonteles (PT), cujo nome vem perdendo força, segundo o Estadão. Moretti afirmou que Lula decidirá "no tempo dele, de acordo com o que ele entender necessário".
 
-O Estadão lembra o "episódio Levy": o economista deixou a Bradesco Asset Management para assumir a Fazenda em janeiro de 2015 com a missão de equilibrar as contas e saiu em dezembro do mesmo ano, isolado e sem emplacar suas propostas diante da resistência da base do governo.
+Segundo o Estadão, profissionais que conhecem Trabuco lembram o "episódio Levy": o economista deixou a Bradesco Asset Management para assumir a Fazenda em janeiro de 2015 com a missão de equilibrar as contas e saiu em dezembro do mesmo ano, isolado e sem emplacar suas propostas diante da resistência da base do governo.
 
 ## A leitura do Grafous
 
