@@ -53,6 +53,7 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-27-governo-central-superavit-52-bi-outubro-deficit-37-9-bi-no-ano',
         '2026-11-27-planalto-confirma-trabuco-fazenda-congresso-elogia-esquerda-critica',
         '2026-11-27-pnad-desemprego-5-1-trimestre-outubro-empata-minimo-serie',
         '2026-11-26-lula-sonda-trabuco-fazenda-banqueiro-avalia',
