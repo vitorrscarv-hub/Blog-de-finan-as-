@@ -53,13 +53,13 @@ export const SITE = {
       // posição do carrossel (1 = primeira), sem precisar estar em `materias`. Sem notícia recente, a janela some.
       janela: { ativo: true, editoria: 'Tecnologia', posicao: 3, dias: 7 },
       materias: [
+        '2026-11-27-planalto-confirma-trabuco-fazenda-congresso-elogia-esquerda-critica',
+        '2026-11-27-pnad-desemprego-5-1-trimestre-outubro-empata-minimo-serie',
         '2026-11-26-lula-sonda-trabuco-fazenda-banqueiro-avalia',
         '2026-11-26-ipca-15-novembro-0-22-12-meses-4-64-alimentos',
         '2026-11-25-eua-propoem-tarifa-aeronaves-acucar-brasil-governo-indignacao',
         '2026-11-25-lula-reune-equipe-pec-gastos-obrigatorios-alcolumbre-pisos',
         '2026-11-25-cni-aciona-stf-contra-decreto-portaria-escala-5x2',
-        '2026-11-24-ptax-cai-1-9-ajuste-aprovado-relatos-nova-pec-gastos',
-        '2026-11-24-camara-aprova-ajuste-fiscal-353-a-128-vai-a-sancao',
       ],
     },
   },
